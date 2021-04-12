@@ -12,9 +12,6 @@ July, 2020
 
 This repository contains the basic knowledge that I believe is required to work within Microsoft General Technologies 
 
-## References 
-[1] 
-
 ## Content
 1. Excel 
 2. Microsoft Forms
