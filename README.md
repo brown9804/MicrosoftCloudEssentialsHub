@@ -1,4 +1,4 @@
-# Microsoft General Path
+# Microsoft Initial Path
 
 ----------
 
