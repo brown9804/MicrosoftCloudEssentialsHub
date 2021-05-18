@@ -1,0 +1,50 @@
+// # ----------
+// # Costa Rica
+// # Belinda Brown, belindabrownr04@gmail.com
+// # May, 2021
+// # ----------
+
+// # Problem: Need to create an automated table in excel 
+
+// Automate spreadsheets with Office Scripts in Microsoft Excel WEB
+
+
+/**
+ * This sample script creates a sorted table.
+ * It also highlights a couple rows to demonstrate formatting.
+ * It does not affect any pre-existing data in your workbook.
+ *
+ * It is based off of this Office Scripts tutorial:
+ * https://docs.microsoft.com/office/dev/scripts/tutorials/excel-tutorial
+ */
+
+
+function main(workbook: ExcelScript.Workbook)
+{
+  // -------------------- For testing 
+  // This function sets up a separate worksheet with sample data.
+  // let sampleSheet = setUpSample(workbook);
+  let sampleSheet = workbook.getActiveWorksheet();
+  // Create a table using the data range.
+  let newTable = workbook.addTable(sampleSheet.getRange("A9999:KA1"), true);
+  // Sort the table based on the first column.
+  newTable.getSort().apply([
+    {
+      key: 0 /* '0' refers to the index, not the column name. */,
+      ascending: true
+    }
+  ]);
+}
+/*
+ * It creates a new worksheet with sample data,
+ * separate from anything that you're working on.
+ *
+ * @param workbook - The currently open workbook.
+//  // ---------------- For Testing 
+//  * @returns - A new worksheet with the sample data.
+//  */
+// function setUpSample(workbook: ExcelScript.Workbook): ExcelScript.Worksheet {
+//   // Create a new worksheet.
+//   let sheet = workbook.addWorksheet();
+//   return sheet;
+// }
