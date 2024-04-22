@@ -17,5 +17,5 @@ July, 2020
 formatDateTime(utcNow(), 'MM-dd-yyyy')
 ```
 
-## References 
-[1] Learning Microsoft PowerApps (2019) - From https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204
+## Wiki
+- [Learning Microsoft PowerApps (2019)](https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204)
