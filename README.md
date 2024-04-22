@@ -1,6 +1,4 @@
-# Microsoft O365
-# Tech Initial Path
-
+# Microsoft O365 Initial Path  
 ----------
 
 Costa Rica
