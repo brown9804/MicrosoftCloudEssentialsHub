@@ -10,5 +10,6 @@ July, 2020
 
 ----------
 
-## References 
-[1] Microsoft Planner Quick Tips - From https://www.linkedin.com/learning/microsoft-planner-quick-tips/saving-time-in-microsoft-planner?u=2095204
+## Wiki
+
+- [Microsoft Planner Quick Tips](https://www.linkedin.com/learning/microsoft-planner-quick-tips/saving-time-in-microsoft-planner?u=2095204)
