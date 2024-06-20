@@ -1,4 +1,4 @@
-# Microsoft Power Platform - Overview 
+# Microsoft Azure - Overview 
 
 Costa Rica
 
