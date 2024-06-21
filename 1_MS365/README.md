@@ -16,7 +16,6 @@ Microsoft 365 is a comprehensive suite of applications and services designed to 
 
 ## Microsoft 365 Services
 
-
 ### Office Applications
 
 - **Word**: A word processing application for creating, editing, and sharing documents. For example, you can use Word to draft a report, then share it with your team for collaborative editing.
