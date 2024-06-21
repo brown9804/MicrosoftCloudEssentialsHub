@@ -11,6 +11,7 @@ Last update: June, 2024
 
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
+
 1. [Azure](./0_Azure/)  <br/>
 2. [Microsoft 365](./1_MS365/) <br/>
     - [Excel](./1_MS365/Excel/) <br/>
