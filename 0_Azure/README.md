@@ -33,7 +33,7 @@ Microsoft Azure is a cloud computing platform that provides a wide range of serv
    - Examples: Office 365, Dynamics 365, Azure DevOps.
    - Use cases: Collaboration, productivity, customer relationship management (CRM).
 
-<img width="500" alt="image" src="https://github.com/brown9804/DevOps-Agile-Cloud_path/assets/24630902/7bc73a87-3b57-4f41-87de-5e72f3dfc6c7">
+<img width="800" alt="image" src="https://github.com/brown9804/DevOps-Agile-Cloud_path/assets/24630902/7bc73a87-3b57-4f41-87de-5e72f3dfc6c7">
 
 ## Key Azure Products
 
