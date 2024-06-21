@@ -12,6 +12,12 @@ Belinda Brown, belindabrownr04@gmail.com
 
 -------------
 
+## Table of Contents
+
+- [Power Platform](./3_PowerPlatform/) <br/>
+    - [Power Apps](./3_PowerPlatform/Power%20Apps/) <br/>
+    - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
+
 Microsoft Power Platform is a collection of **low-code development tools** that empower users to:
 - **Build custom business applications**
 - **Automate workflows**

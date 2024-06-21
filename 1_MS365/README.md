@@ -12,6 +12,14 @@ Belinda Brown, belindabrownr04@gmail.com
 
 ---------
 
+## Table of Contents
+
+- [Microsoft 365](./1_MS365/) <br/>
+    - [Excel](./1_MS365/Excel/) <br/>
+    - [Microsoft Forms](./1_MS365/Forms/) <br/>
+    - [Microsoft Planner](./1_MS365/Planner/) <br/>
+    - [SharePoint](./1_MS365/SharePoint/) <br/>
+
 Microsoft 365 is a comprehensive suite of applications and services designed to help businesses manage their operations more effectively. It includes a wide range of tools for collaboration, communication, productivity, and security.
 
 ## Microsoft 365 Services
