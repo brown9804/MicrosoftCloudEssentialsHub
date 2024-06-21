@@ -26,6 +26,8 @@ Last update: June, 2024
     - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
 </details>
 
+<img width="400" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/9bb7da30-96d0-4bf2-aa58-d53c46b20c90">
+
 ## Wiki
 
 This repository contains the basic knowledge that I believe is required to work within Microsoft Cloud Technologies. The Microsoft Cloud ecosystem encompasses a range of products and solutions designed to work together to provide comprehensive cloud services. Here are the key components:
