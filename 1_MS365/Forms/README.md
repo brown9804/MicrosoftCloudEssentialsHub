@@ -18,7 +18,6 @@ Microsoft Forms is an online survey creator, part of Office 365. It was released
 | Learning Microsoft Forms | For beginners, there are many resources available online to learn Microsoft Forms. These resources introduce the most important features and functions needed when starting out with Microsoft Forms. |
 | Security | Due to a wave of phishing attacks utilizing Microsoft 365 in early 2021, Microsoft uses algorithms to automatically detect and block phishing attempts with Microsoft Forms. |
 
-
 ## Wiki 
 
 - [Microsoft Forms Quick Tips](https://www.linkedin.com/learning/microsoft-forms-quick-tips/gather-insightful-data-from-forms?u=2095204)
