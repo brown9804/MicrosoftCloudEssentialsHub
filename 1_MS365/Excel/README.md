@@ -10,5 +10,15 @@ July, 2020
 
 ----------
 
+Microsoft Excel is a spreadsheet editor developed by Microsoft for Windows, macOS, Android, iOS and iPadOS. It was initially released on November 19, 1987.
+
+| Aspect | Information | 
+| -------- | -------- | 
+| Features | Excel has the basic features of all spreadsheets, using a grid of cells arranged in numbered rows and letter-named columns to organize data manipulations like arithmetic operations. It has a battery of supplied functions to answer statistical, engineering, and financial needs. In addition, it can display data as line graphs, histograms and charts, and with a very limited three-dimensional graphical display. | 
+| Data Analysis | Excel allows sectioning of data to view its dependencies on various factors for different perspectives (using pivot tables and the scenario manager). A PivotTable is a tool for data analysis. It does this by simplifying large data sets via PivotTable fields. | 
+| Programming aspect | Excel has a programming aspect, Visual Basic for Applications, allowing the user to employ a wide variety of numerical methods, for example, for solving differential equations of mathematical physics, and then reporting the results back to the spreadsheet. | 
+| User Interface | Excel also has a variety of interactive features allowing user interfaces that can completely hide the spreadsheet from the user, so the spreadsheet presents itself as a so-called application, or decision support system (DSS), via a custom-designed user interface. | 
+| Learning Excel | For beginners, there are many resources available online to learn Excel. These resources introduce the most important features and functions needed when starting out with Excel, from entering and sorting basic data to writing your first formulas. |
+
 ## Wiki 
 - [Excel: Avoiding Common Mistakes (Office 365/Excel 2019)](https://www.linkedin.com/learning/excel-avoiding-common-mistakes-office-365-excel-2019/optimize-your-excel-skills?u=2095204)
