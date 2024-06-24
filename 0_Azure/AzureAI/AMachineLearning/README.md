@@ -1,5 +1,16 @@
 # Azure Machine Learning
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/63f16cb5-b34b-4d07-ac32-12aba33cd287">
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/2dd7d32d-4232-4709-8ab4-5e1d2f7b059f">

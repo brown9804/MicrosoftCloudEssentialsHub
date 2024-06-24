@@ -1,5 +1,16 @@
 # Azure OpenAI
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Key Features: 
 - **Advanced AI Models**: The service provides access to advanced AI models for conversational, content creation, and data grounding use cases.
 - **Fine-tuning**: You can fine-tune the models, apply generative AI, and integrate with other Azure AI services.

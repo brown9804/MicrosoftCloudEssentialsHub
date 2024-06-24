@@ -1,5 +1,16 @@
 # Translators
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Key Features: 
 - **Text Translation**: Execute text translation between supported source and target languages in real time.
 - **Asynchronous Batch Document Translation**: Translate batch and complex files while preserving the structure and format of the original documents.

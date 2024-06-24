@@ -1,5 +1,16 @@
 # Document Intelligences
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Key Features:
 - **Text Extraction**: Easily pull data and organize information with prebuilt and custom features.
 - **Customized Results**: Get output tailored to your layouts with automatic custom extraction and improve it with human feedback.

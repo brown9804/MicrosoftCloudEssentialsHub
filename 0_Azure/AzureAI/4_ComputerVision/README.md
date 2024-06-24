@@ -1,5 +1,16 @@
 # Computer Vision
  
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Here are some of the key features of the Azure AI Vision service:
 - Optical Character Recognition (OCR): The OCR service extracted text from images. It used deep-learning-based models and worked with text on various surfaces and backgrounds.
 - Image Analysis: The Image Analysis service extracted many visual features from images, such as objects, faces, adult content, and auto-generated text descriptions.

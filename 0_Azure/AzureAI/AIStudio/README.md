@@ -1,5 +1,16 @@
 # Azure AI Studio
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ad165c2c-94ee-455d-8c90-55f56fb119b9">
 
 Key Features: [reference](https://www.slideshare.net/slideshow/azure-ai-platform-automated-ml-workshop/133115961)
@@ -13,3 +24,8 @@ Key Features: [reference](https://www.slideshare.net/slideshow/azure-ai-platform
 Creating a new Azure AI Studio account: 
 - You can create and manage Azure resources for Azure AI Studio via the Azure portal. 
 
+<!-- TOC -->
+
+- [Azure AI Studio](#azure-ai-studio)
+
+<!-- /TOC -->

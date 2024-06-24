@@ -1,5 +1,16 @@
 # Bot Services
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 > Azure Bot Service is a cloud-based platform provided by Microsoft Azure that enables businesses to build, deploy, and manage AI-powered chatbots[2](https://studioteck.com/azure-bot-service/). These chatbots can interact with users through text or voice and can be integrated into websites, messaging platforms, or mobile apps[2](https://studioteck.com/azure-bot-service/). Azure Bot Service simplifies creating and managing chatbots, making them accessible for businesses with varying technical expertise[2](https://studioteck.com/azure-bot-service/). In addition, Azure Bot Service offers the scalability and performance needed to handle varying workloads[2](https://studioteck.com/azure-bot-service/). Businesses can quickly scale their chatbot infrastructure up or down based on demand, ensuring optimal performance and cost efficiency[2](https://studioteck.com/azure-bot-service/).
 
 Here are some of the key features of the Azure AI Bot Service: 

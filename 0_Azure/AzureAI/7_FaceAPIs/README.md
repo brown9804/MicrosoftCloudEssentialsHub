@@ -1,5 +1,16 @@
 # Face APIs
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Key Features: 
 - **Face Detection and Recognition**: The service provides AI algorithms that detect, recognize, and analyze human faces in images.
 - **Facial Recognition Software**: This software is important in many different scenarios, such as security, natural user interface, image content analysis and management, mobile apps, and robotics.

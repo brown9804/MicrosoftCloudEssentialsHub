@@ -1,5 +1,16 @@
 # Speech Services
 
+----------
+
+Costa Rica
+
+Belinda Brown, belindabrownr04@gmail.com
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+----------
+
 Key Features:
 - **Speech to Text**: Transcribe audio into text, either in real-time or asynchronously with batch transcription.
 - **Text to Speech**: Produce natural-sounding text-to-speech voices.
