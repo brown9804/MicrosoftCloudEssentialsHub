@@ -12,15 +12,15 @@ Belinda Brown, belindabrownr04@gmail.com
 
 ---------------
 
-Microsoft Azure is a cloud computing platform that provides a wide range of services for building, deploying, and managing applications and infrastructure. It offers scalability, flexibility, and global reach.
-
-<img width="800" alt="image" src="https://github.com/brown9804/SDLC-Cloud_Lpath/assets/24630902/03e4b996-82bc-40c9-8374-d4267b59e8c3">
-
 ## Content 
 - [Azure](./0_Azure/)  
     - [Azure DevOps](./0_Azure/AzureDevOps/README.md)
     - [Azure Fundamentals](./0_Azure/AzureFundamentals/README.md)
     - [Azure AI](./0_Azure/AzureAI/README.md)
+
+Microsoft Azure is a cloud computing platform that provides a wide range of services for building, deploying, and managing applications and infrastructure. It offers scalability, flexibility, and global reach.
+
+<img width="800" alt="image" src="https://github.com/brown9804/SDLC-Cloud_Lpath/assets/24630902/03e4b996-82bc-40c9-8374-d4267b59e8c3">
 
 ## Service Categories
 
