@@ -951,15 +951,10 @@ The service offered several APIs:
 > 5. **Azure Logic Apps**: Takes action based on the analysis results (e.g., block content, notify user, etc.).
 > 
 > Implementation Steps
-> 
 > 1. **Set up Azure Blob Storage**: Create a Blob Storage account in Azure to store user-generated content.
-> 
 > 2. **Set up Azure Event Grid**: Create an Event Grid subscription that triggers an Azure Function whenever new content is added to Blob Storage.
-> 
 > 3. **Set up Azure Function**: Write an Azure Function that gets triggered by Event Grid. This function should call the Azure AI Content Safety API to analyze the content.
-> 
 > 4. **Set up Azure AI Content Safety**: Use the Azure AI Content Safety API to analyze the content. This API can detect potential risks, threats, and quality problems in the content.
-> 
 > 5. **Set up Azure Logic Apps**: Create a Logic App that takes action based on the analysis results from Azure AI Content Safety. For example, if the content is flagged as unsafe, the Logic App could block the content and notify the user.
 > 
 >  Conclusion
