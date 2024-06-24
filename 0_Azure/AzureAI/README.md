@@ -153,7 +153,7 @@ All Azure services as for now:
 ## Azure AI Studio
 [return to Content](#content)
 
-<img width="709" alt="image" src="https://github.com/brown9804/DataAI_LPath/assets/24630902/fd819318-ef13-4d06-9578-66c32067cb69">
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ad165c2c-94ee-455d-8c90-55f56fb119b9">
 
 Key Features: [reference](https://www.slideshare.net/slideshow/azure-ai-platform-automated-ml-workshop/133115961)
 - Provides a trusted and inclusive platform that empowers developers of all abilities and preferences to innovate with AI and shape the future.
@@ -169,9 +169,9 @@ Creating a new Azure AI Studio account:
 ## Azure Machine Learning
 [return to Content](#content)
 
-<img width="709" alt="image" src="https://github.com/brown9804/DataAI_LPath/assets/24630902/8ac2d66e-d43f-4148-9427-8f093c8dcf21">
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/63f16cb5-b34b-4d07-ac32-12aba33cd287">
 
-<img width="709" alt="image" src="https://github.com/brown9804/DataAI_LPath/assets/24630902/c94f9a36-b4f5-4f47-8cc6-d3f743522e7a">
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/2dd7d32d-4232-4709-8ab4-5e1d2f7b059f">
 
 Key Features: 
 - Accelerates time to value.
