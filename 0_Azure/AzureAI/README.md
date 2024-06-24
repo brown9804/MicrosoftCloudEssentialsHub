@@ -18,18 +18,12 @@ Belinda Brown, belindabrownr04@gmail.com
     - [Wiki](#wiki)
     - [Azure AI Studio](#azure-ai-studio)
     - [Azure Machine Learning](#azure-machine-learning)
-    - 0. [AI Search](./0_AISearch/README.md)
-    - 1. [AI Video Indexer](./1_AIVideoIndexer/README.md)
-    - 2. [AI Content Safety](./2_AIContentSafety/README.md)
-    - 3. [Bot Services](./3_BotServices/README.md)
-    - 4. [Computer Vision](./4_ComputerVision/README.md)
-    <details><summary> 6. <a href="#custom-vision"> Custom Vision </a></summary><ul>
-            <li> <a href="#retail---custom-vision"> Retail - Custom Vision: </a> </li>
-            <li> <a href="#healthcare---custom-vision" >  Healthcare - Custom Vision: </a> </li>
-            <li> <a href="#manufacturing---custom-vision" >  Manufacturing - Custom Vision: </a> </li>
-            <li> <a href="#agriculture---custom-vision" > Agriculture - Custom Vision: </a> </li>
-            <li> <a href="#transportation---custom-vision" > Transportation - Custom Vision: </a> </li>
-    </details></li> <!-- End 6 -->
+        0. [AI Search](./0_AISearch/README.md)
+        1. [AI Video Indexer](./1_AIVideoIndexer/README.md)
+        2. [AI Content Safety](./2_AIContentSafety/README.md)
+        3. [Bot Services](./3_BotServices/README.md)
+        4. [Computer Vision](./4_ComputerVision/README.md)
+        5. [Custom Vision](./5_CustomVision/README.md)
     <details><summary> 7. <a href="#document-intelligences"> Document intelligences </a></summary><ul>
             <li> <a href="#document-classification---document-intelligence"> Document Classification - Document Intelligence: </a> </li>
             <li> <a href="#information-extraction---document-intelligence" > Information Extraction - Document Intelligence: </a> </li>
@@ -150,48 +144,6 @@ Key Features:
 
 Creating a new Azure Machine Learning Platform account: 
 - You can create and manage Azure resources for Azure Machine Learning Platform via the Azure portal. 
-
-## Custom Vision
-[return to Content](#content)
-
-Here are some of the key features of the Azure AI Custom Vision service:
-1. **Customization to your scenario**: Users could set their model to perceive a particular object for their use case.
-2. **Intuitive model creation**: Users could easily build their image identifier model using the simple interface.
-3. **Flexible deployment**: Users could run AI Custom Vision in the cloud or on the edge in containers.
-4. **Built-in security**: Users could rely on enterprise-grade security and privacy for their data and any trained models. 
-
-> [!NOTE]
-> Here are some use cases:
-
-### Retail - Custom Vision:
-[return to Content](#content)
-
-- **Product Identification**: Retailers can use Azure Custom Vision to identify products from images taken by customers. This can be used in a mobile app to allow customers to find similar products.
-- **Inventory Management**: Images from store shelves can be analyzed to determine which products are out of stock.
-
-### Healthcare - Custom Vision:
-[return to Content](#content)
-
-- **Medical Imaging**: Azure Custom Vision can be trained to identify anomalies or diseases in medical images such as X-rays or MRIs.
-- **Patient Monitoring**: In a hospital setting, Azure Custom Vision can be used to monitor patients and alert staff if it detects any unusual activity.
-
-### Manufacturing - Custom Vision:
-[return to Content](#content)
-
-- **Quality Control**: Manufacturers can use Azure Custom Vision to inspect products on an assembly line for defects.
-- **Safety Compliance**: It can be used to ensure that safety protocols are being followed on the manufacturing floor by analyzing images from CCTV feeds.
-
-### Agriculture - Custom Vision:
-[return to Content](#content)
-
-- **Crop Disease Detection**: Farmers can use Azure Custom Vision to analyze drone-captured images of crops to detect diseases early.
-- **Animal Monitoring**: It can be used to monitor the health and well-being of livestock by analyzing images or video feeds.
-
-### Transportation - Custom Vision:
-[return to Content](#content)
-
-- **Vehicle Identification**: Azure Custom Vision can be used in toll booths or parking lots for automatic number plate recognition.
-- **Traffic Management**: It can analyze drone or satellite images to monitor traffic conditions and detect accidents or roadblocks.
 
 ## Document intelligences
 [return to Content](#content)
