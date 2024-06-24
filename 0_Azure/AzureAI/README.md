@@ -3137,7 +3137,7 @@ Azure Speech Services can be used to make applications more accessible. For exam
 > 3. **Application Logic**: The application interprets the user's input (either text or voice commands), executes the appropriate logic, and generates a response.
 > 4. **Response Generation**: The application generates a response, which is converted to speech by the Azure Speech Service (for visually impaired users) or displayed as text (for users with hearing impairments).
 > 
-> ## Implementation Steps
+> Implementation Steps
 > 1. **Integrate Azure Speech Service**: Integrate Azure Speech Service into the application for speech-to-text and text-to-speech conversion.
 > 2. **Develop Voice Navigation**: Develop voice navigation features for visually impaired users. Use the text-to-speech capabilities of Azure Speech Service to provide audio feedback and instructions.
 > 3. **Develop Speech-to-Text Features**: Develop speech-to-text features for users with hearing impairments. Use the speech-to-text capabilities of Azure Speech Service to convert spoken language into written text.
