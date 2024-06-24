@@ -15,7 +15,7 @@ Key Features:
 - **Text Translation**: Execute text translation between supported source and target languages in real time.
 - **Asynchronous Batch Document Translation**: Translate batch and complex files while preserving the structure and format of the original documents.
 - **Synchronous Document Translation**: Translate a single document file alone or with a glossary file while preserving the structure and format of the original document.
-- *Custom Translator**: Build customized models to translate domain- and industry-specific language, terminology, and style.
+- **Custom Translator**: Build customized models to translate domain- and industry-specific language, terminology, and style.
 
 Applications (Common scenarios for Azure Translator include): 
 - **Captioning**: Synchronize captions with your input audio, apply profanity filters, get partial results, apply customizations, and identify spoken languages for multilingual scenarios.
