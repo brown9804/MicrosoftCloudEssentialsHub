@@ -5,15 +5,21 @@
 ![image](https://github.com/brown9804/SDLC-Cloud_Lpath/assets/24630902/bdaebc61-162f-4c0f-855f-6dc74de38397)
 
 ## Content 
-<summary> <a href="#ai-search"> AI Search</a></summary><ul>
-        <li> <a href="#e-commerce-and-retail---azure-ai-search"> E-commerce and Retail - Azure AI Search: </a> </li>
-        <li> <a href="#content-and-document-management---azure-ai-search"> Content and Document Management - Azure AI Search: </a> </li>
-        <li> <a href="#enterprise-search---azure-ai-search"> Enterprise Search - Azure AI Search: </a> </li>
-        <li> <a href="#healthcare-and-life-sciences---azure-ai-search"> Healthcare and Life Sciences - Azure AI Search: </a> </li>
-        <li> <a href="#media-and-entertainment---azure-ai-search" > Media and Entertainment - Azure AI Search: </a> </li>
-        <li> <a href="#travel-and-hospitality---azure-ai-search" > Travel and Hospitality - Azure AI Search: </a> </li>
-        <li> <a href="#financial-services---azure-ai-search" > Financial Services - Azure AI Search: </a> </li>
-</li> <!-- End 1 -->
+
+<!-- TOC -->
+
+- [AI Search](#ai-search)
+    - [Content](#content)
+    - [Examples of Use Cases](#examples-of-use-cases)
+        - [E-commerce and Retail - Azure AI Search:](#e-commerce-and-retail---azure-ai-search)
+        - [Content and Document Management - Azure AI Search:](#content-and-document-management---azure-ai-search)
+        - [Enterprise Search - Azure AI Search:](#enterprise-search---azure-ai-search)
+        - [Healthcare and Life Sciences - Azure AI Search:](#healthcare-and-life-sciences---azure-ai-search)
+        - [Media and Entertainment - Azure AI Search:](#media-and-entertainment---azure-ai-search)
+        - [Travel and Hospitality - Azure AI Search:](#travel-and-hospitality---azure-ai-search)
+        - [Financial Services - Azure AI Search:](#financial-services---azure-ai-search)
+
+<!-- /TOC -->
 
 ## Examples of Use Cases 
 
