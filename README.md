@@ -20,7 +20,7 @@ Last update: June, 2024
     - [Azure AI](./0_Azure/AzureAI/README.md)
 2. [Microsoft 365](./1_MS365/) <br/>
     - [Excel](./1_MS365/Excel/) <br/>
-    - [Microsoft Forms](./1_MS365/Forms/) <br/>
+    - [Microsoft Forms](./1_MS365/Forms) <br/>
     - [Microsoft Planner](./1_MS365/Planner/) <br/>
     - [SharePoint](./1_MS365/SharePoint/) <br/>
 3. [Dynamics 365](./2_Dynamics365/) <br/>
