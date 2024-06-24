@@ -1,4 +1,4 @@
-# Document intelligences
+# Document Intelligences
 
 Key Features:
 - **Text Extraction**: Easily pull data and organize information with prebuilt and custom features.
