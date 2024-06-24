@@ -14,9 +14,9 @@ Belinda Brown, belindabrownr04@gmail.com
 
 ## Content 
 - [Azure](./0_Azure/)  
-    - [Azure DevOps](./0_Azure/AzureDevOps/README.md)
-    - [Azure Fundamentals](./0_Azure/AzureFundamentals/README.md)
-    - [Azure AI](./0_Azure/AzureAI/README.md)
+    - [Azure DevOps](./AzureDevOps/README.md)
+    - [Azure Fundamentals](./AzureFundamentals/README.md)
+    - [Azure AI](./AzureAI/README.md)
 
 Microsoft Azure is a cloud computing platform that provides a wide range of services for building, deploying, and managing applications and infrastructure. It offers scalability, flexibility, and global reach.
 
