@@ -16,8 +16,8 @@ Belinda Brown, belindabrownr04@gmail.com
 - [Azure Artifitial Intelligence + ML Overview](#azure-artifitial-intelligence--ml-overview)
     - [Content](#content)
     - [Wiki](#wiki)
-    - [Azure AI Studio](#azure-ai-studio)
-    - [Azure Machine Learning](#azure-machine-learning)
+    - [Azure AI Studio](./AIStudio/)
+    - [Azure Machine Learning](./AMachineLearning/)
     - [AI Search](./0_AISearch/README.md)
     - [AI Video Indexer](./1_AIVideoIndexer/README.md)
     - [AI Content Safety](./2_AIContentSafety/README.md)
@@ -59,45 +59,6 @@ All Azure services as for now:
 | AI + APIs | AI Service | [Translators](#translators)  | Azure Translator Service is a cloud-based neural machine translation service that is part of the Azure AI services family. It can be used with any operating system and powers many Microsoft products and services used by thousands of businesses worldwide for language translation and other language-related operations. <br/> <br/> For more information: <br/> - [What is Azure AI Translator? - Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/translator/translator-overview) <br/> - [Azure AI Translator](https://azure.microsoft.com/en-us/products/ai-services/ai-translator) <br/> - [Azure AI Translator documentation - quickstarts, tutorials, API ...](https://learn.microsoft.com/en-us/azure/ai-services/translator/). | 
 | Industry Machine Learning solutions | Solution | [Intelligent Recommendations Accounts](#intelligent-recommendations-accounts)  | Azure Intelligent Recommendations is a service that democratizes AI and machine learning recommendations through a codeless experience. It's powered by the same technology that fuels Xbox, Microsoft 365, and Microsoft Azure. <br/> <br/>  For more information: <br/> [What is Intelligent Recommendations?](https://learn.microsoft.com/en-us/industry/retail/intelligent-recommendations/overview) <br/> [Create a new Intelligent Recommendations account](https://learn.microsoft.com/en-us/industry/retail/intelligent-recommendations/deploy-intelligent-recommendations-account) <br/> [Microsoft Entra ID Governance introduces two new features in access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-id-governance-introduces-two-new-features-in/ba-p/2466930) | 
 | Industry Machine Learning solutions | Solution | [Azure Synapse Analytics](#azure-synapse-analytics)  | Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It brings together the best of SQL technologies used in enterprise data warehousing, Apache Spark technologies for big data, and Azure Data Explorer for log and time series analytics. <br/> <br/>  For more information: <br/> [Azure Synapse Analytics Overview](https://azure.microsoft.com/en-us/products/synapse-analytics/) <br/> [What is Azure Synapse Analytics?](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is) <br/> [Azure Synapse Analytics Learning documents](https://learn.microsoft.com/en-us/azure/synapse-analytics/). | 
-
-## Azure AI Studio
-[return to Content](#content)
-
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ad165c2c-94ee-455d-8c90-55f56fb119b9">
-
-Key Features: [reference](https://www.slideshare.net/slideshow/azure-ai-platform-automated-ml-workshop/133115961)
-- Provides a trusted and inclusive platform that empowers developers of all abilities and preferences to innovate with AI and shape the future.
-- Seamlessly explore, build, test, and deploy using cutting-edge AI tools and ML models, grounded in responsible AI practices.
-- Build together as one team.
-- Improve customer experiences, reduce organizational risk, improve work quality, enhance productivity and efficiency.
-- Built-in security and compliance investing USD20 billion in cybersecurity.
-- 8,500 security and threat intelligence experts compliance certification portfolios.
-
-Creating a new Azure AI Studio account: 
-- You can create and manage Azure resources for Azure AI Studio via the Azure portal. 
-
-## Azure Machine Learning
-[return to Content](#content)
-
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/63f16cb5-b34b-4d07-ac32-12aba33cd287">
-
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/2dd7d32d-4232-4709-8ab4-5e1d2f7b059f">
-
-Key Features: 
-- Accelerates time to value.
-- Provides a unified experience for data engineering, data science, and business analysis.
-- Enables data warehousing and data virtualization scenarios.
-- Extends T-SQL to address streaming and machine learning scenarios. 
-- Integrates AI with SQL by using machine learning models to score data.
-- Allows data engineers to use a code-free visual environment for managing data pipelines.
-- Automates query optimization.
-- Seamlessly integrates with Power BI, CosmosDB, and AzureML.
-- Develop with confidence.
-- Design responsibly.
-- Take advantage of key features for the full ML lifecycle. 
-
-Creating a new Azure Machine Learning Platform account: 
-- You can create and manage Azure resources for Azure Machine Learning Platform via the Azure portal. 
 
 ## Retired 
 [return to Content](#content)
