@@ -1,9 +1,8 @@
-## AI Search 
+# AI Search 
 
 > Built-in indexers are available for `Azure Cosmos DB, Azure SQL Database, Azure Blob Storage, and Microsoft SQL Server hosted in Azure Virtual Machines`. Use Azure `Data Factory`, with more than 80 connectors, or `Azure Logic Apps` to connect to your data source. Alternatively, push data into an Azure AI Search index, which has no restrictions on data source type.
 
 ![image](https://github.com/brown9804/SDLC-Cloud_Lpath/assets/24630902/bdaebc61-162f-4c0f-855f-6dc74de38397)
-
 
 ## Content 
 <summary> <a href="#ai-search"> AI Search</a></summary><ul>
@@ -15,6 +14,8 @@
         <li> <a href="#travel-and-hospitality---azure-ai-search" > Travel and Hospitality - Azure AI Search: </a> </li>
         <li> <a href="#financial-services---azure-ai-search" > Financial Services - Azure AI Search: </a> </li>
 </li> <!-- End 1 -->
+
+## Examples of Use Cases 
 
 > [!NOTE]
 > Use Cases for Azure AI Search:
