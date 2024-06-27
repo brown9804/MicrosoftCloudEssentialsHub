@@ -38,14 +38,13 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 ![image](https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/0045c7cc-073b-420d-a80d-707969c7b1f2)
 
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4a49d6af-42eb-45f8-bec3-954a05b84f36"> 
-
 |   <!-- -->    | <!-- -->    |
 | ----  | ---- |
 | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a"> | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c"> |  
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4d9d5e6d-ff9c-4f21-954e-61f644c750bd">
 
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4a49d6af-42eb-45f8-bec3-954a05b84f36"> 
 
 ## Where to start?
 
