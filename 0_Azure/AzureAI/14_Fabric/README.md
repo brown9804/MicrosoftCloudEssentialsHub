@@ -21,6 +21,11 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/c2c78b3f-7d92-4cef-91b4-54c281c40fd9">
 
+> Before Fabric
+
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/c47ad7c0-375e-4257-b56e-7b3b89619e2f">
+
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/64812721-7c24-4771-90f4-27f7a21fa9e0">
 
 ## Features
 
@@ -34,5 +39,6 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 ## Wiki 
 - [What is Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview.)
 - [Data Analytics](https://www.microsoft.com/en-us/microsoft-fabric)
+- [MS Fabric Public Preview - Video](https://www.bing.com/videos/riverview/relatedvideo?q=microsoft+fabric+what+is&mid=17839F76B326A15F559417839F76B326A15F5594&FORM=VIRE)
 - [What is Microsoft Fabric?: Features, Architecture & FAQs](https://atlan.com/microsoft-fabric/)
 - [Microsoft Open Source Code of Conduct](https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/get-started/microsoft-fabric-overview.md)
