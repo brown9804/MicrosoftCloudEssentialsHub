@@ -19,6 +19,9 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 - **OneLake**: This is the unification of lakehouses.
 - **Real-Time hub**: This is the unification of data streams.
 
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/c2c78b3f-7d92-4cef-91b4-54c281c40fd9">
+
+
 ## Features
 
 - **Unification with SaaS foundation**: Fabric integrates workloads such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Industry solutions, and Power BI into a shared SaaS foundation.
@@ -26,6 +29,7 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 - **Unified Management and Governance**: Fabric seamlessly integrates data and services, enabling unified management, governance, and discovery.
 - **Security**: It ensures security for items, data, and row-level access.
 
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/f75bfae7-91af-4f4d-9ca7-8e9c625c4b93">
 
 ## Wiki 
 - [What is Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview.)
