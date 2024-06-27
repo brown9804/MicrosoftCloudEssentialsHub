@@ -18,6 +18,7 @@ Belinda Brown, belindabrownr04@gmail.com
     - [Wiki](#wiki)
     - [Azure AI Studio](./AIStudio/)
     - [Azure Machine Learning](./AMachineLearning/)
+    - [Microsoft Fabric](./14_Fabric/README.md)
     - [AI Search](./0_AISearch/README.md)
     - [AI Video Indexer](./1_AIVideoIndexer/README.md)
     - [AI Content Safety](./2_AIContentSafety/README.md)
