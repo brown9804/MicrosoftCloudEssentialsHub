@@ -36,6 +36,20 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/f75bfae7-91af-4f4d-9ca7-8e9c625c4b93">
 
+![image](https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/0045c7cc-073b-420d-a80d-707969c7b1f2)
+
+<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4a49d6af-42eb-45f8-bec3-954a05b84f36"> 
+
+|   <!-- -->    | <!-- -->    |
+| ----  | ---- |
+| <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c"> |  <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a"> |
+
+## Where to start?
+
+|   <!-- -->    | <!-- -->   |
+| ----  | ---- |
+|<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/559c53b3-6d01-4db1-8066-85692ea34189"> | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ebbc547d-11ab-492c-b284-e813199a036d"> |
+
 ## Wiki 
 - [What is Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview.)
 - [Data Analytics](https://www.microsoft.com/en-us/microsoft-fabric)
