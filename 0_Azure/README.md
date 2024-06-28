@@ -13,7 +13,7 @@ Belinda Brown, belindabrownr04@gmail.com
 ---------------
 
 ## Content 
-- [Azure](./0_Azure/README.md)  
+- [Azure](https://github.com/brown9804/MSCloudEssentials_LPath/blob/main/0_Azure/README.md)  
     - [Azure DevOps](./AzureDevOps/README.md)
     - [Azure Fundamentals](./AzureFundamentals/README.md)
     - [Azure AI](./AzureAI/README.md)
