@@ -69,7 +69,12 @@ Here are some important Azure products within each category:
 - **Pricing**: Azure offers pay-as-you-go pricing and various pricing models.
 - **Security**: Azure provides robust security features and compliance certifications.
 
+## Choose an Azure compute service
+
+<img width="800" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/cf68fbc7-20e7-4e62-8202-393584f058e9">
+
 ## Wiki:
+- [Choose an Azure compute service](https://learn.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree)
 - Postman - [How to Install and use for API Testing](https://www.guru99.com/postman-tutorial.html)
 - Azure Portal - [List Azure role assignments](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal)
 - App Service Plan - [Introduction](https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans)
@@ -112,3 +117,4 @@ Here are some important Azure products within each category:
 - SQL server/Databases - [Configure IP firewall rules](https://www.sqlshack.com/configure-ip-firewall-rules-for-azure-sql-databases/), [SQL Server Authentication](https://www.tutorialsteacher.com/sqlserver/sql-server-authentication#:~:text=In%20the%20object%20explorer%2C%20expand,node%20and%20select%20New%20Login.&text=In%20the%20Login%20%E2%80%93%20New%20window,password%20field%2C%20as%20shown%20below.)
 - SQL server - [Create an Azure SQL server and private endpoint](https://learn.microsoft.com/en-us/azure/private-link/tutorial-private-endpoint-sql-portal#create-an-azure-sql-server-and-private-endpoint)
 - SQL server/Grafana PE - [How to connect to Azure SQL sever from Azure AKS cluster via private endpoint](https://stackoverflow.com/questions/72438761/how-to-connect-to-azure-sql-sever-from-azure-aks-cluster-via-private-endpoint)
+  
