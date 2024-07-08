@@ -1,7 +1,5 @@
 # Azure Artifitial Intelligence + ML Overview
 
-----------
-
 Costa Rica
 
 Belinda Brown, belindabrownr04@gmail.com
