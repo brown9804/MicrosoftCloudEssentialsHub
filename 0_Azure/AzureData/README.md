@@ -23,3 +23,12 @@ Azure Data Storage and Databases both persist data but are optimized for differe
 <img width="700" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ab71485a-5434-401e-ae25-277957c2ffb7">
 
 Image from [here](https://www.edureka.co/blog/azure-storage-tutorial/)
+
+| Storage | Database |
+| --- | --- |
+| Storage provides raw data capacity | It is structured for efficient querying and analysis |
+| Data is opaque to storage system | Database has schema and metadata to represent data |
+| Address data blocks through locations | Database uses abstractions like tables, documents |
+| Enterprise storage connects to servers | Databases are accessed by clients |
+| Durable long-term retention | Temporary persistence tier |
+
