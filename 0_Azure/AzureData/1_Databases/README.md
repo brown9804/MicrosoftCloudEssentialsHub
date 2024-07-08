@@ -12,6 +12,20 @@ Belinda Brown, belindabrownr04@gmail.com
 
 These functionalities include the ability to query data, manage relationships between different data items, enforce data integrity rules, and perform transactions. These products are typically used when you need to work with structured or unstructured data, and need more advanced features compared to basic data storage products.
 
+<img width="700" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/697f7265-647a-41e2-a2f5-ec4b66cf3321"> <br/>
+
+
+
+| Properties               | Structured Data                                  | Unstructured Data                               |
+|--------------------------|--------------------------------------------------|-------------------------------------------------|
+| Formats                  | Pre-defined                                      | A huge variety of formats                       |
+| Storage model            | Pre-defined/not flexible                         | Not pre-defined/flexible                        |
+| Databases                | SQL Relational databases                         | NoSQL Non-relational databases                  |
+| Ease of search           | Easy to search                                   | Difficult to search                             |
+| Analysis methods         | Quantitative                                     | Qualitative                                     |
+| Tools and technologies   | RDBMS, OLAP, CRM, OLTP                           | NoSQL DBMS, Data mining, Data visualization tools |
+| Specialists to handle    | Business analysts, Software engineers, Marketing Analysts     | AI architects, Data scientists, Analysts with deep expertise  |
+
 ## Products 
 
 ```mermaid
