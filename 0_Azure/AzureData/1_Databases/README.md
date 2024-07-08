@@ -12,6 +12,37 @@ Belinda Brown, belindabrownr04@gmail.com
 
 These functionalities include the ability to query data, manage relationships between different data items, enforce data integrity rules, and perform transactions. These products are typically used when you need to work with structured or unstructured data, and need more advanced features compared to basic data storage products.
 
+## Products 
+
+```mermaid
+graph LR
+    A[Azure Databases Products]
+    B[Azure SQL Database Hyperscale​]
+    C[Azure SQL Database]
+    D[Azure SQL Managed Instance]
+    E[SQL Server on Azure Virtual Machines]
+    F[Azure Database for PostgreSQL]
+    G[Azure Database for MySQL​]
+    H[Oracle Database@Azure]
+    I[Azure Cosmos DB for NoSQL]
+    J[Azure Managed Instance for Apache Cassandra​]
+    K[vCore-based Azure Cosmos DB for MongoDB]
+    L[MongoDB Atlas on Azure]
+    M[Azure Cache for Redis]
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+    A --> G
+    A --> H
+    A --> I
+    A --> J
+    A --> K
+    A --> L
+    A --> M
+```
+
 | Product | Description | Benefits | Differentiators | Use Cases | Related Products (tendency used with) |
 | --- | --- | --- | --- | --- | --- |
 |  **Azure SQL Database** | A fully managed platform as a service (PaaS) Database Engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement. | Reduces management overhead and total cost of ownership. | Fully managed with built-in high availability. | Ideal for modern cloud applications that need to scale and perform fast. | Azure App Service, Power BI, Azure Analysis Services. | 
