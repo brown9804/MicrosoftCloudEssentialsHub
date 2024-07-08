@@ -17,30 +17,24 @@ These functionalities include the ability to query data, manage relationships be
 ```mermaid
 graph LR
     A[Azure Databases Products]
-    B[Azure SQL Database Hyperscale​]
-    C[Azure SQL Database]
-    D[Azure SQL Managed Instance]
-    E[SQL Server on Azure Virtual Machines]
-    F[Azure Database for PostgreSQL]
-    G[Azure Database for MySQL​]
-    H[Oracle Database@Azure]
-    I[Azure Cosmos DB for NoSQL]
-    J[Azure Managed Instance for Apache Cassandra​]
-    K[vCore-based Azure Cosmos DB for MongoDB]
-    L[MongoDB Atlas on Azure]
-    M[Azure Cache for Redis]
+    B[Azure SQL Products]
+    C[Azure NoSQL Products]
+    D[Other Azure Databases]
     A --> B
     A --> C
     A --> D
-    A --> E
-    A --> F
-    A --> G
-    A --> H
-    A --> I
-    A --> J
-    A --> K
-    A --> L
-    A --> M
+    B -->|Azure SQL Database Hyperscale​| 1
+    B -->|Azure SQL Database| 2
+    B -->|Azure SQL Managed Instance| 3
+    B -->|SQL Server on Azure Virtual Machines| 4
+    C -->|Azure Cosmos DB for NoSQL| 5
+    C -->|Azure Managed Instance for Apache Cassandra​| 6
+    C -->|vCore-based Azure Cosmos DB for MongoDB| 7
+    C -->|MongoDB Atlas on Azure| 8
+    D -->|Azure Database for PostgreSQL| 9
+    D -->|Azure Database for MySQL​| 10
+    D -->|Oracle Database@Azure| 11
+    D -->|Azure Cache for Redis| 12
 ```
 
 | Product | Description | Benefits | Differentiators | Use Cases | Related Products (tendency used with) |
