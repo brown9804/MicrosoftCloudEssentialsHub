@@ -15,6 +15,6 @@ Azure Data Storage provides scalable, secure, and accessible cloud storage, idea
 
 Azure Data Storage and Databases both persist data but are optimized for different purposes. Storage provides durable capacity while databases structure data for efficient access. Storage suits long-term file retention while databases enable interactive applications.
 
-![image](https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ab71485a-5434-401e-ae25-277957c2ffb7) <br/>
+<img width="700" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ab71485a-5434-401e-ae25-277957c2ffb7">
 
-From [here](https://www.edureka.co/blog/azure-storage-tutorial/)
+Image from [here](https://www.edureka.co/blog/azure-storage-tutorial/)
