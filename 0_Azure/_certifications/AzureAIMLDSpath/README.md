@@ -16,17 +16,17 @@ October, 2020
 This folder contains all Microsoft badges and trophies earned during the learning path.
 
 ## Learning Path Trophies
-0. [Store data in Azure](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/0-Store%20data%20in%20Azure.pdf)
-1. [Large-Scale Data Processing with Azure Data Lake Storage Gen2](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/1-Large-Scale%20Data%20Processing%20with%20Azure%20Data%20Lake%20Storage%20Gen2.pdf)
-2. [Azure Fundamentals part 1 Describe core Azure concepts](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/2-Azure%20Fundamentals%20part%201%20Describe%20core%20Azure%20concepts.pdf)
-3. [Azure Fundamentals part 2 Describe core Azure concepts](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/3-Azure%20Fundamentals%20part%202%20Describe%20core%20Azure%20services.pdf)
-4. [Azure Fundamentals part 3 Describe core solutions and management tools on Azure](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/4-Azure%20Fundamentals%20part%203%20Describe%20core%20solutions%20and%20management%20tools%20on%20Azure.pdf)
-5. [Azure Fundamentals part 4 Describe general security and network security features](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/5-Azure%20Fundamentals%20part%204%20Describe%20general%20security%20and%20network%20security%20features.pdf)
-6. [Azure Fundamentals part 5 Describe identity, governance, privacy, and compliance features](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/6-Azure%20Fundamentals%20part%205%20Describe%20identity%2C%20governance%2C%20privacy%2C%20and%20compliance%20features.pdf)
-7. [Azure Fundamentals part 6 Describe Azure cost management and service level agreements](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/7-Azure%20Fundamentals%20part%206%20Describe%20Azure%20cost%20management%20and%20service%20level%20agreements.pdf)
-8. [Create machine learning models](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/8-Create%20machine%20learning%20models.pdf)
-9. [Build and operate machine learning solutions with Azure Machine Learning](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/9-Build%20and%20operate%20machine%20learning%20solutions%20with%20Azure%20Machine%20Learning.pdf)
-10. [Work with relational data in Azure](https://github.com/brown9804/ML_DS_Lpath/blob/main/6-azds/1_trophies/10-Work%20with%20relational%20data%20in%20Azure.pdf)
+0. [Store data in Azure](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/0-Store%20data%20in%20Azure.pdf)
+1. [Large-Scale Data Processing with Azure Data Lake Storage Gen2](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/1-Large-Scale%20Data%20Processing%20with%20Azure%20Data%20Lake%20Storage%20Gen2.pdf)
+2. [Azure Fundamentals part 1 Describe core Azure concepts](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/2-Azure%20Fundamentals%20part%201%20Describe%20core%20Azure%20concepts.pdf)
+3. [Azure Fundamentals part 2 Describe core Azure concepts](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/3-Azure%20Fundamentals%20part%202%20Describe%20core%20Azure%20services.pdf)
+4. [Azure Fundamentals part 3 Describe core solutions and management tools on Azure](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/4-Azure%20Fundamentals%20part%203%20Describe%20core%20solutions%20and%20management%20tools%20on%20Azure.pdf)
+5. [Azure Fundamentals part 4 Describe general security and network security features](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/5-Azure%20Fundamentals%20part%204%20Describe%20general%20security%20and%20network%20security%20features.pdf)
+6. [Azure Fundamentals part 5 Describe identity, governance, privacy, and compliance features](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/6-Azure%20Fundamentals%20part%205%20Describe%20identity%2C%20governance%2C%20privacy%2C%20and%20compliance%20features.pdf)
+7. [Azure Fundamentals part 6 Describe Azure cost management and service level agreements](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/7-Azure%20Fundamentals%20part%206%20Describe%20Azure%20cost%20management%20and%20service%20level%20agreements.pdf)
+8. [Create machine learning models](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/8-Create%20machine%20learning%20models.pdf)
+9. [Build and operate machine learning solutions with Azure Machine Learning](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/9-Build%20and%20operate%20machine%20learning%20solutions%20with%20Azure%20Machine%20Learning.pdf)
+10. [Work with relational data in Azure](https://github.com/brown9804/MSCloudEssentials_LPath/tree/main/0_Azure/_certifications/AzureAIMLDSpath/1_trophies/10-Work%20with%20relational%20data%20in%20Azure.pdf)
 
 
 ## Courses Badges 
