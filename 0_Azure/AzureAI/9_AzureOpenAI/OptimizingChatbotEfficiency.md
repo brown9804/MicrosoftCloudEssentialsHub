@@ -25,10 +25,10 @@ Costa Rica
 Find below strategies to enhance process efficiency:
 
 - [Contextual Memory](#implement-contextual-memory-in-the-application): Implement a server-side system that retains conversation context. This allows for sending only new user requests to the model, with the server adding necessary context before the API call.
-- "Prompt Compression": Apply techniques to shorten the prompt by removing non-essential words, simplifying sentences, and concentrating on key context and instructions.
-- "Batch Processing": For multiple queries, group them into a single API call to decrease request numbers and boost efficiency.
-- "Parameterization": Use a parameterized format for prompts to allow dynamic input substitution, reducing prompt size while keeping it flexible.
-- "Preprocessing": Clean and preprocess input data to eliminate unnecessary whitespace, punctuation, and formatting issues, optimizing prompt processing efficiency.
+- **Prompt Compression**: Apply techniques to shorten the prompt by removing non-essential words, simplifying sentences, and concentrating on key context and instructions.
+- **Batch Processing**: For multiple queries, group them into a single API call to decrease request numbers and boost efficiency.
+- **Parameterization**: Use a parameterized format for prompts to allow dynamic input substitution, reducing prompt size while keeping it flexible.
+- **Preprocessing**: Clean and preprocess input data to eliminate unnecessary whitespace, punctuation, and formatting issues, optimizing prompt processing efficiency.
 
 These approaches can significantly reduce computational demands and enhance model efficiency in chatbot applications.
 
@@ -158,11 +158,11 @@ deployment_name='REPLACE_WITH_YOUR_DEPLOYMENT_NAME'
 # Function to send prompt to the model
 # Send a completion call to generate an answer
 def send_to_model(prompt):
- print('Sending a test completion job')
- start_phrase = 'Write a tagline for an ice cream shop. '
- response = client.completions.create(model=deployment_name, prompt=start_phrase, max_tokens=10)
- print(start_phrase+response.choices[0].text)
- return response.choices[0].text.strip()
+    print('Sending a test completion job')
+    start_phrase = 'Write a tagline for an ice cream shop. '
+    response = client.completions.create(model=deployment_name, prompt=start_phrase, max_tokens=10)
+    print(start_phrase+response.choices[0].text)
+    return response.choices[0].text.strip()
 
 # Example usage
 user_id = "user123"
