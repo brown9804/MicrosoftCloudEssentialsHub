@@ -35,12 +35,10 @@ These approaches can significantly reduce computational demands and enhance mode
 ## General Overview 
 ### Set Up Your Azure Environment
 
-Sure! Here's a Markdown table summarizing the steps:
-
-| "Task"                    | "Steps"|
+| **Task**                    | **Steps**|
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "Create an Azure OpenAI Resource" | 1. "Sign in to the Azure Portal": <br> - Go to the Azure Portal. <br> - Sign in with your Azure account. <br> 2. "Create a Resource": <br> - Click on `Create a resource`. <br> - Search for `Azure OpenAI`. <br> - Select `Azure OpenAI` and click `Create`. <br> 3. "Configure the Resource": <br> - Fill in the required details such as Subscription, Resource Group, Region, and Name. <br> - Choose the appropriate pricing tier. <br> - Click `Review + create` and then `Create`. |
-| "Deploy a Model"          | 1. "Navigate to Azure OpenAI Studio": <br> - Go to Azure OpenAI Studio. <br> - Sign in with your Azure credentials. <br> 2. "Create a Deployment": <br> - Select your Azure OpenAI resource. <br> - Click on `Deployments` and then `Create new deployment`. <br> - Choose the model you want to deploy (e.g., GPT-4). <br> - Configure the deployment settings and click `Create`. |
+| **Create an Azure OpenAI Resource** | 1. **Sign in to the Azure Portal**: <br> - Go to the Azure Portal. <br> - Sign in with your Azure account. <br> 2. **Create a Resource**: <br> - Click on `Create a resource`. <br> - Search for `Azure OpenAI`. <br> - Select `Azure OpenAI` and click `Create`. <br> 3. **Configure the Resource**: <br> - Fill in the required details such as Subscription, Resource Group, Region, and Name. <br> - Choose the appropriate pricing tier. <br> - Click `Review + create` and then `Create`. |
+| **Deploy a Model**          | 1. **Navigate to Azure OpenAI Studio**: <br> - Go to Azure OpenAI Studio. <br> - Sign in with your Azure credentials. <br> 2. **Create a Deployment**: <br> - Select your Azure OpenAI resource. <br> - Click on `Deployments` and then `Create new deployment`. <br> - Choose the model you want to deploy (e.g., GPT-4). <br> - Configure the deployment settings and click `Create`. |
 
 ### Set Up a Database for Context Storage
 Using Azure SQL Database: 
