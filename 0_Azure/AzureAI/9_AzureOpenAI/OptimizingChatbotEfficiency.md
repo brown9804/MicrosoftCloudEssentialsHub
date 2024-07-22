@@ -19,7 +19,7 @@ Costa Rica
         - [Example](#example)
         - [Other considerations:](#other-considerations)
     - [Wiki](#wiki)
-
+      
 <!-- /TOC -->
 
 Find below strategies to enhance process efficiency:
@@ -192,4 +192,9 @@ store_context(user_id, new_context)
 - [No-Code Chatbot Creation Guide](https://techcommunity.microsoft.com/t5/startups-at-microsoft/how-to-set-up-the-microsoft-chatbot-template-and-azure-openai/ba-p/3849936): This step-by-step guide walks you through creating a professional chatbot without any coding knowledge using the Microsoft Azure OpenAI Service Chatbot Template.
 - [Simple Chat Application using Azure OpenAI](https://learn.microsoft.com/en-us/samples/azure-samples/openai-chat-app-quickstart/openai-chat-app-quickstart/): This repository includes a Python app that uses Azure OpenAI to generate responses to user messages. It covers all the infrastructure and configuration needed to provision Azure OpenAI resources and deploy the app to Azure Container Apps.
 - [How To Set Up and Configure a GPT Deployment Using the Azure OpenAI Service](https://aka.ms/setup-gpt-aoai)
+- [Quickstart: Get started generating text using Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart?tabs=command-line%2Cpython-new&pivots=programming-language-python)
+- [Build language model pipelines with memory](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/openai/guide/language-model-pipelines)
 
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/ccf7893d-53e6-4bbd-980a-192c5f8340fe">
+
+- [Strategies for Optimizing High-Volume Token Usage with Azure OpenAI](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/strategies-for-optimizing-high-volume-token-usage-with-azure/ba-p/4007751)
