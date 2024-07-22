@@ -29,7 +29,7 @@ Key Features:
         - [Language Translation - Azure OpenAI:](#language-translation---azure-openai)
         - [Content Moderation - Azure OpenAI:](#content-moderation---azure-openai)
         - [Speech Recognition - Azure OpenAI:](#speech-recognition---azure-openai)
-
+    - [Optimizing Chatbot Efficiency](./OptimizingChatbotEfficiency.md)
 <!-- /TOC -->
 
 ## Example of Use Cases
