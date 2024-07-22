@@ -183,7 +183,8 @@ store_context(user_id, new_context)
 ```
 
 ### Other considerations:
-To enhance context management, consider truncating older parts of the conversation, summarizing previous discussions, and using tokens effectively to manage prompt size. For security and privacy, ensure the stored context is secure and adheres to privacy laws by encrypting sensitive data, implementing access controls, and ensuring compliance with data protection regulations like GDPR and CCPA.
+- To enhance context management, consider truncating older parts of the conversation, summarizing previous discussions, and using tokens effectively to manage prompt size.
+- For security and privacy, ensure the stored context is secure and adheres to privacy laws by encrypting sensitive data, implementing access controls, and ensuring compliance with data protection regulations like GDPR and CCPA.
 
 ## Wiki
 
