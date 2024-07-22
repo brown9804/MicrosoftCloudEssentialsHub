@@ -69,7 +69,7 @@ To implement contextual memory, you'll need to store and manage the conversation
 
 ### Example
 
-Here’s a simplified example using Python and a database like Azure SQL. For more information click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-sql-python-quickstart?view=azuresql&tabs=windows%2Csql-auth#add-code-to-connect-to-azure-sql-database)
+Here’s a simplified example using Python and a database like Azure SQL. For more information on how to connect to the SQL database click [here](https://learn.microsoft.com/en-us/azure/azure-sql/database/azure-sql-python-quickstart?view=azuresql&tabs=windows%2Csql-auth#add-code-to-connect-to-azure-sql-database). For more about Azure OpenAI On Your Data API click [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/references/on-your-data?tabs=python)
 
 ```python
 import pyodbc
