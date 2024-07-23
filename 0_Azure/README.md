@@ -14,10 +14,11 @@ Belinda Brown, belindabrownr04@gmail.com
 
 ## Content 
 - [Azure](https://github.com/brown9804/MSCloudEssentials_LPath/blob/main/0_Azure/README.md)  
-    - [Azure DevOps](./AzureDevOps/README.md)
-    - [Azure Fundamentals](./AzureFundamentals/README.md)
-    - [Azure AI](./AzureAI/README.md)
-    - [Azure Data](./AzureData/README.md)
+    - [Azure Fundamentals](./0_AzureFundamentals/README.md)
+    - [Azure Data](./1_AzureData/README.md)
+    - [Azure Analytics](./2_AzureAnalytics/README.md)
+    - [Azure AI](./3_AzureAI/README.md)
+    - [Azure DevOps](./4_AzureDevOps/README.md)
 
 Microsoft Azure is a cloud computing platform that provides a wide range of services for building, deploying, and managing applications and infrastructure. It offers scalability, flexibility, and global reach.
 

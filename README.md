@@ -15,9 +15,11 @@ Last update: June, 2024
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 1. [Azure](./0_Azure/)  <br/>
-    - [Azure DevOps](./0_Azure/AzureDevOps/README.md)
-    - [Azure Fundamentals](./0_Azure/AzureFundamentals/README.md)
-    - [Azure AI](./0_Azure/AzureAI/README.md)
+    - [Azure Fundamentals](./0_AzureFundamentals/README.md)
+    - [Azure Data](./1_AzureData/README.md)
+    - [Azure Analytics](./2_AzureAnalytics/README.md)
+    - [Azure AI](./3_AzureAI/README.md)
+    - [Azure DevOps](./4_AzureDevOps/README.md)
 2. [Microsoft 365](./1_MS365/) <br/>
     - [Excel](./1_MS365/Excel/) <br/>
     - [Microsoft Forms](./1_MS365/Forms) <br/>
