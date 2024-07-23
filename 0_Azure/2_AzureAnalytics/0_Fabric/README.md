@@ -13,6 +13,11 @@ Belinda Brown, belindabrownr04@gmail.com
 
 Microsoft Fabric is an end-to-end analytics and data platform designed for enterprises that require a unified solution. It's built on a foundation of `Software as a Service (SaaS)` and `combines both new and existing components from Power BI, Azure Synapse Analytics, Azure Data Factory, and more services into a unified environment`.
 
+> Microsoft Fabric covers Azure Data and Azure Analytics: <br/>
+> `Azure Data`: Fabric integrates data engineering and data management tools. <br/>
+> `Azure Analytics`: It includes business intelligence and analytics tools, especially with its integration with Power BI.
+
+
 ## Key Components
 
 - **Data Engineering, Data Factory, Data Science, Real-Time Analytics, Data Warehouse, and Databases**: These are the key services offered by Microsoft Fabric.
