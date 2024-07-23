@@ -11,3 +11,14 @@ Belinda Brown, belindabrownr04@gmail.com
 [brown9804](https://github.com/brown9804)
 
 ------------------------------------------
+
+## Content
+
+- [Microsoft Fabric](./0_Fabric/README.md)
+- [Azure Synapse Analytics](./1_SynapseAnalytics/README.md)
+
+## Wiki
+
+| Area | Category | Service | Overview |
+| ---- | ---- | ---- | ---- | 
+| Industry Machine Learning solutions | Solution | [Azure Synapse Analytics](./13_SynapseAnalytics/README.md)  | Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It brings together the best of SQL technologies used in enterprise data warehousing, Apache Spark technologies for big data, and Azure Data Explorer for log and time series analytics. <br/> <br/>  For more information: <br/> [Azure Synapse Analytics Overview](https://azure.microsoft.com/en-us/products/synapse-analytics/) <br/> [What is Azure Synapse Analytics?](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is) <br/> [Azure Synapse Analytics Learning documents](https://learn.microsoft.com/en-us/azure/synapse-analytics/). | 

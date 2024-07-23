@@ -16,7 +16,6 @@ Belinda Brown, belindabrownr04@gmail.com
     - [Wiki](#wiki)
     - [Azure AI Studio](./AIStudio/)
     - [Azure Machine Learning](./AMachineLearning/)
-    - [Microsoft Fabric](./14_Fabric/README.md)
     - [AI Search](./0_AISearch/README.md)
     - [AI Video Indexer](./1_AIVideoIndexer/README.md)
     - [AI Content Safety](./2_AIContentSafety/README.md)
@@ -30,7 +29,6 @@ Belinda Brown, belindabrownr04@gmail.com
     - [Speech Services](./10_SpeechServices/README.md)
     - [Translators](./11_Translators/README.md)
     - [Intelligent Recommendations Accounts](./12_IntelligRecommAccounts/README.md)
-    - [Azure Synapse Analytics](./13_SynapseAnalytics/README.md)
     - [Retired](#retired)
 
 ## Wiki 
@@ -57,7 +55,7 @@ All Azure services as for now:
 | AI + APIs | AI Service | [Speech Services](./10_SpeechServices/README.md)  | Azure Speech Services is a managed service offering industry-leading speech capabilities such as speech-to-text, text-to-speech, speech translation, and speaker recognition. <br/> <br/> For more information <br/> - [What is the Speech service? - Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview) <br/> - [Azure AI Speech](https://azure.microsoft.com/en-us/products/ai-services/ai-speech) <br/> - [Speech to Text – Audio to Text Translation](https://azure.microsoft.com/en-us/products/ai-services/speech-to-text) <br/> - [Text to Speech – Realistic AI Voice Generator](https://azure.microsoft.com/en-us/products/ai-services/text-to-speech) | 
 | AI + APIs | AI Service | [Translators](./11_Translators/README.md)  | Azure Translator Service is a cloud-based neural machine translation service that is part of the Azure AI services family. It can be used with any operating system and powers many Microsoft products and services used by thousands of businesses worldwide for language translation and other language-related operations. <br/> <br/> For more information: <br/> - [What is Azure AI Translator? - Azure AI services](https://learn.microsoft.com/en-us/azure/ai-services/translator/translator-overview) <br/> - [Azure AI Translator](https://azure.microsoft.com/en-us/products/ai-services/ai-translator) <br/> - [Azure AI Translator documentation - quickstarts, tutorials, API ...](https://learn.microsoft.com/en-us/azure/ai-services/translator/). | 
 | Industry Machine Learning solutions | Solution | [Intelligent Recommendations Accounts](./12_IntelligRecommAccounts/README.md)  | Azure Intelligent Recommendations is a service that democratizes AI and machine learning recommendations through a codeless experience. It's powered by the same technology that fuels Xbox, Microsoft 365, and Microsoft Azure. <br/> <br/>  For more information: <br/> [What is Intelligent Recommendations?](https://learn.microsoft.com/en-us/industry/retail/intelligent-recommendations/overview) <br/> [Create a new Intelligent Recommendations account](https://learn.microsoft.com/en-us/industry/retail/intelligent-recommendations/deploy-intelligent-recommendations-account) <br/> [Microsoft Entra ID Governance introduces two new features in access reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-id-governance-introduces-two-new-features-in/ba-p/2466930) | 
-| Industry Machine Learning solutions | Solution | [Azure Synapse Analytics](./13_SynapseAnalytics/README.md)  | Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It brings together the best of SQL technologies used in enterprise data warehousing, Apache Spark technologies for big data, and Azure Data Explorer for log and time series analytics. <br/> <br/>  For more information: <br/> [Azure Synapse Analytics Overview](https://azure.microsoft.com/en-us/products/synapse-analytics/) <br/> [What is Azure Synapse Analytics?](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is) <br/> [Azure Synapse Analytics Learning documents](https://learn.microsoft.com/en-us/azure/synapse-analytics/). | 
+
 
 ## Retired 
 [return to Content](#content)
