@@ -32,9 +32,12 @@ Belinda Brown, belindabrownr04@gmail.com
     - [Retired](#retired)
 
 ## Wiki 
-[return to Content](#content)
 
-All Azure services as for now:
+- [Build Powerful RAG Apps Without Code Using LangFlow and Azure OpenAI](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-powerful-rag-apps-without-code-using-langflow-and-azure/ba-p/4193542)
+
+All Azure services as for now: <br/>
+
+<button type="button" style="color: blue;"> [return to Content](#content) </button>
 
 | Area | Category | Service | Overview |
 | ---- | ---- | ---- | ---- | 
