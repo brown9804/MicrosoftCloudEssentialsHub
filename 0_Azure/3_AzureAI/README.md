@@ -37,9 +37,7 @@ Belinda Brown, belindabrownr04@gmail.com
 
 All Azure services as for now: <br/>
 
-<button type="button" style="color: blue;"> Hola </button>
-
-[return to Content](#content)
+<a href="#content" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: blue; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px;"> return to Content </a>
 
 | Area | Category | Service | Overview |
 | ---- | ---- | ---- | ---- | 
