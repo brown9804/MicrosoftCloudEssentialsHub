@@ -24,7 +24,7 @@ jobs:
         run: pip install python-dateutil
 
       - name: Update last modified date in Markdown files
-        run: python update_dates.py
+        run: python ./update_dates.py
 
       - name: Commit changes
         run: |
