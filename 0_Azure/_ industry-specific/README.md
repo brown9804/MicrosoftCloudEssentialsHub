@@ -45,5 +45,7 @@ Costa Rica
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/71a6929f-db18-49a8-a62c-ee6f3c2dccf1">
 
+- [Microsoft details how its technology is advancing drug discovery and biomedical research](https://www.drugdiscoverytrends.com/microsoft-research-impact-drug-discovery/)
+
   
 
