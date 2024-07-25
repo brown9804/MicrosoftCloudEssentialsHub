@@ -1,6 +1,6 @@
 import os
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Get the list of modified files
 result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1'], stdout=subprocess.PIPE)
@@ -10,7 +10,7 @@ modified_files = result.stdout.decode('utf-8').split()
 modified_md_files = [f for f in modified_files if f.endswith('.md')]
 
 # Current date
-current_date = datetime.utcnow().strftime('%Y-%m-%d')
+current_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
 # Function to update the last modified date in a file
 def update_date_in_file(file_path):
