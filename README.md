@@ -7,6 +7,7 @@ Costa Rica
 
 ----------
 
+
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
@@ -27,6 +28,7 @@ Costa Rica
     - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
 </details>
 
+
 <img width="500" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/9bb7da30-96d0-4bf2-aa58-d53c46b20c90">
 
 ## Wiki
@@ -42,3 +44,4 @@ This repository contains the basic knowledge that I believe is required to work 
 | - **Microsoft Security**: A comprehensive set of security solutions integrated across the Microsoft Cloud to protect data, devices, identities, and applications. | - Microsoft Defender: Advanced threat protection <br/> - Azure Security Center: Unified security management system <br/> - Azure Information Protection: Cloud-based solution that helps protect documents and emails <br/> - Microsoft Cloud App Security: Multimode Cloud Access Security Broker (CASB). |
 | - **Industry Solutions**: Tailored cloud services designed to meet the specific needs of various industries. | - Microsoft Cloud for Healthcare: Enhances patient engagement, empowers health team collaboration, and improves clinical and operational insights <br/> - Microsoft Cloud for Retail: Delivers a personalized, seamless, and differentiated customer experience <br/> - Microsoft Cloud for Financial Services: Accelerates innovation in banking, capital markets, and insurance <br/> - Microsoft Cloud for Manufacturing: Delivers capabilities that support the core processes and requirements of the industry. |
 
+Last updated: 2024-07-25
