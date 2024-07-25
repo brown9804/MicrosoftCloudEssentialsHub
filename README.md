@@ -27,6 +27,7 @@ Costa Rica
     - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
 </details>
 
+
 <img width="500" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/9bb7da30-96d0-4bf2-aa58-d53c46b20c90">
 
 ## Wiki
