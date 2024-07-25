@@ -7,7 +7,6 @@ Costa Rica
 
 ----------
 
-
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
