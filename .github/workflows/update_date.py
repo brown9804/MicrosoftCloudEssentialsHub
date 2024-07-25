@@ -1,16 +1,22 @@
 import os
 import subprocess
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Get the list of modified files
 result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1'], stdout=subprocess.PIPE)
 modified_files = result.stdout.decode('utf-8').split()
 
+# Debugging: Print the list of modified files
+print("Modified files:", modified_files)
+
 # Filter for Markdown files
 modified_md_files = [f for f in modified_files if f.endswith('.md')]
 
+# Debugging: Print the list of modified Markdown files
+print("Modified Markdown files:", modified_md_files)
+
 # Current date
-current_date = datetime.utcnow().strftime('%Y-%m-%d')
+current_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
 # Function to update the last modified date in a file
 def update_date_in_file(file_path):
@@ -31,4 +37,5 @@ if not modified_md_files:
 
 # Update the date in each modified Markdown file
 for file_path in modified_md_files:
+    print(f"Updating file: {file_path}")  # Debugging: Print the file being updated
     update_date_in_file(file_path)
