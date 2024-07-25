@@ -1,7 +1,7 @@
 name: Update Last Modified Date
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -23,13 +23,16 @@ jobs:
       - name: Install dependencies
         run: pip install python-dateutil
 
+      - name: Configure Git 
+        run: |
+          git config --global user.email "belindabrownr04@gmail.com"
+          git config --global user.name "brown9804"
+
       - name: Update last modified date in Markdown files
         run: python .github/workflows/update_date.py
 
       - name: Commit changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
+          git add -A
           git commit -m "Update last modified date in Markdown files" || echo "No changes to commit"
-          git push
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
