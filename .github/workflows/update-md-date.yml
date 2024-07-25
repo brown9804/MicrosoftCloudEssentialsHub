@@ -36,7 +36,9 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           while IFS= read -r file; do
-            git add "$file"
+            if [[ $file == *.md ]]; then
+              git add "$file"
+            fi
           done <<< "${{ env.CHANGED_FILES }}"
-          git commit -m "Update last updated date"
-          git push
+          git commit -m "Update last updated date" || echo "No changes to commit"
+          git push || echo "No changes to push"
