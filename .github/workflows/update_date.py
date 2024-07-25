@@ -1,6 +1,5 @@
 import subprocess
 import re
-from datetime import datetime
 
 def get_last_commit_date(file_path):
     result = subprocess.run(['git', 'log', '-1', '--format=%cd', '--date=short', file_path], stdout=subprocess.PIPE)

@@ -22,7 +22,7 @@ jobs:
         run: pip install --upgrade pip
 
       - name: Run update script
-        run: python update_date.py
+        run: python .github/workflows/update_date.py
 
       - name: Commit changes
         run: |
