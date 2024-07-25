@@ -14,18 +14,17 @@ Key Features:
 - **Customized Results**: Get output tailored to your layouts with automatic custom extraction and improve it with human feedback.
 - **Flexible Deployment**: Ingest data from the cloud or at the edge and apply to search indexes, business automation workflows, and more.
 - **Built-in Security**: Rely on enterprise-grade security and privacy applied to both your data and any trained models.
-
-Capabilities: 
-- **Document Analysis**: Detects and extracts text and layout of documents, like tables, check boxes, and objects.
-- **Prebuilt Models**: These are pretrained models for common scenarios such as IDs, receipts, and invoices, that extract text, key-value pairs, and line items from documents.
-- **Custom Models**: This custom form service lets you train on your own data to learn the structure of your documents in an intelligent way.
-
-Applications: 
-- Azure AI Document Intelligence can be used to automate your data processing in applications and workflows, enhance data-driven strategies, and enrich document search capabilities. 
-
-## Content
-
 <!-- TOC -->
+
+- [Document Intelligences](#document-intelligences)
+    - [Examples of Use Cases](#examples-of-use-cases)
+        - [Document Classification - Document Intelligence:](#document-classification---document-intelligence)
+        - [Information Extraction - Document Intelligence:](#information-extraction---document-intelligence)
+        - [Content Search - Document Intelligence:](#content-search---document-intelligence)
+        - [Compliance and Risk Management - Document Intelligence:](#compliance-and-risk-management---document-intelligence)
+        - [Customer Service - Document Intelligence:](#customer-service---document-intelligence)
+
+<!-- /TOC -->
 
 - [Document intelligences](#document-intelligences)
     - [Content](#content)
