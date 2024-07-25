@@ -33,6 +33,6 @@ jobs:
 
       - name: Commit changes
         run: |
-          git add .
+          git add -A
           git commit -m "Update last modified date in Markdown files" || echo "No changes to commit"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
