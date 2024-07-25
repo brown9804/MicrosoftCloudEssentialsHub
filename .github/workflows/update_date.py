@@ -23,12 +23,16 @@ def update_date_in_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
 
+    updated = False
     with open(file_path, 'w') as file:
         for line in lines:
             if line.startswith('Last updated:'):
                 file.write(f'Last updated: {current_date}\n')
+                updated = True
             else:
                 file.write(line)
+        if not updated:
+            file.write(f'\nLast updated: {current_date}\n')
 
 # Check if there are any modified Markdown files
 if not modified_md_files:
@@ -39,3 +43,7 @@ if not modified_md_files:
 for file_path in modified_md_files:
     print(f"Updating file: {file_path}")  # Debugging: Print the file being updated
     update_date_in_file(file_path)
+
+# Add and commit changes
+subprocess.run(['git', 'add', '-A'])
+subprocess.run(['git', 'commit', '-m', 'Update last modified date in Markdown files'])
