@@ -18,8 +18,6 @@ Costa Rica
 
 - [AI Video Indexer](#ai-video-indexer)
     - [Content](#content)
-    - [Examples of Use Cases](#examples-of-use-cases)
-        - [Media and Entertainment - AI Video Indexer:](#media-and-entertainment---ai-video-indexer)
         - [Advertising - AI Video Indexer:](#advertising---ai-video-indexer)
         - [Education - AI Video Indexer:](#education---ai-video-indexer)
         - [Corporate - AI Video Indexer:](#corporate---ai-video-indexer)
@@ -27,19 +25,6 @@ Costa Rica
         - [Healthcare - AI Video Indexer:](#healthcare---ai-video-indexer)
 
 <!-- /TOC -->
-
-## Examples of Use Cases
-> [!NOTE]
-> Azure AI Video Indexer can be utilized across various business areas. Here are some use cases:
-
-### Media and Entertainment - AI Video Indexer:
-[return to Content](#content)
-
-Azure AI Video Indexer can enhance digital asset management and media libraries by analyzing audio and video content. It can also improve user engagement by positioning the relevant video moments to users.
-
-> [!IMPORTANT]
-> Here’s an example of an end-to-end solution using Azure resources and Azure AI Video Indexer: This solution leverages several Azure services to create a comprehensive media and entertainment solution. It not only manages and analyzes media content but also improves user engagement by positioning relevant video moments to users. Please note that this is a high-level overview and the actual implementation may require additional considerations based on specific requirements.
-
 > 1. **Content Upload and Storage**: The first step in the process is to upload the media content. This can be done using **Azure Blob Storage**, which provides a scalable and secure place to store the media files.
 > 
 > 2. **Video Indexing**: Once the media content is stored, you can use **Azure AI Video Indexer** to analyze the content. This service extracts insights from the videos, such as spoken words, written text, faces, speakers, celebrities, emotions, topics, brands, scenes, keyframes, and sentiment.
