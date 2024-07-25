@@ -22,11 +22,17 @@ jobs:
           echo "$CHANGED_FILES" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
+      - name: Debug changed files
+        run: |
+          echo "Changed files:"
+          echo "${{ env.CHANGED_FILES }}"
+
       - name: Update Markdown files
         run: |
           while IFS= read -r file; do
             if [[ $file == *.md ]]; then
               LAST_UPDATED=$(git log -1 --format="%cd" --date=short -- "$file")
+              echo "Updating $file with date $LAST_UPDATED"
               sed -i "s/^Last updated: .*/Last updated: $LAST_UPDATED/" "$file"
             fi
           done <<< "${{ env.CHANGED_FILES }}"
