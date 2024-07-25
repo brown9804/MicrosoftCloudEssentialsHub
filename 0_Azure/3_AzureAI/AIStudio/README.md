@@ -22,8 +22,20 @@ Key Features: [reference](https://www.slideshare.net/slideshow/azure-ai-platform
 Creating a new Azure AI Studio account: 
 - You can create and manage Azure resources for Azure AI Studio via the Azure portal. 
 
+
+## Content 
+
 <!-- TOC -->
 
 - [Azure AI Studio](#azure-ai-studio)
+- [Wiki](#wiki)
 
 <!-- /TOC -->
+
+## Wiki
+
+- [Introducing Meta Llama 3 Models on Azure AI Model Catalog](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/introducing-meta-llama-3-models-on-azure-ai-model-catalog/ba-p/4117144)
+- [Meta’s next generation model, Llama 3.1 405B is now available on Azure AI](https://techcommunity.microsoft.com/t5/ai-ai-platform-blog/meta-s-next-generation-model-llama-3-1-405b-is-now-available-on/ba-p/4198379)
+
+
+
