@@ -13,38 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get changed files
-        id: changed-files
-        run: |
-          git fetch --depth=2
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          echo "$CHANGED_FILES" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Debug changed files
-        run: |
-          echo "Changed files:"
-          echo "${{ env.CHANGED_FILES }}"
+      - name: Install dependencies
+        run: pip install --upgrade pip
 
-      - name: Update Markdown files
-        run: |
-          while IFS= read -r file; do
-            if [[ $file == *.md ]]; then
-              LAST_UPDATED=$(git log -1 --format="%cd" --date=short -- "$file")
-              echo "Updating $file with date $LAST_UPDATED"
-              sed -i "s/^Last updated: .*/Last updated: $LAST_UPDATED/" "$file"
-            fi
-          done <<< "${{ env.CHANGED_FILES }}"
+      - name: Run update script
+        run: python update_date.py
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          while IFS= read -r file; do
-            if [[ $file == *.md ]]; then
-              git add "$file"
-            fi
-          done <<< "${{ env.CHANGED_FILES }}"
-          git commit -m "Update last updated date" || echo "No changes to commit"
-          git push || echo "No changes to push"
+          git add .
+          git commit -m "Update last updated date"
+          git push
