@@ -14,18 +14,18 @@ Key Features:
 - **Asynchronous Batch Document Translation**: Translate batch and complex files while preserving the structure and format of the original documents.
 - **Synchronous Document Translation**: Translate a single document file alone or with a glossary file while preserving the structure and format of the original document.
 - **Custom Translator**: Build customized models to translate domain- and industry-specific language, terminology, and style.
-
-Applications (Common scenarios for Azure Translator include): 
-- **Captioning**: Synchronize captions with your input audio, apply profanity filters, get partial results, apply customizations, and identify spoken languages for multilingual scenarios.
-- **Audio Content Creation**: Use neural voices to make interactions with chatbots and voice assistants more natural and engaging, convert digital texts such as e-books into audiobooks and enhance in-car navigation systems.
-- **Call Center**: Transcribe calls in real-time or process a batch of calls, redact personally identifying information, and extract insights such as sentiment to help with your call center use case.
-- **Language Learning**: Provide pronunciation assessment feedback to language learners, support real-time transcription for remote learning conversations, and read aloud teaching materials with neural voices.
-- **Voice Assistants**: Create natural, human-like conversational interfaces for their applications and experiences. 
-
-## Content 
-
 <!-- TOC -->
 
+- [Translators](#translators)
+    - [Content](#content)
+    - [Example of Use Case](#example-of-use-case)
+        - [Multilingual Customer Support - Azure Translators:](#multilingual-customer-support---azure-translators)
+        - [Content Localization - Azure Translators:](#content-localization---azure-translators)
+        - [Real-Time Communication - Azure Translators:](#real-time-communication---azure-translators)
+        - [Language Learning Applications - Azure Translators:](#language-learning-applications---azure-translators)
+        - [Accessibility - Azure Translators:](#accessibility---azure-translators)
+
+<!-- /TOC -->
 - [Translators](#translators)
     - [Content](#content)
     - [Example of Use Case](#example-of-use-case)
