@@ -33,3 +33,5 @@ Microsoft Power Platform is a collection of **low-code development tools** that 
 - Also supports third-party applications.
 
 Explore more on the [Microsoft Power Platform website](https://www.microsoft.com/en-us/power-platform/).
+
+Last updated: 2024-07-25
