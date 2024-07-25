@@ -1,34 +1,34 @@
+import os
 import subprocess
-import re
+from datetime import datetime
 
-def get_last_commit_date(file_path):
-    result = subprocess.run(['git', 'log', '-1', '--format=%cd', '--date=short', file_path], stdout=subprocess.PIPE)
-    return result.stdout.decode('utf-8').strip()
+# Get the list of modified files
+result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1'], stdout=subprocess.PIPE)
+modified_files = result.stdout.decode('utf-8').split()
 
-def update_markdown_file(file_path, last_updated):
+# Filter for Markdown files
+modified_md_files = [f for f in modified_files if f.endswith('.md')]
+
+# Current date
+current_date = datetime.utcnow().strftime('%Y-%m-%d')
+
+# Function to update the last modified date in a file
+def update_date_in_file(file_path):
     with open(file_path, 'r') as file:
-        content = file.read()
-
-    updated_content = re.sub(r'^Last updated: .*', f'Last updated: {last_updated}', content, flags=re.MULTILINE)
+        lines = file.readlines()
 
     with open(file_path, 'w') as file:
-        file.write(updated_content)
+        for line in lines:
+            if line.startswith('Last updated:'):
+                file.write(f'Last updated: {current_date}\n')
+            else:
+                file.write(line)
 
-def main():
-    result = subprocess.run(['git', 'rev-list', '--count', 'HEAD'], stdout=subprocess.PIPE)
-    commit_count = int(result.stdout.decode('utf-8').strip())
+# Check if there are any modified Markdown files
+if not modified_md_files:
+    print("No modified Markdown files found.")
+    exit(0)
 
-    if commit_count > 1:
-        result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'], stdout=subprocess.PIPE)
-        changed_files = result.stdout.decode('utf-8').splitlines()
-
-        for file_path in changed_files:
-            if file_path.endswith('.md'):
-                last_updated = get_last_commit_date(file_path)
-                update_markdown_file(file_path, last_updated)
-                print(f'Updated {file_path} with last updated date {last_updated}')
-    else:
-        print("No previous commits to compare.")
-
-if __name__ == "__main__":
-    main()
+# Update the date in each modified Markdown file
+for file_path in modified_md_files:
+    update_date_in_file(file_path)
