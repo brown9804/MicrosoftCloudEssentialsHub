@@ -29,5 +29,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Update last updated date"
-          git push
+          git diff-index --quiet HEAD || git commit -m "Update last updated date"
+          git push || echo "No changes to push"
