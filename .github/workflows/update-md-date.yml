@@ -17,12 +17,13 @@ jobs:
         id: changed-files
         run: |
           git fetch --depth=2
-          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD)
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
           echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
 
       - name: Update Markdown files
         run: |
-          for file in ${{ env.CHANGED_FILES }}; do
+          IFS=' ' read -r -a files <<< "${{ env.CHANGED_FILES }}"
+          for file in "${files[@]}"; do
             if [[ $file == *.md ]]; then
               LAST_UPDATED=$(git log -1 --format="%cd" --date=short -- "$file")
               sed -i "s/^Last updated: .*/Last updated: $LAST_UPDATED/" "$file"
@@ -33,6 +34,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add ${{ env.CHANGED_FILES }}
+          IFS=' ' read -r -a files <<< "${{ env.CHANGED_FILES }}"
+          git add "${files[@]}"
           git commit -m "Update last updated date"
           git push
