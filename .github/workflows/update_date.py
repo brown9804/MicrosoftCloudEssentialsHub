@@ -15,14 +15,20 @@ def update_markdown_file(file_path, last_updated):
         file.write(updated_content)
 
 def main():
-    result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'], stdout=subprocess.PIPE)
-    changed_files = result.stdout.decode('utf-8').splitlines()
+    result = subprocess.run(['git', 'rev-list', '--count', 'HEAD'], stdout=subprocess.PIPE)
+    commit_count = int(result.stdout.decode('utf-8').strip())
 
-    for file_path in changed_files:
-        if file_path.endswith('.md'):
-            last_updated = get_last_commit_date(file_path)
-            update_markdown_file(file_path, last_updated)
-            print(f'Updated {file_path} with last updated date {last_updated}')
+    if commit_count > 1:
+        result = subprocess.run(['git', 'diff', '--name-only', 'HEAD~1', 'HEAD'], stdout=subprocess.PIPE)
+        changed_files = result.stdout.decode('utf-8').splitlines()
+
+        for file_path in changed_files:
+            if file_path.endswith('.md'):
+                last_updated = get_last_commit_date(file_path)
+                update_markdown_file(file_path, last_updated)
+                print(f'Updated {file_path} with last updated date {last_updated}')
+    else:
+        print("No previous commits to compare.")
 
 if __name__ == "__main__":
     main()
