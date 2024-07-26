@@ -5,6 +5,8 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
+Last updated: 2024-07-26
+
 ----------
 
 <figure>
@@ -14,6 +16,10 @@ src="https://github.com/user-attachments/assets/c6c298f2-aae2-4ae8-b6cc-0407a22a
 alt="The beautiful MDN logo.">
 <figcaption> <br/> From https://www.databricks.com/product/azure </figcaption>
 </figure>
+
+| Aspect | Details |
+| ----- | ---- | 
+| Pricing tier | - **Standard**: Includes core Apache Spark features and Microsoft Entra integration. <br/> - **Premium**: Offers role-based access controls and advanced enterprise features. <br/>  - **Trial**: Provides a 14-day free trial of our premium workspace. | 
 
 
 ## Wiki 
