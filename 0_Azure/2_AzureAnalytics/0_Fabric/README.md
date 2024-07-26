@@ -17,6 +17,21 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 > `Azure Data`: Fabric integrates data engineering and data management tools. <br/>
 > `Azure Analytics`: It includes business intelligence and analytics tools, especially with its integration with Power BI.
 
+## Wiki 
+- [What is Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview.)
+- [Data Analytics](https://www.microsoft.com/en-us/microsoft-fabric)
+- [MS Fabric Public Preview - Video](https://www.bing.com/videos/riverview/relatedvideo?q=microsoft+fabric+what+is&mid=17839F76B326A15F559417839F76B326A15F5594&FORM=VIRE)
+- [What is Microsoft Fabric?: Features, Architecture & FAQs](https://atlan.com/microsoft-fabric/)
+- [Microsoft Open Source Code of Conduct](https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/get-started/microsoft-fabric-overview.md)
+- [What is the difference between Real-Time Intelligence and comparable Azure solutions?](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/real-time-intelligence-compare)
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/a26c562f-373a-4df5-a334-447c42acbdaf">
+
+- [Process Azure Event Hubs data using Azure Data Factory Mapping Data Flows](https://medium.com/microsoftazure/process-azure-event-hubs-data-using-azure-data-factory-mapping-data-flows-c62ee157582b)
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/fcd6e652-2de5-4f62-849f-a6e734508710">
+
+
 
 ## Key Components
 
@@ -57,9 +72,3 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 | ----  | ---- |
 |<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/559c53b3-6d01-4db1-8066-85692ea34189"> | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ebbc547d-11ab-492c-b284-e813199a036d"> |
 
-## Wiki 
-- [What is Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview.)
-- [Data Analytics](https://www.microsoft.com/en-us/microsoft-fabric)
-- [MS Fabric Public Preview - Video](https://www.bing.com/videos/riverview/relatedvideo?q=microsoft+fabric+what+is&mid=17839F76B326A15F559417839F76B326A15F5594&FORM=VIRE)
-- [What is Microsoft Fabric?: Features, Architecture & FAQs](https://atlan.com/microsoft-fabric/)
-- [Microsoft Open Source Code of Conduct](https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/get-started/microsoft-fabric-overview.md)
