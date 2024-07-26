@@ -1,4 +1,4 @@
-# Microsoft Cloud Essentials - Learning path
+# Microsoft Cloud Essentials - Learning Hub
 
 Costa Rica
 
