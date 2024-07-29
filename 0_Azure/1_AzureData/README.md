@@ -50,3 +50,5 @@ Comparative analysis of various types of DataFrames. Each type of DataFrame has 
 | **Azure Products**     | Azure Synapse Analytics, Azure Machine Learning, Azure Databricks, Azure Blob Storage, Azure Data Lake Storage | Azure Databricks, Azure Synapse Analytics, Azure HDInsight, Azure Data Explorer | Azure Machine Learning | Azure Databricks | Azure Machine Learning, Azure Open Datasets |
 
 
+
+Last updated: 2024-07-29
