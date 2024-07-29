@@ -5,6 +5,8 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
+Last updated: 2024-07-29
+
 ----------
 
 ## Content 
@@ -48,7 +50,3 @@ Comparative analysis of various types of DataFrames. Each type of DataFrame has 
 | **Primary Use Cases and Applications** | Data analysis, manipulation, and visualization; EDA, data cleaning, feature engineering, creating visualizations | Big data processing, machine learning, and streaming; large-scale data processing, ETL operations, running ML algorithms on big data | Data loading, transformation, and preprocessing for ML experiments; defining data loading blueprints with column type conversions and data filtering | Big data processing, collaborative data science, and running ML algorithms on distributed data | Data analysis, manipulation, preprocessing, and feeding data into ML models |
 | **Language Support**   | Python                                                | Python, Scala, Java, R                               | Python                                               | Python, Scala, Java, R                               | Python                                               |
 | **Azure Products**     | Azure Synapse Analytics, Azure Machine Learning, Azure Databricks, Azure Blob Storage, Azure Data Lake Storage | Azure Databricks, Azure Synapse Analytics, Azure HDInsight, Azure Data Explorer | Azure Machine Learning | Azure Databricks | Azure Machine Learning, Azure Open Datasets |
-
-
-
-Last updated: 2024-07-29
