@@ -24,3 +24,7 @@ alt="The beautiful MDN logo.">
 
 ## Wiki 
  - [What is Azure Databricks?](https://learn.microsoft.com/en-us/azure/databricks/introduction/)
+
+## Rommended Training
+- [Explore Azure Databricks](https://learn.microsoft.com/en-us/training/modules/explore-azure-databricks/)
+- [Perform data analysis with Azure Databricks](https://learn.microsoft.com/en-us/training/modules/perform-data-analysis-azure-databricks/)
