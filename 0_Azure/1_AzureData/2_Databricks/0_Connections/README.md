@@ -9,6 +9,8 @@ Last updated: 2024-07-30
 
 ----------
 
+## Integration with Azure Services
+
 Azure Databricks can integrate with several other Azure services, enhancing its capabilities for data processing, analytics, and machine learning.
 
 ```mermaid
@@ -54,3 +56,12 @@ graph TD
 | **Azure Machine Learning**     | Integrates with Azure Databricks for building, training, and deploying machine learning models. |
 | **Azure SQL Database**    | Connects to Azure SQL Database for reading and writing data using JDBC or SQL connectors. [Click here to understand more about how to connect](#connecting-to-sql-databases)    |
 | **SQL Server**               | Connects to SQL Server for data processing and analytics using JDBC or SQL connectors. [Click here to understand more about how to connect](#connecting-to-sql-databases)    |
+
+
+## Open Source Tools 
+
+> Support for open-source tools and frameworks such as Delta Lake, MLflow, and Apache Spark.
+
+#### Apache Spark
+
+> Azure Databricks service launches and manages Apache Spark clusters within your Azure subscription
