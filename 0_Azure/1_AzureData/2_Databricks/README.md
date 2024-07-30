@@ -125,7 +125,7 @@ graph TD
 
 | **Azure Service**              | **Integration Description**                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------------------|
-| **Azure Data Lake Storage**    | Provides scalable storage for big data analytics. Azure Databricks can read and write data directly to Azure Data Lake Storage, enabling efficient data processing and storage. |
+| **Azure Data Lake Storage**    | Provides scalable storage for big data analytics. Azure Databricks can read and write data directly to Azure Data Lake Storage, enabling efficient data processing and storage. [Click here to understand more about how to connect](#connecting-to-azure-data-lake-storage)|
 | **Azure Synapse Analytics**    | Integrates with Azure Synapse to enable advanced analytics and data warehousing solutions. This allows for seamless data movement and transformation between Databricks and Synapse. |
 | **Power BI**                   | Connects with Power BI for real-time data visualization and business intelligence. Users can create interactive dashboards and reports based on data processed in Azure Databricks. |
 | **Azure Cosmos DB**        | Allows for globally distributed, multi-model database integration. Azure Databricks can read from and write to Cosmos DB, enabling efficient data processing and analytics. [Click here to understand more about how to connect](#connecting-to-azure-cosmos-db)|
@@ -134,6 +134,71 @@ graph TD
 | **Azure Machine Learning**     | Integrates with Azure Databricks for building, training, and deploying machine learning models. |
 | **Azure SQL Database**    | Connects to Azure SQL Database for reading and writing data using JDBC or SQL connectors. [Click here to understand more about how to connect](#connecting-to-sql-databases)    |
 | **SQL Server**               | Connects to SQL Server for data processing and analytics using JDBC or SQL connectors. [Click here to understand more about how to connect](#connecting-to-sql-databases)    |
+
+### Connecting to Azure Data Lake Storage 
+
+```mermaid
+graph TD
+    A[Azure Databricks] --> B[Azure Data Lake Storage Gen2]
+    B --> C[Service Principal]
+    A --> D[Cluster Configuration]
+    D --> E[Read/Write Data]
+```
+
+1. **Create an Azure Data Lake Storage Gen2 Account**
+   - Go to the Azure portal.
+   - Create a new storage account and select the "Data Lake Storage Gen2" option.
+   - Configure the storage account settings as needed.
+
+2. **Set Up Azure Databricks**
+   - Create an Azure Databricks workspace if you don't already have one.
+   - Set up a cluster within your Databricks workspace.
+
+3. **Configure Access to ADLS Gen2**
+You can configure access using either a service principal or an access key. Here, we'll use a service principal for better security.
+- **Create a Service Principal**:
+   - Go to the Azure portal and navigate to "Azure Active Directory".
+   - Create a new app registration and note down the Application (client) ID and Directory (tenant) ID.
+   - Create a client secret for the app registration and note it down.
+- **Assign Roles to the Service Principal**:
+   - Navigate to your ADLS Gen2 account.
+   - Go to "Access control (IAM)" and add a role assignment.
+   - Assign the "Storage Blob Data Contributor" role to the service principal.
+- **Configure Databricks to Use the Service Principal**:
+   - In your Databricks workspace, go to the cluster configuration.
+   - Under the "Advanced Options" tab, add the following Spark configuration:
+
+```plaintext
+spark.hadoop.fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net OAuth
+spark.hadoop.fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider
+spark.hadoop.fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net <application-id>
+spark.hadoop.fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net <client-secret>
+spark.hadoop.fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net https://login.microsoftonline.com/<directory-id>/oauth2/token
+```
+
+4. **Access Data in ADLS Gen2 from Databricks**
+Now you can read and write data to ADLS Gen2 from your Databricks notebooks.
+
+**Example Code to Read Data:**
+
+```python
+# Configuration for ADLS Gen2
+storage_account_name = "your_storage_account_name"
+container_name = "your_container_name"
+file_path = "your_file_path"
+
+# Read data from ADLS Gen2
+df = spark.read.format("csv").option("header", "true").load(f"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/{file_path}")
+df.show()
+```
+
+**Example Code to Write Data:**
+
+```python
+# Write data to ADLS Gen2
+output_path = f"abfss://{container_name}@{storage_account_name}.dfs.core.windows.net/output_folder"
+df.write.format("csv").save(output_path)
+```
 
 ### Connecting to Azure Cosmos DB
 
