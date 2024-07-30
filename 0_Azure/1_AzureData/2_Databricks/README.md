@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-07-26
+Last updated: 2024-07-30
 
 ----------
 
@@ -24,3 +24,8 @@ alt="The beautiful MDN logo.">
 
 ## Wiki 
  - [What is Azure Databricks?](https://learn.microsoft.com/en-us/azure/databricks/introduction/)
+
+## Rommended Training
+- [Explore Azure Databricks](https://learn.microsoft.com/en-us/training/modules/explore-azure-databricks/)
+- [Perform data analysis with Azure Databricks](https://learn.microsoft.com/en-us/training/modules/perform-data-analysis-azure-databricks/)
+- [Use Apache Spark in Azure Databricks](https://learn.microsoft.com/en-us/training/modules/use-apache-spark-azure-databricks/)
