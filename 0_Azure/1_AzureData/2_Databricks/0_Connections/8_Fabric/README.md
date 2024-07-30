@@ -28,7 +28,7 @@ Last updated: 2024-07-30
 
 <img width="600" alt="image" src="https://microsoft.github.io/TechExcel-Fabric-with-Databricks-for-Data-Analytics/docs/media/instructions240153/ArchitectureDiagramMFADBNew.png">
 
-## How to 
+## How to Integrate Microsoft Fabric with Azure Databricks
 
 ```mermaid
 graph TD
