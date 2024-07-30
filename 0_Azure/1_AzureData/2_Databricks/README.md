@@ -126,7 +126,7 @@ graph TD
 | **Azure Service**              | **Integration Description**                                                                 |
 |--------------------------------|--------------------------------------------------------------------------------------------|
 | **Azure Data Lake Storage**    | Provides scalable storage for big data analytics. Azure Databricks can read and write data directly to Azure Data Lake Storage, enabling efficient data processing and storage. [Click here to understand more about how to connect](#connecting-to-azure-data-lake-storage)|
-| **Azure Synapse Analytics**    | Integrates with Azure Synapse to enable advanced analytics and data warehousing solutions. This allows for seamless data movement and transformation between Databricks and Synapse. |
+| **Azure Synapse Analytics**    | Integrates with Azure Synapse to enable advanced analytics and data warehousing solutions. This allows for seamless data movement and transformation between Databricks and Synapse. [Click here to understand more about how to connect](#connecting-to-azure-synapse-analytics)|
 | **Power BI**                   | Connects with Power BI for real-time data visualization and business intelligence. Users can create interactive dashboards and reports based on data processed in Azure Databricks. |
 | **Azure Cosmos DB**        | Allows for globally distributed, multi-model database integration. Azure Databricks can read from and write to Cosmos DB, enabling efficient data processing and analytics. [Click here to understand more about how to connect](#connecting-to-azure-cosmos-db)|
 | **Azure Data Factory**         | Orchestrates data workflows and integrates with Azure Databricks for data movement and transformation. |
@@ -157,7 +157,7 @@ graph TD
 3. **Configure Access to ADLS Gen2**
 You can configure access using either a service principal or an access key. Here, we'll use a service principal for better security.
 - **Create a Service Principal**:
-   - Go to the Azure portal and navigate to "Azure Active Directory".
+   - Go to the Azure portal and navigate to "Azure Entra ID".
    - Create a new app registration and note down the Application (client) ID and Directory (tenant) ID.
    - Create a client secret for the app registration and note it down.
 - **Assign Roles to the Service Principal**:
@@ -220,7 +220,7 @@ graph TD
 3. **Configure Access to Azure Synapse Analytics**
 You can configure access using a service principal or managed identity. Find below an example using a service principal for better security.
 - **Create a Service Principal**:
-   - Go to the Azure portal and navigate to "Azure Active Directory".
+   - Go to the Azure portal and navigate to "Azure Entra ID".
    - Create a new app registration and note down the Application (client) ID and Directory (tenant) ID.
    - Create a client secret for the app registration and note it down.
 - **Assign Roles to the Service Principal**:
@@ -369,13 +369,14 @@ df.show()
 ## Wiki 
 - [What is Azure Databricks?](https://learn.microsoft.com/en-us/azure/databricks/introduction/)
 - [Tutorial: Implement Azure Databricks with an Azure Cosmos DB endpoint](https://learn.microsoft.com/en-us/azure/databricks/scenarios/service-endpoint-cosmosdb)
-- [Azure Cosmos DB connector](https://learn.microsoft.com/en-us/azure/databricks/archive/azure/cosmosdb)
 - [Query databases using JDBC](https://learn.microsoft.com/en-us/azure/databricks/connect/external-systems/jdbc)
 - [Query SQL Server with Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/connect/external-systems/sql-server)
 - [How to connect from Azure Databricks to Azure SQL DB using service](https://stackoverflow.com/collectives/azure/articles/75189853/how-to-connect-from-azure-databricks-to-azure-sql-db-using-service-principal)
 - [Azure DataBricks To Connect SQL DataBase with Pyspark](https://stackoverflow.com/questions/76820391/azure-databricks-to-connect-sql-database-with-pyspark)
 - [Use a SQL connector, driver, or API](https://learn.microsoft.com/en-us/azure/databricks/dev-tools/index-driver)
 - [Connect to azure sql database from databricks](https://community.databricks.com/t5/data-engineering/connect-to-azure-sql-database-from-databricks-using-service/td-p/36174)
+- [Query data in Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/databricks/connect/external-systems/synapse-analytics)
+- [Connection from databricks to azure synapse](https://stackoverflow.com/questions/72873898/connection-from-databricks-to-azure-synapse)
   
 ## Rommended Training
 - [Explore Azure Databricks](https://learn.microsoft.com/en-us/training/modules/explore-azure-databricks/)
