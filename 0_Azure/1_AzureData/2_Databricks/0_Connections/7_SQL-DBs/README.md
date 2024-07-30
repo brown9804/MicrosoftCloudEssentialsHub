@@ -11,7 +11,8 @@ Last updated: 2024-07-30
 You can connect to SQL databases using JDBC or SQL connectors. Here are the steps for both methods:
 
 ## **Using JDBC**
-- **Configure the Connection**: Use the following code snippet in a Databricks notebook to configure the connection to SQL Server or Azure SQL Database:
+
+**Configure the Connection**: Use the following code snippet in a Databricks notebook to configure the connection to SQL Server or Azure SQL Database:
 
 ```python
 # Configuration for SQL Database
@@ -35,7 +36,8 @@ df.show()
 ```
 
 ## **Using SQL Connectors**
-- **Install the SQL Spark Connector**: You can install the SQL Spark Connector using Maven coordinates or within a Databricks notebook using `%pip`.
+
+**Install the SQL Spark Connector**: You can install the SQL Spark Connector using Maven coordinates or within a Databricks notebook using `%pip`.
 
 ```python
 # Install the SQL Spark Connector
