@@ -13,8 +13,16 @@ Last updated: 2024-07-30
 
 - [Data Storage](./0_DataStorage/)
 - [Databases](./1_Databases/)
+- [Azure Databricks](./2_Databricks)
 
 Azure Data Storage provides scalable, secure, and accessible cloud storage, ideal for big data and analytics, with various storage tiers. It supports a wide range of services and tools. Azure also offers relational and non-relational databases, with built-in management for high availability and performance, catering to different application needs.
+
+
+| Area | Category | Service | Overview |
+| ---- | ---- | ---- | ---- | 
+| Big Data Analytics | Service | [Azure Databricks](https://azure.microsoft.com/en-us/products/databricks/) | Azure Databricks is a fast, easy, and collaborative Apache Spark-based analytics platform optimized for Azure. It provides an interactive workspace for data engineers, data scientists, and business analysts. <br/> <br/> For more information: <br/> [Azure Databricks Overview](https://azure.microsoft.com/en-us/products/databricks/) <br/> [What is Azure Databricks?](https://learn.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks) <br/> [Azure Databricks Learning documents](https://learn.microsoft.com/en-us/azure/databricks/). |
+| Data Integration | Service | [Azure Data Factory](https://azure.microsoft.com/en-us/products/data-factory/) | Azure Data Factory is a cloud-based data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. <br/> <br/> For more information: <br/> [Azure Data Factory Overview](https://azure.microsoft.com/en-us/products/data-factory/) <br/> [What is Azure Data Factory?](https://learn.microsoft.com/en-us/azure/data-factory/introduction) <br/> [Azure Data Factory Learning documents](https://learn.microsoft.com/en-us/azure/data-factory/). |
+
 
 ## Differences between Azure Data Storage and Databases
 
