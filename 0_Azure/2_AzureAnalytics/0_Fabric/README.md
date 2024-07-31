@@ -2,12 +2,10 @@
 
 Costa Rica
 
-Belinda Brown, belindabrownr04@gmail.com
-
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-07-26
+Last updated: 2024-07-31
 
 ----------
 
@@ -43,9 +41,10 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 > Before Fabric
 
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/c47ad7c0-375e-4257-b56e-7b3b89619e2f">
-
-<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/64812721-7c24-4771-90f4-27f7a21fa9e0">
+<p float="left">
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/c47ad7c0-375e-4257-b56e-7b3b89619e2f" width="450" height="200" />
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/64812721-7c24-4771-90f4-27f7a21fa9e0" width="350" height="200" />
+</p>
 
 ## Features
 
@@ -56,11 +55,13 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/f75bfae7-91af-4f4d-9ca7-8e9c625c4b93">
 
-![image](https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/0045c7cc-073b-420d-a80d-707969c7b1f2)
+> OneLake allows storage of delta parquet files, which can be read and worked with throughout all workloads. It's a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data.
 
-|   <!-- -->    |  <!-- -->    |
-| ----  | ---- |
-| <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a"> | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c"> |  
+<p float="left">
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a" width="450" height="300" />
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c" width="350" height="300" />
+</p>
+
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4d9d5e6d-ff9c-4f21-954e-61f644c750bd">
 
