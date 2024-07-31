@@ -19,15 +19,16 @@ Understanding the distinctions between data governance, management, and security
 
 ## How to connect Azure Blob Storage with Snowflake
 
-| Connection Method                                | Description                                                                 | Security Level       |
-|--------------------------------------------------|-----------------------------------------------------------------------------|----------------------|
-| **Azure Private Link**                           | Provides private connectivity, keeping traffic within the Azure network.    | Very High            |
-| **Storage Integration with Azure Service Principal** | Uses Snowflake storage integration for secure authentication.               | High                 |
-| **Azure Data Factory (ADF)**                     | Securely transfers data using managed identities.                           | High                 |
-| **Snowpipe with Azure Event Grid**               | Automates data ingestion with secure configurations.                        | Medium to High       |
-| **Shared Access Signature (SAS) Token**          | Provides limited access to storage resources.                               | Medium               |
-| **Direct Credentials**                           | Uses storage account keys or access keys.                                   | Low                  |
-| **Firewall Settings and Whitelisting IP Ranges** | Additional security measures to restrict access and enhance security.       | Medium to High       |
+
+| Connection Method                                | Description                                                                 | Security Level       | Cost Estimate (Monthly) |
+|--------------------------------------------------|-----------------------------------------------------------------------------|----------------------|-------------------------|
+| **Azure Private Link**                           | Provides private connectivity, keeping traffic within the Azure network.    | Very High            | High                    |
+| **Storage Integration with Azure Service Principal** | Uses Snowflake storage integration for secure authentication.               | High                 | Medium                  |
+| **Azure Data Factory (ADF)**                     | Securely transfers data using managed identities.                           | High                 | Medium                  |
+| **Snowpipe with Azure Event Grid**               | Automates data ingestion with secure configurations.                        | Medium to High       | Medium                  |
+| **Shared Access Signature (SAS) Token**          | Provides limited access to storage resources.                               | Medium               | Low                     |
+| **Direct Credentials**                           | Uses storage account keys or access keys.                                   | Low                  | Low                     |
+| **Firewall Settings and Whitelisting IP Ranges** | Additional security measures to restrict access and enhance security.       | Medium to High       | Low to Medium           |
 
 > Applying firewall settings and whitelisting IP ranges enhances security by restricting access, though they aren't direct connection methods.
 
