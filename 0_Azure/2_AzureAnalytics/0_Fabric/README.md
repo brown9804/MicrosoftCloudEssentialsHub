@@ -22,6 +22,7 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 - [What is Microsoft Fabric?: Features, Architecture & FAQs](https://atlan.com/microsoft-fabric/)
 - [Microsoft Open Source Code of Conduct](https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/get-started/microsoft-fabric-overview.md)
 - [What is the difference between Real-Time Intelligence and comparable Azure solutions?](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/real-time-intelligence-compare)
+- [End-to-end tutorials in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/end-to-end-tutorials)
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/a26c562f-373a-4df5-a334-447c42acbdaf">
 
@@ -67,8 +68,7 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4a49d6af-42eb-45f8-bec3-954a05b84f36"> 
 
-## Where to start?
+## Recommended Trainings 
 
-|   <!-- -->    | <!-- -->   |
-| ----  | ---- |
-|<img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/559c53b3-6d01-4db1-8066-85692ea34189"> | <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/ebbc547d-11ab-492c-b284-e813199a036d"> |
+- [Get started with Microsoft Fabric](https://learn.microsoft.com/en-us/training/paths/get-started-fabric/)
+
