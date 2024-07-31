@@ -22,3 +22,5 @@ Costa Rica
 | **Firewall Settings and Whitelisting IP Ranges** | Additional security measures to restrict access and enhance security.       | Medium to High       | Low to Medium           |
 
 > Applying firewall settings and whitelisting IP ranges enhances security by restricting access, though they aren't direct connection methods.
+
+Last updated: 2024-07-31
