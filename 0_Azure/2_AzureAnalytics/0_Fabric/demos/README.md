@@ -11,7 +11,7 @@ Last updated: 2024-08-01
 
 ------------------------------------------
 
-This repository contains various demos showcasing the capabilities of Azure Analytics Fabric. Provides a collection of demos to help you get started with Azure Analytics Fabric. Each demo is designed to demonstrate specific features and use cases.
+This repository contains various demos showcasing the capabilities of Azure Analytics Fabric. Each demo is designed to demonstrate specific features and use cases.
 
 ## Prerequisites
 
