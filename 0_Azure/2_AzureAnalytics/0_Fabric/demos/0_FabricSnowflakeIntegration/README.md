@@ -173,6 +173,8 @@ Here are some key points and new features you can highlight:
    - Select Snowflake as the source.
    - Enter the connection details for your Snowflake database (e.g., account name, username, password).
 
+        <img width="600" alt="image" src="https://github.com/user-attachments/assets/32633b95-a79e-4550-9460-43b64c4cb3cc">
+
 4. **Select Data to Mirror**:
    - Choose the tables or schemas you want to replicate.
    - Configure any transformation or filtering rules if needed.
