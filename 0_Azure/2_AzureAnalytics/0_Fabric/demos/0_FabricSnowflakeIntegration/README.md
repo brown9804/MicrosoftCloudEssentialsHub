@@ -125,6 +125,8 @@ Here are some key points and new features you can highlight:
     - In the report canvas, click on the Copilot icon.
     - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”).
     - Copilot will generate the appropriate visuals and insights based on your description.
+      
+    <img width="600" alt="image" src="https://github.com/user-attachments/assets/809558d4-e78b-45c8-9c46-e658c77b1ce8">
 
 5. **Customize the Report:**
     - Adjust the visuals as needed (e.g., change chart types, add filters).
@@ -133,13 +135,37 @@ Here are some key points and new features you can highlight:
    - Save the report to your workspace.
    - Share the report with stakeholders or publish it to the Power BI Service.
 
+#### **Mirroring Setup**: 
 
+> Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
 
-3. **Mirroring Setup**: Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
+1. **Access Fabric**:
+   - Log in to the Azure portal.
+   - Navigate to the Fabric service.
 
-| **Activity** | **Steps** |
-|--------------|------------|
-| **Mirroring Setup** | 1. **Access Fabric**: <br> - Log in to the Azure portal. <br> - Navigate to the Fabric service. <br> 2. **Set Up Mirroring**: <br> - In Fabric, go to the Mirroring section. <br> - Click on "Create Mirroring". <br> 3. **Configure Snowflake Connection**: <br> - Select Snowflake as the source. <br> - Enter the connection details for your Snowflake database (e.g., account name, username, password). <br> 4. **Select Data to Mirror**: <br> - Choose the tables or schemas you want to replicate. <br> - Configure any transformation or filtering rules if needed. <br> 5. **Configure OneLake as Destination**: <br> - Select OneLake as the destination for the mirrored data. <br> - Configure the connection settings for OneLake. <br> 6. **Start Mirroring**: <br> - Save and start the mirroring process. <br> - Monitor the mirroring status to ensure data is being replicated correctly. <br> 7. **Explore Replicated Data**: <br> - Once mirroring is complete, access OneLake. <br> - Use tools like Power BI or Azure Synapse to explore and analyze the replicated data. |
+2. **Set Up Mirroring**:
+   - In Fabric, go to the Mirroring section.
+   - Click on "Create Mirroring".
+
+3. **Configure Snowflake Connection**:
+   - Select Snowflake as the source.
+   - Enter the connection details for your Snowflake database (e.g., account name, username, password).
+
+4. **Select Data to Mirror**:
+   - Choose the tables or schemas you want to replicate.
+   - Configure any transformation or filtering rules if needed.
+
+5. **Configure OneLake as Destination**:
+   - Select OneLake as the destination for the mirrored data.
+   - Configure the connection settings for OneLake.
+
+6. **Start Mirroring**:
+   - Save and start the mirroring process.
+   - Monitor the mirroring status to ensure data is being replicated correctly.
+
+7. **Explore Replicated Data**:
+   - Once mirroring is complete, access OneLake.
+   - Use tools like Power BI or Azure Synapse to explore and analyze the replicated data.
 
 ## Recommended Trainings 
 - [Use Data Factory pipelines in Microsoft Fabric](https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/): This module covers how to describe pipeline capabilities, use the Copy Data activity, create pipelines based on predefined templates, and run and monitor pipelines.
