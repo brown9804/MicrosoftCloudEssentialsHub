@@ -54,7 +54,9 @@ Here are some key points and new features you can highlight:
 
 ### Hands-On Activities
 
-#### **Data Integration Exercise**: Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake
+#### **Data Integration Exercise**: 
+
+> Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake
 
 1. **Access Data Factory within Fabric**:
     - Log in to the Microsoft Fabric portal.
@@ -85,7 +87,9 @@ Here are some key points and new features you can highlight:
     - Monitor the pipeline execution for any errors or issues.
     
 
-#### **Report Creation with Copilot**: Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
+#### **Report Creation with Copilot**: 
+
+> Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
 
 1. **Access Power BI within Fabric:**
     - Open Power BI within the Microsoft Fabric portal.
