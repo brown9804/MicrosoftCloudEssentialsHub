@@ -156,7 +156,14 @@ Here are some key points and new features you can highlight:
      
         <img width="600" alt="image" src="https://github.com/user-attachments/assets/e721b814-245b-4d07-9774-aec125e821dd">
 
-    - Set Up Mirroring:
+        <img width="600" alt="image" src="https://github.com/user-attachments/assets/f8a71081-02c0-48aa-a675-5c2ebff03040">
+
+        <img width="400" alt="image" src="https://github.com/user-attachments/assets/63376753-d650-4b1c-a6dc-6f2cbdcf6ff7">
+
+        <img width="400" alt="image" src="https://github.com/user-attachments/assets/102c2542-6ac7-4df4-a028-8876bbdc2190">
+
+
+    - Set Up Mirroring: [click here for more details](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-tutorial)
        - In Fabric, go to the **Mirroring** section.
        - Click on **Create Mirroring**.
 
