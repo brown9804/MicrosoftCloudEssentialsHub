@@ -57,40 +57,40 @@ Here are some key points and new features you can highlight:
 #### **Data Integration Exercise**: Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake
 
 1. **Access Data Factory within Fabric**:
-  - Log in to the Microsoft Fabric portal.
-  - Navigate to the Data Factory service within Fabric.
-
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/3b57f63c-bb09-4f11-9012-06f59dfa4893">
+    - Log in to the Microsoft Fabric portal.
+    - Navigate to the Data Factory service within Fabric.
+      
+    <img width="200" alt="image" src="https://github.com/user-attachments/assets/3b57f63c-bb09-4f11-9012-06f59dfa4893">
 
 2. **Create a New Data Pipeline**:
-  - Click on the “Create pipeline” button.
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/52cfe364-9022-47b0-a76d-33f78d85144e">
+    - Click on the “Create pipeline” button.
+    
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/52cfe364-9022-47b0-a76d-33f78d85144e">
 
 3. **Add Data Sources**:
-  - Click on the “Activity” tab.
-  - Add a Copy Data activity to the pipeline.
-  - Select the type of data source (e.g., Snowflake, Oracle, MySQL).
-  - Configure the connection settings for each data source (e.g., server name, database name, credentials).
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/8032577f-b415-40a9-9610-9046dbae7870">
+    - Click on the “Activity” tab.
+    - Add a Copy Data activity to the pipeline.
+    - Select the type of data source (e.g., Snowflake, Oracle, MySQL).
+    - Configure the connection settings for each data source (e.g., server name, database name, credentials).
+    
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/8032577f-b415-40a9-9610-9046dbae7870">
 
 4. **Configure Data Integration**:
-  - Add a sink to load the data into the desired destination (e.g., Azure Data Lake, OneLake).
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/4fbaa9dc-8cb9-4d3f-99c1-88fe309362af">
+    - Add a sink to load the data into the desired destination (e.g., Azure Data Lake, OneLake).
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/4fbaa9dc-8cb9-4d3f-99c1-88fe309362af">
 
 5. **Run and Monitor the Pipeline**:
-  - Save and publish the pipeline.
-  - Trigger the pipeline to run.
-  - Monitor the pipeline execution for any errors or issues.
-
+    - Save and publish the pipeline.
+    - Trigger the pipeline to run.
+    - Monitor the pipeline execution for any errors or issues.
+    
 
 #### **Report Creation with Copilot**: Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
 
 1. **Access Power BI within Fabric:**
-   - Open Power BI within the Microsoft Fabric portal.
-
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/6145fce7-7e4d-4ada-882f-5d842d617ca8">
+    - Open Power BI within the Microsoft Fabric portal.
+    
+    <img width="200" alt="image" src="https://github.com/user-attachments/assets/6145fce7-7e4d-4ada-882f-5d842d617ca8">
 
 2. **Enable Copilot:**
    - Ensure that Copilot is enabled in your Power BI settings:
@@ -109,23 +109,22 @@ Here are some key points and new features you can highlight:
          - Ensure that your workspace is in either **Premium Power BI (P1 and above)** or **paid Fabric (F64 and above)** capacity.
 
 3. **Create a New Report:**
-   - Click on “Create” and select “Report”.
+    - Click on “Create” and select “Report”.
+    
+    <img width="300" alt="image" src="https://github.com/user-attachments/assets/572bfb26-9154-4ae9-99f7-24221fb9559e">
 
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/572bfb26-9154-4ae9-99f7-24221fb9559e">
-
-   - Choose the source 
-
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/88fb050c-3919-4fb9-b27e-df590d546ab9">
+    - Choose the source 
+    
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/88fb050c-3919-4fb9-b27e-df590d546ab9">
 
 4. **Use Copilot for Insights:**
-   - In the report canvas, click on the Copilot icon.
-   - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”).
-   - Copilot will generate the appropriate visuals and insights based on your description.
+    - In the report canvas, click on the Copilot icon.
+    - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”).
+    - Copilot will generate the appropriate visuals and insights based on your description.
 
 5. **Customize the Report:**
-   - Adjust the visuals as needed (e.g., change chart types, add filters).
-   - Add additional visuals or data points to enhance the report.
-
+    - Adjust the visuals as needed (e.g., change chart types, add filters).
+    - Add additional visuals or data points to enhance the report.
 6. **Save and Share the Report:**
    - Save the report to your workspace.
    - Share the report with stakeholders or publish it to the Power BI Service.
