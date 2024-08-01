@@ -160,14 +160,12 @@ Here are some key points and new features you can highlight:
         
         <p float="left">
           <img src="https://github.com/user-attachments/assets/63376753-d650-4b1c-a6dc-6f2cbdcf6ff7" width="200" height="300" />
-          <img src="https://github.com/user-attachments/assets/102c2542-6ac7-4df4-a028-8876bbdc2190" width="200" height="300" />
+          <img src="https://github.com/user-attachments/assets/102c2542-6ac7-4df4-a028-8876bbdc2190" width="300" height="300" />
         </p>
 
     - Set Up Mirroring: [click here for more details](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-tutorial)
        - In Fabric, go to the **Mirroring** section.
        - Click on **Create Mirroring**.
-
-
 
 3. **Configure Snowflake Connection**:
    - Select Snowflake as the source.
