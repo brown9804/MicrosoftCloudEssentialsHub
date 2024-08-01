@@ -144,8 +144,21 @@ Here are some key points and new features you can highlight:
    - Navigate to the Fabric service.
 
 2. **Set Up Mirroring**:
-   - In Fabric, go to the Mirroring section.
-   - Click on "Create Mirroring".
+    - Enable Mirroring
+        1. Open Microsoft Fabric: Log in to your Microsoft Fabric account.
+        2. **Access Tenant Settings**:
+           - Navigate to the **Admin Portal**.
+           - In the Admin Portal, go to **Tenant Settings**.
+        3. Expand Mirroring (Preview): In the Tenant Settings, find and expand the **Mirroring (Preview)** section.
+        4. Enable Mirroring: Toggle the **Mirroring (Preview)** switch to **On**.
+        5. Optional: Specific Security Groups: If you want to enable Mirroring for specific users, use the **Specific Security Groups** option to select the users or groups.
+        6. Save Settings: After enabling Mirroring, make sure to **Save** your settings.
+     
+        <img width="600" alt="image" src="https://github.com/user-attachments/assets/e721b814-245b-4d07-9774-aec125e821dd">
+
+    - Set Up Mirroring:
+       - In Fabric, go to the **Mirroring** section.
+       - Click on **Create Mirroring**.
 
 3. **Configure Snowflake Connection**:
    - Select Snowflake as the source.
