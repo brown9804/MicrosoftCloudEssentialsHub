@@ -29,7 +29,20 @@ Here are some key points and new features you can highlight:
 2. **Unified Analytics**: With data mirrored into OneLake, you can leverage Fabric's analytics tools, such as Spark, notebooks, and Power BI, to analyze and visualize data seamlessly.
 3. **Cost and Latency**: Mirroring provides a low-cost and low-latency solution for data replication, making it easier to keep your data up-to-date and accessible for analytics.
 
-## Hands-On Activities
+## Demo
+
+### Requirements
+
+| **Category** | **Requirements** |
+|--------------|------------------|
+| **General Requirements** | - Active Microsoft Fabric subscription  <br> - Fabric capacity (measured in Capacity Units or CUs) |
+| **Data Integration Exercise** | - Permissions to access and manage Data Factory within Microsoft Fabric  <br> - Credentials and connection details for data sources (e.g., Snowflake, Oracle, MySQL)  <br> - Configuration details for the destination (e.g., Azure Data Lake, OneLake) |
+| **Report Creation with Copilot** | - Permissions to access and use Power BI within Microsoft Fabric  <br> - Copilot enabled in Power BI settings  <br> - A compatible workspace with write access assigned to a Copilot-enabled capacity (F64 or higher) or a Power BI Premium capacity (P1 or higher) [1](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-create-report-service) |
+| **Mirroring Setup** | - Permissions to access and manage the Fabric service within the Azure portal  <br> - Connection details for Snowflake database (e.g., account name, username, password)  <br> - Configuration details for OneLake as the destination for mirrored data  <br> - Ability to choose specific tables for mirroring and control over the initiation and suspension of mirroring processes [2](https://eng.ms/docs/cloud-ai-platform/azure-data/azure-data-intelligence-platform/synapse-dw/fabric-dw-top-level-service/trident-dw/clientexperiences/mirroring/overview) |
+| **Additional Considerations** | - User permissions for accessing and managing services and resources  <br> - Compliance with organizational security and compliance policies |
+
+### Hands-On Activities
+
 1. **Data Integration Exercise**: Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake.
 3. **Report Creation with Copilot**: Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
 4. **Mirroring Setup**: Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
