@@ -54,14 +54,88 @@ Here are some key points and new features you can highlight:
 
 ### Hands-On Activities
 
-1. **Data Integration Exercise**: Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake.
-3. **Report Creation with Copilot**: Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
-4. **Mirroring Setup**: Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
+#### **Data Integration Exercise**: Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake
+
+1. **Access Data Factory within Fabric**:
+  - Log in to the Microsoft Fabric portal.
+  - Navigate to the Data Factory service within Fabric.
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/3b57f63c-bb09-4f11-9012-06f59dfa4893">
+
+2. **Create a New Data Pipeline**:
+  - Click on the “Create pipeline” button.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/52cfe364-9022-47b0-a76d-33f78d85144e">
+
+3. **Add Data Sources**:
+  - Click on the “Activity” tab.
+  - Add a Copy Data activity to the pipeline.
+  - Select the type of data source (e.g., Snowflake, Oracle, MySQL).
+  - Configure the connection settings for each data source (e.g., server name, database name, credentials).
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/8032577f-b415-40a9-9610-9046dbae7870">
+
+4. **Configure Data Integration**:
+  - Add a sink to load the data into the desired destination (e.g., Azure Data Lake, OneLake).
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/4fbaa9dc-8cb9-4d3f-99c1-88fe309362af">
+
+5. **Run and Monitor the Pipeline**:
+  - Save and publish the pipeline.
+  - Trigger the pipeline to run.
+  - Monitor the pipeline execution for any errors or issues.
+
+
+#### **Report Creation with Copilot**: Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
+
+1. **Access Power BI within Fabric:**
+   - Open Power BI within the Microsoft Fabric portal.
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/6145fce7-7e4d-4ada-882f-5d842d617ca8">
+
+2. **Enable Copilot:**
+   - Ensure that Copilot is enabled in your Power BI settings:
+      1. **Sign in to Microsoft Fabric** using your admin account credentials.
+      2. **Navigate to the Admin Portal**:
+         - Select **Fabric settings** from the menu.
+         - Choose **Admin portal**.
+      
+      3. **Enable Copilot**:
+         - In the Admin portal, select **Tenant settings**.
+         - Use the search feature to locate the **Copilot and Azure OpenAI Service (preview)** settings.
+         - Toggle the switch to **Enable Copilot in Fabric**.
+         - Click **Apply** to save your changes.
+      
+      4. **Verify Access**:
+         - Ensure that your workspace is in either **Premium Power BI (P1 and above)** or **paid Fabric (F64 and above)** capacity.
+
+3. **Create a New Report:**
+   - Click on “Create” and select “Report”.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/572bfb26-9154-4ae9-99f7-24221fb9559e">
+
+   - Choose the source 
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/88fb050c-3919-4fb9-b27e-df590d546ab9">
+
+4. **Use Copilot for Insights:**
+   - In the report canvas, click on the Copilot icon.
+   - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”).
+   - Copilot will generate the appropriate visuals and insights based on your description.
+
+5. **Customize the Report:**
+   - Adjust the visuals as needed (e.g., change chart types, add filters).
+   - Add additional visuals or data points to enhance the report.
+
+6. **Save and Share the Report:**
+   - Save the report to your workspace.
+   - Share the report with stakeholders or publish it to the Power BI Service.
+
+
+
+3. **Mirroring Setup**: Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
 
 | **Activity** | **Steps** |
 |--------------|------------|
-| **Data Integration Exercise** | 1. Access Data Factory within Fabric: <br> - Log in to the Microsoft Fabric portal. <br> - Navigate to the Data Factory service within Fabric. <br> 2. Create a New Data Pipeline: <br> - Click on the “Create pipeline” button. <br> 3. Add Data Sources: <br> - Click on the “Add Source” button. <br> - Select the type of data source (e.g., Snowflake, Oracle, MySQL). <br> - Configure the connection settings for each data source (e.g., server name, database name, credentials). <br> 4. Configure Data Integration: <br> - Add activities to the pipeline to extract data from the sources. <br> - Use Data Flow to transform the data as needed. <br> - Add a sink to load the data into the desired destination (e.g., Azure Data Lake, OneLake). <br> 5. Run and Monitor the Pipeline: <br> - Save and publish the pipeline. <br> - Trigger the pipeline to run. <br> - Monitor the pipeline execution for any errors or issues. |
-| **Report Creation with Copilot** | 1. Access Power BI within Fabric: <br> - Open Power BI within the Microsoft Fabric portal. <br> 2. Enable Copilot: <br> - Ensure that Copilot is enabled in your Power BI settings. <br> 3. Create a New Report: <br> - Click on “Create” and select “Report”. <br> 4. Use Copilot for Insights: <br> - In the report canvas, click on the Copilot icon. <br> - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”). <br> - Copilot will generate the appropriate visuals and insights based on your description. <br> 5. Customize the Report: <br> - Adjust the visuals as needed (e.g., change chart types, add filters). <br> - Add additional visuals or data points to enhance the report. <br> 6. Save and Share the Report: <br> - Save the report to your workspace. <br> - Share the report with stakeholders or publish it to the Power BI Service. |
 | **Mirroring Setup** | 1. **Access Fabric**: <br> - Log in to the Azure portal. <br> - Navigate to the Fabric service. <br> 2. **Set Up Mirroring**: <br> - In Fabric, go to the Mirroring section. <br> - Click on "Create Mirroring". <br> 3. **Configure Snowflake Connection**: <br> - Select Snowflake as the source. <br> - Enter the connection details for your Snowflake database (e.g., account name, username, password). <br> 4. **Select Data to Mirror**: <br> - Choose the tables or schemas you want to replicate. <br> - Configure any transformation or filtering rules if needed. <br> 5. **Configure OneLake as Destination**: <br> - Select OneLake as the destination for the mirrored data. <br> - Configure the connection settings for OneLake. <br> 6. **Start Mirroring**: <br> - Save and start the mirroring process. <br> - Monitor the mirroring status to ensure data is being replicated correctly. <br> 7. **Explore Replicated Data**: <br> - Once mirroring is complete, access OneLake. <br> - Use tools like Power BI or Azure Synapse to explore and analyze the replicated data. |
 
 ## Recommended Trainings 
