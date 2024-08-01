@@ -24,6 +24,17 @@ Here are some key points and new features you can highlight:
 2. **Simplified Data Pipelines**: The new Data Factory in Fabric integrates better with the unified data platform, including Lakehouse and Data Warehouse, making data pipelines more efficient.
 3. **Real-Time Data Replication**: Mirroring in Fabric allows for near real-time replication of data from various sources into OneLake, simplifying data management and analytics.
 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/f84ae4c4-22e7-44ae-9d21-fa7976e163e4">
+
+| **Option**                | **Description**                                                                                                                                                                                                 |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Dataflow Gen2**         | The new generation of dataflows in Microsoft Fabric, offering improved features like **shorter authoring flows, auto-save, background publishing, and better integration with data pipelines**. Primarily focuses on the **transformation** of data.                      |
+| **Data pipeline**         | A series of processes that move data from one system to another, involving data ingestion, transformation, and storage to ensure data is ready for analysis or other uses. Manages the **movement** of data, including ingestion, transformation, and loading.                                       |
+| **Data Factory**          | A cloud-based data integration service that allows you to **create, schedule, and manage data pipelines**, supporting various data sources and providing tools for data transformation and movement.                  |
+| **Data workflow (Preview)** | Uses **Apache Airflow to create and manage data workflows**, providing a cloud-based platform for developing, scheduling, and monitoring data workflows, making it easier to handle complex data processes.           |
+| **Copy job (Preview)**    | Automates **data loading from Amazon S3 to Amazon Redshift**, detecting new files in specified paths and loading them automatically to simplify the data ingestion process.                                          |
+| **API for GraphQL (Preview)** | Allows interaction with data using GraphQL, **a query language for APIs**, enabling **efficient querying of multiple data sources** and providing a flexible way to fetch data in a single request.                     |
+
 ## Impact on Snowflake Usage
 1. **Mirroring**: Fabric's Mirroring feature allows you to replicate data from Snowflake into OneLake in near real-time, reducing the need for complex ETL pipelines.
 2. **Unified Analytics**: With data mirrored into OneLake, you can leverage Fabric's analytics tools, such as Spark, notebooks, and Power BI, to analyze and visualize data seamlessly.
