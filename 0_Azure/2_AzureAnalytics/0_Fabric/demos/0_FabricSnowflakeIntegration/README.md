@@ -11,11 +11,6 @@ Last updated: 2024-08-05
 
 ------------------------------------------
 
-## Wiki 
-
-- [Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-mirroring-faq#can-snowflake-mirroring-be-accessed-through-the-power-bi-gateway-or-behind-a-firewall--)
-- [Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-sql-database-limitations#fabric-regions-that-support-mirroring)
-
 Here are some key points and new features you can highlight:
 
 ## Microsoft Fabric for Power BI
