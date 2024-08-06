@@ -1,11 +1,12 @@
 # Document Intelligences
 
-----------
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
+
+Last updated: 2024-08-01
 
 ----------
 
@@ -14,17 +15,8 @@ Key Features:
 - **Customized Results**: Get output tailored to your layouts with automatic custom extraction and improve it with human feedback.
 - **Flexible Deployment**: Ingest data from the cloud or at the edge and apply to search indexes, business automation workflows, and more.
 - **Built-in Security**: Rely on enterprise-grade security and privacy applied to both your data and any trained models.
-<!-- TOC -->
 
-- [Document Intelligences](#document-intelligences)
-    - [Examples of Use Cases](#examples-of-use-cases)
-        - [Document Classification - Document Intelligence:](#document-classification---document-intelligence)
-        - [Information Extraction - Document Intelligence:](#information-extraction---document-intelligence)
-        - [Content Search - Document Intelligence:](#content-search---document-intelligence)
-        - [Compliance and Risk Management - Document Intelligence:](#compliance-and-risk-management---document-intelligence)
-        - [Customer Service - Document Intelligence:](#customer-service---document-intelligence)
-
-<!-- /TOC -->
+## Content 
 
 - [Document intelligences](#document-intelligences)
     - [Content](#content)
@@ -34,8 +26,6 @@ Key Features:
         - [Content Search - Document Intelligence:](#content-search---document-intelligence)
         - [Compliance and Risk Management - Document Intelligence:](#compliance-and-risk-management---document-intelligence)
         - [Customer Service - Document Intelligence:](#customer-service---document-intelligence)
-
-<!-- /TOC -->
 
 ## Examples of Use Cases
 
