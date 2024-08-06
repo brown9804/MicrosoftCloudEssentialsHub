@@ -7,11 +7,16 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-01
+Last updated: 2024-08-06
 
 ------------------------------------------
 
 This repository contains various demos showcasing the capabilities of Azure Analytics Fabric. Each demo is designed to demonstrate specific features and use cases.
+
+## Wiki 
+
+- [Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-mirroring-faq#can-snowflake-mirroring-be-accessed-through-the-power-bi-gateway-or-behind-a-firewall--)
+- [Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-sql-database-limitations#fabric-regions-that-support-mirroring)
 
 ## Prerequisites
 
