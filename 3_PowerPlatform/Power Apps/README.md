@@ -5,7 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2024-08-07
+
+------------------------------------------
 
 Microsoft Power Apps is a suite of apps, services, and connectors, as well as a data platform. It provides a rapid development environment to build custom apps for your business needs. <br/>
 
