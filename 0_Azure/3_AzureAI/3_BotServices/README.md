@@ -1,11 +1,11 @@
 # Bot Services
 
-----------
-
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
+
+Last updated: 2024-08-01
 
 ----------
 
@@ -19,17 +19,6 @@ Here are some of the key features of the Azure AI Bot Service:
 
 ## Content 
 
-<!-- TOC -->
-
-- [Bot Services](#bot-services)
-    - [Content](#content)
-    - [Example of Use Cases](#example-of-use-cases)
-        - [Customer Service - Bot Services:](#customer-service---bot-services)
-        - [Sales and Marketing - Bot Services:](#sales-and-marketing---bot-services)
-        - [Human Resources - Bot Services:](#human-resources---bot-services)
-        - [IT Help Desk - Bot Services:](#it-help-desk---bot-services)
-<!-- TOC -->
-
 - [Bot Services](#bot-services)
     - [Content](#content)
     - [Example of Use Cases](#example-of-use-cases)
@@ -38,8 +27,6 @@ Here are some of the key features of the Azure AI Bot Service:
         - [Human Resources - Bot Services:](#human-resources---bot-services)
         - [IT Help Desk - Bot Services:](#it-help-desk---bot-services)
         - [E-commerce - Bot Services:](#e-commerce---bot-services)
-
-<!-- /TOC -->ntent](#content)
 
 - **Automated Support**: Azure Bot Services can be used to create chatbots that provide automated responses to common customer inquiries, reducing the workload on human customer service representatives.
 
