@@ -13,14 +13,16 @@ Last updated: 2024-08-07
 
 - [Add a copilot to Azure Bot Service channels](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)
 - [Deciding between Copilot Studio and Azure Bot Services](https://learn.microsoft.com/en-us/microsoftteams/playbook/technology-choices/pvavsazurebot)
+- [Choose the right chatbot solution for your use case](https://learn.microsoft.com/en-us/azure/bot-service/bot-overview?view=azure-bot-service-4.0)
 - [Azure AI Health Bot helps create copilot experiences with healthcare](https://azure.microsoft.com/en-us/blog/azure-ai-health-bot-helps-create-copilot-experiences-with-healthcare-safeguards/)
 - [Create Generative AI solutions with Power Virtual Agents and Azure](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/create-generative-ai-solutions-with-power-virtual-agents-and-azure-openai-services/)
 - [Introducing AI Skills in Microsoft Fabric: Now in Public Preview](https://blog.fabric.microsoft.com/en-us/blog/introducing-ai-skills-in-microsoft-fabric-now-in-public-preview/)
 - [Chat your data in Microsoft Fabric with Semantic Kernel](https://blog.fabric.microsoft.com/en-us/blog/chat-your-data-in-microsoft-fabric-with-semantic-kernel?ft=All)
-- [Microsoft Conversational AI tools enable developers to build, connect](https://bing.com/search?q=Azure+Fabric+chatbot+solution)
 - [Build a serverless AI Chat with RAG using LangChain.js](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/build-a-serverless-ai-chat-with-rag-using-langchain-js/ba-p/4111041)
 - [Build a chatbot service to ensure safe conversations](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-a-chatbot-service-to-ensure-safe-conversations-using-azure/ba-p/4143628)
-- [NEW REFERENCE ARCHITECTURE: Enterprise-grade conversational bot](https://techcommunity.microsoft.com/t5/azure-global/new-reference-architecture-enterprise-grade-conversational-bot/ba-p/333945)
+= [Create Your Own Copilot Using Copilot Studio](https://techcommunity.microsoft.com/t5/educator-developer-blog/create-your-own-copilot-using-copilot-studio/ba-p/4174957)
+- [Build your own Copilot with Azure AI Studio - live](https://www.youtube.com/watch?v=obfs_LEzPHo)
+- [Tutorial: Build and deploy a question and answer copilot with prompt flow in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-copilot-ai-studio)
 
 ## Copilot Studio and Azure Bot Service:
 
@@ -50,3 +52,7 @@ Last updated: 2024-08-07
 | **Industry-Specific Solutions** | **Health Bot**                            | Cloud platform for healthcare organizations to build and deploy compliant, AI-powered health bots.  | - **Compliance**: Meets healthcare industry standards and regulations<br>- **Personalization**: Provides intelligent and personalized access to health-related information<br>- **Integration**: Can integrate with existing healthcare systems and workflows | No               | - Healthcare-specific solutions<br>- Compliance with industry standards<br>- Personalized health information |
 | **Workflow Automation**    | **Azure Logic Apps**                      | Cloud service for automating and orchestrating tasks and workflows.                                 | - **Workflow Automation**: Automate workflows between your chatbot and other services<br>- **Integration**: Connects with over 200 Azure and third-party services<br>- **Scalability**: Scales to handle large volumes of requests | No               | - Workflow automation<br>- Integration with multiple services<br>- Handling large volumes of requests |
 | **Data Integration and AI** | **Microsoft Fabric with Copilot Integration** | Utilizes Microsoft Fabric and Copilot for advanced data integration and AI capabilities.            | - **AI Skills**: Build generative AI experiences with Fabric Copilot<br>- **Data Integration**: Seamlessly integrates with structured and unstructured data<br>- **Customization**: Customize AI responses based on organizational data | Yes              | - Advanced data integration<br>- Generative AI experiences<br>- Customizable AI responses |
+
+## Recommended Trainings 
+
+- [Develop your own custom copilots with Azure AI Studio](https://learn.microsoft.com/en-us/training/paths/create-custom-copilots-ai-studio/)
