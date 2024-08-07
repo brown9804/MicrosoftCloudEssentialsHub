@@ -5,7 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2024-08-07
+
+------------------------------------------
 
 Microsoft Excel is a spreadsheet editor developed by Microsoft for Windows, macOS, Android, iOS and iPadOS. It was initially released on November 19, 1987.
 

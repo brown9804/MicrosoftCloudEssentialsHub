@@ -5,12 +5,17 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2024-08-07
+
+------------------------------------------
 
 Microsoft Power Apps is a suite of apps, services, and connectors, as well as a data platform. It provides a rapid development environment to build custom apps for your business needs. <br/>
 
 `Using Power Apps, you can create three types of apps: canvas, model-driven, and portal.`
 
+## Wiki
+- [Learning Microsoft PowerApps (2019)](https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204)
+  
 ## Key Features
 - **Rapid Application Development**: Power Apps allows you to quickly build custom business apps that connect to your data stored either in the underlying data platform (Microsoft Dataverse) or in various online and on-premises data sources.
 - **Business Logic and Workflow Capabilities**: Apps built using Power Apps provide rich business logic and workflow capabilities to transform your manual business operations into digital, automated processes.
@@ -31,5 +36,3 @@ Microsoft Power Apps is a suite of apps, services, and connectors, as well as a 
 formatDateTime(utcNow(), 'MM-dd-yyyy')
 ```
 
-## Wiki
-- [Learning Microsoft PowerApps (2019)](https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204)

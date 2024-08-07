@@ -1,11 +1,11 @@
 # Azure OpenAI
 
-----------
-
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
+
+Last updated: 2024-08-01
 
 ----------
 
@@ -27,7 +27,8 @@ Key Features:
         - [Language Translation - Azure OpenAI:](#language-translation---azure-openai)
         - [Content Moderation - Azure OpenAI:](#content-moderation---azure-openai)
         - [Speech Recognition - Azure OpenAI:](#speech-recognition---azure-openai)
-    - [Optimizing Chatbot Efficiency](./OptimizingChatbotEfficiency.md)
+    - [Demos & Tech Talks](./demos/)
+        - [Optimizing Chatbot Efficiency](./demos/1_OptimizingChatbotEfficiency.md)
 <!-- /TOC -->
 
 ## Example of Use Cases

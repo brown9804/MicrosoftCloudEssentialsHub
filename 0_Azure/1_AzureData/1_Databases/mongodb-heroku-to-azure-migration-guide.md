@@ -7,7 +7,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-06
+Last updated: 2024-08-07
 
 ------------------------------------------
 
@@ -34,7 +34,7 @@ Last updated: 2024-08-06
 
 | Service Option          | Description                                                                 | Key Features                                                                                   | When to Use                                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| **Azure Cosmos DB**     | A globally distributed, multi-model database service with MongoDB API support. | - Compatibility with MongoDB API<br>- Scalability<br>- Global distribution<br>- High performance | - When you need global distribution, high availability, and low latency.                   |
+| **Azure Cosmos DB**     | A globally distributed, multi-model database service with MongoDB API support. | - Compatibility with MongoDB API<br>- Scalability<br>- Global distribution<br>- High performance<br>- **vCore-based Model**: Dedicated resources, transparent pricing, high availability.<br>- **RU-based Model**: Multitenant service, granular control, limitless scalability. | - When you need global distribution, high availability, and low latency.<br>- **vCore-based Model**: Ideal for existing MongoDB workloads, long-running queries, complex aggregation pipelines.<br>- **RU-based Model**: Suitable for new cloud-native MongoDB apps, point reads, and applications requiring industry-leading availability. |
 | **MongoDB Atlas on Azure** | A managed MongoDB service provided by MongoDB Inc.                          | - Automated backups<br>- Scaling<br>- Monitoring<br>- Managed service                           | - When you prefer a fully managed MongoDB service with minimal administrative overhead.     |
 | **Azure Virtual Machines** | Set up a MongoDB instance on an Azure VM for more control.                  | - Full control over the environment<br>- Custom configurations<br>- Flexibility                 | - When you need full control over the database environment and custom configurations.       |
 
@@ -49,8 +49,11 @@ Last updated: 2024-08-06
  
 ### Pricing
 
-- **Azure Cosmos DB**: Pricing is based on provisioned throughput (Request Units per second, RU/s) and storage. Use the Azure pricing calculator for estimates.
-- **MongoDB Atlas Pricing**: Includes compute, storage, and data transfer costs. Atlas offers a free tier with limited resources.
+| Service Option          | Pricing Model                          | Description                                                                                     |
+|-------------------------|----------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Azure Cosmos DB**     | **vCore-based Model**                  | Billed based on vCPUs, RAM, and attached storage.                                               |
+| **Azure Cosmos DB**     | **RU-based Model**                     | Billed based on provisioned throughput (Request Units per second, RU/s) and storage.            |
+| **MongoDB Atlas on Azure** | **Standard Pricing**                   | Includes compute, storage, and data transfer costs. Atlas offers a free tier with limited resources. |
 
 ### Networking
 

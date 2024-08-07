@@ -1,15 +1,13 @@
 # Azure Synapse Analytics
 
-----------
-
 Costa Rica
-
-Belinda Brown, belindabrownr04@gmail.com
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2024-08-06
+
+------------------------------------------
 
 Key Features: 
 - Accelerates time to insight across data warehouses and big data systems.
