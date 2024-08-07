@@ -20,7 +20,7 @@ Last updated: 2024-08-07
 - [Chat your data in Microsoft Fabric with Semantic Kernel](https://blog.fabric.microsoft.com/en-us/blog/chat-your-data-in-microsoft-fabric-with-semantic-kernel?ft=All)
 - [Build a serverless AI Chat with RAG using LangChain.js](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/build-a-serverless-ai-chat-with-rag-using-langchain-js/ba-p/4111041)
 - [Build a chatbot service to ensure safe conversations](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-a-chatbot-service-to-ensure-safe-conversations-using-azure/ba-p/4143628)
-= [Create Your Own Copilot Using Copilot Studio](https://techcommunity.microsoft.com/t5/educator-developer-blog/create-your-own-copilot-using-copilot-studio/ba-p/4174957)
+- [Create Your Own Copilot Using Copilot Studio](https://techcommunity.microsoft.com/t5/educator-developer-blog/create-your-own-copilot-using-copilot-studio/ba-p/4174957)
 - [Build your own Copilot with Azure AI Studio - live](https://www.youtube.com/watch?v=obfs_LEzPHo)
 - [Tutorial: Build and deploy a question and answer copilot with prompt flow in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-copilot-ai-studio)
 
