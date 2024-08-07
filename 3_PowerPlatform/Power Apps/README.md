@@ -13,6 +13,9 @@ Microsoft Power Apps is a suite of apps, services, and connectors, as well as a 
 
 `Using Power Apps, you can create three types of apps: canvas, model-driven, and portal.`
 
+## Wiki
+- [Learning Microsoft PowerApps (2019)](https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204)
+  
 ## Key Features
 - **Rapid Application Development**: Power Apps allows you to quickly build custom business apps that connect to your data stored either in the underlying data platform (Microsoft Dataverse) or in various online and on-premises data sources.
 - **Business Logic and Workflow Capabilities**: Apps built using Power Apps provide rich business logic and workflow capabilities to transform your manual business operations into digital, automated processes.
@@ -33,5 +36,3 @@ Microsoft Power Apps is a suite of apps, services, and connectors, as well as a 
 formatDateTime(utcNow(), 'MM-dd-yyyy')
 ```
 
-## Wiki
-- [Learning Microsoft PowerApps (2019)](https://www.linkedin.com/learning/learning-microsoft-powerapps-2019/create-powerful-business-apps?u=2095204)
