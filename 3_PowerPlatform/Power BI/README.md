@@ -5,9 +5,18 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-----------
+Last updated: 2024-08-07
+
+------------------------------------------
 
 Microsoft Power BI is a collection of software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. Your data might be an Excel spreadsheet, or a collection of cloud-based and on-premises hybrid data warehouses.
+
+## Wiki
+
+- [Power BI Top Skills](https://www.linkedin.com/learning/power-bi-top-skills/top-skills-for-power-bi?u=2095204)
+- [Power BI Essential Training](https://www.linkedin.com/learning/power-bi-essential-training-3/create-rich-interactive-reports-with-power-bi?u=2095204)
+- [Power BI Data Modeling with DAX](https://www.linkedin.com/learning/power-bi-data-modeling-with-dax/build-powerful-data-models-with-dax?u=2095204)
+- [Using Power BI with Excel](https://www.linkedin.com/learning/using-power-bi-with-excel/transforming-and-refining-your-data?u=2095204)
 
 ## Key Features
 - **Data Visualization**: Power BI is a data visualization platform used primarily for business intelligence purposes.
@@ -27,10 +36,3 @@ Beyond those three, Power BI also features two other elements:
 
 ## Power BI for Different Users
 Power BI is used differently by different roles in a project or team. You may view reports and dashboards in the Power BI service. Others may create reports in Power BI Desktop and publish them to the service. Some may use the Power BI Mobile app to track sales data. Developers may use Power BI APIs to integrate data and visuals into their apps.
-
-## Wiki
-
-- [Power BI Top Skills](https://www.linkedin.com/learning/power-bi-top-skills/top-skills-for-power-bi?u=2095204)
-- [Power BI Essential Training](https://www.linkedin.com/learning/power-bi-essential-training-3/create-rich-interactive-reports-with-power-bi?u=2095204)
-- [Power BI Data Modeling with DAX](https://www.linkedin.com/learning/power-bi-data-modeling-with-dax/build-powerful-data-models-with-dax?u=2095204)
-- [Using Power BI with Excel](https://www.linkedin.com/learning/using-power-bi-with-excel/transforming-and-refining-your-data?u=2095204)
