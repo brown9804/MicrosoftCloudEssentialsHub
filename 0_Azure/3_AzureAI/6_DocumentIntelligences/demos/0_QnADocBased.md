@@ -14,6 +14,37 @@ Last updated: 2024-08-06
 > [!NOTE]
 > Azure Form Recognizer helps to extract more data from documents but might increase the price. It is optional and can be used based on specific needs.
 
+
+```mermaid
+graph TD
+    A[User Query] -->|1. User asks a question via the bot| B[Azure Bot Service]
+    B -->|2. Bot sends query to| C[Azure Function]
+    C -->|3. Azure Function uses| D[Azure Form Recognizer - Optional]
+    D -->|Extracts relevant data from documents| C
+    C -->|4. Azure Function queries| E[Azure AI Search]
+    E -->|Indexes processed documents| F[Azure Blob Storage]
+    C -->|5. Azure Function uses| G[Azure OpenAI Service]
+    G -->|Generates response based on search results and extracted data| C
+    C -->|6. Bot sends response back to user| B
+
+    subgraph "Solution Architecture"
+        F
+        E
+        D
+        G
+        C
+        B
+    end
+
+    subgraph "Security and Monitoring"
+        H[Azure Entra ID]
+        I[Azure Monitor]
+    end
+
+    H -->|Authentication and Authorization| B
+    I -->|Track performance and health| C
+```
+
 ### Solution Architecture 
 
 1. Document Storage **Azure Blob Storage**: Store your documents in Azure Blob Storage. This service is scalable and cost-effective for storing large amounts of unstructured data. Ensure that all data stored in Azure Blob Storage is encrypted at rest and in transit.
