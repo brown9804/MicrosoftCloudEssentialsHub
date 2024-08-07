@@ -1,5 +1,13 @@
 # Fabric AI Skill (Preview) - Demo
 
+Costa Rica
+
+[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
+[brown9804](https://github.com/brown9804)
+
+Last updated: 2024-08-01
+
+----------
 ## Wiki 
 
 - [How to create an AI skill (preview)](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-ai-skill)
