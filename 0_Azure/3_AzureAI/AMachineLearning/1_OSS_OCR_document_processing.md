@@ -131,12 +131,6 @@ graph TD
 
     <img width="800" alt="image" src="https://github.com/user-attachments/assets/bb05da3a-5ea3-4d22-8ada-c80bf823c9c8">
     
-
-    
-        
-### Step 6: Run Your Script
-- **Run your Python script** in the terminal to perform OCR on your images.
-
 ## Recommended Trainings 
 
 - **[OCR - Optical Character Recognition](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr)**:
