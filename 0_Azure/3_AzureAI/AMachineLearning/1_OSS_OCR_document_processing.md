@@ -54,7 +54,7 @@ graph TD
 4. **Data Processing**: Use natural language processing (NLP) models to analyze and process the extracted text.
 5. **Search and Query**: Implement search functionality using Azure AI Search or other search frameworks to perform searches like a leucine search.
 
-## Step-by-step guide to setting up Tesseract in Azure AI Studio:
+## Step-by-step guide to setting up Tesseract in Azure ML Studio:
 
 ### Step 1: Create an Azure Machine Learning Workspace
 
