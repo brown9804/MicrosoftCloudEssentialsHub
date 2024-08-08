@@ -11,7 +11,6 @@ Last updated: 2024-08-08
 
 > **Optical Character Recognition `(OCR)`** is a technology that converts different types of documents, such as scanned paper documents, PDFs, or images captured by a digital camera, into editable and searchable data. OCR is widely used to digitize printed texts so that they can be electronically edited, searched, and stored more compactly.
 
-
 ## Wiki 
 
 - [How to use Open Source foundation models curated by Azure Machine](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-use-foundation-models?view=azureml-api-2)
@@ -55,6 +54,89 @@ graph TD
 4. **Data Processing**: Use natural language processing (NLP) models to analyze and process the extracted text.
 5. **Search and Query**: Implement search functionality using Azure AI Search or other search frameworks to perform searches like a leucine search.
 
+## Step-by-step guide to setting up Tesseract in Azure AI Studio:
+
+### Step 1: Create an Azure Machine Learning Workspace
+
+- **Sign in to the Azure portal**.
+- **Create a new resource** and search for `Machine Learning`.
+- **Create a new Machine Learning workspace** by filling in the required details like subscription, resource group, workspace name, and region.
+
+### Step 2: Set Up a Compute Instance
+
+- In your Machine Learning workspace, go to the **Compute** section.
+- **Create a new compute instance** by selecting the appropriate virtual machine type and size (CPU or GPU).
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/53a73066-c98d-41f9-a6cc-3556645ae175">
+
+### Step 3: Install Tesseract
+
+- **Open a terminal** in your compute instance.
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/c13badca-4053-4374-8395-1aeb83fb352f">
+
+- **Install Tesseract** using the following commands:
+    
+    ```bash
+    sudo apt-get update
+    sudo apt-get install tesseract-ocr
+    sudo apt-get install libtesseract-dev
+    ```
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/fe8e6692-999a-406a-b12a-1fb463a4e34b">
+       
+### Step 4: Set Up Your Python Environment
+
+-  **Create a new Python environment** or use an existing one.
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/acc20c00-6562-47d7-ae6c-5eb1742b2898">
+
+- **Install the required Python packages**:
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/d10b60b4-f1d5-4d74-b4c3-95f6a1b02b45">
+
+    ```bash
+    pip install pytesseract
+    pip install opencv-python
+    ```
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/89d8ed3c-a32a-4c9e-888d-a4fa0519d363">
+
+### Step 5: Write Your OCR Script
+- **Create a new Python script** and import the necessary libraries:
+
+    ```bash
+        !pip install opencv-python
+    ```
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/5ddc1495-9765-4fd6-80be-666f2109af2a">
+
+
+    ```python
+        import cv2
+        import pytesseract
+    
+        # Path to the Tesseract executable
+        pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+    
+        # Load an image
+        image = cv2.imread('path_to_your_image')
+    
+        # Perform OCR
+        text = pytesseract.image_to_string(image)
+    
+        print(text)
+    ```
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/f8a76949-66c3-4474-8dab-2a3e9ff7da57">
+
+
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/bb05da3a-5ea3-4d22-8ada-c80bf823c9c8">
+    
+
+    
+        
+### Step 6: Run Your Script
+- **Run your Python script** in the terminal to perform OCR on your images.
+
 ## Recommended Trainings 
 
 - **[OCR - Optical Character Recognition](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-ocr)**:
@@ -66,5 +148,4 @@ graph TD
 - **[Implement open-source software - Training](https://learn.microsoft.com/en-us/training/modules/implement-open-source-software-azure/)**:
    - Explore how to implement open-source software in Azure.
    - Understand common open-source licenses and their implications.
-
 
