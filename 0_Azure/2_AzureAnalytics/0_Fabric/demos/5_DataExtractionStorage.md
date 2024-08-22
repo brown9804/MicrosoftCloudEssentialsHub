@@ -20,10 +20,11 @@ Last updated: 2024-08-22
 ## Data Extraction & Storage Capabilities
 
 ```mermaid
-graph TB
+graph LR
     A[Microsoft Fabric Capabilities]
     
     subgraph Extraction
+        direction TB
         B1[Relational Databases]
         B2[Non-Relational Databases]
         B3[Data Lakes]
@@ -35,6 +36,7 @@ graph TB
     end
     
     subgraph Storage
+        direction TB
         C1[Data Lakes]
         C2[Data Warehouses]
         C3[Databases]
