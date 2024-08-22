@@ -22,6 +22,8 @@ Last updated: 2024-08-22
 
 ## How to set up
 
+### General Procedure 
+
 1. **Access Data Factory within Fabric**:
     - Log in to the Microsoft Fabric portal.
     - Navigate to the Data Factory service within Fabric.
@@ -51,6 +53,36 @@ Last updated: 2024-08-22
    - Once validated, click on **Publish All** to publish your pipeline.
    - This will deploy the pipeline and make it available for execution.
 
+
+### If the target resource is in a private network
+
+> Find below an example of how to it within a SQL Server in a private network <br/>
+> Steps 1 will be the same.
+
+2. **Set Up a Self-hosted Integration Runtime**:
+    - Since your SQL Server is in a private network, you'll need to set up a self-hosted integration runtime. This acts as a secure gateway that allows Azure Data Factory to connect to your on-premises SQL Server. You can install the integration runtime on a machine within your network that has access to the SQL Server.
+
+3. **Create Linked Services**:
+    - In Azure Data Factory, create linked services for both your source (SQL Server) and destination (e.g., Azure Blob Storage, Azure SQL Database). The linked service for SQL Server will use the self-hosted integration runtime to connect securely.
+
+4. **Define Datasets**:
+    - Create datasets for the source and destination data. These datasets define the structure and location of the data you want to move.
+
+5. **Create Pipelines**:
+    - Build pipelines in Azure Data Factory to orchestrate the data movement and transformation. A pipeline can include activities such as copying data from SQL Server to the destination, transforming the data, and publishing the results.
+
+6. **Schedule the Refresh**:
+    - In your workspace, select the **Schedule Refresh** icon.
+    - Turn on the scheduled refresh and configure the refresh times.
+
+7. **Validate and Debug**:
+    - Validate your pipeline to ensure there are no errors.
+    - Use the **Debug** option to test the pipeline.
+
+8. **Publish the Pipeline**:
+    - Once validated, click on **Publish All** to publish your pipeline.
+    - This will deploy the pipeline and make it available for execution.
+
 ## Update the Gateway
 
 1. **Check Gateway Version**:
@@ -63,6 +95,5 @@ Last updated: 2024-08-22
 3. **Configure the Gateway**:
    - Ensure the gateway is properly configured to connect to your data sources.
    - Verify the gateway settings in the Azure Data Factory portal.
-
 
 > **Monitor and Manage**: Regularly monitor the pipeline runs and gateway status to ensure everything is functioning smoothly.
