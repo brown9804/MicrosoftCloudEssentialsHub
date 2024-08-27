@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-08
+Last updated: 2024-08-22
 
 ----------
 
@@ -13,7 +13,7 @@ Last updated: 2024-08-08
 
 <!-- TOC -->
 - [Wiki](#wiki)
-- Overview](#overview)
+- [Overview](#overview)
 
 <!-- /TOC -->
 
