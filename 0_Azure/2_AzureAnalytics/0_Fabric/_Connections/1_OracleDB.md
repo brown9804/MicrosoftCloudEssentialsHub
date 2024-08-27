@@ -1,4 +1,4 @@
-# Connecting Microsoft Fabric to Oracle EHR Database
+# Connecting Microsoft Fabric to Oracle Database
 
 Costa Rica
 
