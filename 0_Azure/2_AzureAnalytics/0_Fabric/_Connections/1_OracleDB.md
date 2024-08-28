@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-27
+Last updated: 2024-08-28
 
 ----------
 
@@ -41,9 +41,31 @@ graph LR
 3. **Configure Oracle Client**: During installation, specify the directory where ODP.NET can find its Oracle Client configuration files.
 
 ### Configure Connection in Data Pipeline
+
 1. **Open Data Factory**: Go to the Data Factory pipeline in Microsoft Fabric.
-2. **Connect Data Source**: Browse to the "Connect data source" section.
-3. **Specify Connection Details**:
+
+   <img width="200" alt="image" src="https://github.com/user-attachments/assets/c722730e-b104-4577-ad44-d6e595026e0b"> 
+
+2. **Create a New Data Pipeline**:
+    - Click on the “Create pipeline” button.
+      
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/8f5048f1-4ffc-43af-8150-caa768afd620"> <br/>
+
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/69d3c597-77f3-461b-97e6-7a4078fb4642">
+
+    - Add activities to your pipeline, such as **Copy data assistant**, to define the data transformation and movement.
+      
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/0f77c890-aa0b-4589-8c6f-e234cb8a80d3">
+
+3. Select the `Oracle DB` connector:
+
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/bf075e48-8b82-4b7f-9485-4a4c680103b0">
+
+4. Select the `Oracle DB` tab to create or select an existing connection
+
+   <img width="461" alt="image" src="https://github.com/user-attachments/assets/e4a9e4d8-20ff-4c53-b543-a931569376ec">
+
+5. **Specify Connection Details**:
    - **Server**: Enter the Oracle database location using one of the following:
      - **TNS Alias**: Predefined address name in the `tnsnames.ora` file.
      - **Connect Descriptor**: Example: `(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=sales-server)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=sales.us.acme.com)))`
