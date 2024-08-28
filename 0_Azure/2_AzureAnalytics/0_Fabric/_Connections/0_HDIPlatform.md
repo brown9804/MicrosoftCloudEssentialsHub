@@ -75,9 +75,9 @@ graph LR
 
    <img width="461" alt="image" src="https://github.com/user-attachments/assets/6fc14f0b-3031-488c-9217-8ebee7184f55">
 
-### Set Authentication
-1. **Authentication Kind**: Choose the appropriate authentication type.
-2. **Credentials**: Enter your HDI platform credentials.
+7. Set Authentication
+    - **Authentication Kind**: Choose the appropriate authentication type.
+    - **Credentials**: Enter your HDI platform credentials.
 
 ## Possible Connection Issues and Solutions
 
