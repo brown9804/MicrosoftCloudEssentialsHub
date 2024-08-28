@@ -50,7 +50,7 @@ graph LR
       
       <img width="400" alt="image" src="https://github.com/user-attachments/assets/5b24ad77-2a8e-4aa7-a783-d42f3957da6f">
 
-3. Select the `HDInsight` conneector:
+3. Select the `HDInsight` connector:
 
     <img width="400" alt="image" src="https://github.com/user-attachments/assets/23006761-4968-473a-9c23-5351024d3f1f">
 
