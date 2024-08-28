@@ -72,10 +72,9 @@ graph LR
      - **Easy Connect**: Example: `salesserver1:1521/sales.us.example.com`
    - **Connection Name**: Provide a name for your connection.
    - **Data Gateway**: Select your on-premises data gateway.
-
-### Set Authentication
-1. **Authentication Kind**: Choose the authentication type (e.g., Basic).
-2. **Credentials**: Enter your Oracle database username and password.
+6.  Set Authentication
+    - **Authentication Kind**: Choose the authentication type (e.g., Basic).
+    -  **Credentials**: Enter your Oracle database username and password.
 
 ## Possible Connection Issues and Solutions
 
