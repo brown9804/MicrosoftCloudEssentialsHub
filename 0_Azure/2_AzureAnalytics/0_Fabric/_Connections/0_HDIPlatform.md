@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-27
+Last updated: 2024-08-28
 
 ----------
 
@@ -36,11 +36,44 @@ graph LR
 
 ### Configure Connection in Data Pipeline
 1. **Open Data Factory**: Go to the Data Factory pipeline in Microsoft Fabric.
-2. **Connect Data Source**: Browse to the "Connect data source" section.
-3. **Specify Connection Details**:
+
+   <img width="200" alt="image" src="https://github.com/user-attachments/assets/c722730e-b104-4577-ad44-d6e595026e0b">
+
+2. **Create a New Data Pipeline**:
+    - Click on the “Create pipeline” button.
+      
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/8f5048f1-4ffc-43af-8150-caa768afd620"> <br/>
+
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/69d3c597-77f3-461b-97e6-7a4078fb4642">
+
+    - Add activities to your pipeline, such as **Pipeline activity**, to define the data transformation and movement.
+      
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/5b24ad77-2a8e-4aa7-a783-d42f3957da6f">
+
+3. Select the `HDInsight` conneector:
+
+    <img width="400" alt="image" src="https://github.com/user-attachments/assets/23006761-4968-473a-9c23-5351024d3f1f">
+
+4. Select the `HDI Cluster` tab to create or select an existing connection
+
+   <img width="461" alt="image" src="https://github.com/user-attachments/assets/d82138d4-e953-42bd-b56c-33909eb57185">
+
+5. **Specify Connection Details**:
+    - Create new connection or select the existing one:
+      
+        <img width="461" alt="image" src="https://github.com/user-attachments/assets/2c4963bd-e974-4d7b-a3ae-935af8c23c50"> <br/>
+
+        <img width="461" alt="image" src="https://github.com/user-attachments/assets/c19998e9-087c-45bf-aba9-5c12f54d5372">
+
    - **Server**: Enter the HDI platform server details.
    - **Connection Name**: Provide a name for your connection.
    - **Data Gateway**: Select your on-premises data gateway.
+
+        <img width="461" alt="image" src="https://github.com/user-attachments/assets/1477d5be-1782-477c-89d5-06ecfc0723a2">
+
+6. Make sure to fill out the `Settings` tab:
+
+   <img width="461" alt="image" src="https://github.com/user-attachments/assets/6fc14f0b-3031-488c-9217-8ebee7184f55">
 
 ### Set Authentication
 1. **Authentication Kind**: Choose the appropriate authentication type.
