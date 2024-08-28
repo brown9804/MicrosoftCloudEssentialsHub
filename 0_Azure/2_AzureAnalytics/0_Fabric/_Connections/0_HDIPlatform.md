@@ -37,15 +37,15 @@ graph LR
 ### Configure Connection in Data Pipeline
 1. **Open Data Factory**: Go to the Data Factory pipeline in Microsoft Fabric.
 
-   <img width="200" alt="image" src="https://github.com/user-attachments/assets/c722730e-b104-4577-ad44-d6e595026e0b"> <br/>
-
-   <img width="400" alt="image" src="https://github.com/user-attachments/assets/69d3c597-77f3-461b-97e6-7a4078fb4642">
+   <img width="200" alt="image" src="https://github.com/user-attachments/assets/c722730e-b104-4577-ad44-d6e595026e0b">
 
 2. **Create a New Data Pipeline**:
     - Click on the “Create pipeline” button.
       
-      <img width="400" alt="image" src="https://github.com/user-attachments/assets/8f5048f1-4ffc-43af-8150-caa768afd620">
-    
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/8f5048f1-4ffc-43af-8150-caa768afd620"> <br/>
+
+      <img width="400" alt="image" src="https://github.com/user-attachments/assets/69d3c597-77f3-461b-97e6-7a4078fb4642">
+
     - Add activities to your pipeline, such as **Pipeline activity**, to define the data transformation and movement.
       
       <img width="400" alt="image" src="https://github.com/user-attachments/assets/5b24ad77-2a8e-4aa7-a783-d42f3957da6f">
