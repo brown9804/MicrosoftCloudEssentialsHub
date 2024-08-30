@@ -4,7 +4,7 @@ Costa Rica
 
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
 
-Last updated: 2024-08-01
+Last updated: 2024-08-30
 
  ----------------------------
 
@@ -200,6 +200,6 @@ store_context(user_id, new_context)
 - [Simple Chat Application using Azure OpenAI](https://learn.microsoft.com/en-us/samples/azure-samples/openai-chat-app-quickstart/openai-chat-app-quickstart/): This repository includes a Python app that uses Azure OpenAI to generate responses to user messages. It covers all the infrastructure and configuration needed to provision Azure OpenAI resources and deploy the app to Azure Container Apps.
 - [Build language model pipelines with memory](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/openai/guide/language-model-pipelines)
 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/ccf7893d-53e6-4bbd-980a-192c5f8340fe">
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/ccf7893d-53e6-4bbd-980a-192c5f8340fe">
 
 - [Strategies for Optimizing High-Volume Token Usage with Azure OpenAI](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/strategies-for-optimizing-high-volume-token-usage-with-azure/ba-p/4007751)
