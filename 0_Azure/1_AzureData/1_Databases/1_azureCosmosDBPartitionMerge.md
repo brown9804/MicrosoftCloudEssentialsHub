@@ -19,7 +19,7 @@ Last updated: 2024-08-30
 - [Migrate data using the desktop data migration tool](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-migrate-desktop-tool)
 - [Relocate an Azure Cosmos DB NoSQL account to another region](https://learn.microsoft.com/en-us/azure/operational-excellence/relocation-cosmos-db)
 - [An Introduction to the new Data Migration Tool for Azure Cosmos DB](https://learn.microsoft.com/en-us/shows/azure-cosmos-db-conf-2023/an-introduction-to-the-new-data-migration-tool-for-azure-cosmos-db)
-- [Azure Cosmos DB Spark connector GitHub repository](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3_2-12/Samples/DatabricksLiveContainerMigration)
+- [Live Migrate Azure Cosmos DB SQL API Containers data with Spark Connector and Azure Databricks](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3_2-12/Samples/DatabricksLiveContainerMigration)
 
 
 ## Requirements 
