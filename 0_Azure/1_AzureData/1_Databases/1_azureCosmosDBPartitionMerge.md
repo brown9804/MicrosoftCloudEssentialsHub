@@ -19,7 +19,9 @@ Last updated: 2024-08-30
 - [Migrate data using the desktop data migration tool](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-migrate-desktop-tool)
 - [Relocate an Azure Cosmos DB NoSQL account to another region](https://learn.microsoft.com/en-us/azure/operational-excellence/relocation-cosmos-db)
 - [An Introduction to the new Data Migration Tool for Azure Cosmos DB](https://learn.microsoft.com/en-us/shows/azure-cosmos-db-conf-2023/an-introduction-to-the-new-data-migration-tool-for-azure-cosmos-db)
-  
+- [Azure Cosmos DB Spark connector GitHub repository](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3_2-12/Samples/DatabricksLiveContainerMigration)
+
+
 ## Requirements 
 
 To be eligible for the partition merge preview in Azure Cosmos DB, your account must meet the following criteria:
@@ -94,10 +96,11 @@ Workaround - Create a New Account with Periodic Backups:
    - Use Azure Data Migration tools, Azure Data Factory or scripts to transfer your data from the existing account to the new one.
    - Ensure that all data and configurations are correctly migrated.
   
-    | **Method**                | **Steps**                                                                                     |
-    |---------------------------|-----------------------------------------------------------------------------------------------|
-    | **Data Migration Tool**   | 1. **Install the Tool**: Download and install from GitHub.<br/>2. **Prepare Databases**: Set up source and target databases.<br/>3. **Configure Tool**: Set up source and target connections.<br/>4. **Perform Migration**: Select data and start migration.<br/>5. **Verify Data**: Check data integrity.<br/>6. **Update Applications**: Update connection strings and test applications. |
-    | **Azure Data Factory**    | 1. **Create Data Factory**: Set up a new Data Factory instance in the Azure portal.<br/>2. **Set Up Linked Services**: Create linked services for source and target Cosmos DB accounts.<br/>3. **Create Pipeline**: Add a "Copy Data" activity.<br/>4. **Configure Source**: Set up source settings.<br/>5. **Configure Sink**: Set up target settings.<br/>6. **Run Pipeline**: Validate and trigger the pipeline.<br/>7. **Monitor Migration**: Track progress using monitoring tools. |
+| **Method**                | **Steps**                                                                                     | **Suitable For**                                                                 |
+|---------------------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| **Data Migration Tool**   | 1. **Install the Tool**: Download and install from GitHub.<br/>2. **Prepare Databases**: Set up source and target databases.<br/>3. **Configure Tool**: Set up source and target connections.<br/>4. **Perform Migration**: Select data and start migration.<br/>5. **Verify Data**: Check data integrity.<br/>6. **Update Applications**: Update connection strings and test applications. | Small to medium-sized migrations, one-time migrations, and scenarios where a simple tool is sufficient. |
+| **Azure Data Factory**    | 1. **Create Data Factory**: Set up a new Data Factory instance in the Azure portal.<br/>2. **Set Up Linked Services**: Create linked services for source and target Cosmos DB accounts.<br/>3. **Create Pipeline**: Add a "Copy Data" activity.<br/>4. **Configure Source**: Set up source settings.<br/>5. **Configure Sink**: Set up target settings.<br/>6. **Run Pipeline**: Validate and trigger the pipeline.<br/>7. **Monitor Migration**: Track progress using monitoring tools. | Large-scale migrations, complex data transformations, and scenarios requiring automation and scheduling. |
+| **Cosmos DB Spark Connector** | 1. **Set Up Environment**: Ensure Databricks workspace and Cosmos DB accounts are ready.<br/>2. **Install Connector**: Add the Azure Cosmos DB Spark connector library to your Databricks cluster.<br/>3. **Configure Spark Session**: Set up Spark session with Cosmos DB configurations.<br/>4. **Read Data**: Use Spark DataFrame API to read data from the source Cosmos DB.<br/>5. **Write Data**: Configure target Cosmos DB and write data.<br/>6. **Monitor Migration**: Use Databricks monitoring tools to track progress. | Real-time or live migrations, large-scale data processing, and scenarios requiring integration with Databricks for advanced analytics. |
 
 3. **Update Applications**:
    - Update your applications to point to the new Cosmos DB account.
@@ -161,3 +164,50 @@ Workaround - Create a New Account with Periodic Backups:
    - Trigger the pipeline to start the data migration process.
 7. **Monitor the Migration**: Use the monitoring tools in Azure Data Factory to track the progress of your data migration.
 
+### Using the Azure Cosmos DB Spark connector for live migrations
+
+> This method is particularly useful for large-scale data migrations and can be integrated with Databricks for a seamless process.
+
+1. **Set Up Your Environment**:
+   - **Databricks Workspace**: Ensure you have a Databricks workspace set up.
+   - **Azure Cosmos DB Accounts**: Have both the source and target Azure Cosmos DB accounts ready.
+2. **Install the Azure Cosmos DB Spark Connector**: Add the Azure Cosmos DB Spark connector library to your Databricks cluster. You can do this by navigating to the Libraries tab in your cluster configuration and installing the library from Maven coordinates:
+     ```
+     com.azure.cosmos.spark:azure-cosmos-spark_3_2-12:<version>
+     ```
+3. **Configure the Spark Session**: Configure your Spark session to use the Azure Cosmos DB Spark connector. Here’s an example configuration:
+     ```scala
+     import com.azure.cosmos.spark._
+     import org.apache.spark.sql.SparkSession
+
+     val spark = SparkSession.builder()
+       .appName("CosmosDBLiveMigration")
+       .config("spark.cosmos.accountEndpoint", "<source-account-endpoint>")
+       .config("spark.cosmos.accountKey", "<source-account-key>")
+       .config("spark.cosmos.database", "<source-database>")
+       .config("spark.cosmos.container", "<source-container>")
+       .getOrCreate()
+     ```
+     
+4. **Read Data from the Source Cosmos DB**: Use the Spark DataFrame API to read data from the source Cosmos DB container:
+     ```scala
+     val sourceDF = spark.read.cosmos()
+       .option("spark.cosmos.accountEndpoint", "<source-account-endpoint>")
+       .option("spark.cosmos.accountKey", "<source-account-key>")
+       .option("spark.cosmos.database", "<source-database>")
+       .option("spark.cosmos.container", "<source-container>")
+       .load()
+     ```
+
+5. **Write Data to the Target Cosmos DB**: Configure the target Cosmos DB account and write the data:
+     ```scala
+     sourceDF.write.cosmos()
+       .option("spark.cosmos.accountEndpoint", "<target-account-endpoint>")
+       .option("spark.cosmos.accountKey", "<target-account-key>")
+       .option("spark.cosmos.database", "<target-database>")
+       .option("spark.cosmos.container", "<target-container>")
+       .mode("append")
+       .save()
+     ```
+     
+6. **Monitor the Migration**: Use Databricks monitoring tools to track the progress and performance of your migration job.
