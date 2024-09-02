@@ -93,9 +93,55 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 | **Key Differences** | - No data movement. <br> - Live access to external data sources. <br> - Ideal for accessing data across multiple locations without duplication. | - Data is physically replicated. <br> - Access to a centralized, up-to-date copy of data. <br> - Suitable for centralized analysis and ensuring data consistency. |
 | **Compatible Products** | - Azure Data Lake Storage (ADLS) Gen2 <br> - Amazon S3 <br> - Google Cloud Storage <br> - Dataverse <br> - On-premises data sources via Fabric on-premises data gateway | - Azure SQL Database <br> - Azure Cosmos DB <br> - Snowflake |
 
+## Parquet & Delta Data Formats
+
+```mermaid
+graph TD
+    subgraph Parquet Format
+        A[Parquet Format] -->|Storage| B[Columnar Storage]
+        A -->|Schema Enforcement| I[❌]
+        A -->|Compression| D[Efficient Compression]
+        A -->|Read/Write| E[Fast Read/Write]
+        A -->|Immutability| F[✔️]
+        A -->|ACID Transactions| G[❌]
+        A -->|Data Versioning| H[❌]
+        A -->|Efficient Updates| J[❌]
+        A -->|Query Optimization| K[✔️]
+    end
+```
+
+```mermaid
+graph TD
+    subgraph Delta Format
+        L[Delta Format] -->|Storage| B[Columnar Storage]
+        L -->|Schema Enforcement| C[✔️]
+        L -->|Compression| D[Efficient Compression]
+        L -->|Read/Write| E[Fast Read/Write]
+        L -->|Immutability| Q[❌]
+        L -->|ACID| N[ACID Transactions]
+        L -->|Data Versioning| O[Time Travel]
+        L -->|Data Management| P[Data Lineage]
+        L -->|Efficient Updates| U[✔️]
+        L -->|Query Optimization| V[✔️]
+    end
+```
 
 
 
+| Feature                | Parquet                                      | Delta                                      | Available in Parquet? | Available in Delta? |
+|------------------------|----------------------------------------------|--------------------------------------------|-----------------------|---------------------|
+| **Storage Type**       | Columnar storage format, ideal for analytical queries. | Columnar storage format built on Parquet, optimized for data lakes. | ✔️                    | ✔️                  |
+| **Schema Information** | Schema included in metadata, simplifying data processing. | Schema included in metadata, ensuring consistency. | ✔️                    | ✔️                  |
+| **Compression**        | Supports various compression algorithms (e.g., Snappy, Gzip) for efficient storage. | High compression, leveraging Parquet's capabilities. | ✔️                    | ✔️                  |
+| **Row Groups**         | Data organized into row groups with min/max statistics for efficient querying. | Similar row group structure with min/max statistics, enhancing performance. | ✔️                    | ✔️                  |
+| **Immutability**       | Immutable files, ensuring data integrity but limiting updates. | Supports updates and deletes, providing flexibility for data modifications. | ✔️                    |  ❌                    |
+| **ACID Transactions**  | Not supported, making it less suitable for complex data operations. | Supports ACID transactions, ensuring reliable and consistent data operations. | ❌                    | ✔️                  |
+| **Data Versioning**    | Not available, limiting the ability to track changes over time. | Provides data versioning, allowing for auditing and rollback scenarios. | ❌                    | ✔️                  |
+| **Schema Enforcement** | No built-in schema enforcement, requiring external validation. | Enforces schema consistency, maintaining data quality. | ❌                    | ✔️                  |
+| **Efficient Updates**  | Does not support efficient updates, making it less suitable for frequently changing data. | Allows for efficient updates and deletes, ideal for dynamic datasets. | ❌                    | ✔️                  |
+| **Query Optimization** | Basic query optimization, relying on columnar storage benefits. | Advanced query optimization with features like data skipping and Z-order indexing. | ✔️                    | ✔️                  |
+| **Use Case**           | Ideal for data warehousing, batch processing, and scenarios where data is primarily read and not frequently updated. | Best suited for data lakes, real-time analytics, and environments requiring strict data integrity and frequent updates. | ✔️                    | ✔️                  |
+| **Additional Context** | Parquet is excellent for read-heavy workloads and large-scale data analytics. It's widely supported and highly efficient for scenarios where data doesn't change frequently. | Delta builds on Parquet by adding features like ACID transactions, data versioning, and efficient updates/deletes. It's designed for environments where data integrity, frequent updates, and complex data operations are crucial. | ✔️                    | ✔️                  |
 
 ## Recommended Trainings 
 
