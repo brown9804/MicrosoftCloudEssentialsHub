@@ -71,15 +71,22 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/f75bfae7-91af-4f4d-9ca7-8e9c625c4b93">
 
-> OneLake allows storage of delta parquet files, which can be read and worked with throughout all workloads. It's a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data.
-
-<p float="left">
-  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a" width="450" height="300" />
-  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c" width="350" height="300" />
-</p>
-
+## Dataflow Gen2 & Data Pipelines
 
 <img width="709" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/4d9d5e6d-ff9c-4f21-954e-61f644c750bd">
+
+| **Feature** | **Dataflow Gen2** | **Data Pipelines** |
+|-------------|-------------------|--------------------|
+| **Purpose** | Data transformation and preparation using a low-code interface. | Orchestration of data workflows and control flow of execution. |
+| **Use Case** | Ideal for cleaning, prepping, and transforming data with over 300 data and AI-based transformations. | Best for creating complex data workflows that involve multiple steps and dependencies. |
+| **Authoring Experience** | Shorter and simpler with auto-save and background publishing. | More detailed and flexible, allowing for complex orchestration. |
+| **Data Destinations** | Supports multiple destinations like Fabric Lakehouse, Azure Data Explorer, Azure Synapse Analytics, and Azure SQL Database. | Can call Dataflows and other activities to move data to various destinations. |
+| **Integration** | Can be integrated within Data Pipelines for more complex workflows. | Can include Dataflows as part of the pipeline activities. |
+| **Flexibility** | Provides a low-code interface for easy data transformation. | Offers rich out-of-the-box orchestration capabilities for enterprise needs. |
+| **Monitoring and Refresh History** | Improved monitoring and refresh history features. | Provides detailed monitoring and logging for all pipeline activities. |
+| **Scalability** | High-scale compute capabilities for large data transformations. | Scalable orchestration for large and complex workflows. |
+| **When to Use** | When you need to perform data transformations and preparations with a low-code interface. When you require a quick and easy way to clean and prep data. When you want to leverage AI-based transformations. | When you need to orchestrate complex data workflows with multiple steps and dependencies. When you require detailed control over the execution flow of your data processes. When you need to integrate various data activities, including Dataflows, into a single workflow. |
+| **Important Information** | Designed to make data transformation easier and more efficient with features like auto-save, background publishing, and support for multiple data destinations. | Provides a robust framework for orchestrating data workflows, allowing you to create logical groupings of activities and manage dependencies effectively. |
 
 ## Shortcuts & Mirroring
 
@@ -94,6 +101,13 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 | **Compatible Products** | - Azure Data Lake Storage (ADLS) Gen2 <br> - Amazon S3 <br> - Google Cloud Storage <br> - Dataverse <br> - On-premises data sources via Fabric on-premises data gateway | - Azure SQL Database <br> - Azure Cosmos DB <br> - Snowflake |
 
 ## Parquet & Delta Data Formats
+
+> OneLake allows storage of delta parquet files, which can be read and worked with throughout all workloads. It's a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data.
+
+<p float="left">
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/8566f641-277b-4746-826a-efc0bcd73d5a" width="450" height="300" />
+  <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c" width="350" height="300" />
+</p>
 
 ```mermaid
 graph TD
@@ -125,8 +139,6 @@ graph TD
         L -->|Query Optimization| V[✔️]
     end
 ```
-
-
 
 | Feature                | Parquet                                      | Delta                                      | Available in Parquet? | Available in Delta? |
 |------------------------|----------------------------------------------|--------------------------------------------|-----------------------|---------------------|
