@@ -8,12 +8,21 @@ Costa Rica
 Last updated: 2024-09-04
 
 ----------
+
+> Fabric AI Skills allow you to create custom conversational Q&A systems using generative AI. By setting up these skills, you can enable your colleagues to ask questions and receive reliable, data-driven answers. This involves providing instructions and examples to guide the AI, ensuring it understands your organization’s context and data before being widely shared.
+
+Key Features:
+- Customizable Q&A Systems: Tailor the AI to answer specific questions relevant to your organization.
+- Generative AI: Leverage advanced AI to interact with your data, enhancing data-driven decision-making.
+- Ease of Use: Once set up, users can simply ask questions and get accurate answers without needing deep technical knowledge.
+
 ## Wiki 
 
 - [How to create an AI skill (preview)](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-ai-skill)
 - [Introducing AI Skills in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-ai-skills-in-microsoft-fabric-now-in-public-preview/)
 - [AI skill scenario (preview)](https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario)
 - [Prebuilt Azure AI services in Fabric](https://blog.fabric.microsoft.com/en-us/blog/prebuilt-azure-ai-services-in-fabric-2?ft=02-2024:date)
+- [AI skill example with the AdventureWorks dataset (preview))[https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario]
 
 ## Setup required
 
