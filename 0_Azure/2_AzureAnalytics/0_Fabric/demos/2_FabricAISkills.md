@@ -22,7 +22,7 @@ Key Features:
 - [Introducing AI Skills in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/introducing-ai-skills-in-microsoft-fabric-now-in-public-preview/)
 - [AI skill scenario (preview)](https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario)
 - [Prebuilt Azure AI services in Fabric](https://blog.fabric.microsoft.com/en-us/blog/prebuilt-azure-ai-services-in-fabric-2?ft=02-2024:date)
-- [AI skill example with the AdventureWorks dataset (preview))[https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario]
+- [AI skill example with the AdventureWorks dataset -preview)[https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario]
 
 ## Setup required
 
