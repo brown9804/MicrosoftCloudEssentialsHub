@@ -77,6 +77,7 @@ Microsoft Fabric is an end-to-end analytics and data platform designed for enter
 
 | **Feature** | **Dataflow Gen2** | **Data Pipelines** |
 |-------------|-------------------|--------------------|
+|**Hint** | `ETL/ELT` | `Pipeline/Orchestrator` |
 | **Purpose** | Data transformation and preparation using a low-code interface. | Orchestration of data workflows and control flow of execution. |
 | **Use Case** | Ideal for cleaning, prepping, and transforming data with over 300 data and AI-based transformations. | Best for creating complex data workflows that involve multiple steps and dependencies. |
 | **Authoring Experience** | Shorter and simpler with auto-save and background publishing. | More detailed and flexible, allowing for complex orchestration. |
