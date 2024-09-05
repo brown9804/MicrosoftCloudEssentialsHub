@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-30
+Last updated: 2024-09-04
 
 ----------
 
@@ -211,3 +211,15 @@ Workaround - Create a New Account with Periodic Backups:
      ```
      
 6. **Monitor the Migration**: Use Databricks monitoring tools to track the progress and performance of your migration job.
+
+## Risks & Mitigation 
+
+| **Risk**                         | **Description**                                                                 | **Mitigation Strategies**                                                                                   |
+|----------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Data Integrity and Consistency** | Risk of data corruption or loss during migration.                              | Implement comprehensive data validation checks before and after migration. Use reliable tools like Azure Data Factory or Cosmos DB Spark Connector. |
+| **Downtime and Service Disruption** | Potential downtime or service disruption during migration.                     | Plan migration during low-traffic periods. Use a phased approach to gradually transfer data. Implement a rollback plan. |
+| **Configuration and Compatibility Issues** | Differences in configurations between old and new accounts.                    | Thoroughly review and replicate settings from the old account. Test the new setup in a staging environment before going live. |
+| **Performance Impact**            | Temporary performance impact during migration.                                 | Monitor performance closely and adjust throughput settings as needed. Use burst capacity feature to handle peak loads. |
+| **Security Concerns**             | Handling sensitive information during data transfer.                           | Ensure data is encrypted during transfer. Conduct a security review of the new setup. |
+| **Cost Implications**             | Additional costs incurred during setup and migration.                          | Estimate costs beforehand and ensure benefits outweigh expenses. Optimize new account configuration to avoid unnecessary costs. |
+| **Complexity and Resource Requirements** | Complexity and resource-intensive nature of the migration process.             | Allocate sufficient resources and time for migration. Engage experts or use professional services if needed. |
