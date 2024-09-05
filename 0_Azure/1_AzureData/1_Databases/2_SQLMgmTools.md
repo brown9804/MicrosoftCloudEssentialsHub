@@ -43,19 +43,19 @@ Last updated: 2024-09-05
    - Click on the download link and run the installer.
    - Follow the installation prompts to complete the setup.
   
-   <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/c5908fc0-30d7-4146-ae20-ab62d8694d1f">
+   <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/c5908fc0-30d7-4146-ae20-ab62d8694d1f">
   
 2. **Connect to a Server:**   
    - Open SSMS and click on`Connect" in the Object Explorer.
    - Enter your server name and authentication details.
 
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/f39b6c01-40e6-4fa5-92c6-70e4ae41d914">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/f39b6c01-40e6-4fa5-92c6-70e4ae41d914">
 
 4. **Manage Databases:**
    - Use the Object Explorer to navigate and manage your databases.
    - Right-click on databases to create new ones, run queries, or perform other management tasks.
 
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/17b25f48-ca70-4c95-8cdc-870d6a19f80d">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/17b25f48-ca70-4c95-8cdc-870d6a19f80d">
 
 ### **DBeaver**
 
@@ -74,6 +74,7 @@ Last updated: 2024-09-05
 ## Third-Party Clouds
 
 ### **Adminer**
+
 > A lightweight, full-featured database management tool deployable as a single PHP file.
 
 1. **Download Adminer:**
@@ -106,19 +107,19 @@ Last updated: 2024-09-05
    - Download Azure Data Studio from the [official website](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio).
    - Follow the installation instructions for your operating system.
 
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/4a08ee70-9fd2-441e-a501-c50eedabc87a">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/4a08ee70-9fd2-441e-a501-c50eedabc87a">
 
 2. **Connect to a Database:**
    - Open Azure Data Studio and click on `New Connection.`
    - Enter your database connection details.
   
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/f8bc7b1e-890c-44b0-a7ee-197dc390130b">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/f8bc7b1e-890c-44b0-a7ee-197dc390130b">
 
 3. **Use the Editor:**
    - Write and execute SQL queries in the editor.
    - View results and manage your database.
 
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/423390f0-60e0-466d-8250-1b71183aa4e7">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/423390f0-60e0-466d-8250-1b71183aa4e7">
 
 ### **Azure SQL Managed Instance**
 
@@ -128,9 +129,9 @@ Last updated: 2024-09-05
    - Sign up for a free Azure account at [Azure Free Account](https://azure.microsoft.com/en-us/free/).
 2. **Create a SQL Managed Instance:**
    - Go to the Azure portal and navigate to `SQL Managed Instances.`
-   - Click on "Create" and follow the prompts to set up your instance.
+   - Click on `Create` and follow the prompts to set up your instance.
      
-      <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/c7e60ee0-b0e4-4f23-9aa7-c10349071474">
+      <img width="700" height="370" alt="image" src="https://github.com/user-attachments/assets/c7e60ee0-b0e4-4f23-9aa7-c10349071474">
 
 3. **Connect and Manage:**
    - Use Azure Data Studio or SSMS to connect to your managed instance.
