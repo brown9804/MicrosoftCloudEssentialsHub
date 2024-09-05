@@ -1,6 +1,5 @@
 # Azure Databases Overview 
 
-
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
