@@ -26,6 +26,7 @@ Last updated: 2024-09-06
 - [3 steps to secure your multicloud and hybrid infrastructure with Azure Arc](https://www.microsoft.com/en-us/security/blog/2022/03/29/3-steps-to-secure-your-multicloud-and-hybrid-infrastructure-with-azure-arc/)
 - [Azure Arc-enabled server configurations](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-hybrid-config)
 - [Configure Microsoft Defender for Cloud for Azure Arc-enabled servers](https://learn.microsoft.com/en-us/training/modules/configure-defender-cloud-azure-arc-enabled-servers/)
+- [SQL Managed Instance enabled by Azure Arc Overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/managed-instance-overview)
 - [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
 - [Administer SQL Server with Azure Arc - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-sql-server)
 
