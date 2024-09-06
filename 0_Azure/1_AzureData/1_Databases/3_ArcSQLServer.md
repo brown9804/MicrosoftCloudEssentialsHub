@@ -113,11 +113,11 @@ Last updated: 2024-09-06
 | **Azure Arc Data Controller**    | Set up an Azure Arc Data Controller in your Kubernetes cluster.             |
 
 - Step 1: Configure the providers required within the subscription:
-> - **Resource Providers**: Register the `Microsoft.AzureArcData`,  `Microsoft.ExtendedLocation` and `Microsoft.Kubernetes` resource providers in your Azure subscription.
+> - **Resource Providers**: Register the `Microsoft.AzureArcData`,  `Microsoft.ExtendedLocation`, `Microsoft.KubernetesConfiguration` and `Microsoft.Kubernetes` resource providers in your Azure subscription.
 >     - Go to **Subscriptions**.
 >     - Select your subscription.
 >     - Under **Settings**, select **Resource providers**.
->     - Search for `Microsoft.AzureArcData`, `Microsoft.ExtendedLocation` and `Microsoft.Kubernetes`, click **Register**.
+>     - Search for `Microsoft.AzureArcData`, `Microsoft.ExtendedLocation`, `Microsoft.KubernetesConfiguration` and `Microsoft.Kubernetes`, click **Register**.
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/bfda2892-c917-49f4-a8c0-12feedea116c">
 
@@ -137,20 +137,50 @@ Last updated: 2024-09-06
 | **Azure Arc Extensions**   | Install the necessary Azure Arc extensions on your AKS cluster: <br/> `az extension add --name connectedk8s` <br/> `az extension add --name k8s-extension`                                       |
 | **Security**               | Implement security best practices, such as using Azure Policy for Kubernetes, enabling Azure Defender for Kubernetes, and regularly updating your cluster and nodes.                                        |
 
-- Step 3: Create Custom Location
+- Step 3: Install the necessary Azure Arc extensions on your AKS cluster:
     1. Go to your AKS and run the instructions via Azure CLI:
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/8623dd30-6bce-4c2b-9179-9755696363bd">
+  
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5021f8b8-6145-48a1-b2f5-41c37ff12233">
 
-       `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+       `az k8s-extension create --name azuremonitor-containers --extension-type Microsoft.AzureMonitor.Containers --scope cluster --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/344a62dd-c9fa-4b9d-a64a-e8a58bb83c05">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c14d0add-47b8-4ae1-a1d0-39b8494586c8">
 
         `az aks enable-addons --addons monitoring --name <cluster-name> --resource-group <resource-group-name>`
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef454aa-3d5b-4739-b6a2-8381b8726226">
 
-   2. **Create Custom Location**:
+   1. **Create Custom Location**:
+      - Install the required Azure CLI extensions: `az extension add --name customlocation` 
+      - Connect your AKS cluster to Azure Arc:  `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c9aee09-3ac0-41a1-b623-c87c8583c21d">
+
+      - Enable the custom locations feature: `az connectedk8s enable-features -n <clusterName> -g <resourceGroupName> --features cluster-connect custom-locations`
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/4069fbaf-0da2-4c46-adb7-d9bb6c58fe60">
+
+      - Create a custom location: `az customlocation create --name <customLocationName> --resource-group <resourceGroupName> --namespace <namespace> --host-resource-id <hostResourceId> --cluster-extension-ids <extensionId> --location <location>`
+
+        | Parameter           | Description                                      |
+        |-----------------------|--------------------------------------------------|
+        | `<customLocationName>`| The name of your custom location.                |
+        | `<resourceGroupName>` | The name of your resource group.                 |
+        | `<namespace>`         | The namespace for the custom location.           |
+        | `<extensionId>`       | The ID of the cluster extension.                 |
+        | `<hostResourceId>`    | The host resource ID of your connected cluster.  |
+
+          - Get the Cluster Extension IDs: `az k8s-extension list --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
+          - Get the Host Resource ID: `az connectedk8s show --name <clusterName> --resource-group <resourceGroupName>`
+
+
+
+
+
+
+
       - After executing the required connection, go to the Azure portal, navigate to **Custom locations** under **Azure Arc**.
       - Click on **+ Add** and follow the prompts to create a custom location linked to your Kubernetes cluster.
         
@@ -168,6 +198,33 @@ Last updated: 2024-09-06
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/23e33a35-2308-4481-894a-d8fe75c765e9">
 
 - Step 1: Set Up Azure Arc Data Controller
+
+  > The Azure Arc data controller is a key component of Azure Arc-enabled data services. It allows you to run Azure data services on-premises, at the edge, and in multi-cloud environments using Kubernetes.
+  
+    | **Feature**                | **Description**                                                                 |
+    |----------------------------|---------------------------------------------------------------------------------|
+    | **Provisioning and Management** | Consistent way to provision, manage, and monitor data services across environments. |
+    | **Elastic Scaling**        | Scale data services up or down based on demand.                                 |
+    | **Automated Updates**      | Ensures data services are always up-to-date with automated updates.             |
+    | **High Availability and Backup** | Built-in high availability and backup capabilities for data resilience.         |
+    | **Azure Integration**      | Integrates with Azure for additional functionalities like monitoring and security. |
+
+    > Understanding Azure Arc data controller types of connection
+    
+    | Feature/Aspect                | Directly Connected Mode                                                                 | Indirectly Connected Mode                                                                 |
+    |-------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+    | **Real-time Integration**     | Yes, real-time integration with Azure services like Azure Monitor, Security Center, etc. | No, periodic synchronization with Azure                                                   |
+    | **Azure Portal Access**       | Full access, manage and monitor directly from the Azure Portal                           | Read-only access, view inventory and details but cannot manage directly                   |
+    | **Updates**                   | Automatic updates and patches                                                            | Manual updates and patches                                                                |
+    | **Use Cases**                 | Ideal for environments with reliable internet connectivity and real-time monitoring needs | Suitable for highly secure environments or those with limited internet connectivity       |
+    | **Kubernetes Requirement**    | Yes, requires a Kubernetes cluster connected to Azure                                    | No, the Azure Arc data controller can be deployed without the Kubernetes cluster being connected to Azure |
+    | **Network Requirements**      | Stable and continuous internet connection                                                | Periodic internet connectivity                                                            |
+    | **Security**                  | Integrated security features                                                             | More isolation, manual security management                                                |
+    | **Management Overhead**       | Lower, due to automation and real-time management                                        | Higher, due to manual updates and limited Azure Portal access                             |
+
+
+
+
    1. **Navigate to Azure Arc**:
       - Go to the Azure portal.
       - In the left-hand menu, select **Azure Arc** > **Data services**.
@@ -200,4 +257,10 @@ Last updated: 2024-09-06
       - Utilize the Azure portal to manage and monitor your SQL Managed Instance.
       - You can apply policies, monitor performance, and manage security settings.
 
+## Troubleshooting
 
+- [Resolve errors when enabling or disabling Azure Arc on your AKS workload clusters in AKS enabled by Arc](https://learn.microsoft.com/en-us/azure/aks/hybrid/known-issues-arc)
+
+## Recommended Trainings
+
+- [Implement Azure Arc-enabled SQL Managed Instance in your hybrid environment](https://learn.microsoft.com/en-us/training/paths/get-started-azure-arc-sql-managed-instance/)
