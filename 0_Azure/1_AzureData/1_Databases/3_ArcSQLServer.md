@@ -137,21 +137,35 @@ Last updated: 2024-09-06
 | **Azure Arc Extensions**   | Install the necessary Azure Arc extensions on your AKS cluster: <br/> `az extension add --name connectedk8s` <br/> `az extension add --name k8s-extension`                                       |
 | **Security**               | Implement security best practices, such as using Azure Policy for Kubernetes, enabling Azure Defender for Kubernetes, and regularly updating your cluster and nodes.                                        |
 
-- Step 3: Create Custom Location 
-   1. **Create Custom Location**:
-      - In the Azure portal, navigate to **Custom locations** under **Azure Arc**.
-      - Click on **+ Add** and follow the prompts to create a custom location linked to your Kubernetes cluster.
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/78a79f8d-aab2-403b-b732-f2d57f505491">
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/cd685428-adc0-4433-8163-95c0a3225647">
-
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0c890fd-9c12-493a-bdd2-89b3f2c2d169">
-
-      - Go to your AKS and run the instructions via Azure CLI:
+- Step 3: Create Custom Location
+    1. Go to your AKS and run the instructions via Azure CLI:
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/8623dd30-6bce-4c2b-9179-9755696363bd">
 
+       `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+       
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/344a62dd-c9fa-4b9d-a64a-e8a58bb83c05">
+
+        `az aks enable-addons --addons monitoring --name <cluster-name> --resource-group <resource-group-name>`
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef454aa-3d5b-4739-b6a2-8381b8726226">
+
+   2. **Create Custom Location**:
+      - After executing the required connection, go to the Azure portal, navigate to **Custom locations** under **Azure Arc**.
+      - Click on **+ Add** and follow the prompts to create a custom location linked to your Kubernetes cluster.
+        
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/78a79f8d-aab2-403b-b732-f2d57f505491">
+     
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b041545-c425-4167-b4aa-592a132c0b28">
+     
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/cd685428-adc0-4433-8163-95c0a3225647">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0c890fd-9c12-493a-bdd2-89b3f2c2d169">
+        
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5d124f08-549d-413e-bf20-fd1c24877252">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/23e33a35-2308-4481-894a-d8fe75c765e9">
 
 - Step 1: Set Up Azure Arc Data Controller
    1. **Navigate to Azure Arc**:
