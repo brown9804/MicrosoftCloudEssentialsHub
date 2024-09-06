@@ -144,60 +144,58 @@ Last updated: 2024-09-06
   
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/5021f8b8-6145-48a1-b2f5-41c37ff12233">
 
+          - Connect your AKS cluster to Azure Arc:  `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c9aee09-3ac0-41a1-b623-c87c8583c21d">
+
+        - Validate is connected:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5469daa0-8e97-42b4-a658-8f8cd701be24">
+
        `az k8s-extension create --name azuremonitor-containers --extension-type Microsoft.AzureMonitor.Containers --scope cluster --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
        
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/c14d0add-47b8-4ae1-a1d0-39b8494586c8">
+
+        - Validate that the extention was added:
+          
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/92c4db6b-c0dc-483b-a6db-a272c7cdd9ec">
 
         `az aks enable-addons --addons monitoring --name <cluster-name> --resource-group <resource-group-name>`
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef454aa-3d5b-4739-b6a2-8381b8726226">
 
-   1. **Create Custom Location**:
-      - Install the required Azure CLI extensions: `az extension add --name customlocation` 
-      - Connect your AKS cluster to Azure Arc:  `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+- Step 4: **Create Custom Location**:
+  - Install the required Azure CLI extensions: `az extension add --name customlocation` 
+  - Enable the custom locations feature: `az connectedk8s enable-features -n <clusterName> -g <resourceGroupName> --features cluster-connect custom-locations`
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c9aee09-3ac0-41a1-b623-c87c8583c21d">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/4069fbaf-0da2-4c46-adb7-d9bb6c58fe60">
 
-      - Enable the custom locations feature: `az connectedk8s enable-features -n <clusterName> -g <resourceGroupName> --features cluster-connect custom-locations`
+  - Create a custom location: `az customlocation create --name <customLocationName> --resource-group <resourceGroupName> --namespace <namespace> --host-resource-id <hostResourceId> --cluster-extension-ids <extensionId> --location <location>`
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/4069fbaf-0da2-4c46-adb7-d9bb6c58fe60">
+    | Parameter           | Description                                      |
+    |-----------------------|--------------------------------------------------|
+    | `<customLocationName>`| The name of your custom location.                |
+    | `<resourceGroupName>` | The name of your resource group.                 |
+    | `<namespace>`         | The namespace for the custom location.           |
+    | `<extensionId>`       | The ID of the cluster extension.                 |
+    | `<hostResourceId>`    | The host resource ID of your connected cluster.  |
 
-      - Create a custom location: `az customlocation create --name <customLocationName> --resource-group <resourceGroupName> --namespace <namespace> --host-resource-id <hostResourceId> --cluster-extension-ids <extensionId> --location <location>`
-
-        | Parameter           | Description                                      |
-        |-----------------------|--------------------------------------------------|
-        | `<customLocationName>`| The name of your custom location.                |
-        | `<resourceGroupName>` | The name of your resource group.                 |
-        | `<namespace>`         | The namespace for the custom location.           |
-        | `<extensionId>`       | The ID of the cluster extension.                 |
-        | `<hostResourceId>`    | The host resource ID of your connected cluster.  |
-
-          - Get the Cluster Extension IDs: `az k8s-extension list --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
-          - Get the Host Resource ID: `az connectedk8s show --name <clusterName> --resource-group <resourceGroupName>`
-
-
-
-
-
-
-
-      - After executing the required connection, go to the Azure portal, navigate to **Custom locations** under **Azure Arc**.
-      - Click on **+ Add** and follow the prompts to create a custom location linked to your Kubernetes cluster.
+      - Get the Cluster Extension IDs: `az k8s-extension list --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
+      - Get the Host Resource ID: `az connectedk8s show --name <clusterName> --resource-group <resourceGroupName>`
+      - If want to explore the a GUI method, you can go to the Azure portal, navigate to **Custom locations** under **Azure Arc**.
+          - Click on **+ Add** and follow the prompts to create a custom location linked to your Kubernetes cluster.
         
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/78a79f8d-aab2-403b-b732-f2d57f505491">
-     
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b041545-c425-4167-b4aa-592a132c0b28">
-     
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/78a79f8d-aab2-403b-b732-f2d57f505491">
+    
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b041545-c425-4167-b4aa-592a132c0b28">
+    
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/0fb0e335-7c2f-40d6-98a7-ec63dbb2babf">
+    
+             - Validate that the custom location is created, you should see something like this:
+    
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/0ac58efb-8a8e-4097-a049-30ef8dfe8bea">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/cd685428-adc0-4433-8163-95c0a3225647">
-
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0c890fd-9c12-493a-bdd2-89b3f2c2d169">
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5d124f08-549d-413e-bf20-fd1c24877252">
-
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/23e33a35-2308-4481-894a-d8fe75c765e9">
-
-- Step 1: Set Up Azure Arc Data Controller
+- Step 5: Set Up Azure Arc Data Controller
 
   > The Azure Arc data controller is a key component of Azure Arc-enabled data services. It allows you to run Azure data services on-premises, at the edge, and in multi-cloud environments using Kubernetes.
   
@@ -222,37 +220,46 @@ Last updated: 2024-09-06
     | **Security**                  | Integrated security features                                                             | More isolation, manual security management                                                |
     | **Management Overhead**       | Lower, due to automation and real-time management                                        | Higher, due to manual updates and limited Azure Portal access                             |
 
+    1. Enable both features:
 
+         `az connectedk8s enable-features -n <cluster-name> -g <resource-group> --features cluster-connect custom-locations`
 
+    2. Create the Data Controller:
 
-   1. **Navigate to Azure Arc**:
-      - Go to the Azure portal.
-      - In the left-hand menu, select **Azure Arc** > **Data services**.
+       `az arcdata dc create --name <data-controller-name> --resource-group <resource-group> --custom-location <custom-location> --connectivity-mode <direct|indirect> --location <location> --k8s-namespace <namespace>`
+       
+        - You can also use the Azure Portal:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/d5b8aa74-81f9-4a0f-90f2-315d1d035710">
+
+       - Choose the connection mode:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/da314a80-9c39-4528-9515-8fa95dadb4de">
+
+        - Complete all the required information:
+
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/181a0516-4c8d-4e48-9f32-d5d9ab3dfbb9">
+
+    3. Connect SQL Managed Instance to Azure Arc
+       - **Navigate to Azure Arc Data Services**: Go to the Azure portal. In the left-hand menu, select **Azure Arc** > **Data services**.
         
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8710b913-5f1e-4a6e-af92-cd2cf9f99dca">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8710b913-5f1e-4a6e-af92-cd2cf9f99dca">
 
-   2. **Add Data Controller**:
-      - Click on **+ Add**.
-      - Follow the prompts to create a data controller in your SQL Managed instance.
+       - **Add SQL Managed Instance**:
+          - Click on **+ Add**.
+          - Select **SQL Managed Instance**.
+          - Choose your **Subscription**, **Resource group**, and **Custom location**.
+          - Specify the **Name**, **vCores**, **Storage**, and other settings for your SQL Managed Instance.
+          - Click **Review + create** and then **Create**.
+
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/819b7d6e-c4eb-4137-bc66-9659db40a920">
+
+           - Validate the Connection:  Go back to the Azure portal, navigate to **Azure Arc** > **Data services**, and ensure your SQL Managed Instance appears in the list of Arc-enabled data services.
 
 
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/e7be6923-ea8a-4545-82e1-49e34e0afe9b">
 
-- Step 3: Connect SQL Managed Instance to Azure Arc
-   1. **Navigate to Azure Arc Data Services**:
-      - Go to the Azure portal.
-      - In the left-hand menu, select **Azure Arc** > **Data services**.
-   2. **Add SQL Managed Instance**:
-      - Click on **+ Add**.
-      - Select **SQL Managed Instance**.
-      - Choose your **Subscription**, **Resource group**, and **Custom location**.
-      - Specify the **Name**, **vCores**, **Storage**, and other settings for your SQL Managed Instance.
-      - Click **Review + create** and then **Create**.
-- Step 4: Validate the Connection
-   1. **Check Azure Portal**:
-      - Go back to the Azure portal.
-      - Navigate to **Azure Arc** > **Data services**.
-      - Ensure your SQL Managed Instance appears in the list of Arc-enabled data services.
-- Step 5: Manage and Monitor
+- Step 6: Manage and Monitor
    1. **Use Azure Portal**:
       - Utilize the Azure portal to manage and monitor your SQL Managed Instance.
       - You can apply policies, monitor performance, and manage security settings.
