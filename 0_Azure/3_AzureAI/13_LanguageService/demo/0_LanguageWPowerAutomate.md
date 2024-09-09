@@ -90,8 +90,19 @@ Last updated: 2024-09-09
     1. **Add Another Step**:
        - Click on **+ New step**.
        - In the search bar, type **Computer Vision**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/227b9d28-6da2-4d59-8e9d-c7632b8192be">
+
     2. **Select an OCR Action**: Choose the action you need, such as **Read** or **Recognize Text**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/93949f66-cb8c-4bad-bd39-6c443ea92790">
+
     3. **Authenticate the Connector**: Enter the **Endpoint** and **Key** from your Computer Vision resource in Azure.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a71e3a50-f1c9-4ea7-9b38-20818bafd919">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/fb77dccc-dc99-4548-a2ce-e92168ff4682">
+
 -  Step 5: Test Your Flow
     1. **Save Your Flow**: Click **Save** at the top right corner.
     2. **Test the Flow**:
