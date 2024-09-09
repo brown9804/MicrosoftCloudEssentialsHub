@@ -103,9 +103,22 @@ Last updated: 2024-09-09
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/fb77dccc-dc99-4548-a2ce-e92168ff4682">
 
+        > Example of use:
+
+        ```
+        https://github.com/microsoft/.github/blob/main/images/open-at-microsoft.png
+        ```
+
 -  Step 5: Test Your Flow
     1. **Save Your Flow**: Click **Save** at the top right corner.
     2. **Test the Flow**:
        - Click **Test** from the top navigation menu.
        - Follow the prompts to test your flow and ensure it works as expected.
 
+> Dummy image
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0457ecc-5819-47d0-b325-29e3dee35191">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8195f173-d871-4576-87a3-59cdc925e7bb">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/104a295a-8f24-42f9-86fa-b71a82cde3cb">
