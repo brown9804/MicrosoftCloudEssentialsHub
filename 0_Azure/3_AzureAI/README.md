@@ -27,6 +27,7 @@ Costa Rica
     - [Speech Services](./10_SpeechServices/README.md)
     - [Translators](./11_Translators/README.md)
     - [Intelligent Recommendations Accounts](./12_IntelligRecommAccounts/README.md)
+    - [Language Service](./13_LanguageService/README.md)
     - [Retired](#retired)
 
 ## Wiki 
