@@ -10,7 +10,8 @@ Last updated: 2024-09-09
 ----------
 
 ## Wiki 
-
+- [Use the Language service in Power Automate](https://learn.microsoft.com/en-us/azure/ai-services/language-service/tutorials/power-automate)
+  
 ## How to 
 
 -  Step 1: Create a Language Resource in Azure
