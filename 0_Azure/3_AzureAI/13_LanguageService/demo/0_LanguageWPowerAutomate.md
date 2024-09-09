@@ -21,10 +21,16 @@ Last updated: 2024-09-09
        - Click on **Create a resource** in the left-hand menu.
        - In the search bar, type **Language** and select **Language** from the list.
        - Click **Create**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/ba0aed0d-2602-4c5a-bdf4-8bb3e9cc4dbc">
+
     3. **Configure the Resource**:
        - Fill in the necessary details like **Subscription**, **Resource Group**, **Region**, and **Name**.
        - Choose the **Pricing tier** that suits your needs.
        - Click **Review + create** and then **Create**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/36df57ee-c617-4bb4-9979-8ebc123ab3f8">
+
     4. **Retrieve Endpoint and Key**:
        - Once the resource is created, navigate to it.
        - In the left-hand menu, select **Keys and Endpoint**.
