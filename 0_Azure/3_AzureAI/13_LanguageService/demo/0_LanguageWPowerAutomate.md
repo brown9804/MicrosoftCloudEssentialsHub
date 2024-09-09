@@ -74,17 +74,17 @@ Last updated: 2024-09-09
        - You will be prompted to enter the **Endpoint** and **Key** from the Language resource you created in Azure.
        - Enter these details to authenticate.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/291bc6ea-c00a-4e05-b538-863de06749c8">
-
-        ```
-        DUMMY TEXT
-
-        In a small village, there was a young person who loved exploring the forest nearby. 
-        One day, they found a hidden path that led to a beautiful meadow filled with colorful flowers and butterflies.
-        They spent hours there, enjoying the beauty of nature. This place became their secret spot of peace and happiness.
-        ```
-
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/6367aada-d379-40fd-9dc7-cb0ad5cd05d7">
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/291bc6ea-c00a-4e05-b538-863de06749c8">
+  
+          ```
+          DUMMY TEXT
+  
+          In a small village, there was a young person who loved exploring the forest nearby. 
+          One day, they found a hidden path that led to a beautiful meadow filled with colorful flowers and butterflies.
+          They spent hours there, enjoying the beauty of nature. This place became their secret spot of peace and happiness.
+          ```
+  
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/6367aada-d379-40fd-9dc7-cb0ad5cd05d7">
 
 -  Step 4: Integrate with OCR Engine
     1. **Add Another Step**:
@@ -114,13 +114,13 @@ Last updated: 2024-09-09
     2. **Test the Flow**:
        - Click **Test** from the top navigation menu.
        - Follow the prompts to test your flow and ensure it works as expected.
-
-> Dummy image
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0457ecc-5819-47d0-b325-29e3dee35191">
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8195f173-d871-4576-87a3-59cdc925e7bb">
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/377443ed-c343-40d6-ad46-12db4104e276">
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3427dd72-2ca3-4d6b-b3cf-867b933c3c3e">
+    
+    > Dummy image
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0457ecc-5819-47d0-b325-29e3dee35191">
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8195f173-d871-4576-87a3-59cdc925e7bb">
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/377443ed-c343-40d6-ad46-12db4104e276">
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3427dd72-2ca3-4d6b-b3cf-867b933c3c3e">
