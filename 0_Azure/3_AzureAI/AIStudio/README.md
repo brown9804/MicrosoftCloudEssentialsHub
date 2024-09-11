@@ -24,6 +24,7 @@ Last updated: 2024-09-11
 - [Introducing Meta Llama 3 Models on Azure AI Model Catalog](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/introducing-meta-llama-3-models-on-azure-ai-model-catalog/ba-p/4117144)
 - [Meta’s next generation model, Llama 3.1 405B is now available on Azure AI](https://techcommunity.microsoft.com/t5/ai-ai-platform-blog/meta-s-next-generation-model-llama-3-1-405b-is-now-available-on/ba-p/4198379)
 - [Model benchmarks in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-benchmarks)
+- [What are Azure AI services?](https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services)
 
 ## Overview 
 
@@ -85,7 +86,21 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/823714d5-ccda-43c8-9fc8-3188c5fa5a7c">
 
-
+| Service                     | Description                                                                 | Use Cases                                                                                  |
+|-----------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| **Azure OpenAI Service**    | Provides access to powerful language models like GPT-3 and GPT-4.           | Text generation, summarization, translation, conversational AI.                            |
+| **Azure AI Vision**         | Offers image and video analysis capabilities, including OCR and object detection. | Image tagging, content moderation, automated document processing.                          |
+| **Azure AI Speech**         | Converts speech to text, text to speech, and offers speech translation and speaker recognition. | Voice assistants, transcription services, real-time translation.                           |
+| **Azure AI Language**       | Tools for natural language understanding, including sentiment analysis and entity recognition. | Chatbots, sentiment analysis for customer feedback, multilingual support.                  |
+| **Azure AI Search**         | Enhances search capabilities with AI-powered indexing and retrieval.        | Enterprise search solutions, e-commerce search, knowledge management.                      |
+| **Azure AI Content Safety** | Detects and filters offensive or inappropriate content in text and images.  | Content moderation for social media platforms, forums, online communities.                 |
+| **Azure AI Translator**     | Real-time translation of text and documents across more than 100 languages. | Multilingual communication, document translation, global customer support.                 |
+| **Azure AI Document Intelligence** | Extracts text, key-value pairs, tables, and structures from documents. | Automated data entry, document digitization, information extraction.                       |
+| **Azure AI Video Indexer**  | Analyzes video content to extract insights and metadata.                    | Video content management, automated tagging, content search.                               |
+| **Azure Bot Services**      | Develops intelligent, enterprise-grade bots.                                | Customer service bots, virtual assistants, interactive chatbots.                           |
+| **Azure Custom Vision**     | Customizes image classification and object detection models.                | Specialized image recognition tasks, custom object detection.                              |
+| **Azure Face API**          | Detects and recognizes human faces in images.                               | Facial recognition, emotion detection, identity verification.                              |
+| **Azure Immersive Reader**  | Improves reading comprehension with tools that read text aloud, translate, and highlight. | Education, accessibility, language learning.                                               |
 
 ## Componenets 
 
