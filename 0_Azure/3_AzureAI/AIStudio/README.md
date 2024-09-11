@@ -102,6 +102,24 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Azure Face API**          | Detects and recognizes human faces in images.                               | Facial recognition, emotion detection, identity verification.                              |
 | **Azure Immersive Reader**  | Improves reading comprehension with tools that read text aloud, translate, and highlight. | Education, accessibility, language learning.                                               |
 
+## Architecture 
+### AI Hub
+		Projects
+### AI Studio SDK
+### RBAC and permissions
+### Networking
+## Project playground 
+### Chat
+### Assistants
+### Images
+### Completions
+## Tools 
+### Code
+### Prompt Flow
+### Tracing
+### Evaluation
+### Fine-tunning
+
 ## Componenets 
 
 ### Data 
