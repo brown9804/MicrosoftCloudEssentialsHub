@@ -23,6 +23,7 @@ Last updated: 2024-09-11
 
 - [Introducing Meta Llama 3 Models on Azure AI Model Catalog](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/introducing-meta-llama-3-models-on-azure-ai-model-catalog/ba-p/4117144)
 - [Meta’s next generation model, Llama 3.1 405B is now available on Azure AI](https://techcommunity.microsoft.com/t5/ai-ai-platform-blog/meta-s-next-generation-model-llama-3-1-405b-is-now-available-on/ba-p/4198379)
+- [Model benchmarks in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/model-benchmarks)
 
 ## Overview 
 
@@ -69,17 +70,30 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 
 ### Model Benchmarks
 
+> Model Benchmarks in Azure AI Studio is a feature that allows users to compare the performance of various AI models. This tool helps you make informed decisions about which model best suits your specific task by providing a comprehensive comparison of benchmarking metrics.
+
+| Key Aspect                  | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| Comparison of Models        | Compare LLMs and SLMs based on metrics like accuracy, coherence, fluency, and GPT (Generative Pre-trained Transformer) similarity this metric is particularly useful when comparing the performance of different language models. |
+| Quality and Embeddings Benchmarks | Evaluate models based on quality and embeddings benchmarks.              |
+| Efficiency                  | Reduce development time and infrastructure costs by identifying the most suitable model quickly. |
+| User-Friendly               | Accessible within the same environment where you build, train, and deploy AI solutions. |
 
 ### Azure AI Services
 
+> Azure AI Services is a comprehensive suite of AI tools and services provided by Microsoft to help developers and organizations build intelligent applications.
 
-### Componenets 
-
-#### Data 
-
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/823714d5-ccda-43c8-9fc8-3188c5fa5a7c">
 
 
-#### Deployments 
+
+## Componenets 
+
+### Data 
+
+
+
+### Deployments 
 
 > Types of deployments available in Azure AI Studio:
 
@@ -92,9 +106,9 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | Managed Compute             | Use Azure's managed compute resources to deploy and run models.                 | Combination of compute and storage costs|
 
 
-#### Indexes 
+### Indexes 
 
-#### Content Filter
+### Content Filter
 
 
 
