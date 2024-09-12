@@ -31,7 +31,10 @@ Last updated: 2024-09-12
 - [What is the Microsoft Purview Data Catalog?](https://learn.microsoft.com/en-us/purview/what-is-data-catalog)
 - [How to request access for a data asset](https://learn.microsoft.com/en-us/purview/how-to-request-access)
 - [Data catalog development best practices](https://learn.microsoft.com/en-us/purview/data-catalog-best-practices)
-
+- [Supported data sources and file types](https://learn.microsoft.com/en-us/purview/microsoft-purview-connector-overview)
+- [Discover and govern Azure SQL Database](https://learn.microsoft.com/en-us/purview/register-scan-azure-sql-database)
+- [Query SQL Database with query editor in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-portal?view=azuresql)
+  
 ## Overview 
 
 > Microsoft Purview is a comprehensive set of solutions designed to help organizations govern, protect, and manage their data across their entire data estate.
@@ -164,4 +167,15 @@ Find below some examples of custom connectors for Data Loss Prevention (DLP) in 
 | **Federated Governance**    | Adopt a federated governance approach to distribute data governance responsibilities across the organization. |
 | **Data Quality and Trust**  | Enhance data quality and trustworthiness by implementing governance-focused actions and creating source-of-truth data products. |
 | **Business Value Creation** | Align data governance with business practices to unlock business value and make data more accessible and useful for decision-making. |
+
+## Query an SQL database with Azure Purview
+
+1. **Register the Data Source**:
+   - Open the Microsoft Purview governance portal.
+   - Register your Azure SQL Database as a data source. This involves providing the necessary credentials and permissions.
+2. **Configure Access**: Ensure that the Purview managed identity has the required permissions on your SQL database. This typically involves creating a user in your SQL database and assigning the appropriate roles.
+3. **Run a Scan**: In the Purview portal, create and run a scan on your registered SQL database. This will extract metadata and classify the data based on predefined or custom rules.
+4. **Explore the Data**: Once the scan is complete, you can explore the data classifications, lineage, and other insights provided by Purview. This helps in understanding the structure and content of your data.
+5. **Query the Data**: Use the query editor in the Azure portal to connect to your SQL database and run queries. Navigate to your SQL database in the Azure portal, select the query editor, and provide your credentials to start querying.
+
 
