@@ -178,4 +178,15 @@ Find below some examples of custom connectors for Data Loss Prevention (DLP) in 
 4. **Explore the Data**: Once the scan is complete, you can explore the data classifications, lineage, and other insights provided by Purview. This helps in understanding the structure and content of your data.
 5. **Query the Data**: Use the query editor in the Azure portal to connect to your SQL database and run queries. Navigate to your SQL database in the Azure portal, select the query editor, and provide your credentials to start querying.
 
+## How to remove data from Azure Purview
+
+1. **Delete Individual Assets**:
+   - Navigate to the asset you want to delete in the Purview portal.
+   - Select the asset and click on the delete button. This will remove the asset and any child assets under its hierarchy¹(https://learn.microsoft.com/en-us/purview/catalog-asset-details).
+2. **Bulk Delete Assets**: Currently, the Purview user interface does not support bulk deletion of assets directly. However, you can use REST APIs to delete multiple assets. You will need to get the GUIDs of the assets you want to delete and use the `DELETE` method with the appropriate endpoint. Find more information about it [here](https://learn.microsoft.com/en-us/answers/questions/805790/delete-multiple-assets-in-purview).
+3. **Remove Data Source**: If you want to remove an entire data source, you can unregister it from the Purview portal. This will remove all associated metadata and classifications. Find more information [here[(https://learn.microsoft.com/en-us/purview/catalog-asset-details).
+4. **Considerations**:
+   - Ensure you have the necessary permissions to delete assets or data sources.
+   - Be aware that deleting assets will also remove any associated metadata and lineage information.
+
 
