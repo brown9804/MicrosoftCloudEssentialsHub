@@ -28,6 +28,9 @@ Last updated: 2024-09-12
 - [Introducing HTTP and Custom Connector Support for Data Loss Prevention Policies - Power Platform](https://www.microsoft.com/en-us/power-platform/blog/power-automate/introducing-http-and-custom-connector-support-for-data-loss-prevention-policies/)
 - [Connector classification - Power Platform](https://learn.microsoft.com/en-us/power-platform/admin/dlp-connector-classification)
 - [DLP for custom connectors](https://learn.microsoft.com/en-us/power-platform/admin/dlp-custom-connector-parity)
+- [What is the Microsoft Purview Data Catalog?](https://learn.microsoft.com/en-us/purview/what-is-data-catalog)
+- [How to request access for a data asset](https://learn.microsoft.com/en-us/purview/how-to-request-access)
+- [Data catalog development best practices](https://learn.microsoft.com/en-us/purview/data-catalog-best-practices)
 
 ## Overview 
 
