@@ -14,6 +14,7 @@ Last updated: 2024-09-12
 
 ## Wiki 
 
+- [What's new in Microsoft Purview](https://learn.microsoft.com/en-us/purview/whats-new)
 - [Learn about data loss prevention](https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp)
 - [Get started with collecting files that match data loss prevention policies from devices](https://learn.microsoft.com/en-us/purview/dlp-copy-matched-items-get-started?tabs=purview-portal%2Cpurview)
 - [Learn about Endpoint data loss prevention](https://learn.microsoft.com/en-us/purview/endpoint-dlp-learn-about)
@@ -33,6 +34,7 @@ Last updated: 2024-09-12
 - [Data catalog development best practices](https://learn.microsoft.com/en-us/purview/data-catalog-best-practices)
 - [Supported data sources and file types](https://learn.microsoft.com/en-us/purview/microsoft-purview-connector-overview)
 - [Discover and govern Azure SQL Database](https://learn.microsoft.com/en-us/purview/register-scan-azure-sql-database)
+- [Disaster recovery for Microsoft Purview](https://learn.microsoft.com/en-us/purview/disaster-recovery)
 - [Query SQL Database with query editor in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-portal?view=azuresql)
   
 ## Overview 
@@ -189,4 +191,12 @@ Find below some examples of custom connectors for Data Loss Prevention (DLP) in 
    - Ensure you have the necessary permissions to delete assets or data sources.
    - Be aware that deleting assets will also remove any associated metadata and lineage information.
 
+## Restoring deleted information in Azure Purview 
+
+| **Scenario**                | **Description**               |
+|-----------------------------|-------------------------  |
+| **Permanent Deletion**      | When you delete an asset using the delete button in Azure Purview, it is permanently deleted. This means that the asset and its metadata are removed from the catalog.  |
+| **Reingestion**             | If the asset was ingested from a data source, you can run a full scan on that source again. This will reingest the asset into the Purview catalog, effectively restoring it.      |
+| **Backup and Disaster Recovery** | Azure Purview does not currently support automated backup and disaster recovery (BCDR). However, you can manually create a secondary Purview account in another region to serve as a backup. This involves duplicating all activities performed on the primary account to the secondary account. |
+| **Manual Restoration**      | For more complex scenarios, you might need to manually restore data using scripts or APIs. This requires maintaining a backup of your metadata and configurations.     |
 
