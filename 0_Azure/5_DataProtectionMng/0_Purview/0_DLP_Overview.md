@@ -35,16 +35,6 @@ Last updated: 2024-09-12
 | Comprehensive Monitoring          | Monitors actions on sensitive items and prevents unintentional sharing.         |
 | Integration with Sensitivity Labels| Unifies data security and compliance with sensitivity labels from Microsoft Information Protection. |
 
-## Limitation & Workarounds 
-
-| **Limitation**                   | **Description**                                                                 | **Workaround**                                                                 |
-|----------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| Policy and Rule Limits           | Constraints on the number of policies and rules you can create. For instance, the maximum number of DLP rules in a tenant is 600, and the maximum size of an individual DLP rule is 100 KB. | - **Prioritize Critical Policies**: Focus on creating policies that address the most critical data protection needs first. <br/> - **Combine Rules**: Where possible, combine multiple conditions into a single rule to stay within the limits. |
-| File Type Restrictions           | DLP policies are primarily effective for specific file types, mainly Office files. This can limit the scope of protection for other file formats. | - **Custom Connectors**: Use custom connectors to extend DLP capabilities to other file types and applications. <br/> - **Third-Party Tools**: Integrate third-party DLP solutions that support a broader range of file types. |
-| Text Extraction Limits           | The maximum size of text that can be extracted from a file for scanning is 2 MB. | - **Pre-Processing**: Pre-process files to reduce their size before they are scanned by DLP policies. <br/> - **Selective Scanning**: Focus on scanning the most critical parts of documents, such as headers, footers, and specific sections. |
-| Policy Size and Complexity       | The maximum size of a DLP policy is 100 KB, which can limit the complexity and number of rules within a single policy. | - **Modular Policies**: Break down complex policies into smaller, modular policies that can be managed more easily. <br/> - **Regular Reviews**: Regularly review and optimize policies to ensure they remain within size limits. |
-| Integration Limitations          | The data map in Microsoft Purview does not currently support DLP capabilities for Microsoft 365 apps and services. | - **Manual Processes**: Implement manual processes to complement DLP policies where integration is not supported. <br/> - **Custom Scripts**: Use custom scripts to automate data protection tasks that are not covered by DLP policies. |
-| License Restrictions             | Some advanced DLP features are only available with higher-tier licenses, such as Office 365 E5. | - **Evaluate Needs**: Assess your organization's specific needs to determine if higher-tier licenses are necessary. <br/> - **Leverage Available Features**: Make the most of the features available in your current license tier while planning for future upgrades if needed. |
 
 ## Boundaries of DLP without Microsoft Purview
 
@@ -57,6 +47,17 @@ Last updated: 2024-09-12
 | Policy Management         | More challenging to manage and enforce DLP policies without the centralized management capabilities provided by Purview. |
 | Advanced Features         | Less robust features like Endpoint DLP and integration with non-Microsoft cloud apps.            |
 | Compliance and Reporting  | Fewer advanced compliance and reporting tools to help meet regulatory requirements and monitor data usage effectively. |
+
+## Limitation & Workarounds 
+
+| **Limitation**                   | **Description**                                                                 | **Workaround**                                                                 |
+|----------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| Policy and Rule Limits           | Constraints on the number of policies and rules you can create. For instance, the maximum number of DLP rules in a tenant is 600, and the maximum size of an individual DLP rule is 100 KB. | - **Prioritize Critical Policies**: Focus on creating policies that address the most critical data protection needs first. <br/> - **Combine Rules**: Where possible, combine multiple conditions into a single rule to stay within the limits. |
+| File Type Restrictions           | DLP policies are primarily effective for specific file types, mainly Office files. This can limit the scope of protection for other file formats. | - **Custom Connectors**: Use custom connectors to extend DLP capabilities to other file types and applications. <br/> - **Third-Party Tools**: Integrate third-party DLP solutions that support a broader range of file types. |
+| Text Extraction Limits           | The maximum size of text that can be extracted from a file for scanning is 2 MB. | - **Pre-Processing**: Pre-process files to reduce their size before they are scanned by DLP policies. <br/> - **Selective Scanning**: Focus on scanning the most critical parts of documents, such as headers, footers, and specific sections. |
+| Policy Size and Complexity       | The maximum size of a DLP policy is 100 KB, which can limit the complexity and number of rules within a single policy. | - **Modular Policies**: Break down complex policies into smaller, modular policies that can be managed more easily. <br/> - **Regular Reviews**: Regularly review and optimize policies to ensure they remain within size limits. |
+| Integration Limitations          | The data map in Microsoft Purview does not currently support DLP capabilities for Microsoft 365 apps and services. | - **Manual Processes**: Implement manual processes to complement DLP policies where integration is not supported. <br/> - **Custom Scripts**: Use custom scripts to automate data protection tasks that are not covered by DLP policies. |
+| License Restrictions             | Some advanced DLP features are only available with higher-tier licenses, such as Office 365 E5. | - **Evaluate Needs**: Assess your organization's specific needs to determine if higher-tier licenses are necessary. <br/> - **Leverage Available Features**: Make the most of the features available in your current license tier while planning for future upgrades if needed. |
 
 ## Custom Connectors
 
