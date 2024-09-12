@@ -139,3 +139,26 @@ Find below some examples of custom connectors for Data Loss Prevention (DLP) in 
    - **Example**: A custom connector for an email gateway that handles outbound emails.
    - **Usage**: Applies DLP policies to monitor and prevent the leakage of sensitive information through email communications.
 
+## Setting Up Foundational Elements in Azure Purview
+
+### **Data Cataloging**
+
+| **Component**       | **Description**                                                                 | **Best Practices**                                                                 |
+|---------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Data Map**        | - Automated Metadata Scanning: Automate the scanning of metadata from various data sources. <br> - Data Lineage: Track the lineage of data to understand its flow from source to destination. | - Use built-in and custom classifiers for accurate data discovery and classification. <br> - Ensure comprehensive lineage tracking for compliance and auditing. |
+| **Data Catalog**    | - Governance Domains: Create governance domains to distribute ownership and maintenance tasks. <br> - Glossary Terms: Define glossary terms to standardize data definitions across the organization. | - Distribute governance responsibilities to make data easily discoverable. <br> - Standardize data definitions to enhance understanding and usage. |
+
+### **Handling Data Subject Requests**
+
+| **Component**               | **Description**                                                                 | **Best Practices**                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| **Self-Service Access Requests** | - Access Workflow: Enable users to request access to data assets directly through the Purview catalog. <br> - Data Access Policies: Implement data access policies to ensure only authorized users can access sensitive data. | - Streamline access requests by automating workflows. <br> - Protect privacy and comply with regulations through strict access policies. |
+
+### **Additional Best Practices**
+
+| **Practice**                | **Description**                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------|
+| **Federated Governance**    | Adopt a federated governance approach to distribute data governance responsibilities across the organization. |
+| **Data Quality and Trust**  | Enhance data quality and trustworthiness by implementing governance-focused actions and creating source-of-truth data products. |
+| **Business Value Creation** | Align data governance with business practices to unlock business value and make data more accessible and useful for decision-making. |
+
