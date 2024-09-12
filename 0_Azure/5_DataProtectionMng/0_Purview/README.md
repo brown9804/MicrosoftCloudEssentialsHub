@@ -149,4 +149,3 @@ Last updated: 2024-09-12
 | **Reingestion**             | If the asset was ingested from a data source, you can run a full scan on that source again. This will reingest the asset into the Purview catalog, effectively restoring it.      |
 | **Backup and Disaster Recovery** | Azure Purview does not currently support automated backup and disaster recovery (BCDR). However, you can manually create a secondary Purview account in another region to serve as a backup. This involves duplicating all activities performed on the primary account to the secondary account. |
 | **Manual Restoration**      | For more complex scenarios, you might need to manually restore data using scripts or APIs. This requires maintaining a backup of your metadata and configurations.     |
-
