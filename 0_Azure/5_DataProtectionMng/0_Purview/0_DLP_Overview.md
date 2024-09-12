@@ -9,6 +9,9 @@ Last updated: 2024-09-12
 
 ----------
 
+> `Microsoft Priva` is tailored for managing privacy risks and ensuring compliance with `privacy regulations`. It helps organizations automate privacy operations and manage consent and data subject requests. <br/>
+> `Microsoft Purview` offers a broader range of `data governance and protection capabilities`, focusing on securing and managing data across the entire organization, including compliance and risk management.
+
 ## Wiki 
 
 - [Learn about data loss prevention](https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp)
@@ -24,17 +27,52 @@ Last updated: 2024-09-12
 - [Introducing HTTP and Custom Connector Support for Data Loss Prevention Policies - Power Platform](https://www.microsoft.com/en-us/power-platform/blog/power-automate/introducing-http-and-custom-connector-support-for-data-loss-prevention-policies/)
 - [Connector classification - Power Platform](https://learn.microsoft.com/en-us/power-platform/admin/dlp-connector-classification)
 - [DLP for custom connectors](https://learn.microsoft.com/en-us/power-platform/admin/dlp-custom-connector-parity)
-  
-## Benefits
+
+## Overview 
+
+> Microsoft Purview is a comprehensive set of solutions designed to help organizations govern, protect, and manage their data across their entire data estate.
+
+| **Feature**                     | **Microsoft Priva**                                                                 | **Microsoft Purview**                                                                 |
+|---------------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| **Primary Focus**               | Privacy management and compliance                                                   | Data governance, protection, and compliance                                          |
+| **Key Capabilities**            | - Privacy Risk Management<br>- Subject Rights Requests<br>- Consent Management      | - Data Loss Prevention<br>- Information Protection<br>- Insider Risk Management      |
+| **Data Handling**               | Focuses on personal data privacy and regulatory compliance                          | Manages and protects data across the entire data estate                              |
+| **Integration**                 | Integrates with Microsoft Purview for data classification and labeling               | Integrates with Microsoft 365 and Azure for comprehensive data governance            |
+| **Use Cases**                   | - Automating privacy assessments<br>- Managing consent<br>- Handling data subject requests | - Mapping data estate<br>- Classifying and protecting sensitive data<br>- Managing insider risks |
+| **Compliance Tools**            | Privacy-specific compliance tools and assessments                                   | Broad compliance tools including audit, eDiscovery, and communication compliance     |
+| **Target Users**                | Privacy officers, compliance teams                                                  | Data governance teams, security officers, compliance teams                           |
+
+
+### Key Features of Microsoft Purview
+
+| **Category**           | **Feature**                        | **Description**                                                                 |
+|------------------------|------------------------------------|---------------------------------------------------------------------------------|
+| **Data Security**      | Data Loss Prevention               | Protects sensitive information from risky and unauthorized access.              |
+|                        | Information Protection             | Identifies, classifies, and protects sensitive data.                            |
+|                        | Insider Risk Management            | Detects and acts on critical risks like data theft and leaks.                   |
+|                        | Privileged Access Management       | Manages and secures privileged access to sensitive data.                        |
+| **Data Governance**    | Data Map                           | Registers and scans data sources to map the data estate and identify sensitive data. |
+|                        | Data Catalog                       | Curates data sources, manages data integrity, and secures sensitive data.       |
+|                        | Unified Data Governance            | Manages data services across on-premises, multicloud, and SaaS environments.    |
+| **Risk and Compliance**| Audit                              | Supports forensic investigations and meets regulatory requirements.             |
+|                        | Communication Compliance           | Detects sensitive or inappropriate content in communication channels.           |
+|                        | Compliance Manager                 | Translates regulatory requirements into specific improvement actions.           |
+|                        | eDiscovery                         | Manages data for internal or legal investigations.                              |
+
+
+### Benefits of Microsoft Purview
 
 | **Benefit**                       | **Description**                                                                 |
 |-----------------------------------|---------------------------------------------------------------------------------|
+| Visibility                        | Gain insights into data across your organization.                               |
+| Security                          | Safeguard data throughout its lifecycle.                                        |
+| Governance                        | Seamlessly govern data in new, comprehensive ways.                              |
+| Compliance                        | Minimize compliance risks and meet regulatory requirements.                     |
 | Sensitive Data Detection          | Identifies sensitive information using deep content analysis.                   |
 | Policy Creation and Enforcement   | Allows creation and enforcement of DLP policies across various services.        |
 | Machine Learning Integration      | Enhances detection accuracy with machine learning algorithms.                   |
 | Comprehensive Monitoring          | Monitors actions on sensitive items and prevents unintentional sharing.         |
 | Integration with Sensitivity Labels| Unifies data security and compliance with sensitivity labels from Microsoft Information Protection. |
-
 
 ## Boundaries of DLP without Microsoft Purview
 
