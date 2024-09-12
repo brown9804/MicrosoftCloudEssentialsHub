@@ -38,6 +38,20 @@ Last updated: 2024-09-12
 | **Compliance Tools**            | Privacy-specific compliance tools and assessments                                   | Broad compliance tools including audit, eDiscovery, and communication compliance     |
 | **Target Users**                | Privacy officers, compliance teams                                                  | Data governance teams, security officers, compliance teams                           |
 
+### Benefits of Microsoft Purview
+
+| **Benefit**                       | **Description**                                                                 |
+|-----------------------------------|---------------------------------------------------------------------------------|
+| Visibility                        | Gain insights into data across your organization.                               |
+| Security                          | Safeguard data throughout its lifecycle.                                        |
+| Governance                        | Seamlessly govern data in new, comprehensive ways.                              |
+| Compliance                        | Minimize compliance risks and meet regulatory requirements.                     |
+| Sensitive Data Detection          | Identifies sensitive information using deep content analysis.                   |
+| Policy Creation and Enforcement   | Allows creation and enforcement of DLP policies across various services.        |
+| Machine Learning Integration      | Enhances detection accuracy with machine learning algorithms.                   |
+| Comprehensive Monitoring          | Monitors actions on sensitive items and prevents unintentional sharing.         |
+| Integration with Sensitivity Labels| Unifies data security and compliance with sensitivity labels from Microsoft Information Protection. |
+
 ### Key Features of Microsoft Purview
 
 | **Category**           | **Feature**                        | **Description**                                                                 |
@@ -53,20 +67,6 @@ Last updated: 2024-09-12
 |                        | Communication Compliance           | Detects sensitive or inappropriate content in communication channels.           |
 |                        | Compliance Manager                 | Translates regulatory requirements into specific improvement actions.           |
 |                        | eDiscovery                         | Manages data for internal or legal investigations.                              |
-
-### Benefits of Microsoft Purview
-
-| **Benefit**                       | **Description**                                                                 |
-|-----------------------------------|---------------------------------------------------------------------------------|
-| Visibility                        | Gain insights into data across your organization.                               |
-| Security                          | Safeguard data throughout its lifecycle.                                        |
-| Governance                        | Seamlessly govern data in new, comprehensive ways.                              |
-| Compliance                        | Minimize compliance risks and meet regulatory requirements.                     |
-| Sensitive Data Detection          | Identifies sensitive information using deep content analysis.                   |
-| Policy Creation and Enforcement   | Allows creation and enforcement of DLP policies across various services.        |
-| Machine Learning Integration      | Enhances detection accuracy with machine learning algorithms.                   |
-| Comprehensive Monitoring          | Monitors actions on sensitive items and prevents unintentional sharing.         |
-| Integration with Sensitivity Labels| Unifies data security and compliance with sensitivity labels from Microsoft Information Protection. |
 
 ## Azure Cloud Services related with Microsoft Purview 
 
@@ -84,7 +84,6 @@ Last updated: 2024-09-12
 | **Azure SQL Managed Instance** | Supports data governance and classification with Purview.                      |
 | **Azure HDInsight**          | Integrates with Purview for big data analytics and governance.                  |
 | **Azure Databricks**         | Connects with Purview for advanced analytics and data governance.               |
-
 
 ## Demo Ideas 
 
