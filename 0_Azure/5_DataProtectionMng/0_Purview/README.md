@@ -11,6 +11,7 @@ Last updated: 2024-09-12
 
 > `Microsoft Priva` is tailored for managing privacy risks and ensuring compliance with `privacy regulations`. It helps organizations automate privacy operations and manage consent and data subject requests. <br/>
 > `Microsoft Purview` offers a broader range of `data governance and protection capabilities`, focusing on securing and managing data across the entire organization, including compliance and risk management.
+> `Microsoft Priva integrates seamlessly with Microsoft Purview`, enhancing the overall data governance and compliance capabilities. `Together, they provide a comprehensive solution for managing data privacy and compliance` across your organization.
 
 ## Wiki 
 
