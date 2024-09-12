@@ -120,13 +120,10 @@ Last updated: 2024-09-12
 
 ### Step 3: Configure Data Compression
 
-#### Select Compression Type
 1. **Compression Settings**:
    - In the **Sink** tab of the Copy Data activity, scroll down to **Compression**.
    - Choose the desired compression type (LZ4 or GZIP).
-
-#### Destination Configuration
-1. **Configure Destination**:
+2. **Configure Destination**:
    - Specify the file format and path where the compressed data will be stored.
    - Ensure the destination supports the chosen compression format.
 
