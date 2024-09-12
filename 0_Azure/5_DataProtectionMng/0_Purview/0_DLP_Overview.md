@@ -22,6 +22,7 @@ Last updated: 2024-09-12
 - [Configure endpoint data loss prevention settings](https://learn.microsoft.com/en-us/purview/dlp-configure-endpoint-settings)
 - [Use data loss prevention policies for non-Microsoft cloud apps](https://learn.microsoft.com/en-us/purview/dlp-use-policies-non-microsoft-cloud-apps?tabs=purview)
 - [Data Loss Prevention policy reference](https://learn.microsoft.com/en-us/purview/dlp-policy-reference)
+- [Govern your data wherever it resides with Azure Purview](https://azure.microsoft.com/en-us/blog/govern-your-data-wherever-it-resides-with-azure-purview/)
 - [Frequently asked questions (FAQ) about Microsoft Purview data governance solutions](https://learn.microsoft.com/en-us/purview/frequently-asked-questions)
 - [Data loss prevention Exchange conditions and actions reference](https://learn.microsoft.com/en-us/purview/dlp-exchange-conditions-and-actions)
 - [Introducing HTTP and Custom Connector Support for Data Loss Prevention Policies - Power Platform](https://www.microsoft.com/en-us/power-platform/blog/power-automate/introducing-http-and-custom-connector-support-for-data-loss-prevention-policies/)
@@ -96,6 +97,23 @@ Last updated: 2024-09-12
 | Policy Size and Complexity       | The maximum size of a DLP policy is 100 KB, which can limit the complexity and number of rules within a single policy. | - **Modular Policies**: Break down complex policies into smaller, modular policies that can be managed more easily. <br/> - **Regular Reviews**: Regularly review and optimize policies to ensure they remain within size limits. |
 | Integration Limitations          | The data map in Microsoft Purview does not currently support DLP capabilities for Microsoft 365 apps and services. | - **Manual Processes**: Implement manual processes to complement DLP policies where integration is not supported. <br/> - **Custom Scripts**: Use custom scripts to automate data protection tasks that are not covered by DLP policies. |
 | License Restrictions             | Some advanced DLP features are only available with higher-tier licenses, such as Office 365 E5. | - **Evaluate Needs**: Assess your organization's specific needs to determine if higher-tier licenses are necessary. <br/> - **Leverage Available Features**: Make the most of the features available in your current license tier while planning for future upgrades if needed. |
+
+## Azure Cloud Services related with Microsoft Purview 
+
+> These services work together with Microsoft Purview to `provide comprehensive data governance, protection, and management across your entire data estate`.
+
+| **Service**                  | **Description**                                                                 |
+|------------------------------|---------------------------------------------------------------------------------|
+| **Azure Synapse Analytics**  | Integrates with Purview for data lineage and unified analytics.                  |
+| **Azure SQL Database**       | Works with Purview for data classification and governance.                      |
+| **Azure Data Factory**       | Connects with Purview for data integration and orchestration.                   |
+| **Azure Blob Storage**       | Supports data storage and integrates with Purview for data governance.          |
+| **Azure Data Lake Storage**  | Provides scalable storage and integrates with Purview for data management.      |
+| **Power BI**                 | Integrates with Purview for data visualization and governance.                  |
+| **Azure Cosmos DB**          | Works with Purview for managing and governing globally distributed data.        |
+| **Azure SQL Managed Instance** | Supports data governance and classification with Purview.                      |
+| **Azure HDInsight**          | Integrates with Purview for big data analytics and governance.                  |
+| **Azure Databricks**         | Connects with Purview for advanced analytics and data governance.               |
 
 ## Custom Connectors
 
