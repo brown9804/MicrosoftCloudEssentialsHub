@@ -134,17 +134,17 @@ Last updated: 2024-09-12
 
 #### Connection Issues
 - **Issue**: Unable to connect to Oracle database.
-- **Solution**: Verify connection details, ensure Oracle Client is installed, and check network connectivity. Ensure the data gateway is properly configured and running¹.
+- **Solution**: Verify connection details, ensure Oracle Client is installed, and check network connectivity. Ensure the data gateway is properly configured and running.
 
 #### Authentication Problems
 - **Issue**: Authentication failures.
-- **Solution**: Double-check credentials and authentication method. Ensure API key or token is valid and has necessary permissions¹.
+- **Solution**: Double-check credentials and authentication method. Ensure API key or token is valid and has necessary permissions.
 
 #### Data Transfer Errors
 - **Issue**: Errors during data transfer.
-- **Solution**: Check pipeline logs for error messages. Ensure data format and schema compatibility. Adjust query or data mapping as needed².
+- **Solution**: Check pipeline logs for error messages. Ensure data format and schema compatibility. Adjust query or data mapping as needed.
 
 #### Compression Issues
 - **Issue**: Data not compressed as expected.
-- **Solution**: Verify compression settings in the copy activity. Ensure destination supports specified compression format².
+- **Solution**: Verify compression settings in the copy activity. Ensure destination supports specified compression format.
 
