@@ -46,16 +46,16 @@ Last updated: 2024-09-13
   4. **Enter Connection Details**:
      - Provide the server name, database name, and the credentials for the MySQL user you created earlier.
      - Ensure that the connection string includes SSL parameters to enforce encryption.
-- Step 4: Secure the Connection
-  1. All interactions with Microsoft Fabric are encrypted by default and authenticated using Microsoft Entra ID. Data at rest is also stored encrypted.
-  2. Ensure that the communication between your MySQL database and Microsoft Fabric travels through secure channels, leveraging the encryption you already have in place between the cloud and your local network.
-  3. **Verify SSL/TLS Encryption**: Ensure that your MySQL server is configured to support SSL/TLS connections. You might need to update your MySQL configuration file (`my.cnf` or `my.ini`) to enable SSL.
-  4. **Test the Connection**: Use the test connection feature in Microsoft Fabric to ensure that the connection is successful and encrypted.
-- Step 5: Create and Schedule Dataflows
+     - Secure the Connection
+        1. All interactions with Microsoft Fabric are encrypted by default and authenticated using Microsoft Entra ID. Data at rest is also stored encrypted.
+        2. Ensure that the communication between your MySQL database and Microsoft Fabric travels through secure channels, leveraging the encryption you already have in place between the cloud and your local network.
+        3. **Verify SSL/TLS Encryption**: Ensure that your MySQL server is configured to support SSL/TLS connections. You might need to update your MySQL configuration file (`my.cnf` or `my.ini`) to enable SSL.
+        4. **Test the Connection**: Use the test connection feature in Microsoft Fabric to ensure that the connection is successful and encrypted.
+- Step 4: Create and Schedule Dataflows
   1. **Design Your Dataflow**: Use Power Query to design your dataflow, specifying the tables and columns you want to import from MySQL.
   2. **Transform Data as Needed**: Apply any necessary transformations to your data within the dataflow.
   3. **Schedule Data Refresh**: Set up a schedule for your dataflow to refresh the data at regular intervals.
-- Step 6: Monitor and Maintain
+- Step 5: Monitor and Maintain
   1. **Monitor Dataflows**: Regularly monitor the status of your dataflows to ensure they are running smoothly.
   2. **Update Gateway and Connectors**: Keep your on-premises data gateway and MySQL connectors up to date to ensure compatibility and security.
 
