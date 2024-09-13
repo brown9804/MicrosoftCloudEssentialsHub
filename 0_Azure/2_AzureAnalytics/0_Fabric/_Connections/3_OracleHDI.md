@@ -32,12 +32,11 @@ Last updated: 2024-09-13
 
 > **Set Up Data Gateway**: If your Oracle database is on-premises, configure the on-premises data gateway to facilitate the connection.
 
-1. **Setup the Connection in Microsoft Fabric**
+1. **Setup the Data Pipeline in Microsoft Fabric**
     - **Open Data Factory**: Navigate to Microsoft Fabric's Data Factory.
 
       <img width="219" alt="image" src="https://github.com/user-attachments/assets/be07d64c-5adc-4a60-970b-76dee9020ddf">
       
-2. **Set Up Data Pipeline**
    - **Create a Pipeline**: In Data Factory, create a new pipeline to manage the data flow from Oracle HDI to your desired destination.
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/ac73aab8-dd74-45d3-b33b-a337e6321a30">
@@ -59,7 +58,7 @@ Last updated: 2024-09-13
          - **Username and Password**: Enter your Oracle database credentials.
          - **Test Connection**: Click on **Test Connection** to ensure the details are correct.
            
- 3. **Configure Data Compression**
+ 2. **Configure Data Compression**
      - In the **Destination** tab, choose the destination data store (e.g., Azure Blob Storage, SQL Database).
      - **Select Compression Type**: In the copy activity settings, choose the desired compression type (LZ4 or GZIP) for the data transfer.
      - **Destination Configuration**: Configure the destination settings to store the compressed data in your preferred format. Specify the file format and path where the compressed data will be stored.
