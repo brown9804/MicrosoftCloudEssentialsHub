@@ -52,19 +52,31 @@ There are a few methods to connect on-premises data to Microsoft Fabric:
 
 1. **Install the On-Premises Data Gateway**: Download and install the gateway on a local machine within your network. You can find detailed instructions on how to do this [here](https://learn.microsoft.com/en-us/fabric/data-factory/how-to-access-on-premises-data).
 2. **Configure the Gateway**:
-  - Sign In: After installation, sign in with your Microsoft account.
-  - Register Gateway: Register the gateway with your Microsoft Fabric account. This will link the gateway to your Fabric environment.
-  - Network Configuration: Ensure the gateway is configured to only allow connections from specific internal IP addresses for added security.
+    - Sign In: After installation, sign in with your Microsoft account.
+    - Register Gateway: Register the gateway with your Microsoft Fabric account. This will link the gateway to your Fabric environment.
+    - Network Configuration: Ensure the gateway is configured to only allow connections from specific internal IP addresses for added security.
 3. **Create a Connection for Your On-Premises Data Source**:
    - Navigate to the admin portal in Microsoft Fabric.
    - Select the settings icon (gear icon) at the top right of the page.
    - Choose "Manage connections and gateways" from the dropdown menu.
+     
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0acdb168-c806-45f2-8f77-6562f9ec258b">
+
    - In the New connection dialog, select "On-premises" and provide your gateway cluster, resource type, and relevant information.
-4. **Connect Your On-Premises Data Source to a Dataflow Gen2**:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/d0d4fe16-e3cf-4c47-b7d6-a5ffb9cae60b">
+
+3. **Connect Your On-Premises Data Source to a Dataflow Gen2**:
    - Go to your workspace and create a Dataflow Gen2.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa27c48b-6126-4a52-8d62-070c9bc1a207">
+
    - Add a new source to the dataflow and select the connection you established in the previous step.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/b77616f3-66c2-4635-9d6e-483235c8b535">
+
    - Perform any necessary data transformations and add a destination for your data.
-5. **Using On-Premises Data in a Pipeline**:
+4. **Using On-Premises Data in a Pipeline**:
    - Create a Data Pipeline in your workspace.
    - Add a new source to the pipeline copy activity and select the connection established earlier.
    - Choose a destination for your data from the on-premises source and run the pipeline.
