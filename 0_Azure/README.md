@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-06
+Last updated: 2024-09-13
 
 ------------------------------------------
 
@@ -16,6 +16,7 @@ Last updated: 2024-08-06
     - [Azure Analytics](./2_AzureAnalytics/README.md)
     - [Azure AI](./3_AzureAI/README.md)
     - [Azure DevOps](./4_AzureDevOps/README.md)
+    - [Data Protection and Management](./5_DataProtectionMng)
 
 Microsoft Azure is a cloud computing platform that provides a wide range of services for building, deploying, and managing applications and infrastructure. It offers scalability, flexibility, and global reach.
 
