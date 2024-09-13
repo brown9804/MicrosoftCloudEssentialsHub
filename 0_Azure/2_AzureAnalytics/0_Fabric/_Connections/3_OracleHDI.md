@@ -83,3 +83,4 @@ Last updated: 2024-09-13
  4. **Compression Issues**
      - **Issue**: Data not being compressed as expected.
      - **Solution**: Verify the compression settings in the copy activity. Ensure that the destination supports the specified compression format (LZ4 or GZIP).
+       
