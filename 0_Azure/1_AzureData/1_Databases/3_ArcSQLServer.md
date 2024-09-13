@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-06
+Last updated: 2024-09-13
 
 ----------
 
@@ -26,6 +26,8 @@ Last updated: 2024-09-06
 - [3 steps to secure your multicloud and hybrid infrastructure with Azure Arc](https://www.microsoft.com/en-us/security/blog/2022/03/29/3-steps-to-secure-your-multicloud-and-hybrid-infrastructure-with-azure-arc/)
 - [Azure Arc-enabled server configurations](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-hybrid-config)
 - [Configure Microsoft Defender for Cloud for Azure Arc-enabled servers](https://learn.microsoft.com/en-us/training/modules/configure-defender-cloud-azure-arc-enabled-servers/)
+- [SQL Managed Instance enabled by Azure Arc Overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/managed-instance-overview)
+- [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
 - [Administer SQL Server with Azure Arc - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-sql-server)
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/df22531f-c57c-43dd-9fdf-d38549ff6926">
@@ -127,15 +129,15 @@ Last updated: 2024-09-06
 
 - Step 2: AKS cluster needs to meet certain requirements
 
-| **Category**               | **Details**                                                                                                                                                                                                 |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Kubernetes Version**     | Ensure your AKS cluster is running a supported version of Kubernetes. Azure Arc-enabled data services typically support the last three stable versions of Kubernetes.                                        |
-| **Node Configuration**     | - **Node Size**: Use nodes with sufficient CPU and memory resources. For production workloads, it's recommended to use at least Standard_D4s_v3 or equivalent. <br/> - **Node Count**: Have a minimum of three nodes to ensure high availability and redundancy. |
-| **Storage**                | - **Persistent Storage**: Configure persistent storage for your AKS cluster. Azure Disk or Azure Files are commonly used for this purpose. <br> - **Storage Class**: Ensure you have a default storage class set up in your cluster. |
-| **Networking**             | - **Network Policies**: Implement network policies to control traffic between pods and services. <br/> - **Load Balancer**: Ensure your cluster has a load balancer configured for external access. |
-| **RBAC**                   | Enable RBAC in your AKS cluster to manage permissions and access control.                                                                                                                                   |
-| **Azure Arc Extensions**   | Install the necessary Azure Arc extensions on your AKS cluster: <br/> `az extension add --name connectedk8s` <br/> `az extension add --name k8s-extension`                                       |
-| **Security**               | Implement security best practices, such as using Azure Policy for Kubernetes, enabling Azure Defender for Kubernetes, and regularly updating your cluster and nodes.                                        |
+    | **Category**               | **Details**                                                                                                                                                                                                 |
+    |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | **Kubernetes Version**     | Ensure your AKS cluster is running a supported version of Kubernetes. Azure Arc-enabled data services typically support the last three stable versions of Kubernetes.                                        |
+    | **Node Configuration**     | - **Node Size**: Use nodes with sufficient CPU and memory resources. For production workloads, it's recommended to use at least Standard_D4s_v3 or equivalent. <br/> - **Node Count**: Have a minimum of three nodes to ensure high availability and redundancy. |
+    | **Storage**                | - **Persistent Storage**: Configure persistent storage for your AKS cluster. Azure Disk or Azure Files are commonly used for this purpose. <br> - **Storage Class**: Ensure you have a default storage class set up in your cluster. |
+    | **Networking**             | - **Network Policies**: Implement network policies to control traffic between pods and services. <br/> - **Load Balancer**: Ensure your cluster has a load balancer configured for external access. |
+    | **RBAC**                   | Enable RBAC in your AKS cluster to manage permissions and access control.                                                                                                                                   |
+    | **Azure Arc Extensions**   | Install the necessary Azure Arc extensions on your AKS cluster: <br/> `az extension add --name connectedk8s` <br/> `az extension add --name k8s-extension`                                       |
+    | **Security**               | Implement security best practices, such as using Azure Policy for Kubernetes, enabling Azure Defender for Kubernetes, and regularly updating your cluster and nodes.                                        |
 
 - Step 3: Install the necessary Azure Arc extensions on your AKS cluster:
     1. Go to your AKS and run the instructions via Azure CLI:
@@ -144,25 +146,25 @@ Last updated: 2024-09-06
   
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/5021f8b8-6145-48a1-b2f5-41c37ff12233">
 
-          - Connect your AKS cluster to Azure Arc:  `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
+        - Connect your AKS cluster to Azure Arc:  `az connectedk8s connect --name <clusterName> --resource-group <resourceGroupName> --location <location> --tags <key1=value1> <key2=value2> --correlation-id <correlationId>`
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c9aee09-3ac0-41a1-b623-c87c8583c21d">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c9aee09-3ac0-41a1-b623-c87c8583c21d">
 
         - Validate is connected:
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5469daa0-8e97-42b4-a658-8f8cd701be24">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/5469daa0-8e97-42b4-a658-8f8cd701be24">
 
-       `az k8s-extension create --name azuremonitor-containers --extension-type Microsoft.AzureMonitor.Containers --scope cluster --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
+       - Run the following command in the k8s: `az k8s-extension create --name azuremonitor-containers --extension-type Microsoft.AzureMonitor.Containers --scope cluster --cluster-name <clusterName> --resource-group <resourceGroupName> --cluster-type connectedClusters`
        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c14d0add-47b8-4ae1-a1d0-39b8494586c8">
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/c14d0add-47b8-4ae1-a1d0-39b8494586c8">
 
         - Validate that the extention was added:
           
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/92c4db6b-c0dc-483b-a6db-a272c7cdd9ec">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/92c4db6b-c0dc-483b-a6db-a272c7cdd9ec">
 
-        `az aks enable-addons --addons monitoring --name <cluster-name> --resource-group <resource-group-name>`
+       - Run the following command in the k8s: `az aks enable-addons --addons monitoring --name <cluster-name> --resource-group <resource-group-name>`
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef454aa-3d5b-4739-b6a2-8381b8726226">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef454aa-3d5b-4739-b6a2-8381b8726226">
 
 - Step 4: **Create Custom Location**:
   - Install the required Azure CLI extensions: `az extension add --name customlocation` 
@@ -191,7 +193,7 @@ Last updated: 2024-09-06
     
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/0fb0e335-7c2f-40d6-98a7-ec63dbb2babf">
     
-             - Validate that the custom location is created, you should see something like this:
+          - Validate that the custom location is created, you should see something like this:
     
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/0ac58efb-8a8e-4097-a049-30ef8dfe8bea">
 
@@ -243,7 +245,7 @@ Last updated: 2024-09-06
     3. Connect SQL Managed Instance to Azure Arc
        - **Navigate to Azure Arc Data Services**: Go to the Azure portal. In the left-hand menu, select **Azure Arc** > **Data services**.
         
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8710b913-5f1e-4a6e-af92-cd2cf9f99dca">
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/8710b913-5f1e-4a6e-af92-cd2cf9f99dca">
 
        - **Add SQL Managed Instance**:
           - Click on **+ Add**.
@@ -254,15 +256,15 @@ Last updated: 2024-09-06
 
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/819b7d6e-c4eb-4137-bc66-9659db40a920">
 
-           - Validate the Connection:  Go back to the Azure portal, navigate to **Azure Arc** > **Data services**, and ensure your SQL Managed Instance appears in the list of Arc-enabled data services.
-
+          - Validate the Connection:  Go back to the Azure portal, navigate to **Azure Arc** > **Data services**, and ensure your SQL Managed Instance appears in the list of Arc-enabled data services.
 
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/e7be6923-ea8a-4545-82e1-49e34e0afe9b">
 
 - Step 6: Manage and Monitor
-   1. **Use Azure Portal**:
-      - Utilize the Azure portal to manage and monitor your SQL Managed Instance.
-      - You can apply policies, monitor performance, and manage security settings.
+    - Utilize the Azure portal to manage and monitor your SQL Managed Instance.
+    - You can apply policies, monitor performance, and manage security settings.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/4339c27f-ef5c-4ca7-9b4f-58f3a2545462">
 
 ## Troubleshooting
 
