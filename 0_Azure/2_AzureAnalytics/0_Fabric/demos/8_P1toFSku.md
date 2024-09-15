@@ -14,6 +14,7 @@ Last updated: 2024-09-15
 - [Important update to Power BI Premium licensing](https://www.microsoft.com/en-us/licensing/news/power-bi-premium-sku-retirement)
 - [Important update coming to Power BI Premium licensing - Blog](https://powerbi.microsoft.com/en-us/blog/important-update-coming-to-power-bi-premium-licensing/)
 - [Microsoft Fabric concepts and licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
+- [Moving Fabric (Power BI) Workspaces from Premium or Free Trial to new F SKUs](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/moving-fabric-power-bi-workspaces-from-premium-or-free-trial-to/ba-p/4176482)
 
 ## Overview 
 
