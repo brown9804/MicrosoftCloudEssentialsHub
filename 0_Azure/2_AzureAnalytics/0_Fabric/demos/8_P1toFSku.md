@@ -68,13 +68,13 @@ Here's a step-by-step guide to help you transition from Power BI Premium (P1 SKU
        - **Log In**: Open your web browser and go to the Power BI Admin portal. Log in using your administrator credentials.
        - **Navigate to Admin Portal**: Once logged in, click on the gear icon (⚙️) in the top right corner and select `Admin Portal` from the dropdown menu.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/ec0c32dc-17aa-46c5-9912-1f5920d7e0d3">
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/ec0c32dc-17aa-46c5-9912-1f5920d7e0d3">
 
     2. Select Workspaces
        - **Go to Workspaces**: In the Admin Portal, navigate to the `Workspaces` section. This will display a list of all the workspaces in your organization.
        - **Identify Workspaces**: Identify the workspaces currently assigned to the P1 SKU that you want to migrate to the Fabric SKU.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/d9441ad8-1919-49c5-baf4-e0eaec050332">
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/d9441ad8-1919-49c5-baf4-e0eaec050332">
 
     3. Reassign Capacity
        - **Select Workspace**: Click on the workspace you want to migrate. This will open the workspace settings.
@@ -82,7 +82,7 @@ Here's a step-by-step guide to help you transition from Power BI Premium (P1 SKU
        - **Select Fabric SKU**: From the dropdown menu, select the new Fabric SKU that you have purchased.
        - **Save Changes**: Click "Save" to apply the changes. The workspace will now be reassigned to the new Fabric SKU.
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3587658e-50b8-484a-b048-07de018a15fe">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/3587658e-50b8-484a-b048-07de018a15fe">
 
 5. **Verify Migration**:
    - **Check Functionality**: Ensure all reports and dashboards are functioning correctly after the migration.
