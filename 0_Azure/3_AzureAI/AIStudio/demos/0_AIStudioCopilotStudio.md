@@ -117,7 +117,7 @@ Last updated: 2024-09-16
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
    - **Create an Azure Bot Service Bot**: Navigate to the Azure portal, create a new Bot Service, and configure it using the v4 SDK.
 2. **Create a Copilot in Copilot Studio**:
-   - **Start a New Copilot**: Log in to Copilot Studio, click on "Create a Copilot," and provide a name and language for your chatbot.
+   - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
 3. **Retrieve Copilot Parameters**:
    - **Get Copilot Name and Token Endpoint**: In Copilot Studio, navigate to Settings and copy your copilot's name and token endpoint.
@@ -135,7 +135,7 @@ Last updated: 2024-09-16
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
    - **Access Azure OpenAI Service**: Navigate to the Azure portal and create an Azure OpenAI resource.
 2. **Create a Copilot in Copilot Studio**:
-   - **Start a New Copilot**: Log in to Copilot Studio, click on "Create a Copilot," and provide a name and language for your chatbot.
+   - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
 3. **Integrate with Azure OpenAI Service**:
    - **Select Model**: In Copilot Studio, choose to integrate with Azure OpenAI Service and select a model like GPT-4.
@@ -150,7 +150,7 @@ Last updated: 2024-09-16
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
    - **Access Azure Cognitive Services**: Navigate to the Azure portal and create resources for Language Understanding (LUIS), Speech Services, and Computer Vision.
 2. **Create a Copilot in Copilot Studio**:
-   - **Start a New Copilot**: Log in to Copilot Studio, click on "Create a Copilot," and provide a name and language for your chatbot.
+   - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
 3. **Integrate with Azure Cognitive Services**:
    - **Language Understanding**: Connect your copilot to LUIS to enhance its ability to understand user intents.
@@ -166,7 +166,7 @@ Last updated: 2024-09-16
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
    - **Access Azure Machine Learning**: Navigate to the Azure portal and create an Azure Machine Learning workspace.
 2. **Create a Copilot in Copilot Studio**:
-   - **Start a New Copilot**: Log in to Copilot Studio, click on "Create a Copilot," and provide a name and language for your chatbot.
+   - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
 3. **Integrate with Azure Machine Learning**:
    - **Data Grounding**: Use Azure Machine Learning to ground your copilot in specific data, enhancing the relevance and accuracy of its responses.
@@ -181,7 +181,7 @@ Last updated: 2024-09-16
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
    - **Access Azure DevOps**: Navigate to the Azure DevOps portal and create a new project.
 2. **Create a Copilot in Copilot Studio**:
-   - **Start a New Copilot**: Log in to Copilot Studio, click on "Create a Copilot," and provide a name and language for your chatbot.
+   - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
 3. **Integrate with Azure DevOps**:
    - **Set Up Repos**: Use Azure Repos to manage your copilot's code and configurations.
