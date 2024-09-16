@@ -83,7 +83,6 @@ Last updated: 2024-09-16
   | **Tools** | Supports LLMOps for generative AI solutions, including evaluation, connection management, and flow logic | Allows users to manage deployments and models directly through the Azure OpenAI Studio |
   | **Use Cases** | Suitable for a wide range of AI applications, including text, image, and document processing | Primarily for text generation, summarization, translation, and question answering |
 
-
 ### Model Catalog 
 
 > The Model Catalog in Azure AI Studio is a `central hub where you can discover, evaluate, and deploy a wide range of AI models`. It includes models from various providers such as Azure OpenAI Service, Mistral, Meta, Cohere, NVIDIA, and Hugging Face, as well as models trained by Microsoft.
