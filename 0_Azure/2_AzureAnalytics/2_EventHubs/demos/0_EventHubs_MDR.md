@@ -113,6 +113,8 @@ Key benefits:
    - Set up **budgets** and **alerts** to monitor and control your spending.
    - Analyze the cost data to identify which resources and activities contribute most to your monthly Azure bill. This can help you optimize your resource usage and reduce costs.
 
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/49f6bddf-3ac1-44fc-88c0-5e847ca05531">
+
 ## Setting up Azure Event Hubs 
 
 > Involves creating an Event Hubs namespace and an event hub within that namespace. 
