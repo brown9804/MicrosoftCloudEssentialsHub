@@ -14,6 +14,9 @@ Last updated: 2024-09-16
 - [What Is MDR? Managed Detection and Response](https://www.microsoft.com/en-us/security/business/security-101/what-is-mdr-managed-detection-response)
 - [What is Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about)
 - [Event Hubs pricing](https://azure.microsoft.com/en-us/pricing/details/event-hubs/)
+- [Monitor Azure resources with Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/monitor-azure-resource)
+- [Collect and analyze resource logs from an Azure resource](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/tutorial-resource-logs)
+- [Step-by-Step: Finding and Analyzing Microsoft Azure Cloud Usage Costs](https://techcommunity.microsoft.com/t5/finops-blog/step-by-step-finding-and-analyzing-microsoft-azure-cloud-usage/ba-p/718890)
 
 ## Overview
 
