@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-15
+Last updated: 2024-09-16
 
 ----------
 
@@ -15,6 +15,8 @@ Last updated: 2024-09-15
 - [Important update coming to Power BI Premium licensing - Blog](https://powerbi.microsoft.com/en-us/blog/important-update-coming-to-power-bi-premium-licensing/)
 - [Microsoft Fabric concepts and licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
 - [Moving Fabric (Power BI) Workspaces from Premium or Free Trial to new F SKUs](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/moving-fabric-power-bi-workspaces-from-premium-or-free-trial-to/ba-p/4176482)
+- [Deploying Microsoft Fabric Capacity Using Terraform](https://murggu.medium.com/deploying-microsoft-fabric-azure-capacity-using-terraform-8dfcbab16f64)
+- [Announcing the availability of Trusted workspace access and Managed private endpoints in any Fabric capacity](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-availability-of-trusted-workspace-access-and-managed-private-endpoints-in-any-fabric-capacity?ft=All)
 
 ## Overview 
 
