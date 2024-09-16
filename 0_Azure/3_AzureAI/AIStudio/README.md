@@ -13,11 +13,42 @@ Last updated: 2024-09-16
 
 ## Content 
 
-<!-- TOC -->
-- [Wiki](#wiki)
-- [Overview](#overview)
+<details>
+  <summary>Click to display </summary>
+  
+- [Azure AI Studio](#azure-ai-studio)
+    - [Content](#content)
+    - [Wiki](#wiki)
+    - [Overview](#overview)
+        - [Model Catalog](#model-catalog)
+        - [Model Benchmarks](#model-benchmarks)
+        - [Azure AI Services](#azure-ai-services)
+    - [Architecture](#architecture)
+        - [AI Hub](#ai-hub)
+        - [Projects](#projects)
+        - [AI Studio SDK](#ai-studio-sdk)
+        - [RBAC and Permissions](#rbac-and-permissions)
+        - [Networking](#networking)
+    - [Project playground](#project-playground)
+        - [Chat](#chat)
+        - [Assistants](#assistants)
+        - [Images](#images)
+        - [Completions](#completions)
+    - [Tools](#tools)
+        - [Code](#code)
+        - [Prompt Flow](#prompt-flow)
+        - [Tracing](#tracing)
+        - [Evaluation](#evaluation)
+        - [Fine-tunning](#fine-tunning)
+    - [Componenets](#componenets)
+        - [Data](#data)
+        - [Indexes](#indexes)
+        - [Content Filter](#content-filter)
+        - [Deployments](#deployments)
 
 <!-- /TOC -->
+
+</details>
 
 ## Wiki
 
@@ -120,7 +151,8 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Connections to Azure Services** | The hub can connect to other Azure services like Azure OpenAI, Azure AI services, and Azure AI Search. These connections are shared with projects created from the hub. |
 | **Project Management**         | A hub can manage multiple child projects, each inheriting the hub's security settings and shared resource access. |
 
-#### Setting Up an AI Hub:
+> Setting Up an AI Hub:
+
 1. **Navigate to Azure AI Studio**: Open the Azure portal and go to Azure AI Studio.
 2. **Create a New Hub**:
    - Click on `Create a resource` and search for `AI Hub`.
@@ -143,7 +175,8 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Isolated Containers**        | Projects have isolated containers for data upload, ensuring data security and privacy. |
 | **Project-Scoped Connections** | These connections allow project members to access specific data and resources without affecting other projects. |
 
-#### Creating a Project within an AI Hub:
+>  Creating a Project within an AI Hub:
+
 1. **Navigate to Your AI Hub**: Open the AI Hub you created.
 2. **Create a New Project**:
    - Click on `New Project`.
@@ -164,7 +197,7 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Integration**| Easily integrate AI capabilities into applications, streamlining the development process.            |
 | **Flexibility**| The SDK supports various programming languages and frameworks, making it adaptable to different development environments. |
 
-#### Using the AI Studio SDK:
+> Using the AI Studio SDK:
 1. **Install the SDK**: Use pip to install the SDK: `pip install azure-ai-studio-sdk`.
 2. **Authenticate**: Set up authentication using Azure CLI or a service principal.
 3. **Initialize the SDK**:
@@ -190,7 +223,7 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Azure AI Developer**  | Can perform all actions except creating new hubs and managing hub permissions.                        |
 | **Hub vs. Project Access** | The hub manages infrastructure and security, while projects focus on development and deployment.       |
 
-#### Setting Up RBAC:
+> Setting Up RBAC:
 1. **Navigate to Your AI Hub**: Open the AI Hub in the Azure portal.
 2. **Access IAM (Identity and Access Management)**: Click on `Access control (IAM)`.
 3. **Add Role Assignments**:
@@ -209,7 +242,7 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | **Managed Identities**| Using managed identities for secure access to resources without managing credentials.                |
 | **Policies**          | Implementing policies to control and monitor network traffic, ensuring compliance and security.       |
 
-#### Configuring Networking:
+> Configuring Networking:
 1. **Set Up Virtual Networks**:
    - In the Azure portal, navigate to `Virtual networks` and create a new virtual network.
    - Configure subnets and network security groups as needed.
@@ -264,8 +297,6 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 
 
 ## Tools 
-
-## Tools Overview
 
 | Tool          | Description                                                                 | Key Features                                                                                       |
 |---------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -376,6 +407,3 @@ Types of deployments available in Azure AI Studio:
 4. **Configure Deployment**: Specify the deployment name and modify settings as needed.
 5. **Deploy**: Click `Deploy` to make the model available as an API.
 6. **Integrate and Use**: Use the generated API endpoint to integrate the deployed model with your applications.
-
-
-
