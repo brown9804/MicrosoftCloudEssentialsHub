@@ -64,36 +64,36 @@ Key benefits:
 - Step 1: Create an Event Hubs Namespace
     1. **Sign in to Azure Portal**: Go to the Azure portal.
     2. **Create a Resource Group**:
-        - In the left-hand menu, select "Resource groups".
-        - Click "Create" and fill in the required details like Subscription, Resource Group Name, and Region.
-        - Click "Review + Create" and then "Create".
+        - In the left-hand menu, select `Resource groups`.
+        - Click `Create` and fill in the required details like Subscription, Resource Group Name, and Region.
+        - Click `Review + Create` and then `Create`.
     3. **Create Namespace**:
-        - In the left-hand menu, select "All services" and then "Event Hubs".
-        - Click "Create" on the Event Hubs page.
+        - In the left-hand menu, select `All services` and then `Event Hubs`.
+        - Click `Create` on the Event Hubs page.
         - Fill in the required details:
             - **Subscription**: Select your subscription.
             - **Resource Group**: Select the resource group you created.
             - **Namespace Name**: Enter a unique name for your namespace.
             - **Location**: Choose a region.
             - **Pricing Tier**: Choose between Basic, Standard, or Dedicated based on your needs.
-        - Click "Review + Create" and then "Create".
+        - Click `Review + Create` and then `Create`.
 - Step 2: Create an Event Hub
     1. **Navigate to Event Hubs Namespace**:
         - In the Azure portal, go to your Event Hubs namespace.
-        - Under "Entities", select "Event Hubs".
-        - Click "Create" to create a new event hub.
+        - Under `Entities`, select `Event Hubs`.
+        - Click `Create` to create a new event hub.
     2. **Configure Event Hub**:
         - **Name**: Enter a name for your event hub.
         - **Partition Count**: Choose the number of partitions (default is 4).
         - **Message Retention**: Set the message retention period (default is 1 day).
         - **Capture**: Optionally, enable capture to store event data in Azure Blob Storage or Azure Data Lake.
-        - Click "Create".
+        - Click `Create`.
 - Step 3: Configure Security and Access
     1. **Shared Access Policies**:
-        - In your Event Hubs namespace, go to "Shared access policies".
-        - Click "Add" to create a new policy.
+        - In your Event Hubs namespace, go to `Shared access policies`.
+        - Click `Add` to create a new policy.
         - Enter a name for the policy and select the appropriate permissions (e.g., Send, Listen, Manage).
-        - Click "Create".
+        - Click `Create`.
     2. **Connection Strings**:
         - After creating the shared access policy, click on it to view the connection strings.
         - Copy the connection string for use in your applications.
@@ -102,7 +102,7 @@ Key benefits:
         - Use the connection string to configure your application to send events to the event hub.
         - You can use SDKs like Azure SDK for .NET, Java, Python, etc., to send events.
     2. **Monitor and Analyze**:
-        - In the Azure portal, go to your event hub and click on "Metrics" to monitor incoming events and throughput.
+        - In the Azure portal, go to your event hub and click on `Metrics` to monitor incoming events and throughput.
         - Use Azure Stream Analytics, Azure Functions, or other services to process and analyze the event data.
 
 ## Example of how to setup Azure activity logs to an MDR solution
