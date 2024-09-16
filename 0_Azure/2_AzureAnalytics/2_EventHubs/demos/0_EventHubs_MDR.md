@@ -117,6 +117,12 @@ Key benefits:
 
 ## Setting up Azure Event Hubs 
 
+> Is a big data streaming platform and event ingestion service. It can receive and process millions of events per second.
+
+- Real-time data ingestion and processing.
+- Streaming analytics.
+- Telemetry data collection from IoT devices.
+
 > Involves creating an Event Hubs namespace and an event hub within that namespace. 
 
 - Step 1: Create an Event Hubs Namespace
@@ -163,7 +169,9 @@ Key benefits:
         - In the Azure portal, go to your event hub and click on `Metrics` to monitor incoming events and throughput.
         - Use Azure Stream Analytics, Azure Functions, or other services to process and analyze the event data.
 
-## Example of how to setup Azure activity logs to an MDR solution
+## Setting Up Azure Activity Logs to an MDR Solution
+
+> Collect and analyze logs, and then forwarding these logs to a Managed Detection and Response (MDR) solution for security monitoring and incident response.
 
 - Step 1: Create a Log Analytics Workspace
     1. **Navigate to Azure Portal**: Go to the Azure portal and search for `Log Analytics workspaces`.
