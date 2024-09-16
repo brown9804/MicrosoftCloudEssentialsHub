@@ -28,6 +28,8 @@ Last updated: 2024-09-16
 - [Azure AI Studio architecture](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/architecture)
 - [Role-based access control in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/rbac-ai-studio)
 - [Collaboratively build AI apps and share resources with hubs and projects](https://techcommunity.microsoft.com/t5/ai-ai-platform-blog/collaboratively-build-ai-apps-and-share-resources-with-hubs-and/ba-p/4153938)
+- [Deploy models, flows, and web apps with Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/deployments-overview)
+- [How to deploy Azure OpenAI models with Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/deploy-models-openai)
   
 ## Overview 
 
@@ -262,21 +264,103 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 
 
 ## Tools 
+
+## Tools Overview
+
+| Tool          | Description                                                                 | Key Features                                                                                       |
+|---------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Code**      | The `Code` tool allows you to write, test, and debug code directly within Azure AI Studio. | - `Interactive Development`: Write, test, and debug code. <br> - `Integration with Notebooks`: Use Jupyter Notebooks for interactive data analysis and model development. <br> - `Version Control`: Integrate with Git for version control and collaboration. |
+| **Prompt Flow** | `Prompt Flow` provides a visual interface for creating and managing AI workflows. | - `Visual Workflow`: Create and manage AI workflows using a visual interface. <br> - `Prompt Engineering`: Design and test prompts for large language models (LLMs). <br> - `Flow Variants`: Create and compare multiple prompt variants to optimize performance. |
+| **Tracing**   | `Tracing` is a debugging and performance monitoring tool.                   | - `Debugging`: Trace the execution of your AI workflows to identify and fix issues. <br> - `Logging`: Capture detailed logs of workflow execution for analysis. <br> - `Performance Monitoring`: Monitor the performance of your AI models and workflows. |
+| **Evaluation**| The `Evaluation` tool offers built-in and custom evaluators to assess the performance and quality of your AI models. | - `Built-in Evaluators`: Use built-in evaluators to assess model performance. <br> - `Custom Evaluators`: Create custom evaluators tailored to your specific needs. <br> - `Comprehensive Metrics`: Evaluate models using a variety of metrics, including accuracy, relevance, and safety. |
+| **Fine-Tuning**| `Fine-Tuning` allows you to customize pre-trained models to better fit your specific use case. | - `Model Customization`: Fine-tune pre-trained models to better fit your specific use case. <br> - `Data Integration`: Use your own datasets to fine-tune models. <br> - `Performance Improvement`: Enhance model performance by tailoring it to your data. |
+
 ### Code
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Open the Code Editor**: Navigate to the project and select `Code` from the menu.
+3. **Write Your Code**: Use the integrated code editor to write and test your code.
+4. **Run and Debug**: Execute your code and use debugging tools to troubleshoot any issues.
+5. **Save and Version Control**: Save your code and commit changes to your Git repository if integrated.
+
 ### Prompt Flow
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Open Prompt Flow**: Navigate to the project and select `Prompt Flow` from the menu.
+3. **Create a New Flow**: Click on `New Flow` and choose a template or start from scratch.
+4. **Design Your Flow**: Use the visual editor to add and configure nodes, including prompts and actions.
+5. **Test and Iterate**: Run your flow, test different prompt variants, and iterate based on results.
+   
 ### Tracing
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Enable Tracing**: Navigate to the project settings and enable tracing for your workflows.
+3. **Run Your Workflow**: Execute your AI workflow and let tracing capture the execution details.
+4. **Analyze Logs**: Review the captured logs to identify any issues or performance bottlenecks.
+5. **Debug and Optimize**: Use the insights from tracing to debug and optimize your workflows.
+
 ### Evaluation
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Deploy a Model**: Navigate to the project, select `Deploy Model`, and choose a model to evaluate.
+3. **Open Evaluation**: Go to `Evaluation` in the project menu.
+4. **Select Evaluators**: Choose built-in or custom evaluators to assess your model.
+5. **Run Evaluation**: Execute the evaluation and review the results to understand your model's performance.
+
 ### Fine-tunning
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Upload Your Data**: Navigate to the project and upload your dataset.
+3. **Select a Model**: Choose a pre-trained model to fine-tune.
+4. **Configure Fine-Tuning**: Set up the fine-tuning parameters, including learning rate, epochs, and batch size.
+5. **Run Fine-Tuning**: Execute the fine-tuning process and monitor the progress.
+6. **Evaluate and Deploy**: Evaluate the fine-tuned model and deploy it if it meets your performance criteria.
 
 ## Componenets 
 
+| Component       | Description                                                                 | Key Features                                                                                       |
+|-----------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| **Data**        | Manages and utilizes datasets for AI model training and evaluation.         | - **Data Ingestion**: Import data from various sources, including Azure Blob Storage, SQL databases, and external APIs. <br> - **Data Preprocessing**: Clean, transform, and prepare data using built-in tools and custom scripts. <br> - **Data Storage**: Securely store datasets with support for versioning and access control. |
+| **Indexes**     | Organizes and retrieves data efficiently, especially for search tasks.      | - **Index Creation**: Create indexes on various data fields to optimize search and retrieval. <br> - **Search Capabilities**: Perform fast and accurate searches across indexed data. <br> - **Integration**: Integrate indexes with other Azure services, such as Azure Cognitive Search. |
+| **Content Filter** | Ensures that the content generated by AI models is safe and appropriate.  | - **Default Content Filter**: Automatically detect and block harmful content. <br> - **Custom Content Filters**: Create and configure custom content filters. <br> - **Language Support**: Supports multiple languages, including English, German, Japanese, Spanish, French, Italian, Portuguese, and Chinese. |
+| **Deployments** | Makes AI models, workflows, and applications available for production use.  | - **Model Deployment**: Deploy large language models (LLMs) and other AI models as APIs. <br> - **Serverless Deployment**: Deploy models as serverless APIs, billed per usage. <br> - **Managed Infrastructure**: Host models on managed infrastructure with virtual machines and capacity management. <br> - **Integration**: Integrate deployed models with other applications and services. |
+
 ### Data 
 
+> The `Data` component in Azure AI Studio is essential for managing and utilizing datasets for AI model training and evaluation. It provides tools for data ingestion, preprocessing, and storage, ensuring that your data is ready for AI workflows.
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Upload Data**: Navigate to the project, select `Data`, and click `Upload Data`. Choose your data source and follow the prompts to import your dataset.
+3. **Preprocess Data**: Use the built-in tools or custom scripts to clean and transform your data as needed.
+4. **Store Data**: Save your processed data within the project, ensuring it is versioned and access-controlled.
+
+### Indexes 
+
+> `Indexes` in Azure AI Studio are used to organize and retrieve data efficiently. They are particularly useful for search and retrieval tasks, enabling quick access to relevant information within large datasets.
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Upload Data**: Navigate to the project, select `Data`, and upload your dataset.
+3. **Create an Index**: Go to `Indexes`, click `Create Index`, and select the fields you want to index.
+4. **Configure Search**: Set up search parameters and options to optimize retrieval.
+5. **Test and Use**: Perform searches on your indexed data to ensure it meets your requirements.
+
+### Content Filter
+
+> The `Content Filter` component in Azure AI Studio is designed to ensure that the content generated by AI models is safe and appropriate. It uses classification models to detect and filter harmful content in both input prompts and output completions.
+
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Navigate to Content Filters**: In your project, go to the `Content Filters` tab.
+3. **Create a Content Filter**: Click `Create Content Filter`, enter a name, and select a connection.
+4. **Configure Input Filters**: Set the action and severity level threshold for each filter type on the input prompt.
+5. **Configure Output Filters**: Set the action and severity level threshold for each filter type on the output content.
+6. **Save and Apply**: Save your content filter settings and apply them to your model deployments.
 
 
 ### Deployments 
 
-> Types of deployments available in Azure AI Studio:
+> `Deployments` in Azure AI Studio involve making AI models, workflows, and applications available for use in production environments. This includes hosting models on servers or in the cloud and creating APIs or other interfaces for users to interact with the models.
+
+Types of deployments available in Azure AI Studio:
 
 | **Deployment Method**       | **Description**                                                                 | **Billing Model**                      |
 |-----------------------------|---------------------------------------------------------------------------------|----------------------------------------|
@@ -286,11 +370,12 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 | Flows and Web Applications  | Deploy models as part of larger workflows or web applications.                  | Varies based on usage                  |
 | Managed Compute             | Use Azure's managed compute resources to deploy and run models.                 | Combination of compute and storage costs|
 
-
-### Indexes 
-
-### Content Filter
-
+1. **Create a Project**: Go to Azure AI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Deploy a Model**: Navigate to the project, select `Deployments`, and click `+ Deploy model`.
+3. **Select a Model**: Choose a model from the model catalog, such as an Azure OpenAI model.
+4. **Configure Deployment**: Specify the deployment name and modify settings as needed.
+5. **Deploy**: Click `Deploy` to make the model available as an API.
+6. **Integrate and Use**: Use the generated API endpoint to integrate the deployed model with your applications.
 
 
 
