@@ -105,10 +105,9 @@ Last updated: 2024-09-16
 
 | Azure Service               | Integration Capabilities                                                                 |
 |-----------------------------|------------------------------------------------------------------------------------------|
-| **Azure Bot Service**       | - Connect to multiple channels (Teams, Skype, Facebook Messenger, etc.)<br>- Scalable and reliable hosting for chatbots                                             |
+| **Azure Bot Service**       | - Collaborate with multidisciplinary teams using Bot Framework Composer. <br/> Connect to multiple channels (Teams, Skype, Facebook Messenger, etc.) <br> - Scalable and reliable hosting for chatbots  <br/> - Leverage full capabilities for sophisticated chatbot applications                                        |
 | **Azure OpenAI Service**    | - Utilize advanced models like GPT-4 for natural language understanding and generation<br>- Fine-tune models for specific use cases                                                |
 | **Azure Cognitive Services**| - Enhance language understanding with LUIS<br>- Add speech recognition and synthesis for voice interactions<br>- Analyze and interpret images with Computer Vision                                      |
-| **Azure AI Bot Service**    | - Collaborate with multidisciplinary teams using Bot Framework Composer<br>- Leverage full capabilities for sophisticated chatbot applications                      |
 | **Azure Machine Learning**  | - Ground chatbot in specific data for enhanced relevance and accuracy<br>- Train custom machine learning models for specialized tasks                             |
 | **Azure DevOps**            | - Set up CI/CD pipelines for continuous integration and deployment<br>- Manage code and configurations with Azure Repos                                        |
 
