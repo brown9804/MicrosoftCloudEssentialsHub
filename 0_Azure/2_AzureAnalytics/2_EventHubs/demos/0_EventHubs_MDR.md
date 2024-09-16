@@ -9,6 +9,12 @@ Last updated: 2024-09-16
 
 ----------
 
+| **Aspect**          | **Event Hubs**                                                                 | **Log Analytics**                                                                                   |
+|---------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Service Focus**   | Event streaming and real-time data processing                                 | Log collection, analysis, and security monitoring                                                   |
+| **Setup Complexity**| Involves more steps related to event ingestion and processing                 | Focuses on log collection and integration with security solutions                                   |
+| **End Goals**       | Handles large-scale event data streams                                        | Provides insights and security monitoring through log data                                          |
+
 > `Managed Detection and Response (MDR)` is a cybersecurity service that combines advanced technology with human expertise to `detect, monitor, and respond to cyber threats in real-time`.
 
 Some key aspects of MDR:
@@ -118,10 +124,9 @@ Key benefits:
 ## Setting up Azure Event Hubs 
 
 > Is a big data streaming platform and event ingestion service. It can receive and process millions of events per second.
-
-- Real-time data ingestion and processing.
-- Streaming analytics.
-- Telemetry data collection from IoT devices.
+> - Real-time data ingestion and processing. <br/>
+> - Streaming analytics.  <br/>
+> - Telemetry data collection from IoT devices.
 
 > Involves creating an Event Hubs namespace and an event hub within that namespace. 
 
@@ -172,6 +177,9 @@ Key benefits:
 ## Setting Up Azure Activity Logs to an MDR Solution
 
 > Collect and analyze logs, and then forwarding these logs to a Managed Detection and Response (MDR) solution for security monitoring and incident response.
+> - Security monitoring and incident response.  <br/>
+> - Compliance and auditing.  <br/>
+> - Operational monitoring and troubleshooting.
 
 - Step 1: Create a Log Analytics Workspace
     1. **Navigate to Azure Portal**: Go to the Azure portal and search for `Log Analytics workspaces`.
