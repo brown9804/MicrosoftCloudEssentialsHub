@@ -1,4 +1,4 @@
-# MongoDB Migration from Heroku to Azure Overview
+# MongoDB Migration from PaaS to Azure Overview
 
 Costa Rica
 
@@ -13,7 +13,7 @@ Last updated: 2024-08-30
 
 ## Content 
 
-- [MongoDB Migration from Heroku to Azure Overview](#mongodb-migration-from-heroku-to-azure-overview)
+- [MongoDB Migration from PaaS to Azure Overview](#mongodb-migration-from-PaaS-to-azure-overview)
     - [Content](#content)
     - [Service Options for MongoDB Migration](#service-options-for-mongodb-migration)
     - [General Considerations](#general-considerations)
@@ -66,15 +66,15 @@ Last updated: 2024-08-30
 
 | Step        | Description                                                                                                      |
 |-------------|------------------------------------------------------------------------------------------------------------------|
-| **Assessment** | - **Evaluate Current Setup**: Identify the collections, indexes, and data size in your MongoDB database on Heroku.<br>- **Data Size**: Check the total size of your data to estimate the required throughput and storage on Azure Cosmos DB.<br>- **Indexes**: List all indexes to ensure they are recreated in Azure Cosmos DB. |
+| **Assessment** | - **Evaluate Current Setup**: Identify the collections, indexes, and data size in your MongoDB database on PaaS.<br>- **Data Size**: Check the total size of your data to estimate the required throughput and storage on Azure Cosmos DB.<br>- **Indexes**: List all indexes to ensure they are recreated in Azure Cosmos DB. |
 | **Planning**   | - **Partition Key**: Choose an appropriate partition key based on your data access patterns. A good partition key ensures even distribution of data and efficient query performance.<br>- **Indexing Policy**: Define indexing policies to optimize query performance. Azure Cosmos DB automatically indexes all properties, but you can customize this. |
 
 ### Data Export
 
-Use `mongodump` to export your data from Heroku. This tool creates a binary export of the contents of a MongoDB database.
+Use `mongodump` to export your data from PaaS. This tool creates a binary export of the contents of a MongoDB database.
 
 ```bash
-mongodump --uri="mongodb://<username>:<password>@<heroku_mongo_uri>"
+mongodump --uri="mongodb://<username>:<password>@<PaaS_mongo_uri>"
 ```
 
 ### Data Import
@@ -91,10 +91,10 @@ For a more streamlined process, consider using Azure Database Migration Service 
 
 1. **Create a Migration Project**:
      - Go to the Azure portal and search for "Azure Database Migration Service."
-     - Create a new migration project and select the source (MongoDB on Heroku) and target (Azure Cosmos DB).
+     - Create a new migration project and select the source (MongoDB on PaaS) and target (Azure Cosmos DB).
 
 2. **Configure Source and Target**:
-     - **Source**: Provide the connection details for your MongoDB database on Heroku.
+     - **Source**: Provide the connection details for your MongoDB database on PaaS.
      - **Target**: Provide the connection details for your Azure Cosmos DB account.
 
 3. **Run Migration**:
