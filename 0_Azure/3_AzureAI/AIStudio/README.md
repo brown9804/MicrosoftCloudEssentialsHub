@@ -40,7 +40,7 @@ Last updated: 2024-09-16
         - [Tracing](#tracing)
         - [Evaluation](#evaluation)
         - [Fine-tunning](#fine-tunning)
-    - [Componenets](#componenets)
+    - [Components](#components)
         - [Data](#data)
         - [Indexes](#indexes)
         - [Content Filter](#content-filter)
@@ -346,7 +346,7 @@ The model catalog offers two distinct `ways to deploy models` for your use:
 5. **Run Fine-Tuning**: Execute the fine-tuning process and monitor the progress.
 6. **Evaluate and Deploy**: Evaluate the fine-tuned model and deploy it if it meets your performance criteria.
 
-## Componenets 
+## Components 
 
 | Component       | Description                                                                 | Key Features                                                                                       |
 |-----------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
