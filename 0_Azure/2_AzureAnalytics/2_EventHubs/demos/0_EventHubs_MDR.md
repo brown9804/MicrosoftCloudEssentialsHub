@@ -81,25 +81,25 @@ Key benefits:
 
 1. **Create a Log Analytics Workspace**:
    - Go to the Azure portal.
-   - In the left-hand menu, select **"Log Analytics workspaces"**.
-   - Click on **"Add"** to create a new workspace.
+   - In the left-hand menu, select `Log Analytics workspaces`.
+   - Click on `Add` to create a new workspace.
    - Fill in the required details:
      - **Subscription**: Select your Azure subscription.
      - **Resource Group**: Choose an existing resource group or create a new one.
      - **Name**: Enter a unique name for your workspace.
      - **Region**: Select the region where you want to create the workspace.
-   - Click **"Review + create"**, then **"Create"** to finalize the creation of the workspace.
+   - Click `Review + create`, then `Create` to finalize the creation of the workspace.
 2. **Configure Diagnostic Settings**:
    - Navigate to the Azure resource you want to monitor (e.g., Virtual Machine, Storage Account).
-   - In the resource's menu, select **"Diagnostic settings"** under the **Monitoring** section.
-   - Click on **"Add diagnostic setting"**.
+   - In the resource's menu, select `Diagnostic settings` under the **Monitoring** section.
+   - Click on `Add diagnostic setting`.
    - Provide a name for the diagnostic setting.
    - Choose the logs and metrics you want to collect. You can select from options like **AuditLogs**, **PerformanceCounters**, **Metrics**, etc.
    - Select the destination for the collected data:
      - **Log Analytics workspace**: Choose the workspace you created earlier.
      - **Event Hubs**: If you want to stream the data to Event Hubs.
      - **Storage Account**: For long-term storage in Azure Storage.
-   - Click **"Save"** to apply the diagnostic settings.
+   - Click `Save` to apply the diagnostic settings.
 3. **Analyze Historical Data**:
    - Go to your **Log Analytics workspace** in the Azure portal.
    - Use **Log Analytics** to run queries on the collected data. You can use the **Kusto Query Language (KQL)** to filter and analyze the data.
