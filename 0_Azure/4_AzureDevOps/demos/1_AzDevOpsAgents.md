@@ -115,25 +115,34 @@ Setting up a self-hosted macOS agent involves a few more steps but gives you mor
      ./config.sh
      ```
 
+   - Install and Start the Agent:
+
+     ```sh
+      ./run.sh
+     ```
+
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/714c9838-86d4-4c05-9a13-84f558bbb170">
+
+      | LastWriteTime         | Length | Name          |
+      |-----------------------|--------|---------------|
+      | 8/20/2024  8:11 AM    |        | bin           |
+      | 8/20/2024  8:02 AM    |        | externals     |
+      | 8/20/2024  8:00 AM    |  3173  | config.sh     |
+      | 8/20/2024  8:00 AM    |   726  | env.sh        |
+      | 8/20/2024  8:00 AM    |  9465  | license.html  |
+      | 8/20/2024  8:00 AM    |  2753  | run-docker.sh |
+      | 8/20/2024  8:00 AM    |  2014  | run.sh        |
 
    - Follow the prompts to configure the agent. You’ll need:
      - Your Azure DevOps organization URL.
      - A Personal Access Token (PAT) for authentication, Service Principals, or Device Code Flow (Entra ID) for registering the agent.
 
-4. **Install and Start the Agent**:
-
-     ```sh
-     sudo ./svc.sh install
-     sudo ./svc.sh start
-     ```
-
-5. **Verify the Agent**:
+4. **Verify the Agent**:
    - Go back to your Azure DevOps organization.
    - Navigate to Pipelines > Agent pools.
    - Ensure your new agent appears in the list and is online.
 
-6. **Use the Self-Hosted Agent in Your Pipeline**: In your pipeline YAML file, specify the agent pool and the agent name.
+5. **Use the Self-Hosted Agent in Your Pipeline**: In your pipeline YAML file, specify the agent pool and the agent name.
 
      ```yaml
      pool:
