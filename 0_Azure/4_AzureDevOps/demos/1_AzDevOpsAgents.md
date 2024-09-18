@@ -96,12 +96,14 @@ Setting up a self-hosted macOS agent involves a few more steps but gives you mor
    - Click on `New agent` and select macOS.
    - Download the agent package.
 
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/e376d9c4-5764-47aa-98e1-fd0802b54df7">
+
 3. **Configure the Agent**:
    - Extract the downloaded agent package:
 
      ```sh
      mkdir myagent && cd myagent
-     tar zxvf ~/Downloads/vsts-agent-osx-x64-2.x.x.tar.gz
+     tar zxvf ~/Downloads/vsts-agent-osx-x64-3.x.x.tar.gz
      ```
 
    - Run the configuration script:
@@ -109,6 +111,8 @@ Setting up a self-hosted macOS agent involves a few more steps but gives you mor
      ```sh
      ./config.sh
      ```
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/714c9838-86d4-4c05-9a13-84f558bbb170">
 
    - Follow the prompts to configure the agent. You’ll need:
      - Your Azure DevOps organization URL.
