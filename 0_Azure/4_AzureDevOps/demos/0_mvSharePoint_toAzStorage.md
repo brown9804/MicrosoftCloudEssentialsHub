@@ -109,10 +109,10 @@ Testing and Automation:
    - In the Azure portal, create a new Logic App.
    - Choose a blank template to start from scratch.
 2. **Configure the Trigger**:
-   - Add a SharePoint trigger, such as "When a file is created in a folder".
+   - Add a SharePoint trigger, such as `When a file is created in a folder`.
    - Connect to your SharePoint site and select the folder you want to monitor.
 3. **Add an Action to Copy Files**:
-   - Add an Azure Blob Storage action, such as "Create blob".
+   - Add an Azure Blob Storage action, such as `Create blob`.
    - Connect to your Azure Storage account and select the destination container.
 4. **Map the Data**: Map the file data from SharePoint to the corresponding fields in Azure Blob Storage.
 5. **Save and Test**: Save the Logic App and test it by creating a file in the SharePoint folder to ensure it gets copied to Azure Storage.
