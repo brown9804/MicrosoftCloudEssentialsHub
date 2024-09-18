@@ -63,7 +63,7 @@ graph TD
 
 ### 1. Microsoft-Hosted macOS Agents
 
-Using Microsoft-hosted agents is straightforward as they come pre-configured with the latest macOS versions.
+If you prefer not to manage your own agents, you can use  Microsoft-hosted agents which is straightforward as they come pre-configured with the latest macOS versions.
 
 1. **Create a Pipeline**:
    - Navigate to your Azure DevOps project.
@@ -116,7 +116,7 @@ Setting up a self-hosted macOS agent involves a few more steps but gives you mor
 
    - Follow the prompts to configure the agent. You’ll need:
      - Your Azure DevOps organization URL.
-     - A Personal Access Token (PAT) for authentication.
+     - A Personal Access Token (PAT) for authentication, Service Principals, or Device Code Flow (Entra ID) for registering the agent.
 
 4. **Install and Start the Agent**:
 
