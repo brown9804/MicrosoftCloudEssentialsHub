@@ -83,7 +83,7 @@ Using Microsoft-hosted agents is straightforward as they come pre-configured wit
 Setting up a self-hosted macOS agent involves a few more steps but gives you more control over the environment.
 
 1. **Check Prerequisites**:
-   - Ensure your macOS version is supported (e.g., macOS Sequoia).
+   - Ensure your macOS version is supported (e.g., macOS Sonoma).
    - Install Git (version 2.9.0 or higher) using Homebrew:
      ```sh
      brew install git
