@@ -17,6 +17,9 @@ Last updated: 2024-09-18
 - [Pipeline runs - Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/runs?view=azure-devops)
 - [Create and manage agent pools](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops)
 - [Deploy an Azure Pipelines agent on Windows](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/windows-agent?view=azure-devops)
+- [Self-hosted macOS agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/osx-agent?view=azure-devops)
+- [Microsoft-hosted agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml)
+- [Self-hosted agent authentication options](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agent-authentication-options?view=azure-devops)
 
 > `Agents` are the workers that run your build and deployment jobs. 
 
