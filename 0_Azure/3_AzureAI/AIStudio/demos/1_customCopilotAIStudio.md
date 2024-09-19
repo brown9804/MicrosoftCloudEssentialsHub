@@ -64,7 +64,11 @@ Some of the trending AI models in Azure AI Studio. Keep in mind to `assess model
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/de646a19-be04-4fe8-8350-92d613043d79">
 
-- Step 2: Create a New Project in Azure AI Studio
+- Step 2: Make sure to create you compute, with your specifications and region availability of features considered.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2159b327-718b-4e31-96fc-87583c74aa3d">
+
+- Step 3: Create a New Project in Azure AI Studio
   - **Navigate to AI Studio**: Go to the Azure AI Hub created, anc launch the Azure AI Studio from the Azure portal.
       
       <img width="300" alt="image" src="https://github.com/user-attachments/assets/f491d6d5-a332-4518-ba14-7f931f4c9be9">
@@ -73,13 +77,13 @@ Some of the trending AI models in Azure AI Studio. Keep in mind to `assess model
   
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/b4e5c8f3-298d-4ab9-bb8e-7087d974e77a">
 
-- Step 3: Choose a Model
+- Step 4: Choose a Model
   - **Model Catalog**: Browse the model catalog in Azure AI Studio.
   - **Select Model**: Choose a model that fits your use case, for example gpt-4o-mini.
     
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/d7e96dd0-7e18-4bb4-9226-63a345632b1b">
 
-- Step 4: Add Your Data
+- Step 5: Add Your Data
   - **Data Integration**: Integrate your own data into the model. This can include:
       - **Product Information**: Upload product catalogs or databases.
       - **Customer Data**: Include customer interaction logs or CRM data.
@@ -100,38 +104,97 @@ Some of the trending AI models in Azure AI Studio. Keep in mind to `assess model
 
   - Add your data: Create the connection if required, if you already have it, you can you can select your data.
 
-    <img width="764" alt="image" src="https://github.com/user-attachments/assets/b0c50db6-c16c-48fd-98ff-c68354de030d">
+    <img width="650" alt="image" src="https://github.com/user-attachments/assets/b0c50db6-c16c-48fd-98ff-c68354de030d">
 
   - Validate your data was uploaded:
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/6b350e0c-6c0b-41d7-aa10-e948c20f06db">
 
+- Step 6: Create a Prompt Flow, you can use the prompt flow feature to design how your copilot will interact with users.
+  - **Design Interaction**
+    1. **Open Prompt Flow Designer**: In Azure AI Studio, navigate to the Prompt Flow Designer.
+    2. **Define User Scenarios**: Identify the key scenarios and user intents your copilot will handle.
+    3. **Map User Journey**: Outline the user journey, including initial greetings, main interactions, and possible end points.
+        - Set Up Prompts:
+          1. **Initial Prompts**: Define the initial prompts that will greet the user and set the context.
+             - Example: "Hello! How can I assist you today?"
+          2. **Expected Responses**: Specify the expected user responses and how the copilot should handle them.
+             - Example: If the user asks for product information, the copilot should provide details from the product catalog.
+      
+          <img width="650" alt="image" src="https://github.com/user-attachments/assets/5674399a-387c-4460-9204-3638fd81259b">
+    
+        - Branching Logic
+          1. **Create Branches**: Set up branches for different user inputs and scenarios.
+             - Example: If the user asks about order status, branch to the order status flow.
+          2. **Conditional Logic**: Use conditional logic to handle various user inputs and direct the conversation accordingly.
+             - Example: If the user provides an order number, fetch the order status; if not, prompt for the order number.
+  
+          <img width="650" alt="image" src="https://github.com/user-attachments/assets/ea16950b-bdc8-48ce-bae2-b7b828417297">
+  
+          <img width="650" alt="image" src="https://github.com/user-attachments/assets/bcd8a863-b4a7-4658-b057-93950c793119">
 
-### 6. Create a Prompt Flow
-- **Design Interaction**: Use the prompt flow feature to design how your copilot will interact with users.
-  - **Set Up Prompts**: Define the initial prompts and expected responses.
-  - **Branching Logic**: Create branches for different user inputs and scenarios.
+          <img width="550" alt="image" src="https://github.com/user-attachments/assets/21e506bb-b16f-483f-a06d-c48b7cb86e2b">
 
-### 7. Customize with Multiple Data Sources
-- **Enhance Responses**: Integrate multiple data sources to provide more accurate and comprehensive responses.
-  - **Azure Cognitive Search**: Use Azure Cognitive Search to index and search your data.
-  - **Hybrid Search**: Combine semantic search with traditional keyword search for better results.
+- Step 7: Customize with Multiple Data Sources
+  - Enhance Responses: Integrate multiple data sources to provide more accurate and comprehensive responses.
+      1. **Identify Data Sources**: Determine which data sources will enhance your copilot's responses.
+        - Example: Product catalogs, customer databases, FAQs.
+      2. **Integrate Data**: Use APIs or data connectors to integrate these data sources into your copilot.
+  - Enhance search: 
+      - Azure AI Search: To index and search your data.
+          1. **Set Up AI Search**: Create an Azure AI Search resource.
+          2. **Index Data**: Index your data sources to make them searchable.
+            - Example: Index product information, customer queries, and knowledge base articles.
+      - Hybrid Search: Combine semantic search with traditional keyword search for better results.
+          1. **Combine Searches**: Implement hybrid search to combine semantic search with traditional keyword search.
+          2. **Optimize Search Results**: Fine-tune the search algorithms to provide the most relevant results.
+            - Example: Use semantic search for understanding user intent and keyword search for specific terms.
 
-### 8. Evaluate and Test
-- **Evaluation Dataset**: Use a question and answer evaluation dataset to test your copilot's performance.
-  - **Manual Testing**: Manually test the copilot with various queries.
-  - **Automated Testing**: Set up automated tests to continuously evaluate performance.
-- **Adjustments**: Make necessary adjustments based on test results to improve accuracy and relevance.
+- Step 8: Evaluate and Test:
+  - Evaluation Dataset: Use a question and answer evaluation dataset to test your copilot's performance.
+      1. **Create Dataset**: Compile a dataset of questions and answers to evaluate your copilot.
+      2. **Upload Dataset**: Upload this dataset to Azure AI Studio for evaluation purposes.
+  - Testing methods:
+      - Manual Testing: Test the copilot with various queries.
+          1. **Simulate User Queries**: Manually test the copilot by simulating various user queries.
+          2. **Review Responses**: Evaluate the copilot's responses for accuracy and relevance.
+      - Automated Testing: To continuously evaluate performance.
+          1. **Set Up Tests**: Create automated tests to continuously evaluate the copilot's performance.
+          2. **Run Tests Regularly**: Schedule regular test runs to ensure ongoing performance.
+  - Adjustments: Make necessary adjustments based on test results to improve accuracy and relevance. 
+      1. **Analyze Results**: Analyze test results to identify areas for improvement.
+      2. **Make Adjustments**: Adjust the prompt flows, data integration, and search algorithms as needed.
 
-### 9. Deploy Your Copilot
-- **Deployment Endpoint**: Deploy your copilot to an endpoint for consumption.
-  - **Azure Functions**: Use Azure Functions to create a serverless endpoint.
-  - **API Management**: Manage and secure your API with Azure API Management.
+- Step 9: Deploy Your Copilot
+  - Deployment Endpoint: **Create Endpoint**: Deploy your copilot to an endpoint for user access.
+     - Example: Use Azure Functions to create a serverless endpoint.
 
-### 10. Monitor and Update
-- **Performance Monitoring**: Continuously monitor your copilot's performance using Azure Monitor.
-  - **Metrics and Logs**: Track key metrics and logs to identify issues.
-  - **Alerts**: Set up alerts for critical issues.
-- **Regular Updates**: Update your copilot with new data or improved prompt flows as needed.
-  - **Feedback Loop**: Incorporate user feedback to refine and enhance the copilot.
+      <img width="650" alt="image" src="https://github.com/user-attachments/assets/6fdea045-0016-4e23-864b-9473bf64e60d">
 
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/93b84375-b404-4ce5-97bc-8015bf6fdc68">
+
+      <img width="650" alt="image" src="https://github.com/user-attachments/assets/6a4e0ab5-b02c-488b-a9b6-7cf2f70ce7e7">
+
+  - Azure Functions: To create a serverless endpoint
+    1. **Set Up Functions**: Create Azure Functions to handle specific tasks, such as fetching data or processing user inputs.
+    2. **Integrate with Copilot**: Ensure these functions are integrated with your copilot's prompt flow.
+  - API Management: Manage and secure your API with Azure API Management.
+    1. **Create API**: Use Azure API Management to create and manage your copilot's API.
+    2. **Secure API**: Implement security measures, such as API keys and authentication, to protect your API.
+
+- Step 10: Monitor and Update
+  - Performance Monitoring: Continuously monitor your copilot's performance using Azure Monitor.
+    1. **Set Up Monitoring**: Use Azure Monitor to track your copilot's performance.
+    2. **Define Metrics**: Identify key metrics to monitor, such as response time, accuracy, and user satisfaction.
+  - Metrics and Logs: Track key metrics and logs to identify issues.
+    1. **Track Metrics**: Continuously track the defined metrics to identify any issues.
+    2. **Analyze Logs**: Review logs to understand user interactions and identify potential improvements.
+  - Alerts: Set up alerts for critical issues.
+    1. **Set Up Alerts**: Configure alerts for critical issues, such as downtime or performance degradation.
+    2. **Respond to Alerts**: Quickly respond to alerts to maintain optimal performance.
+  - Regular Updates: Update your copilot with new data or improved prompt flows as needed.
+    1. **Incorporate Feedback**: Regularly update your copilot based on user feedback and new data.
+    2. **Refine Prompt Flows**: Continuously refine the prompt flows to improve user interactions.
+  - Feedback Loop: Incorporate user feedback to refine and enhance the copilot.
+    1. **Collect Feedback**: Implement mechanisms to collect user feedback.
+    2. **Iterate and Improve**: Use this feedback to iteratively improve your copilot.
