@@ -14,7 +14,7 @@ Last updated: 2024-09-19
 - [Tutorial: Deploy an Enterprise Chat web app](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-chat-web-app)
 - [Tutorial: Part 1 - Create resources for building a custom chat application with the prompt flow SDK](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/copilot-sdk-create-resources)
 
-Some of the trending AI models in Azure AI Studio. Keep in mind to `assess model performance with evaluated metrics`. You can use `model benchmarks` for guidance.
+Find below some of the trending AI models in Azure AI Studio. You can use `model benchmarks` for guidance, to `assess model performance with evaluated metrics`.
 
 | **Model Name**       | **Provider** | **Strengths**                                                                 |
 |----------------------|--------------|-----------------------------------------------------------------------------|
