@@ -11,8 +11,14 @@ Last updated: 2024-09-19
 
 ## Wiki 
 
+- [Azure OpenAI Service models available + preview)](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
+- [Create and manage prompt flow compute sessions in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/create-manage-compute-session)
+- [Troubleshoot guidance for prompt flow](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/prompt-flow-troubleshoot)
 - [Tutorial: Deploy an Enterprise Chat web app](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/deploy-chat-web-app)
 - [Tutorial: Part 1 - Create resources for building a custom chat application with the prompt flow SDK](https://learn.microsoft.com/en-us/azure/ai-studio/tutorials/copilot-sdk-create-resources)
+- [How to add and manage data in your Azure AI Studio project](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-add)
+- [8 steps to building an Azure OpenAI Copilot for your startup](https://startups.microsoft.com/blog/8-steps-to-building-an-azure-openai-copilot-for-your-startup/)
+- [Build a RAG-based copilot solution with your own data using Azure AI Studio](https://learn.microsoft.com/en-us/training/modules/build-copilot-ai-studio/)
 
 Find below some of the trending AI models in Azure AI Studio. You can use `model benchmarks` for guidance, to `assess model performance with evaluated metrics`.
 
