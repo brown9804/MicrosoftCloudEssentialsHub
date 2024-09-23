@@ -11,6 +11,7 @@ Last updated: 2024-09-23
 
 ## Wiki 
 
+- [What's new in Microsoft Purview](https://learn.microsoft.com/en-us/purview/whats-new)
 - [Pricing - Microsoft Purview](https://azure.microsoft.com/en-us/pricing/details/purview/)
 - [Pricing guidelines for classic Microsoft Purview data governance](https://learn.microsoft.com/en-us/purview/concept-guidelines-pricing)
 - [Purview how to upgrade from free to enterprise](https://learn.microsoft.com/en-us/purview/upgrade)
