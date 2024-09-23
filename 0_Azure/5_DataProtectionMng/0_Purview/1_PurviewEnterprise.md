@@ -18,7 +18,7 @@ Last updated: 2024-09-16
 
 ## Free vs Enterprise
 
-> `Purview Free`: Provides basic data governance capabilities, suitable for small-scale or initial exploration of Purview’s features. It includes basic cataloging, limited data discovery, and basic compliance tools.
+> `Purview Free`: Provides basic data governance capabilities, suitable for small-scale or initial exploration of Purview’s features. It includes basic cataloging, limited data discovery, and basic compliance tools. <br/>
 > `Purview Enterprise`: Offers comprehensive data governance, protection, and compliance features. It supports a wide range of data sources, advanced classification, full DLP, information protection, compliance management, and seamless integration with Azure services.
 
 | **Feature**                        | **Purview Free**                                                                                       | **Purview Enterprise**                                                                                       |
@@ -76,7 +76,7 @@ Last updated: 2024-09-16
 
 ### Key Differences
 
-> - `Scalability`: Purview's pay-as-you-go model allows for cost-effective scaling based on actual usage, which can be more economical for organizations with fluctuating data needs.
+> - `Scalability`: Purview's pay-as-you-go model allows for cost-effective scaling based on actual usage, which can be more economical for organizations with fluctuating data needs. <br/>
 > - `Integration with Azure`: For organizations already using Azure, Purview can offer additional cost savings due to its deep integration with Azure services.
 
 | Aspect                  | Microsoft Purview         | Atlan                      | Alation                    | Collibra                   | Informatica               |
