@@ -18,6 +18,7 @@ Last updated: 2024-09-23
 - [Announcing the Public Preview of Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-public-preview-of-database-mirroring-in-microsoft-fabric?ft=All)
 - [Announcing Mirroring Azure SQL Database in Fabric for Public Preview](https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-mirroring-azure-sql-database-in-fabric-for-public/ba-p/4085988)
 - [How do I enable Mirroring in my tenant?](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview#how-do-i-enable-mirroring-in-my-tenant)
+- [Limitations and behaviors in Microsoft Fabric mirrored databases from Azure SQL Database (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-sql-database-limitations)
 
 ## Mirroring SQL Database in Microsoft Fabric
 
