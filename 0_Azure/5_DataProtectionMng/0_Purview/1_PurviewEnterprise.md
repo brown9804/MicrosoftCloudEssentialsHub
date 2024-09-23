@@ -18,6 +18,8 @@ Last updated: 2024-09-23
 - [What's available in the free version of Microsoft Purview governance solutions?](https://learn.microsoft.com/en-us/purview/free-version)
 - [Applications available in free vs enterprise](https://learn.microsoft.com/en-us/purview/free-version#applications-available-in-free-vs-enterprise)
 - [Set up authentication using service principal](https://learn.microsoft.com/en-us/purview/tutorial-using-rest-apis#set-up-authentication-using-service-principal)
+- [How to get lineage from Airflow into Microsoft Purview (Preview)](https://learn.microsoft.com/en-us/purview/how-to-lineage-airflow)
+- [Microsoft Purview Data Catalog lineage user guide](https://learn.microsoft.com/en-us/purview/catalog-lineage-user-guide)
 
 ## Free vs Enterprise
 
@@ -186,7 +188,6 @@ Find below different scenarios to manage data governance, protection, and compli
       - Edit each asset:
         - Click on a data asset to view its details.
         - Add detailed descriptions, relevant tags, and contact information for data stewards.
-
 
 6. **Data Lineage**
     - **Enable Lineage Tracking**:
@@ -489,3 +490,21 @@ Find below different scenarios to manage data governance, protection, and compli
     - **Document incident responses and review for continuous improvement**:
       - Document the incident responses and actions taken.
       - Review the incident responses to identify areas for improvement and update policies as needed.
+
+## Examples of use cases
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/cdbc5769-ea4a-402f-89fb-7a812e14e501">
+
+## Collect metadata information from Apache Airflow
+
+> This capability is currently in public preview and is achieved through integration with **OpenLineage**, an open framework for data lineage collection and analysis.
+
+How it works:
+1. **Enable OpenLineage in Airflow**: By enabling OpenLineage in your Airflow instance, metadata and lineage information about jobs and datasets are automatically tracked as Directed Acyclic Graphs (DAGs) execute.
+2. **Azure Event Hubs**: The tracked metadata and lineage information are sent to an Azure Event Hubs instance that you configure.
+3. **Microsoft Purview**: Purview subscribes to the events from Azure Event Hubs, parses them, and ingests the metadata and lineage into the data map.
+
+This integration supports capturing metadata such as:
+- Airflow workspace
+- Airflow DAG
+- Airflow task
