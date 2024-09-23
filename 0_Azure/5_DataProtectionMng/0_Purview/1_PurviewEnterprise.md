@@ -15,6 +15,7 @@ Last updated: 2024-09-23
 - [Pricing guidelines for classic Microsoft Purview data governance](https://learn.microsoft.com/en-us/purview/concept-guidelines-pricing)
 - [Purview how to upgrade from free to enterprise](https://learn.microsoft.com/en-us/purview/upgrade)
 - [What's available in the free version of Microsoft Purview governance solutions?](https://learn.microsoft.com/en-us/purview/free-version)
+- [Applications available in free vs enterprise](https://learn.microsoft.com/en-us/purview/free-version#applications-available-in-free-vs-enterprise)
 - [Set up authentication using service principal](https://learn.microsoft.com/en-us/purview/tutorial-using-rest-apis#set-up-authentication-using-service-principal)
 
 ## Free vs Enterprise
