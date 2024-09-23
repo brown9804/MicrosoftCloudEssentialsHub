@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-16
+Last updated: 2024-09-23
 
 ----------
 
@@ -15,10 +15,11 @@ Last updated: 2024-09-16
 - [Pricing guidelines for classic Microsoft Purview data governance](https://learn.microsoft.com/en-us/purview/concept-guidelines-pricing)
 - [Purview how to upgrade from free to enterprise](https://learn.microsoft.com/en-us/purview/upgrade)
 - [What's available in the free version of Microsoft Purview governance solutions?](https://learn.microsoft.com/en-us/purview/free-version)
+- [Set up authentication using service principal](https://learn.microsoft.com/en-us/purview/tutorial-using-rest-apis#set-up-authentication-using-service-principal)
 
 ## Free vs Enterprise
 
-> `Purview Free`: Provides basic data governance capabilities, suitable for small-scale or initial exploration of Purview’s features. It includes basic cataloging, limited data discovery, and basic compliance tools.
+> `Purview Free`: Provides basic data governance capabilities, suitable for small-scale or initial exploration of Purview’s features. It includes basic cataloging, limited data discovery, and basic compliance tools. <br/>
 > `Purview Enterprise`: Offers comprehensive data governance, protection, and compliance features. It supports a wide range of data sources, advanced classification, full DLP, information protection, compliance management, and seamless integration with Azure services.
 
 | **Feature**                        | **Purview Free**                                                                                       | **Purview Enterprise**                                                                                       |
@@ -76,7 +77,7 @@ Last updated: 2024-09-16
 
 ### Key Differences
 
-> - `Scalability`: Purview's pay-as-you-go model allows for cost-effective scaling based on actual usage, which can be more economical for organizations with fluctuating data needs.
+> - `Scalability`: Purview's pay-as-you-go model allows for cost-effective scaling based on actual usage, which can be more economical for organizations with fluctuating data needs. <br/>
 > - `Integration with Azure`: For organizations already using Azure, Purview can offer additional cost savings due to its deep integration with Azure services.
 
 | Aspect                  | Microsoft Purview         | Atlan                      | Alation                    | Collibra                   | Informatica               |
@@ -109,7 +110,27 @@ Find below different scenarios to manage data governance, protection, and compli
       - Fill in the required details such as subscription, resource group, and account name.
       - Choose the region and pricing tier.
       - Review and create the account.
-2. **Data Discovery**
+2. **Data Domain**:
+    - Create a domain that match your org key business
+      - Create collections:
+        - Go to the `Collections` section.
+        - Click on `New Collection` and provide a name and description.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/369a6a03-be3a-46d2-8246-806bf7b26f4b">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2ab92b29-75d1-482f-afd8-7c99d3ffbed6">
+
+> [!NOTE]
+> Remember to add purview identity with required RBAC (e.g admin) within the data source desired:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5f7b5e29-6e36-4a38-9a51-26d43451bf41">
+
+> Also add the required roles within the Purview portal, for each collection>
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/afc237d3-3765-4ecb-a56b-23dd04eb1a46">
+
+3. **Data Discovery**
+
     - **Navigate to Purview Portal**: Access the Purview portal from the Azure portal by selecting your Purview account.
     - **Register Data Sources**:
       - Go to the `Data Map` section.
@@ -117,6 +138,9 @@ Find below different scenarios to manage data governance, protection, and compli
       - Provide connection details:
         - For Azure SQL Database: Enter the server name, database name, and authentication details.
         - For Azure Blob Storage: Enter the storage account name and access key.
+        
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/db0de8c7-d5fb-4c21-8a36-753225f8a737">
+
     - **Configure Scan Settings**:
       - Set the scan scope: Select specific databases, tables, or containers to scan.
       - Schedule the scan frequency: Choose how often the scan should run (e.g., daily, weekly).
@@ -124,7 +148,16 @@ Find below different scenarios to manage data governance, protection, and compli
     - **Initiate Scan**:
       - Click on `Start Scan` to begin the discovery process.
       - Monitor the scan progress and review the results once completed.
-3. **Metadata Collection**
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9c5d6070-84d8-47f4-a5a5-5509d68da579">
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/1b377ccc-21ed-4bfe-8360-e253bced4f16">
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9c8445ba-e662-4a2c-81c4-fee17402094a">
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/59fde3a4-471d-4106-b9aa-71ace7b7cb69">
+
+4. **Metadata Collection**
     - **Review Discovered Assets**: Go to the `Data Map` section and review the list of discovered data assets.
     - **Automatic Classification**:
       - Go to the `Classifications` section.
@@ -135,12 +168,10 @@ Find below different scenarios to manage data governance, protection, and compli
       - Edit metadata for specific data assets:
         - Click on a data asset to view its details.
         - Add custom tags, descriptions, and contact information for data stewards.
-4. **Data Cataloging**
+
+5. **Data Cataloging**
     - **Register Data Assets**: Ensure all scanned assets are listed in the `Data Catalog` section.
     - **Organize Data Assets**:
-      - Create collections:
-        - Go to the `Collections` section.
-        - Click on `New Collection` and provide a name and description.
         - Add relevant data assets to the collection.
       - Define glossary terms:
         - Go to the `Glossary` section.
@@ -150,7 +181,10 @@ Find below different scenarios to manage data governance, protection, and compli
       - Edit each asset:
         - Click on a data asset to view its details.
         - Add detailed descriptions, relevant tags, and contact information for data stewards.
-5. **Data Lineage**
+
+    <img width="204" alt="image" src="https://github.com/user-attachments/assets/65db1e09-b01e-48ab-801d-0a6d5ef7955d">
+
+6. **Data Lineage**
     - **Enable Lineage Tracking**:
       - Go to the `Lineage` section.
       - Ensure lineage tracking is enabled for the registered data sources.
@@ -163,7 +197,7 @@ Find below different scenarios to manage data governance, protection, and compli
       - Identify upstream and downstream dependencies:
         - Use the lineage graph to trace data dependencies.
         - Analyze the impact of changes to data assets.
-6. **Data Stewardship**
+7. **Data Stewardship**
     - **Assign Data Stewards**:
       - Go to the `Roles` section.
       - Assign data steward roles:
@@ -177,7 +211,7 @@ Find below different scenarios to manage data governance, protection, and compli
       - Regularly review and update metadata, classifications, and lineage information:
         - Schedule periodic reviews.
         - Make necessary updates to ensure data accuracy and compliance.
-7. **Compliance Management**
+8. **Compliance Management**
     - **Implement Governance Policies**:
       - Go to the `Policies` section.
       - Define and apply data governance policies:
@@ -193,7 +227,7 @@ Find below different scenarios to manage data governance, protection, and compli
         - Select relevant compliance templates (e.g., GDPR, CCPA).
         - Run assessments and review the results.
       - Generate compliance reports: Create reports to document compliance status and actions taken.
-8. **Monitoring and Reporting**
+9. **Monitoring and Reporting**
     - **Set Up Monitoring Dashboards**:
       - Go to the `Monitoring` section.
       - Create dashboards:
