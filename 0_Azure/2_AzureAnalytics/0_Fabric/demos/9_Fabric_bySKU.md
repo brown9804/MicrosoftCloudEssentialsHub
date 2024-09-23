@@ -17,6 +17,7 @@ Last updated: 2024-09-23
 - [Workspace license mode and user capabilities](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#workspace)
 - [User license and capabilities](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
 - [Microsoft Fabric features by SKU](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features)
+- [Understand how consumption is calculated](https://learn.microsoft.com/en-us/fabric/enterprise/plan-capacity#understand-how-consumption-is-calculated)
 
 ## Overview 
 
