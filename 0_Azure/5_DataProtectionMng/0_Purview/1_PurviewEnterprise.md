@@ -160,6 +160,9 @@ Find below different scenarios to manage data governance, protection, and compli
 
 4. **Metadata Collection**
     - **Review Discovered Assets**: Go to the `Data Map` section and review the list of discovered data assets.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/bb514fe4-1d44-40d6-809a-b1e3d578a05d">
+
     - **Automatic Classification**:
       - Go to the `Classifications` section.
       - Enable automatic classification:
@@ -183,7 +186,6 @@ Find below different scenarios to manage data governance, protection, and compli
         - Click on a data asset to view its details.
         - Add detailed descriptions, relevant tags, and contact information for data stewards.
 
-    <img width="204" alt="image" src="https://github.com/user-attachments/assets/65db1e09-b01e-48ab-801d-0a6d5ef7955d">
 
 6. **Data Lineage**
     - **Enable Lineage Tracking**:
