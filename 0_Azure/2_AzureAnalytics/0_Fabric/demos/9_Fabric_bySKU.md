@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-23
+Last updated: 2024-09-24
 
 ------------------------------------------
 
@@ -33,6 +33,7 @@ Detailed Features by License:
 
 | **License** | **Capacity Units (CU)** | **Power BI SKU** | **Power BI v-cores** | **Features** |
 |-------------|-------------------------|------------------|----------------------|--------------|
+| **Free Trial** | 64 | Not applicable | 8 | Comprehensive data analytics, Data Factory, extensive AI capabilities, including deep learning models. <br/> Ideal for organizations with extensive data needs. <br/> **Copilot:** No <br/> **AI Skills:** Yes <br/> **Mirroring:** No |
 | **F2**      | 2                       | Not applicable   | 0.25                 | Basic data integration, limited to small datasets. <br/> No advanced AI capabilities. <br/> Suitable for individual users or very small projects. <br/> **Copilot:** No <br/> **AI Skills:** No <br/> **Mirroring:** No |
 | **F4**      | 4                       | Not applicable   | 0.5                  | Enhanced data integration, basic data transformation capabilities. <br/> No AI features. <br/> Ideal for small teams. <br/> **Copilot:** No <br/> **AI Skills:** No <br/> **Mirroring:** No |
 | **F8**      | 8                       | EM/A1            | 1                    | Includes Data Factory for ETL processes, basic AI capabilities like automated ML. <br/> Suitable for medium-sized teams. <br/> **Copilot:** No <br/> **AI Skills:** Yes <br/> **Mirroring:** No |
