@@ -5,11 +5,14 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-23
+Last updated: 2024-09-25
 
 ----------
 
 ## Wiki 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [Azure OpenAI Service models available + preview)](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
 - [Create and manage prompt flow compute sessions in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/create-manage-compute-session)
@@ -19,6 +22,8 @@ Last updated: 2024-09-23
 - [How to add and manage data in your Azure AI Studio project](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/data-add)
 - [8 steps to building an Azure OpenAI Copilot for your startup](https://startups.microsoft.com/blog/8-steps-to-building-an-azure-openai-copilot-for-your-startup/)
 - [Build a RAG-based copilot solution with your own data using Azure AI Studio](https://learn.microsoft.com/en-us/training/modules/build-copilot-ai-studio/)
+
+</details>
 
 Find below some of the trending AI models in Azure AI Studio. You can use `model benchmarks` for guidance, to `assess model performance with evaluated metrics`.
 
