@@ -136,6 +136,12 @@ $$
 
 This means with 50 PTUs, you can process 75,000 tokens per minute.
 
+## Provisioned Capacity Calculator
+
+> Improve accuracy of your estimate by adding multiple workloads to your PTU calculation. Each workload will be calculated and displayed as well as the aggregate total if both are running at the same time to your deployment.
+
+<img width="705" alt="image" src="https://github.com/user-attachments/assets/e59c7e24-6d9b-4ea3-855c-d4f284b53e59">
+
 ## How to increase your quota in Azure OpenAI:
 
 1. **Sign in to the Azure Portal**:
