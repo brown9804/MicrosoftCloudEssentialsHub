@@ -139,7 +139,7 @@ This means with 50 PTUs, you can process 75,000 tokens per minute.
 ## How to increase your quota in Azure OpenAI:
 
 1. **Sign in to the Azure Portal**:
-   - Open your web browser and go to portal.azure.com.
+   - Open your web browser and go to [portal.azure.com](https://portal.azure.com/)
    - Enter your Azure account credentials to log in.
 2. **Navigate to Quotas**:
    - In the search bar at the top of the Azure Portal, type `Quotas`.
