@@ -5,11 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-23
+Last updated: 2024-10-01
 
 ----------
-
-> Here is a small guide on how to set up a refresh with Azure Data Factory (ADF) in Microsoft Fabric, publish the data pipeline, and update the gateway.
 
 ## Wiki 
 
