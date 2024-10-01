@@ -59,6 +59,10 @@ Last updated: 2024-09-30
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9261c2f-1605-4656-af43-4e6da93ba289">
 
+## How to accessing the Semantic Index 
+
+Find below more information about how to access the Semantic Index, like within your custom chatbots or through Copilot:
+
 1. **Using Azure AI Search**: Azure AI Search can be used to index SharePoint content and provide semantic search capabilities.
    - Set Up Azure AI Search: Create an Azure Cognitive Search service in the Azure portal.
    - Configure SharePoint Indexer:
@@ -69,14 +73,8 @@ Last updated: 2024-09-30
         - Run the indexer to start indexing your SharePoint content.
         - Use the Azure portal to monitor the indexing process and ensure it completes successfully.
    - Query the Index: Use the Azure Cognitive Search API to query the indexed data and retrieve relevant results.
-
-
-## How to accessing the Semantic Index 
-
-Find below more information about how to access the Semantic Index, like within your custom chatbots or through Copilot:
-
-1. `Microsoft 365 Copilot`: Create `Copilot Agents` within SharePoint to automate tasks and answer questions based on the semantic index. This feature allows you to build custom agents without coding, making it easier to integrate with your workflows.
-2. `Custom Chatbots`:
+2. `Microsoft 365 Copilot`: Create `Copilot Agents` within SharePoint to automate tasks and answer questions based on the semantic index. This feature allows you to build custom agents without coding, making it easier to integrate with your workflows.
+3. `Custom Chatbots`:
    - `Microsoft Bot Framework`: Create a bot using the Microsoft Bot Framework, integrate it with Microsoft Graph API to access SharePoint data, and use the semantic search capabilities provided by the Semantic Index to enhance the bot's responses.
         - Create a bot using the Microsoft Bot Framework.
         - Integrate the bot with Microsoft Graph API to access SharePoint data.
@@ -85,7 +83,7 @@ Find below more information about how to access the Semantic Index, like within 
         - Create a chatbot using Power Virtual Agents.
         - Connect the bot to SharePoint using Power Automate flows.
         - Leverage the Semantic Index to provide more accurate and contextually relevant responses.
-3. `Using Microsoft Graph API` to access the Semantic Index for SharePoint: Set up a Microsoft Graph Connector for SharePoint to index your SharePoint content and bring the semantic index data into your custom applications. You can use methods like the Power Bi, SemPy library, data pipelines, or Power Automate
+4. `Using Microsoft Graph API` to access the Semantic Index for SharePoint: Set up a Microsoft Graph Connector for SharePoint to index your SharePoint content and bring the semantic index data into your custom applications. You can use methods like the Power Bi, SemPy library, data pipelines, or Power Automate
  
   > Conditions for Viability: 
   > - API Availability: Ensure the Microsoft Graph API supports the specific functionality you need. While the API for accessing SharePoint Pages is generally available, specific features like querying the semantic index might still be in development or limited to certain environments. <br/> 
@@ -104,7 +102,7 @@ Steps:
 - Query the Semantic Index
     - Use the Microsoft Graph API to send queries to the semantic index.
     - Retrieve the desired data from SharePoint.
-4. From `Microsoft Fabric`
+5. From `Microsoft Fabric`
     1. `Using Power BI`: You can create a semantic model from a SharePoint list and use Power BI to analyze the data.
         - Export SharePoint List to Power BI:
             - Open your SharePoint list.
