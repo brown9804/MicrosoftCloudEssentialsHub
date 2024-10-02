@@ -17,7 +17,8 @@ Last updated: 2024-10-02
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
-- [Azure SQL Database licensing and pricing](https://learn.microsoft.com/en-us/azure/azure-sql/database/pricing?view=azuresql)
+- [Azure SQL Database pricing](https://azure.microsoft.com/en-us/pricing/details/azure-sql-database/single/?msockid=38ec3806873362243e122ce086486339#pricing)
+- [Azure princing calculator](https://azure.microsoft.com/en-gb/pricing/calculator/?msockid=38ec3806873362243e122ce086486339)
 - [Azure SQL Database documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/?view=azuresql)
 - [Deployment tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/saas-multitenantdb-get-started-deploy?view=azuresql)
 - [Tutorial: Design a relational database in Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/design-first-database-tutorial?view=azuresql)
