@@ -64,18 +64,18 @@ Last updated: 2024-10-02
 
 
        - If you don't have a SQL server in place, please create one.
-       - Fill in the required details like server name, admin login, and password.
-    
-          <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecf6b6aa-e1d9-4e38-82ae-8664d4002b69">
-          
-          | Topic                        | Description                                                                                                                                                                                                 |
-          |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-          | **Availability of Services** | Not all Azure services and features are available in every region. It's important to check the [Azure Products by Region page](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/) to see which services are available in your desired region.                     |
-          | **Redundancy Options**       | Azure SQL Database supports local and zonal redundancy options. Local redundancy provides resiliency within a datacenter, while zonal redundancy improves resiliency by protecting against outages of an availability zone within a region. |
-          | **Compliance and Data Residency** | Different regions have specific compliance and data residency requirements. Azure regions are designed to meet these requirements, ensuring that your data stays within the specified geographic boundaries. |
-          | **Virtual Network Rules**    | For SQL Database, virtual network rules must reference subnets hosted in the same geographic region as the database. Each server can have up to 128 ACL entries for any virtual network.                     |
-          | **Authentication Methods**   | - **SQL Authentication**: Users connect using a username and password. <br/> - **Microsoft Entra Authentication**: Users authenticate using their Microsoft Entra ID credentials, which supports enhanced security features like multifactor authentication and conditional access policies. |
-          | **Microsoft Entra Admin**    | The Microsoft Entra admin center is a unified portal for managing Microsoft Entra products, including identity and access management solutions. It provides tools for user and group management, device management, application management, security and compliance, and identity governance. This centralized interface helps streamline administrative tasks and enhances security. |
+          - Fill in the required details like server name, admin login, and password.
+       
+             <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecf6b6aa-e1d9-4e38-82ae-8664d4002b69">
+             
+             | Topic                        | Description                                                                                                                                                                                                 |
+             |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+             | **Availability of Services** | Not all Azure services and features are available in every region. It's important to check the [Azure Products by Region page](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/) to see which services are available in your desired region.                     |
+             | **Redundancy Options**       | Azure SQL Database supports local and zonal redundancy options. Local redundancy provides resiliency within a datacenter, while zonal redundancy improves resiliency by protecting against outages of an availability zone within a region. |
+             | **Compliance and Data Residency** | Different regions have specific compliance and data residency requirements. Azure regions are designed to meet these requirements, ensuring that your data stays within the specified geographic boundaries. |
+             | **Virtual Network Rules**    | For SQL Database, virtual network rules must reference subnets hosted in the same geographic region as the database. Each server can have up to 128 ACL entries for any virtual network.                     |
+             | **Authentication Methods**   | - **SQL Authentication**: Users connect using a username and password. <br/> - **Microsoft Entra Authentication**: Users authenticate using their Microsoft Entra ID credentials, which supports enhanced security features like multifactor authentication and conditional access policies. |
+             | **Microsoft Entra Admin**    | The Microsoft Entra admin center is a unified portal for managing Microsoft Entra products, including identity and access management solutions. It provides tools for user and group management, device management, application management, security and compliance, and identity governance. This centralized interface helps streamline administrative tasks and enhances security. |
 
    - Choose the pricing tier and performance level that suits your needs.
        
