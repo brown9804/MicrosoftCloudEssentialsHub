@@ -80,19 +80,61 @@ Last updated: 2024-10-02
        
       <img width="370" alt="image" src="https://github.com/user-attachments/assets/26488350-7622-494e-8980-262f78b663e3">
 
+      | Topic                          | Description                                                                                                                                                                                                 |
+      |--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      | **SQL Elastic Pool**           | SQL Elastic Pools are a cost-effective solution for managing and scaling multiple databases with varying and unpredictable usage demands. Databases in an elastic pool share a set number of resources on a single server, allowing for efficient resource utilization and cost savings. |
+      | **Benefits of SQL Elastic Pool** | - **Cost Efficiency**: Aggregate resources in an elastic pool to leverage economies of scale. <br> - **Flexibility**: Databases within a pool can auto-scale within the limits of the pool. <br> - **Simplified Management**: Manage a group of databases as a single entity, reducing administrative overhead. |
+      | **Workload Environment Differences** | - **Development**: Environment where developers write and test code. It's a sandbox for experimentation and initial testing. <br> - **Production**: Live environment where the final code is deployed for end-users. It must be stable and reliable. <br> - **Key Differences from Azure Perspective**: <br> - **Development**: Typically uses lower-cost, lower-performance configurations. Suitable for testing and development purposes. <br> - **Production**: Uses higher-cost, higher-performance configurations. Optimized for reliability, performance, and security. |
+      | **Backup Storage Redundancy**  | - **Locally Redundant Storage (LRS)**: Replicates data three times within a single physical location in the primary region. <br> - **Zone-Redundant Storage (ZRS)**: Replicates data synchronously across three Azure availability zones in the primary region. <br> - **Geo-Redundant Storage (GRS)**: Replicates data asynchronously to a secondary region, providing high durability across regions. |
+
+      - Compute and Storage options:
+   
+         | Category              | Description                                                                                       | Options                                                                                     |
+         |-----------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+         | **Region**            | The geographic location where your Azure SQL Database will be hosted. Choosing the right region can impact performance, compliance, and cost. | Examples: East US, West US, North Europe, Southeast Asia, Australia East, etc.              |
+         | **Type**              | The deployment type for your database. This determines how the database is managed and scaled.    | - **Single Database**: Isolated database with dedicated resources. <br> - **Elastic Pool**: Multiple databases sharing a set of resources. <br> - **Managed Instance**: Fully managed instance with near 100% compatibility with on-premises SQL Server. |
+         | **Purchase Model**    | The pricing model for your database. This affects how you are billed for compute and storage resources. | - **vCore**: Flexible model allowing independent scaling of compute, memory, and storage. <br> - **DTU**: Bundled model combining compute, memory, and I/O resources into pre-configured units. |
+         | **Service Tier**      | The performance and availability level for your database.                                         | - **General Purpose**: Balanced and scalable compute and storage options. <br> - **Business Critical**: High performance and high availability with built-in HA and replication. <br> - **Hyperscale**: Suitable for large databases with dynamic scaling needs. |
+         | **Compute Tier**      | The allocation method for compute resources.                                                      | - **Provisioned**: Resources are allocated and billed based on provisioned capacity. <br> - **Serverless**: Automatically scales compute resources based on workload demand and pauses during inactivity. |
+         | **Hardware Type**     | The type of hardware used for the database server.                                                | - **Standard-series (Gen 5)**: Intel-based processors suitable for general-purpose workloads. <br> - **Fsv2-series**: Optimized for compute-intensive workloads with high CPU-to-memory ratio. <br> - **DC-series**: Provides confidential computing capabilities with hardware-based security. |
+         | **Instance**          | The number of virtual cores (vCores) allocated to your database. More vCores provide higher compute power. | Examples: 2 vCore, 4 vCore, 6 vCore, 8 vCore, etc.                                          |
+         | **Disaster Recovery** | Options for high availability and disaster recovery. This determines how your data is replicated and protected. | - **Primary or Geo Replica**: Main instance or a secondary instance in a different region for disaster recovery. <br> - **Standby Replica**: A secondary instance that can take over in case the primary instance fails. |
+      
 2. **Configure Networking**:
    - Set up firewall rules to allow access to your SQL Server.
    - Choose the appropriate network settings based on your security requirements.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa53de28-eba1-4214-bb81-e6e1420a458d">
 
+      | Area                   | Options                                                                                       |
+      |------------------------|-----------------------------------------------------------------------------------------------|
+      | **Connectivity Method** | - **No access**: No public endpoint or private endpoint is configured. <br> - **Public endpoint**: Allows connectivity through a public endpoint. <br> - **Private endpoint**: Allows connectivity through a private endpoint. |
+      | **Connection Policy**  | - **Default**: Uses Redirect policy for all client connections originating inside of Azure (except Private Endpoint connections) and Proxy for all client connections originating outside Azure. <br> - **Proxy**: All connections are proxied via the Azure SQL Database gateway. <br> - **Redirect**: Clients establish connections directly to the node hosting the database. |
+      | **Encrypted Connections** | - **Minimum TLS version**: Specifies the minimum version of Transport Layer Security (TLS) required for encrypted connections. <br> - **TLS 1.0**: The first version of TLS, now considered outdated and insecure. <br> - **TLS 1.1**: An improvement over TLS 1.0, but also considered outdated. <br> - **TLS 1.2**: A widely used version that provides strong security features. It is recommended for most applications. |
+
 3. **Configure Security**:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/1e0d9519-fd0c-43cb-a825-ceaaf27731be">
    
+   | Option                                      | Description                                                                                       | Use Case                                                                                       |
+   |---------------------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+   | **Microsoft Defender for SQL**              | Protects data using a unified security package including vulnerability assessments and advanced threat protection. | Use this to enhance the security of your SQL databases by identifying and mitigating potential vulnerabilities and threats. |
+   | **Ledger**                                  | Helps maintain the integrity of data by providing cryptographic proof that it has not been tampered with. | Use this to ensure data integrity and provide tamper-evidence for critical data.               |
+   | **Server Identity**                         | Allows assigning managed identities to enable central access management between the database and other Azure resources. | Use this to manage access and permissions centrally, simplifying identity management and enhancing security. |
+   | **Transparent Data Encryption Key Management** | Encrypts databases, backups, and logs at rest without requiring changes to applications. <br> - **Server-level key**: Managed at the server level, providing a single key for all databases on the server. <br> - **Database-level key**: Managed individually for each database, allowing for more granular control. | Use this to protect data at rest by encrypting it, ensuring that it remains secure even if the physical media is compromised. |
+   | **Elastic Resource Enclaves**               | Provides a high level of industry-leading data protection by creating a separation between the database engine process memory and the operating system or hypervisor processes. | Use this to enhance data protection by isolating the database engine process from other processes, reducing the risk of data breaches. |
+
+
 4. **Configure Additional Settings**:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/6539e0ba-053d-4b9e-8b24-9a3e0d9c6e10">
+
+   | Section                | Description                                                                                       | Options                                                                                     |
+   |------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+   | **Data Source**        | Options to use an existing database.                                                              | - **None**: No existing data source. <br> - **Backup**: Use a backup of an existing database. <br> - **Sample**: Use a sample database provided by Azure. |
+   | **Database Collation** | Defines rules that sort and compare data. The default database collation is SQL_Latin1_General_CP1_CI_AS. | - **Enter a collation**: Manually specify a collation. <br> - **Find a collation**: Use a search function to find and select a collation. |
+   | **Maintenance Window** | Specifies the preferred maintenance window for database updates and maintenance tasks. The default is "System default (5pm to 8am)". | - **System default**: 5pm to 8am. <br> - **Custom window**: Select a preferred time window from the drop-down list. |
+
 
 7. **Deploy and Manage**:
    - Use tools like SQL Server Management Studio (SSMS) or Azure Data Studio to manage your databases.
