@@ -23,12 +23,6 @@ Last updated: 2024-10-02
 
 ## MDR 
 
-| **Aspect**          | **Event Hubs**                                                                 | **Log Analytics**                                                                                   |
-|---------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| **Service Focus**   | Event streaming and real-time data processing                                 | Log collection, analysis, and security monitoring                                                   |
-| **Setup Complexity**| Involves more steps related to event ingestion and processing                 | Focuses on log collection and integration with security solutions                                   |
-| **End Goals**       | Handles large-scale event data streams                                        | Provides insights and security monitoring through log data                                          |
-
 > `Managed Detection and Response (MDR)` is a cybersecurity service that combines advanced technology with human expertise to `detect, monitor, and respond to cyber threats in real-time`.
 
 Some key aspects of MDR:
@@ -42,6 +36,12 @@ Some key aspects of MDR:
 | Reporting and Recommendations  | Regular reports and security health checks help organizations understand their security posture and improve their defenses |
 
 ## Overview
+
+| **Aspect**          | **Event Hubs**                                                                 | **Log Analytics**                                                                                   |
+|---------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Service Focus**   | Event streaming and real-time data processing                                 | Log collection, analysis, and security monitoring                                                   |
+| **Setup Complexity**| Involves more steps related to event ingestion and processing                 | Focuses on log collection and integration with security solutions                                   |
+| **End Goals**       | Handles large-scale event data streams                                        | Provides insights and security monitoring through log data                                          |
 
 Key benefits:
 
