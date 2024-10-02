@@ -1,4 +1,4 @@
-# How to increase your quota in Azure OpenAI
+# Increase your quota in Azure OpenAI
 
 Costa Rica
 
@@ -8,6 +8,13 @@ Costa Rica
 Last updated: 2024-10-01
 
 ----------
+
+## Wiki 
+
+- [Azure OpenAI Service quotas and limits](https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits)
+- [Manage Azure OpenAI Service quota](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/quota?tabs=rest)
+
+## How to 
 
 1. **Sign in to the Azure Portal**:
    - Open your web browser and go to [portal.azure.com](https://portal.azure.com/)
