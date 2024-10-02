@@ -1,4 +1,4 @@
-# Event Hubs & MDR
+# Event Hubs & Managed Detection and Response (MDR)
 
 Costa Rica
 
