@@ -14,6 +14,25 @@ Last updated: 2024-10-02
 
 ## Wiki 
 
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Azure SQL Database licensing and pricing](https://learn.microsoft.com/en-us/azure/azure-sql/database/pricing?view=azuresql)
+- [Azure SQL Database documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/?view=azuresql)
+- [Deployment tutorial](https://learn.microsoft.com/en-us/azure/azure-sql/database/saas-multitenantdb-get-started-deploy?view=azuresql)
+- [Tutorial: Design a relational database in Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/design-first-database-tutorial?view=azuresql)
+- [Microsoft Azure - Fault Tolerance Pitfalls and Resolutions in the Cloud](https://learn.microsoft.com/en-us/archive/msdn-magazine/2015/september/microsoft-azure-fault-tolerance-pitfalls-and-resolutions-in-the-cloud)
+- [Availability through redundancy - Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla-local-zone-redundancy?view=azuresql)
+- [Availability through local and zone redundancy - Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/high-availability-sla-local-zone-redundancy?view=azuresql)
+- [Disaster recovery guidance - Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/disaster-recovery-guidance?view=azuresql)
+- [Cloud business continuity - disaster recovery - Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/business-continuity-high-availability-disaster-recover-hadr-overview?view=azuresql)
+- [Authorize database access to SQL Database, SQL Managed Instance, and more](https://learn.microsoft.com/en-us/azure/azure-sql/database/logins-create-manage?view=azuresql)
+- [Microsoft Entra authentication - Azure SQL Database & Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/database/authentication-aad-overview?view=azuresql)
+- [Azure SQL Database security overview](https://learn.microsoft.com/en-us/azure/azure-sql/database/security-overview?view=azuresql)
+- [Azure SQL Database performance best practices](https://learn.microsoft.com/en-us/azure/azure-sql/database/performance-best-practices?view=azuresql)
+
+</details>
+
 ## Overview
 
 | Topic                        | Description                                                                                                                                                                                                 |
