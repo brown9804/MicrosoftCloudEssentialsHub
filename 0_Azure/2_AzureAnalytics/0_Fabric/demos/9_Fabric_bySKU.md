@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-24
+Last updated: 2024-10-03
 
 ------------------------------------------
 
@@ -13,11 +13,15 @@ Last updated: 2024-09-24
 
 ## Wiki 
 
+- [Microsoft Fabric trial capacity](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
+- [Buy a Microsoft Fabric subscription](https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription)
 - [Fabric Capacity Size](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#capacity)
 - [Workspace license mode and user capabilities](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#workspace)
 - [User license and capabilities](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
 - [Microsoft Fabric features by SKU](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features)
 - [Understand how consumption is calculated](https://learn.microsoft.com/en-us/fabric/enterprise/plan-capacity#understand-how-consumption-is-calculated)
+- [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?msockid=38ec3806873362243e122ce086486339)
+- [Fabric Capacity and OneLake Consumption](https://learn.microsoft.com/en-us/fabric/onelake/onelake-capacity-consumption)
 
 ## Overview 
 
@@ -30,6 +34,8 @@ Explanation of Power BI SKUs:
 - **Not applicable** for smaller licenses (F2, F4) because these licenses are intended for basic data integration and visualization without the need for extensive Power BI resources. These smaller licenses are more suited for individual users or small teams who do not require the advanced features and computational power provided by Power BI SKUs.
 
 Detailed Features by License:
+
+> [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?msockid=38ec3806873362243e122ce086486339) will calculate storage costs if you exceed the included limit for your selected SKU. If your usage stays within the included storage capacity, you shouldn’t see additional charges for storage.
 
 | **License** | **Capacity Units (CU)** | **Power BI SKU** | **Power BI v-cores** | **Included Storage** | **Billing for Storage** | **Features** |
 |-------------|-------------------------|------------------|----------------------|----------------------|-------------------------|--------------|
