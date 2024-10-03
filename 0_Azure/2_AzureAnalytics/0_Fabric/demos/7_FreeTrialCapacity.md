@@ -12,6 +12,7 @@ Last updated: 2024-09-15
 ## Wiki 
 
 - [Microsoft Fabric trial capacity](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
+- [Are you ready? -> Buy a Microsoft Fabric subscription](https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription)
 - [Roles in workspaces in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces)
 - [Plan your capacity size](https://learn.microsoft.com/en-us/fabric/enterprise/plan-capacity)
 - [What's new and planned in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/release-plan/overview)
