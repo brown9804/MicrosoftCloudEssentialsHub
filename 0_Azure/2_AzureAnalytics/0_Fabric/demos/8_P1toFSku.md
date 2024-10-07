@@ -13,14 +13,23 @@ Last updated: 2024-10-07
 
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
-   
+
 - [Important update to Power BI Premium licensing](https://www.microsoft.com/en-us/licensing/news/power-bi-premium-sku-retirement)
 - [Important update coming to Power BI Premium licensing - Blog](https://powerbi.microsoft.com/en-us/blog/important-update-coming-to-power-bi-premium-licensing/)
 - [Microsoft Fabric concepts and licenses](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
 - [Moving Fabric (Power BI) Workspaces from Premium or Free Trial to new F SKUs](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/moving-fabric-power-bi-workspaces-from-premium-or-free-trial-to/ba-p/4176482)
 - [Deploying Microsoft Fabric Capacity Using Terraform](https://murggu.medium.com/deploying-microsoft-fabric-azure-capacity-using-terraform-8dfcbab16f64)
 - [Announcing the availability of Trusted workspace access and Managed private endpoints in any Fabric capacity](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-availability-of-trusted-workspace-access-and-managed-private-endpoints-in-any-fabric-capacity?ft=All)
-
+- [Migrate to Data Factory - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/upgrade-paths)
+- [Fabric F64 capacity vs. Power BI Premium P1 capacity](https://community.fabric.microsoft.com/t5/General-Discussion/Fabric-F64-capacity-vs-Power-BI-Premium-P1-capacity/m-p/3708411)
+- [Solved: Power BI Premium migration to Fabric - Microsoft Fabric Community](https://community.fabric.microsoft.com/t5/Service/Power-BI-Premium-migration-to-Fabric/td-p/3975917)
+- [Data Factory documentation in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/)
+- [Microsoft Fabric changing the game: Exporting data and building the Lakehouse](https://blog.fabric.microsoft.com/en-US/blog/microsoft-fabric-changing-the-game-exporting-data-and-building-the-lakehouse/)
+- [Export and sharing tenant settings - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-export-sharing)
+- [Load data into your lakehouse with a notebook - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-notebook-load-data)
+- [How to copy data using copy activity - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity)
+- [Move and transform data with dataflow and data pipelines - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/transform-data)
+  
 </details>
 
 ## Overview 
