@@ -1,4 +1,4 @@
-# Transition from Power BI Premium (P-SKUs) to Fabric (F-SKUs)
+# Migration from Power BI Premium (P-SKUs) to Fabric (F-SKUs)
 
 Costa Rica
 
