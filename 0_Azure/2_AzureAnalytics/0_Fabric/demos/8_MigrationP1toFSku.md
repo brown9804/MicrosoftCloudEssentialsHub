@@ -67,6 +67,9 @@ Last updated: 2024-10-07
 
 ## How to transition 
 
+> [!NOTE]
+> If the resources are in the `same region`, it's just `reassigning the workspace compute -> Capacity`
+
 1. **Review Current Capacity and Usage**:
      - Review the current usage and performance metrics of your P1 capacity.
      - Identify the workspaces, datasets, reports, and dashboards that need to be migrated.
@@ -109,6 +112,9 @@ Last updated: 2024-10-07
 
                <img width="550" alt="image" src="https://github.com/user-attachments/assets/1a6cbfdf-cde3-4eb4-a7d8-f66a28094059">
 
+> [!NOTE]
+> If the `across region`, you need to `export/import reports and semantic models, recreate dashboards`.
+
 5. Data Export and Import: `-> Sematic Models/Dataset`
    - `For small Datasets`: Use Power BI’s export features to export datasets from the P1 capacity.
       1. **Identify Data Sources**: List all datasets you need to export from the P1 capacity.
@@ -122,25 +128,37 @@ Last updated: 2024-10-07
          - Navigate to the workspace where you want to import the datasets.
          - Click on **Upload** > **Upload a file** and select the exported files.
          - Verify that the data is correctly imported and update any data connections if necessary.
-   - `For large Datasets`: Consider using scripts or Data Factory to facilitate the export.
-      1. **Set Up Data Factory in Microsoft Fabric**:
-         - Go to the Microsoft Fabric portal.
-         - Navigate to `Data Factory`.
-      2. **Create a Data Pipeline**:
-         - In Data Factory, create a new `Data Pipeline`.
-         - Add a **Copy Data** activity to the pipeline.
-         - Configure the source to be your P1 capacity data source.
-         - Configure the destination to be a storage account or directly to the F64 capacity.
+   - `For large Datasets`: Consider using scripts, Power BI XMLA or Data Factory to facilitate the export.
+      - Backup and Restore requires using XMLA-based tools, such as SQL Server Management Studio (SSMS):
+          - If not sure if small dataset or large dataset, click here: [Large semantic models in Power BI Premium](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-large-models)
+          - Detailed method: [Backup and restore semantic models with Power BI Premium](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-backup-restore-dataset)
 
-            <img width="421" alt="image" src="https://github.com/user-attachments/assets/4e6b4bd6-c746-49c4-baeb-5da12d59afb5">
+          | **Step**                | **Description**                                                                                                                                                                                                 |
+          |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+          | **Requirements**        | - Power BI Premium or Premium Per User (PPU) license. Click here to see [What is Power BI Premium?](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-what-is) <br> - Use XMLA-based tools like SQL Server Management Studio (SSMS).   |
+          | **Backup Process**      | - **Connect to Power BI**: Use SSMS to connect to your Power BI Premium workspace.<br>- **Backup Command**: Execute a backup command to save the dataset to an Azure Data Lake Storage Gen2 (ADLS Gen2) account. |
+          | **Restore Process**     | - **Prepare Backup Files**: Ensure the backup files (.abf) are in the correct folder in your ADLS Gen2 account.<br>- **Restore Command**: Use SSMS to execute a restore command, specifying the backup file and target dataset. |
+          | **Considerations**      | - **Storage Account Configuration**: Backup and Restore use an ADLS Gen2 storage account configured at the tenant or workspace level.<br>- **Permissions**: Only users with appropriate permissions (admin or contributor) can perform backup and restore operations.<br>- **Limitations**: Ensure your ADLS Gen2 account is accessible and not restricted by VNET or firewall settings. |
+
+      - Using Data Factory:
+          1. **Set Up Data Factory in Microsoft Fabric**:
+             - Go to the Microsoft Fabric portal.
+             - Navigate to `Data Factory`.
+          2. **Create a Data Pipeline**:
+             - In Data Factory, create a new `Data Pipeline`.
+             - Add a **Copy Data** activity to the pipeline.
+             - Configure the source to be your P1 capacity data source.
+             - Configure the destination to be a storage account or directly to the F64 capacity.
+    
+                <img width="421" alt="image" src="https://github.com/user-attachments/assets/4e6b4bd6-c746-49c4-baeb-5da12d59afb5">
      
-      3. **Run the Pipeline**:
-         - Execute the pipeline to transfer the data.
-         - Monitor the pipeline execution to ensure data is transferred successfully.
-      4. **Import Data into F64 Capacity**:
-         - If the data was copied to a storage account, use Data Factory to import it into the F64 capacity.
-         - Create a new pipeline in Data Factory to copy data from the storage account to the F64 capacity.
-         - Execute the pipeline and verify that the data is correctly imported.
+          3. **Run the Pipeline**:
+             - Execute the pipeline to transfer the data.
+             - Monitor the pipeline execution to ensure data is transferred successfully.
+          4. **Import Data into F64 Capacity**:
+             - If the data was copied to a storage account, use Data Factory to import it into the F64 capacity.
+             - Create a new pipeline in Data Factory to copy data from the storage account to the F64 capacity.
+             - Execute the pipeline and verify that the data is correctly imported.
 
 6. Migrate `Reports and Dashboards`: 
    - Export Reports and Dashboards from P1 Capacity
@@ -158,6 +176,10 @@ Last updated: 2024-10-07
          - Click on **Upload** > **Upload a file** and select the .pbix file you downloaded.
          - Update data sources and connections to point to the new F64 capacity.
       2. **Recreate Dashboards**: Manually recreate the dashboards in the F64 capacity by pinning the necessary visuals from the imported reports.
+         
+> [!NOTE]
+> Verify the `migration and documentation` are steps recommended for `both approaches, same region migration or across region`.
+         
 7. **Verify Migration**:
    - **Check Functionality**:
       1. **Verify Data Integrity**:
