@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-04
+Last updated: 2024-10-06
 
 ------------------------------------------
 
@@ -44,7 +44,7 @@ Last updated: 2024-10-04
 1. Sign in to the Azure Portal: Go to the Azure portal and sign in with your Microsoft account credentials.
 2. Navigate to Reservations: In the left-hand menu, select **All services** and then **Reservations** or use the search bar.
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/cd710088-7b71-4323-873d-b849700063ff">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/cd710088-7b71-4323-873d-b849700063ff">
 
 3. Click on `+ Add`, and select **Microsoft Fabric** from the list of available reservations.
 
@@ -62,7 +62,7 @@ Last updated: 2024-10-04
 
 6. Choose a Region: Select the Azure region where the reservation will apply. This is important for ensuring that your resources are located in the desired geographical area.
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/7f10db21-d922-4437-acbf-e0a6f383091f">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/7f10db21-d922-4437-acbf-e0a6f383091f">
 
 7. Add to Cart: Add the desired quantity of Capacity Units (CUs) to your cart. For example, if you need 64 CUs, add 64 CUs to your cart.
 8. Review and Purchase: Review your selections and proceed to purchase. You can choose to pay upfront or with monthly payments.
