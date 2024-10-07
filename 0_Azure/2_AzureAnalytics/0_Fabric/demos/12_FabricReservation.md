@@ -9,7 +9,9 @@ Last updated: 2024-10-06
 
 ------------------------------------------
 
-> Each license level provides different amounts of computational power and features, allowing organizations to choose the one that best fits their needs
+> Each license level provides different amounts of computational power and features, allowing organizations to choose the one that best fits their needs <br/> <br/>
+> `Pay-as-you-go` capacities related with specific Azure `resource groups`. This allows you to manage and allocate resources within your organizational structure more effectively. <br/> 
+> `Reservation` capacities are managed at the `subscription level`. This means you can’t directly associate them with individual resource groups. Instead, they apply to the entire subscription, providing a discount for committing to a certain amount of capacity over a period of time.
 
 ## Wiki 
 
