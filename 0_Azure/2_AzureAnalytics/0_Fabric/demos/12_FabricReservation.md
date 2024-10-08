@@ -12,6 +12,7 @@ Last updated: 2024-10-08
 > Each license level provides different amounts of computational power and features, allowing organizations to choose the one that best fits their needs <br/> <br/>
 > `Pay-as-you-go` capacities related with specific Azure `resource groups`. This allows you to manage and allocate resources within your organizational structure more effectively. <br/> 
 > `Reservation` capacities are managed at the `subscription level`. This means you can’t directly associate them with individual resource groups. Instead, they apply to the entire subscription, providing a discount for committing to a certain amount of capacity over a period of time.
+> Assign the capacity to your workspace
 
 ## Wiki 
 
@@ -45,6 +46,7 @@ Overall process:
 
 > 1. Make a `reservation`, click to see [how to make a reservation](#how-to-make-a-reservation).
 > 2. After making a reservation, you need to create the actual `Fabric capacity` where your workloads will run. Link the capacity to your reservation during this setup. Click to see [how to create and link fabric capacity with reservation](#creatinglinking-fabric-capacity-to-your-reservation).
+> 3. Assign the workspace capacity, click [here](#assign-workspace-capacity) to see more.
 
 ## Reservations & Capacity
 
@@ -124,6 +126,20 @@ Overall process:
    - Review your configuration and then click **Create** to provision the capacity.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/9ac40a4f-a9cb-4f56-b591-8ef171d7f50b">
+
+## Assign Workspace Capacity
+
+- **Log In**: Open your web browser and go to the Power BI Admin portal. Log in using your administrator credentials.
+- **Navigate to Admin Portal**: Once logged in, click on the gear icon (⚙️) in the top right corner and select `Admin Portal` from the dropdown menu.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/ec0c32dc-17aa-46c5-9912-1f5920d7e0d3">
+
+- **Select Workspace**: Click on the workspace you want to migrate. This will open the workspace settings.
+    - **Change Capacity**: In the workspace settings, look for the `Capacity` section. You will see an option to change the capacity assignment.
+    - **Select Fabric SKU**: From the dropdown menu, select the new Fabric SKU that you have purchased.
+    - **Save Changes**: Click "Save" to apply the changes. The workspace will now be reassigned to the new Fabric SKU.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3587658e-50b8-484a-b048-07de018a15fe">
 
 ## How to Change Scope of a Reservation
 
