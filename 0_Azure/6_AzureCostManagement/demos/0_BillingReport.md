@@ -22,6 +22,12 @@ Last updated: 2024-10-08
 
 > Generate and download billing reports for specific resources.
 
+> [!NOTE]
+> The total cost of the reservation is spread over the term of the reservation. This means that instead of paying the full amount upfront, the cost is amortized over the reservation period, making it easier to manage and predict expenses. <br/>
+
+> `For example`:
+> By committing to the F64 reservation of Microsoft Fabric, you receive a significant discount compared to the pay-as-you-go rate. The pay-as-you-go rate might be $11.52 per hour, but with the reservation, you pay $6.853 per hour, saving ~41%
+
 - **Navigate to Subscription**:
    - `Sign in` to the Azure portal.
    - `Select` the subscription where the factory is located from the `Subscriptions` menu.
