@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-06
+Last updated: 2024-10-08
 
 ------------------------------------------
 
@@ -40,6 +40,32 @@ Last updated: 2024-10-06
 | **Payment Flexibility**   | **Upfront or Monthly Payments**: You can choose to pay for reservations upfront or with monthly payments, without any additional fees. |
 | **Enhanced Resource Management** | - **Scope Options**: Apply reservations to specific resource groups, subscriptions, or management groups to optimize resource allocation. <br> - **Automatic Application**: The reservation discount automatically applies to matching resources, simplifying management. |
 | **Compliance and Governance** | **Policy Enforcement**: Use Azure Policy to ensure resources comply with organizational standards and regulatory requirements. |
+
+Overall process:
+
+> 1. Make a `reservation`, click to see [how to make a reservation](#how-to-make-a-reservation).
+> 2. After making a reservation, you need to create the actual `Fabric capacity` where your workloads will run. Link the capacity to your reservation during this setup. Click to see [how to create and link fabric capacity with reservation](#creatinglinking-fabric-capacity-to-your-reservation).
+
+## Reservations & Capacity
+
+> Microsoft Fabric `Reservations are agreements` for a specific time period and compute capacity. Whether using the Pay-as-you-go model or reservations, you need to create the Microsoft Fabric Capacity within a resource group. <br/> <br/>
+> Reservations in Azure, including Microsoft Fabric `reservations`, are indeed `managed at the subscription leve`l. This means that the reserved capacity units (CUs) apply to the entire subscription, not to individual resource groups. <br/>
+> - `Reservations`: Provide a `subscription-wide discount` for committing to a certain amount of capacity over a period of time. <br/>
+> - `Capacity Creation`: You create and manage Fabric `capacities within specific resource groups`, but the `cost benefits from the reservation apply at the subscription level`. 
+
+> While manage resources within resource groups, the reservation’s cost benefits are applied across the entire subscription.
+
+| **Aspect** | **Details** |
+|------------|-------------|
+| **Reservation** | - `Subscription Level Management`: When you make a reservation, it applies to the entire subscription. This means any resource within that subscription can benefit from the reserved capacity.<br/>- `Discounts`: The primary benefit of reservations is the cost savings. By committing to a certain amount of capacity over a period of time, you receive a discount compared to pay-as-you-go pricing.<br/>- `Flexibility`: While the reservation itself is at the subscription level, you can still create and manage individual capacities within different resource groups. The reserved capacity units are utilized by any eligible resources within the subscription. |
+| **Capacity** | - `Creating Capacity`: Even though the reservation is at the subscription level, you still need to create the actual Fabric capacity in the Azure portal. This capacity can be assigned to specific resource groups as needed.<br/>- `Utilizing Reservations`: When you create a Fabric capacity, it will automatically utilize the reserved capacity units from your subscription, ensuring you benefit from the cost savings. |
+
+### Scope Assignment in Reservations
+
+| **Level**                | **Scope**                                                                                                                                       | **Usage/Management**                                                                                                                                                                                                 |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Subscription Level**   | - Reservations are applied at the subscription level.<br/>- Reserved capacity units (CUs) provide a discount for any eligible resources within the entire subscription. | Any Fabric capacity created within this subscription can utilize the reserved CUs, benefiting from the cost savings. |
+| **Resource Group Level** | - Reservations are managed at the subscription level.<br/>- The reserved capacity units are not directly assigned to individual resource groups but are available for any resource within the subscription.  | You can still organize and manage your resources within different resource groups. |
 
 ## How to make a reservation
 
@@ -77,3 +103,39 @@ Last updated: 2024-10-06
 > - **Data Residency and Compliance**: Ensure the region complies with any legal or regulatory requirements for your data.
 > - **Availability Zones**: Some regions offer availability zones for enhanced resilience and availability.
 > - **Paired Regions**: Consider using paired regions for geo-redundant storage and other services that depend on replication.
+
+## Creating/Linking Fabric Capacity to Your Reservation
+
+1. **Make a Reservation**: First, ensure you have made a reservation for the required capacity units (CUs) in the Azure portal. This involves selecting the region, size, and quantity of CUs you need. Click [here to see how](#how-to-make-a-reservation).
+2. **Create Fabric Capacity**:
+   - Go to the Azure portal and search for **Microsoft Fabric**.
+   - Select **Create Fabric Capacity**.
+3. **Fill in the Required Details**:
+   - **Subscription**: Choose the subscription where you made the reservation.
+   - **Resource Group**: Select the resource group for your capacity.
+   - **Capacity Name**: Provide a unique name for your capacity.
+   - **Region**: Ensure this matches the region of your reservation.
+   - **Size**: Select the size based on the reserved CUs.
+4. **Link to Reservation**:
+   - During the setup, you will see an option to link your capacity to an existing reservation.
+   - Select the reservation you made earlier from the list. This ensures that the capacity you are creating will utilize the reserved CUs.
+5. **Review and Create**:
+   - Click on **Review + create** to finalize the setup.
+   - Review your configuration and then click **Create** to provision the capacity.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/9ac40a4f-a9cb-4f56-b591-8ef171d7f50b">
+
+## How to Change Scope of a Reservation
+
+> - **Permissions**: Ensure you have the necessary permissions to change the scope. Typically, you need to be an owner or have the reservation purchaser role on the subscription. <br/> 
+> - **Impact**: Changing the scope can affect how the reservation discount is applied across your resources, so make sure to review the changes carefully.
+
+1. **Sign in to the Azure Portal**: Go to the Azure portal and sign in with your credentials.
+2. **Navigate to Reservations**: In the Azure portal, select `All services` and then `Reservations`.
+3. **Select the Reservation**: Find and select the reservation you want to modify.
+4. **Change the Scope**:
+   - Go to `Settings` and then `Configuration`.
+   - Here, you can change the scope of the reservation. You can switch between different scopes such as:
+     - **Single Subscription Scope**: Applies the reservation discount to the matching resources in the selected subscription.
+     - **Shared Scope**: Applies the reservation discount to matching resources in eligible subscriptions within the billing context.
+     - **Management Group Scope**: Applies the reservation discount to the matching resources in the list of subscriptions that are part of the management group.
