@@ -51,7 +51,7 @@ Overall process:
 ## Reservations & Capacity
 
 > Microsoft Fabric `Reservations are agreements` for a specific time period and compute capacity. Whether using the Pay-as-you-go model or reservations, you need to create the Microsoft Fabric Capacity within a resource group. <br/> <br/>
-> Reservations in Azure, including Microsoft Fabric `reservations`, are `managed at the subscription leve`. This means that the reserved capacity units (CUs) apply to the entire subscription, not to individual resource groups. <br/>
+> Reservations in Azure, including Microsoft Fabric `reservations`, are `managed at the subscription level`. This means that the reserved capacity units (CUs) apply to the entire subscription, not to individual resource groups. <br/>
 > - `Reservations`: Provide a `subscription-wide discount` for committing to a certain amount of capacity over a period of time. <br/>
 > - `Capacity Creation`: You create and manage Fabric `capacities within specific resource groups`, but the `cost benefits from the reservation apply at the subscription level`. 
 
