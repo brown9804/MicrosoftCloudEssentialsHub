@@ -14,6 +14,11 @@ Last updated: 2024-10-08
 > `Reservation` capacities are managed at the `subscription level`. This means you can’t directly associate them with individual resource groups. Instead, they apply to the entire subscription, providing a discount for committing to a certain amount of capacity over a period of time.
 > Assign the capacity to your workspace
 
+> [!NOTE]
+> The total cost of the reservation is distributed over the reservation period. This means you don't have to pay the entire amount upfront; instead, the cost is spread out, making it easier to manage and predict your expenses.
+
+> Example: By choosing an F128 reservation in Microsoft Fabric, if the pay-as-you-go rate is $23.04 per hour, with the reservation, you might pay $13.706 per hour, saving ~41%.
+
 ## Wiki 
 
 <details>
