@@ -1,4 +1,4 @@
-# Connecting Microsoft Fabric to On-Premises MYSQL
+# Connecting Microsoft Fabric to On-Premises MySQL
 
 Costa Rica
 
