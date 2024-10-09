@@ -51,6 +51,9 @@ Last updated: 2024-09-15
         2. Ensure that the communication between your MySQL database and Microsoft Fabric travels through secure channels, leveraging the encryption you already have in place between the cloud and your local network.
         3. **Verify SSL/TLS Encryption**: Ensure that your MySQL server is configured to support SSL/TLS connections. You might need to update your MySQL configuration file (`my.cnf` or `my.ini`) to enable SSL.
         4. **Test the Connection**: Use the test connection feature in Microsoft Fabric to ensure that the connection is successful and encrypted.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/e149a2b0-7559-4db9-911f-5e3902f264ff">
+
 - Step 4: Create and Schedule Dataflows
   1. **Design Your Dataflow**: Use Power Query to design your dataflow, specifying the tables and columns you want to import from MySQL.
   2. **Transform Data as Needed**: Apply any necessary transformations to your data within the dataflow.
