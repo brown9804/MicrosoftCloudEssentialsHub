@@ -164,7 +164,7 @@ graph TD
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/10a3610c-a6a0-448a-ba54-389c1424f326">
 
-  <img width="433" alt="image" src="https://github.com/user-attachments/assets/31aa0106-f734-42ef-9da4-b917bc191b67">
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/31aa0106-f734-42ef-9da4-b917bc191b67">
 
 ### Set Up Network Security Groups (NSGs)
 
@@ -174,7 +174,6 @@ graph TD
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/669186f7-329e-4423-8359-27434b358ed2">
    
-
 ### Create index/Upload Documents 
 
 > Since now we are in a private network, Azure AI Search only admits requests from clients in a virtual network instead of over a public internet. So we need to create a VM, and set that VM in a VNET. Click [here for a more detailed guide on how to Create a private endpoint for a secure connection to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/service-create-private-endpoint#use-the-azure-portal-to-access-a-private-search-service)
@@ -194,12 +193,20 @@ graph TD
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/49d21529-8529-4ff1-9b4a-d3bbd40c7f45">
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c7d45a5-cb8c-4902-9e2c-e4db7c0b5735">
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/5f660ba8-694d-4cba-b65a-97d532b7c68b">
 
+> Now you are able to access the AI Search behind the same private network.
 
 - Create Index: Set up an index to store your documents.
 
    <img width="310" alt="image" src="https://github.com/user-attachments/assets/7304b542-7bc9-4c59-a2a3-ae81d6be113a">
+   
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6e6ebaa-c371-4a56-bffb-4dc95fc272e5">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/8b255ca7-a98d-42be-b854-94b16a41b922">
 
 - Upload Documents: Use the data import wizard to upload your documents and configure the indexer to parse the content.
-     
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3b601686-a811-45c5-8041-49a21e3adb55">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/efd5e069-538e-457a-991c-a82ca6a3d948">
