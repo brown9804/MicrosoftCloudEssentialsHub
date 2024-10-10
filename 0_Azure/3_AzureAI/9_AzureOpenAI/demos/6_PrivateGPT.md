@@ -190,11 +190,14 @@ graph TD
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/34fce8f1-ddf5-4cfa-8306-6c03f59c1cf7">
 
 
+- Login into the VM, and go the AI Search. You can use Azure Bastion to connect.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/49d21529-8529-4ff1-9b4a-d3bbd40c7f45">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c7d45a5-cb8c-4902-9e2c-e4db7c0b5735">
 
 
-
-
-- Create Index: Once the search service is created, set up an index to store your documents.
+- Create Index: Set up an index to store your documents.
 
    <img width="310" alt="image" src="https://github.com/user-attachments/assets/7304b542-7bc9-4c59-a2a3-ae81d6be113a">
 
