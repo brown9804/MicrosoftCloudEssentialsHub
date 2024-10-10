@@ -199,7 +199,7 @@ graph TD
 
 - Create Index: Set up an index to store your documents.
 
-   <img width="310" alt="image" src="https://github.com/user-attachments/assets/7304b542-7bc9-4c59-a2a3-ae81d6be113a">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7304b542-7bc9-4c59-a2a3-ae81d6be113a">
    
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6e6ebaa-c371-4a56-bffb-4dc95fc272e5">
 
@@ -210,3 +210,66 @@ graph TD
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/3b601686-a811-45c5-8041-49a21e3adb55">
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/efd5e069-538e-457a-991c-a82ca6a3d948">
+
+### Configure and Deploy AI model
+
+- Navigate to Azure OpenAI Studio
+    1. **Open Azure OpenAI Studio**: In your browser, go to the Azure OpenAI Studio.
+    2. **Sign In**: Sign in with your Azure account.
+- Explore the Model Catalog
+    1. **Model Catalog**: From the sidebar, select `Model catalog` under the `Get started` section.
+    2. **Choose a Model**: Browse through the available models and select the one you want to deploy to get more information about it.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c85e9763-1e7f-4d9f-974a-0a2b06ca8f1d">
+
+    3. **Deploy the model**: You can do ir directly by the `Model Catalog` or under `Deployments`:
+        - **Deployments**: From the sidebar, select `Deployments` under the `Shared resources` section.
+        - **Create Deployment**: Click on `Create deployment` and follow the prompts to deploy the selected model.
+           - **Name**: Provide a name for the deployment.
+           - **Model**: Choose the model from the model catalog.
+           - **Scale Settings**: Configure the scale settings as needed.
+        - **Deploy**: Click `Deploy` to start the deployment process.
+
+        <p float="left">
+          <img src="https://github.com/user-attachments/assets/86053509-09a0-4def-87e3-a7fcc9f63315" width="450" height="250" />
+          <img src="https://github.com/user-attachments/assets/137e8194-6d69-4b80-9156-a844f91cfed8" width="200" height="250" />
+        </p>
+
+- **Test the Deployment**<br/>
+    1. **Playgrounds**: Use the `Playgrounds` section in the sidebar to test the deployed model.<br/>
+        - **Chat**: Test the model with chat interactions.<br/>
+        - **Add Data as AI Index in Azure OpenAI**: If any authentication error happens please see [how to allow the services to authorize each other](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/use-your-data-securely#role-assignments)
+
+            1. **Select Deployment**: In the `Setup` section, choose the deployment you want to add data to.<br/>
+            2. **Add Data Source**: Click on `+ Add a data source` to add a new data source.<br/>
+            3. **Configure Data Source**: Follow the steps to configure the data source. This may involve selecting the type of data source and providing the necessary connection details.<br/>
+            4. **Review and Finish**: Review the configuration and finish the setup to add the data source.<br/>
+            5. **Index Data**: The data from the configured data source will be indexed and available for search and retrieval.<br/>
+
+               <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecb19e4e-c79e-4ec6-9a1a-cc98cc95ddb2">
+
+
+       - **Completions**: Test the model with completion tasks.<br/>
+
+
+
+
+
+    1. **Verify**: Ensure that the model is responding as expected.<br/>
+
+
+  
+
+
+- **Integrate with Your Application**<br/>
+      1. **Get Endpoint and Key**: From the `Deployments` section, get the endpoint and API key for the deployed model.<br/>
+      2. **Application Code**: Use the endpoint and API key in your application code to send requests to the model.<br/>
+      3. **Handle Responses**: Process the responses from the model within your application.<br/>
+
+- **Monitor and Manage**<br/>
+      1. **Quota**: Check the `Quota` section under `Shared resources` to monitor your usage.<br/>
+      2. **Content Filters**: Use `Content filters` to manage the content filtering settings for your deployment.<br/>
+      3. **Data Files**: Manage your data files in the `Data files` section.<br/>
+      4. **Vector Stores**: Use `Vector stores` to manage vector representations of your data.<br/>
+
+
