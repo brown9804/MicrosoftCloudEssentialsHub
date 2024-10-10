@@ -9,6 +9,15 @@ Last updated: 2024-09-13
 
 ----------
 
+## Wiki 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+  
+- [Build Powerful RAG Apps Without Code Using LangFlow and Azure OpenAI](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-powerful-rag-apps-without-code-using-langflow-and-azure/ba-p/4193542)
+ 
+</details>
+
 ## Content 
 
 - [Azure Artifitial Intelligence + ML Overview](#azure-artifitial-intelligence--ml-overview)
@@ -32,9 +41,8 @@ Last updated: 2024-09-13
     - [Language Service](./13_LanguageService/README.md)
     - [Retired](#retired)
 
-## Wiki 
 
-- [Build Powerful RAG Apps Without Code Using LangFlow and Azure OpenAI](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-powerful-rag-apps-without-code-using-langflow-and-azure/ba-p/4193542)
+## Overview
 
 All Azure services as for now: <br/>
 
