@@ -66,11 +66,11 @@ Last updated: 2024-10-10
 | **No Data Loss**       | **Data Integrity**: The migration process ensures that there is no loss of data or functionality in your existing reports and dashboards. |
 | **Components needing recreation** | Since it's cross-region, `Fabric components` like lake houses, warehouses, and real-time analytics components `needs to be recreated` | 
 
-> [!IMPORT]
+> [!IMPORTANT]
 > - Data Refresh Settings: After migrating a workspace to a new capacity, the data refresh settings should remain intact. However, please verify the settings post-migration to ensure they are configured as expected. <br/>
-- Scheduled Refreshes: Make sure that no manual or scheduled refreshes are running during the migration process to avoid any conflicts or interruptions. <br/>
-- Capacity-Specific Features: Some features, like automatic page refresh for DirectQuery sources, are specific to Premium capacities and need to be reconfigured if the capacity type changes. <br/>
-- If `errors`, you can switch back to the old capacity, and troubleshoot.
+> - Scheduled Refreshes: Make sure that no manual or scheduled refreshes are running during the migration process to avoid any conflicts or interruptions. <br/>
+> - Capacity-Specific Features: Some features, like automatic page refresh for DirectQuery sources, are specific to Premium capacities and need to be reconfigured if the capacity type changes. <br/>
+> - If `errors`, you can switch back to the old capacity, and troubleshoot.
 
 ## How to transition 
 
