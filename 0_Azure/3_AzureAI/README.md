@@ -5,9 +5,18 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-13
+Last updated: 2024-10-14
 
 ----------
+
+## Wiki 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+  
+- [Build Powerful RAG Apps Without Code Using LangFlow and Azure OpenAI](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-powerful-rag-apps-without-code-using-langflow-and-azure/ba-p/4193542)
+ 
+</details>
 
 ## Content 
 
@@ -32,9 +41,8 @@ Last updated: 2024-09-13
     - [Language Service](./13_LanguageService/README.md)
     - [Retired](#retired)
 
-## Wiki 
 
-- [Build Powerful RAG Apps Without Code Using LangFlow and Azure OpenAI](https://techcommunity.microsoft.com/t5/educator-developer-blog/build-powerful-rag-apps-without-code-using-langflow-and-azure/ba-p/4193542)
+## Overview
 
 All Azure services as for now: <br/>
 
