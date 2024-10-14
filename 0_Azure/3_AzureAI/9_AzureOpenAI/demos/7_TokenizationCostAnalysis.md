@@ -80,4 +80,12 @@ Where:
 - **N** is the number of tokens for which the price is specified (e.g., 100,000 tokens).
 - **Price per N Tokens** is the cost rate for processing N tokens, which varies based on the model and region.
 
+## Optimization: Best Practices Overview
+
+| Optimization Aspect | Technical Details                                                                                     | Best Practices                                                                                       |
+|---------------------|-------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Input Optimization  | - **Token Efficiency:** Reducing the number of tokens in the input can significantly lower costs.<br/>- **Prompt Engineering:** Crafting prompts that achieve the desired result with fewer tokens.<br/>- **Context Management:** Including only the necessary context in the input to minimize token usage. | - **Concise Prompts:** Use the shortest possible prompts that still convey the necessary information.<br/>- **Avoid Redundancy:** Remove any repetitive or unnecessary words from the prompts.<br/>- **Template Design:** Design prompt templates that are efficient in terms of token usage. |
+| Output Optimization | - **Response Length Control:** Limiting the length of the model's response can help manage and predict costs.<br/>- **Stop Sequences:** Using stop sequences to control where the model should stop generating further tokens.<br/>- **Max Tokens Parameter:** Setting an appropriate limit on the number of tokens in the response. | - **Set Max Tokens:** Use the `max_tokens` parameter to limit the length of the model's response.<br/>- **Use Stop Sequences:** Define stop sequences to control the verbosity of the output.<br/>- **Quality Check:** Regularly review the model's responses to ensure they are within the expected length and quality. |
+
+
 
