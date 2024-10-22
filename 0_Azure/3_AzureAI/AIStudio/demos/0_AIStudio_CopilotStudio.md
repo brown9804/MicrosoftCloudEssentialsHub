@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-16
+Last updated: 2024-10-22
 
 ----------
 
@@ -107,7 +107,7 @@ Last updated: 2024-09-16
 |-----------------------------|------------------------------------------------------------------------------------------|
 | **Azure Bot Service**       | - Collaborate with multidisciplinary teams using Bot Framework Composer. <br/> - Connect to multiple channels (Teams, Skype, Facebook Messenger, etc.) <br> - Scalable and reliable hosting for chatbots  <br/> - Leverage full capabilities for sophisticated chatbot applications                                        |
 | **Azure OpenAI Service**    | - Utilize advanced models like GPT-4 for natural language understanding and generation<br>- Fine-tune models for specific use cases                                                |
-| **Azure Cognitive Services**| - Enhance language understanding with LUIS<br>- Add speech recognition and synthesis for voice interactions<br>- Analyze and interpret images with Computer Vision                                      |
+| **Azure AI Services**| - Enhance language understanding with LUIS<br>- Add speech recognition and synthesis for voice interactions<br>- Analyze and interpret images with Computer Vision                                      |
 | **Azure Machine Learning**  | - Ground chatbot in specific data for enhanced relevance and accuracy<br>- Train custom machine learning models for specialized tasks                             |
 | **Azure DevOps**            | - Set up CI/CD pipelines for continuous integration and deployment<br>- Manage code and configurations with Azure Repos                                        |
 
@@ -144,20 +144,20 @@ Last updated: 2024-09-16
    - **Deploy the Copilot**: Deploy your copilot to Azure OpenAI Service.
    - **Test**: Use the built-in testing tools in Copilot Studio to simulate conversations and refine responses.
 
-### **Example 3: Integrating Copilot Studio with Azure Cognitive Services**: Adding Speech and Vision Capabilities to a Copilot
+### **Example 3: Integrating Copilot Studio with Azure AI Services**: Adding Speech and Vision Capabilities to a Copilot
 
 1. **Set Up Your Environment**:
    - **Create an Azure Account**: Sign up for an Azure account if you don't have one.
-   - **Access Azure Cognitive Services**: Navigate to the Azure portal and create resources for Language Understanding (LUIS), Speech Services, and Computer Vision.
+   - **Access Azure AI Services**: Navigate to the Azure portal and create resources for Language Understanding (LUIS), Speech Services, and Computer Vision.
 2. **Create a Copilot in Copilot Studio**:
    - **Start a New Copilot**: Log in to Copilot Studio, click on `Create a Copilot` and provide a name and language for your chatbot.
    - **Define Topics and Knowledge Sources**: Add topics and integrate knowledge sources like SharePoint or Dataverse.
-3. **Integrate with Azure Cognitive Services**:
+3. **Integrate with Azure AI Services**:
    - **Language Understanding**: Connect your copilot to LUIS to enhance its ability to understand user intents.
    - **Speech Services**: Add speech recognition and synthesis capabilities to your copilot for voice interactions.
    - **Computer Vision**: Enable your copilot to analyze and interpret images using Computer Vision.
 4. **Deploy and Test**:
-   - **Deploy the Copilot**: Deploy your copilot with the integrated Cognitive Services.
+   - **Deploy the Copilot**: Deploy your copilot with the integrated AI Services.
    - **Test**: Use the built-in testing tools in Copilot Studio to simulate conversations and refine responses.
 
 ### **Example 4: Integrating Copilot Studio with Azure Machine Learning**: Grounding a Copilot in Specific Data

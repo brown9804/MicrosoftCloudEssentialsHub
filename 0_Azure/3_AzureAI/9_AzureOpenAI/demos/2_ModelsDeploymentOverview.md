@@ -5,9 +5,31 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-30
+Last updated: 2024-10-22
 
 ----------
+
+## Overview
+
+> `Deployments` in Azure OpenAI Studio involve making AI models, workflows, and applications available for use in production environments. This includes hosting models on servers or in the cloud and creating APIs or other interfaces for users to interact with the models.
+
+Types of deployments available in Azure OpenAI Studio:
+
+| **Deployment Method**       | **Description**                                                                 | **Billing Model**                      | **Deployment Process**                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------|----------------------------------------|----------------------------------------------------------------------------------------|
+| **Serverless API**          | Deploy models as serverless APIs, accessible via endpoints without managing infrastructure. | Pay-as-you-go (per token/request)      | 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Configure deployment settings.<br/>7. Click `Deploy`.<br/>8. Use the generated API endpoint to integrate the model. |
+| **Models as a Service (MaaS)** | Managed service where models are hosted and maintained by Azure.                | Pay-as-you-go (per token)              | 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Configure deployment settings.<br/>7. Click `Deploy`.<br/>8. Use the generated API endpoint to integrate the model. |
+| **Models as a Platform (MaaP)** | Deploy models on dedicated virtual machines (VMs) for more control over resources. | Billed as VMs per-hour                 | 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Choose VM specifications.<br/>7. Configure deployment settings.<br/>8. Click `Deploy`.<br/>9. Use the generated API endpoint to integrate the model. |
+| **Flows and Web Applications** | Deploy models as part of larger workflows or web applications.                  | Varies based on usage                  | 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Configure deployment settings.<br/>7. Integrate the model into your workflow or web application.<br/>8. Click `Deploy`.<br/>9. Use the generated API endpoint to integrate the model. |
+| **Managed Compute**         | Use Azure's managed compute resources to deploy and run models.                 | Combination of compute and storage costs| 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Choose managed compute resources.<br/>7. Configure deployment settings.<br/>8. Click `Deploy`.<br/>9. Use the generated API endpoint to integrate the model. |
+| **Provisioned-Managed**     | Ensures consistent performance by allocating specific throughput capacity using PTUs. | Billed based on the number of PTUs provisioned. | 1. Create a project in Azure OpenAI Studio.<br/>2. Navigate to the project dashboard.<br/>3. Click on `Deployments`.<br/>4. Click `+ Deploy model`.<br/>5. Select a model from the catalog.<br/>6. Configure deployment settings, including the number of PTUs.<br/>7. Click `Deploy`.<br/>8. Use the generated API endpoint to integrate the model. |
+
+1. **Create a Project**: Go to Azure OpenAI Studio, select `New Project`, enter a name, and choose a hub.
+2. **Deploy a Model**: Navigate to the project, select `Deployments`, and click `+ Deploy model`.
+3. **Select a Model**: Choose a model from the model catalog, such as an Azure OpenAI model.
+4. **Configure Deployment**: Specify the deployment name and modify settings as needed.
+5. **Deploy**: Click `Deploy` to make the model available as an API.
+6. **Integrate and Use**: Use the generated API endpoint to integrate the deployed model with your applications.
 
 ## How to 
 1. Create an Azure OpenAI Resource
