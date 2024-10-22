@@ -1,14 +1,13 @@
-# Fabric: How to Manage Accesss
+# Microsoft Fabric - Power Bi: How to Manage Accesss
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-07
+Last updated: 2024-10-22
 
 ------------------------------------------
-
 
 ## Wiki 
 
