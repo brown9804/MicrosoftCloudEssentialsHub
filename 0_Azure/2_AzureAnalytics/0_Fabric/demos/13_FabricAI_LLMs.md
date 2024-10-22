@@ -125,72 +125,104 @@ Last updated: 2024-10-22
 
           <img width="550" alt="image" src="https://github.com/user-attachments/assets/a860911c-0ab8-469e-82d9-d0495268bd3b">
 
-3. **Enable Fabric Capacity in Power BI**:
-   - Go to the Power BI workspace.
-   - Select the Fabric capacity license and the Fabric resource created in Azure.
+    3. **Enable Fabric Capacity in Power BI**:
+       - Go to the Power BI workspace.
+       - Select the Fabric capacity license and the Fabric resource created in Azure.
 
-4. **Pause Fabric Compute When Not in Use**:
-   - To save costs, remember to pause the Fabric compute in Azure when you're not using it.
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/5dae8ea7-528d-4742-af51-b877d4610fa4">
 
-### Step 2: Install Required Libraries
-1. **Install SynapseML on Your Cluster**:
-   - Configure your cluster to include the SynapseML package.
-   - Use the following configuration:
-     ```json
-     {
-       "name": "synapseml",
-       "conf": {
-         "spark.jars.packages": "com.microsoft.azure:synapseml_2.12:0.11.1-10-5e9c0c19-SNAPSHOT,org.apache.spark:spark-avro_2.12:3.3.1",
-         "spark.jars.repositories": "https://mmlspark.azureedge.net/maven",
-         "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12,com.fasterxml.jackson.core:jackson-databind",
-         "spark.yarn.user.classpath.first": "true",
-         "spark.sql.parquet.enableVectorizedReader": "false",
-         "spark.sql.legacy.replaceDatabricksSparkAvro.enabled": "true"
-       }
-     }
-     ```
+    4. **Pause Fabric Compute When Not in Use**: To save costs, remember to pause the Fabric compute in Azure when you're not using it.
 
-2. **Install LangChain and Other Dependencies**:
-   - Use `%pip install` to install the necessary packages:
-     ```python
-     %pip install openai langchain pdf2image pdfminer.six pytesseract unstructured
-     ```
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/117d6902-cc8b-45b8-a104-9b54180565f2">
 
-### Step 3: Configure Azure OpenAI Service
-1. **Set Up API Keys**:
-   - Provide the keys for Azure OpenAI to authenticate the applications:
-     ```python
-     import os
-     from synapse.ml.core.platform import find_secret
+- Step 2: Install Required Libraries
 
-     openai_api_key = find_secret("openai-api-key")
-     openai_api_base = "https://synapseml-openai.openai.azure.com/"
-     openai_api_version = "2022-12-01"
-     openai_api_type = "azure"
-     deployment_name = "text-davinci-003"
-     bing_search_url = "https://api.bing.microsoft.com/v7.0/search"
-     bing_subscription_key = find_secret("bing-search-key")
+    1. **Access Microsoft Fabric**:
+       - Open your web browser and navigate to the Microsoft Fabric portal.
+       - Sign in with your Azure credentials.
+    2. **Select Your Workspace**: From the Microsoft Fabric home page, select the workspace where you want to configure SynapseML.
+    3. **Create a New Cluster**:
+       - Within the **Data Science** component, you should find options to create a new cluster.
+            
+         <img width="182" alt="image" src="https://github.com/user-attachments/assets/1763b8a0-e3ff-4ae7-adc9-413f0eb454f3">
 
-     os.environ["BING_SUBSCRIPTION_KEY"] = bing_subscription_key
-     os.environ["BING_SEARCH_URL"] = bing_search_url
-     os.environ["OPENAI_API_TYPE"] = openai_api_type
-     os.environ["OPENAI_API_VERSION"] = openai_api_version
-     os.environ["OPENAI_API_BASE"] = openai_api_base
-     os.environ["OPENAI_API_KEY"] = openai_api_key
-     ```
+       - Follow the prompts to configure and create your cluster, specifying the details such as cluster name, region, node size, and node count.
 
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/6cf15794-27cb-4ee9-af66-ac236b14de1e">
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/63e07b66-48f1-4d99-8f2d-615a25dd10ee">
+
+    4. **Install SynapseML on Your Cluster**: Configure your cluster to include the SynapseML package.
+    
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a2243d3a-17f2-456b-829c-06c22f8ab7b7">
+    
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/74272c11-d607-407e-ba4a-977590951046">
+
+        ~~~
+        %pip show synapseml
+        ~~~
+
+    5. **Install LangChain and Other Dependencies**: Use `%pip install` to install the necessary packages
+    
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ee7b32ca-1860-46d5-abb4-80669ac22621">
+
+         ```python
+         %pip install openai langchain pdf2image pdfminer.six pytesseract unstructured
+         ```
+
+        Or you can use the environment configuration:
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/29ee0f29-5162-498e-86b6-8286733e101b">
+
+- Step 3: Configure Azure OpenAI Service
+    1. **Set Up API Keys**: Ensure you have the API key and endpoint URL for your deployed model. Set these as environment variables
+    
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1639cf55-772f-42e3-8da6-1f110d2dc9fe">
+
+         ```python
+         import os
+    
+         # Set the API key for Azure OpenAI
+         os.environ["OPENAI_API_KEY"] = "your_openai_api_key"
+    
+         # Set the base URL for the Azure OpenAI service
+         os.environ["OPENAI_API_BASE"] = "https://your_openai_api_base/"
+    
+         # Set the API version for the Azure OpenAI service
+         os.environ["OPENAI_API_VERSION"] = "2022-12-01"
+    
+         # Set the API type for the Azure OpenAI service
+         os.environ["OPENAI_API_TYPE"] = "azure"
+         ```
 2. **Initialize Azure OpenAI Class**:
-   - Create an instance of the Azure OpenAI class:
+   - Create an instance of the Azure OpenAI class using the environment variables set above:
      ```python
      from langchain.llms import AzureOpenAI
 
+     # Create an instance of the Azure OpenAI class
      llm = AzureOpenAI(
-         deployment_name=deployment_name,
-         model_name=deployment_name,
+         deployment_name="your_deployment_name",
+         model_name="your_model_name",
          temperature=0.1,
          verbose=True,
      )
      ```
+
+3. **Call the Deployed Model**: Use the Azure OpenAI service to generate text or perform other language model tasks. Here's an example of generating a response based on a prompt
+     ```python
+     # Define a prompt
+     prompt = "Once upon a time"
+
+     # Generate a response from the Azure OpenAI service
+     response = llm(prompt)
+
+     # Print the response
+     print(response)
+     ```
+
+Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`, `"your_deployment_name"`, and `"your_model_name"` with your actual API key, base URL, deployment name, and model name from your Azure OpenAI instance.
+
+This example demonstrates how to configure and use an existing Azure OpenAI instance in Microsoft Fabric. If you have any further questions or need additional assistance, feel free to ask!
 
 ### Step 4: Basic Usage of LangChain Transformer
 1. **Create a Prompt Template**:
