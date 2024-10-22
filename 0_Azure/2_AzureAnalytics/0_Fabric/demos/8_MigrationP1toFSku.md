@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-07
+Last updated: 2024-10-22
 
 ----------
 
@@ -64,11 +64,21 @@ Last updated: 2024-10-07
 | **Enhanced Capabilities** | - **New Features**: Once migrated, you’ll have access to additional features and capabilities available in Microsoft Fabric, which can enhance your reports and dashboards.<br> - **Improved Performance**: Fabric SKUs are designed to offer better performance and scalability, which can improve the responsiveness and efficiency of your reports. |
 | **Integration with Azure** | **Azure-Only Features**: You’ll gain access to Azure-only features that can be integrated into your existing reports and dashboards, providing more advanced analytics and data processing options. |
 | **No Data Loss**       | **Data Integrity**: The migration process ensures that there is no loss of data or functionality in your existing reports and dashboards. |
+| **Components needing recreation** | Since it's cross-region, `Fabric components` like lake houses, warehouses, and real-time analytics components `needs to be recreated` | 
+
+> [!IMPORTANT]
+> - Data Refresh Settings: After migrating a workspace to a new capacity, the data refresh settings should remain intact. However, please verify the settings post-migration to ensure they are configured as expected. <br/>
+> - Scheduled Refreshes: Make sure that no manual or scheduled refreshes are running during the migration process to avoid any conflicts or interruptions. <br/>
+> - Capacity-Specific Features: Some features, like automatic page refresh for DirectQuery sources, are specific to Premium capacities and need to be reconfigured if the capacity type changes. <br/>
+> - If `errors`, you can switch back to the old capacity, and troubleshoot.
 
 ## How to transition 
 
 > [!NOTE]
 > If the resources are in the `same region`, it's just `reassigning the workspace compute -> Capacity`
+
+> [!IMPORTANT]
+> API Call for Bulk Migration: For multiple workspaces using an API call to get all workspaces in a capacity and then performing a bulk migration, could simplify the process and identify any workspaces that need manual intervention. Use this as reference [Solved: Re: Bulk Assign Workspace Capacity - Microsoft Fabric Community](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/1/atp-safelinks.html), and [Admin - Groups GetGroupsAsAdmin](https://learn.microsoft.com/en-us/rest/api/power-bi/admin/groups-get-groups-as-admin)
 
 1. **Review Current Capacity and Usage**:
      - Review the current usage and performance metrics of your P1 capacity.
