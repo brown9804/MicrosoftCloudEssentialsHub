@@ -58,6 +58,28 @@ Last updated: 2024-10-08
   
       <img width="503" alt="image" src="https://github.com/user-attachments/assets/9f6461f2-e6f1-4ceb-a5ae-d730d57a11ed">
 
+     | **Filter**        | **Description**                                                                 |
+     |-------------------|---------------------------------------------------------------------------------|
+     | Billing period    | Allows you to break down costs by the month they were invoiced.                 |
+     | Charge type       | Differentiates between usage, purchase, refund, and unused reservation costs.   |
+     | Department        | Breaks down costs by EA department, if applicable.                              |
+     | Frequency         | Indicates whether a charge is one-time, recurring, or usage-based.              |
+     | Invoice ID        | Breaks down costs by billed invoice.                                            |
+     | Location          | Breaks down costs by resource location or region.                               |
+     | Meter             | Breaks down costs by usage meter.                                               |
+     | Pricing model     | Differentiates between on-demand, reservation, or spot usage.                   |
+     | Product           | Breaks down costs by product name.                                              |
+     | Provider          | Breaks down costs by provider type (e.g., Azure, Microsoft 365, AWS).           |
+     | Publisher type    | Differentiates between Microsoft, Azure, AWS, and Marketplace costs.            |
+     | Reservation       | Breaks down costs by reservation.                                               |
+     | Resource          | Breaks down costs by resource.                                                  |
+     | Resource group    | Breaks down costs by resource group.                                            |
+     | Service name      | Breaks down costs by Azure service.                                             |
+     | Service tier      | Breaks down costs by Azure usage meter subclassification.                       |
+     | Subscription      | Breaks down costs by Azure subscription and AWS linked account.                 |
+     | Tag               | Breaks down costs by tag values for a specific tag key.                         |
+     | UnitOfMeasure     | The billing unit of measure for the service.                                    |
+
 - **Download Report**:
    - At the top of the Cost Analysis window, click on the `Download` button.
    - `Choose the format` (e.g., CSV, Excel) for the report.
