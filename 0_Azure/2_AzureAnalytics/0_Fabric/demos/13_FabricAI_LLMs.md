@@ -181,6 +181,7 @@ Last updated: 2024-10-22
           - pip:
               - synapseml==1.0.8
               - langchain==0.3.4
+              - langchain_community==0.3.4
         ```
 
 - Step 3: Configure Azure OpenAI Service
