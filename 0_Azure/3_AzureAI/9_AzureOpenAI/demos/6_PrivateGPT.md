@@ -22,7 +22,7 @@ Last updated: 2024-10-22
 
 ## How to 
 
-> `same/different vent` -> `shared access` can be used <br/>
+> `same/different vnet` -> `shared access` can be used <br/>
 > `same vnet` -> `private endpoint` <br/>
 > `different vnet` -> needs `vnet peering`
 
