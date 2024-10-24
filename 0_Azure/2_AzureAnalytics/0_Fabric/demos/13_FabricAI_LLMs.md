@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-22
+Last updated: 2024-10-24
 
 ------------------------------------------
 
@@ -174,6 +174,16 @@ Last updated: 2024-10-22
 
          <img width="550" alt="image" src="https://github.com/user-attachments/assets/29ee0f29-5162-498e-86b6-8286733e101b">
 
+        You can also try with the `.yml file` approach. Just upload your list of dependencies. E.g:
+
+        ```yml
+        dependencies:
+          - pip:
+              - synapseml==1.0.8
+              - langchain==0.3.4
+              - langchain_community==0.3.4
+        ```
+
 - Step 3: Configure Azure OpenAI Service
     1. **Set Up API Keys**: Ensure you have the API key and endpoint URL for your deployed model. Set these as environment variables
     
@@ -220,9 +230,7 @@ Last updated: 2024-10-22
      print(response)
      ```
 
-Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`, `"your_deployment_name"`, and `"your_model_name"` with your actual API key, base URL, deployment name, and model name from your Azure OpenAI instance.
-
-This example demonstrates how to configure and use an existing Azure OpenAI instance in Microsoft Fabric. If you have any further questions or need additional assistance, feel free to ask!
+Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`, `"your_deployment_name"`, and `"your_model_name"` with your actual API key, base URL, deployment name, and model name from your Azure OpenAI instance. This example demonstrates how to configure and use an existing Azure OpenAI instance in Microsoft Fabric. 
 
 ### Step 4: Basic Usage of LangChain Transformer
 1. **Create a Prompt Template**:
