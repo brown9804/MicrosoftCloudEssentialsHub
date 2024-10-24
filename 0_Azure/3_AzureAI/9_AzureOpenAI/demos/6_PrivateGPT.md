@@ -37,9 +37,9 @@ Last updated: 2024-10-24
   - Name: Provide a unique name for your Azure OpenAI resource.
 - Review and Create: Review your configuration and select `Create`.
 
- <img width="550" alt="image" src="https://github.com/user-attachments/assets/51f14c45-4167-48cb-9961-fa291ef78fea">
-
- <img width="550" alt="image" src="https://github.com/user-attachments/assets/d68922eb-b54d-4257-82aa-2d8e45128e32">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/51f14c45-4167-48cb-9961-fa291ef78fea">
+    
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/d68922eb-b54d-4257-82aa-2d8e45128e32">
 
 ### Set Up Azure AI Search:
 
@@ -49,14 +49,20 @@ Last updated: 2024-10-24
     - Resource Group: Use the same resource group as your Azure OpenAI resource.
     - Location: Use the same region for reduced latency.
     - Pricing Tier: Select a pricing tier based on your needs.
-
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/09222c27-994f-44b6-bf04-fa9c3d0fb07e">
-
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/9420a863-f22c-4236-9687-9e3799af15c8">
+  
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/09222c27-994f-44b6-bf04-fa9c3d0fb07e">
     
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/9420a863-f22c-4236-9687-9e3799af15c8">
+        
 - Establish the network connection by choosing to either set up the resource with a public configuration and adjust the network settings later, or integrate the network configuration during the resource creation process.
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b16c4621-9645-4c8f-9378-fb6674a7f7c6">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b16c4621-9645-4c8f-9378-fb6674a7f7c6">
+
+    | Option                  | Description                                                                 | Use Case                                                                 |
+    |-------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+    | **All networks**        | Allows access from any public IP address.                                   | Testing or development environments where security is not a primary concern. |
+    | **Selected IP addresses** | Restricts access to specified public IP addresses.                         | Scenarios where you know the IP addresses of the clients that need to connect. |
+    | **Disabled**            | Disables public network access entirely.                                    | Resources that should only be accessed from within a virtual network or through private endpoints. |
 
 > [!NOTE]  
 > About the exception checkmark `Allow Azure services on the trusted services list to access this search service`: <br/>
