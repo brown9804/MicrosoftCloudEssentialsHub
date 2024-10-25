@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-22
+Last updated: 2024-10-24
 
 ----------
 
@@ -18,6 +18,7 @@ Last updated: 2024-10-22
 - [Plan to manage costs for Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/manage-costs)
 - [Chapter 9 - Cost Management and Optimization](https://azure.github.io/AI-in-Production-Guide/chapters/chapter_09_managing_expedition_cost_management_optimization)
 - [Pricing Update: Token Based Billing for Fine Tuning Training](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/pricing-update-token-based-billing-for-fine-tuning-training/ba-p/4164465)
+- [Tokenizer - tool from OpenAI](https://platform.openai.com/tokenizer)
   
 </details>
 
