@@ -167,9 +167,9 @@ Implementing a medallion architecture provides several benefits:
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/16181f57-67b6-4141-8259-cf2ca0fc072e">
 
             
-            > If you want see more, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/notebook_bronze_to_silver.ipynb) to see a sample of the notebook.
+            > If you want see more, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/0_notebook_bronze_to_silver.ipynb) to see a sample of the notebook.
             
-            <img width="957" alt="image" src="https://github.com/user-attachments/assets/5affce77-ec21-4b03-881e-877ff2425b9d">
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/5affce77-ec21-4b03-881e-877ff2425b9d">
 
 - Step 4: Curate Data in the Gold Layer
     1. **Read Data from Silver Layer**: Use notebooks or dataflows to read data from the Silver lakehouse.
@@ -179,6 +179,29 @@ Implementing a medallion architecture provides several benefits:
        - Use functions like `groupBy()`, `agg()`, and `sum()` to aggregate the data.
     3. **Write to Gold Layer**: Write the curated data to the Gold lakehouse.
        - Use the `write.format("delta").save()` method to save the data to the `curated_Gold` lakehouse.
+
+            > Before any changes:
+
+            <img width="170" alt="image" src="https://github.com/user-attachments/assets/759d1c7a-9d2d-404c-99e4-de068399ed4a">
+
+            > Applying some transformations: If you want see more, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/1_notebook_silver_gold.ipynb) to see a sample of the notebook.
+
+            > **PySpark Code to Move Data from Silver to Gold**:
+            ```python
+            # Read data from the Silver layer
+            silver_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-lakehouse>.Lakehouse/Tables/<table name>")
+            
+            # Perform aggregations
+            gold_df = silver_df.groupBy("Name").agg(
+                sum("Count").alias("TotalCount"),
+                avg("price").alias("AveragePrice"),
+                avg("tax").alias("AverageTax")
+            )
+            
+            # Write data to the Gold layer
+            gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-gold-lakehouse name>.Lakehouse/Tables/<your table name>")
+            ```
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/d092d34f-86f5-4853-aea7-88ff4062f4af">
 
 - Step 5: Set Up Pipelines for Orchestration
     1. **Create Pipelines**: Create pipelines to automate the movement of data from the Bronze layer to the Silver layer, and from the Silver layer to the Gold layer.
@@ -198,23 +221,5 @@ Implementing a medallion architecture provides several benefits:
        - Connect to the `curated_Gold` lakehouse using the SQL analytics endpoint.
        - Build reports and dashboards that provide insights into the data.
 
-### Example Code Snippets for Orchestration
-Here are some example code snippets that demonstrate the orchestration of data movement between the layers:
 
 
-
-**PySpark Code to Move Data from Silver to Gold**:
-```python
-# Read data from the Silver layer
-silver_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-path>/Tables/data")
-
-# Perform aggregations
-gold_df = silver_df.groupBy("Name").agg(
-    sum("Count").alias("TotalCount"),
-    avg("price").alias("AveragePrice"),
-    avg("tax").alias("AverageTax")
-)
-
-# Write data to the Gold layer
-gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-gold-path>/Tables/curated_data")
-```
