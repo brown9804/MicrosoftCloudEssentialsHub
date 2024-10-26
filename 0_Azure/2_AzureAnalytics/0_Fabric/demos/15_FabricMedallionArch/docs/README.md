@@ -1,4 +1,4 @@
-# Arch Diagram
+# Architecture Diagram
 
 Costa Rica
 
