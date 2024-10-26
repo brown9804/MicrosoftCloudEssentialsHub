@@ -32,6 +32,10 @@ Last updated: 2024-10-25
 > [!NOTE]
 > This demo will be created step by step. Please note that Microsoft Fabric already assists by setting up the medallion flow for you.
 
+> [!IMPORTANT]
+> If you are not able to see the `auto-create report` option neither `copilot` be aware you need to enable AI features in your tenant, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/6_PBiCopilot.md#tenant-configuration) to see how.
+
+
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/7eec0098-7b7b-453c-9dbb-ee1a6390577b">
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/4bbb5f10-415b-44b2-8fd0-a5a12482ce2c">
@@ -213,13 +217,43 @@ Implementing a medallion architecture provides several benefits:
        - Consider the frequency of data updates and the latency that is acceptable for your use case.
 
 -  Step 6: Enable Data Access for Reporting
-    1. **Configure SQL Analytics Endpoint**: Ensure that the data in the Gold layer is accessible to your reporting tools.
-       - In the Fabric workspace, navigate to the `curated_Gold` lakehouse.
-       - Enable the SQL analytics endpoint to allow direct querying of the data.
-    2. **Create Power BI Reports**: Use Power BI in Direct Lake Mode to create reports and dashboards from the data in the Gold layer.
-       - Open Power BI Desktop.
+    1. **Configure SQL Analytics Endpoint**:
+       - Validate if you have the SQL Analytics Endpoint configured, you can review it from workspace view, primarly is required for Gold layer to be accessible to your reporting tools. 
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/77b4cbf9-6dba-4cc5-bc20-5755ae14bc8b">
+
+    2. Create a semantic models with the required tables for the report.
+    
+       - Go to your gold layer.
+            
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/8b4b7de1-fff4-4d1e-acda-15ef00aa88a2">
+    
+       - Create the semantic model:
+            
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/91464446-262a-4dd1-9234-69cf7d889876">
+    
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/2cd16d3a-3ac8-4546-bb14-9d066cdabb62">
+
+    3. **Create Power BI Reports**: Use Power BI in Direct Lake Mode to create reports and dashboards from the data in the Gold layer.
        - Connect to the `curated_Gold` lakehouse using the SQL analytics endpoint.
        - Build reports and dashboards that provide insights into the data.
 
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0861bc6-bcdb-426a-95c6-c396078e19b3">
 
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/c9c63d99-ae66-469d-8059-db687423adc8">
 
+            > Create new report:
+
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ae58ad5-8c91-452b-ad79-2e14e38c69a1">
+
+            > If you click `auto-create report` Copilot will create a draft report for you:
+            
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/2c3403ca-0cde-4008-a8c1-ae3c92f196e8">
+    
+            > You can edit your report:
+            
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/69ecd0e9-0a1a-42ac-b39c-23ec65257fa1">
+            
+            > Also, you can levarage AI capabilities with Copilot:
+            
+            <img width="550" alt="image" src="https://github.com/user-attachments/assets/01cb521f-8529-4097-95bf-7c30a92fefd2">
