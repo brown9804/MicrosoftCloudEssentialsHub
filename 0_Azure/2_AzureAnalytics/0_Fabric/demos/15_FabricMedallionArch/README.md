@@ -188,7 +188,7 @@ Implementing a medallion architecture provides several benefits:
 
             <img width="170" alt="image" src="https://github.com/user-attachments/assets/759d1c7a-9d2d-404c-99e4-de068399ed4a">
 
-            > Applying some transformations: If you want see more, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/src/1_notebook_silver_gold.ipynb) to see a sample of the notebook.
+            > Applying some transformations: If you want see more, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/src/1_notebook_silver_to_gold.ipynb) to see a sample of the notebook.
 
             > **PySpark Code to Move Data from Silver to Gold**:
             ```python
