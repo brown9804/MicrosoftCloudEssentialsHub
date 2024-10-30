@@ -356,7 +356,7 @@ To ensure that API calls from different departments are tagged correctly, you ca
 
 ### Automating Tagging with Azure Policy
 
-To ensure that all resources are tagged consistently, you can use Azure Policy to enforce tagging.
+> To ensure that all resources are tagged consistently, you can use Azure Policy to enforce tagging.
 
 1. **Create a Tagging Policy**:
    - Go to **Azure Policy** in the Azure portal.
