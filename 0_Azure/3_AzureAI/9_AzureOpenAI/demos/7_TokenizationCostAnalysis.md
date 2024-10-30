@@ -24,6 +24,7 @@ Last updated: 2024-10-30
 - [Manage costs with automation](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/manage-automation)
 - [Group and allocate costs using tag inheritance](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/enable-tag-inheritance)
 - [Tags - List](https://learn.microsoft.com/en-us/rest/api/resources/tags/list?view=rest-resources-2021-04-01)
+- [Azure OpenAI Service REST API preview reference, with available parameters](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference-preview)
   
 </details>
 
@@ -94,7 +95,7 @@ Where:
 | Output Optimization | - **Response Length Control:** Limiting the length of the model's response can help manage and predict costs.<br/>- **Stop Sequences:** Using stop sequences to control where the model should stop generating further tokens.<br/>- **Max Tokens Parameter:** Setting an appropriate limit on the number of tokens in the response. | - **Set Max Tokens:** Use the `max_tokens` parameter to limit the length of the model's response.<br/>- **Use Stop Sequences:** Define stop sequences to control the verbosity of the output.<br/>- **Quality Check:** Regularly review the model's responses to ensure they are within the expected length and quality. |
 
 ## Cost Tracking with API calls
-> Postman: Is a popular API platform that simplifies the process of building, testing, and managing APIs (Application Programming Interfaces). It provides a user-friendly interface for making HTTP requests, viewing responses, and debugging issues. <br/>
+> Bruno: An open-source API client designed to simplify API testing and exploration. Bruno is known for its speed and Git-friendly approach, allowing users to store API collections directly on their filesystem using a plain text markup language called Bru. Click [here to go download page](https://www.usebruno.com/downloads) <br/>
 > Azure API Management Developer Portal (API Playground) to track costs with the Azure Cost Management API. 
 
 ### Register an Application in Azure AD
@@ -117,6 +118,8 @@ Where:
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/2ff80cb7-fef7-4c40-bac8-1442c3c43183">
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/5aa9d4ac-d017-4794-a2a7-5237e0d7f88c">
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/40c7f940-fc38-4297-abb6-22ab2e244e1b">
 
 ### Get an Access Token
 
@@ -142,8 +145,23 @@ Where:
     &resource=https://management.azure.com/
     ```
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a78a37f9-cd7f-41aa-bc9d-73986c7f46cc">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/8975ee6c-aaf5-43e4-bc1f-520aff6c12a2">
 
+    > If you want to export the code template, you can use the code option:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b3b7d3fe-2c38-4104-9adb-df9234a51a43">
+
+    ```shell
+    curl --request POST \
+      --url 'https://login.microsoftonline.com/subscription_id/oauth2/token?api-version=2019-10-01' \
+      --header 'Content-Type: application/x-www-form-urlencoded' \
+      --header 'Cookie: esctx=PAQABBwEAAADW6jl31mB3T7ugrWTT8pFezGSVIkuP4LyhO8IAul5sxYLpizsuZhmYFjqPjHxaz7bVTzOeuQjCKjjQF3J43TO21RwnzGUMJ-Acbq4cBahfBiXEXJxPa1R9Z1PttRbOXlmaik7EzCTGeYPSdngJbcKPzopMfHuKy3mb_R-AOkexDuijM7hy0dYYHZLQK7ZNr5wgAA; fpc=Ahs9ebTvJwpOrfeArkj6nvy8JwoaAgAAANhWtN4OAAAAcQFObAEAAABzV7TeDgAAAA; stsservicecookie=estsfd; x-ms-gateway-slice=estsfd' \
+      --header 'content-type: application/x-www-form-urlencoded' \
+      --data grant_type=client_credentials \
+      --data client_id=tbd \
+      --data client_secret=tbd \
+      --data resource=https://management.azure.com/
+    ```
 2. **Use the Access Token** in your API calls:
 
      ```http
@@ -160,7 +178,7 @@ Where:
 
 > Retrieve the data and consider applying filters, check the following section for more information:
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/00f48833-a34e-48df-848e-d8b104ff272d">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/88357a1a-d0d6-400e-a508-641c42639670">
 
  ```http
  GET https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Consumption/usageDetails?api-version=2019-10-01
@@ -217,6 +235,16 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/providers/Micros
 Authorization: Bearer {accessToken}
 ```
 
+> Example using Cognitive Services Filter:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/00bfdb76-e928-4689-bb6f-42af087f5171">
+
+```shell
+curl --request GET \
+  --url 'https://management.azure.com/subscriptions/%257Bsusbcription_id%257D/providers/Microsoft.Consumption/usageDetails?api-version=2019-10-01&%60%24filter=properties%2FmeterCategory%2520eq%2520%2527Cognitive%2520Services%2527%60' \
+  --header 'Authorization: Bearer tbd'
+```
+
 ## Tagging Resources Demo
 
 ### Tagging the Azure OpenAI Resource
@@ -244,42 +272,89 @@ Authorization: Bearer {accessToken}
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/03874b34-c995-4966-8b64-1145cd28863f">
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/d26db0f5-8da0-42c8-984a-83cd1946a2e1">
+
 To ensure that API calls from different departments are tagged correctly, you can include the tags in the API requests. Here’s an example of how to do this:
 
 - **Set Up the API Call**:
    - Use the Azure OpenAI API to make requests.
    - Include the tags in the request headers or body as needed.
 
-> **Example API Call with Tags**:
-   ```http
-   POST https://api.openai.azure.com/v1/engines/davinci-codex/completions
-   Content-Type: application/json
-   Authorization: Bearer {accessToken}
+   > Example of general model call:
 
-   {
-     "prompt": "Translate the following English text to French: '{text}'",
-     "max_tokens": 60,
-     "tags": {
-       "Department": "Marketing"
-     }
-   }
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5008450-f3b7-4e83-ac73-a60f2f035661">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/c185c9ad-7cf4-46ba-bb32-ebe591b9d753">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/1f7cf997-1c52-467f-8668-67ebe98df4b9">
+
+    ```shell
+    curl --request POST \
+      --url 'https://azureopenaibrowntest.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview' \
+      --header 'Content-Type: application/json' \
+      --header 'api-key: {key_value}' \
+      --header 'content-type: application/json' \
+      --data '{
+      "temperature": 0.7,
+      "max_tokens": 200,
+      "seed": 42,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant."
+        },
+        {
+          "role": "user",
+          "content": "Tell me a story about how the universe?"
+        }
+      ]
+    }'
+    ```
+> [!IMPORTANT]
+> To understand more about tags available, please click [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference-preview)
+
+> [!NOTE]
+> To tag usage costs from different departments or areas, you can use the `user` parameter in your API requests. This parameter allows you to assign a unique identifier representing your end-user, which can help monitor and detect usage patterns across different departments
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0a2586ba-491d-477d-99d4-4712d249a32a">
+
+> **Example API Call with Tags**:
+   ```shell
+    curl --request POST \
+      --url 'https://azureopenaibrowntest.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview' \
+      --header 'Content-Type: application/json' \
+      --header 'api-key: {api_value_key}' \
+      --header 'content-type: application/json' \
+      --data '{
+      "temperature": 0.7,
+      "max_tokens": 200,
+      "seed": 42,
+      "user": "department-hr",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant."
+        },
+        {
+          "role": "user",
+          "content": "Tell me a story about how the universe?"
+        }
+      ]
+    }'
    ```
 
-#### 3. Generating Billing Reports Based on Tags
+### Generating Billing Reports Based on Tags
 
-1. **Navigate to Cost Management + Billing**:
-   - In the Azure portal, go to **Cost Management + Billing**.
-
+1. **Navigate to Cost Management + Billing**: In the Azure portal, go to **Cost Management + Billing**.
 2. **Cost Analysis**:
    - Select **Cost Analysis**.
    - Use the **Add filter** option to filter costs by tags.
-   - For example, filter by `Department:Marketing` to see the costs associated with the Marketing department.
-
+   - For example, filter by `department-hr` to see the costs associated with the Marketing department.
 3. **Group by Tags**:
    - Use the **Group by** option to group costs by tags.
-   - This will allow you to see a breakdown of costs by department.
+   - This will allow you to see a breakdown of costs by tags.
 
-#### 4. Automating Tagging with Azure Policy
+### Automating Tagging with Azure Policy
 
 To ensure that all resources are tagged consistently, you can use Azure Policy to enforce tagging.
 
@@ -287,9 +362,7 @@ To ensure that all resources are tagged consistently, you can use Azure Policy t
    - Go to **Azure Policy** in the Azure portal.
    - Click on **Definitions** and then **+ Policy definition**.
    - Create a policy definition that requires tags on resources.
-
 2. **Assign the Policy**:
    - Assign the policy to the subscription or resource group.
    - This will ensure that all new resources are tagged according to the policy.
-
-
+     
