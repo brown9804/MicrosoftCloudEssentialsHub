@@ -280,45 +280,47 @@ To ensure that API calls from different departments are tagged correctly, you ca
    - Use the Azure OpenAI API to make requests.
    - Include the tags in the request headers or body as needed.
 
-   > Example of general model call:
-
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5008450-f3b7-4e83-ac73-a60f2f035661">
-
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/c185c9ad-7cf4-46ba-bb32-ebe591b9d753">
-
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/1f7cf997-1c52-467f-8668-67ebe98df4b9">
-
-    ```shell
-    curl --request POST \
-      --url 'https://azureopenaibrowntest.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview' \
-      --header 'Content-Type: application/json' \
-      --header 'api-key: {key_value}' \
-      --header 'content-type: application/json' \
-      --data '{
-      "temperature": 0.7,
-      "max_tokens": 200,
-      "seed": 42,
-      "messages": [
-        {
-          "role": "system",
-          "content": "You are a helpful assistant."
-        },
-        {
-          "role": "user",
-          "content": "Tell me a story about how the universe?"
-        }
-      ]
-    }'
-    ```
 > [!IMPORTANT]
 > To understand more about tags available, please click [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference-preview)
+
+ > Example of general model call:
+
+ <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5008450-f3b7-4e83-ac73-a60f2f035661">
+
+ <img width="550" alt="image" src="https://github.com/user-attachments/assets/c185c9ad-7cf4-46ba-bb32-ebe591b9d753">
+
+ <img width="550" alt="image" src="https://github.com/user-attachments/assets/1f7cf997-1c52-467f-8668-67ebe98df4b9">
+
+  ```shell
+  curl --request POST \
+    --url 'https://azureopenaibrowntest.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview' \
+    --header 'Content-Type: application/json' \
+    --header 'api-key: {key_value}' \
+    --header 'content-type: application/json' \
+    --data '{
+    "temperature": 0.7,
+    "max_tokens": 200,
+    "seed": 42,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a helpful assistant."
+      },
+      {
+        "role": "user",
+        "content": "Tell me a story about how the universe?"
+      }
+    ]
+  }'
+  ```
 
 > [!NOTE]
 > To tag usage costs from different departments or areas, you can use the `user` parameter in your API requests. This parameter allows you to assign a unique identifier representing your end-user, which can help monitor and detect usage patterns across different departments
 
+> **Example API Call with Tags**:
+
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/0a2586ba-491d-477d-99d4-4712d249a32a">
 
-> **Example API Call with Tags**:
    ```shell
     curl --request POST \
       --url 'https://azureopenaibrowntest.openai.azure.com/openai/deployments/gpt-4/chat/completions?api-version=2024-08-01-preview' \
