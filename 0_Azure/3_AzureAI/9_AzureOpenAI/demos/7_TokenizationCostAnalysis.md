@@ -219,6 +219,77 @@ Authorization: Bearer {accessToken}
 
 ## Tagging Resources Demo
 
+### Tagging the Azure OpenAI Resource
 
+1. **Log in to the Azure Portal**: Go to [portal.azure.com](https://portal.azure.com/) and log in with your Azure account.
+2. **Navigate to the Azure OpenAI Resource**:
+   - In the left-hand menu, select **Resource groups**.
+   - Select the resource group that contains your Azure OpenAI resource.
+   - Click on the Azure OpenAI resource.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/ba1029b5-3e38-4155-bdcd-83b4ac8d50cf">
+
+3. **Add Tags to the Resource**:
+   - In the left-hand menu of the resource, select **Tags**.
+   - Add tags to the resource. For example, you can add tags like `Department-Marketing`, `Department-Sales`, etc.
+   - Click **Apply**.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/a2040de0-245b-4b77-bf44-a59684d95a01">
+
+### Using Tags in API Calls
+
+> Give the required roles to be able to call the model `(Cognitivie Services User, Cognitive Services OpenAI User)`:
+
+<img width="404" alt="image" src="https://github.com/user-attachments/assets/66b5d293-9d60-47e5-ab90-0dc5602f234d">
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/03874b34-c995-4966-8b64-1145cd28863f">
+
+To ensure that API calls from different departments are tagged correctly, you can include the tags in the API requests. Here’s an example of how to do this:
+
+- **Set Up the API Call**:
+   - Use the Azure OpenAI API to make requests.
+   - Include the tags in the request headers or body as needed.
+
+> **Example API Call with Tags**:
+   ```http
+   POST https://api.openai.azure.com/v1/engines/davinci-codex/completions
+   Content-Type: application/json
+   Authorization: Bearer {accessToken}
+
+   {
+     "prompt": "Translate the following English text to French: '{text}'",
+     "max_tokens": 60,
+     "tags": {
+       "Department": "Marketing"
+     }
+   }
+   ```
+
+#### 3. Generating Billing Reports Based on Tags
+
+1. **Navigate to Cost Management + Billing**:
+   - In the Azure portal, go to **Cost Management + Billing**.
+
+2. **Cost Analysis**:
+   - Select **Cost Analysis**.
+   - Use the **Add filter** option to filter costs by tags.
+   - For example, filter by `Department:Marketing` to see the costs associated with the Marketing department.
+
+3. **Group by Tags**:
+   - Use the **Group by** option to group costs by tags.
+   - This will allow you to see a breakdown of costs by department.
+
+#### 4. Automating Tagging with Azure Policy
+
+To ensure that all resources are tagged consistently, you can use Azure Policy to enforce tagging.
+
+1. **Create a Tagging Policy**:
+   - Go to **Azure Policy** in the Azure portal.
+   - Click on **Definitions** and then **+ Policy definition**.
+   - Create a policy definition that requires tags on resources.
+
+2. **Assign the Policy**:
+   - Assign the policy to the subscription or resource group.
+   - This will ensure that all new resources are tagged according to the policy.
 
 
