@@ -183,15 +183,18 @@ graph TD
     <img width="504" alt="image" src="https://github.com/user-attachments/assets/229ba216-44cc-4e44-b3d3-cda6de347011">
 
 #### **Create Variants**:
-   - The existing LLM node will be labeled as `variant_0` by default.
-   - Click on the `Clone` button on `variant_0` to generate `variant_1`.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/db8aced3-2f56-4c17-a0cc-1d1918c00ebc">
+> This allows you to fine-tune and test different configurations.
 
-   - Configure `variant_1` with different parameters or update the prompt as needed.
-   - Repeat this step to create additional variants (e.g., `variant_2`, `variant_3`, etc.).
+ - The existing LLM node will be labeled as `variant_0` by default.
+ - Click on the `Clone` button on `variant_0` to generate `variant_1`.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd952bd2-ee7f-44ee-ab77-78e3244357e7">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/db8aced3-2f56-4c17-a0cc-1d1918c00ebc">
+
+ - Configure `variant_1` with different parameters or update the prompt as needed.
+ - Repeat this step to create additional variants (e.g., `variant_2`, `variant_3`, etc.).
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd952bd2-ee7f-44ee-ab77-78e3244357e7">
 
 #### **Configure Parameters for Each Variant**:
    - For each variant, you can adjust parameters such as temperature, top_p, and the prompt content.
@@ -202,37 +205,17 @@ graph TD
      - **Variant 3**: `Temperature = 0.7`, `Prompt: "What is the main point of this article? {{input_text}}"`
 
 
-7. **Run and Evaluate Variants**:
-   - After configuring your variants, you can run the flow with different inputs to test how each variant performs.
-   - Use the "Run" button to execute the flow and select the LLM node with variants to test.
-   - Evaluate the outputs to determine which variant produces the best results for your use case.
+### **Run and Evaluate Variants**:
 
-8. **Monitor and Adjust**:
-   - Continuously monitor the performance of each variant.
-   - Make adjustments as needed based on the results to optimize your prompt configurations.
+ - After configuring your variants, use Azure AI Studio or API calls to interact with your deployed model. You can run the flow with different inputs to test how each variant performs.
+ - Use the "Run" button to execute the flow and select the LLM node with variants to test.
+ - Evaluate the outputs to determine which variant produces the best results for your use case.
 
-### Example Flow
+### **Monitor and Adjust**:
 
+ - Continuously monitor the performance of each variant.
+ - Make adjustments as needed based on the results to optimize your prompt configurations.
 
-
-#### 3. **Deploying Your Model**
-
-
-
-2. **Configure Variants**:
-   - Use the Variants feature to create different versions of your prompt settings.
-   - This allows you to fine-tune and test different configurations.
-   - Save these variants for reuse.
-
-#### 4. **Using the Model**
-
-1. **Interact with Your Model**:
-   - Use Azure AI Studio or API calls to interact with your deployed model.
-   - Apply the saved parameter settings and variants to ensure consistent performance.
-
-2. **Monitor and Adjust**:
-   - Continuously monitor the performance of your model.
-   - Use the saved settings and variants to make adjustments as needed.
 
 ### Example Code Snippet
 
