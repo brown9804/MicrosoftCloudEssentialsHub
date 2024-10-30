@@ -13,11 +13,36 @@ Last updated: 2024-10-30
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki Contents</b> (Click to expand)</summary>
 
 - [Tune prompts using variants in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/flow-tune-prompts-using-variants)
 - [Prompt tool for flows in Azure AI Studio](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/prompt-flow-tools/prompt-tool)
   
+</details>
+
+## Content 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [How to Save and Reuse Parameter Settings in Azure OpenAI & AI Studio Variants](#how-to-save-and-reuse-parameter-settings-in-azure-openai--ai-studio-variants)
+    - [Wiki](#wiki)
+    - [Content](#content)
+    - [GUI approach over Azure OpenAI](#gui-approach-over-azure-openai)
+    - [Variants Approach over Azure OpenAI](#variants-approach-over-azure-openai)
+        - [Create an Azure OpenAI Resource:e**:](#create-an-azure-openai-resourcee)
+        - [Setup your project:t**:](#setup-your-projectt)
+        - [Indexing Your Data:a**:](#indexing-your-dataa)
+        - [Deploy a Model:l**:](#deploy-a-modell)
+        - [Configure the prompt flow:](#configure-the-prompt-flow)
+        - [Add an LLM Node:e**:](#add-an-llm-nodee)
+        - [Configuring Variants in Azure AI Studio:o**:](#configuring-variants-in-azure-ai-studioo)
+            - [Create Variants:s**:](#create-variantss)
+            - [Configure Parameters for Each Variant:t**:](#configure-parameters-for-each-variantt)
+        - [Run and Evaluate Variants:s**:](#run-and-evaluate-variantss)
+        - [Monitor and Adjust:t**:](#monitor-and-adjustt)
+        - [Example Code Snippet](#example-code-snippet)
+
 </details>
 
 ## GUI approach over Azure OpenAI 
