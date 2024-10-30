@@ -240,7 +240,7 @@ Authorization: Bearer {accessToken}
 
 > Give the required roles to be able to call the model `(Cognitivie Services User, Cognitive Services OpenAI User)`:
 
-<img width="404" alt="image" src="https://github.com/user-attachments/assets/66b5d293-9d60-47e5-ab90-0dc5602f234d">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/66b5d293-9d60-47e5-ab90-0dc5602f234d">
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/03874b34-c995-4966-8b64-1145cd28863f">
 
