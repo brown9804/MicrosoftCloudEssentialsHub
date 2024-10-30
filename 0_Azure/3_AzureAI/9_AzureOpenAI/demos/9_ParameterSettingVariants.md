@@ -30,17 +30,17 @@ Last updated: 2024-10-30
     - [Content](#content)
     - [GUI approach over Azure OpenAI](#gui-approach-over-azure-openai)
     - [Variants Approach over Azure OpenAI](#variants-approach-over-azure-openai)
-        - [Create an Azure OpenAI Resource:e**:](#create-an-azure-openai-resourcee)
-        - [Setup your project:t**:](#setup-your-projectt)
-        - [Indexing Your Data:a**:](#indexing-your-dataa)
-        - [Deploy a Model:l**:](#deploy-a-modell)
+        - [Create an Azure OpenAI Resource](#create-an-azure-openai-resource)
+        - [Setup your project](#setup-your-project)
+        - [Indexing Your Data](#indexing-your-data)
+        - [Deploy a Model](#deploy-a-model)
         - [Configure the prompt flow:](#configure-the-prompt-flow)
-        - [Add an LLM Node:e**:](#add-an-llm-nodee)
-        - [Configuring Variants in Azure AI Studio:o**:](#configuring-variants-in-azure-ai-studioo)
-            - [Create Variants:s**:](#create-variantss)
-            - [Configure Parameters for Each Variant:t**:](#configure-parameters-for-each-variantt)
-        - [Run and Evaluate Variants:s**:](#run-and-evaluate-variantss)
-        - [Monitor and Adjust:t**:](#monitor-and-adjustt)
+        - [Add an LLM Node](#add-an-llm-node)
+        - [Configuring Variants in Azure AI Studio](#configuring-variants-in-azure-ai-studio)
+            - [Create Variants](#create-variants)
+            - [Configure Parameters for Each Variant](#configure-parameters-for-each-variant)
+        - [Run and Evaluate Variants](#run-and-evaluate-variants)
+        - [Monitor and Adjust](#monitor-and-adjust)
         - [Example Code Snippet](#example-code-snippet)
 
 </details>
@@ -119,7 +119,7 @@ graph TD
     end
 ```
 
-### **Create an Azure OpenAI Resource**:
+### Create an Azure OpenAI Resource
  - Go to the Azure portal.
  - Navigate to `Create a resource` and search for `Azure OpenAI`.
  - Follow the prompts to create your resource.
@@ -128,7 +128,7 @@ graph TD
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/b779c283-b919-4b60-9b2f-7b6af466fd12">
 
-### **Setup your project**:
+### Setup your project
  
 - **Navigate to Azure AI Studio**: Go to the Azure AI Studio and open your project.
    
@@ -138,7 +138,8 @@ graph TD
    
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c74f587-678b-4f86-9cdc-e487d6be396d">
 
-### **Indexing Your Data**:
+### Indexing Your Data
+
 - **Prepare Your Data**:
    - Ensure your data is in a suitable format (e.g., text, PDF).
    - Upload your data to Azure Blob Storage or another supported storage service.
@@ -179,7 +180,7 @@ graph TD
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5ff72ed-9506-4674-b888-319ebb99d335">
 
-### **Deploy a Model**:
+### Deploy a Model
 - In Azure AI Studio, go to the `Deployments` section.
 - Select `Create Deployment` and choose your model (e.g., GPT-4).
 
@@ -194,7 +195,7 @@ graph TD
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/9fb56aad-842a-4767-aa4b-c7f5d7101c0b">
 
-### Configure the prompt flow:
+### Configure the prompt flow
 
 > From the chat playground
 
@@ -207,7 +208,7 @@ graph TD
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/ac29d845-5659-4c67-b7ca-218c865db3fb">
 
-### **Add an LLM Node**:
+### Add an LLM Node
 
 > [!NOTE]
 > If you used `Prompt flow` section within your project, you need to add the LLM model but if you add the prompt flow from the chat playground you will see the LLM added, and other required elements as base for you.
@@ -225,7 +226,7 @@ graph TD
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/15e4e472-b03f-452d-8d51-e18978d82513">
 
 
-### **Configuring Variants in Azure AI Studio**:
+### Configuring Variants in Azure AI Studio
 
 > [!Note]
 > Set up your environment variables for your key and endpoint. This can be done in your `development environment` or `directly in Azure AI Studio`.
@@ -236,7 +237,7 @@ graph TD
   
     <img width="504" alt="image" src="https://github.com/user-attachments/assets/229ba216-44cc-4e44-b3d3-cda6de347011">
 
-#### **Create Variants**:
+#### Create Variants
 
 > This allows you to fine-tune and test different configurations.
 
@@ -250,7 +251,7 @@ graph TD
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd952bd2-ee7f-44ee-ab77-78e3244357e7">
 
-#### **Configure Parameters for Each Variant**:
+#### Configure Parameters for Each Variant
    - For each variant, you can adjust parameters such as temperature, top_p, and the prompt content.
    - Example configurations:
      - **Variant 0**: `Temperature = 1`, `Prompt: "Summarize the following text: {{input_text}}"`
@@ -259,13 +260,13 @@ graph TD
      - **Variant 3**: `Temperature = 0.7`, `Prompt: "What is the main point of this article? {{input_text}}"`
 
 
-### **Run and Evaluate Variants**:
+### Run and Evaluate Variants
 
  - After configuring your variants, use Azure AI Studio or API calls to interact with your deployed model. You can run the flow with different inputs to test how each variant performs.
  - Use the "Run" button to execute the flow and select the LLM node with variants to test.
  - Evaluate the outputs to determine which variant produces the best results for your use case.
 
-### **Monitor and Adjust**:
+### Monitor and Adjust
 
  - Continuously monitor the performance of each variant.
  - Make adjustments as needed based on the results to optimize your prompt configurations.
