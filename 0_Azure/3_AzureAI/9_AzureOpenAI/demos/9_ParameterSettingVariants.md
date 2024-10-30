@@ -1,4 +1,4 @@
-# How to Save and Reuse Parameter Settings in Azure OpenAI with AI Studio Variants
+# How to Save and Reuse Parameter Settings in Azure OpenAI & AI Studio Variants
 
 Costa Rica
 
@@ -20,7 +20,36 @@ Last updated: 2024-10-30
   
 </details>
 
-## Overview 
+## GUI approach over Azure OpenAI 
+
+> You can use the export option:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0f061e1a-27a6-466a-94ff-4b093fadbbc9">
+
+> Which will look like this:
+
+```json
+{
+    "systemPrompt": "You are an AI assistant that helps people find information.",
+    "fewShotExamples": [],
+    "chatParameters": {
+        "deploymentName": "gpt-4o-mini",
+        "maxResponseLength": 800,
+        "temperature": 0.7,
+        "topProbablities": 0.95,
+        "stopSequences": [],
+        "pastMessagesToInclude": 10,
+        "frequencyPenalty": 0,
+        "presencePenalty": 0
+    }
+}
+```
+
+> Import the configuration:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/20d0f55c-a138-4dd9-8d51-623e8b46d5ac">
+
+## Variants Approach over Azure OpenAI
 
 ```mermaid
 graph TD
