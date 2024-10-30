@@ -65,56 +65,159 @@ graph TD
     end
 ```
 
-- 1. **Set Up Your Azure OpenAI Environment**
-    1. **Create an Azure OpenAI Resource**:
-       - Go to the Azure portal.
-       - Navigate to `Create a resource` and search for `Azure OpenAI`.
-       - Follow the prompts to create your resource.
+### **Create an Azure OpenAI Resource**:
+ - Go to the Azure portal.
+ - Navigate to `Create a resource` and search for `Azure OpenAI`.
+ - Follow the prompts to create your resource.
 
-          <img width="550" alt="image" src="https://github.com/user-attachments/assets/785c4fc2-ff0a-452f-ae3c-346de1de0c3c">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/785c4fc2-ff0a-452f-ae3c-346de1de0c3c">
 
-          <img width="550" alt="image" src="https://github.com/user-attachments/assets/b779c283-b919-4b60-9b2f-7b6af466fd12">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b779c283-b919-4b60-9b2f-7b6af466fd12">
 
-    2. **Configure Your Environment**:
-       - Set up your environment variables for your key and endpoint. This can be done in your `development environment` or `directly in Azure AI Studio`.
+### **Setup your project**:
+ 
+- **Navigate to Azure AI Studio**: Go to the Azure AI Studio and open your project.
+   
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/d2713134-9cfd-4e67-b614-7484bdf9afd0">
 
-         > Using the approach of AI Studio
+- Create a project:
+   
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c74f587-678b-4f86-9cdc-e487d6be396d">
 
-          1. **Navigate to Azure AI Studio**: Go to the Azure AI Studio and open your project.
-             
-              <img width="550" alt="image" src="https://github.com/user-attachments/assets/d2713134-9cfd-4e67-b614-7484bdf9afd0">
-
-          2. Create a project:
-             
-              <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c74f587-678b-4f86-9cdc-e487d6be396d">
-
-          4. **Set Environment Variables**: In Azure AI Studio, you can set environment variables for your project. This is typically done in the settings or configuration section of your project.
-          5. **Use Environment Variables in Your Project**: When configuring your project or writing code in Azure AI Studio, you can reference these environment variables directly.
-          
-
-
-#### 2. **Indexing Your Data**
-
-1. **Prepare Your Data**:
+### **Indexing Your Data**:
+- **Prepare Your Data**:
    - Ensure your data is in a suitable format (e.g., text, PDF).
    - Upload your data to Azure Blob Storage or another supported storage service.
 
-2. **Create an Index**:
-   - In Azure AI Studio, navigate to the "Data" section.
-   - Select "Create Index" and configure the parameters such as chunk size, embedding model, and search type.
-   - Save these settings for future use.
+   > If you don't have any yet see steps below:
 
-3. **Index Your Data**:
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/97584a49-e101-4851-b2c0-003db036e26d">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/2ed7d569-1103-48a6-8952-28414d7e75ae">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/8737301c-c560-4822-ae6c-bdfd61dcd2f2">
+
+- **Index Your Data**:
    - Use the configured settings to index your data.
    - This process will break down your documents into smaller chunks and create embeddings.
 
+    > Use AI Search directly:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b2b27e0-a203-48b0-9fa0-857a6b45251a">
+
+    <img width="953" alt="image" src="https://github.com/user-attachments/assets/bcb0e547-04b4-41bc-8fa4-d3daca9368e2">
+
+    > Create a new connection if it's required, for e.g you can use Access key or SAS (Shared Access Signature):
+            
+    <img width="143" alt="image" src="https://github.com/user-attachments/assets/1caa6937-9e97-4acd-95ba-cee79a2be318">
+
+   > Follow the process:
+
+   <img width="472" alt="image" src="https://github.com/user-attachments/assets/9a6cc9ed-2f01-4e0a-b134-425e942f99b9">
+
+   > In Azure AI Studio:
+
+   - Navigate to the `Indexes` section.
+   - Select `Create Index` and configure the parameters such as chunk size, embedding model, and search type.
+   - Save these settings for future use.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/821d06c9-5512-45c3-aa2b-e53c13ff25cd">
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5ff72ed-9506-4674-b888-319ebb99d335">
+
+### **Deploy a Model**:
+- In Azure AI Studio, go to the `Deployments` section.
+- Select `Create Deployment` and choose your model (e.g., GPT-4).
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ee35693-3efa-45d2-b272-65890d9079a6">
+
+- Configure deployment parameters like model version, temperature, and top_p.
+- Save these deployment settings.
+
+  <img width="331" alt="image" src="https://github.com/user-attachments/assets/fac5d4fb-c393-4d6f-ac0c-a4c84cca3e1f">
+
+- Add your index data to the model:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9fb56aad-842a-4767-aa4b-c7f5d7101c0b">
+
+### Configure the prompt flow:
+
+> From the chat playground
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/96b0c8a8-5703-41ea-84c0-1d56e23295ff">
+
+> Or you can:
+
+ - Go to the `Prompt flow` section within your project.
+ - Click on `Create` to start a new flow.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/ac29d845-5659-4c67-b7ca-218c865db3fb">
+
+### **Add an LLM Node**:
+
+> [!NOTE]
+> If you used `Prompt flow` section within your project, you need to add the LLM model but if you add the prompt flow from the chat playground you will see the LLM added, and other required elements as base for you.
+
+> How to add the LLM:
+ - In the flow creation wizard, add an LLM (Large Language Model) node.
+ - Configure the initial settings for this node, such as the prompt and connection settings.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/95d1300d-1892-4fa0-a5b2-6113f1203d96">
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/c1f9f7cf-abdc-4535-b0e7-30f709a91b93">
+
+> How it looks from giving starting point:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/15e4e472-b03f-452d-8d51-e18978d82513">
+
+
+### **Configuring Variants in Azure AI Studio**:
+
+> [!Note]
+> Set up your environment variables for your key and endpoint. This can be done in your `development environment` or `directly in Azure AI Studio`.
+
+> Using the approach of AI Studio
+
+- **Show Variants**: Once your LLM node is set up, click on the `Show variants` button at the top right of the node. This will allow you to create and manage different variants of your prompt.
+  
+    <img width="504" alt="image" src="https://github.com/user-attachments/assets/229ba216-44cc-4e44-b3d3-cda6de347011">
+
+#### **Create Variants**:
+   - The existing LLM node will be labeled as `variant_0` by default.
+   - Click on the `Clone` button on `variant_0` to generate `variant_1`.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/db8aced3-2f56-4c17-a0cc-1d1918c00ebc">
+
+   - Configure `variant_1` with different parameters or update the prompt as needed.
+   - Repeat this step to create additional variants (e.g., `variant_2`, `variant_3`, etc.).
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd952bd2-ee7f-44ee-ab77-78e3244357e7">
+
+#### **Configure Parameters for Each Variant**:
+   - For each variant, you can adjust parameters such as temperature, top_p, and the prompt content.
+   - Example configurations:
+     - **Variant 0**: `Temperature = 1`, `Prompt: "Summarize the following text: {{input_text}}"`
+     - **Variant 1**: `Temperature = 0.7`, `Prompt: "Summarize the following text: {{input_text}}"`
+     - **Variant 2**: `Temperature = 1`, `Prompt: "What is the main point of this article? {{input_text}}"`
+     - **Variant 3**: `Temperature = 0.7`, `Prompt: "What is the main point of this article? {{input_text}}"`
+
+
+7. **Run and Evaluate Variants**:
+   - After configuring your variants, you can run the flow with different inputs to test how each variant performs.
+   - Use the "Run" button to execute the flow and select the LLM node with variants to test.
+   - Evaluate the outputs to determine which variant produces the best results for your use case.
+
+8. **Monitor and Adjust**:
+   - Continuously monitor the performance of each variant.
+   - Make adjustments as needed based on the results to optimize your prompt configurations.
+
+### Example Flow
+
+
+
 #### 3. **Deploying Your Model**
 
-1. **Deploy a Model**:
-   - In Azure AI Studio, go to the "Deployments" section.
-   - Select "Create Deployment" and choose your model (e.g., GPT-4).
-   - Configure deployment parameters like model version, temperature, and top_p.
-   - Save these deployment settings.
+
 
 2. **Configure Variants**:
    - Use the Variants feature to create different versions of your prompt settings.
