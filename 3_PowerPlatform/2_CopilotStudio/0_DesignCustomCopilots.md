@@ -14,6 +14,9 @@ Last updated: 2024-10-31
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
+- [Use entities and slot filling in copilots](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-entities-slot-filling)
+- 
+
 </details>
 
 ## Overview 
@@ -97,7 +100,7 @@ Last updated: 2024-10-31
 
 ## Demo 
 
-### Step 1: Configure your your environment and Create a Copilot
+### Topic 1: Configure your your environment and Create a Copilot
 
 - Go to [Microsoft Copilot Studio Home Page](https://copilotstudio.microsoft.com/)
 - Prompt your case, for example:
@@ -151,10 +154,42 @@ Last updated: 2024-10-31
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/c1f5deb9-8541-4fbf-9208-c354fc72e4f8">
 
+### Topic 2: Understanding Entities & Slot Filling
+
+| Concept       | Description                                                                 | Example                                                                                   |
+|---------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| **Entities**  | Key pieces of information that the AI copilot needs to understand and extract from user inputs. | - **Examples**: Names, dates, locations, product names, quantities. <br> - **Usage**: "Book a flight to New York for tomorrow" (Entities: "New York" - location, "tomorrow" - date). |
+| **Slot Filling** | The process of collecting all necessary entities (or slots) required to complete a task. The AI copilot asks follow-up questions to gather any missing information. | - **Example**: For booking a flight, the copilot might need the departure city, destination city, date, and time. If the user only provides the destination, the copilot will ask for the remaining details. <br> - **Scenario**: Booking a meeting room. <br> **Entities**: Date, time, room number, duration. <br> **User Input**: "I need a room for a meeting tomorrow." <br> **Slot Filling**: <br> - Copilot: "What time is the meeting?" <br> - User: "At 3 PM." <br> - Copilot: "How long will the meeting last?" <br> - User: "2 hours." <br> - Copilot: "Which room would you like to book?" <br> - User: "Room 101." |
+
+- Go to `Settings` in top-right corner, and select `Entities`. Then select `Add` an entity and `New entity`.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b543c6ff-ac7c-4b6b-9268-d9bacd301a02">
+
+- You can choose between `Closed list` or `Regular expression (Regex)`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9171775c-140b-4a2c-b344-a1bbda1f46c1">
+
+  > If you choose `Closed list` you will se a window like this:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/562c8b59-6f42-46ab-b634-9209f695ea71">
+
+- You can add that `Entity` to the `Topic`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/bfd4ce79-59c4-4bbf-86e5-62a776dcaa5c">
 
 
-  
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/53155f54-de30-462a-a0c8-3cae98d05758">
+
+- You can test the `Slot Filling`, by having the `Variables` window open:
+
+  <video src='https://github.com/user-attachments/assets/625d865d-6259-4b07-8d6c-565c0d3675d1' width=180/>
+
+- You can access the code editor:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3918e5a0-6ef7-4898-a84d-a0e6630f37c3">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/011e6cb9-e779-4852-9277-1038600eecab">
 
 
-
+### Topic 3: 
 
