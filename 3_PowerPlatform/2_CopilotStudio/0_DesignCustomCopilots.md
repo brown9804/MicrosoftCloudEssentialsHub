@@ -38,7 +38,7 @@ Last updated: 2024-10-31
 
 **Steps**:
 1. **Sign in to Power Virtual Agents**: Go to the Power Virtual Agents website and sign in with your Microsoft account.
-2. **Create a New Bot**: Click on "Create a bot" and follow the prompts to set up your bot.
+2. **Create a New Bot**: Click on `Create a bot` and follow the prompts to set up your bot.
 3. **Define Topics**: Add topics that your bot will handle. Topics are the different areas of conversation your bot can engage in.
 4. **Build Conversations**: Use the graphical interface to design the conversation flow for each topic.
 5. **Test and Publish**: Test your bot to ensure it works as expected, then publish it to make it available to users.
@@ -49,7 +49,7 @@ Last updated: 2024-10-31
 
 **Steps**:
 1. **Sign in to Power Automate**: Go to the Power Automate website and sign in with your Microsoft account.
-2. **Create a Flow**: Click on "Create" and choose the type of flow you want to build (e.g., automated, instant, scheduled).
+2. **Create a Flow**: Click on `Create` and choose the type of flow you want to build (e.g., automated, instant, scheduled).
 3. **Add Triggers and Actions**: Define the trigger that starts the flow and add the actions that the flow will perform.
 4. **Configure Details**: Set up the details for each action, such as specifying conditions and data inputs.
 5. **Test and Activate**: Test your flow to ensure it works correctly, then activate it to start running.
@@ -60,7 +60,7 @@ Last updated: 2024-10-31
 
 **Steps**:
 1. **Sign in to Power Automate**: Go to the Power Automate website and sign in with your Microsoft account.
-2. **Create a Flow**: Click on "Create" and choose the type of flow you want to build.
+2. **Create a Flow**: Click on `Create` and choose the type of flow you want to build.
 3. **Define Rules**: Use the graphical interface to set up rules and conditions that dictate how the flow operates.
 4. **Add Actions**: Specify the actions that the flow will take based on the defined rules.
 5. **Test and Deploy**: Test your flow to ensure it follows the rules correctly, then deploy it.
