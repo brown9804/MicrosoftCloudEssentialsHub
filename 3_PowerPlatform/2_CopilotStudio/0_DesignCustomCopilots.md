@@ -97,4 +97,64 @@ Last updated: 2024-10-31
 
 ## Demo 
 
+### Step 1: Configure your your environment and Create a Copilot
+
+- Go to [Microsoft Copilot Studio Home Page](https://copilotstudio.microsoft.com/)
+- Prompt your case, for example:
+
+  ```text
+  I'm planning to develop a support copilot for our Contoso customers. This tool will assist by providing answers to frequently asked questions and performing routine tasks, such as order status updates.
+  ```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/db23a02f-6000-43b7-8617-af4504faa040">
+
+- Setup your Copilot Name, Icon, description and instructions:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2197193b-d91e-4a2a-8078-251441c06e3a">
+
+  ```
+  - Information should come from https://learn.microsoft.com/en-us/microsoft-copilot-studio/ and from https://www.microsoft.com/en-us/microsoft-copilot/
+  - Maintain a professional, cheerful tone focused on our clients, avoiding any mention of competitors or comparisons with their products.
+  ```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3de35622-6af0-4dc8-b383-2c39e347bee7">
+
+  > You will see a screen like this while you wait to Copilot to create your bot:
+  
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/028904ba-88c5-418b-9203-bc879b640b97">
+
+  > You can see it by the `Copilots` section:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/d828671c-eb5b-4049-95f0-32ee8b46ccd5">
+
+- You can keep configuring different settings available:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/e7bd4c43-7e2d-46e9-a37b-3cc4f6f41a51">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b680d628-6462-4728-bec2-6957ee2fa065">
+
+- Create topics if needed:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/ee2f4108-7698-4ede-8b99-ff0418dbb7d2">
+
+  > It will look like this:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/94dd43e1-02b5-4468-8b82-38745492356a">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/4b9b6ec4-69bd-45c6-bea3-554e3d7d064d">
+
+- Before you publish your copilot, please navigate to the `Security` section and adjust the `Authentication` settings according to your requirements:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/047ac431-27c4-4ab0-913e-bc80004dd962">
+
+- Once you are ready, `Publish` your own Copilot:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/c1f5deb9-8541-4fbf-9208-c354fc72e4f8">
+
+
+
+  
+
+
+
 
