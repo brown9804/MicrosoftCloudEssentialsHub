@@ -162,17 +162,16 @@ Last updated: 2024-10-31
     %pip show synapseml
     ~~~
 
-5. **Install LangChain and Other Dependencies**: Use `%pip install` to install the necessary packages
-
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/ee7b32ca-1860-46d5-abb4-80669ac22621">
+5. **Install LangChain and Other Dependencies**:
+   > You can use `%pip install` to install the necessary packages
 
      ```python
-     %pip install openai langchain pdf2image pdfminer.six pytesseract unstructured
+     %pip install openai langchain_community
      ```
 
     Or you can use the environment configuration:
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/e97ee674-166a-4071-aec3-6be14a41fdcb">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b61d180c-d7e5-4aec-a4b9-8133b3a92250">
 
     You can also try with the `.yml file` approach. Just upload your list of dependencies. E.g:
 
@@ -187,62 +186,72 @@ Last updated: 2024-10-31
     ```
 
 ### Configure Azure OpenAI Service
+
 1. **Set Up API Keys**: Ensure you have the API key and endpoint URL for your deployed model. Set these as environment variables
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/1639cf55-772f-42e3-8da6-1f110d2dc9fe">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/a2eb24bf-7279-4f4e-be00-408dbbd82600">
 
-     ```python
-     import os
+ ```python
+import os
 
-     # Set the API key for Azure OpenAI
-     os.environ["OPENAI_API_KEY"] = "your_openai_api_key"
+# Set the API version for the Azure OpenAI service
+os.environ["OPENAI_API_VERSION"] = "2023-08-01-preview"
 
-     # Set the base URL for the Azure OpenAI service
-     os.environ["OPENAI_API_BASE"] = "https://your_openai_api_base/"
+# Set the base URL for the Azure OpenAI service
+os.environ["AZURE_OPENAI_ENDPOINT"] = "https://your-resource-name.openai.azure.com"
 
-     # Set the API version for the Azure OpenAI service
-     os.environ["OPENAI_API_VERSION"] = "2022-12-01"
-
-     # Set the API type for the Azure OpenAI service
-     os.environ["OPENAI_API_TYPE"] = "azure"
-     ```
+# Set the API key for Azure OpenAI
+os.environ["AZURE_OPENAI_API_KEY"] = "your-api-key"
+ ```
 
 2. **Initialize Azure OpenAI Class**: Create an instance of the Azure OpenAI class using the environment variables set above.
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b1b03f7a-3dfd-402b-90c3-56ff73b83fce">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/e9fad52c-5c64-4047-8f22-cef80ce33d6e">
 
      ```python
-    from langchain.chat_models import ChatOpenAI
+    from langchain_openai import AzureChatOpenAI
     
-    # Create an instance of the Azure OpenAI class
-    llm = ChatOpenAI(
-        model_kwargs={
-            "deployment_name": "your-deployment-name",
-            "model_name": "your-model-name",
-            "api_key": "your-api-key"
-        },
-        temperature=0,
-        verbose=True
+    # Set the API base URL
+    api_base = os.environ["AZURE_OPENAI_ENDPOINT"]
+    
+    # Create an instance of the Azure OpenAI Class
+    llm = AzureChatOpenAI(
+        openai_api_key=os.environ["AZURE_OPENAI_API_KEY"],
+        temperature=0.7,
+        verbose=True,
+        top_p=0.9
     )
      ```
 
 3. **Call the Deployed Model**: Use the Azure OpenAI service to generate text or perform other language model tasks. Here's an example of generating a response based on a prompt
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6cfccfe-42b6-45f6-9d84-6189c1222f92">
+
      ```python
     # Define a prompt
-    prompt = "Once upon a time"
+    messages = [
+        (
+            "system",
+            "You are a helpful assistant that translates English to French. Translate the user sentence.",
+        ),
+        ("human", "Hi, how are you?"),
+    ]
     
     # Generate a response from the Azure OpenAI service using the invoke method
-    response = llm.invoke(prompt)
+    ai_msg = llm.invoke(messages)
     
     # Print the response
-    print(response)
+    print(ai_msg)
      ```
 
 Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`, `"your_deployment_name"`, and `"your_model_name"` with your actual API key, base URL, deployment name, and model name from your Azure OpenAI instance. This example demonstrates how to configure and use an existing Azure OpenAI instance in Microsoft Fabric. 
 
-### Step 4: Basic Usage of LangChain Transformer
-1. **Create a Prompt Template**:
-   - Define a prompt template for generating definitions:
+### Basic Usage of LangChain Transformer
+
+1. **Create a Prompt Template**: Define a prompt template for generating definitions.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/f4a3dea8-d743-46e0-a6e9-279aae457bc8">
+
      ```python
      from langchain.prompts import PromptTemplate
 
@@ -252,42 +261,77 @@ Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`,
      )
      ```
 
-2. **Set Up an LLMChain**:
-   - Create an LLMChain with the defined prompt template:
+2. **Set Up an LLMChain**: Create an LLMChain with the defined prompt template.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/30a74226-7a02-4c81-a4b1-4039eb43fa9c">
+
      ```python
      from langchain.chains import LLMChain
 
      chain = LLMChain(llm=llm, prompt=copy_prompt)
      ```
 
-3. **Configure LangChain Transformer**:
-   - Set up the LangChain transformer to execute the processing chain:
-     ```python
-     from synapse.ml.cognitive.langchain import LangchainTransformer
+3. **Configure LangChain Transformer**: Set up the LangChain transformer to execute the processing chain.
 
-     transformer = (
-         LangchainTransformer()
-         .setInputCol("technology")
-         .setOutputCol("definition")
-         .setChain(chain)
-         .setSubscriptionKey(openai_api_key)
-         .setUrl(openai_api_base)
-     )
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/f7d6480a-b75e-449e-808d-ad5a51974af9">
+
+     ```python
+    # Set up the LangChain transformer to execute the processing chain.
+    from synapse.ml.cognitive.langchain import LangchainTransformer
+    
+    openai_api_key= os.environ["AZURE_OPENAI_API_KEY"]
+    
+    transformer = (
+        LangchainTransformer()
+        .setInputCol("technology")
+        .setOutputCol("definition")
+        .setChain(chain)
+        .setSubscriptionKey(openai_api_key)
+        .setUrl(api_base)
+    )
      ```
 
-4. **Create a Test DataFrame**:
-   - Construct a DataFrame with technology names:
+4. **Create a Test DataFrame**: Construct a DataFrame with technology names.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a2a8e208-6f1d-4cb0-9944-0d2457106b49">
+
+
      ```python
-     df = spark.createDataFrame(
-         [(0, "docker"), (1, "spark"), (2, "python")],
-         ["label", "technology"]
-     )
-     display(transformer.transform(df))
+    from pyspark.sql import SparkSession
+    from pyspark.sql.functions import udf
+    from pyspark.sql.types import StringType
+    
+    # Initialize Spark session
+    spark = SparkSession.builder.appName("example").getOrCreate()
+    
+    # Construct a DataFrame with technology names
+    df = spark.createDataFrame(
+        [
+            (0, "docker"), (1, "spark"), (2, "python")
+        ],
+        ["label", "technology"]
+    )
+    
+    # Define a simple UDF to transform the technology column
+    def transform_technology(tech):
+        return tech.upper()
+    
+    # Register the UDF
+    transform_udf = udf(transform_technology, StringType())
+    
+    # Apply the UDF to the DataFrame
+    transformed_df = df.withColumn("transformed_technology", transform_udf(df["technology"]))
+    
+    # Show the transformed DataFrame
+    transformed_df.show()
      ```
 
-### Step 5: Using LangChain for Large Scale Literature Review
-1. **Define Functions for Content Extraction and Prompt Generation**:
-   - Extract content from PDFs linked in arXiv papers and generate prompts for extracting specific information:
+### Using LangChain for Large Scale Literature Review
+
+1. **Define Functions for Content Extraction and Prompt Generation**: Extract content from PDFs linked in arXiv papers and generate prompts for extracting specific information.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/54b0b122-e71e-4040-ad69-dd01b0411b3f">
+
      ```python
      from langchain.document_loaders import OnlinePDFLoader
 
@@ -308,8 +352,10 @@ Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`,
          return {"prompt": prompt}
      ```
 
-2. **Create a Sequential Chain for Information Extraction**:
-   - Set up a chain to extract structured information from an arXiv link:
+2. **Create a Sequential Chain for Information Extraction**: Set up a chain to extract structured information from an arXiv link
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/3980b019-f3c7-4614-a27e-c2692e8d4f47">
+
      ```python
      from langchain.chains import TransformChain, SimpleSequentialChain
 
@@ -326,58 +372,63 @@ Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`,
      """
      ```
 
-### Step 6: Machine Learning Integration with Microsoft Fabric
-1. **Train and Register Machine Learning Models**:
-   - Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperparameters, and evaluation metrics:
+### Machine Learning Integration with Microsoft Fabric
+
+1. **Train and Register Machine Learning Models**: Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperparameters, and evaluation metrics.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a6eebe61-bfde-48ce-88e7-9bd5dfb6d00a">
+
      ```python
-     import mlflow
-     from mlflow.models import infer_signature
-     from sklearn.datasets import make_regression
-     from sklearn.ensemble import RandomForestRegressor
-
-     # Generate synthetic regression data
-     X, y = make_regression(n_features=4, n_informative=2, random_state=0, shuffle=False)
-
-     # Model parameters
-     params = {"n_estimators": 3, "random_state": 42}
-
-     # Model tags for MLflow
-     model_tags = {
-         "project_name": "grocery-forecasting",
-         "store_dept": "produce",
-         "team": "stores-ml",
-         "project_quarter": "Q3-2023"
-     }
-
-     # Log MLflow entities
-     with mlflow.start_run() as run:
-         # Train the model
-         model = RandomForestRegressor(**params).fit(X, y)
-
-         # Infer the model signature
-         signature = infer_signature(X, model.predict(X))
-
-         # Log parameters and the model
-         mlflow.log_params(params)
-         mlflow.sklearn.log_model(model, artifact_path="sklearn-model", signature=signature)
-
-         # Register the model with tags
-         model_uri = f"runs:/{run.info.run_id}/sklearn-model"
-         model_version = mlflow.register_model(model_uri, "RandomForestRegressionModel", tags=model_tags)
-
-         # Output model registration details
-         print(f"Model Name: {model_version.name}")
-         print(f"Model Version: {model_version.version}")
+    import mlflow
+    from mlflow.models import infer_signature
+    from sklearn.datasets import make_regression
+    from sklearn.ensemble import RandomForestRegressor
+    
+    # Generate synthetic regression data
+    X, y = make_regression(n_features=4, n_informative=2, random_state=0, shuffle=False)
+    
+    # Model parameters
+    params = {"n_estimators": 3, "random_state": 42}
+    
+    # Model tags for MLflow
+    model_tags = {
+        "project_name": "grocery-forecasting",
+        "store_dept": "produce",
+        "team": "stores-ml",
+        "project_quarter": "Q3-2023"
+    }
+    
+    # Log MLflow entities
+    with mlflow.start_run() as run:
+        # Train the model
+        model = RandomForestRegressor(**params).fit(X, y)
+    
+        # Infer the model signature
+        signature = infer_signature(X, model.predict(X))
+    
+        # Log parameters and the model
+        mlflow.log_params(params)
+        mlflow.sklearn.log_model(model, artifact_path="sklearn-model", signature=signature)
+    
+        # Register the model with tags
+        model_uri = f"runs:/{run.info.run_id}/sklearn-model"
+        model_version = mlflow.register_model(model_uri, "RandomForestRegressionModel", tags=model_tags)
+    
+        # Output model registration details
+        print(f"Model Name: {model_version.name}")
+        print(f"Model Version: {model_version.version}")
      ```
 
-2. **Compare and Filter Machine Learning Models**:
-   - Use MLflow to search among multiple models saved within the workspace:
-     ```python
-     from pprint import pprint
-     from mlflow.tracking import MlflowClient
+2. **Compare and Filter Machine Learning Models**: Use MLflow to search among multiple models saved within the workspace.
 
-     client = MlflowClient()
-     for rm in client.list_registered_models():
-         pprint(dict(rm), indent=4)
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/d39e2a0e-3dde-4138-aafc-48d3d680bc93">
+
+     ```python
+    from pprint import pprint
+    from mlflow.tracking import MlflowClient
+    
+    client = MlflowClient()
+    for rm in client.search_registered_models():
+        pprint(dict(rm), indent=4)
      ```
 
