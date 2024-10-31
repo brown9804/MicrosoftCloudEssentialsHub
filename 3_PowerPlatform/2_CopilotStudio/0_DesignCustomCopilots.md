@@ -15,7 +15,7 @@ Last updated: 2024-10-31
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [Use entities and slot filling in copilots](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-entities-slot-filling)
-- 
+- [Create and edit topics with Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring#whats-supported?wt.mc_id=power-virtual-agents_inproduct)
 
 </details>
 
