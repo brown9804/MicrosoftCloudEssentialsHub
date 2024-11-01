@@ -282,10 +282,6 @@ Last updated: 2024-11-01
   
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/1d679711-2fef-484b-be42-2207b0d74f40">
 
-  > In this case, we'll going to use an `AI Search` index:
-
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/ef82fdad-0390-4e86-b32a-6c8cf41d5211">
-
   > Search for `Azure AI Search`, in this example we'll indexing a document:
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/871f142d-5227-4416-a5f9-707d06b9f4a8">
@@ -298,17 +294,24 @@ Last updated: 2024-11-01
 
   > Add the `Parameters`:
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/fd52edce-dc21-43fd-82cc-657c489cb7a7">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/46dd9a30-f60b-4e16-890c-e9f309abfc69">
 
   > Add `Action timeout`, and turn on `Security` features:
 
-  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/389514a5-915a-4306-a4a5-6a8c85198ea8">
 
-    
+  > You can add `Status`, and `Outputs` for testing, then click on `Save`:
 
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/5067efc0-5780-4d68-8f32-69a5faba1ef7">
 
+  > `Add an output` to the `Return values(s) to Power Virtual Agents`:
 
-=
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6eaf562-d8a0-4254-b045-cb54794297d7">
+
+  > Once you add all your desired output parameters, click on `Save`:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/1be27b5b-1a0b-438b-a57d-d9af2509164f">
+
 
 
 
