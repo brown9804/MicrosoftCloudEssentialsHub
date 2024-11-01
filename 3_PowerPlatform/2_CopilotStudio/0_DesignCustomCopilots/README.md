@@ -16,7 +16,8 @@ Last updated: 2024-10-31
 
 - [Use entities and slot filling in copilots](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-entities-slot-filling)
 - [Create and edit topics with Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-authoring#whats-supported?wt.mc_id=power-virtual-agents_inproduct)
-
+- [Microsoft Power Automate documentation](https://learn.microsoft.com/en-us/power-automate/)
+  
 </details>
 
 ## Overview 
@@ -190,6 +191,130 @@ Last updated: 2024-10-31
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/011e6cb9-e779-4852-9277-1038600eecab">
 
+### Topic 3: Copilot Studio to request data from another data source using Power Automate
 
-### Topic 3: 
+> Microsoft Power Automate (formerly known as Microsoft Flow) is a cloud-based service that enables users to `create automated workflows between their favorite apps and services`. This helps streamline repetitive tasks, integrate various systems, and improve overall productivity.
+
+| **Category**               | **Key Features**                                                                                     |
+|----------------------------|-----------------------------------------------------------------------------------------------------|
+| **Automate Workflows**     | - **Cloud Flows**: Automate tasks across cloud services like Office 365, Dynamics 365, and third-party applications.<br>- **Desktop Flows**: Automate tasks on your desktop, such as data entry and file management, using robotic process automation (RPA). |
+| **Integration**            | - **Connectors**: Power Automate offers hundreds of connectors to integrate with various services and applications, including SharePoint, Outlook, Twitter, and more.<br>- **Custom Connectors**: Create custom connectors to integrate with proprietary or less common services. |
+| **AI Capabilities**        | - **AI Builder**: Incorporate AI models into your workflows to automate tasks like form processing, object detection, and sentiment analysis. |
+| **User-Friendly Interface**| - **Templates**: Start with pre-built templates to quickly create common workflows.<br>- **Drag-and-Drop**: Use a visual designer to build workflows without writing code. |
+
+### **Benefits**
+
+| **Benefit**     | **Description**                                                                                     |
+|-----------------|-----------------------------------------------------------------------------------------------------|
+| **Efficiency**  | Automate repetitive tasks to save time and reduce human error.                                       |
+| **Productivity**| Focus on higher-value tasks by offloading routine processes to automated workflows.                  |
+| **Scalability** | Easily scale your automation efforts as your business grows.                                         |
+
+### **Use Cases**
+
+| **Use Case**                  | **Description**                                                                                     |
+|-------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Business Process Automation**| Automate approval processes, notifications, and data synchronization.                               |
+| **Data Collection**           | Automatically collect and process data from various sources.                                       |
+| **Integration**               | Seamlessly integrate different systems and applications to ensure data consistency and streamline operations. |
+
+> Example of connecting to Snowflake
+
+- Create `Add a topic`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/4cb1a631-1374-4d97-a5c2-2afd82c65b29">
+
+- Click `+`. amd a `Question`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/4d79dba2-4a12-4edb-971f-ef613fb2e3d1">
+
+- Add some description around the topics:
+    
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/3eec2fde-9857-47d3-b402-2d4aff37dfa0">
+
+  ```text
+  Yes, I can get you the status of your receipt. What is your receipt number?
+  ```
+
+- Add and `Identity`, click on `Create an Entity`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/5113e492-460c-4089-83ce-8aa24f18dfba">
+
+  > Choose between `Closed list`, and `Regular expresion (Regex)`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/881f8773-bc09-4fd3-bd3d-c4693f5f69dc">
+
+  > Add you `name, description` and `list items`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8d1d6a00-cd1f-447f-be1c-9d197a6c1976">
+
+  > Adjust the variables properties as required:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/4430ec67-362e-4c89-b1fe-0a4944bd5f33">
+
+  > `Save` and `Test` your flow:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/1381ae44-8e62-4ed0-84fc-de41fc95ac89">
+
+- Add Power Automate cloud flow:
+
+  > Click on `+`, `Call an action `, and `Create a flow`:
+  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/bbc59a26-de56-4b45-b770-cf95696a9e3b">
+
+  > An Power Automate window will open:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/4c8c6107-9d3b-4702-a4a6-d7cb282135cd">
+
+  > Click on `When Copilot Studio calls a flow`, to `Add an input`:
+  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/2e5b7c11-9b83-48d2-a2b7-f17734d08b22">
+  
+  > For this example, click on `Text` and add `ReceiptNumber`:
+
+    <img width="379" alt="image" src="https://github.com/user-attachments/assets/72504c97-8a86-4472-9f2a-8aed95b9379a">
+
+  > CLick on `Collapse` and `+`, so we can add a new action:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/0d0f5639-ecae-409e-b02b-4c53ad8b118d">
+
+  > `Add an action`:
+  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/1d679711-2fef-484b-be42-2207b0d74f40">
+
+  > In this case, we'll going to use an `AI Search` index:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/ef82fdad-0390-4e86-b32a-6c8cf41d5211">
+
+  > Search for `Azure AI Search`, in this example we'll indexing a document:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/871f142d-5227-4416-a5f9-707d06b9f4a8">
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/af6b08b7-c248-490f-a77e-6d834ae7209a">
+
+  > Fill the information and click on `Create new`:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/15c129a3-538c-492d-a31e-d9c72559931c">
+
+  > Add the `Parameters`:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/fd52edce-dc21-43fd-82cc-657c489cb7a7">
+
+  > Add `Action timeout`, and turn on `Security` features:
+
+  
+
+    
+
+
+
+=
+
+
+
+  
+
+
+
+
 
