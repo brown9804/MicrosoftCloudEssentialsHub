@@ -240,21 +240,17 @@ Last updated: 2024-11-01
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/5113e492-460c-4089-83ce-8aa24f18dfba">
 
-  > Choose between `Closed list`, and `Regular expresion (Regex)`:
+  > Choose between `Closed list`, or  `Regular expresion (Regex)`:
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/881f8773-bc09-4fd3-bd3d-c4693f5f69dc">
 
   > Add you `name, description` and `list items`:
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8d1d6a00-cd1f-447f-be1c-9d197a6c1976">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/190e6100-7da9-415d-bd11-c8e22ee8925a">
 
-  > Adjust the variables properties as required:
+  > Adjust the variables properties as required, and click on `Save`:
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/4430ec67-362e-4c89-b1fe-0a4944bd5f33">
-
-  > `Save` and `Test` your flow:
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/1381ae44-8e62-4ed0-84fc-de41fc95ac89">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/9c7ceb8d-7f16-420f-8a41-539fc3c23b61">
 
 - Add Power Automate cloud flow:
 
@@ -306,16 +302,25 @@ Last updated: 2024-11-01
 
   > `Add an output` to the `Return values(s) to Power Virtual Agents`:
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6eaf562-d8a0-4254-b045-cb54794297d7">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/411f8aa4-0250-4fea-a592-a86271ba79e4">
+
 
   > Once you add all your desired output parameters, click on `Save`:
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/1be27b5b-1a0b-438b-a57d-d9af2509164f">
 
+  > Adjust the name of the `Power Automate Flow` as desired, click on `Save` to change the name:
 
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/0241aa6b-7ddf-4967-bf3d-fe45fe561dcd">
 
+  > Go back to , click on `+`, `Call an action`, and you'll see your recently created flow:
 
-  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/655cd3e7-753c-4894-b2d3-e66a843aaa76">
+
+  > You'll see `action` created, click on `Enter or select a value`, select the `variable` created:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b52028a9-6be5-477e-8722-554dd579d76d">
+
 
 
 
