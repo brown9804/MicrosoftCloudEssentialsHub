@@ -38,14 +38,30 @@ Last updated: 2024-10-02
 
 1. **Open Power BI Desktop** and load your data.
 2. **Go to the Power Query Editor** by clicking on `Transform Data`.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/0786f906-9e15-4751-94d1-1807afef7dda">
+
 3. **Create Parameters**: In Power Query Editor, create `RangeStart` and `RangeEnd` parameters to define the date range for incremental refresh.
    - Select `Manage Parameters` > `New Parameter`.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/fe88a6c8-ea8c-46f9-9ea2-fda795ec5267">
+
    - Name the parameters `RangeStart` and `RangeEnd`, and set their data type to `Date/Time`.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/0e47b52a-d174-4f85-9fef-ce51b904dac4">
+
 4. **Filter Data**: Apply filters to your data based on the `RangeStart` and `RangeEnd` parameters to ensure only the relevant data is loaded.
    - Select the date column you want to filter.
    - Apply a custom filter using the `RangeStart` and `RangeEnd` parameters.
+   - Once you have done, click on `Close & Apply`
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/bf7e4d68-f644-413f-a26b-1290ff6a9585">
+
 5. **Define Policy**: Set up an incremental refresh policy in Power BI Desktop. This policy will automate partition creation and management, ensuring that only the most recent data is refreshed.
-   - In the `Modeling` tab, select `Manage Incremental Refresh`.
+   - In the `Model view` tab, select `...`, and choose `Incremental refresh`:
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/de66579e-2746-4b54-b411-a65a147e7b36">
+
    - Define the refresh policy, specifying how much historical data to keep and how frequently to refresh.
 
 ## How the VertiPaq Engine Works
