@@ -35,7 +35,6 @@ Last updated: 2024-11-07
 
 - [Fabric Overview](#fabric-overview)
     - [Wiki](#wiki)
-    - [Wiki](#wiki)
     - [Overview](#overview)
         - [Key Components](#key-components)
         - [Features](#features)
