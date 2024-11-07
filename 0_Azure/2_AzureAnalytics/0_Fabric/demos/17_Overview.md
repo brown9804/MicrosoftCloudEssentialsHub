@@ -128,14 +128,6 @@ graph TD
 > - `Schema Enforcement and Evolution`: Allows for schema changes over time, making it easier to manage evolving data structures.
 > - `Time Travel:` Enables querying of historical data, providing the ability to access and revert to previous versions of data.
 > - `Efficient Data Management`: Features like compaction, Z-Order, and V-Order optimize data storage and query performance
-  
-  | **Aspect**               | **Z-Order**                                                                 | **V-Order**                                                                 |
-  |--------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-  | **Purpose**              | Improves query performance by co-locating related information in the same set of files. | Enhances read performance by organizing data in a way that leverages Microsoft Verti-Scan technology. |
-  | **Key Features**         | - Data Co-Location: Organizes data based on one or more columns, storing rows with similar values together. <br/> - Query Efficiency: Reduces the amount of data read during queries, improving performance. <br/> - Compatibility: Works with Delta Lake to enhance data-skipping algorithms. | - Special Sorting: Applies special sorting techniques to Parquet files. <br/> - Row Group Distribution: Optimizes row group distribution for better read performance. <br/> - Dictionary Encoding and Compression: Uses efficient dictionary encoding and compression. <br/> - Performance Boost: Provides fast reads under various compute engines. <br/> - Cost Efficiency: Reduces network, disk, and CPU resources during reads. |
-  | **Timing**               | Applied during read time (or table optimization).                            | Applied during write time.                                                 |
-  | **Use Cases**            | - When you need to improve query performance by reducing the amount of data read. <br/> - For queries that frequently filter on specific columns. | - When you need to enhance read performance and reduce storage costs. <br/> - For scenarios requiring efficient data access across various compute engines. |
-  | **Compatibility**        | Requires specific tools like Delta Lake.                                     | Universally compatible with all Parquet engines. 
 
 ```mermaid
 graph TD
@@ -152,6 +144,15 @@ graph TD
         L -->|Query Optimization| V[✔️]
     end
 ```
+  
+  | **Aspect**               | **Z-Order**                                                                 | **V-Order**                                                                 |
+  |--------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+  | **Purpose**              | Improves query performance by co-locating related information in the same set of files. | Enhances read performance by organizing data in a way that leverages Microsoft Verti-Scan technology. |
+  | **Key Features**         | - Data Co-Location: Organizes data based on one or more columns, storing rows with similar values together. <br/> - Query Efficiency: Reduces the amount of data read during queries, improving performance. <br/> - Compatibility: Works with Delta Lake to enhance data-skipping algorithms. | - Special Sorting: Applies special sorting techniques to Parquet files. <br/> - Row Group Distribution: Optimizes row group distribution for better read performance. <br/> - Dictionary Encoding and Compression: Uses efficient dictionary encoding and compression. <br/> - Performance Boost: Provides fast reads under various compute engines. <br/> - Cost Efficiency: Reduces network, disk, and CPU resources during reads. |
+  | **Timing**               | Applied during read time (or table optimization).                            | Applied during write time.                                                 |
+  | **Use Cases**            | - When you need to improve query performance by reducing the amount of data read. <br/> - For queries that frequently filter on specific columns. | - When you need to enhance read performance and reduce storage costs. <br/> - For scenarios requiring efficient data access across various compute engines. |
+  | **Compatibility**        | Requires specific tools like Delta Lake.                                     | Universally compatible with all Parquet engines. 
+
 
 | Feature                | Parquet                                      | Delta                                      | Available in Parquet? | Available in Delta? |
 |------------------------|----------------------------------------------|--------------------------------------------|-----------------------|---------------------|
