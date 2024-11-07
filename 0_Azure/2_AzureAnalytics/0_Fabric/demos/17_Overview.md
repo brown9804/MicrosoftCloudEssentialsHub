@@ -17,13 +17,14 @@ Last updated: 2024-11-07
 > - `Azure Data`: Incorporates tools for data engineering and management. <br/>
 > - `Azure Analytics`: Features business intelligence and analytics tools, notably through its Power BI integration.
 
-
 ## Wiki 
 
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [What is data warehousing in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/query-warehouse)
+- [What is the SQL analytics endpoint for a lakehouse?](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint)
   
 </details>
 
@@ -205,8 +206,102 @@ graph TD
 
 > Example over ETL (Extract, Transform, Load)
 
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/8a1623ef-3088-47c2-992c-552d25954cb9">
 
+Steps: Click [here to see a visual guidance](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/README.md#step-2-ingest-data-into-the-bronze-layer)
+1. Select **`Data pipeline`**.
+2. You can either click on **`Copy data assist`** right away or simply click on **`Copy data`**.
 
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/c5056154-cdcc-4cc7-888e-1d417f8be09e">
 
+3. Add the connection to your data source. In this example, we'll use **Azure SQL Database**.
+4. Choose the tables you want to include. You can do this using the **Tables view**, by writing a **Query** or **Stored procedure**.
 
+| **Option**          | **Description**                                                                 | **Use Case**                                                                 |
+|---------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **Table**           | Allows you to select and work with entire tables from your data source.         | Ideal for scenarios where you need to copy or transform all data within a specific table. |
+| **Query**           | Enables you to write custom SQL queries to select specific data from your data source. | Useful when you need to filter, join, or aggregate data before copying or transforming it. |
+| **Stored Procedure**| Allows you to execute predefined stored procedures in your database.            | Best for complex data operations that are encapsulated within stored procedures, such as data transformations or business logic. |
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b48701f-b1d6-4147-b8c4-ad900c297e79">
+
+5. Select your destination, such as the **Bronze layer**.
+6. Test and validate your data pipeline.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b2a95f5d-70b7-4236-b04b-3569df9ab8ab">
+
+## Medallion Architecture Overview
+
+Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/15_FabricMedallionArch/README.md#fabric-medallion-architecture-overview) to go to a quick guide over the medallion architecture, and see a demo with conventional lakehouse.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8cca8978-df21-493c-969e-78a6c7f84c94">
+
+## Fabric: Highlights into AI/LLMs
+
+Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/13_FabricAI_LLMs#configure-azure-openai-service) to see a quick guide and demo.
+
+- Example of [how to integrate Azure OpenAI with Fabric](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/copilot_studio_demo/0_Azure/2_AzureAnalytics/0_Fabric/demos/13_FabricAI_LLMs#configure-azure-openai-service): Call a deployed model and request information.
+- [Basic Usage of LangChain Transformer](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/13_FabricAI_LLMs#basic-usage-of-langchain-transformer): Create a prompt template, set up an LLMChain, and configure the transformer to execute the processing chain.
+- Example of [Using LangChain for Large Scale Literature Review](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/13_FabricAI_LLMs#using-langchain-for-large-scale-literature-review): This example is around extracting content from PDFs linked in arXiv papers and generating prompts for extracting specific information.
+- [Machine Learning Integration with Microsoft Fabric](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/13_FabricAI_LLMs#machine-learning-integration-with-microsoft-fabric): Shows how to train and register machine learning models using Microsoft Fabric's native integration with the MLflow framework. This includes logging trained models, hyperparameters, and evaluation metrics. It also shows how to compare and filter machine learning models using MLflow, with an example using RandomForestRegressor.
+
+## Writing SQL: SQL Analytics Endpoint
+
+> In Microsoft Fabric, you can `write your SQL queries using the SQL analytics endpoint`. `This endpoint provides a SQL-based experience for querying data stored in lakehouse Delta tables`. <br/>
+> The SQL analytics endpoint `allows you to use T-SQL (Transact-SQL) to analyze your data, create views, save functions, and apply SQL security`.
+
+| **Key Feature**          | **Description**                                                                 |
+|--------------------------|---------------------------------------------------------------------------------|
+| **SQL-Based Querying**   | Use T-SQL to query Delta tables in your lakehouse.                              |
+| **Views and Functions**  | Create and save SQL views and functions for reusable queries and operations.    |
+| **SQL Security**         | Apply object-level security to control access to your data.                     |
+| **Read-Only Mode**       | The SQL analytics endpoint operates in read-only mode, meaning you can read data but not modify it directly through this endpoint. |
+
+### How to Configure and Use the SQL Analytics Endpoint
+
+> Steps to Configure:
+
+1. **Create a Lakehouse**:
+   - Go to your Microsoft Fabric workspace.
+   - Click on **New item** and select **Lakehouse** to create a new lakehouse or select an existing one. This automatically provisions a SQL analytics endpoint for the lakehouse.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8481c3a9-9209-46a8-99f4-f8288d36ccbe">
+
+   - Follow the prompts to set up your lakehouse.
+
+      <img width="200" alt="image" src="https://github.com/user-attachments/assets/0a807bd9-7e40-4f6d-8d2c-d4a29ed4f4c4">
+      
+      | **Aspect**               | **Lakehouse in Microsoft Fabric**                                      | **Lakehouse with Schema in Microsoft Fabric**                          |
+      |--------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
+      | **Purpose**              | Centralized storage for structured and unstructured data.              | Enhanced organization and management of tables using schemas.          |
+      | **Data Organization**    | Tables are stored without additional grouping.                         | Tables are organized into schemas, providing a folder-like structure.  |
+      | **Data Discovery**       | Basic data discovery capabilities.                                     | Improved data discovery through schema grouping.                       |
+      | **Access Control**       | Standard access control at the table level.                            | Enhanced access control at the schema level, allowing for finer granularity. |
+      | **Integration**          | Integrated with other Fabric components like SQL analytics endpoint.   | Same integration, with added schema support for better data management. |
+      | **SQL Analytics Endpoint** | Supports querying tables directly.                                    | Supports querying tables within schemas, using namespace notation.     |
+      | **Schema Management**    | Not applicable.                                                        | Allows creation, modification, and management of schemas.              |
+      | **Use Cases**            | Suitable for general data storage and analytics.                       | Ideal for scenarios requiring organized data structures and advanced access control. |
+
+      | Lakehouse simple | Lakehouse with schema | 
+      | --- | ---- |
+      | <img width="550" alt="image" src="https://github.com/user-attachments/assets/63e2919d-99cb-4f30-9e78-a875564a2928"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/4e2eb1ed-9f43-4ce2-9521-105fe4c1e6f6"> |
+
+2. **Access the SQL Analytics Endpoint**:
+   - In the workspace view, select the lakehouse.
+   - In the Lakehouse explorer, go to **SQL analytics endpoint**.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c071cef-06fd-4660-8de8-f65d05579722">
+
+3. **Connect Using SQL Query Editor**:
+   - Open the SQL query editor from the Microsoft Fabric portal.
+   - Write a simple query, for example:
+     ```sql
+     SELECT * FROM your_table_name;
+     ```
+   - Execute the query to see the results.
+4. **Connect Using External Tools**:
+   - Copy the SQL analytics endpoint connection string (T-SQL connection string) from the Lakehouse explorer.
+   - **SQL Server Management Studio (SSMS)** or **Azure Data Studio**:For this case, open SSMS and click on **Connect**.
+   - Select **Database Engine** and paste the connection string.
+   - Authenticate using Azure Active Directory credentials.
+   - Write and execute your SQL queries.
 
