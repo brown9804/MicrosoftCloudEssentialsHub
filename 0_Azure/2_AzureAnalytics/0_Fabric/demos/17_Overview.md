@@ -20,12 +20,37 @@ Last updated: 2024-11-07
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of references</b> (Click to expand)</summary>
 
 - [What is data warehousing in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/query-warehouse)
 - [What is the SQL analytics endpoint for a lakehouse?](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint)
   
+</details>
+
+## Content 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Fabric Overview](#fabric-overview)
+    - [Wiki](#wiki)
+    - [Wiki](#wiki)
+    - [Overview](#overview)
+        - [Key Components](#key-components)
+        - [Features](#features)
+    - [OneLake in Microsoft Fabric](#onelake-in-microsoft-fabric)
+        - [Lakehouse & Data Warehouse](#lakehouse--data-warehouse)
+    - [Parquet & Delta Data Formats](#parquet--delta-data-formats)
+    - [Dataflow Gen2 & Data Pipelines](#dataflow-gen2--data-pipelines)
+    - [Shortcuts & Mirroring](#shortcuts--mirroring)
+    - [Data Factory](#data-factory)
+    - [Medallion Architecture Overview](#medallion-architecture-overview)
+    - [Fabric: Highlights into AI/LLMs](#fabric-highlights-into-aillms)
+    - [Writing SQL: SQL Analytics Endpoint](#writing-sql-sql-analytics-endpoint)
+        - [How to Configure and Use the SQL Analytics Endpoint](#how-to-configure-and-use-the-sql-analytics-endpoint)
+    - [Fabric AI Skill](#fabric-ai-skill)
+
 </details>
 
 ## Overview 
