@@ -84,19 +84,15 @@ Last updated: 2024-11-07
 > `Lakehouse `is a `specific type of data architecture within Microsoft Fabric `that combines the features of data lakes and data warehouses. `It allows for the storage and processing of both structured and unstructured data`, providing the flexibility of a data lake with the performance and management features of a data warehouse. <br/> <br/>
 > `Data Warehouse` is a centralized repository for `storing large volumes of structured data`. It is optimized for querying and analysis, providing high-performance SQL-based analytics.
 
+| Lakehouse | Data Warehouse | 
+| --- | --- | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/4753bff5-524f-4f94-a6cd-7a1594bc9042"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/2be585bd-fab6-4fdd-8d99-3ad8521158c4"> |
+
 | **Aspect**               | **OneLake**                                                                 | **Lakehouse**                                                                 | **Data Warehouse**                                                         |
 |--------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | **Purpose**              | `Acts as the central storage repository for all data types within Microsoft Fabric.` | Provides a unified architecture for managing and analyzing data, combining the benefits of data lakes and data warehouses. | Focuses on storing and analyzing structured data for business intelligence and decision support. |
 | **Functionality**        | Focuses on storing data in a unified, governed, and accessible manner.       | Focuses on enabling advanced analytics and machine learning by providing a flexible and scalable data architecture. | Optimized for high-performance SQL-based querying and reporting on structured data. |
 | **When to Use Each**     | - As the central storage repository for all data types within Microsoft Fabric. <br/> - To ensure seamless integration and accessibility across various services. | - When you need to handle large volumes of diverse data types. <br/> - When you require flexibility in data processing with multiple engines (e.g., Spark, SQL). <br/> - For machine learning projects that `need access to both raw and processed data`. <br/> - For real-time analytics and advanced data processing. | - When you need optimized performance for SQL-based querying and reporting. <br/> - When your `primary focus is on structured data and historical analysis`. <br/> - For a robust environment supporting business intelligence and decision support. |
-
-> Lakehouse:
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/4753bff5-524f-4f94-a6cd-7a1594bc9042">
-
-> Data Warehouse:
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/2be585bd-fab6-4fdd-8d99-3ad8521158c4">
 
 ## Parquet & Delta Data Formats
 
@@ -212,22 +208,22 @@ Steps: Click [here to see a visual guidance](https://github.com/brown9804/Micros
 1. Select **`Data pipeline`**.
 2. You can either click on **`Copy data assist`** right away or simply click on **`Copy data`**.
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/c5056154-cdcc-4cc7-888e-1d417f8be09e">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/c5056154-cdcc-4cc7-888e-1d417f8be09e">
 
 3. Add the connection to your data source. In this example, we'll use **Azure SQL Database**.
 4. Choose the tables you want to include. You can do this using the **Tables view**, by writing a **Query** or **Stored procedure**.
 
-| **Option**          | **Description**                                                                 | **Use Case**                                                                 |
-|---------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **Table**           | Allows you to select and work with entire tables from your data source.         | Ideal for scenarios where you need to copy or transform all data within a specific table. |
-| **Query**           | Enables you to write custom SQL queries to select specific data from your data source. | Useful when you need to filter, join, or aggregate data before copying or transforming it. |
-| **Stored Procedure**| Allows you to execute predefined stored procedures in your database.            | Best for complex data operations that are encapsulated within stored procedures, such as data transformations or business logic. |
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b48701f-b1d6-4147-b8c4-ad900c297e79">
+    | **Option**          | **Description**                                                                 | **Use Case**                                                                 |
+    |---------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+    | **Table**           | Allows you to select and work with entire tables from your data source.         | Ideal for scenarios where you need to copy or transform all data within a specific table. |
+    | **Query**           | Enables you to write custom SQL queries to select specific data from your data source. | Useful when you need to filter, join, or aggregate data before copying or transforming it. |
+    | **Stored Procedure**| Allows you to execute predefined stored procedures in your database.            | Best for complex data operations that are encapsulated within stored procedures, such as data transformations or business logic. |
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b48701f-b1d6-4147-b8c4-ad900c297e79">
 
 5. Select your destination, such as the **Bronze layer**.
 6. Test and validate your data pipeline.
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b2a95f5d-70b7-4236-b04b-3569df9ab8ab">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b2a95f5d-70b7-4236-b04b-3569df9ab8ab">
 
 ## Medallion Architecture Overview
 
@@ -264,44 +260,68 @@ Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/
    - Go to your Microsoft Fabric workspace.
    - Click on **New item** and select **Lakehouse** to create a new lakehouse or select an existing one. This automatically provisions a SQL analytics endpoint for the lakehouse.
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8481c3a9-9209-46a8-99f4-f8288d36ccbe">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8481c3a9-9209-46a8-99f4-f8288d36ccbe">
 
    - Follow the prompts to set up your lakehouse.
 
-      <img width="200" alt="image" src="https://github.com/user-attachments/assets/0a807bd9-7e40-4f6d-8d2c-d4a29ed4f4c4">
-      
-      | **Aspect**               | **Lakehouse in Microsoft Fabric**                                      | **Lakehouse with Schema in Microsoft Fabric**                          |
-      |--------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
-      | **Purpose**              | Centralized storage for structured and unstructured data.              | Enhanced organization and management of tables using schemas.          |
-      | **Data Organization**    | Tables are stored without additional grouping.                         | Tables are organized into schemas, providing a folder-like structure.  |
-      | **Data Discovery**       | Basic data discovery capabilities.                                     | Improved data discovery through schema grouping.                       |
-      | **Access Control**       | Standard access control at the table level.                            | Enhanced access control at the schema level, allowing for finer granularity. |
-      | **Integration**          | Integrated with other Fabric components like SQL analytics endpoint.   | Same integration, with added schema support for better data management. |
-      | **SQL Analytics Endpoint** | Supports querying tables directly.                                    | Supports querying tables within schemas, using namespace notation.     |
-      | **Schema Management**    | Not applicable.                                                        | Allows creation, modification, and management of schemas.              |
-      | **Use Cases**            | Suitable for general data storage and analytics.                       | Ideal for scenarios requiring organized data structures and advanced access control. |
+        <img width="200" alt="image" src="https://github.com/user-attachments/assets/0a807bd9-7e40-4f6d-8d2c-d4a29ed4f4c4">
+        
+        | **Aspect**               | **Lakehouse in Microsoft Fabric**                                      | **Lakehouse with Schema in Microsoft Fabric**                          |
+        |--------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------|
+        | **Purpose**              | Centralized storage for structured and unstructured data.              | Enhanced organization and management of tables using schemas.          |
+        | **Data Organization**    | Tables are stored without additional grouping.                         | Tables are organized into schemas, providing a folder-like structure.  |
+        | **Data Discovery**       | Basic data discovery capabilities.                                     | Improved data discovery through schema grouping.                       |
+        | **Access Control**       | Standard access control at the table level.                            | Enhanced access control at the schema level, allowing for finer granularity. |
+        | **Integration**          | Integrated with other Fabric components like SQL analytics endpoint.   | Same integration, with added schema support for better data management. |
+        | **SQL Analytics Endpoint** | Supports querying tables directly.                                    | Supports querying tables within schemas, using namespace notation.     |
+        | **Schema Management**    | Not applicable.                                                        | Allows creation, modification, and management of schemas.              |
+        | **Use Cases**            | Suitable for general data storage and analytics.                       | Ideal for scenarios requiring organized data structures and advanced access control. |
+  
+        | Lakehouse simple | Lakehouse with schema | 
+        | --- | ---- |
+        | <img width="550" alt="image" src="https://github.com/user-attachments/assets/63e2919d-99cb-4f30-9e78-a875564a2928"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/4e2eb1ed-9f43-4ce2-9521-105fe4c1e6f6"> |
 
-      | Lakehouse simple | Lakehouse with schema | 
-      | --- | ---- |
-      | <img width="550" alt="image" src="https://github.com/user-attachments/assets/63e2919d-99cb-4f30-9e78-a875564a2928"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/4e2eb1ed-9f43-4ce2-9521-105fe4c1e6f6"> |
-
-2. **Access the SQL Analytics Endpoint**:
-   - In the workspace view, select the lakehouse.
-   - In the Lakehouse explorer, go to **SQL analytics endpoint**.
-
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c071cef-06fd-4660-8de8-f65d05579722">
-
-3. **Connect Using SQL Query Editor**:
+2. **Connect Using SQL Query Editor**:
    - Open the SQL query editor from the Microsoft Fabric portal.
+
+      1. Go to the  workspace.
+      2. **Select the Lakehouse/Data Warehouse** you want to query.
+      3. **Click on the "New SQL query" button** in the ribbon at the top of the pageÑ This will open the SQL query editor where you can write and execute your T-SQL queries. The editor supports features like IntelliSense, code completion, and syntax highlighting to help you write queries efficiently.
+
+         | Lakehouse - SQL Analytics Endpoint | Data Warehouse - SQL Analytics Endpoint |
+         | --- | --- |
+         | <img width="550" alt="image" src="https://github.com/user-attachments/assets/51d6cef9-3813-4e4c-9826-c53201103ec4"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/f478e4c4-9ba1-4fdd-b7e9-ed4ca115642d"> | 
+
    - Write a simple query, for example:
      ```sql
      SELECT * FROM your_table_name;
      ```
    - Execute the query to see the results.
-4. **Connect Using External Tools**:
-   - Copy the SQL analytics endpoint connection string (T-SQL connection string) from the Lakehouse explorer.
-   - **SQL Server Management Studio (SSMS)** or **Azure Data Studio**:For this case, open SSMS and click on **Connect**.
-   - Select **Database Engine** and paste the connection string.
-   - Authenticate using Azure Active Directory credentials.
-   - Write and execute your SQL queries.
 
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/f2653ec8-5c5f-4006-8439-8a445ae119ad">
+
+    - You can use `Explain query` to add comments to your query:
+  
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/9ca5bf6d-8605-424c-9192-bf4cfe06a287">
+  
+
+3. **Connect Using External Tools**:
+  -  **Access the SQL Analytics Endpoint**:  Copy the SQL analytics endpoint connection string (T-SQL connection string) from the Lakehouse explorer.
+     - In the workspace view, select the lakehouse.
+     - In the Lakehouse explorer, go to **SQL analytics endpoint**.
+  
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/3c071cef-06fd-4660-8de8-f65d05579722">
+
+   - **SQL Server Management Studio (SSMS)** or **Azure Data Studio**:
+     - For this case, open SSMS and click on **Connect**.
+     - Select **Database Engine** and paste the connection string.
+     - Authenticate using Azure Active Entra credentials.
+     - Write and execute your SQL queries.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c5df46d5-5ff4-42ab-9405-7f986f3e0859">
+
+## Fabric AI Skill 
+
+> Fabric AI Skills let you `build custom chat platforms for asking and answering questions using advanced AI`. By setting up these skills, we can ask questions and get reliable answers based on data. We need to give clear instructions and examples so the AI can work well for our company's specific needs and data.
+
+Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/2_FabricAISkills.md) for a quick guidance.
