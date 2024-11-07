@@ -106,6 +106,11 @@ Last updated: 2024-11-07
   <img src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/54455481-fc87-40c2-b6ce-88895429257c" width="350" height="300" />
 </p>
 
+> `Parquet` is a `columnar storage file format` optimized for use with big data processing frameworks. `In Microsoft Fabric`, Parquet is commonly used for its efficiency in `storing and querying large datasets`. <br/>
+> - `Columnar Storage`: Stores data in columns, which allows for efficient data compression and encoding schemes, reducing storage costs. <br/>
+> - `Efficient Query Performance`: Optimized for read-heavy operations, making it ideal for analytical queries. <br/>
+> - `Compatibility`: Supports various compression `codecs (encodes or decodes a data stream or signal, "coder-decoder" or "compressor-decompressor)` like gzip, snappy, and others, enhancing flexibility in data storage and retrieval. <br/> <br/>
+
 ```mermaid
 graph TD
     subgraph Parquet Format
@@ -120,6 +125,20 @@ graph TD
         A -->|Query Optimization| K[✔️]
     end
 ```
+
+> `Delta format`, often referred to as Delta Lake, is an `open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to big data workloads`. It is designed to address the challenges of managing large-scale data lakes. <br/>
+> - `ACID Transaction`s: Ensures data reliability and consistency, supporting complex data operations without data corruption.
+> - `Schema Enforcement and Evolution`: Allows for schema changes over time, making it easier to manage evolving data structures.
+> - `Time Travel:` Enables querying of historical data, providing the ability to access and revert to previous versions of data.
+> - `Efficient Data Management`: Features like compaction, Z-Order, and V-Order optimize data storage and query performance
+  
+  | **Aspect**               | **Z-Order**                                                                 | **V-Order**                                                                 |
+  |--------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+  | **Purpose**              | Improves query performance by co-locating related information in the same set of files. | Enhances read performance by organizing data in a way that leverages Microsoft Verti-Scan technology. |
+  | **Key Features**         | - Data Co-Location: Organizes data based on one or more columns, storing rows with similar values together. <br/> - Query Efficiency: Reduces the amount of data read during queries, improving performance. <br/> - Compatibility: Works with Delta Lake to enhance data-skipping algorithms. | - Special Sorting: Applies special sorting techniques to Parquet files. <br/> - Row Group Distribution: Optimizes row group distribution for better read performance. <br/> - Dictionary Encoding and Compression: Uses efficient dictionary encoding and compression. <br/> - Performance Boost: Provides fast reads under various compute engines. <br/> - Cost Efficiency: Reduces network, disk, and CPU resources during reads. |
+  | **Timing**               | Applied during read time (or table optimization).                            | Applied during write time.                                                 |
+  | **Use Cases**            | - When you need to improve query performance by reducing the amount of data read. <br/> - For queries that frequently filter on specific columns. | - When you need to enhance read performance and reduce storage costs. <br/> - For scenarios requiring efficient data access across various compute engines. |
+  | **Compatibility**        | Requires specific tools like Delta Lake.                                     | Universally compatible with all Parquet engines. 
 
 ```mermaid
 graph TD
@@ -144,7 +163,7 @@ graph TD
 | **Compression**        | Supports various compression algorithms (e.g., Snappy, Gzip) for efficient storage. | High compression, leveraging Parquet's capabilities. | ✔️                    | ✔️                  |
 | **Row Groups**         | Data organized into row groups with min/max statistics for efficient querying. | Similar row group structure with min/max statistics, enhancing performance. | ✔️                    | ✔️                  |
 | **Immutability**       | Immutable files, ensuring data integrity but limiting updates. | Supports updates and deletes, providing flexibility for data modifications. | ✔️                    |  ❌                    |
-| **ACID Transactions**  | Not supported, making it less suitable for complex data operations. | Supports ACID transactions, ensuring reliable and consistent data operations. | ❌                    | ✔️                  |
+| **ACID (Atomicity, Consistency, Isolation, Durability) Transactions**  | Not supported, making it less suitable for complex data operations. | Supports ACID transactions, ensuring reliable and consistent data operations. | ❌                    | ✔️                  |
 | **Data Versioning**    | Not available, limiting the ability to track changes over time. | Provides data versioning, allowing for auditing and rollback scenarios. | ❌                    | ✔️                  |
 | **Schema Enforcement** | No built-in schema enforcement, requiring external validation. | Enforces schema consistency, maintaining data quality. | ❌                    | ✔️                  |
 | **Efficient Updates**  | Does not support efficient updates, making it less suitable for frequently changing data. | Allows for efficient updates and deletes, ideal for dynamic datasets. | ❌                    | ✔️                  |
