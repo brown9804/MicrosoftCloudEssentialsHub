@@ -200,3 +200,13 @@ graph TD
 | **Benefits** | - Reduces data duplication. <br> - Enhances accessibility by providing a unified view of data. <br> - Simplifies data management by abstracting the data retrieval process. | - Provides real-time data replication. <br> - Ensures data consistency and availability. <br> - Simplifies the process of keeping data synchronized across different systems. |
 | **Key Differences** | - No data movement. <br> - Live access to external data sources. <br> - Ideal for accessing data across multiple locations without duplication. | - Data is physically replicated. <br> - Access to a centralized, up-to-date copy of data. <br> - Suitable for centralized analysis and ensuring data consistency. |
 | **Compatible Products** | - Azure Data Lake Storage (ADLS) Gen2 <br> - Amazon S3 <br> - Google Cloud Storage <br> - Dataverse <br> - On-premises data sources via Fabric on-premises data gateway | - Azure SQL Database <br> - Azure Cosmos DB <br> - Snowflake |
+
+## Data Factory
+
+> Example over ETL (Extract, Transform, Load)
+
+
+
+
+
+
