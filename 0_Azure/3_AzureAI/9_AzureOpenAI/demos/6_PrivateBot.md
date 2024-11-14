@@ -1,4 +1,4 @@
-# Building a Private ChatGPT with Azure OpenAI
+# Building a Private ChatBot with Azure OpenAI
 
 Costa Rica
 
