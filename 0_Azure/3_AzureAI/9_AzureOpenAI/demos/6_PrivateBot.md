@@ -26,6 +26,8 @@ Last updated: 2024-11-14
 > `same vnet` -> `private endpoint` <br/>
 > `different vnet` -> needs `vnet peering`
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/088ede47-564f-496e-8476-ea272c945e66">
+
 ### Create an Azure OpenAI Resource:
 
 - Sign in to the Azure portal.
