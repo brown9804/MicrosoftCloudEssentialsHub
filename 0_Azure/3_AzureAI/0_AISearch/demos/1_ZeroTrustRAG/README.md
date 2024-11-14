@@ -46,19 +46,17 @@ Components:
 6. **VM for Data Science**: A virtual machine used for data science tasks within the AI-services-subnet.
 7. **App Service Plan and Web App**: Part of the app-service-subnet, used to host web applications.
 
-
 > Network Interface & Network Security Groups
 
-![nic-nsg-detailed](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/0_nic-nsg-detailed.png)
+![nic-nsg-detailed](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/0_nic-nsg-detailed.png)
 
 > Zero trust phase0
 
-![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/1_zero-trust-phase0.png)
+![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/1_zero-trust-phase0.png)
 
 > Microsoft Enterprise RAG Solution Accelerator 
 
-![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/2_Microsoft-RAG_Azure-Template.png)
-
+![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/2_Microsoft-RAG_Azure-Template.png)
 
 1. **User Interaction**: The user initiates a request from their device.
 2. **Azure Front Door and WAF**: The request is routed through Azure Front Door and Web Application Firewall (WAF) for initial security checks.
