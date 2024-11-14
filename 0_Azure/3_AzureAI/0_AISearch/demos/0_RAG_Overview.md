@@ -23,6 +23,9 @@ Last updated: 2024-11-14
 - [Tips for better performance in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-performance-tips)
 - [Retrieval Augmented Generation (RAG) in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview)
 - [Service limits in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-limits-quotas-capacity)
+- [Semantic ranking in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/semantic-search-overview)
+- [Create a skillset in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/cognitive-search-defining-skillset)
+- [Skillset concepts in Azure AI Search](https://learn.microsoft.com/en-us/azure/search/cognitive-search-working-with-skillsets)
   
 </details>
 
@@ -141,20 +144,32 @@ graph LR
 
 > Semantic rankers in Azure AI Search are advanced features that improve search relevance by using Microsoft's language understanding models to re-rank search results based on their semantic meaning. `This technology is particularly useful for content-rich and descriptive data, such as knowledge bases and online documentation`.
 
+| **Step**               | **Description**                                                                 |
+|------------------------|---------------------------------------------------------------------------------|
+| Initial Ranking        | When a query is made, the search service first uses traditional ranking algorithms like `BM25` or `Reciprocal Rank Fusion (RRF)` to generate an initial set of results. |
+| Semantic Ranking       | The initial results are then passed to the Semantic Ranker, which uses deep learning models adapted from Microsoft Bing. These models understand the context and semantic meaning of the query to re-rank the results based on their relevance. |
+| Summarization and Scoring | - **Input Collection**: The system collects and summarizes inputs from the top 50 results. It focuses on text fields like titles, keywords, and content, trimming excessively long strings to fit model constraints. <br/> - **Scoring**: The summarized inputs are scored for semantic relevance. Each document receives a score from 0 to 4, with higher scores indicating greater relevance. |
+| Output Generation      | The Semantic Ranker generates outputs that include: <br/> - **Semantic Captions**: Verbatim sentences and phrases that best summarize the content, with highlights over key passages. <br/> - **Semantic Answers**: Direct answers to queries posed as questions, extracted from the document text. |
+| Efficiency and Performance | To ensure quick processing, the system consolidates and reduces inputs, allowing the reranking step to be completed within the expected query latency. |
+
+In summary, Semantic rankers analyze the context and meaning of both the query and the documents, using deep learning models adapted from Microsoft Bing. This process involves:
+- **Summarizing Inputs**: Collecting and summarizing the most relevant parts of documents.
+- **Scoring Results**: Assigning relevance scores based on semantic understanding.
+- **Outputting Enhanced Results**: Providing re-ranked results along with captions and answers.
+
 | **Key Function**                  | **Description**                                                                 |
 |-----------------------------------|---------------------------------------------------------------------------------|
 | **Secondary Ranking**             | After an initial ranking using traditional methods like BM25, semantic rankers apply a secondary ranking to promote the most semantically relevant results. |
 | **Semantic Captions and Highlights** | They extract and highlight key phrases and sentences from documents, making it easier for users to understand why a result is relevant. |
 | **Semantic Answers**              | For queries that resemble questions, semantic rankers can provide direct answers extracted from the content. |
 
-Semantic rankers analyze the context and meaning of both the query and the documents, using deep learning models adapted from Microsoft Bing. This process involves:
-- **Summarizing Inputs**: Collecting and summarizing the most relevant parts of documents.
-- **Scoring Results**: Assigning relevance scores based on semantic understanding.
-- **Outputting Enhanced Results**: Providing re-ranked results along with captions and answers.
+> Steps:
 
-| Normal Search | With Semantic Ranker | 
-| --- | --- | 
-| <img width="550" alt="image" src="https://github.com/user-attachments/assets/0e7ef3e5-ae9a-4891-a2e4-fa4c79127b82"> | <img width="700" alt="image" src="https://github.com/user-attachments/assets/bcf40166-01d9-493d-b109-e5c3bad4d639">|
+- Go to your `index`. It's under Search Management.
+- Choose your index or create a new one.
+- Under `semantic configurations`, create a new one or edit an existing one.
+
+   <img width="953" alt="image" src="https://github.com/user-attachments/assets/e87f7fbf-1282-4a31-b68b-937f9ae90e98">
 
 Normal Search: `historic hotel with good food`  <br/> 
 Search with Semantic Ranker: <br/> 
@@ -171,7 +186,12 @@ Search with Semantic Ranker: <br/>
   "count": true,
   "queryType": "semantic"
 }
-``` 
+```
+
+| Normal Search | With Semantic Ranker | 
+| --- | --- | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/0e7ef3e5-ae9a-4891-a2e4-fa4c79127b82"> | <img width="700" alt="image" src="https://github.com/user-attachments/assets/bcf40166-01d9-493d-b109-e5c3bad4d639">|
+
 ### Scoring profiles (fine tune)
 
 > Scoring profiles in Azure AI Search are `configurations that determine how search results are ranked based on relevance`. They allow you to customize the ranking algorithm to better suit your specific search requirements. BM25, or `Best Matching 25`, is a `ranking function used by search engines to estimate the relevance of documents to a given search query`. It’s an evolution of the TF-IDF (Term Frequency-Inverse Document Frequency) model and is part of the family of probabilistic information retrieval models.
@@ -190,6 +210,13 @@ Search with Semantic Ranker: <br/>
 - **Field Weights**: Assign different weights to fields to influence the ranking of search results.
 - **Boost Functions**: Apply functions to boost scores based on field values, such as boosting newer documents or those with higher ratings.
 - **Custom Scoring**: Combine multiple scoring functions to create a tailored ranking strategy that meets your specific needs.
+
+| **Step**               | **Description**                                                                 |
+|------------------------|---------------------------------------------------------------------------------|
+| Definition and Setup   | - **Scoring Profile Definition**: A scoring profile is defined within the index schema. It includes weighted fields and functions that determine how scores are adjusted. <br/> - **Weighted Fields**: These are specific fields in your documents that you want to give more importance to. For example, you might want matches in the `title` field to be more relevant than those in the `content` field. <br/> - **Functions**: These are used to boost scores based on numeric data, such as dates, ranges, or geographic coordinates. Functions include `distance`, `freshness`, `magnitude`, and `tag`. |
+| Application            | - **Query Execution**: When a search query is executed, the scoring profile is applied to adjust the relevance scores of the search results. <br/> - **Boosting Criteria**: The profile boosts the scores of documents that meet the specified criteria. For example, a document closer to a specified location might receive a higher score if a `distance` function is used. |
+| Scoring Process        | - **Initial Scoring**: The search service first uses traditional ranking algorithms like BM25 to generate an initial set of results. <br/> - **Profile Application**: The scoring profile is then applied to these results. Weighted fields and functions adjust the scores based on the defined criteria. <br/> - **Final Ranking**: The adjusted scores are used to produce the final ranked list of search results. |
+| Efficiency and Performance | - **Optimization**: The system optimizes the application of scoring profiles to ensure quick processing and minimal impact on query latency. <br/> - **Iterative Testing**: Profiles are often tested iteratively to fine-tune the boosting criteria and ensure they improve search relevance effectively. |
 
 > Steps to create a scoring profile:
 - Click on `Add scoring profile`, add your `profile name` and the `fields and weights`. Those numbers are based on your criteria.
@@ -214,9 +241,12 @@ Search with Semantic Ranker: <br/>
 
 ### Vision
 
-### Zero Trust 
-
 ### Schedulers 
 
 ### Cost examples 
 
+### Zero Trust 
+
+> Zero Trust AI architecture in Microsoft Azure is a `security framework designed to protect data, applications, and infrastructure by assuming that threats can come from both inside and outside the network`. This model operates on the principle of `never trust, always verify`, meaning `every access request is thoroughly authenticated and authorized based on all available data points, regardless of its origin. The architecture integrates multiple layers of security, including strong identity verification, device compliance checks, and least privilege access, ensuring that only authorized users and devices can access sensitive resources`. By continuously monitoring and validating each request, Zero Trust AI architecture helps organizations minimize risks and enhance their overall security posture
+
+Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG) for a quick guidance.
