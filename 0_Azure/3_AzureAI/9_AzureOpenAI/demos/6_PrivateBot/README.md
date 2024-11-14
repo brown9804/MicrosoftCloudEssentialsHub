@@ -1,11 +1,11 @@
-# Building a Private ChatGPT with Azure OpenAI
+# Building a Private ChatBot with Azure OpenAI
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-26
+Last updated: 2024-11-14
 
 ------------------------------------------
 
@@ -14,9 +14,28 @@ Last updated: 2024-10-26
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki </b> (Click to expand)</summary>
   
 - [Create a private endpoint for a secure connection to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/service-create-private-endpoint#use-the-azure-portal-to-access-a-private-search-service)
+ 
+</details>
+
+## Content
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Building a Private ChatBot with Azure OpenAI](#building-a-private-chatbot-with-azure-openai)
+    - [Wiki](#wiki)
+    - [How to](#how-to)
+        - [Create an Azure OpenAI Resource:](#create-an-azure-openai-resource)
+        - [Set Up Azure AI Search:](#set-up-azure-ai-search)
+        - [Integrate with Virtual Network VNet](#integrate-with-virtual-network-vnet)
+        - [Configure Private Endpoints for Azure AI Search](#configure-private-endpoints-for-azure-ai-search)
+        - [Configure Private Endpoints for Azure OpenAI](#configure-private-endpoints-for-azure-openai)
+        - [Set Up Network Security Groups NSGs](#set-up-network-security-groups-nsgs)
+        - [Create index/Upload Documents](#create-indexupload-documents)
+        - [Configure and Deploy AI model](#configure-and-deploy-ai-model)
  
 </details>
 
@@ -25,6 +44,8 @@ Last updated: 2024-10-26
 > `same/different vnet` -> `shared access` can be used <br/>
 > `same vnet` -> `private endpoint` <br/>
 > `different vnet` -> needs `vnet peering`
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/088ede47-564f-496e-8476-ea272c945e66">
 
 ### Create an Azure OpenAI Resource:
 
