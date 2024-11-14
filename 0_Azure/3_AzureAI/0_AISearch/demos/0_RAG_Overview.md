@@ -239,6 +239,95 @@ Search with Semantic Ranker: <br/>
 
 ### Skillsets 
 
+> Skillsets in Azure AI Search are collections of AI-powered skills that enhance and transform data during the indexing process. They are designed to enrich documents by extracting meaningful information, which can then be used to improve search relevance and user experience.
+
+| Key Concepts | Details |
+| --- | --- |
+| **Skillset Definition** | A skillset is a reusable object attached to an indexer. It contains one or more skills that perform specific tasks on the data retrieved from an external source. |
+| **Enrichment Tree** |  An enriched document is a temporary, tree-like data structure created during skillset execution. It collects all the changes introduced through skills, representing them as a hierarchy of nodes. |
+| **Indexer Definition** | An indexer pulls data from a data source, processes it through the skillset, and then indexes the enriched data. The indexer configuration includes mappings that set the data path to fields in a search index. |
+
+> How Skillsets Work
+
+1. **Data Extraction**:The indexer extracts raw data from the data source, such as text and images.
+2. **Skill Execution**: Skills in the skillset process the extracted data. Each skill reads from and writes to the enriched document, adding structure and substance to the data. Skills can execute independently or in sequence, depending on their configuration.
+3. **Enrichment**: Skills perform various enrichment tasks, such as OCR for extracting text from images, entity recognition for identifying entities in text, and text translation.
+4. **Output Mapping**: The enriched data is mapped to the fields in the search index. This mapping determines what content is ingested into the index and how it is structured.
+
+#### Example Workflow
+
+1. **Define Skillset**:
+   - Create a skillset with the necessary skills, such as OCR and entity recognition. Example JSON configuration:
+     ```json
+     {
+       "name": "ocr-skillset",
+       "skills": [
+         {
+           "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+           "description": "Extract text from images",
+           "context": "/document",
+           "inputs": [
+             {
+               "name": "image",
+               "source": "/document/normalized_images/*"
+             }
+           ],
+           "outputs": [
+             {
+               "name": "text",
+               "targetName": "ocrText"
+             }
+           ]
+         }
+       ],
+       "cognitiveServices": {
+         "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+         "description": "mycogsvcs",
+         "key": ""
+       }
+     }
+     ```
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/e64f6ee6-f342-4493-8fe9-03daabab2ce8">
+
+2. **Create Indexer**:
+   - Configure an indexer to use the skillset and specify the data source and target index.
+   - Example JSON configuration:
+     ```json
+     {
+       "name": "my-indexer",
+       "dataSourceName": "my-data-source",
+       "targetIndexName": "my-index",
+       "skillsetName": "ocr-skillset",
+       "schedule": {
+         "interval": "PT2H"
+       },
+       "parameters": {
+         "batchSize": 50,
+         "maxFailedItems": 0,
+         "maxFailedItemsPerBatch": 0
+       }
+     }
+     ```
+
+3. **Run Indexer**: Execute the indexer to start processing documents and applying the skills.
+4. **Verify Enrichment**: Check the enriched data in the search index to ensure the skills have been applied correctly.
+
+#### OCR in Azure AI Search
+
+> `Optical Character Recognition (OCR)` is a skill in Azure AI Search that extracts text from images. 
+
+Here's how it works:
+1. **Skill Parameters**:
+   - **detectOrientation**: Detects the orientation of the image.
+   - **defaultLanguageCode**: Specifies the language of the input text.
+2. **Skill Inputs**: `image` The image field from which text is to be extracted.
+3. **Skill Outputs**:
+   - **text**: The plain text extracted from the image.
+   - **layoutText**: Structured text with information about the location of the text in the image.
+4. **Execution**:
+   - The OCR skill uses machine learning models from Azure AI Vision to recognize printed and handwritten text in various image formats (JPEG, PNG, BMP, TIFF).
+   - The extracted text is added to the enrichment tree and can be used for further processing or directly indexed.
+
 ### Vision
 
 ### Schedulers 
