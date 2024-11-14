@@ -28,8 +28,8 @@ Last updated: 2024-11-14
 - [Building a Private ChatBot with Azure OpenAI](#building-a-private-chatbot-with-azure-openai)
     - [Wiki](#wiki)
     - [How to](#how-to)
-        - [Create an Azure OpenAI Resource:](#create-an-azure-openai-resource)
-        - [Set Up Azure AI Search:](#set-up-azure-ai-search)
+        - [Create an Azure OpenAI Resource](#create-an-azure-openai-resource)
+        - [Set Up Azure AI Search](#set-up-azure-ai-search)
         - [Integrate with Virtual Network VNet](#integrate-with-virtual-network-vnet)
         - [Configure Private Endpoints for Azure AI Search](#configure-private-endpoints-for-azure-ai-search)
         - [Configure Private Endpoints for Azure OpenAI](#configure-private-endpoints-for-azure-openai)
@@ -47,7 +47,7 @@ Last updated: 2024-11-14
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/088ede47-564f-496e-8476-ea272c945e66">
 
-### Create an Azure OpenAI Resource:
+### Create an Azure OpenAI Resource
 
 - Sign in to the Azure portal.
 - Navigate to `Create a resource` and search for `Azure OpenAI`.
@@ -62,7 +62,7 @@ Last updated: 2024-11-14
     
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/d68922eb-b54d-4257-82aa-2d8e45128e32">
 
-### Set Up Azure AI Search:
+### Set Up Azure AI Search
 
  - Create Azure AI Search Resource: In the Azure portal, create a new Azure AI Search resource.
  - Configure Search Service: Provide the necessary details
