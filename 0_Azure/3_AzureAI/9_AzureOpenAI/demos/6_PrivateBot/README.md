@@ -11,7 +11,7 @@ Last updated: 2024-11-14
 
 > This demo is about how to setup secure document searches within a designated network, ensuring that your data remains protected while leveraging the capabilities of Azure OpenAI. <br/>
 
-> You could use the `RAG pattern` to improve the search experience in your web application. For instance, when a `user queries the search system`, it can retrieve `relevant documents from Azure Storage Blob` Containers and use the `retrieved information to generate a more accurate and detailed search result`.
+> You could use the `RAG pattern` to improve the search experience in your web application. For instance, when a `user queries the search system`, it can retrieve `relevant documents from Azure Storage Blob` Containers and use the `retrieved information to generate a more accurate and detailed search result`. [Click here for more information about RAG and AI Search](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG.md).
 
 ## Wiki 
 
@@ -40,51 +40,6 @@ Last updated: 2024-11-14
         - [Configure and Deploy AI model](#configure-and-deploy-ai-model)
  
 </details>
-
-## Overview 
-
-
-| **Step**       | **Description**                                                                                                                                                                                                 |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Retrieval**  | The system retrieves relevant documents or pieces of information from a knowledge base or external data source based on the input query. This step ensures that the model has access to up-to-date and specific information that can enhance the response. |
-| **Augmentation** | The retrieved information is then used to augment the input query. This augmented input provides additional context and details that the generative model can use to produce a more informed response.                                                   |
-| **Generation** | A generative model (such as GPT-4) processes the augmented input to generate a coherent and contextually relevant response. The output is a combination of the model's language generation capabilities and the retrieved factual information.               |
-
-> Applications of RAG Pattern:
-- **Question Answering**: Providing accurate answers by retrieving relevant documents and generating responses based on them.
-- **Document Summarization**: Summarizing documents by retrieving key sections and generating concise summaries.
-- **Conversational AI**: Enhancing chatbot responses with up-to-date information from external sources.
-
-> Implementing RAG Pattern with Azure AI:
-
-```mermaid
-graph LR
-    A[Set Up a Knowledge Base] --> B[Configure a Retrieval System] --> C[Integrate with a Generative Model]
-```
-
-1. **Set Up a Knowledge Base**: Store your documents in Azure Storage Blob Containers or another accessible data source.
-2. **Configure a Retrieval System**: Use Azure AI Search to index and retrieve relevant documents based on user queries.
-3. **Integrate with a Generative Model**: Use a generative model like GPT-4 to process the retrieved documents and generate responses.
-
-
-
-
-
-> Traditional methods and the `Retrieval-Augmented Generation (RAG)` pattern:
-
-| **Aspect**                | **Traditional Methods**                                                                 | **RAG Pattern**                                                                                   |
-|---------------------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **Model Type**            | Static, pre-trained models that rely on historical data. These models do not update dynamically and can become outdated. | Dynamic integration of retrieval and generative models, allowing for real-time data updates, keeping responses current and relevant. |
-| **Data Freshness**        | Relies on pre-trained data, which may not reflect the latest information.                | Retrieves the most recent data from external sources, ensuring up-to-date information.            |
-| **Context Understanding** | Often lacks the ability to fully understand the context of a query, leading to less accurate results. | Enhances context understanding by incorporating real-time information retrieval, providing richer context for responses. |
-| **Retrieval Techniques**  | Uses keyword matching techniques like BM25 and TF-IDF, which may not capture the semantic meaning of queries. | Employs advanced semantic search techniques that better understand the intent behind queries, leading to more relevant results. |
-| **Accuracy**              | May struggle with understanding context and semantic meaning, resulting in less accurate responses. | Improves accuracy by grounding responses in verified external knowledge, reducing the likelihood of errors. |
-| **Risk of Hallucinations**| Higher risk of generating incorrect information as responses are based solely on training data. | Reduces this risk by grounding responses in real-time, verified information from external sources. |
-| **Flexibility**           | Limited to specific data types and formats, which can restrict their applicability.      | Capable of handling various data types, including text, images, and videos, making it more versatile. |
-| **Adaptability**          | Requires extensive retraining to incorporate new information, which can be time-consuming and costly. | More adaptable as it integrates real-time data without the need for frequent retraining.           |
-| **Cost Efficiency**       | Can be resource-intensive due to the need for frequent retraining and large labeled datasets. | More cost-effective as it minimizes the need for extensive retraining and leverages existing data sources. |
-| **Applications**          | Suitable for basic search and static content generation.                                | Ideal for complex applications such as healthcare, customer support, and content creation, where up-to-date and contextually relevant information is crucial. |
-
 
 ## How to 
 
@@ -319,31 +274,17 @@ graph TD
             3. **Configure Data Source**: Follow the steps to configure the data source. This may involve selecting the type of data source and providing the necessary connection details.<br/>
             4. **Review and Finish**: Review the configuration and finish the setup to add the data source.<br/>
             5. **Index Data**: The data from the configured data source will be indexed and available for search and retrieval.<br/>
-
+            
                <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecb19e4e-c79e-4ec6-9a1a-cc98cc95ddb2">
 
-
-       - **Completions**: Test the model with completion tasks.<br/>
-
-
-
-
-
-    1. **Verify**: Ensure that the model is responding as expected.<br/>
-
-
-  
-
-
-- **Integrate with Your Application**<br/>
-      1. **Get Endpoint and Key**: From the `Deployments` section, get the endpoint and API key for the deployed model.<br/>
-      2. **Application Code**: Use the endpoint and API key in your application code to send requests to the model.<br/>
-      3. **Handle Responses**: Process the responses from the model within your application.<br/>
-
-- **Monitor and Manage**<br/>
-      1. **Quota**: Check the `Quota` section under `Shared resources` to monitor your usage.<br/>
-      2. **Content Filters**: Use `Content filters` to manage the content filtering settings for your deployment.<br/>
-      3. **Data Files**: Manage your data files in the `Data files` section.<br/>
-      4. **Vector Stores**: Use `Vector stores` to manage vector representations of your data.<br/>
-
-
+       - **Completions**: Test the model with completion tasks.
+       - **Verify**: Ensure that the model is responding as expected.<br/>
+    2. **Integrate with Your Application**<br/>
+          1. **Get Endpoint and Key**: From the `Deployments` section, get the endpoint and API key for the deployed model.<br/>
+          2. **Application Code**: Use the endpoint and API key in your application code to send requests to the model.<br/>
+          3. **Handle Responses**: Process the responses from the model within your application.<br/>
+    3. **Monitor and Manage**<br/>
+          1. **Quota**: Check the `Quota` section under `Shared resources` to monitor your usage.<br/>
+          2. **Content Filters**: Use `Content filters` to manage the content filtering settings for your deployment.<br/>
+          3. **Data Files**: Manage your data files in the `Data files` section.<br/>
+          4. **Vector Stores**: Use `Vector stores` to manage vector representations of your data.<br/>
