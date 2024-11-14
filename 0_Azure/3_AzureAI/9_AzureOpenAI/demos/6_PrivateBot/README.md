@@ -9,7 +9,9 @@ Last updated: 2024-11-14
 
 ------------------------------------------
 
-> This demo is about how to setup secure document searches within a designated network, ensuring that your data remains protected while leveraging the capabilities of Azure OpenAI.
+> This demo is about how to setup secure document searches within a designated network, ensuring that your data remains protected while leveraging the capabilities of Azure OpenAI. <br/>
+
+> You could use the `RAG pattern` to improve the search experience in your web application. For instance, when a `user queries the search system`, it can retrieve `relevant documents from Azure Storage Blob` Containers and use the `retrieved information to generate a more accurate and detailed search result`.
 
 ## Wiki 
 
@@ -41,7 +43,34 @@ Last updated: 2024-11-14
 
 ## Overview 
 
-> Traditional methods and the RAG pattern:
+
+| **Step**       | **Description**                                                                                                                                                                                                 |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Retrieval**  | The system retrieves relevant documents or pieces of information from a knowledge base or external data source based on the input query. This step ensures that the model has access to up-to-date and specific information that can enhance the response. |
+| **Augmentation** | The retrieved information is then used to augment the input query. This augmented input provides additional context and details that the generative model can use to produce a more informed response.                                                   |
+| **Generation** | A generative model (such as GPT-4) processes the augmented input to generate a coherent and contextually relevant response. The output is a combination of the model's language generation capabilities and the retrieved factual information.               |
+
+> Applications of RAG Pattern:
+- **Question Answering**: Providing accurate answers by retrieving relevant documents and generating responses based on them.
+- **Document Summarization**: Summarizing documents by retrieving key sections and generating concise summaries.
+- **Conversational AI**: Enhancing chatbot responses with up-to-date information from external sources.
+
+> Implementing RAG Pattern with Azure AI:
+
+```mermaid
+graph LR
+    A[Set Up a Knowledge Base] --> B[Configure a Retrieval System] --> C[Integrate with a Generative Model]
+```
+
+1. **Set Up a Knowledge Base**: Store your documents in Azure Storage Blob Containers or another accessible data source.
+2. **Configure a Retrieval System**: Use Azure AI Search to index and retrieve relevant documents based on user queries.
+3. **Integrate with a Generative Model**: Use a generative model like GPT-4 to process the retrieved documents and generate responses.
+
+
+
+
+
+> Traditional methods and the `Retrieval-Augmented Generation (RAG)` pattern:
 
 | **Aspect**                | **Traditional Methods**                                                                 | **RAG Pattern**                                                                                   |
 |---------------------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
