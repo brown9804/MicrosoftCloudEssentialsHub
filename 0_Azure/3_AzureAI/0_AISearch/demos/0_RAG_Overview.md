@@ -72,7 +72,7 @@ graph LR
 - Indexer: Automates data ingestion from Azure Storage Blob Containers.
 - Semantic Ranker: Improve search relevance.
 - Scoring profiles: To boost the AI Search scores and results using weighted fields.
-- Skillsets: Enhance indexing with AI capabilities like OCR for scanned documents and image analysis1.
+- Skillsets: Enhance indexing with AI capabilities like OCR for scanned documents and image analysis.
 - Vision: For processing images within documents
 - Zero Trust Architecture: Security model that assumes no part of the network is inherently secure. Click [here to see more information about Zero Trust Arch](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG)
 
