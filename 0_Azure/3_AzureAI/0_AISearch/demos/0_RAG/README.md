@@ -158,15 +158,12 @@ Components:
 
 > Network Interface & Network Security Groups
 
-![nic-nsg-detailed](https://github.com/user-attachments/assets/c3a1cb48-ecc1-42e3-8a17-b975b97a6426)
+![nic-nsg-detailed](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/0_nic-nsg-detailed.png)
 
 > Zero trust phase0
 
-![zero-trust-phase0](https://github.com/user-attachments/assets/a149c57c-9b04-4510-96cd-56e1f5203dc5)
+![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/1_zero-trust-phase0.png)
 
 > Microsoft Enterprise RAG Solution Accelerator 
 
-![Microsoft-RAG_Azure-Template](https://github.com/user-attachments/assets/0242c054-0201-4be1-9605-93931320d1b4)
-
-
-
+![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/0_RAG/docs/2_Microsoft-RAG_Azure-Template.png)
