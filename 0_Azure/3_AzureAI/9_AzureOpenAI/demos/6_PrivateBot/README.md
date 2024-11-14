@@ -1,11 +1,11 @@
-# Building a Private ChatGPT with Azure OpenAI
+# Building a Private ChatBot with Azure OpenAI
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-26
+Last updated: 2024-11-14
 
 ------------------------------------------
 
@@ -25,6 +25,8 @@ Last updated: 2024-10-26
 > `same/different vnet` -> `shared access` can be used <br/>
 > `same vnet` -> `private endpoint` <br/>
 > `different vnet` -> needs `vnet peering`
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/088ede47-564f-496e-8476-ea272c945e66">
 
 ### Create an Azure OpenAI Resource:
 
