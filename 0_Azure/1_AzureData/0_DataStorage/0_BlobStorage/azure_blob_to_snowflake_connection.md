@@ -2,19 +2,19 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-07-31
+Last updated: 2024-11-15
 
----------------
+----------
 
-## Wiki 
-- 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
 
-Each method has its own strengths and use cases, so the best alternative depends on your specific requirements for security, cost, and ease of use:
+> Each method has its own strengths and use cases, so the best alternative depends on your specific requirements for security, cost, and ease of use:
 
 | Connection Method                                | Description                                                                 | Security Level       | Cost Estimate (Monthly) | Can Be Used Instead Of                                                      | Why Can Be Used Instead Of                                                  | Can Be Integrated With                                                      | Why Can Be Integrated With                                                  |
 |--------------------------------------------------|-----------------------------------------------------------------------------|----------------------|-------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
