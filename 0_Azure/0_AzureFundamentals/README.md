@@ -10,6 +10,11 @@ Costa Rica
 
 ---------------
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
 ## Wiki 
 
 - [Azure Enterprise Development: 1 Governance and Infrastructure Deployments](https://www.linkedin.com/learning/azure-enterprise-development-1-governance-and-infrastructure-deployments/welcome?u=2095204)
@@ -51,3 +56,5 @@ Costa Rica
 
 ### 3. MFA 
 ![Alt text](https://github.com/brown9804/MSCloudEssentials_LPath/blob/main/0_Azure/img/AzureFundamentals/%5Bimg%5D_azure_security_features-identity-MFA.png)
+
+Last updated: 2024-11-15
