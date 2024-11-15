@@ -61,11 +61,32 @@ Managing cloud connections in Power BI, below you can find differences between p
 | Organizational    | Limits the visibility of a data source to a trusted group of people. It is isolated from all Public data sources, but is visible to other Organizational data sources. A common example is a Microsoft Word document on an intranet SharePoint site with permissions enabled for a trusted group. |
 | Public | Gives everyone visibility to the data. Only files, internet data sources, or workbook data can be marked Public. Examples include data from a Wikipedia page, or a local file containing data copied from a public web page.| 
 
+Steps: 
+- Go to [Power Bi](https://app.powerbi.com/)
+- Click on ⚙️, and go to `Manage connections and gateways`
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/248c9c85-2a86-426e-b5dd-d30ec715c52c">
+
+- Click on `+ New`, and choose the connection type, and fill required details.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/48d66efa-91e2-4f07-8e27-26bb42f1d55b">
+
 ### Managing Connections
 
-- `Switching to Shareable Connections`: If you want to switch from a personal cloud connection to a shareable one, you can do so in the Semantic model settings. This allows you to leverage the benefits of shareable connections, such as easier management and sharing capabilities.
-- `Granular Access Control`: Power BI allows for granular access control at the tenant, workspace, and semantic model levels. This means you can enforce access policies to ensure that only authorized users can create or use specific connections.
+> - `Switching to Shareable Connections`: If you want to switch from a personal cloud connection to a shareable one, you can do so in the Semantic model settings. This allows you to leverage the benefits of shareable connections, such as easier management and sharing capabilities. <br/> 
+> - `Granular Access Control`: Power BI allows for granular access control at the tenant, workspace, and semantic model levels. This means you can enforce access policies to ensure that only authorized users can create or use specific connections.
 
+- To assign the connection a semantic model, click on `...` over your semantic model, and go to `Settings`
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/69ab9537-9fed-4422-892e-f990dfaa0d57">
+
+- Under `Semantic models`, search for `Gateway and cloud connections`. Assign you connection to the data source in the semantic model.
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/a38641f4-4139-429a-9f8e-81de965ddc0d">
+
+- Another way go to that view og assign the connection, you can click on ⚙️, and go to `Power Bi Settings`. Search for your semantic models, and the `Gateway and cloud connections`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/549fd9e3-eed8-41cc-ad20-65887ae99838">
 
 ## Admin Monitoring Workspace
 
@@ -108,7 +129,7 @@ Benefits of sharing the semantic model:
 > [!IMPORTANT]
 > Other ways to get insights: <br/>
 > - `Monitoring Usage`: You can monitor and manage cloud connections through the Power BI service. By navigating to the Manage connections and gateways section, you can see which users have access to and are using specific cloud connections. <br/>
-> <img width="550" alt="image" src="https://github.com/user-attachments/assets/d64e3acd-aef9-47ba-81c6-c0e92ae5518b">
+> <img width="550" alt="image" src="https://github.com/user-attachments/assets/d64e3acd-aef9-47ba-81c6-c0e92ae5518b"> <br/>
 > - `Premium Capacity Metrics`: For a more detailed analysis, you can use the Premium Capacity Metrics app, which provides insights into the usage and performance of your Power BI Premium capacities.
 
 ## Identify Access per report
