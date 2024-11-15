@@ -1,14 +1,20 @@
- 
 # AI Video Indexer
-
-----------
-
+ 
 Costa Rica
+
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
+Last updated: 2024-11-15
+
 ----------
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
 
 > Azure AI Video Indexer is a powerful tool that uses AI to extract actionable insights from stored videos, and no machine learning expertise is necessary. It provides the integration of multiple machine learning models into one pipeline. It's easy to evaluate and integrate, and available via web portal, web widget, and REST API. It can identify and extract speech, on-screen text, detect objects, identify brands, detect and recognize faces, extract topics discussed, and create closed captions or subtitles from the audio track. [1](https://vi.microsoft.com/en-us/learn), [2](https://azure.microsoft.com/en-us/products/ai-video-indexer/), [3](https://learn.microsoft.com/en-us/azure/azure-video-indexer/faq), [4](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/empower-azure-video-indexer-insights-with-your-own-models/ba-p/4023243)
 
