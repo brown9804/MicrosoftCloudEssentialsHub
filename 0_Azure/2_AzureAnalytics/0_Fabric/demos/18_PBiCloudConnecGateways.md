@@ -12,7 +12,7 @@ Last updated: 2024-11-15
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Create and share cloud data sources in the Power BI service](https://learn.microsoft.com/en-us/power-bi/connect-data/service-create-share-cloud-data-sources)
 - [Connect to cloud data sources in the Power BI service](https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-cloud-data-sources)
@@ -27,6 +27,10 @@ Last updated: 2024-11-15
 - [Manage security roles of an on-premises data gateway](https://learn.microsoft.com/en-us/data-integration/gateway/manage-security-roles)
   
 </details>
+
+## Content 
+
+
 
 ## How to Manage Cloud connections
 
@@ -146,9 +150,9 @@ Benefits of sharing the semantic model:
 
 ## Restrict Access from new gateway connections
 
-Facilitate secure data transfer between Power BI or Power Apps and non-cloud data sources like on-premises SQL Server databases or SharePoint sites. 
+> Facilitate secure data transfer between Power BI or Power Apps and non-cloud data sources like on-premises SQL Server databases or SharePoint sites. 
 
-> Gateway Roles
+Gateway Roles:
 
 | Role                         | Permissions                                                                                          |
 |------------------------------|------------------------------------------------------------------------------------------------------|
@@ -156,7 +160,7 @@ Facilitate secure data transfer between Power BI or Power Apps and non-cloud dat
 | `Connection Creator`         | - Allowed to create connections/data sources on the gateway.<br/>- Can test the status of the gateway cluster and its members.<br/>- Cannot manage or update the gateway or add/remove users. |
 | `Connection Creator with Sharing` | - Allowed to create connections/data sources on the gateway and test the gateway status.<br/>- Can share the gateway with other users as a connection creator but cannot remove users. |
 
-> Connection Roles
+Connection Roles:
 
 | Role                         | Permissions                                                                                          |
 |------------------------------|------------------------------------------------------------------------------------------------------|
@@ -165,19 +169,19 @@ Facilitate secure data transfer between Power BI or Power Apps and non-cloud dat
 | `User with Sharing`          | - Can use the connection in Power BI reports and dataflows.<br/>- Can share the data source with others with User permission. |
 
 
-> Steps to Manage Gateway and Connection Roles
+Steps to Manage Gateway and Connection Roles:
 
-- **Manage On-Premises Data Gateways**:
-   - Navigate to the Power Platform admin center.
-   - Go to the **On-premises data gateways** tab.
-   - Select a gateway cluster.
-   - In the top ribbon, select **Manage users**.
-   - Assign users to the gateway based on their roles.
-- **Manage Data Sources**:
-   - Navigate to the Power Platform admin center.
-   - Select a connection (data source).
-   - In the top ribbon, select **Manage users**.
-   - Assign users to the connection based on their roles.
+- Go to [Power Bi/Fabric admin center](https://app.powerbi.com/)
+- Click on ⚙️, and go to `Manage Connections and Gateways`
+- Choose `Connections`, `On premises data gateway` or `Virtual Network data gateways`:
+   
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c102a22-9040-4ba8-b17a-720c5dd88dd3">
+
+- Click on `...`, and select `Manage users`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9a548e80-f53e-42ad-8999-4ca54428e3da">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b445d8d0-0bf6-447a-9d2a-05067b028e17">
 
 ### On-premises Data Gateways
 
@@ -190,15 +194,17 @@ Facilitate secure data transfer between Power BI or Power Apps and non-cloud dat
 | ``Managing Data Sources``        | - ``Data Source Configuration``: Configure data sources on the gateway and manage user access to these sources. Ensure that only authorized users can create and manage connections.                                                                                                                                                                               |
 | ``Monitoring and Auditing``      | - ``Usage Monitoring``: Regularly monitor gateway usage to detect any unauthorized access or unusual activity.<br/>- ``Audit Logs``: Maintain audit logs to track changes and access to the gateways and data sources.                                                                                                                                               |
 
-### Steps to Restrict Access for On-Premises Data Gateways
+Steps to Restrict Access for On-Premises Data Gateways:
 
-1. **Access the Power Platform Admin Center**: Go to the Power Platform Admin Center.
+1. **Access the Power Platform Admin Center**: Go to the [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/ext/DataGateways).
 2. **Navigate to Data Gateways**:
    - Click on **Data** (preview) in the left-hand menu.
    - Select **On-premises data gateway**.
 3. **Enable Tenant Administration for Gateways**: Turn on **Tenant administration for gateways**.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/d39c8a49-ef78-476f-ac9d-e53ae42a7247">
+
 4. **Restrict Users from Installing Gateways**: Toggle on **Restrict users in your organization from installing gateways**.
 5. **Allow Specific Users to Override the Restriction** (if needed): Add the users who are allowed to install gateways by specifying their details.
 
-
-
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/92ccd161-22b5-47bb-9ab5-09eecb01396f">
