@@ -31,9 +31,8 @@ Last updated: 2024-11-14
 ![image](https://github.com/user-attachments/assets/da80a334-e6a0-4d53-aa9f-9b81029980fe)
 
 
-## Workflow in Zero Trust Architecture
+## Components
 
-Components:
 1. **Azure Services Subscription**: The overarching subscription under which all services are organized.
 2. **Resource Group (RG) for RAG**: A logical container that holds related resources, ensuring they are managed and secured together.
 3. **Storage Account**: Used to store data securely.
@@ -47,17 +46,17 @@ Components:
 6. **VM for Data Science**: A virtual machine used for data science tasks within the AI-services-subnet.
 7. **App Service Plan and Web App**: Part of the app-service-subnet, used to host web applications.
 
-> Network Interface & Network Security Groups
+## Workflow in Zero Trust Architecture
+
+> Network Interface & Network Security Groups: 
 
 ![nic-nsg-detailed](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/0_nic-nsg-detailed.png)
 
-> Zero trust phase0
+> Zero trust: Initial Phase
 
 ![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/1_zero-trust-phase0.png)
 
-> Microsoft Enterprise RAG Solution Accelerator 
-
-![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/2_Microsoft-RAG_Azure-Template.png)
+> Microsoft Enterprise RAG Solution Accelerator: 
 
 1. **User Interaction**: The user initiates a request from their device.
 2. **Azure Front Door and WAF**: The request is routed through Azure Front Door and Web Application Firewall (WAF) for initial security checks.
@@ -69,3 +68,6 @@ Components:
 8. **Document Retrieval**: The orchestrator queries Azure AI Search to retrieve relevant documents.
 9. **Response Generation**: The orchestrator uses Azure OpenAI to generate a response based on the retrieved documents.
 10. **Response Delivery**: The response is sent back to the user through the same secure path.
+
+![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/2_Microsoft-RAG_Azure-Template.png)
+
