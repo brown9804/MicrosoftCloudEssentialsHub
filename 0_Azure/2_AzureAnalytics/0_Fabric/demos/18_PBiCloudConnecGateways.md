@@ -12,7 +12,7 @@ Last updated: 2024-11-15
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Create and share cloud data sources in the Power BI service](https://learn.microsoft.com/en-us/power-bi/connect-data/service-create-share-cloud-data-sources)
 - [Connect to cloud data sources in the Power BI service](https://learn.microsoft.com/en-us/power-bi/connect-data/service-connect-cloud-data-sources)
@@ -24,8 +24,30 @@ Last updated: 2024-11-15
 - [Set privacy levels (Power Query) details](https://support.microsoft.com/en-us/office/set-privacy-levels-power-query-cc3ede4d-359e-4b28-bc72-9bee7900b540?ui=en-us&rs=en-us&ad=us)
 - [What is the admin monitoring workspace? (Preview)](https://learn.microsoft.com/en-us/fabric/admin/monitoring-workspace)
 - [Feature usage and adoption report (preview)](https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption)
+- [Manage security roles of an on-premises data gateway](https://learn.microsoft.com/en-us/data-integration/gateway/manage-security-roles)
+- [Virtual network (virtual network) data gateway FAQs](https://learn.microsoft.com/en-us/data-integration/vnet/data-gateway-faqs)
 
 </details>
+
+## Content 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+  
+- [Power Bi: Cloud Connections & Gateways](#power-bi-cloud-connections--gateways)
+    - [Wiki](#wiki)
+    - [Content](#content)
+    - [How to Manage Cloud connections](#how-to-manage-cloud-connections)
+        - [Creating Shareable Connections](#creating-shareable-connections)
+        - [Managing Connections](#managing-connections)
+    - [Admin Monitoring Workspace](#admin-monitoring-workspace)
+    - [Identify Access per report](#identify-access-per-report)
+    - [Restrict Access from new gateway connections](#restrict-access-from-new-gateway-connections)
+        - [On-premises Data Gateways](#on-premises-data-gateways)
+        - [Virtual Network VNet Data Gateways](#virtual-network-vnet-data-gateways)
+
+</details>
+
 
 ## How to Manage Cloud connections
 
@@ -142,3 +164,79 @@ Benefits of sharing the semantic model:
 - You will see something like this:
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/11633c88-d19d-4e33-bf33-24c985afbb78">
+
+## Restrict Access from new gateway connections
+
+> Facilitate secure data transfer between Power BI or Power Apps and non-cloud data sources like on-premises SQL Server databases or SharePoint sites. 
+
+Gateway Roles:
+
+| Role                         | Permissions                                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------|
+| `Admin`                      | - Can manage and update the gateway.<br/>- Allowed to create connections (data sources) on the gateway.<br/>- Can manage (add/delete) users with admin, connection creator, and connection creator with sharing roles.<br/>- Manages access to all connections created on the gateway. |
+| `Connection Creator`         | - Allowed to create connections/data sources on the gateway.<br/>- Can test the status of the gateway cluster and its members.<br/>- Cannot manage or update the gateway or add/remove users. |
+| `Connection Creator with Sharing` | - Allowed to create connections/data sources on the gateway and test the gateway status.<br/>- Can share the gateway with other users as a connection creator but cannot remove users. |
+
+Connection Roles:
+
+| Role                         | Permissions                                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------|
+| `Owner`                      | - Can update credentials and delete the connection.<br/>- Can assign others to the connection with Owner, User, or User with sharing permissions. |
+| `User`                       | - Can use the connection in Power BI reports and dataflows.<br/>- Cannot see or update credentials. |
+| `User with Sharing`          | - Can use the connection in Power BI reports and dataflows.<br/>- Can share the data source with others with User permission. |
+
+
+Steps to Manage Gateway and Connection Roles:
+
+- Go to [Power Bi/Fabric admin center](https://app.powerbi.com/)
+- Click on ⚙️, and go to `Manage Connections and Gateways`
+- Choose `Connections`, `On premises data gateway` or `Virtual Network data gateways`:
+   
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c102a22-9040-4ba8-b17a-720c5dd88dd3">
+
+- Click on `...`, and select `Manage users`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9a548e80-f53e-42ad-8999-4ca54428e3da">
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/b445d8d0-0bf6-447a-9d2a-05067b028e17">
+
+### On-premises Data Gateways
+
+> On-premises data gateways facilitate secure data transfer between on-premises data sources and Power BI services. They are essential for scenarios `where data cannot be moved to the cloud due to compliance or security reasons`.
+
+| **Category**                     | **Details**                                                                                                                                                                                                                                                                                                                                                       |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``Restricting Gateway Installations`` | - ``Tenant-Level Control``: Restrict who can install on-premises data gateways at the tenant level through the Power Platform admin center. This prevents unauthorized users from creating new gateway connections.<br/>- ``Role Management``: Assign specific roles to users, such as Admin, Connection Creator, and Connection Creator with Sharing, to control who can create and manage connections on the gateway. |
+| ``Security Measures``            | - ``Network Security Groups (NSGs)``: Configure NSGs to allow outbound traffic to necessary endpoints, such as Microsoft Entra ID for authentication and Certificate Authorities for HTTPS connections.<br/>- ``Private Links``: Use private links to secure connectivity from your network to Power BI, ensuring that data traffic does not traverse the public internet.                         |
+| ``Managing Data Sources``        | - ``Data Source Configuration``: Configure data sources on the gateway and manage user access to these sources. Ensure that only authorized users can create and manage connections.                                                                                                                                                                               |
+| ``Monitoring and Auditing``      | - ``Usage Monitoring``: Regularly monitor gateway usage to detect any unauthorized access or unusual activity.<br/>- ``Audit Logs``: Maintain audit logs to track changes and access to the gateways and data sources.                                                                                                                                               |
+
+Steps to Restrict Access for On-Premises Data Gateways:
+
+> - **Tenant-Level Control**: You can `restrict who can install on-premises data gateways at the tenant level through the Power Platform admin center`. This prevents unauthorized users from creating new gateway connections. <br/>
+> - **Role Management**: Assign specific roles to users, such as Admin, Connection Creator, and Connection Creator with Sharing, `to control who can create and manage connections on the gateway`.
+
+
+1. **Access the Power Platform Admin Center**: Go to the [Power Platform Admin Center](https://admin.powerplatform.microsoft.com/ext/DataGateways).
+2. **Navigate to Data Gateways**:
+   - Click on **Data** (preview) in the left-hand menu.
+   - Select **On-premises data gateway**.
+3. **Enable Tenant Administration for Gateways**: Turn on **Tenant administration for gateways**.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/d39c8a49-ef78-476f-ac9d-e53ae42a7247">
+
+4. **Restrict Users from Installing Gateways**: Toggle on **Restrict users in your organization from installing gateways**.
+5. **Allow Specific Users to Override the Restriction** (if needed): Add the users who are allowed to install gateways by specifying their details.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/92ccd161-22b5-47bb-9ab5-09eecb01396f">
+
+###  Virtual Network (VNet) Data Gateways
+
+> Allow Power BI to connect to data services within an Azure virtual network without needing an on-premises data gateway. This setup is particularly useful for maintaining security and compliance by keeping data traffic within the Azure backbone.
+
+| **Section**                   | **Details**                                                                                                                                                                                                                                                                                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Licensing Requirements:**| VNet data gateways require a Power BI Premium capacity license (A4 SKU or higher or any P SKU).                                                                                                                                               |
+| **Managing VNet Data Gateways:** | - **Admin Management:** You can manage VNet data gateways through the Power Platform admin center or the Manage Gateways page in Power BI.<br/>- **Data Source Management:** Create and share data sources within the VNet data gateway as you would with standard data gateways. |
+| **Security and Connectivity:** | - **Private Endpoints:** Use private endpoints to connect securely to your data sources within Azure. This ensures that all traffic remains on the Azure backbone and is not exposed to the public internet.<br/>- **Conditional Access Policies:** VNet data gateways support conditional access policies, allowing you to enforce security measures based on user identity and location.<br/>- **Microsoft Entra ID SSO:** Enable single sign-on (SSO) for DirectQuery to ensure that queries execute under the user's Microsoft Entra ID identity. |
+| **Restrictions and Limitations:** | - **Cross-Tenant Scenarios:** VNet data gateways must be created in the same tenant as the Power BI tenant.<br/>- **Region Constraints:** The virtual network data gateway is physically located in the same region as your Azure virtual network. |
