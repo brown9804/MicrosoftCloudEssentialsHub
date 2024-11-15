@@ -9,6 +9,11 @@ Last updated: 2024-08-01
 
 ----------
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
+
 ## Content 
 
 - [Data Storage](./0_DataStorage/)
