@@ -56,3 +56,5 @@ Costa Rica
 
 ### 3. MFA 
 ![Alt text](https://github.com/brown9804/MSCloudEssentials_LPath/blob/main/0_Azure/img/AzureFundamentals/%5Bimg%5D_azure_security_features-identity-MFA.png)
+
+Last updated: 2024-11-15
