@@ -32,6 +32,7 @@ Last updated: 2024-11-15
     - [Wiki](#wiki)
     - [Azure AI Studio](./AIStudio/)
     - [Azure Machine Learning](./AMachineLearning/)
+    - [AI Use Cases examples](./14_AIUseCases/)
     - [AI Search](./0_AISearch/README.md)
     - [AI Video Indexer](./1_AIVideoIndexer/README.md)
     - [AI Content Safety](./2_AIContentSafety/README.md)
