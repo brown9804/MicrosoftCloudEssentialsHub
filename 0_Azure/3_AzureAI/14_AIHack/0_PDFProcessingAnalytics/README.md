@@ -62,3 +62,44 @@ Last updated: 2024-11-18
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef5d701-5df7-4e18-a0d3-60a93d5076c9">
 
+### Step 2: Set Up Azure Blob Storage for PDF Ingestion
+
+> An `Azure Storage Account` provides a `unique namespace in Azure for your data, allowing you to store and manage various types of data such as blobs, files, queues, and tables`. It serves as the foundation for all Azure Storage services, ensuring high availability, scalability, and security for your data. <br/> <br/>
+> A `Blob Container` is a `logical grouping of blobs within an Azure Storage Account, similar to a directory in a file system`. Containers help organize and manage blobs, which can be any type of unstructured data like text or binary data. Each container can store an unlimited number of blobs, and you must create a container before uploading any blobs.
+
+1. **Create a Storage Account**:
+   - In the Azure portal, navigate to your **Resource Group**.
+   - Click **+ Create**.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd4579b3-2f95-4a24-b9ef-178ee14c9e98">
+
+   - Search for `Storage Account`.
+  
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/09616373-c3b2-459c-89b8-59c6db6beaea">
+
+   - Select the Resource Group you created.
+   - Enter a Storage Account name (e.g., `contosostorageaidemo`).
+   - Choose the region and performance options, and click `Next` to continue.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/4db31956-2d36-4581-98cf-ec0e68d55037">
+
+   - If you need to modify anything related to `Security, Access protocols, Blob Storage Tier`, you can do that in the `Advanced` tab.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5d3da139-6e7a-4bb6-a695-deb1c314ccd3">
+
+   - Regarding `Networking`, this example will cover `Public access` configuration. However, please ensure you review your privacy requirements and adjust network and access settings as necessary for your specific case.
+  
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0273e197-6e5b-4a1c-93cc-7597730c384b">
+
+   - Click **Review + create** and then **Create**. Once is done, you'll be able to see it in your Resource Group.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8b61b79c-9f3f-47f0-b59f-6720edebe41e">
+
+2. **Create a Blob Container**:
+   - Go to your Storage Account.
+   - Under **Data storage**, select **Containers**.
+   - Click **+ Container**.
+   - Enter a name for the container (e.g., `pdfinvoices`) and set the public access level to **Private**.
+   - Click **Create**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/9b4900e3-7ce8-42aa-b5d9-c2fbb2417721">
