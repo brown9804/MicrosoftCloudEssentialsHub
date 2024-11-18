@@ -16,7 +16,7 @@ Last updated: 2024-11-15
   <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
 </div>
 
- > Microsoft Planner is a planning application available on the Microsoft 365 platform. It was initially released on June 6, 2016. 
+> Microsoft Planner is a planning application available on the Microsoft 365 platform. It was initially released on June 6, 2016. 
 
 | Aspect | Information |
 | -------- | -------- |
