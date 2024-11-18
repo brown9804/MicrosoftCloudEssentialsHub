@@ -65,7 +65,7 @@ Last updated: 2024-11-18
    - Enter the Resource Group name (e.g., `RGContosoAI`) and select a region (e.g., `East US 2`). You can add tags if needed.
    - Click **Review + create** and then **Create**.
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/7ef5d701-5df7-4e18-a0d3-60a93d5076c9">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/324c1157-9566-4b30-bb36-bd0efb0a1bf3">
 
 ### Step 2: Set Up Azure Blob Storage for PDF Ingestion
 
@@ -109,7 +109,51 @@ Last updated: 2024-11-18
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/9b4900e3-7ce8-42aa-b5d9-c2fbb2417721">
 
-### Step 3: Set Up Azure Functions for Document Ingestion and Processing
+   - Create another container for `processedinvoices`:
+  
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1e7da13b-3b8f-4f75-b9cb-79ab14797620">
+
+### Step 3: Set Up Azure Cosmos DB
+
+> `Azure Cosmos DB` is a globally distributed,` multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
+> An `Azure Cosmos DB container` is a `logical unit` within a Cosmos DB database where data is stored. `Containers are schema-agnostic, meaning they can store items with different structures. Each container is automatically partitioned to scale out across multiple servers, providing virtually unlimited throughput and storage`. Containers are the primary scalability unit in Cosmos DB, and they use a partition key to distribute data efficiently across partitions.
+
+1. **Create a Cosmos DB Account**:
+   - In the Azure portal, navigate to your **Resource Group**.
+   - Click **+ Create**.
+   - Search for `Cosmos DB`, click on `Create`:
+     
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecdb9a17-5623-4dc0-a607-92448950b7a0">
+
+   - Choose your desired API type, for this will be using `Azure Cosmos DB for NoSQL`. This option supports a SQL-like query language, which is familiar and powerful for querying and analyzing your invoice data. It also integrates well with various client libraries, making development easier and more flexible.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/db942359-8a81-4289-9ea7-91234b4c3802">
+
+   - Please enter an account name (e.g., `contosocosmosdbaidemo`). As with the previously configured resources, we will use the `Public network` for this example. Ensure that you adjust the architecture to include your networking requirements.
+   - Select the region and other settings.
+   - Click **Review + create** and then **Create**.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/42b415d3-0d38-4b69-9e18-7bc4015b4a6d">
+
+1. **Create a Database and Container**:
+   - Go to your Cosmos DB account.
+   - Under **Data Explorer**, click **New Database**.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/5f816576-8160-444c-8abc-086b450d98b1">
+
+   - Enter a database name (e.g., `ContosoDBAIdemo`) and click **OK**.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/5dcb8d28-b042-4038-ac37-2663b8013a3a">
+
+   - Click **New Container**.
+   - Enter a container name (e.g., `Invoices`) and set the partition key (e.g., `/transactionId`).
+   - Click **OK**.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/0232de53-ee75-4f20-a45d-49cf54e3f794">
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/50fc8358-c33d-436d-9661-4127465fc21b">
+
+### Step 4: Set Up Azure Functions for Document Ingestion and Processing
 
 > An `Azure Function App` is a `container for hosting individual Azure Functions`. It provides the execution context for your functions, allowing you to manage, deploy, and scale them together. `Each function app can host multiple functions, which are small pieces of code that run in response to various triggers or events, such as HTTP requests, timers, or messages from other Azure services`. <br/> <br/>
 > Azure Functions are designed to be lightweight and event-driven, enabling you to build scalable and serverless applications. `You only pay for the resources your functions consume while they are running, making it a cost-effective solution for many scenarios`.
@@ -154,20 +198,93 @@ Last updated: 2024-11-18
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/4e8692b4-bda7-4bdc-a61b-a4c377cccbba">
 
    - You will see something like this:
-  
+ 
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a16a571d-d3e2-444d-80ff-451d6c00de4f">
 
+   - Update the function code to extract data from PDFs and store it in Cosmos DB, use this an example. Click on `Save`.
+      
+      > - **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
+      > - **PDF Processing**: The PDF content is read using `PyPDF2` and the text is extracted. <br/>
+      > - **Data Extraction**: The extracted text is processed to extract invoice data (dummy implementation provided). <br/>
+      > - **Data Storage**: The processed invoice data is saved directly to Azure Cosmos DB.
 
+      ```python
+      import azure.functions as func
+      import logging
+      import PyPDF2
+      import json
+      import os
+      from azure.cosmos import CosmosClient, PartitionKey
+      
+      app = func.FunctionApp()
+      
+      @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
+                        connection="contosostorageaidemo_STORAGE")
+      def BlobTriggerPDFInvoice(myblob: func.InputStream, name: str):
+          logging.info(f"Python blob trigger function processed blob\n"
+                       f"Name: {myblob.name}\n"
+                       f"Blob Size: {myblob.length} bytes")
+      
+          # Read the PDF content
+          reader = PyPDF2.PdfFileReader(myblob)
+          text = ""
+          for page_num in range(reader.numPages):
+              page = reader.getPage(page_num)
+              text += page.extract_text()
+      
+          logging.info(f"Extracted text from PDF: {text}")
+      
+          # Process the extracted text (e.g., extract invoice data)
+          invoice_data = extract_invoice_data(text)
+          logging.info(f"Extracted invoice data: {invoice_data}")
+      
+          # Save the processed data to Cosmos DB
+          save_invoice_data_to_cosmos(invoice_data, name)
+      
+      def extract_invoice_data(text):
+          # Dummy implementation for extracting invoice data
+          # Replace with actual extraction logic
+          invoice_data = {
+              "id": "12345",  # Cosmos DB requires an 'id' field
+              "invoice_number": "12345",
+              "date": "2024-11-18",
+              "total": "1000.00"
+          }
+          return invoice_data
+      
+      def save_invoice_data_to_cosmos(invoice_data, blob_name):
+          # Connect to Cosmos DB
+          endpoint = os.getenv("COSMOS_DB_ENDPOINT")
+          key = os.getenv("COSMOS_DB_KEY")
+          client = CosmosClient(endpoint, key)
+          
+          # Database and container names
+          database_name = 'InvoiceDatabase'
+          container_name = 'Invoices'
+          
+          # Create database and container if they don't exist
+          database = client.create_database_if_not_exists(id=database_name)
+          container = database.create_container_if_not_exists(
+              id=container_name,
+              partition_key=PartitionKey(path="/invoice_number"),
+              offer_throughput=400
+          )
+          
+          # Insert the invoice data into Cosmos DB
+          container.upsert_item(invoice_data)
+          logging.info(f"Saved processed invoice data to Cosmos DB: {invoice_data['id']}")
+      ```
+   - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
 
+     -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
+     -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
 
-   - Write the function code to extract data from PDFs and store it in Cosmos DB.
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
+    
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
 
-
-
-
-   - Go to the blob container created `pdfinvoices`, and upload the PDF invoices here:
-  
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/dbe567e6-783a-4db4-9729-cac7075c960a">
-
+     - Click on `Apply` to save your configuration.
+       
    - You will see something like this:
   
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/75e9d0ec-2c69-451c-b283-4b486bb80839">
