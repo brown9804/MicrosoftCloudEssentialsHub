@@ -216,7 +216,7 @@ Last updated: 2024-11-19
    - Update the function code to extract data from PDFs and store it in Cosmos DB, use this an example. Click on `Save`.
       
      > 1. **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
-     > 2. **PDF Processing**: The PDF content is read using `PyPDF2` and the text is extracted. <br/>
+     > 2. **PDF Processing**: The read_pdf_content function uses pdfminer.six to read and extract text from the PDF. <br/>
      > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
      > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container.
 
