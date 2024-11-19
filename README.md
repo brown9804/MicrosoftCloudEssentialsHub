@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
 
@@ -30,8 +30,8 @@ Last updated: 2024-11-15
     - [SharePoint](./1_MS365/SharePoint/) <br/>
 3. [Dynamics 365](./2_Dynamics365/) <br/>
 4. [Power Platform](./3_PowerPlatform/) <br/>
-    - [Power Apps](./3_PowerPlatform/Power%20Apps/) <br/>
-    - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
+    - [Power Apps](./3_PowerPlatform/0_PowerApps/) <br/>
+    - [Power Bi](./3_PowerPlatform/1_PowerBI/) <br/>
 </details>
 
 

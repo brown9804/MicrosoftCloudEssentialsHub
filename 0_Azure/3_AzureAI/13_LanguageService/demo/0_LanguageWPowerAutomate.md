@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 ## Wiki 
 - [Use the Language service in Power Automate](https://learn.microsoft.com/en-us/azure/ai-services/language-service/tutorials/power-automate)
@@ -131,3 +125,8 @@ Last updated: 2024-11-15
           <img width="550" alt="image" src="https://github.com/user-attachments/assets/377443ed-c343-40d6-ad46-12db4104e276">
         
           <img width="550" alt="image" src="https://github.com/user-attachments/assets/3427dd72-2ca3-4d6b-b3cf-867b933c3c3e">
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

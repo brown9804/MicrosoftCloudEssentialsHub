@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > Language models are essential tools in natural language processing (NLP). They help in understanding, generating, and manipulating human language.
 
@@ -58,3 +52,8 @@ Last updated: 2024-11-15
 3. **Applications**: SLMs are used in applications where efficiency and speed are crucial, such as real-time language translation, voice assistants, and on-device text processing.
 4. **Training**: These models are trained on vast datasets but optimized to require less data and time for training compared to larger models.
 5. **Accessibility**: SLMs make advanced AI capabilities more accessible and affordable, enabling broader adoption in various industries and everyday applications. 
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

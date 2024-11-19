@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-08
+Last updated: 2024-11-19
 
 ------------------------------------------
 
@@ -160,3 +160,8 @@ Overall process:
      - **Single Subscription Scope**: Applies the reservation discount to the matching resources in the selected subscription.
      - **Shared Scope**: Applies the reservation discount to matching resources in eligible subscriptions within the billing context.
      - **Management Group Scope**: Applies the reservation discount to the matching resources in the list of subscriptions that are part of the management group.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

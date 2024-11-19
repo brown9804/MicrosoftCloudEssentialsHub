@@ -1,13 +1,11 @@
 # Custom Vision
 
-----------
-
 Costa Rica
-
-Belinda Brown, belindabrownr04@gmail.com
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
+
+Last updated: 2024-11-19
 
 ----------
 
@@ -65,3 +63,8 @@ Here are some of the key features of the Azure AI Custom Vision service:
 
 - **Vehicle Identification**: Azure Custom Vision can be used in toll booths or parking lots for automatic number plate recognition.
 - **Traffic Management**: It can analyze drone or satellite images to monitor traffic conditions and detect accidents or roadblocks.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

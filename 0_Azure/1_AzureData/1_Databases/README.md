@@ -5,14 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > These functionalities include the ability to query data, manage relationships between different data items, enforce data integrity rules, and perform transactions. These products are typically used when you need to work with structured or unstructured data, and need more advanced features compared to basic data storage products.
 
@@ -69,3 +64,8 @@ graph LR
 |  **MongoDB Atlas on Azure** | A global cloud database service for modern applications. | Offers built-in automation for resource and workload optimization. | Provides a fully managed MongoDB service on Azure. | Best for applications requiring a document database. | Azure Kubernetes Service, Azure Databricks, Azure Functions. | 
 |  **Azure Cache for Redis** | Improves the performance of your application by increasing its responsiveness and enabling it to handle increasing loads with less web-compute resources. | Provides high throughput and low-latency access to data. | Offers a secure and dedicated Redis cache, managed by Microsoft. | Ideal for applications needing to cache frequently queried data. | Azure Web Apps, Azure Functions, Azure Logic Apps. | 
 |  **SQL Server 2022** | The most cloud-connected version of SQL Server yet. | Enables hybrid scenarios with cloud connectivity. | Provides the latest SQL Server innovations in the cloud. | Best for modern applications needing the latest SQL Server features. | Azure Synapse Analytics, Power BI, Azure Data Factory. | 
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

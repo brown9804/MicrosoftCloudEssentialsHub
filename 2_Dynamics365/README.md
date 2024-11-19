@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > Microsoft Dynamics 365 is a suite of intelligent business applications that helps your business transform by delivering superior operational efficiency and breakthrough customer experiences. It's designed to optimize operations and elevate customer engagement to new heights.
 
@@ -34,3 +28,8 @@ Last updated: 2024-11-15
 - **Flexibility**: Dynamics 365 applications are made to work together—and with your existing systems—for a comprehensive solution that connects your entire business.
 - **Efficiency**: With the Dynamics 365 ecosystem, you spend less time switching between applications and searching for information.
 - **Cost-effective**: Dynamics 365 makes large-scale, costly and lengthy ERP and CRM projects a thing of the past. You can start small, achieve results fast, and pay only for the applications that you actually need.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

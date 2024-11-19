@@ -5,14 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 ## Products 
 
@@ -52,3 +47,8 @@ graph TB
 | **Azure File Sync** | Hybrid cloud file shares for caching your on-premises data [9](https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction). | Used for file sharing, home directories, databases, high-performance computing [8](https://azure.microsoft.com/en-us/products/netapp/). Ideal for improving server recovery times and giving employees the ability to work without interruptions [10](https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-deployment-guide). | SMB Azure file shares can be cached on Windows servers [9](https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction). |
 | **Azure Stack Edge** | Cloud storage gateway to transfer data efficiently and easily between the cloud and the edge [11](https://azure.microsoft.com/en-us/products/azure-stack/edge/). | Used for machine learning at the edge, edge and IoT solutions, network data transfer from edge to cloud [12](https://learn.microsoft.com/en-us/azure/databox-online/azure-stack-edge-deploy-aks-on-azure-stack-edge). | Works with Azure Kubernetes Service, Azure Batch, and Azure Machine Learning [11](https://azure.microsoft.com/en-us/products/azure-stack/edge/). |
 | **Azure Data Box** | Appliances and solutions for transferring data into and out of Azure quickly and cost-effectively [13](https://azure.microsoft.com/en-us/products/databox/). | Used for onetime migration, initial bulk transfer, periodic uploads [14](https://learn.microsoft.com/en-us/azure/databox/data-box-overview). | Works with Azure Storage [13](https://azure.microsoft.com/en-us/products/databox/). |
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

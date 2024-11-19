@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-08-06
+Last updated: 2024-11-19
 
 ------------------------------------------
 
@@ -23,3 +23,8 @@ This collection of demos showcasing the powerful capabilities of Apache Spark wi
 - [Analyze data with Apache Spark and Python](https://learn.microsoft.com/en-us/fabric/data-science/python-guide/python-visualizations)
 - [Use Apache Spark in Microsoft Fabric](https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/)
 - [Hands-on Lab video on MS Fabric and how to use Apache Spark for data](https://techcommunity.microsoft.com/t5/it-resources-training/hands-on-lab-video-on-ms-fabric-and-how-to-use-apache-spark-for/td-p/3912488)
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

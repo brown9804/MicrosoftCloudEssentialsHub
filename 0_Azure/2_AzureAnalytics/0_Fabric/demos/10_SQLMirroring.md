@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-10-01
+Last updated: 2024-11-19
 
 ----------
 
@@ -43,3 +43,8 @@ If you need near real-time data from SQLDB and your SQL Server is in a private n
 1. [Near Real-Time Lakehouse Data Processing](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/real-time-lakehouse-data-processing): This architecture uses Azure Event Hubs, Azure Synapse Analytics, and Azure Data Lake Storage to keep lakehouse data in sync in near real-time. It involves capturing changes using Debezium connectors, streaming data to Event Hubs, and processing it in Synapse Analytics.
 2. [Mirroring Azure SQL Database in Microsoft Fabric](https://www.mssqltips.com/sqlservertip/8001/microsoft-fabric-mirroring-for-data-replication/): Mirroring in Microsoft Fabric allows for near real-time replication of Azure SQL Database into Fabric's OneLake. This feature leverages SQL's CDC stack to keep data in sync without complex ETL processes. For more [click here](https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-mirroring-azure-sql-database-in-fabric-for-public/ba-p/4085988).
 3. [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-sql-database-well-architected-framework): This framework provides best practices for designing and operating reliable, secure, efficient, and cost-effective systems in the cloud. It includes guidance on using Active Geo-Replication and Auto Failover Groups for high availability and disaster recovery.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

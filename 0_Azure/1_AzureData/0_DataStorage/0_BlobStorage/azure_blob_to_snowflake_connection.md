@@ -5,14 +5,9 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-15
+Last updated: 2024-11-19
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > Each method has its own strengths and use cases, so the best alternative depends on your specific requirements for security, cost, and ease of use:
 
@@ -85,3 +80,8 @@ Last updated: 2024-11-15
 10. Additional Security Measures: **Firewall Settings and Whitelisting IP Ranges**
   - Configure firewall settings on your Azure Blob Storage account to allow access only from specific IP ranges, such as the IP ranges of your Azure Data Factory instance.
   - Similarly, configure firewall settings on your Snowflake account to restrict access to trusted IP ranges.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

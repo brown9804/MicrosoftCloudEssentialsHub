@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-09-13
+Last updated: 2024-11-19
 
 ----------
 
@@ -81,4 +81,7 @@ There are a few methods to connect on-premises data to Microsoft Fabric:
    - Add a new source to the pipeline copy activity and select the connection established earlier.
    - Choose a destination for your data from the on-premises source and run the pipeline.
 
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
