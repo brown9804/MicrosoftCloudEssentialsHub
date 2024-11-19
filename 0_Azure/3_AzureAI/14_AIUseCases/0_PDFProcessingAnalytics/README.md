@@ -1,4 +1,4 @@
-# Automated PDF Invoice Processing and Analytics using OpenFramework and Function App
+# Automated PDF Invoice Processing <br/> using Function App + OpenFramework 
 
 Costa Rica
 
