@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
 Last updated: 2024-11-15
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > **Optical Character Recognition `(OCR)`** is a technology that converts different types of documents, such as scanned paper documents, PDFs, or images captured by a digital camera, into editable and searchable data. OCR is widely used to digitize printed texts so that they can be electronically edited, searched, and stored more compactly.
 
@@ -149,3 +143,8 @@ graph TD
 - **[Implement open-source software - Training](https://learn.microsoft.com/en-us/training/modules/implement-open-source-software-azure/)**:
    - Explore how to implement open-source software in Azure.
    - Understand common open-source licenses and their implications.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

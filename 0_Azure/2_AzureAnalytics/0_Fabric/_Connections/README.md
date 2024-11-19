@@ -89,4 +89,7 @@ Some key aspects:
     - **Automated Security Protocols**: Security protocols, including access controls and encryption, are automated to reduce human error and ensure consistent application.
     - **Threat Monitoring**: Continuous monitoring for vulnerabilities and threats helps maintain a secure environment.
 
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
 Last updated: 2024-11-15
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 ## Content 
 
@@ -133,3 +127,8 @@ For a more streamlined process, consider using Azure Database Migration Service 
 - [Migrate MongoDB offline to Azure Cosmos DB using MongoDB native tools](https://learn.microsoft.com/en-us/azure/cosmos-db/mongodb/tutorial-mongotools-cosmos-db): This tutorial guides you through migrating a MongoDB database to Azure Cosmos DB using MongoDB native tools like `mongodump` and `mongorestore`.
 - [Migrate to vCore-based Azure Cosmos DB for MongoDB](https://learn.microsoft.com/en-us/training/modules/migrate-vcore-based-azure-cosmos-db-mongodb/): This module helps you plan and assess the readiness of a migration from MongoDB to vCore-based Azure Cosmos DB for MongoDB, using tools like Azure Data Studio and Azure Database Migration Service.
 - [Tutorial: Migrate MongoDB online to Azure Cosmos DB using Azure Database Migration Service](https://learn.microsoft.com/en-us/azure/dms/tutorial-mongodb-cosmos-db-online): This tutorial demonstrates the steps to migrate MongoDB data to Azure Cosmos DB using Azure Database Migration Service.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

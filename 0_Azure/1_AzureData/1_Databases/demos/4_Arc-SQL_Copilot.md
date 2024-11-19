@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
 Last updated: 2024-11-15
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 > Azure Arch Copilot focuses on cloud architecture <br/>
 > SQL Copilot focuses on enhancing database management and operations within Azure SQL Database. <br/>
@@ -33,3 +27,8 @@ Last updated: 2024-11-15
 |----------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | **Azure Arch Copilot** | Primarily assists with architectural design and management within the Azure ecosystem. | Helps in designing, optimizing, and managing cloud architectures. Provides recommendations for best practices, cost optimization, and security enhancements. | Ideal for cloud architects and IT professionals who need to design and manage complex cloud infrastructures. |
 | **SQL Copilot**        | Specifically tailored for database management and operations within Azure SQL Database. | Converts natural language queries into SQL, assists with database administration tasks, and provides insights into database performance and health. | Beneficial for database administrators and developers who need to interact with and manage SQL databases more efficiently. |
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

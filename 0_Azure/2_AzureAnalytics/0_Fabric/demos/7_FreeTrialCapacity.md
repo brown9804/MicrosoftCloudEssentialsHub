@@ -47,4 +47,7 @@ Last updated: 2024-09-15
 | Contributor | Create/modify content, limited sharing capabilities                         |
 | Viewer      | View/read content, no modification capabilities                             |
 
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

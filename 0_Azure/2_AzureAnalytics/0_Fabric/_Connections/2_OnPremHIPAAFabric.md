@@ -81,4 +81,7 @@ There are a few methods to connect on-premises data to Microsoft Fabric:
    - Add a new source to the pipeline copy activity and select the connection established earlier.
    - Choose a destination for your data from the on-premises source and run the pipeline.
 
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

@@ -104,3 +104,8 @@ graph TD
 3. **Network Connectivity**:
    - **Issue**: Unable to reach the Oracle server.
    - **Solution**: Check network settings and firewall rules to ensure the server is accessible.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

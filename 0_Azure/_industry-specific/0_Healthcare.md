@@ -2,19 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
 Last updated: 2024-11-15
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
 
 - [Microsoft Health Features](https://www.microsoft.com/en-us/research/lab/microsoft-health-futures/projects/)
 - [Project New Hope: Clinical Trials Matching](https://www.microsoft.com/en-us/research/project/project-new-hope-clinical-trials-matching/)
@@ -50,5 +44,7 @@ Last updated: 2024-11-15
 
 - [Microsoft details how its technology is advancing drug discovery and biomedical research](https://www.drugdiscoverytrends.com/microsoft-research-impact-drug-discovery/)
 
-  
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

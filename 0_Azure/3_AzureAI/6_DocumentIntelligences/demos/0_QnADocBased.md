@@ -72,4 +72,7 @@ graph TD
 5. **Response Generation**: The Azure Function uses the OpenAI model to generate a response based on the search results and extracted data.
 6. **Reply**: The bot sends the response back to the user.
 
-
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

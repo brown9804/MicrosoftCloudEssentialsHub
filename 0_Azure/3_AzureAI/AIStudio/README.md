@@ -406,3 +406,8 @@ Types of deployments available in Azure AI Studio:
 4. **Configure Deployment**: Specify the deployment name and modify settings as needed.
 5. **Deploy**: Click `Deploy` to make the model available as an API.
 6. **Integrate and Use**: Use the generated API endpoint to integrate the deployed model with your applications.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

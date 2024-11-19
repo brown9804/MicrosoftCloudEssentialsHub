@@ -80,3 +80,8 @@ Last updated: 2024-09-23
    - Verify the gateway settings in the Azure Data Factory portal.
 
 > **Monitor and Manage**: Regularly monitor the pipeline runs and gateway status to ensure everything is functioning smoothly.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
