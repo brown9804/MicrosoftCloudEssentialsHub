@@ -11,11 +11,6 @@ Last updated: 2024-11-15
 
 ----------
 
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
-
 Key Features: 
 - **Advanced AI Models**: The service provides access to advanced AI models for conversational, content creation, and data grounding use cases.
 - **Fine-tuning**: You can fine-tune the models, apply generative AI, and integrate with other Azure AI services.
@@ -483,3 +478,9 @@ graph TB
     A --> E
     E --> M
 ```
+
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
