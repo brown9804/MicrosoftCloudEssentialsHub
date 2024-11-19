@@ -168,21 +168,33 @@ Last updated: 2024-11-18
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/571c2880-cff7-4ed5-9840-2f1b5f58ce46">
 
-   - Choose a `hosting option`; for this example, we will use `App Service`. Click [here for a quick overview of hosting options](#function-app-hosting-plans):
+   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](#function-app-hosting-plans):
            
-        <img width="958" alt="image" src="https://github.com/user-attachments/assets/cbeab929-e60d-44c1-9dcd-051d42a3dbf7">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8bd30c5-7b21-4aac-adf2-6e1dc5ec509a">
 
    - Enter a name for the Function App (e.g., `ContosoFunctionAppAI`).
    - Choose your runtime stack (e.g., `.NET` or `Python`).
    - Select the region and other settings.
 
-      <img width="750" alt="image" src="https://github.com/user-attachments/assets/57bff16c-6dd3-4bc5-8799-044d62cb61bd">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/e32fb474-c954-475b-971e-599f9909d35a">
 
    - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/352c95c7-bf6a-4e1d-937b-98dc018b69a4">
 
-2. **Develop the Function**:
+2. **Configure/Validate** the `Environment variables`:
+   - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
+
+     -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
+     -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
+    
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
+
+     - Click on `Apply` to save your configuration.
+
+3. **Develop the Function**:
    - Go to your Function App.
    - Click on `Create function`.
    - Choose a template (e.g., **Blob trigger**) and configure it to trigger on new PDF uploads in your Blob container.
@@ -203,147 +215,144 @@ Last updated: 2024-11-18
 
    - Update the function code to extract data from PDFs and store it in Cosmos DB, use this an example. Click on `Save`.
       
-      > - **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
-      > - **PDF Processing**: The PDF content is read using `PyPDF2` and the text is extracted. <br/>
-      > - **Data Extraction**: The extracted text is processed to extract invoice data (dummy implementation provided). <br/>
-      > - **Data Storage**: The processed invoice data is saved directly to Azure Cosmos DB.
+     > 1. **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
+     > 2. **PDF Processing**: The PDF content is read using `PyPDF2` and the text is extracted. <br/>
+     > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
+     > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container.
 
       ```python
-        import azure.functions as func
-        import logging
-        import PyPDF2
-        import json
-        import os
-        from azure.cosmos import CosmosClient, PartitionKey
-        
-        app = func.FunctionApp()
-        
-        @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
-                          connection="contosostorageaidemo_STORAGE")
-        def BlobTriggerPDFInvoice(myblob: func.InputStream, name: str):
-            logging.info(f"Python blob trigger function processed blob\n"
-                         f"Name: {myblob.name}\n"
-                         f"Blob Size: {myblob.length} bytes")
-        
-            # Read the PDF content
-            try:
-                reader = PyPDF2.PdfFileReader(myblob)
-                text = ""
-                for page_num in range(reader.numPages):
-                    page = reader.getPage(page_num)
-                    text += page.extract_text()
-                logging.info("Successfully read and extracted text from PDF.")
-            except Exception as e:
-                logging.error(f"Error reading PDF: {e}")
-                return
-        
-            logging.info(f"Extracted text from PDF: {text}")
-        
-            # Process the extracted text (e.g., extract invoice data)
-            try:
-                invoice_data = extract_invoice_data(text)
-                logging.info(f"Extracted invoice data: {invoice_data}")
-            except Exception as e:
-                logging.error(f"Error extracting invoice data: {e}")
-                return
-        
-            # Save the processed data to Cosmos DB
-            try:
-                save_invoice_data_to_cosmos(invoice_data, name)
-                logging.info("Successfully saved invoice data to Cosmos DB.")
-            except Exception as e:
-                logging.error(f"Error saving invoice data to Cosmos DB: {e}")
-        
-        def extract_invoice_data(text):
-            # Extract invoice data from the text
-            lines = text.split('\n')
-            invoice_data = {
-                "id": "12345",  # Cosmos DB requires an 'id' field
-                "customer_name": "",
-                "customer_email": "",
-                "customer_address": "",
-                "company_name": "",
-                "company_phone": "",
-                "company_address": "",
-                "rentals": []
-            }
-        
-            for i, line in enumerate(lines):
-                if "BILL TO:" in line:
-                    invoice_data["customer_name"] = lines[i + 1].strip()
-                    invoice_data["customer_email"] = lines[i + 2].strip()
-                    invoice_data["customer_address"] = lines[i + 3].strip()
-                elif "Company Information:" in line:
-                    invoice_data["company_name"] = lines[i + 1].strip()
-                    invoice_data["company_phone"] = lines[i + 2].strip()
-                    invoice_data["company_address"] = lines[i + 3].strip()
-                elif "Rental Date" in line:
-                    # Extract rental details
-                    for j in range(i + 1, len(lines)):
-                        if lines[j].strip() == "":
-                            break
-                        rental_details = lines[j].split()
-                        rental_date = rental_details[0]
-                        title = " ".join(rental_details[1:-3])
-                        description = rental_details[-3]
-                        quantity = rental_details[-2]
-                        total_price = rental_details[-1]
-                        invoice_data["rentals"].append({
-                            "rental_date": rental_date,
-                            "title": title,
-                            "description": description,
-                            "quantity": quantity,
-                            "total_price": total_price
-                        })
-        
-            logging.info("Successfully extracted invoice data.")
-            return invoice_data
-        
-        def save_invoice_data_to_cosmos(invoice_data, blob_name):
-            # Connect to Cosmos DB
-            try:
-                endpoint = os.getenv("COSMOS_DB_ENDPOINT")
-                key = os.getenv("COSMOS_DB_KEY")
-                client = CosmosClient(endpoint, key)
-                logging.info("Successfully connected to Cosmos DB.")
-            except Exception as e:
-                logging.error(f"Error connecting to Cosmos DB: {e}")
-                return
-            
-            # Database and container names
-            database_name = 'InvoiceDatabase'
-            container_name = 'Invoices'
-            
-            try:
-                # Create database and container if they don't exist
-                database = client.create_database_if_not_exists(id=database_name)
-                container = database.create_container_if_not_exists(
-                    id=container_name,
-                    partition_key=PartitionKey(path="/invoice_number"),
-                    offer_throughput=400
-                )
-                logging.info("Successfully ensured database and container exist.")
-            except Exception as e:
-                logging.error(f"Error creating database or container: {e}")
-                return
-            
-            try:
-                # Insert the invoice data into Cosmos DB
-                response = container.upsert_item(invoice_data)
-                logging.info(f"Saved processed invoice data to Cosmos DB: {response}")
-            except Exception as e:
-                logging.error(f"Error inserting item into Cosmos DB: {e}")
+      import azure.functions as func
+      import logging
+      import PyPDF2
+      import json
+      import os
+      from azure.cosmos import CosmosClient, PartitionKey
+      import uuid
+      
+      # Function Definitions
+      
+      def extract_invoice_data(text):
+          # Extract invoice data from the text
+          lines = text.split('\n')
+          invoice_data = {
+              "id": generate_id(),  # Generate a unique ID for the invoice
+              "customer_name": "",
+              "customer_email": "",
+              "customer_address": "",
+              "company_name": "",
+              "company_phone": "",
+              "company_address": "",
+              "rentals": []
+          }
+      
+          for i, line in enumerate(lines):
+              if "BILL TO:" in line:
+                  invoice_data["customer_name"] = lines[i + 1].strip()
+                  invoice_data["customer_email"] = lines[i + 2].strip()
+                  invoice_data["customer_address"] = lines[i + 3].strip()
+              elif "Company Information:" in line:
+                  invoice_data["company_name"] = lines[i + 1].strip()
+                  invoice_data["company_phone"] = lines[i + 2].strip()
+                  invoice_data["company_address"] = lines[i + 3].strip()
+              elif "Rental Date" in line:
+                  # Extract rental details
+                  for j in range(i + 1, len(lines)):
+                      if lines[j].strip() == "":
+                          break
+                      rental_details = lines[j].split()
+                      rental_date = rental_details[0]
+                      title = " ".join(rental_details[1:-3])
+                      description = rental_details[-3]
+                      quantity = rental_details[-2]
+                      total_price = rental_details[-1]
+                      invoice_data["rentals"].append({
+                          "rental_date": rental_date,
+                          "title": title,
+                          "description": description,
+                          "quantity": quantity,
+                          "total_price": total_price
+                      })
+      
+          logging.info("Successfully extracted invoice data.")
+          return invoice_data
+      
+      def save_invoice_data_to_cosmos(invoice_data, blob_name):
+          # Connect to Cosmos DB
+          try:
+              endpoint = os.getenv("COSMOS_DB_ENDPOINT")
+              key = os.getenv("COSMOS_DB_KEY")
+              client = CosmosClient(endpoint, key)
+              logging.info("Successfully connected to Cosmos DB.")
+          except Exception as e:
+              logging.error(f"Error connecting to Cosmos DB: {e}")
+              return
+          
+          # Database and container names
+          database_name = 'ContosoAIDemo'
+          container_name = 'Invoices'
+          
+          try:
+              # Create database and container if they don't exist
+              database = client.create_database_if_not_exists(id=database_name)
+              container = database.create_container_if_not_exists(
+                  id=container_name,
+                  partition_key=PartitionKey(path="/invoice_number"),
+                  offer_throughput=400
+              )
+              logging.info("Successfully ensured database and container exist.")
+          except Exception as e:
+              logging.error(f"Error creating database or container: {e}")
+              return
+          
+          try:
+              # Insert the invoice data into Cosmos DB
+              response = container.upsert_item(invoice_data)
+              logging.info(f"Saved processed invoice data to Cosmos DB: {response}")
+          except Exception as e:
+              logging.error(f"Error inserting item into Cosmos DB: {e}")
+      
+      def generate_id():
+          # Generate a unique ID for the invoice
+          return str(uuid.uuid4())
+      
+      # Main Function
+      
+      @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
+                        connection="contosostorageaidemo_STORAGE")
+      def BlobTriggerPDFInvoice(myblob: func.InputStream, name: str):
+          logging.info(f"Python blob trigger function processed blob\n"
+                       f"Name: {myblob.name}\n"
+                       f"Blob Size: {myblob.length} bytes")
+      
+          # Read the PDF content
+          try:
+              reader = PyPDF2.PdfFileReader(myblob)
+              text = ""
+              for page_num in range(reader.numPages):
+                  page = reader.getPage(page_num)
+                  text += page.extract_text()
+              logging.info("Successfully read and extracted text from PDF.")
+          except Exception as e:
+              logging.error(f"Error reading PDF: {e}")
+              return
+      
+          logging.info(f"Extracted text from PDF: {text}")
+      
+          # Process the extracted text (e.g., extract invoice data)
+          try:
+              invoice_data = extract_invoice_data(text)
+              logging.info(f"Extracted invoice data: {invoice_data}")
+          except Exception as e:
+              logging.error(f"Error extracting invoice data: {e}")
+              return
+      
+          # Save the processed data to Cosmos DB
+          try:
+              save_invoice_data_to_cosmos(invoice_data, name)
+              logging.info("Successfully saved invoice data to Cosmos DB.")
+          except Exception as e:
+              logging.error(f"Error saving invoice data to Cosmos DB: {e}")
       ```
-   - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
-
-     -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
-     -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
-
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
-    
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
-
-     - Click on `Apply` to save your configuration.
        
    - You will see something like this:
   
