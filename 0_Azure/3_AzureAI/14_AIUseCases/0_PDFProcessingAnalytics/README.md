@@ -1,4 +1,4 @@
-# Building a Scalable Cloud-Based Database for Automated PDF Invoice Processing and Analytics
+# Automated PDF Invoice Processing and Analytics using OpenFramework and Function App
 
 Costa Rica
 
@@ -10,7 +10,7 @@ Last updated: 2024-11-19
 
 ----------
 
-> Using Azure Functions, Blob Storage, and Cosmos DB
+> Using Azure Functions, Blob Storage, and Cosmos DB. <br/>
 
 ## Wiki 
 
@@ -257,7 +257,9 @@ Last updated: 2024-11-19
      > 1. **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
      > 2. **PDF Processing**: The read_pdf_content function uses pdfminer.six to read and extract text from the PDF. <br/>
      > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
-     > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container.
+     > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container. 
+
+     > `pdfminer.six` is an open-source framework. It is a community-maintained fork of the original PDFMiner,` designed for extracting and analyzing text data from PDF documents`. The framework is built in a modular way, allowing each component to be easily replaced or extended for various purpose
 
      - Update the `function_app.py`:
 
