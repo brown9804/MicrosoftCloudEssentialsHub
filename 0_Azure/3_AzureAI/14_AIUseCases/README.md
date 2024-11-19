@@ -22,7 +22,7 @@ Last updated: 2024-11-18
 
 ## Content 
 
-- Example0 - [Building a Scalable Cloud-Based Database for Automated PDF Invoice Processing and Analytics](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/14_AIHack/0_PDFProcessingAnalytics): Using Azure Functions, Blob Storage, and Cosmos DB
+- Example0 - [Automated PDF Invoice Processing using Function App + OpenFramework](./0_PDFProcessingFAOF/): Using Azure Functions, Blob Storage, and Cosmos DB
 
 
 <div align="center">
