@@ -319,7 +319,7 @@ Last updated: 2024-11-19
       
       @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
                         connection="contosostorageaidemo_STORAGE")
-      def BlobTriggerPDFInvoice(myblob: func.InputStream, name: str):
+      def blob_trigger(myblob: func.InputStream, name: str):
           logging.info(f"Python blob trigger function processed blob\n"
                        f"Name: {myblob.name}\n"
                        f"Blob Size: {myblob.length} bytes")
