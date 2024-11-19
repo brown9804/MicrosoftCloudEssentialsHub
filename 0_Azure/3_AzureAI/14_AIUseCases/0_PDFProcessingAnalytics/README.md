@@ -228,7 +228,9 @@ Last updated: 2024-11-19
       import os
       from azure.cosmos import CosmosClient, PartitionKey
       import uuid
-      
+
+      app = func.FunctionApp()
+
       # Function Definitions
       
       def extract_invoice_data(text):
