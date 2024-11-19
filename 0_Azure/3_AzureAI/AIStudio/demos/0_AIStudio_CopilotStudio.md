@@ -190,3 +190,7 @@ Last updated: 2024-10-22
    - **Deploy the Copilot**: Use the CI/CD pipelines to deploy your copilot to the desired environment.
    - **Test**: Continuously test and monitor the copilot's performance using Azure DevOps tools.
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

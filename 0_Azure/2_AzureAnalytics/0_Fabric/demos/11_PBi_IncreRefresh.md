@@ -175,3 +175,7 @@ Last updated: 2024-11-07
 2. **Use Power Query Editor**: Power Query Editor in Power BI is a powerful tool for transforming and cleaning data. You can use it to change the column type to date.
 3. **Handle Text Columns**: If your date column is currently in text format, you can use Power Query Editor to convert it to a date type. This involves parsing the text values into date values.
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

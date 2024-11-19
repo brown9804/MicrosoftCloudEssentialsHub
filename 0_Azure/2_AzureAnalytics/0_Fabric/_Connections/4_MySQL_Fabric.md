@@ -31,3 +31,8 @@ Last updated: 2024-10-09
 | Shared Server                  | MySQL Database Connector in Dataflow Gen2 or Power Query                                   | Secure connection using appropriate authentication methods, supports various authentication types. |
 | Multicloud Environments        | Power Query                                                                                 | Secure connection using cloud provider's security features, supports various authentication types. |
 | Private Cloud                  | MySQL Database Connector in Dataflow Gen2 with On-Premises Data Gateway                     | Secure connection using on-premises data gateway, supports Basic and Windows authentication. |
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

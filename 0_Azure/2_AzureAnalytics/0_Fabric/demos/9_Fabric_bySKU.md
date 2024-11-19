@@ -56,3 +56,8 @@ Detailed Features by License:
 | **F512**    | 512                     | P4/A7            | 64                   | 512 TB | Billed when exceeding included storage or if compute capacity is paused | High-end data processing, Data Factory, advanced AI and ML, including predictive analytics. <br/> Suitable for large enterprises. <br/> **Copilot:** Yes <br/> **AI Skills:** Yes <br/> **Mirroring:** Yes |
 | **F1024**   | 1024                    | P5/A8            | 128                  | 1024 TB | Billed when exceeding included storage or if compute capacity is paused | Maximum computational power, Data Factory, comprehensive AI capabilities, including advanced analytics and big data processing. <br/> Ideal for large-scale enterprise applications. <br/> **Copilot:** Yes <br/> **AI Skills:** Yes <br/> **Mirroring:** Yes |
 | **F2048**   | 2048                    | Not applicable   | 256                  | 2048 TB | Billed when exceeding included storage or if compute capacity is paused | Ultimate performance, Data Factory, full suite of AI and ML capabilities, including large-scale data processing and analytics. <br/> Suitable for the largest and most complex data environments. <br/> **Copilot:** Yes <br/> **AI Skills:** Yes <br/> **Mirroring:** Yes |
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

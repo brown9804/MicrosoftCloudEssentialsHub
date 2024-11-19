@@ -62,3 +62,7 @@ Last updated: 2024-09-15
   1. **Monitor Dataflows**: Regularly monitor the status of your dataflows to ensure they are running smoothly.
   2. **Update Gateway and Connectors**: Keep your on-premises data gateway and MySQL connectors up to date to ensure compatibility and security.
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

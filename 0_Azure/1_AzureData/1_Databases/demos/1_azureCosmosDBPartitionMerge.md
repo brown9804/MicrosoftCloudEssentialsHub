@@ -2,20 +2,13 @@
 
 Costa Rica
 
-[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
 Last updated: 2024-11-15
 
 ----------
-
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
-
 
 ## Wiki 
 
@@ -231,3 +224,8 @@ Workaround - Create a New Account with Periodic Backups:
 | **Security Concerns**             | Handling sensitive information during data transfer.                           | Ensure data is encrypted during transfer. Conduct a security review of the new setup. |
 | **Cost Implications**             | Additional costs incurred during setup and migration.                          | Estimate costs beforehand and ensure benefits outweigh expenses. Optimize new account configuration to avoid unnecessary costs. |
 | **Complexity and Resource Requirements** | Complexity and resource-intensive nature of the migration process.             | Allocate sufficient resources and time for migration. Engage experts or use professional services if needed. |
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

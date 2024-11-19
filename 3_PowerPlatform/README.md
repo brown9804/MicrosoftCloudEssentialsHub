@@ -19,8 +19,8 @@ Last updated: 2024-11-15
 ## Table of Contents
 
 - [Power Platform](./3_PowerPlatform/) <br/>
-    - [Power Apps](./3_PowerPlatform/Power%20Apps/) <br/>
-    - [Power Bi](./3_PowerPlatform/Power%20BI/) <br/>
+    - [Power Apps](./3_PowerPlatform/0_PowerApps/) <br/>
+    - [Power Bi](./3_PowerPlatform/1_PowerBI/) <br/>
 
 Microsoft Power Platform is a collection of **low-code development tools** that empower users to:
 - **Build custom business applications**

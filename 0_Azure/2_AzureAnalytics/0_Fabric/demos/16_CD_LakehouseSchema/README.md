@@ -59,3 +59,8 @@ Steps to Set Up Incremental Refresh:
 2. **Configure the Query**: Ensure your query includes a DateTime column that can be used to filter the data.
 3. **Enable Incremental Refresh**: Right-click the query and select Incremental Refresh. Configure the settings, such as the DateTime column and the time range for data extraction.
 4. **Publish the Dataflow**: Once configured, publish the dataflow. The dataflow will then automatically refresh the data incrementally based on the settings.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

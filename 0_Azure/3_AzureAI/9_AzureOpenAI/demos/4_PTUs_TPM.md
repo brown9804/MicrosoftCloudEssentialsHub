@@ -63,3 +63,8 @@ This means with 50 PTUs, you can process 75,000 tokens per minute.
 > Improve accuracy of your estimate by adding multiple workloads to your PTU calculation. Each workload will be calculated and displayed as well as the aggregate total if both are running at the same time to your deployment.
 
 <img width="705" alt="image" src="https://github.com/user-attachments/assets/e59c7e24-6d9b-4ea3-855c-d4f284b53e59">
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
