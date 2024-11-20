@@ -15,6 +15,12 @@ Last updated: 2024-11-20
 > 2. An Azure Function is triggered by the upload, which calls the Azure Document Intelligence API to analyze the PDFs.  <br/>
 > 3. The extracted data is parsed and subsequently stored in a Cosmos DB database, ensuring a seamless and automated workflow from document upload to data storage. 
 
+> [!NOTE]
+> Advantages of Document Intelligence for organizations handling with large volumes of documents: <br/>
+> - Utilizes natural language processing, computer vision, deep learning, and machine learning. <br/>
+> - Handles structured, semi-structured, and unstructured documents. <br/>
+> - Automates the extraction and transformation of data into usable formats like JSON or CSV
+
 ## Wiki 
 
 <details>
@@ -91,7 +97,7 @@ Last updated: 2024-11-20
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a168a63b-2d15-4643-8200-34bf8335a0fe">
 
-1. **Create a Blob Container**:
+2. **Create a Blob Container**: Within the Storage Account, create a Blob Container to store your PDFs.
    - Go to your Storage Account.
    - Under **Data storage**, select **Containers**.
    - Click **+ Container**.
@@ -99,6 +105,46 @@ Last updated: 2024-11-20
    - Click **Create**.
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/27b024f8-0390-4331-bc34-59c3831d9bd1">
+
+## Step 3: Set Up Azure Cosmos DB
+
+> `Azure Cosmos DB` is a globally distributed,` multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
+> An `Azure Cosmos DB container` is a `logical unit` within a Cosmos DB database where data is stored. `Containers are schema-agnostic, meaning they can store items with different structures. Each container is automatically partitioned to scale out across multiple servers, providing virtually unlimited throughput and storage`. Containers are the primary scalability unit in Cosmos DB, and they use a partition key to distribute data efficiently across partitions.
+
+1. **Create a Cosmos DB Account**:
+   - In the Azure portal, navigate to your **Resource Group**.
+   - Click **+ Create**.
+   - Search for `Cosmos DB`, click on `Create`:
+     
+      <img width="550" alt="image" src="">
+
+   - Choose your desired API type, for this will be using `Azure Cosmos DB for NoSQL`. This option supports a SQL-like query language, which is familiar and powerful for querying and analyzing your invoice data. It also integrates well with various client libraries, making development easier and more flexible.
+
+       <img width="550" alt="image" src="">
+
+   - Please enter an account name (e.g., `contosoinvoiceai`). As with the previously configured resources, we will use the `Public network` for this example. Ensure that you adjust the architecture to include your networking requirements.
+   - Select the region and other settings.
+   - Click **Review + create** and then **Create**.
+
+       <img width="550" alt="image" src="">
+
+2. **Create a Database and Container**:
+   - Go to your Cosmos DB account.
+   - Under **Data Explorer**, click **New Database**.
+
+      <img width="550" alt="image" src="">
+
+   - Enter a database name (e.g., `ContosoDBDocIntellig`) and click **OK**.
+
+      <img width="550" alt="image" src="">
+
+   - Click **New Container**.
+   - Enter a container name (e.g., `Invoices`) and set the partition key (e.g., `/transactionId`).
+   - Click **OK**.
+
+      <img width="550" alt="image" src="">
+
+      <img width="550" alt="image" src="">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
