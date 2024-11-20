@@ -67,38 +67,38 @@ Last updated: 2024-11-20
    - In the Azure portal, navigate to your **Resource Group**.
    - Click **+ Create**.
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/1998660c-bb80-4ea7-9865-b6cdfa125d02">
 
    - Search for `Storage Account`.
   
-       <img width="550" alt="image" src="">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0bde893e-a40e-4dd6-bf55-964c33109e33">
 
    - Select the Resource Group you created.
    - Enter a Storage Account name (e.g., `invoicecontosostorage`).
    - Choose the region and performance options, and click `Next` to continue.
 
-        <img width="550" alt="image" src="">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/bb5aeccc-e35f-45f2-a2a5-1000d92aa73a">
 
    - If you need to modify anything related to `Security, Access protocols, Blob Storage Tier`, you can do that in the `Advanced` tab.
 
-        <img width="550" alt="image" src="">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a478525f-6028-4f12-8b99-a441ed99fe0f">
 
    - Regarding `Networking`, this example will cover `Public access` configuration. However, please ensure you review your privacy requirements and adjust network and access settings as necessary for your specific case.
   
-       <img width="550" alt="image" src="">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0273e197-6e5b-4a1c-93cc-7597730c384b">
 
    - Click **Review + create** and then **Create**. Once is done, you'll be able to see it in your Resource Group.
 
-        <img width="550" alt="image" src="">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a168a63b-2d15-4643-8200-34bf8335a0fe">
 
-2. **Create a Blob Container**:
+1. **Create a Blob Container**:
    - Go to your Storage Account.
    - Under **Data storage**, select **Containers**.
    - Click **+ Container**.
    - Enter a name for the container (e.g., `pdfinvoices`) and set the public access level to **Private**.
    - Click **Create**.
 
-        <img width="550" alt="image" src="">
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/27b024f8-0390-4331-bc34-59c3831d9bd1">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
