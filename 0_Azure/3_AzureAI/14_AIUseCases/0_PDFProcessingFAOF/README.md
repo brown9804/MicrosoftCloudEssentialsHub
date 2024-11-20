@@ -126,10 +126,6 @@ Last updated: 2024-11-20
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/9b4900e3-7ce8-42aa-b5d9-c2fbb2417721">
 
-   - Create another container for `processedinvoices`:
-  
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1e7da13b-3b8f-4f75-b9cb-79ab14797620">
-
 ## Step 3: Set Up Azure Cosmos DB
 
 > `Azure Cosmos DB` is a globally distributed,` multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
