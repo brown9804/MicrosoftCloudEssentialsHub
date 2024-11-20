@@ -26,6 +26,19 @@ Last updated: 2024-11-19
 
 </details>
 
+## Content
+
+- [Automated PDF Invoice Processing  using Function App + OpenFramework](#automated-pdf-invoice-processing--using-function-app--openframework)
+    - [Wiki](#wiki)
+    - [Content](#content)
+    - [Overview](#overview)
+        - [Function App Hosting Options](#function-app-hosting-options)
+        - [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
+        - [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
+        - [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
+        - [Step 4: Set Up Azure Functions for Document Ingestion and Processing](#step-4-set-up-azure-functions-for-document-ingestion-and-processing)
+        - [Step 5: Test the solution](#step-5-test-the-solution)
+
 ## Overview 
 
 > Using Cosmos DB provides you with a flexible, scalable, and globally distributed database solution that can handle both structured and semi-structured data efficiently. <br/>
