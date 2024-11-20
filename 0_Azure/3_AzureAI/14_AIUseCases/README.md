@@ -10,19 +10,11 @@ Last updated: 2024-11-19
 
 ----------
 
-> Here you will find some guidance over 4 general use cases around AI.
-
-## Wiki 
-
-<details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
-  
- 
-</details>
+> Here you will find some guidance over general use cases around AI.
 
 ## Content 
 
-- Example0 - [Automated PDF Invoice Processing using Function App + OpenFramework](./0_PDFProcessingFAOF/): Using Azure Functions, Blob Storage, and Cosmos DB
+- [Automated PDF Invoice Processing using Function App + OpenFramework](./0_PDFProcessingFAOF/): Using Azure Functions, Blob Storage, and Cosmos DB
 
 
 <div align="center">
