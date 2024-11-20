@@ -12,6 +12,8 @@ Last updated: 2024-11-19
 
 > Using Azure Functions, Blob Storage, and Cosmos DB. <br/>
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/cda874fc-6cca-4857-ac5d-2f8d7887e36d">
+
 ## Wiki 
 
 <details>
