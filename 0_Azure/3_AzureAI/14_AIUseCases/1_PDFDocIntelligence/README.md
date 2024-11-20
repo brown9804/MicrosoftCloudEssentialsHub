@@ -38,6 +38,23 @@ Last updated: 2024-11-20
 | **Custom Models** | - **Training**: You can train custom models using labeled data. This involves uploading a set of documents and manually labeling the fields you want to extract.<br/>- **Model Management**: Manage versions of your custom models, retrain them with new data, and evaluate their performance. |
 | **APIs and SDKs** | - **REST API**: Provides endpoints for analyzing documents, managing models, and retrieving results.<br/>- **SDKs**: Available in multiple languages (e.g., Python, C#, JavaScript) to simplify integration into your applications. |
 
+## Step 1: Set Up Your Azure Environment
+
+> An Azure `Resource Group` is a `container that holds related resources for an Azure solution`.
+> It can include all the resources for the solution or only those you want to manage as a group.
+> Typically, resources that share the same lifecycle are added to the same resource group, allowing for easier deployment, updating, and deletion as a unit.
+> Resource groups also store metadata about the resources, and you can apply access control, locks, and tags to them for better management and organization.
+
+1. **Create an Azure Account**: If you don't have one, sign up for an Azure account.
+2. **Create a Resource Group**:
+   - Go to the Azure portal.
+   - Navigate to **Resource groups**.
+   - Click **+ Create**.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/56d1e99f-0a22-4492-bd6f-d4e3a76aedd8">
+
+   - Enter the Resource Group name (e.g., `RGContosoAIDoc`) and select a region (e.g., `East US 2`). You can add tags if needed.
+   - Click **Review + create** and then **Create**.
 
 
 <div align="center">
