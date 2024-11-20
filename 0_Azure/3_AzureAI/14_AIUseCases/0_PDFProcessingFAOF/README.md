@@ -12,6 +12,11 @@ Last updated: 2024-11-20
 
 > Using Azure Functions, Blob Storage, and Cosmos DB. <br/>
 
+> [!NOTE]
+> Limitations of this approach: <br/>
+> - Requires significant manual effort to structure and format extracted data. <br/>
+> - Limited in handling complex layouts and non-text elements like images and charts. <br/>
+
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/cda874fc-6cca-4857-ac5d-2f8d7887e36d">
 
 ## Wiki 
@@ -148,7 +153,7 @@ Last updated: 2024-11-20
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/42b415d3-0d38-4b69-9e18-7bc4015b4a6d">
 
-1. **Create a Database and Container**:
+2. **Create a Database and Container**:
    - Go to your Cosmos DB account.
    - Under **Data Explorer**, click **New Database**.
 
