@@ -56,6 +56,8 @@ Last updated: 2024-11-20
    - Enter the Resource Group name (e.g., `RGContosoAIDoc`) and select a region (e.g., `East US 2`). You can add tags if needed.
    - Click **Review + create** and then **Create**.
 
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/288d05ca-e5e3-47f7-9c0d-3ddb0fffe518">
+
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
