@@ -116,35 +116,38 @@ Last updated: 2024-11-20
    - Click **+ Create**.
    - Search for `Cosmos DB`, click on `Create`:
      
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/ecdb9a17-5623-4dc0-a607-92448950b7a0">
 
    - Choose your desired API type, for this will be using `Azure Cosmos DB for NoSQL`. This option supports a SQL-like query language, which is familiar and powerful for querying and analyzing your invoice data. It also integrates well with various client libraries, making development easier and more flexible.
 
-       <img width="550" alt="image" src="">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/db942359-8a81-4289-9ea7-91234b4c3802">
 
-   - Please enter an account name (e.g., `contosoinvoiceai`). As with the previously configured resources, we will use the `Public network` for this example. Ensure that you adjust the architecture to include your networking requirements.
+   - Please enter an account name (e.g., `contosoinvoiceaicosmos`). As with the previously configured resources, we will use the `Public network` for this example. Ensure that you adjust the architecture to include your networking requirements.
    - Select the region and other settings.
    - Click **Review + create** and then **Create**.
 
-       <img width="550" alt="image" src="">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/47948255-3988-42f3-8e4e-80291aefaf5b">
 
 2. **Create a Database and Container**:
    - Go to your Cosmos DB account.
    - Under **Data Explorer**, click **New Database**.
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/d0130cf2-aaf8-4a63-9786-4c65bc700812">
 
    - Enter a database name (e.g., `ContosoDBDocIntellig`) and click **OK**.
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/7839be4d-8d4d-476e-9d81-203b0fd2426f">
 
    - Click **New Container**.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/24e08dca-3399-40d2-a91d-95a6569156ad">
+
    - Enter a container name (e.g., `Invoices`) and set the partition key (e.g., `/transactionId`).
    - Click **OK**.
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/96ffc93a-078b-49f9-ad4a-470e73540c30">
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/203f4e0d-6697-4200-83bc-65f0023addb5">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
