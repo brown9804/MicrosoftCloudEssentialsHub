@@ -300,6 +300,8 @@ Within the Storage Account, create a Blob Container to store your PDFs.
   -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
   -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
   -  `invoicecontosostorage_STORAGE`: Your Storage Account key.
+  -  `FORM_RECOGNIZER_ENDPOINT`: For example: `https://<your-form-recognizer-endpoint>.cognitiveservices.azure.com/`
+  -  `FORM_RECOGNIZER_KEY`: Your Documment Intelligence Key (Form Recognizer).
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/31d813e7-38ba-46ff-9e4b-d091ae02706a">
 
@@ -307,9 +309,11 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/ec5d60f3-5136-489d-8796-474b7250865d">
 
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/074d2fa5-c64d-43bd-8ed7-af6da46d86a2">
+
   - Click on `Apply` to save your configuration.
     
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/7b2d7e9a-5107-4545-a199-a0522cf04f00">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/437b44bb-7735-4d17-ae49-e211eca64887">
 
 ### Develop the Function
 
@@ -491,7 +495,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
       ## MAIN 
       @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
                         connection="contosostorageaidemo_STORAGE")
-      def BlobTriggerContosoPDFInvoicesRaw(myblob: func.InputStream):
+      def BlobTriggerContosoPDFInvoicesDocIntelligence(myblob: func.InputStream):
           logging.info(f"Python blob trigger function processed blob\n"
                        f"Name: {myblob.name}\n"
                        f"Blob Size: {myblob.length} bytes")
@@ -525,7 +529,37 @@ Within the Storage Account, create a Blob Container to store your PDFs.
               logging.error(f"Error saving invoice data to Cosmos DB: {e}")
      ```
 
+   - Now, let's update the `requirements.txt`:
 
+    | Template `requirements.txt` | Updated `requirements.txt` |
+    | --- | --- |
+    | <img width="550" alt="image" src="https://github.com/user-attachments/assets/239516e0-a4b7-4e38-8c2b-9be12ebb00de"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/cf6fe986-a1d8-4866-99cf-57db2ec4c113"> | 
+
+     ```text
+      azure-functions
+      azure-ai-formrecognizer
+      azure-core
+      azure-cosmos
+     ```
+   - Since this function has already been tested, you can deploy your code to the function app in your subscription. If you want to test, you can use run your function locally for testing.
+      - Click on the `Azure` icon.
+      - Under `workspace`, click on the `Function App` icon.
+      - Click on `Deploy to Azure`.
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/12405c04-fa43-4f09-817d-f6879fbff035">
+
+      - Select your `subscription`, your `function app`, and accept the prompt to overwrite:
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/1882e777-6ba0-4e18-9d7b-5937204c7217">
+
+      - After completing, you see the status in your terminal:
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa090cfc-f5b3-4ef2-9c2d-6be4f00b83b8">
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/369ecfc7-cc31-403c-a625-bb1f6caa271c">
+
+> [!IMPORTANT]
+If you need further assistance with the code, please click [here to view all the function code](./src/).
 
 
 <div align="center">
