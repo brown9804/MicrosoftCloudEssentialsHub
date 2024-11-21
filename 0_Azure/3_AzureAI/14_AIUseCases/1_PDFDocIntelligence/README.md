@@ -123,6 +123,12 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/27b024f8-0390-4331-bc34-59c3831d9bd1">
 
+### Allow storage account key access
+
+> When Allow storage account key access is disabled, any requests to the account that are authorized with Shared Key, including shared access signatures (SAS), will be denied. Click [here to learn more](https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent?tabs=portal)
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/47e74073-1b58-4d4a-b898-7be91b9314b7">
+
 ## Step 3: Set Up Azure Cosmos DB
 
 ### Create a Cosmos DB Account:
