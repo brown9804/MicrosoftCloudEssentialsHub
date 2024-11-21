@@ -205,6 +205,7 @@ Last updated: 2024-11-21
 
      -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
      -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+     -  `contosostorageaidemo_STORAGE`: Your Storage Account key.
 
          <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
     
