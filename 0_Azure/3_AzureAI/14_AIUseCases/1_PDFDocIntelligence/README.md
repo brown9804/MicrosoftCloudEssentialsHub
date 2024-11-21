@@ -125,7 +125,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
 ### Allow storage account key access
 
-> When Allow storage account key access is disabled, any requests to the account that are authorized with Shared Key, including shared access signatures (SAS), will be denied. Click [here to learn more](https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent?tabs=portal)
+> If you plan to use access keys, please ensure that the setting "Allow storage account key access" is enabled. When this setting is disabled, any requests to the account authorized with Shared Key, including shared access signatures (SAS), will be denied. Click [here to learn more](https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent?tabs=portal)
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/47e74073-1b58-4d4a-b898-7be91b9314b7">
 
