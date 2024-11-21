@@ -149,6 +149,43 @@ Last updated: 2024-11-20
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/203f4e0d-6697-4200-83bc-65f0023addb5">
 
+## Step 4: Set Up Azure Document Intelligence
+
+1. Create Document Intelligence Resource
+  - Go to the Azure Portal.
+  - **Create a New Resource**:
+    - Click on `Create a resource` and search for `Form Recognizer`.
+    - Select `Form Recognizer` and click `Create`.
+- **Configure the Resource**:
+   - **Subscription**: Select your Azure subscription.
+   - **Resource Group**: Choose an existing resource group or create a new one.
+   - **Region**: Select the region closest to your location.
+   - **Name**: Provide a unique name for your Form Recognizer resource.
+   - **Pricing Tier**: Choose the pricing tier that fits your needs (e.g., Standard S0).
+- Review your settings and click `Create` to deploy the resource.
+
+2. Configure Models
+  - Using Prebuilt Models:
+    - **Access Form Recognizer Studio**:
+      - Navigate to your Form Recognizer resource in the Azure Portal.
+      - Click on `Form Recognizer Studio` under the `Quick start` section.
+    - **Select Prebuilt Models**: Choose the prebuilt model that matches your document type (e.g., "Invoices" for your PDF example).
+    - **Analyze Document**:
+      - Upload your PDF document to the Form Recognizer Studio.
+      - The prebuilt model will automatically extract fields such as invoice ID, date, vendor information, line items, and totals.
+  - Training Custom Models (if needed):
+    - **Prepare Training Data**:
+      - Collect a set of sample documents similar to your PDF example.
+      - Label the fields you want to extract using the Form Recognizer Labeling Tool.
+    - **Upload Training Data**: Upload the labeled documents to an Azure Blob Storage container.
+    - **Train the Model**:
+      - In the Form Recognizer Studio, select "Custom model".
+      - Provide the SAS URL of the Blob Storage container with your training data.
+      - Click "Train" to create a custom model.
+    - **Test the Model**:
+      - Upload a new document to test the custom model.
+      - Verify that the model correctly extracts the desired fields.
+
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
   <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
