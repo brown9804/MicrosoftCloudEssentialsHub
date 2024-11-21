@@ -221,6 +221,9 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 - **Prepare Training Data**:
    - Collect a set of sample documents similar to your PDF example.
    - Label the fields you want to extract using the [Form Recognizer Labeling Tool](https://fott-2-1.azurewebsites.net/). Click [here for more information about to use it](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/try-sample-label-tool?view=doc-intel-2.1.0#prerequisites-for-training-a-custom-form-model).
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/94fca855-ec1b-444c-91f0-e05de13600df">
+
 - **Upload Training Data**: Upload the labeled documents to an Azure Blob Storage container.
 - Grant the necessary role (`Storage Blob Data Reader`) to the Document Intelligence Account for the Storage Account to access the information. Otherwise, you may encounter an error like this:
 
@@ -560,6 +563,34 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
 > [!IMPORTANT]
 If you need further assistance with the code, please click [here to view all the function code](./src/).
+
+## Step 6: Test the solution
+
+> Upload sample PDF invoices to the Blob container and verify that data is correctly ingested and stored in Cosmos DB.
+
+- Click on `Upload`, then select `Browse for files` and choose your PDF invoices to be stored in the blob container, which will trigger the function app to parse them.
+
+   <img width="950" alt="image" src="">
+
+- Check the logs, and traces from your function with `Application Insights`:
+
+   <img width="550" alt="image" src="">
+
+- Under `Investigate`, click on `Performance`. Filter by time range, and `drill into the samples`. Sort the results by date (if you have many, like in my case) and click on the last one.
+
+   <img width="550" alt="image" src="">
+
+- Click on `View all`:
+
+   <img width="550" alt="image" src="">
+
+- Check all the logs, and traces generated. Also review the information parsed:
+
+   <img width="550" alt="image" src="">
+
+- Validate that the information was uploaded to the Cosmos DB. Under `Data Explorer`, check your `Database`:
+
+   <img width="550" alt="image" src="">
 
 
 <div align="center">
