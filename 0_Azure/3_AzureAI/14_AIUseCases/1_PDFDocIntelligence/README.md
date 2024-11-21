@@ -1,4 +1,4 @@
-<img width="709" alt="image" src="https://github.com/user-attachments/assets/e6fb0e9e-5ead-4bff-8643-27a8110ca63a"># Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
+# Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
 
 Costa Rica
 
@@ -212,7 +212,7 @@ Last updated: 2024-11-21
          - Collect a set of sample documents similar to your PDF example.
          - Label the fields you want to extract using the [Form Recognizer Labeling Tool](https://fott-2-1.azurewebsites.net/). Click [here for more information about to use it](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/try-sample-label-tool?view=doc-intel-2.1.0#prerequisites-for-training-a-custom-form-model).
       - **Upload Training Data**: Upload the labeled documents to an Azure Blob Storage container.
-      - Grant the necessary role (`Storage Blob Data Contributor`) to the Document Intelligence Account for the Storage Account to access the information. Otherwise, you may encounter an error like this:
+      - Grant the necessary role (`Storage Blob Data Reader`) to the Document Intelligence Account for the Storage Account to access the information. Otherwise, you may encounter an error like this:
 
           <img width="550" alt="image" src="https://github.com/user-attachments/assets/16feb31b-2a0e-4060-8e57-c870240a5109">
 
@@ -226,7 +226,7 @@ Last updated: 2024-11-21
 
            <img width="550" alt="image" src="https://github.com/user-attachments/assets/59881d40-eb4c-4276-b3d3-d5e7dd877af0">
 
-         - Search for `Storage Blob Data Contributor`, click `Next`. Then, click on `select members` and search for your `Document intelligence identity`. Finally click on `Review + assign`:
+         - Search for `Storage Blob Data Reader`, click `Next`. Then, click on `select members` and search for your `Document intelligence identity`. Finally click on `Review + assign`:
 
             <img width="550" alt="image" src="https://github.com/user-attachments/assets/e8bbe706-8ecc-41bd-a189-846e82ccef01">
 
@@ -253,6 +253,111 @@ Last updated: 2024-11-21
       - **Test the Model**:
          - Upload a new document to test the custom model.
          - Verify that the model correctly extracts the desired fields.
+
+## Step 5: Set Up Azure Functions for Document Ingestion and Processing
+
+> An `Azure Function App` is a `container for hosting individual Azure Functions`. It provides the execution context for your functions, allowing you to manage, deploy, and scale them together. `Each function app can host multiple functions, which are small pieces of code that run in response to various triggers or events, such as HTTP requests, timers, or messages from other Azure services`. <br/> <br/>
+> Azure Functions are designed to be lightweight and event-driven, enabling you to build scalable and serverless applications. `You only pay for the resources your functions consume while they are running, making it a cost-effective solution for many scenarios`.
+
+1. **Create a Function App**:
+   - In the Azure portal, go to your **Resource Group**.
+   - Click **+ Create**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7796ccf9-808d-487a-85cc-ec8bc382a7aa">
+
+   - Search for `Function App`, click on `Create`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c5ce746-06b7-4dd8-992f-edc597ea6c27">
+
+   - Choose a `hosting option`; for this example, we will use `Flex Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/parsePDFDocIntellig/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
+           
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/49ef62ad-440c-480c-ac36-9b14eaeaa958">
+
+   - Enter a name for the Function App (e.g., `ContosoFAaiDocIntellig`).
+   - Choose your runtime stack (e.g., `.NET` or `Python`).
+   - Select the region and other settings.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8674cf0b-f03e-4161-8efd-8f690a3e9dbd">
+
+   - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/002620d0-4040-4289-ad56-3e5d4d6ff3c7">
+
+2. **Configure/Validate** the `Environment variables`:
+   - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
+
+     -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
+     -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+     -  `invoicecontosostorage_STORAGE`: Your Storage Account key.
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/31d813e7-38ba-46ff-9e4b-d091ae02706a">
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/45313857-b337-4231-9184-d2bb46e19267">
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ec5d60f3-5136-489d-8796-474b7250865d">
+
+     - Click on `Apply` to save your configuration.
+       
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/7b2d7e9a-5107-4545-a199-a0522cf04f00">
+
+3. **Develop the Function**:
+   - You need to install [VSCode](https://code.visualstudio.com/download)
+   - Install python from Microsoft store:
+       
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/30f00c27-da0d-400f-9b98-817fd3e03b1c">
+
+   - Open VSCode, and install some extensions: `python`, and `Azure Tools`.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/715449d3-1a36-4764-9b07-99421fb1c834">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/854aa665-dc2f-4cbf-bae2-2dc0a8ef6e46">
+
+   - Click on the `Azure` icon, and `sign in` into your account. Allow the extension `Azure Resources` to sign in using Microsoft, it will open a browser window. After doing so, you will be able to see your subscription and resources.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/4824ca1c-4959-4242-95af-ad7273c5530d">
+
+   - Under Workspace, click on `Create Function Project`, and choose a path in your local computer to develop your function.
+  
+       <img width="550" alt="image" src="">
+
+   - Choose the language, in this case is `python`:
+
+      <img width="550" alt="image" src="">
+
+   - Select the model version, for this example let's use `v2`:
+     
+      <img width="550" alt="image" src="">
+
+   - For the python interpreter, let's use the one installed via `Microsoft Store`:
+
+      <img width="741" alt="image" src="">
+
+   - Choose a template (e.g., **Blob trigger**) and configure it to trigger on new PDF uploads in your Blob container.
+
+      <img width="550" alt="image" src="">
+
+   - Provide a function name, like `BlobTriggerContosoPDFInvoicesDocIntelligence`:
+
+      <img width="550" alt="image" src="">
+
+   - Next, it will prompt you for the path of the blob container where you expect the function to be triggered after a file is uploaded. In this case is `pdfinvoices` as was previously created.
+
+     <img width="550" alt="image" src="">
+
+   - Click on `Create new local app settings`, and then choose your subscription.
+
+     <img width="550" alt="image" src="">
+
+   - Choose `Azure Storage Account for remote storage`, and select one. I'll be using the `contosostorageaidemo`. 
+
+     <img width="550" alt="image" src="">
+
+   - Then click on `Open in the current window`. You will see something like this:
+
+     <img width="550" alt="image" src="">
+
+   - Now we need to update the function code to extract data from PDFs and store it in Cosmos DB, use this an example:
+
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
