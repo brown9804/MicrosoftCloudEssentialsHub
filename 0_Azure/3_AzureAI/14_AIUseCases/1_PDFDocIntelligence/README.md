@@ -318,43 +318,43 @@ Last updated: 2024-11-21
 
    - Under Workspace, click on `Create Function Project`, and choose a path in your local computer to develop your function.
   
-       <img width="550" alt="image" src="">
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/2c42d19e-be8b-48ef-a7e4-8a39989cea5a">
 
    - Choose the language, in this case is `python`:
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/2fb19a1e-bb2d-47e5-a56e-8dc8a708647a">
 
    - Select the model version, for this example let's use `v2`:
      
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/fd46ee93-d788-463d-8b28-dbf2487e9a7f">
 
    - For the python interpreter, let's use the one installed via `Microsoft Store`:
 
-      <img width="741" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/3605c959-fc59-461f-9e8d-01a6a92004a8">
 
    - Choose a template (e.g., **Blob trigger**) and configure it to trigger on new PDF uploads in your Blob container.
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/0a4ed541-a693-485c-b6ca-7d5fb55a61d2">
 
    - Provide a function name, like `BlobTriggerContosoPDFInvoicesDocIntelligence`:
 
-      <img width="550" alt="image" src="">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/263cef5c-4460-46cb-8899-fb609b191d81">
 
    - Next, it will prompt you for the path of the blob container where you expect the function to be triggered after a file is uploaded. In this case is `pdfinvoices` as was previously created.
 
-     <img width="550" alt="image" src="">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/7005dc44-ffe2-442b-8373-554b229b3042">
 
    - Click on `Create new local app settings`, and then choose your subscription.
 
-     <img width="550" alt="image" src="">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/07c211d6-eda0-442b-b428-cdaed2bf12ac">
 
-   - Choose `Azure Storage Account for remote storage`, and select one. I'll be using the `contosostorageaidemo`. 
+   - Choose `Azure Storage Account for remote storage`, and select one. I'll be using the `invoicecontosostorage`. 
 
-     <img width="550" alt="image" src="">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/3b5865fc-3e84-4582-8f06-cb5675d393f0">
 
    - Then click on `Open in the current window`. You will see something like this:
 
-     <img width="550" alt="image" src="">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/f30e8e10-0c37-4efc-8158-c83faf22a7d8">
 
    - Now we need to update the function code to extract data from PDFs and store it in Cosmos DB, use this an example:
 
