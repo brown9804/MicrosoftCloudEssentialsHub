@@ -186,7 +186,7 @@ Last updated: 2024-11-21
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/571c2880-cff7-4ed5-9840-2f1b5f58ce46">
 
-   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](#function-app-hosting-plans):
+   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
            
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8bd30c5-7b21-4aac-adf2-6e1dc5ec509a">
 
