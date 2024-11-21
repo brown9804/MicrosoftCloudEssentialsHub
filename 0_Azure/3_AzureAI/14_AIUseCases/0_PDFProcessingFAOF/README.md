@@ -471,7 +471,6 @@ If you need further assistance with the code, please click [here to view all the
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/28bba46b-eaf0-4bbc-a565-f7c1ad8a0ac6">
 
-
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
   <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
