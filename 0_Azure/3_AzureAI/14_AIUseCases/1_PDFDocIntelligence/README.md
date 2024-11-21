@@ -581,7 +581,7 @@ If you need further assistance with the code, please click [here to view all the
 
 > [!IMPORTANT]
 > Please ensure that the user/system admin responsible for uploading the PDFs to the blob container has the necessary permissions. The error below illustrates what might occur if these roles are missing. <br/> 
-> <img width="55-" alt="image" src="https://github.com/user-attachments/assets/d827775a-d419-467e-9b2d-35cb05bc0f8a"> <br/>
+> <img width="550" alt="image" src="https://github.com/user-attachments/assets/d827775a-d419-467e-9b2d-35cb05bc0f8a"> <br/>
 > In that case, go to `Access Control (IAM)`, click on `+ Add`, and `Add role assignment`: <br/>
 > <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa4deff1-b6e1-49ec-9395-831ce2f982f5"> <br/>
 > Search for `Storage Blob Data Contributor`, click `Next`. <br/>
