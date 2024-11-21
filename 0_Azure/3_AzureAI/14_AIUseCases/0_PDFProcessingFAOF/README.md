@@ -6,11 +6,16 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2024-11-21
 
 ----------
 
 > Using Azure Functions, Blob Storage, and Cosmos DB. <br/>
+
+> [!NOTE]
+> Limitations of this approach: <br/>
+> - Requires significant manual effort to structure and format extracted data. <br/>
+> - Limited in handling complex layouts and non-text elements like images and charts. <br/>
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/cda874fc-6cca-4857-ac5d-2f8d7887e36d">
 
@@ -25,6 +30,19 @@ Last updated: 2024-11-19
 - [Storage considerations for Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/storage-considerations?tabs=azure-cli)
 
 </details>
+
+## Content
+
+- [Automated PDF Invoice Processing  using Function App + OpenFramework](#automated-pdf-invoice-processing--using-function-app--openframework)
+    - [Wiki](#wiki)
+    - [Content](#content)
+    - [Overview](#overview)
+        - [Function App Hosting Options](#function-app-hosting-options)
+    - [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
+    - [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
+    - [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
+    - [Step 4: Set Up Azure Functions for Document Ingestion and Processing](#step-4-set-up-azure-functions-for-document-ingestion-and-processing)
+    - [Step 5: Test the solution](#step-5-test-the-solution)
 
 ## Overview 
 
@@ -51,7 +69,7 @@ Last updated: 2024-11-19
 | **App Service**         | `No`              | `Dedicated VMs`                        | `Yes`                  | `Yes`                                       | `Varies`                       | `AI-powered web applications` with integrated functions, AI applications needing `dedicated resources`. Great for web applications that incorporate AI functionalities, such as personalized content delivery, chatbots, or interactive AI features. Suitable for AI applications that require dedicated compute resources for consistent performance, such as intensive data processing or complex AI model inference. |
 | **Container Apps Env.** | `No`              | `Containerized microservices environment` | `Yes`                  | `Yes`                                       | `Varies`                       | `AI microservices architecture`, containerized AI workloads, `complex AI event-driven workflows`. Perfect for building a microservices architecture where each service can be independently scaled and managed, such as a suite of AI services for different tasks (e.g., image processing, text analysis). Ideal for deploying containerized AI workloads that need to run in a managed environment, such as machine learning model training and deployment pipelines. Suitable for orchestrating complex workflows involving multiple AI services and event-driven processes, such as automated data pipelines and real-time analytics. |
 
-### Step 1: Set Up Your Azure Environment
+## Step 1: Set Up Your Azure Environment
 
 > An Azure `Resource Group` is a `container that holds related resources for an Azure solution`.
 > It can include all the resources for the solution or only those you want to manage as a group.
@@ -71,7 +89,7 @@ Last updated: 2024-11-19
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/324c1157-9566-4b30-bb36-bd0efb0a1bf3">
 
-### Step 2: Set Up Azure Blob Storage for PDF Ingestion
+## Step 2: Set Up Azure Blob Storage for PDF Ingestion
 
 > An `Azure Storage Account` provides a `unique namespace in Azure for your data, allowing you to store and manage various types of data such as blobs, files, queues, and tables`. It serves as the foundation for all Azure Storage services, ensuring high availability, scalability, and security for your data. <br/> <br/>
 > A `Blob Container` is a `logical grouping of blobs within an Azure Storage Account, similar to a directory in a file system`. Containers help organize and manage blobs, which can be any type of unstructured data like text or binary data. Each container can store an unlimited number of blobs, and you must create a container before uploading any blobs.
@@ -113,11 +131,7 @@ Last updated: 2024-11-19
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/9b4900e3-7ce8-42aa-b5d9-c2fbb2417721">
 
-   - Create another container for `processedinvoices`:
-  
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1e7da13b-3b8f-4f75-b9cb-79ab14797620">
-
-### Step 3: Set Up Azure Cosmos DB
+## Step 3: Set Up Azure Cosmos DB
 
 > `Azure Cosmos DB` is a globally distributed,` multi-model database service provided by Microsoft Azure`. It is designed to offer high availability, scalability, and low-latency access to data for modern applications. Unlike traditional relational databases, Cosmos DB is a `NoSQL database, meaning it can handle unstructured, semi-structured, and structured data types`. `It supports multiple data models, including document, key-value, graph, and column-family, making it versatile for various use cases.` <br/> <br/>
 > An `Azure Cosmos DB container` is a `logical unit` within a Cosmos DB database where data is stored. `Containers are schema-agnostic, meaning they can store items with different structures. Each container is automatically partitioned to scale out across multiple servers, providing virtually unlimited throughput and storage`. Containers are the primary scalability unit in Cosmos DB, and they use a partition key to distribute data efficiently across partitions.
@@ -139,7 +153,7 @@ Last updated: 2024-11-19
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/42b415d3-0d38-4b69-9e18-7bc4015b4a6d">
 
-1. **Create a Database and Container**:
+2. **Create a Database and Container**:
    - Go to your Cosmos DB account.
    - Under **Data Explorer**, click **New Database**.
 
@@ -157,7 +171,7 @@ Last updated: 2024-11-19
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/50fc8358-c33d-436d-9661-4127465fc21b">
 
-### Step 4: Set Up Azure Functions for Document Ingestion and Processing
+## Step 4: Set Up Azure Functions for Document Ingestion and Processing
 
 > An `Azure Function App` is a `container for hosting individual Azure Functions`. It provides the execution context for your functions, allowing you to manage, deploy, and scale them together. `Each function app can host multiple functions, which are small pieces of code that run in response to various triggers or events, such as HTTP requests, timers, or messages from other Azure services`. <br/> <br/>
 > Azure Functions are designed to be lightweight and event-driven, enabling you to build scalable and serverless applications. `You only pay for the resources your functions consume while they are running, making it a cost-effective solution for many scenarios`.
@@ -172,7 +186,7 @@ Last updated: 2024-11-19
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/571c2880-cff7-4ed5-9840-2f1b5f58ce46">
 
-   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](#function-app-hosting-plans):
+   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
            
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8bd30c5-7b21-4aac-adf2-6e1dc5ec509a">
 
@@ -191,6 +205,7 @@ Last updated: 2024-11-19
 
      -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
      -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+     -  `contosostorageaidemo_STORAGE`: Your Storage Account key.
 
          <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
     
@@ -428,7 +443,7 @@ Last updated: 2024-11-19
 > [!IMPORTANT]
 If you need further assistance with the code, please click [here to view all the function code](./src/).
 
-### Step 5: Test the solution
+## Step 5: Test the solution
 
 > Upload sample PDF invoices to the Blob container and verify that data is correctly ingested and stored in Cosmos DB.
 
@@ -455,7 +470,6 @@ If you need further assistance with the code, please click [here to view all the
 - Validate that the information was uploaded to the Cosmos DB. Under `Data Explorer`, check your `Database`:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/28bba46b-eaf0-4bbc-a565-f7c1ad8a0ac6">
-
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
