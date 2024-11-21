@@ -314,6 +314,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
   -  `invoicecontosostorage_STORAGE`: Your Storage Account key.
   -  `FORM_RECOGNIZER_ENDPOINT`: For example: `https://<your-form-recognizer-endpoint>.cognitiveservices.azure.com/`
   -  `FORM_RECOGNIZER_KEY`: Your Documment Intelligence Key (Form Recognizer).
+  -  `FUNCTIONS_EXTENSION_VERSION`: ~4
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/31d813e7-38ba-46ff-9e4b-d091ae02706a">
 
@@ -572,6 +573,9 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
 > [!IMPORTANT]
 If you need further assistance with the code, please click [here to view all the function code](./src/).
+
+> [!NOTE]
+> Please ensure that the `Storage Blob Data Contributor` role is assigned to the Function App within the storage account, allowing the function app to listen to the blob container. You may enable `System assigned`  for the Function App to facilitate the role assignment.
 
 ## Step 6: Test the solution
 
