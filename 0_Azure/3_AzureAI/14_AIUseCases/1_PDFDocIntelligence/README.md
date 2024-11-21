@@ -483,14 +483,14 @@ Within the Storage Account, create a Blob Container to store your PDFs.
               logging.error(f"Error connecting to Cosmos DB: {e}")
               return
       
-          database_name = 'ContosoDBAIDemo'
+          database_name = 'ContosoDBDocIntellig'
           container_name = 'Invoices'
       
           try:
               database = cosmos_client.create_database_if_not_exists(id=database_name)
               container = database.create_container_if_not_exists(
                   id=container_name,
-                  partition_key=PartitionKey(path="/invoice_number"),
+                  partition_key=PartitionKey(path="/transactionId"),
                   offer_throughput=400
               )
               logging.info("Successfully ensured database and container exist.")
