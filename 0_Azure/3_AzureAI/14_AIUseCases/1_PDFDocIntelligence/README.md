@@ -27,6 +27,15 @@ Last updated: 2024-11-21
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [Azure Cosmos DB - Database for the AI Era](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction)
+- [Azure AI Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)
+- [Get started with the Document Intelligence Sample Labeling tool](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/try-sample-label-tool?view=doc-intel-2.1.0#prerequisites-for-training-a-custom-form-model)
+- [Document Intelligence Sample Labeling tool](https://fott-2-1.azurewebsites.net/)
+- [Assign an Azure role for access to blob data](https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access?tabs=portal)
+- [Build and train a custom extraction model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/how-to-guides/build-a-custom-model?view=doc-intel-2.1.0)
+- [Compose custom models - Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/how-to-guides/compose-custom-models?view=doc-intel-2.1.0&tabs=studio)
+- [Deploy the Sample Labeling tool](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/deploy-label-tool?view=doc-intel-2.1.0)
+- [Train a custom model using the Sample Labeling tool](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/label-tool?view=doc-intel-2.1.0)
+- Train models with the sample-labeling tool](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/supervised-table-tags?view=doc-intel-2.1.0)
 
 </details>
 
@@ -497,7 +506,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
       
       ## MAIN 
       @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
-                        connection="contosostorageaidemo_STORAGE")
+                        connection="invoicecontosostorage_STORAGE")
       def BlobTriggerContosoPDFInvoicesDocIntelligence(myblob: func.InputStream):
           logging.info(f"Python blob trigger function processed blob\n"
                        f"Name: {myblob.name}\n"
@@ -566,15 +575,24 @@ If you need further assistance with the code, please click [here to view all the
 
 ## Step 6: Test the solution
 
+> [!IMPORTANT]
+> Please ensure that the user/system admin responsible for uploading the PDFs to the blob container has the necessary permissions. The error below illustrates what might occur if these roles are missing. <br/> 
+> <img width="55-" alt="image" src="https://github.com/user-attachments/assets/d827775a-d419-467e-9b2d-35cb05bc0f8a"> <br/>
+> In that case, go to `Access Control (IAM)`, click on `+ Add`, and `Add role assignment`: <br/>
+> <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa4deff1-b6e1-49ec-9395-831ce2f982f5"> <br/>
+> Search for `Storage Blob Data Contributor`, click `Next`. <br/>
+> <img width="550" alt="image" src="https://github.com/user-attachments/assets/1fd40ef8-53f7-42df-a263-5bc3c80e61ba"> <br/>
+> Then, click on `select members` and search for your user/systen admin. Finally click on `Review + assign`.
+
 > Upload sample PDF invoices to the Blob container and verify that data is correctly ingested and stored in Cosmos DB.
 
 - Click on `Upload`, then select `Browse for files` and choose your PDF invoices to be stored in the blob container, which will trigger the function app to parse them.
 
-   <img width="950" alt="image" src="">
+   <img width="950" alt="image" src="https://github.com/user-attachments/assets/a8456461-400b-4c68-b3d3-ac0b1630374d">
 
 - Check the logs, and traces from your function with `Application Insights`:
 
-   <img width="550" alt="image" src="">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/d499580a-76cb-4b4f-bb36-fd60c563a91c">
 
 - Under `Investigate`, click on `Performance`. Filter by time range, and `drill into the samples`. Sort the results by date (if you have many, like in my case) and click on the last one.
 
