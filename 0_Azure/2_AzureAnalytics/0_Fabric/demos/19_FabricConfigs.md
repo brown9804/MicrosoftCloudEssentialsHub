@@ -20,6 +20,26 @@ Last updated: 2024-11-22
 
 ## Fabric Admin Portal 
 
+1. [Tenant settings (New)](#tenant-settings)
+2. Usage metrics
+3. Users
+4. Premium Per User
+5. Audit logs
+6. Domains (New)
+7. Workloads
+8. Tags (preview) (New)
+9. Capacity settings
+   - Refresh summary
+10. [Embed Codes](#embed-codes)
+11. Organizational visuals
+12. Azure connections
+13. Workspaces
+14. [Custom branding](#custom-branding)
+15. Protection metrics
+16. Fabric identities
+17. Featured content
+18. Help + support
+
 ## Tenant settings 
 
 ### Microsoft Fabric 
@@ -84,6 +104,12 @@ Last updated: 2024-11-22
 | **Users can use Copilot features and other features powered by Azure OpenAI** | Users can use Copilot features and other features powered by Azure OpenAI if an administrator enables access, users have been assigned licenses that include Copilot, and users have appropriate security group assignments. <br/> **Technical Context**: Copilot in Microsoft Fabric uses AI to assist users in data exploration, report generation, and analytics. It can understand natural language queries and provide relevant data insights, making it easier for users to interact with complex datasets. <br/> **Azure OpenAI Integration**: Azure OpenAI provides the underlying AI capabilities for Copilot, including natural language processing and machine learning. This integration allows for advanced data analysis and visualization features within Microsoft Fabric. <br/> **Security Group Assignments**: Administrators can control access to Copilot features by assigning appropriate security groups. This ensures that only authorized users can utilize these advanced AI capabilities. |
 | **Data Residency and Compliance** | Data sent to Azure OpenAI can be processed outside your organization's geographic region or national cloud instance if required for service availability. <br/> **Technical Context**: Organizations need to be aware of where their data is processed, especially if it involves sensitive or regulated information. Enabling Copilot may result in data being processed outside the organization's geographic region, which could impact compliance with data residency regulations. |
 
+## Embed Codes
+
+This section allows administrators to view embed codes that have been created by their organization. The interface includes options to refresh and export data, and it lists details such as the report name, workspace, publisher, status, and embed URL.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/8d70d3e8-2e05-4c68-9f40-dd7d31cc2a81">
+
 ## Custom branding
 
 | **Setting** | **Description and Context** |
@@ -91,10 +117,3 @@ Last updated: 2024-11-22
 | **Logo** | Administrators can upload a logo with a recommended size of 190 x 30 pixels. <br/> **Technical Context**: Uploading a custom logo helps organizations maintain brand consistency across their Power BI environment. The logo appears in the Power BI service, providing a branded experience for users. Ensuring the logo meets the recommended size ensures it displays correctly without distortion. Custom branding features like logos help organizations create a consistent brand experience across all their tools and platforms, enhancing user recognition and trust. |
 | **Cover Image** | Administrators can upload a cover image that is at least 1920 x 160 pixels and less than 1 MB in size. <br/> **Technical Context**: The cover image is displayed on the Power BI home page, enhancing the visual appeal and reinforcing the organization's brand identity. Ensuring the image meets the size and file requirements is important for optimal display quality. A high-resolution image that fits within the specified dimensions ensures a professional and polished appearance. Customizing the visual elements of Power BI can improve the user experience by making the interface more engaging and aligned with the organization's identity. |
 | **Theme Color** | There is an option to set a theme color using a color picker or by entering a hex code. <br/> **Technical Context**: Setting a theme color allows organizations to align the Power BI interface with their corporate color scheme. This customization helps create a cohesive look and feel, making the Power BI environment more familiar and visually appealing to users. Using the correct hex code ensures that the chosen color is accurately represented in the interface, maintaining visual consistency. Adhering to the recommended sizes and file formats for logos and cover images ensures that these elements are displayed correctly and look professional. |
-
-## Embed Codes
-
-This section allows administrators to view embed codes that have been created by their organization. The interface includes options to refresh and export data, and it lists details such as the report name, workspace, publisher, status, and embed URL.
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/8d70d3e8-2e05-4c68-9f40-dd7d31cc2a81">
-
