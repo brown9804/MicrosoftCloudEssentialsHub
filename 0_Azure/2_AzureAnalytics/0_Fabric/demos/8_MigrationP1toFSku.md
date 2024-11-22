@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2024-11-22
 
 ----------
 
@@ -75,7 +75,7 @@ Last updated: 2024-11-19
 ## How to transition 
 
 > [!NOTE]
-> If the resources are in the `same region`, it's just `reassigning the workspace compute -> Capacity`
+> If the resources are in the $${\color{red}same\ region}$$, it's just $${\color{red}reassigning\ the\ workspace\ compute\ ->\ Capacity}$$
 
 > [!IMPORTANT]
 > API Call for Bulk Migration: For multiple workspaces using an API call to get all workspaces in a capacity and then performing a bulk migration, could simplify the process and identify any workspaces that need manual intervention. Use this as reference [Solved: Re: Bulk Assign Workspace Capacity - Microsoft Fabric Community](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/1/atp-safelinks.html), and [Admin - Groups GetGroupsAsAdmin](https://learn.microsoft.com/en-us/rest/api/power-bi/admin/groups-get-groups-as-admin)
@@ -123,7 +123,7 @@ Last updated: 2024-11-19
                <img width="550" alt="image" src="https://github.com/user-attachments/assets/1a6cbfdf-cde3-4eb4-a7d8-f66a28094059">
 
 > [!NOTE]
-> If the `across region`, you need to `export/import reports and semantic models, recreate dashboards`.
+> If the $${\color{red}across\ region}$$, you need to $${\color{red}also\ export/import\ reports\ and\ semantic\ models,\ recreate\ dashboards}$$.
 
 5. Data Export and Import: `-> Sematic Models/Dataset`
    - `For small Datasets`: Use Power BI’s export features to export datasets from the P1 capacity.
@@ -188,7 +188,7 @@ Last updated: 2024-11-19
       2. **Recreate Dashboards**: Manually recreate the dashboards in the F64 capacity by pinning the necessary visuals from the imported reports.
          
 > [!NOTE]
-> Verify the `migration and documentation` are steps recommended for `both approaches, same region migration or across region`.
+> Verify the $${\color{red}migration\ and\ documentation}$$ are steps recommended for $${\color{red}both\ approaches,\ same\ region\ migration\ or\ across\ region}$$.
          
 7. **Verify Migration**:
    - **Check Functionality**:
