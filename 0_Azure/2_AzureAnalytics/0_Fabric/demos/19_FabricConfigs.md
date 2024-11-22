@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/587cbad3-8ce7-47a7-8888-ced848c34924)# Fabric: Overview of Configuration Settings
+# Fabric: Overview of Configuration Settings
 
 Costa Rica
 
@@ -95,4 +95,6 @@ Last updated: 2024-11-22
 ## Embed Codes
 
 This section allows administrators to view embed codes that have been created by their organization. The interface includes options to refresh and export data, and it lists details such as the report name, workspace, publisher, status, and embed URL.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/8d70d3e8-2e05-4c68-9f40-dd7d31cc2a81">
 
