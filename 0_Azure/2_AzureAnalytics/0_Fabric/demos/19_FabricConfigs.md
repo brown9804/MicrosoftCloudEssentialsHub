@@ -15,6 +15,7 @@ Last updated: 2024-11-22
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
+- [What is the admin portal?](https://learn.microsoft.com/en-us/fabric/admin/admin-center)
 
 </details>
 
