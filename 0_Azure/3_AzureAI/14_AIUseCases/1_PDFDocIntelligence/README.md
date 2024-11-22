@@ -312,13 +312,17 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/002620d0-4040-4289-ad56-3e5d4d6ff3c7">
 
-- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account`.
+- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account` related to the runtime (the one created with the function app).
 
  > [!IMPORTANT]
  > This example is using system-assigned managed identity to assign RBACs (Role-based Access Control).
  > <img width="550" alt="image" src="https://github.com/user-attachments/assets/46fe06d4-d978-4743-801d-59c197fa4717">
 
  <img width="550" alt="image" src="https://github.com/user-attachments/assets/a08f77bf-71d4-4922-8001-cf402e9e81f2">
+
+- Assign `Storage Blob Data Reader`, ` to the Function App within the `Storage Account` that will contains the invoices, click `Next`. Then, click on `select members` and search for your `Function App` identity. Finally click on `Review + assign`:
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
 ### Configure/Validate the Environment variables
 
