@@ -306,7 +306,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 - Choose your runtime stack (e.g., `.NET` or `Python`).
 - Select the region and other settings.
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/8674cf0b-f03e-4161-8efd-8f690a3e9dbd">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/616867b6-1182-4a6d-94b2-6f8e2d3b664c">
 
 - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
 
