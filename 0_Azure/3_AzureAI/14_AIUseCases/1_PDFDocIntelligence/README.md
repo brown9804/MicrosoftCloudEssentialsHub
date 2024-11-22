@@ -297,9 +297,9 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c5ce746-06b7-4dd8-992f-edc597ea6c27">
 
-- Choose a `hosting option`; for this example, we will use `Flex Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/parsePDFDocIntellig/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
+- Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/parsePDFDocIntellig/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
         
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/49ef62ad-440c-480c-ac36-9b14eaeaa958">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/f58ae618-abd9-4e52-a1ac-c38891a6baab">
 
 - Enter a name for the Function App (e.g., `ContosoFAaiDocIntellig`).
 - Choose your runtime stack (e.g., `.NET` or `Python`).
@@ -310,6 +310,10 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/002620d0-4040-4289-ad56-3e5d4d6ff3c7">
+
+- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account`.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a08f77bf-71d4-4922-8001-cf402e9e81f2">
 
 ### Configure/Validate the Environment variables
 
@@ -606,11 +610,11 @@ If you need further assistance with the code, please click [here to view all the
 
 - Under `Investigate`, click on `Performance`. Filter by time range, and `drill into the samples`. Sort the results by date (if you have many, like in my case) and click on the last one.
 
-   <img width="550" alt="image" src="">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/e266131c-e46f-4848-96ed-db2c04c5c18f">
 
 - Click on `View all`:
 
-   <img width="550" alt="image" src="">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/19356900-00c8-43ca-b888-fe493b25f258">
 
 - Check all the logs, and traces generated. Also review the information parsed:
 
