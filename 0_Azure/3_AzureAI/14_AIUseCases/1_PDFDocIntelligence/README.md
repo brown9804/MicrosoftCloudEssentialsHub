@@ -618,7 +618,7 @@ If you need further assistance with the code, please click [here to view all the
 
 - Check all the logs, and traces generated. Also review the information parsed:
 
-   <img width="550" alt="image" src="">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/8f4631cc-162e-4c3b-913d-d146ea4e36b3">
 
 - Validate that the information was uploaded to the Cosmos DB. Under `Data Explorer`, check your `Database`:
 
