@@ -1,4 +1,4 @@
-# Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/c7b2f749-3557-4708-90af-f8e976079e43"><img width="953" alt="image" src="https://github.com/user-attachments/assets/6f8a13c9-bc2e-4562-9ebf-a55ba27f1828"># Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
 
 Costa Rica
 
@@ -323,6 +323,10 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 - Assign `Storage Blob Data Reader` to the `Function App` within the `Storage Account` that will contains the invoices, click `Next`. Then, click on `select members` and search for your `Function App` identity. Finally click on `Review + assign`:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
+
+- Also, add `Contributor` role. the Contributor role grants full access to manage all Azure resources, including the ability to read, write, and delete data in Cosmos DB.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/9f02909e-fffc-483d-88b8-b3d7cacaa892">
 
 ### Configure/Validate the Environment variables
 
