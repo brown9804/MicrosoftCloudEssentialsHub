@@ -336,6 +336,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
   -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
   -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+  -  `COSMOS_DB_CONNECTION_STRING`: Your Cosmos DB connection string.
   -  `invoicecontosostorage_STORAGE`: Your Storage Account connection string.
   -  `FORM_RECOGNIZER_ENDPOINT`: For example: `https://<your-form-recognizer-endpoint>.cognitiveservices.azure.com/`
   -  `FORM_RECOGNIZER_KEY`: Your Documment Intelligence Key (Form Recognizer).
