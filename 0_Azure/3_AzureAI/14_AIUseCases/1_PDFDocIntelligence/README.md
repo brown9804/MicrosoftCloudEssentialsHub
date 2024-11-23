@@ -1,4 +1,4 @@
-<img width="953" alt="image" src="https://github.com/user-attachments/assets/c7b2f749-3557-4708-90af-f8e976079e43"><img width="953" alt="image" src="https://github.com/user-attachments/assets/6f8a13c9-bc2e-4562-9ebf-a55ba27f1828"># Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
+# Automated PDF Invoice Processing using <br/> Azure Storage + Document Intelligence + Cosmos DB
 
 Costa Rica
 
