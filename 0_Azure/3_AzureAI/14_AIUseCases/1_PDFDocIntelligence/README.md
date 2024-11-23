@@ -299,15 +299,15 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/7c5ce746-06b7-4dd8-992f-edc597ea6c27">
 
-- Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/parsePDFDocIntellig/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
+- Choose a `hosting option`; for this example, we will use `Functions Premium`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/parsePDFDocIntellig/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
         
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/f58ae618-abd9-4e52-a1ac-c38891a6baab">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/11fabed8-1219-4090-9ba8-a79a41f2830a">
 
 - Enter a name for the Function App (e.g., `ContosoFAaiDocIntellig`).
 - Choose your runtime stack (e.g., `.NET` or `Python`).
 - Select the region and other settings.
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/616867b6-1182-4a6d-94b2-6f8e2d3b664c">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7e5dbc3c-6ee9-4272-95d4-243c7cca68d9">
 
 - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
 
