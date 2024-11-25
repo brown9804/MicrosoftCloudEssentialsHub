@@ -5,9 +5,11 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2024-11-25
 
 ----------
+
+> $${\color{red}Same\ geo\ but\ across\ region}$$ The `multi-geography setup` in Microsoft Fabric allows you to deploy content to data centers in regions other than the home region of your Fabric tenant. This feature is particularly useful for multinational customers who need to address regional, industry-specific, or organizational data residency requirements.` In your example, if you have the US as the geography with Central US and West US 2 as regions, you can set up a Fabric capacity reservation in one of these regions. Once a capacity is created, it remains in that region, and any workspaces created under it will have their content stored in that regio`n. This approach ensures that `you don't need to move the home region`, which can simplify management and compliance. CLick [here for more information about it](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-multi-geo?tabs=power-bi-premium)
 
 ## Wiki 
 
@@ -29,6 +31,7 @@ Last updated: 2024-11-19
 - [Load data into your lakehouse with a notebook - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-notebook-load-data)
 - [How to copy data using copy activity - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/copy-data-activity)
 - [Move and transform data with dataflow and data pipelines - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/transform-data)
+- [Configure Multi-Geo support for Fabric](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-multi-geo?tabs=power-bi-premium)
   
 </details>
 
@@ -75,7 +78,7 @@ Last updated: 2024-11-19
 ## How to transition 
 
 > [!NOTE]
-> If the resources are in the `same region`, it's just `reassigning the workspace compute -> Capacity`
+> If the resources are in the $${\color{red}same\ region}$$, it's just $${\color{red}reassigning\ the\ workspace\ compute\ ->\ Capacity}$$
 
 > [!IMPORTANT]
 > API Call for Bulk Migration: For multiple workspaces using an API call to get all workspaces in a capacity and then performing a bulk migration, could simplify the process and identify any workspaces that need manual intervention. Use this as reference [Solved: Re: Bulk Assign Workspace Capacity - Microsoft Fabric Community](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/1/atp-safelinks.html), and [Admin - Groups GetGroupsAsAdmin](https://learn.microsoft.com/en-us/rest/api/power-bi/admin/groups-get-groups-as-admin)
@@ -123,7 +126,7 @@ Last updated: 2024-11-19
                <img width="550" alt="image" src="https://github.com/user-attachments/assets/1a6cbfdf-cde3-4eb4-a7d8-f66a28094059">
 
 > [!NOTE]
-> If the `across region`, you need to `export/import reports and semantic models, recreate dashboards`.
+> If the $${\color{red}across\ region}$$, you need to $${\color{red}also\ export/import\ reports\ and\ semantic\ models,\ recreate\ dashboards}$$.
 
 5. Data Export and Import: `-> Sematic Models/Dataset`
    - `For small Datasets`: Use Power BI’s export features to export datasets from the P1 capacity.
@@ -188,7 +191,7 @@ Last updated: 2024-11-19
       2. **Recreate Dashboards**: Manually recreate the dashboards in the F64 capacity by pinning the necessary visuals from the imported reports.
          
 > [!NOTE]
-> Verify the `migration and documentation` are steps recommended for `both approaches, same region migration or across region`.
+> Verify the $${\color{red}migration\ and\ documentation}$$ are steps recommended for $${\color{red}both\ approaches,\ same\ region\ migration\ or\ across\ region}$$.
          
 7. **Verify Migration**:
    - **Check Functionality**:
