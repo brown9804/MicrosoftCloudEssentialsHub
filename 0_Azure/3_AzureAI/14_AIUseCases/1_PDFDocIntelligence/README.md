@@ -39,6 +39,8 @@ Last updated: 2024-11-25
 - [Consistency levels in Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/consistency-levels)
 - [Azure Cosmos DB SQL API client library for Python](https://learn.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python)
 - [CosmosClient class documentation](https://learn.microsoft.com/en-us/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient?view=azure-python)
+- [Cosmos AAD Authentication](https://learn.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python#aad-authentication)
+- [Cosmos python examples](https://learn.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python#examples)
   
 </details>
 
@@ -326,9 +328,9 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
-- Also, add `Contributor` role. the Contributor role grants full access to manage all Azure resources, including the ability to read, write, and delete data in Cosmos DB.
+- Also, add `Contributor` role (grants full access to manage all Azure resources, including the ability to read, write, and delete data in Cosmos DB). And also `Cosmos DB Account Reader Role` (Read the metadata of a location):
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/9f02909e-fffc-483d-88b8-b3d7cacaa892">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/39201507-ff8c-4b26-97f5-98af46339b55">
 
 ### Configure/Validate the Environment variables
 
