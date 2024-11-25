@@ -328,7 +328,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
-- Also, add `Contributor` role (grants full access to manage all Azure resources, including the ability to read, write, and delete data in Cosmos DB). And also `Cosmos DB Account Reader Role` (Read the metadata of a location):
+- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor` and `Azure AI Administrator`:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/39201507-ff8c-4b26-97f5-98af46339b55">
 
