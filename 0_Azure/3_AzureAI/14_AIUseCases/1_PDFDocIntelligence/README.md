@@ -41,7 +41,10 @@ Last updated: 2024-11-25
 - [CosmosClient class documentation](https://learn.microsoft.com/en-us/python/api/azure-cosmos/azure.cosmos.cosmos_client.cosmosclient?view=azure-python)
 - [Cosmos AAD Authentication](https://learn.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python#aad-authentication)
 - [Cosmos python examples](https://learn.microsoft.com/en-us/python/api/overview/azure/cosmos-readme?view=azure-python#examples)
-  
+- [Use control plane role-based access control with Azure Cosmos DB for NoSQL](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-control-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-portal)
+- [Use data plane role-based access control with Azure Cosmos DB for NoSQL](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-data-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-cli)
+- [Create or update Azure custom roles using Azure CLI](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-cli)
+
 </details>
 
 ## Content 
@@ -328,9 +331,86 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
-- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor` and `Azure AI Administrator`:
+- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`:
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/39201507-ff8c-4b26-97f5-98af46339b55">
+
+- Add role assigment `Azure Cosmos DB Control Plane Owner` to the `Function App`, under `Resource Group` -> `Access Control (IAM)`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2865e0c5-e2a8-4230-93f7-f4cc54443fa0">
+
+- To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB.
+
+    | **Aspect**         | **Data Plane Access**                                                                 | **Control Plane Access**                                                                 |
+    |--------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+    | **Scope**          | Focuses on `data operations` within databases and containers. This includes actions such as reading, writing, and querying data in your databases and containers. | Focuses on `management operations` at the account level. This includes actions such as creating, deleting, and configuring databases and containers. |
+    | **Roles**          | - `Cosmos DB Built-in Data Reader`: Provides read-only access to data within the databases and containers. <br> - `Cosmos DB Built-in Data Contributor`: Allows read and write access to data within the databases and containers. <br> - `Cosmos DB Built-in Data Owner`: Grants full access to manage data within the databases and containers. | - `Contributor`: Grants full access to manage all Azure resources, including Cosmos DB. <br> - `Owner`: Grants full access to manage all resources, including the ability to assign roles in Azure RBAC. <br> - `Cosmos DB Account Contributor`: Allows management of Cosmos DB accounts, including creating and deleting databases and containers. <br> - `Cosmos DB Account Reader`: Provides read-only access to Cosmos DB account metadata. |
+    | **Permissions**    | - `Reading documents` <br> - `Writing documents` <br> - Managing data within containers. | - `Creating or deleting databases and containers` <br> - Configuring settings <br> - Managing account-level configurations. |
+    | **Authentication** | Uses `Azure Active Directory (AAD) tokens` or `resource tokens` for authentication.                      | Uses `Azure Active Directory (AAD)` for authentication.                                 |
+
+> Steps to assing it:
+
+1. **Open Azure CLI**: Go to the [Azure portal](portal.azure.com) and click on the icon for the Azure CLI.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/b2643d9a-7364-454a-bb24-f16270e99d92">
+
+2. **List Role Definitions**: Run the following command to list all of the role definitions associated with your Azure Cosmos DB for NoSQL account. Review the output and locate the role definition named `Cosmos DB Built-in Data Contributor`.
+
+     ```powershell
+     az cosmosdb sql role definition list \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>"
+     ```
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/4c19d70e-d525-4c15-bb0e-518f50f61b37">
+    
+
+3. **Get Cosmos DB Account ID**: Run this command to get the ID of your Cosmos DB account. Record the value of the `id` property as it is required for the next step.
+
+     ```powershell
+     az cosmosdb show --resource-group "<your-resource-group>" --name "<your-account-name>" --query "{id:id}"
+     ```
+
+     Example output:
+    
+     ```json
+    {                                                               
+      "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{cosmos-account-name}"
+    }     
+     ```
+    
+     <img width="750" alt="image" src="https://github.com/user-attachments/assets/f3426130-2de5-46a0-96f0-4c6e15e57975">
+
+4. **Assign the Role**: Assign the new role using `az cosmosdb sql role assignment create`. Use the previously recorded role definition ID for the `--role-definition-id` argument, the unique identifier for your identity for the `--principal-id` argument, and your account's ID for the `--scope` argument.
+  
+     > You can extract the `principal-id`, from `Identity` of the `Function App`:
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/b54f046f-ecc7-4434-80ce-e49a0abeca66">
+    
+     ```powershell
+     az cosmosdb sql role assignment create \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>" \
+         --role-definition-id "<role-definition-id>" \
+         --principal-id "<principal-id>" \
+         --scope "/subscriptions/{subscriptions-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{cosmos-account-name}"
+     ```
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/72e1e4f9-9228-4ec0-aade-20ad4aaa1f4f">
+    
+    > After a few minutes, you will see something like this:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/5caea3b9-3e4d-4791-8376-fda4547547bd">
+
+5. **Verify Role Assignment**: Use `az cosmosdb sql role assignment list` to list all role assignments for your Azure Cosmos DB for NoSQL account. Review the output to ensure your role assignment was created.
+    
+     ```powershell
+     az cosmosdb sql role assignment list \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>"
+     ```
+
+    <img width="750" alt="image" src="https://github.com/user-attachments/assets/8c7675cf-8183-433c-a21b-f9b7029642d9">
 
 ### Configure/Validate the Environment variables
 
