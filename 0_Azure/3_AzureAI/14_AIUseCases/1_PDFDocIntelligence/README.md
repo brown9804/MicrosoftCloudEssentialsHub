@@ -340,7 +340,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
   -  `invoicecontosostorage_STORAGE`: Your Storage Account connection string.
   -  `FORM_RECOGNIZER_ENDPOINT`: For example: `https://<your-form-recognizer-endpoint>.cognitiveservices.azure.com/`
   -  `FORM_RECOGNIZER_KEY`: Your Documment Intelligence Key (Form Recognizer).
-  -  `FUNCTIONS_EXTENSION_VERSION`: ~4
+  -  `FUNCTIONS_EXTENSION_VERSION`: ~4 (Review the existence of this, if not create it)
   -  `FUNCTIONS_NODE_BLOCK_ON_ENTRY_POINT_ERROR`: true (This setting ensures that all entry point errors are visible in your application insights logs).
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/31d813e7-38ba-46ff-9e4b-d091ae02706a">
