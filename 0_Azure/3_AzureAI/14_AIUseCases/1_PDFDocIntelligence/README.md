@@ -24,7 +24,7 @@ Last updated: 2024-11-25
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Azure AI Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)
 - [Get started with the Document Intelligence Sample Labeling tool](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/v21/try-sample-label-tool?view=doc-intel-2.1.0#prerequisites-for-training-a-custom-form-model)
@@ -331,15 +331,11 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
-- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`:
+- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`, `Cosmos DB Account Reader Role`, `Contributor`:
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/39201507-ff8c-4b26-97f5-98af46339b55">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7570747e-a5f1-4090-98ce-b44928ef1f57">
 
-- Add role assigment `Azure Cosmos DB Control Plane Owner` to the `Function App`, under `Resource Group` -> `Access Control (IAM)`:
-
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2865e0c5-e2a8-4230-93f7-f4cc54443fa0">
-
-- To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB.
+- To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB. Click [here to understand more about it](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-data-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-cli#prepare-role-definition).
 
     | **Aspect**         | **Data Plane Access**                                                                 | **Control Plane Access**                                                                 |
     |--------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
@@ -517,14 +513,18 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
       | Template Blob Trigger | Function Code updated |
       | --- | --- |
-      |   <img width="550" alt="image" src="https://github.com/user-attachments/assets/07a7b285-eed2-4b42-bb1f-e41e8eafd273"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/4d22d821-4dee-4786-a3e0-7a8ebaf163ae"> |
+      |   <img width="550" alt="image" src="https://github.com/user-attachments/assets/07a7b285-eed2-4b42-bb1f-e41e8eafd273"> |  <img width="550" alt="image" src="https://github.com/user-attachments/assets/d364591b-817e-4f36-8c50-7de187c32a1e">|
+      
+      <details>
+      <summary><b>Function Code </b> (Click to expand)</summary>
 
      ```python
       import logging
       import azure.functions as func
       from azure.ai.formrecognizer import DocumentAnalysisClient
       from azure.core.credentials import AzureKeyCredential
-      from azure.cosmos import CosmosClient, PartitionKey
+      from azure.cosmos import CosmosClient, PartitionKey, exceptions
+      from azure.identity import DefaultAzureCredential
       import os
       import uuid
       
@@ -534,24 +534,26 @@ Within the Storage Account, create a Blob Container to store your PDFs.
       def initialize_form_recognizer_client():
           endpoint = os.getenv("FORM_RECOGNIZER_ENDPOINT")
           key = os.getenv("FORM_RECOGNIZER_KEY")
+          if not isinstance(key, str):
+              raise ValueError("FORM_RECOGNIZER_KEY must be a string")
+          logging.info(f"Form Recognizer endpoint: {endpoint}")
           return DocumentAnalysisClient(endpoint=endpoint, credential=AzureKeyCredential(key))
       
-      def initialize_cosmos_client():
-          endpoint = os.getenv("COSMOS_DB_ENDPOINT")
-          key = os.getenv("COSMOS_DB_KEY")
-          return CosmosClient(endpoint, key)
-      
       def read_pdf_content(myblob):
+          logging.info(f"Reading PDF content from blob: {myblob.name}")
           return myblob.read()
       
       def analyze_pdf(form_recognizer_client, pdf_bytes):
+          logging.info("Starting PDF analysis.")
           poller = form_recognizer_client.begin_analyze_document(
               model_id="prebuilt-invoice",
               document=pdf_bytes
           )
+          logging.info("PDF analysis in progress.")
           return poller.result()
       
       def extract_invoice_data(result):
+          logging.info("Extracting invoice data from analysis result.")
           invoice_data = {
               "id": str(uuid.uuid4()),
               "customer_name": "",
@@ -563,50 +565,77 @@ Within the Storage Account, create a Blob Container to store your PDFs.
               "rentals": []
           }
       
+          def serialize_field(field):
+              if field:
+                  return str(field.value)  # Convert to string
+              return ""
+          
           for document in result.documents:
               fields = document.fields
-              invoice_data["customer_name"] = fields.get("CustomerName", {}).get("value", "")
-              invoice_data["customer_email"] = fields.get("CustomerEmail", {}).get("value", "")
-              invoice_data["customer_address"] = fields.get("CustomerAddress", {}).get("value", "")
-              invoice_data["company_name"] = fields.get("VendorName", {}).get("value", "")
-              invoice_data["company_phone"] = fields.get("VendorPhoneNumber", {}).get("value", "")
-              invoice_data["company_address"] = fields.get("VendorAddress", {}).get("value", "")
+              invoice_data["customer_name"] = serialize_field(fields.get("CustomerName"))
+              invoice_data["customer_email"] = serialize_field(fields.get("CustomerEmail"))
+              invoice_data["customer_address"] = serialize_field(fields.get("CustomerAddress"))
+              invoice_data["company_name"] = serialize_field(fields.get("VendorName"))
+              invoice_data["company_phone"] = serialize_field(fields.get("VendorPhoneNumber"))
+              invoice_data["company_address"] = serialize_field(fields.get("VendorAddress"))
       
-              for item in fields.get("Items", {}).get("value", []):
+              items = fields.get("Items").value if fields.get("Items") else []
+              for item in items:
+                  item_value = item.value if item.value else {}
                   rental = {
-                      "rental_date": item.properties.get("Date", {}).get("value", ""),
-                      "title": item.properties.get("Description", {}).get("value", ""),
-                      "description": item.properties.get("Description", {}).get("value", ""),
-                      "quantity": item.properties.get("Quantity", {}).get("value", ""),
-                      "total_price": item.properties.get("TotalPrice", {}).get("value", "")
+                      "rental_date": serialize_field(item_value.get("Date")),
+                      "title": serialize_field(item_value.get("Description")),
+                      "description": serialize_field(item_value.get("Description")),
+                      "quantity": serialize_field(item_value.get("Quantity")),
+                      "total_price": serialize_field(item_value.get("TotalPrice"))
                   }
                   invoice_data["rentals"].append(rental)
       
-          logging.info("Successfully extracted invoice data.")
+          logging.info(f"Successfully extracted invoice data: {invoice_data}")
           return invoice_data
       
       def save_invoice_data_to_cosmos(invoice_data):
           try:
-              cosmos_client = initialize_cosmos_client()
-              logging.info("Successfully connected to Cosmos DB.")
+              endpoint = os.getenv("COSMOS_DB_ENDPOINT")
+              key = os.getenv("COSMOS_DB_KEY")
+              aad_credentials = DefaultAzureCredential()
+              client = CosmosClient(endpoint, credential=aad_credentials, consistency_level='Session')
+              logging.info("Successfully connected to Cosmos DB using AAD default credential")
           except Exception as e:
               logging.error(f"Error connecting to Cosmos DB: {e}")
               return
+          
+          database_name = "ContosoDBDocIntellig"
+          container_name = "Invoices"
       
-          database_name = 'ContosoDBDocIntellig'
-          container_name = 'Invoices'
+          
+          try: # Check if the database exists
+              # If the database does not exist, create it
+              database = client.create_database_if_not_exists(database_name)
+              logging.info(f"Database '{database_name}' does not exist. Creating it.")
+          except exceptions.CosmosResourceExistsError: # If error get name, keep going 
+              database = client.get_database_client(database_name)
+              logging.info(f"Database '{database_name}' already exists.")
       
-          try:
-              database = cosmos_client.create_database_if_not_exists(id=database_name)
-              container = database.create_container_if_not_exists(
+          database.read()
+          logging.info(f"Reading into '{database_name}' DB")
+      
+          try: # Check if the container exists
+              # If the container does not exist, create it
+              container = database.create_container(
                   id=container_name,
                   partition_key=PartitionKey(path="/transactionId"),
                   offer_throughput=400
               )
-              logging.info("Successfully ensured database and container exist.")
-          except Exception as e:
-              logging.error(f"Error creating database or container: {e}")
-              return
+              logging.info(f"Container '{container_name}' does not exist. Creating it.")
+          except exceptions.CosmosResourceExistsError:
+              container = database.get_container_client(container_name)
+              logging.info(f"Container '{container_name}' already exists.")
+          except exceptions.CosmosHttpResponseError:
+              raise
+      
+          container.read()
+          logging.info(f"Reading into '{container}' container")
       
           try:
               response = container.upsert_item(invoice_data)
@@ -651,17 +680,20 @@ Within the Storage Account, create a Blob Container to store your PDFs.
               logging.error(f"Error saving invoice data to Cosmos DB: {e}")
      ```
 
+      </details>
+
    - Now, let's update the `requirements.txt`:
 
     | Template `requirements.txt` | Updated `requirements.txt` |
     | --- | --- |
-    | <img width="550" alt="image" src="https://github.com/user-attachments/assets/239516e0-a4b7-4e38-8c2b-9be12ebb00de"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/cf6fe986-a1d8-4866-99cf-57db2ec4c113"> | 
+    | <img width="550" alt="image" src="https://github.com/user-attachments/assets/239516e0-a4b7-4e38-8c2b-9be12ebb00de"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/91bd6bd8-ec21-4e1a-ae86-df577d37bcbb">| 
 
      ```text
       azure-functions
       azure-ai-formrecognizer
       azure-core
-      azure-cosmos
+      azure-cosmos==4.3.0
+      azure-identity==1.7.0
      ```
    - Since this function has already been tested, you can deploy your code to the function app in your subscription. If you want to test, you can use run your function locally for testing.
       - Click on the `Azure` icon.
@@ -684,7 +716,7 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 If you need further assistance with the code, please click [here to view all the function code](./src/).
 
 > [!NOTE]
-> Please ensure that the `Storage Blob Data Contributor` role is assigned to the Function App within the storage account, allowing the function app to listen to the blob container. You may enable `System assigned`  for the Function App to facilitate the role assignment.
+> Please ensure that all specified roles are assigned to the Function App. The provided example used `System assigned` for the Function App to facilitate the role assignment.
 
 ## Step 6: Test the solution
 
@@ -719,10 +751,9 @@ If you need further assistance with the code, please click [here to view all the
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/8f4631cc-162e-4c3b-913d-d146ea4e36b3">
 
-- Validate that the information was uploaded to the Cosmos DB. Under `Data Explorer`, check your `Database`:
+- Validate that the information was uploaded to the Cosmos DB. Under `Data Explorer`, check your `Database`.
 
-   <img width="550" alt="image" src="">
-
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/27309a6d-c654-4c76-bbc1-990a9338973c">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
