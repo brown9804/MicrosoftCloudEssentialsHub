@@ -84,7 +84,7 @@ Last updated: 2024-11-26
 | **APIs and SDKs** | - **REST API**: Provides endpoints for analyzing documents, managing models, and retrieving results.<br/>- **SDKs**: Available in multiple languages (e.g., Python, C#, JavaScript) to simplify integration into your applications. |
 
 > [!IMPORTANT]
-> Regarding `Networking`, this example will cover `Public access configuration`. However, please ensure you `review your privacy requirements and adjust network and access settings as necessary for your specific case`.
+> Regarding `Networking`, this example will cover `Public access configuration`, and `system-managed identity`. However, please ensure you `review your privacy requirements and adjust network and access settings as necessary for your specific case`.
 
 ## Step 1: Set Up Your Azure Environment
 
