@@ -21,6 +21,8 @@ Last updated: 2024-11-25
 > - Handles structured, semi-structured, and unstructured documents. <br/>
 > - Automates the extraction and transformation of data into usable formats like JSON or CSV
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/21ec5d04-1c9b-4273-ad98-7b46186de78e">
+
 ## Wiki 
 
 <details>
