@@ -66,7 +66,7 @@ Last updated: 2024-11-26
   - [Create Document Intelligence Resource](#create-document-intelligence-resource)
   - [Configure Models](#configure-models)
       - [Using Prebuilt Models](#using-prebuilt-models)
-      - [Training Custom Models optional/if needed:](#training-custom-models-optionalif-needed)
+      - [Training Custom Models](#training-custom-models-optionalif-needed) (optional/if needed)
 - [Step 5: Set Up Azure Functions for Document Ingestion and Processing](#step-5-set-up-azure-functions-for-document-ingestion-and-processing)
   - [Create a Function App](#create-a-function-app)
   - [Configure/Validate the Environment variables](#configurevalidate-the-environment-variables)
