@@ -51,7 +51,27 @@ Last updated: 2024-11-26
 
 ## Content 
 
-
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
+- [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
+  - [Create a Storage Account:](#create-a-storage-account)
+  - [Create a Blob Container](#create-a-blob-container)
+  - [Allow storage account key access](#allow-storage-account-key-access)
+- [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
+  - [Create a Cosmos DB Account:](#create-a-cosmos-db-account)
+  - [Create a Database and Container](#create-a-database-and-container)
+- [Step 4: Set Up Azure Document Intelligence](#step-4-set-up-azure-document-intelligence)
+  - [Create Document Intelligence Resource](#create-document-intelligence-resource)
+  - [Configure Models](#configure-models)
+      - [Using Prebuilt Models](#using-prebuilt-models)
+      - [Training Custom Models optional/if needed:](#training-custom-models-optionalif-needed)
+- [Step 5: Set Up Azure Functions for Document Ingestion and Processing](#step-5-set-up-azure-functions-for-document-ingestion-and-processing)
+  - [Create a Function App](#create-a-function-app)
+  - [Configure/Validate the Environment variables](#configurevalidate-the-environment-variables)
+  - [Develop the Function](#develop-the-function)
+- [Step 6: Test the solution](#step-6-test-the-solution)
 
 ## Overview 
 
