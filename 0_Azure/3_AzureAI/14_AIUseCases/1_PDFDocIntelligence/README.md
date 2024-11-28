@@ -341,21 +341,21 @@ Within the Storage Account, create a Blob Container to store your PDFs.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/002620d0-4040-4289-ad56-3e5d4d6ff3c7">
 
-- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account` related to the runtime (the one created with the function app).
-
  > [!IMPORTANT]
  > This example is using system-assigned managed identity to assign RBACs (Role-based Access Control).
  > <img width="550" alt="image" src="https://github.com/user-attachments/assets/46fe06d4-d978-4743-801d-59c197fa4717">
 
- <img width="550" alt="image" src="https://github.com/user-attachments/assets/a08f77bf-71d4-4922-8001-cf402e9e81f2">
+- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account` related to the runtime (the one created with the function app).
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a08f77bf-71d4-4922-8001-cf402e9e81f2">
 
 - Assign `Storage Blob Data Reader` to the `Function App` within the `Storage Account` that will contains the invoices, click `Next`. Then, click on `select members` and search for your `Function App` identity. Finally click on `Review + assign`:
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
 - Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`, `Cosmos DB Account Reader Role`, `Contributor`:
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7570747e-a5f1-4090-98ce-b44928ef1f57">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/7570747e-a5f1-4090-98ce-b44928ef1f57">
 
 - To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB. Click [here to understand more about it](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-data-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-cli#prepare-role-definition).
 
