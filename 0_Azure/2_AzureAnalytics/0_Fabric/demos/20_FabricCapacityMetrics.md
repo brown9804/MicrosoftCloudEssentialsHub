@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/82a14c25-61b4-4aea-8ae7-ecd3c6775f31)# Fabric Capacity Metrics + Monitoring Overview 
+# Fabric Capacity Metrics + Monitoring Overview 
 
 Costa Rica
 
