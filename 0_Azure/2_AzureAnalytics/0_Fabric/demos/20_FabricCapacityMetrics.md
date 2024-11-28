@@ -29,6 +29,20 @@ Last updated: 2024-11-28
 
 </details>
 
+## Content 
+
+- [Wiki](#wiki)
+- [Content](#content)
+- [Microsoft Fabric Capacity Metrics app](#microsoft-fabric-capacity-metrics-app)
+    - [Installation Steps](#installation-steps)
+    - [Configuration Steps](#configuration-steps)
+    - [Troubleshooting](#troubleshooting)
+- [Admin monitoring](#admin-monitoring)
+    - [Configure the Admin Monitoring Workspace](#configure-the-admin-monitoring-workspace)
+    - [How to Use Data from Admin Monitoring Workspace Custom Reports](#how-to-use-data-from-admin-monitoring-workspace-custom-reports)
+- [Monitor Hub](#monitor-hub)
+    - [How to Access and Use the Monitor Hub](#how-to-access-and-use-the-monitor-hub)
+    - [Extending Activity History](#extending-activity-history)
 
 ## Microsoft Fabric Capacity Metrics app 
 
