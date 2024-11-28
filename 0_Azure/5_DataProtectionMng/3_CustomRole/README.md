@@ -151,7 +151,7 @@ In this example:
 az role definition create --role-definition custom_role.json
 ```
 
-
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/c4a3a705-b363-41cb-ac30-71a5c2ad7135">
 
 4. Verify the custom role: List your custom roles to ensure it was created successfully.
 
@@ -159,9 +159,16 @@ az role definition create --role-definition custom_role.json
 az role definition list --custom-role-only true
 ```
 
-5. Assing the custom role to the required users.
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5449b403-4d1b-4bdb-9ff9-c1bfd406c6d0">
 
+5. Validate the creation of your role. Depending on the assigned actions, you will see the role under either the pricegeled tab or the job function tab. Click on `view` to see detailed information about the actions included in the role.
 
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/cb8672c3-668d-4118-a703-91ce9886149b">
 
+6. Assign the custom role to the necessary users. Navigate to `Access control (IAM)`, click on `+ Add`, and select `Add role assignment`:
 
+  <img width="600" alt="image" src="https://github.com/user-attachments/assets/3da6fd4a-f968-45ad-b285-dc834846cc0a">
 
+- Search for the role name in either the `Job Function Roles` or `Privileged Administrator Roles` tabs. Select the role, click on `+ Select members`, add the required members, and finally click on `Review + assign`:
+  
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/10a5b8d3-8ff0-49eb-aaa6-a3271e1baa0c">
