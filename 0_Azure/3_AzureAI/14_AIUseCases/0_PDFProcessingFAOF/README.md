@@ -166,7 +166,7 @@ Last updated: 2024-11-28
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/5dcb8d28-b042-4038-ac37-2663b8013a3a">
 
    - Click **New Container**.
-   - Enter a container name (e.g., `Invoices`) and set the partition key (e.g., `/transactionId`).
+   - Enter a container name (e.g., `Invoices`) and set the partition key (e.g., `/invoice_number`).
    - Click **OK**.
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0232de53-ee75-4f20-a45d-49cf54e3f794">
