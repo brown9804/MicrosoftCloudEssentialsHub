@@ -10,8 +10,6 @@ Last updated: 2024-11-28
 
 ----------
 
-> The `Microsoft Fabric Capacity Metrics app` is designed to provide comprehensive monitoring capabilities for Microsoft Fabric capacities. It helps administrators track capacity consumption, identify performance bottlenecks, and make informed decisions about scaling and resource allocation. The app provides detailed insights into capacity utilization, throttling, and system events, enabling proactive management of resources to ensure optimal performance.
-
 > [!NOTE]
 > Ensure you have admin rights for the capacity you want to monitor.
 
@@ -29,6 +27,7 @@ Last updated: 2024-11-28
 
 ## Microsoft Fabric Capacity Metrics app 
 
+> The `Microsoft Fabric Capacity Metrics app` is designed to provide comprehensive monitoring capabilities for Microsoft Fabric capacities. It helps administrators track capacity consumption, identify performance bottlenecks, and make informed decisions about scaling and resource allocation. The app provides detailed insights into capacity utilization, throttling, and system events, enabling proactive management of resources to ensure optimal performance. <br/> <br/> 
 > This app is essential for maintaining the health and efficiency of your Microsoft Fabric capacities
 
 | **Feature**                  | **Description**                                                                 |
@@ -110,6 +109,7 @@ Last updated: 2024-11-28
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/be675f2f-82a4-4799-a72b-04cc9b47f3aa">
 
 ### Troubleshooting
+
 - If the app doesn't show data or can't refresh, try deleting the old app and reinstalling the latest version.
 - Update the semantic model credentials if needed.
 
