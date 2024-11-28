@@ -21,6 +21,11 @@ Last updated: 2024-11-28
 - [Install the Microsoft Fabric capacity metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st)
 - [What is the Microsoft Fabric Capacity Metrics app?](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
 - [Understand the metrics app compute page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-compute-page)
+- [What is the admin monitoring workspace? (Preview)](https://learn.microsoft.com/en-us/fabric/admin/monitoring-workspace)
+- [Feature usage and adoption report (preview)](https://learn.microsoft.com/en-us/fabric/admin/feature-usage-adoption)
+- [Use the Monitor hub](https://learn.microsoft.com/en-us/fabric/admin/monitoring-hub)
+- [Monitoring Hub github repo ref](https://github.com/MicrosoftDocs/fabric-docs/blob/main/docs/admin/monitoring-hub.md)
+- [Manage audit log retention policies](https://learn.microsoft.com/en-us/purview/audit-log-retention-policies?tabs=microsoft-purview-portal)
 
 </details>
 
