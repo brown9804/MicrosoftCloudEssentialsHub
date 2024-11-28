@@ -265,7 +265,7 @@ Last updated: 2024-11-28
   
      > You can extract the `principal-id`, from `Identity` of the `Function App`:
     
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/b54f046f-ecc7-4434-80ce-e49a0abeca66">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/89c524ce-a392-4507-90ad-19becddff923">
     
      ```powershell
      az cosmosdb sql role assignment create \
