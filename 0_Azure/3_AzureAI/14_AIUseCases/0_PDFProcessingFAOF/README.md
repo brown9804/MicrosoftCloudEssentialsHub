@@ -215,9 +215,9 @@ Last updated: 2024-11-28
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
 
-- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`, `Cosmos DB Account Reader Role`, `Contributor`:
+- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Cosmos DB Account Reader Role`, `Contributor`:
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7570747e-a5f1-4090-98ce-b44928ef1f57">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/3ef8a8ae-4a98-4d1f-9ff0-61ac2829ebf9">
 
 - To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB. Click [here to understand more about it](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-data-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-cli#prepare-role-definition).
 
