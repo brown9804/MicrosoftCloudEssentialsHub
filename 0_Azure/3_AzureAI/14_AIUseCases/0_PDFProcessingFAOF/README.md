@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-26
+Last updated: 2024-11-28
 
 ----------
 
@@ -33,16 +33,18 @@ Last updated: 2024-11-26
 
 ## Content
 
-- [Automated PDF Invoice Processing  using Function App + OpenFramework](#automated-pdf-invoice-processing--using-function-app--openframework)
-    - [Wiki](#wiki)
-    - [Content](#content)
-    - [Overview](#overview)
-        - [Function App Hosting Options](#function-app-hosting-options)
-    - [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
-    - [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
-    - [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
-    - [Step 4: Set Up Azure Functions for Document Ingestion and Processing](#step-4-set-up-azure-functions-for-document-ingestion-and-processing)
-    - [Step 5: Test the solution](#step-5-test-the-solution)
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+    - [Function App Hosting Options](#function-app-hosting-options)
+- [Step 1: Set Up Your Azure Environment](#step-1-set-up-your-azure-environment)
+- [Step 2: Set Up Azure Blob Storage for PDF Ingestion](#step-2-set-up-azure-blob-storage-for-pdf-ingestion)
+- [Step 3: Set Up Azure Cosmos DB](#step-3-set-up-azure-cosmos-db)
+- [Step 4: Set Up Azure Functions for Document Ingestion and Processing](#step-4-set-up-azure-functions-for-document-ingestion-and-processing)
+    - [Create a Function App](#create-a-function-app)
+    - [Configure/Validate the Environment variables](#configurevalidate-the-environment-variables)
+    - [Develop the Function](#develop-the-function)
+- [Step 5: Test the solution](#step-5-test-the-solution)
 
 ## Overview 
 
@@ -176,269 +178,360 @@ Last updated: 2024-11-26
 > An `Azure Function App` is a `container for hosting individual Azure Functions`. It provides the execution context for your functions, allowing you to manage, deploy, and scale them together. `Each function app can host multiple functions, which are small pieces of code that run in response to various triggers or events, such as HTTP requests, timers, or messages from other Azure services`. <br/> <br/>
 > Azure Functions are designed to be lightweight and event-driven, enabling you to build scalable and serverless applications. `You only pay for the resources your functions consume while they are running, making it a cost-effective solution for many scenarios`.
 
-1. **Create a Function App**:
-   - In the Azure portal, go to your **Resource Group**.
-   - Click **+ Create**.
+### Create a Function App
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/efac220b-72db-447b-98a7-58196b3d39dd">
+- In the Azure portal, go to your **Resource Group**.
+- Click **+ Create**.
 
-   - Search for `Function App`, click on `Create`:
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/efac220b-72db-447b-98a7-58196b3d39dd">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/571c2880-cff7-4ed5-9840-2f1b5f58ce46">
+- Search for `Function App`, click on `Create`:
 
-   - Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
-           
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8bd30c5-7b21-4aac-adf2-6e1dc5ec509a">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/571c2880-cff7-4ed5-9840-2f1b5f58ce46">
 
-   - Enter a name for the Function App (e.g., `ContosoFunctionAppAI`).
-   - Choose your runtime stack (e.g., `.NET` or `Python`).
-   - Select the region and other settings.
-
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/e32fb474-c954-475b-971e-599f9909d35a">
-
-   - Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
-
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/352c95c7-bf6a-4e1d-937b-98dc018b69a4">
-
-2. **Configure/Validate** the `Environment variables`:
-   - Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
-
-     -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
-     -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
-     -  `contosostorageaidemo_STORAGE`: Your Storage Account key.
-
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
-    
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
-
-     - Click on `Apply` to save your configuration.
-
-3. **Develop the Function**:
-   - You need to install [VSCode](https://code.visualstudio.com/download)
-   - Install python from Microsoft store:
+- Choose a `hosting option`; for this example, we will use `Consumption`. Click [here for a quick overview of hosting options](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/14_AIUseCases/0_PDFProcessingFAOF#function-app-hosting-options):
        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/30f00c27-da0d-400f-9b98-817fd3e03b1c">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8bd30c5-7b21-4aac-adf2-6e1dc5ec509a">
 
-   - Open VSCode, and install some extensions: `python`, and `Azure Tools`.
+- Enter a name for the Function App (e.g., `ContosoFunctionAppAI`).
+- Choose your runtime stack (e.g., `.NET` or `Python`).
+- Select the region and other settings.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/715449d3-1a36-4764-9b07-99421fb1c834">
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/e32fb474-c954-475b-971e-599f9909d35a">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/854aa665-dc2f-4cbf-bae2-2dc0a8ef6e46">
+- Select **Review + create** and then **Create**. Verify the resources created in your `Resource Group`.
 
-   - Click on the `Azure` icon, and `sign in` into your account. Allow the extension `Azure Resources` to sign in using Microsoft, it will open a browser window. After doing so, you will be able to see your subscription and resources.
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/352c95c7-bf6a-4e1d-937b-98dc018b69a4">
 
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/4824ca1c-4959-4242-95af-ad7273c5530d">
+ > [!IMPORTANT]
+ > This example is using system-assigned managed identity to assign RBACs (Role-based Access Control).
+ > <img width="550" alt="image" src="https://github.com/user-attachments/assets/dd5ce062-9720-40d3-b860-778048c38e6c">
 
-   - Under Workspace, click on `Create Function Project`, and choose a path in your local computer to develop your function.
+- Please assign the `Storage Blob Data Contributor` and `Storage File Data SMB Share Contributor` roles to the `Function App` within the `Storage Account` related to the runtime (the one created with the function app).
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/a08f77bf-71d4-4922-8001-cf402e9e81f2">
+
+- Assign `Storage Blob Data Reader` to the `Function App` within the `Storage Account` that will contains the invoices, click `Next`. Then, click on `select members` and search for your `Function App` identity. Finally click on `Review + assign`:
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/dcfdd7f0-f7a6-4829-876a-87383887e0e2">
+
+- Also add `Cosmos DB Operator`, `DocumentDB Account Contributor`, `Azure AI Administrator`, `Cosmos DB Account Reader Role`, `Contributor`:
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/7570747e-a5f1-4090-98ce-b44928ef1f57">
+
+- To assign the `Microsoft.DocumentDB/databaseAccounts/readMetadata` permission, you need to create a custom role in Azure Cosmos DB. This permission is required for accessing metadata in Cosmos DB. Click [here to understand more about it](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-grant-data-plane-role-based-access?tabs=built-in-definition%2Ccsharp&pivots=azure-interface-cli#prepare-role-definition).
+
+    | **Aspect**         | **Data Plane Access**                                                                 | **Control Plane Access**                                                                 |
+    |--------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+    | **Scope**          | Focuses on `data operations` within databases and containers. This includes actions such as reading, writing, and querying data in your databases and containers. | Focuses on `management operations` at the account level. This includes actions such as creating, deleting, and configuring databases and containers. |
+    | **Roles**          | - `Cosmos DB Built-in Data Reader`: Provides read-only access to data within the databases and containers. <br> - `Cosmos DB Built-in Data Contributor`: Allows read and write access to data within the databases and containers. <br> - `Cosmos DB Built-in Data Owner`: Grants full access to manage data within the databases and containers. | - `Contributor`: Grants full access to manage all Azure resources, including Cosmos DB. <br> - `Owner`: Grants full access to manage all resources, including the ability to assign roles in Azure RBAC. <br> - `Cosmos DB Account Contributor`: Allows management of Cosmos DB accounts, including creating and deleting databases and containers. <br> - `Cosmos DB Account Reader`: Provides read-only access to Cosmos DB account metadata. |
+    | **Permissions**    | - `Reading documents` <br> - `Writing documents` <br> - Managing data within containers. | - `Creating or deleting databases and containers` <br> - Configuring settings <br> - Managing account-level configurations. |
+    | **Authentication** | Uses `Azure Active Directory (AAD) tokens` or `resource tokens` for authentication.                      | Uses `Azure Active Directory (AAD)` for authentication.                                 |
+
+> Steps to assing it:
+
+1. **Open Azure CLI**: Go to the [Azure portal](portal.azure.com) and click on the icon for the Azure CLI.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/b2643d9a-7364-454a-bb24-f16270e99d92">
+
+2. **List Role Definitions**: Run the following command to list all of the role definitions associated with your Azure Cosmos DB for NoSQL account. Review the output and locate the role definition named `Cosmos DB Built-in Data Contributor`.
+
+     ```powershell
+     az cosmosdb sql role definition list \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>"
+     ```
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/4c19d70e-d525-4c15-bb0e-518f50f61b37">
+    
+
+3. **Get Cosmos DB Account ID**: Run this command to get the ID of your Cosmos DB account. Record the value of the `id` property as it is required for the next step.
+
+     ```powershell
+     az cosmosdb show --resource-group "<your-resource-group>" --name "<your-account-name>" --query "{id:id}"
+     ```
+
+     Example output:
+    
+     ```json
+    {                                                               
+      "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{cosmos-account-name}"
+    }     
+     ```
+    
+     <img width="750" alt="image" src="https://github.com/user-attachments/assets/f3426130-2de5-46a0-96f0-4c6e15e57975">
+
+4. **Assign the Role**: Assign the new role using `az cosmosdb sql role assignment create`. Use the previously recorded role definition ID for the `--role-definition-id` argument, the unique identifier for your identity for the `--principal-id` argument, and your account's ID for the `--scope` argument.
   
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/8db80e51-725e-45fe-91b5-7158fd94be8e">
+     > You can extract the `principal-id`, from `Identity` of the `Function App`:
+    
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/b54f046f-ecc7-4434-80ce-e49a0abeca66">
+    
+     ```powershell
+     az cosmosdb sql role assignment create \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>" \
+         --role-definition-id "<role-definition-id>" \
+         --principal-id "<principal-id>" \
+         --scope "/subscriptions/{subscriptions-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{cosmos-account-name}"
+     ```
 
-   - Choose the language, in this case is `python`:
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/72e1e4f9-9228-4ec0-aade-20ad4aaa1f4f">
+    
+    > After a few minutes, you will see something like this:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/5caea3b9-3e4d-4791-8376-fda4547547bd">
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/2fb19a1e-bb2d-47e5-a56e-8dc8a708647a">
+5. **Verify Role Assignment**: Use `az cosmosdb sql role assignment list` to list all role assignments for your Azure Cosmos DB for NoSQL account. Review the output to ensure your role assignment was created.
+    
+     ```powershell
+     az cosmosdb sql role assignment list \
+         --resource-group "<your-resource-group>" \
+         --account-name "<your-account-name>"
+     ```
 
-   - Select the model version, for this example let's use `v2`:
-     
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/fd46ee93-d788-463d-8b28-dbf2487e9a7f">
+    <img width="750" alt="image" src="https://github.com/user-attachments/assets/8c7675cf-8183-433c-a21b-f9b7029642d9">
+    
+### Configure/Validate the Environment variables
 
-   - For the python interpreter, let's use the one installed via `Microsoft Store`:
+- Under `Settings`, go to `Environment variables`. And `+ Add` the following variables:
 
-      <img width="741" alt="image" src="https://github.com/user-attachments/assets/3605c959-fc59-461f-9e8d-01a6a92004a8">
+ -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
+ -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
+ -  `contosostorageaidemo_STORAGE`: Your Storage Account key.
 
-   - Choose a template (e.g., **Blob trigger**) and configure it to trigger on new PDF uploads in your Blob container.
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/0a4ed541-a693-485c-b6ca-7d5fb55a61d2">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
 
-   - Provide a function name, like `BlobTriggerContosoPDFInvoicesRaw`:
+ - Click on `Apply` to save your configuration.
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9cbc7605-8cb3-41f8-b3f7-3dfc9b8e67b5">
+### Develop the Function
+- You need to install [VSCode](https://code.visualstudio.com/download)
+- Install python from Microsoft store:
+   
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/30f00c27-da0d-400f-9b98-817fd3e03b1c">
 
-   - Next, it will prompt you for the path of the blob container where you expect the function to be triggered after a file is uploaded. In this case is `pdfinvoices` as was previously created.
+- Open VSCode, and install some extensions: `python`, and `Azure Tools`.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/7005dc44-ffe2-442b-8373-554b229b3042">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/715449d3-1a36-4764-9b07-99421fb1c834">
 
-   - Click on `Create new local app settings`, and then choose your subscription.
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/854aa665-dc2f-4cbf-bae2-2dc0a8ef6e46">
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/07c211d6-eda0-442b-b428-cdaed2bf12ac">
+- Click on the `Azure` icon, and `sign in` into your account. Allow the extension `Azure Resources` to sign in using Microsoft, it will open a browser window. After doing so, you will be able to see your subscription and resources.
 
-   - Choose `Azure Storage Account for remote storage`, and select one. I'll be using the `contosostorageaidemo`. 
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/4824ca1c-4959-4242-95af-ad7273c5530d">
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ca2a494-2716-4b5a-8e7d-caca1eaf88ab">
+- Under Workspace, click on `Create Function Project`, and choose a path in your local computer to develop your function.
 
-   - Then click on `Open in the current window`. You will see something like this:
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/8db80e51-725e-45fe-91b5-7158fd94be8e">
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/59fa0a79-2a23-4864-968f-9f933826dbca">
+- Choose the language, in this case is `python`:
 
-   - Now we need to update the function code to extract data from PDFs and store it in Cosmos DB, use this an example:
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/2fb19a1e-bb2d-47e5-a56e-8dc8a708647a">
 
-     > 1. **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
-     > 2. **PDF Processing**: The read_pdf_content function uses pdfminer.six to read and extract text from the PDF. <br/>
-     > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
-     > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container. 
+- Select the model version, for this example let's use `v2`:
+ 
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/fd46ee93-d788-463d-8b28-dbf2487e9a7f">
 
-     > `pdfminer.six` is an open-source framework. It is a community-maintained fork of the original PDFMiner,` designed for extracting and analyzing text data from PDF documents`. The framework is built in a modular way, allowing each component to be easily replaced or extended for various purpose
+- For the python interpreter, let's use the one installed via `Microsoft Store`:
 
-     - Update the `function_app.py`:
+    <img width="741" alt="image" src="https://github.com/user-attachments/assets/3605c959-fc59-461f-9e8d-01a6a92004a8">
 
-      | Template Blob Trigger | Function Code updated |
-      | --- | --- |
-      |      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a4ac6f2d-1419-4629-8896-de202c76000e"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9e41cd7-9c3f-4da5-8526-5c7f06107a84"> | 
+- Choose a template (e.g., **Blob trigger**) and configure it to trigger on new PDF uploads in your Blob container.
 
-      ```python
-      import azure.functions as func
-      import logging
-      import json
-      import os
-      import uuid
-      import io
-      from pdfminer.high_level import extract_text
-      from azure.cosmos import CosmosClient, PartitionKey
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/0a4ed541-a693-485c-b6ca-7d5fb55a61d2">
+
+- Provide a function name, like `BlobTriggerContosoPDFInvoicesRaw`:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/9cbc7605-8cb3-41f8-b3f7-3dfc9b8e67b5">
+
+- Next, it will prompt you for the path of the blob container where you expect the function to be triggered after a file is uploaded. In this case is `pdfinvoices` as was previously created.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/7005dc44-ffe2-442b-8373-554b229b3042">
+
+- Click on `Create new local app settings`, and then choose your subscription.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/07c211d6-eda0-442b-b428-cdaed2bf12ac">
+
+- Choose `Azure Storage Account for remote storage`, and select one. I'll be using the `contosostorageaidemo`. 
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ca2a494-2716-4b5a-8e7d-caca1eaf88ab">
+
+- Then click on `Open in the current window`. You will see something like this:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/59fa0a79-2a23-4864-968f-9f933826dbca">
+
+- Now we need to update the function code to extract data from PDFs and store it in Cosmos DB, use this an example:
+
+ > 1. **Blob Trigger**: The function is triggered when a new PDF file is uploaded to the `pdfinvoices` container. <br/>
+ > 2. **PDF Processing**: The read_pdf_content function uses pdfminer.six to read and extract text from the PDF. <br/>
+ > 3. **Data Extraction**: The extracted text is processed to extract invoice data. The `generate_id` function generates a unique ID for each invoice. <br/>
+ > 4. **Data Storage**: The processed invoice data is saved to Azure Cosmos DB in the `ContosoAIDemo` database and `Invoices` container. 
+
+ > `pdfminer.six` is an open-source framework. It is a community-maintained fork of the original PDFMiner,` designed for extracting and analyzing text data from PDF documents`. The framework is built in a modular way, allowing each component to be easily replaced or extended for various purpose
+
+ - Update the `function_app.py`:
+
+  | Template Blob Trigger | Function Code updated |
+  | --- | --- |
+  |      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a4ac6f2d-1419-4629-8896-de202c76000e"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9e41cd7-9c3f-4da5-8526-5c7f06107a84"> | 
+
+  ```python
+  import azure.functions as func
+  import logging
+  import json
+  import os
+  import uuid
+  import io
+  from pdfminer.high_level import extract_text
+  from azure.cosmos import CosmosClient, PartitionKey
+  
+  app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+  
+  def read_pdf_content(myblob):
+      # Read the blob content into a BytesIO stream
+      blob_bytes = myblob.read()
+      pdf_stream = io.BytesIO(blob_bytes)
       
-      app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+      # Extract text from the PDF stream
+      text = extract_text(pdf_stream)
+      return text
+  
+  def extract_invoice_data(text):
+      lines = text.split('\n')
+      invoice_data = {
+          "id": generate_id(),
+          "customer_name": "",
+          "customer_email": "",
+          "customer_address": "",
+          "company_name": "",
+          "company_phone": "",
+          "company_address": "",
+          "rentals": []
+      }
+  
+      for i, line in enumerate(lines):
+          if "BILL TO:" in line:
+              invoice_data["customer_name"] = lines[i + 1].strip()
+              invoice_data["customer_email"] = lines[i + 2].strip()
+              invoice_data["customer_address"] = lines[i + 3].strip()
+          elif "Company Information:" in line:
+              invoice_data["company_name"] = lines[i + 1].strip()
+              invoice_data["company_phone"] = lines[i + 2].strip()
+              invoice_data["company_address"] = lines[i + 3].strip()
+          elif "Rental Date" in line:
+              for j in range(i + 1, len(lines)):
+                  if lines[j].strip() == "":
+                      break
+                  rental_details = lines[j].split()
+                  rental_date = rental_details[0]
+                  title = " ".join(rental_details[1:-3])
+                  description = rental_details[-3]
+                  quantity = rental_details[-2]
+                  total_price = rental_details[-1]
+                  invoice_data["rentals"].append({
+                      "rental_date": rental_date,
+                      "title": title,
+                      "description": description,
+                      "quantity": quantity,
+                      "total_price": total_price
+                  })
+  
+      logging.info("Successfully extracted invoice data.")
+      return invoice_data
+  
+  def save_invoice_data_to_cosmos(invoice_data, blob_name):
+      try:
+          endpoint = os.getenv("COSMOS_DB_ENDPOINT")
+          key = os.getenv("COSMOS_DB_KEY")
+          client = CosmosClient(endpoint, key)
+          logging.info("Successfully connected to Cosmos DB.")
+      except Exception as e:
+          logging.error(f"Error connecting to Cosmos DB: {e}")
+          return
       
-      def read_pdf_content(myblob):
-          # Read the blob content into a BytesIO stream
-          blob_bytes = myblob.read()
-          pdf_stream = io.BytesIO(blob_bytes)
-          
-          # Extract text from the PDF stream
-          text = extract_text(pdf_stream)
-          return text
+      database_name = 'ContosoDBAIDemo'
+      container_name = 'Invoices'
       
-      def extract_invoice_data(text):
-          lines = text.split('\n')
-          invoice_data = {
-              "id": generate_id(),
-              "customer_name": "",
-              "customer_email": "",
-              "customer_address": "",
-              "company_name": "",
-              "company_phone": "",
-              "company_address": "",
-              "rentals": []
-          }
+      try:
+          database = client.create_database_if_not_exists(id=database_name)
+          container = database.create_container_if_not_exists(
+              id=container_name,
+              partition_key=PartitionKey(path="/invoice_number"),
+              offer_throughput=400
+          )
+          logging.info("Successfully ensured database and container exist.")
+      except Exception as e:
+          logging.error(f"Error creating database or container: {e}")
+          return
       
-          for i, line in enumerate(lines):
-              if "BILL TO:" in line:
-                  invoice_data["customer_name"] = lines[i + 1].strip()
-                  invoice_data["customer_email"] = lines[i + 2].strip()
-                  invoice_data["customer_address"] = lines[i + 3].strip()
-              elif "Company Information:" in line:
-                  invoice_data["company_name"] = lines[i + 1].strip()
-                  invoice_data["company_phone"] = lines[i + 2].strip()
-                  invoice_data["company_address"] = lines[i + 3].strip()
-              elif "Rental Date" in line:
-                  for j in range(i + 1, len(lines)):
-                      if lines[j].strip() == "":
-                          break
-                      rental_details = lines[j].split()
-                      rental_date = rental_details[0]
-                      title = " ".join(rental_details[1:-3])
-                      description = rental_details[-3]
-                      quantity = rental_details[-2]
-                      total_price = rental_details[-1]
-                      invoice_data["rentals"].append({
-                          "rental_date": rental_date,
-                          "title": title,
-                          "description": description,
-                          "quantity": quantity,
-                          "total_price": total_price
-                      })
-      
-          logging.info("Successfully extracted invoice data.")
-          return invoice_data
-      
-      def save_invoice_data_to_cosmos(invoice_data, blob_name):
-          try:
-              endpoint = os.getenv("COSMOS_DB_ENDPOINT")
-              key = os.getenv("COSMOS_DB_KEY")
-              client = CosmosClient(endpoint, key)
-              logging.info("Successfully connected to Cosmos DB.")
-          except Exception as e:
-              logging.error(f"Error connecting to Cosmos DB: {e}")
-              return
-          
-          database_name = 'ContosoDBAIDemo'
-          container_name = 'Invoices'
-          
-          try:
-              database = client.create_database_if_not_exists(id=database_name)
-              container = database.create_container_if_not_exists(
-                  id=container_name,
-                  partition_key=PartitionKey(path="/invoice_number"),
-                  offer_throughput=400
-              )
-              logging.info("Successfully ensured database and container exist.")
-          except Exception as e:
-              logging.error(f"Error creating database or container: {e}")
-              return
-          
-          try:
-              response = container.upsert_item(invoice_data)
-              logging.info(f"Saved processed invoice data to Cosmos DB: {response}")
-          except Exception as e:
-              logging.error(f"Error inserting item into Cosmos DB: {e}")
-      
-      def generate_id():
-          return str(uuid.uuid4())
-      
-      @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
-                        connection="contosostorageaidemo_STORAGE")
-      def BlobTriggerContosoPDFInvoicesRaw(myblob: func.InputStream):
-          logging.info(f"Python blob trigger function processed blob\n"
-                       f"Name: {myblob.name}\n"
-                       f"Blob Size: {myblob.length} bytes")
-      
-          try:
-              text = read_pdf_content(myblob)
-              logging.info("Successfully read and extracted text from PDF.")
-          except Exception as e:
-              logging.error(f"Error reading PDF: {e}")
-              return
-      
-          logging.info(f"Extracted text from PDF: {text}")
-      
-          try:
-              invoice_data = extract_invoice_data(text)
-              logging.info(f"Extracted invoice data: {invoice_data}")
-          except Exception as e:
-              logging.error(f"Error extracting invoice data: {e}")
-              return
-      
-          try:
-              save_invoice_data_to_cosmos(invoice_data, myblob.name)
-              logging.info("Successfully saved invoice data to Cosmos DB.")
-          except Exception as e:
-              logging.error(f"Error saving invoice data to Cosmos DB: {e}")
-      ```
+      try:
+          response = container.upsert_item(invoice_data)
+          logging.info(f"Saved processed invoice data to Cosmos DB: {response}")
+      except Exception as e:
+          logging.error(f"Error inserting item into Cosmos DB: {e}")
+  
+  def generate_id():
+      return str(uuid.uuid4())
+  
+  @app.blob_trigger(arg_name="myblob", path="pdfinvoices/{name}",
+                    connection="contosostorageaidemo_STORAGE")
+  def BlobTriggerContosoPDFInvoicesRaw(myblob: func.InputStream):
+      logging.info(f"Python blob trigger function processed blob\n"
+                   f"Name: {myblob.name}\n"
+                   f"Blob Size: {myblob.length} bytes")
+  
+      try:
+          text = read_pdf_content(myblob)
+          logging.info("Successfully read and extracted text from PDF.")
+      except Exception as e:
+          logging.error(f"Error reading PDF: {e}")
+          return
+  
+      logging.info(f"Extracted text from PDF: {text}")
+  
+      try:
+          invoice_data = extract_invoice_data(text)
+          logging.info(f"Extracted invoice data: {invoice_data}")
+      except Exception as e:
+          logging.error(f"Error extracting invoice data: {e}")
+          return
+  
+      try:
+          save_invoice_data_to_cosmos(invoice_data, myblob.name)
+          logging.info("Successfully saved invoice data to Cosmos DB.")
+      except Exception as e:
+          logging.error(f"Error saving invoice data to Cosmos DB: {e}")
+  ```
 
-   - Now, let's update the `requirements.txt`:
+- Now, let's update the `requirements.txt`:
 
-    | Template `requirements.txt` | Updated `requirements.txt` |
-    | --- | --- |
-    | <img width="550" alt="image" src="https://github.com/user-attachments/assets/d7dec16e-4f78-446d-a7e0-4d3b1d43bec4"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b30e6450-515b-4070-b91b-8040ecbde738"> 
+| Template `requirements.txt` | Updated `requirements.txt` |
+| --- | --- |
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/d7dec16e-4f78-446d-a7e0-4d3b1d43bec4"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b30e6450-515b-4070-b91b-8040ecbde738"> 
 
-    ```text
-   azure-functions
-   pdfminer.six
-   azure-cosmos==4.3.0
-   ```
-   - Since this function has already been tested, you can deploy your code to the function app in your subscription. If you want to test, you can use run your function locally for testing.
-      - Click on the `Azure` icon.
-      - Under `workspace`, click on the `Function App` icon.
-      - Click on `Deploy to Azure`.
+```text
+azure-functions
+pdfminer.six
+azure-cosmos==4.3.0
+```
+- Since this function has already been tested, you can deploy your code to the function app in your subscription. If you want to test, you can use run your function locally for testing.
+  - Click on the `Azure` icon.
+  - Under `workspace`, click on the `Function App` icon.
+  - Click on `Deploy to Azure`.
 
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9f90f93-a8ce-467f-a675-f9b8737f5a3e">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/a9f90f93-a8ce-467f-a675-f9b8737f5a3e">
 
-      - Select your `subscription`, your `function app`, and accept the prompt to overwrite:
+  - Select your `subscription`, your `function app`, and accept the prompt to overwrite:
 
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/a6492b14-491c-44d6-8d5a-f9ea670f174b">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/a6492b14-491c-44d6-8d5a-f9ea670f174b">
 
-      - After completing, you see the status in your terminal:
+  - After completing, you see the status in your terminal:
 
-         <img width="959" alt="image" src="https://github.com/user-attachments/assets/f742fb8e-4974-4222-b67e-c3dc6939740f">
+     <img width="959" alt="image" src="https://github.com/user-attachments/assets/f742fb8e-4974-4222-b67e-c3dc6939740f">
 
-         <img width="550" alt="image" src="https://github.com/user-attachments/assets/94052759-4c0f-483d-8a78-5803fab5c961">
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/94052759-4c0f-483d-8a78-5803fab5c961">
 
 > [!IMPORTANT]
 If you need further assistance with the code, please click [here to view all the function code](./src/).
