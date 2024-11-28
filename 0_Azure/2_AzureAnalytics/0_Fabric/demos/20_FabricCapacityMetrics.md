@@ -61,7 +61,7 @@ Last updated: 2024-11-28
 ### Configuration Steps
 1. **Run the App for the First Time**:
    - In Microsoft Fabric, go to **Apps** and select the Microsoft Fabric Capacity Metrics app.
-   - When prompted with "You have to connect to your own data to view this report", select **Connect**.
+   - When prompted with `You have to connect to your own data to view this report`, select **Connect**.
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/de72c2c8-f755-41be-831d-9b756963a30b">
 
