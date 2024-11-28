@@ -188,9 +188,9 @@ Benefits of Using Admin Monitoring Workspace:
 
 2. **Create Custom Reports**: You can utilize copilot capabilities to automatically create your report and edit it. Request additional pages with your content or even ask questions about your data.
      
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/12368a38-cd80-4bdb-b249-efb2b9225260">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/12368a38-cd80-4bdb-b249-efb2b9225260">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c928cae7-4bb3-48b9-8bf9-7f05f2f0b7e2">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/c928cae7-4bb3-48b9-8bf9-7f05f2f0b7e2">
 
 3. **Share Reports**: Once your reports are created, you can share them with others by assigning roles or providing direct access links.
 
