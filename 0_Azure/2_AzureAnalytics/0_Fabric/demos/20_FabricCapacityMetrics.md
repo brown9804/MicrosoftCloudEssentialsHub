@@ -108,6 +108,8 @@ Last updated: 2024-11-28
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/35bd1fc0-e5b3-43f0-acf8-d71310134273">
 
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/be675f2f-82a4-4799-a72b-04cc9b47f3aa">
+
 ### Troubleshooting
 - If the app doesn't show data or can't refresh, try deleting the old app and reinstalling the latest version.
 - Update the semantic model credentials if needed.
