@@ -298,11 +298,13 @@ Last updated: 2024-11-28
 
  -  `COSMOS_DB_ENDPOINT`: Your Cosmos DB account endpoint.
  -  `COSMOS_DB_KEY`: Your Cosmos DB account key.
- -  `contosostorageaidemo_STORAGE`: Your Storage Account key.
+ -  `contosostorageaidemo_STORAGE`: Your Storage Account connection string.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/ab7cdaad-8939-4a82-99e3-5e7cfd24e908">
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/effadf44-7304-4185-a55b-1eb76a5ab8b1">
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/905aa59c-9083-4cad-8eb8-b73e5712d2df">
 
  - Click on `Apply` to save your configuration.
 
