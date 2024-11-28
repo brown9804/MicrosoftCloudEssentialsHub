@@ -12,6 +12,9 @@ Last updated: 2024-11-28
 
 > The `Microsoft Fabric Capacity Metrics app` is designed to provide comprehensive monitoring capabilities for Microsoft Fabric capacities. It helps administrators track capacity consumption, identify performance bottlenecks, and make informed decisions about scaling and resource allocation. The app provides detailed insights into capacity utilization, throttling, and system events, enabling proactive management of resources to ensure optimal performance.
 
+> [!NOTE]
+> Ensure you have admin rights for the capacity you want to monitor.
+
 ## Wiki 
 
 <details>
@@ -34,10 +37,6 @@ Last updated: 2024-11-28
 | **Throttling**               | Displays delays and rejections based on capacity consumption, helping to manage and mitigate performance issues. |
 | **System Events**            | Logs significant events such as capacity pauses and resumes, providing context for performance changes. |
 | **Matrix by Item and Operation** | Breaks down metrics by individual items and operations, offering granular insights into resource usage. |
-
-### Prerequisites
-1. **Capacity Admin**: Ensure you have admin rights for the capacity you want to monitor.
-2. **Power BI Pro License**: Install the app in a workspace with a Pro license to avoid throttling.
 
 ### Installation Steps
 
@@ -113,5 +112,92 @@ Last updated: 2024-11-28
 ### Troubleshooting
 - If the app doesn't show data or can't refresh, try deleting the old app and reinstalling the latest version.
 - Update the semantic model credentials if needed.
+
+## Admin monitoring 
+
+> `Admin monitoring workspace` in Microsoft Fabric is a powerful tool for administrators to track and analyze usage metrics across their organization. This workspace provides detailed insights into how different features and services are being utilized, helping admins make informed decisions to optimize performance and resource allocation.
+
+Key Components:
+
+| **Item**                          | **Description**                                                                 |
+|-----------------------------------|---------------------------------------------------------------------------------|
+| **Feature Usage and Adoption - Report** | Provides detailed reports on the adoption and usage of various features within the organization. |
+| **Feature Usage and Adoption - Semantic model** | Contains the underlying data model that supports the usage and adoption reports. |
+| **Purview Hub - Semantic model**  | Includes data models related to data governance and compliance monitoring.      |
+| **Purview Hub - Report**          | Offers reports on data governance and compliance, helping to ensure adherence to relevant regulations and standards. |
+
+Benefits of Using Admin Monitoring Workspace:
+
+1. **Track Feature Adoption**: Understand which features are being used the most and identify areas where additional training or resources might be needed.
+2. **Monitor Performance**: Keep an eye on system performance and identify any bottlenecks or issues that need to be addressed.
+3. **Optimize Resources**: Make data-driven decisions about scaling and resource allocation to ensure optimal performance.
+4. **Ensure Compliance**: Use the Purview Hub to monitor data governance and compliance, ensuring that your organization adheres to relevant regulations and standards.
+
+
+### Configure the Admin Monitoring Workspace
+
+> [!IMPORTANT]
+> - **Permissions**: `Only users with direct admin roles can set up the Admin Monitoring workspace`. If the admin role `is assigned through a group, data refreshes may fail`. <br/> 
+> - **Read-Only Workspace**: The `Admin Monitoring workspace is read-only`. Users, including admins, cannot edit or view properties of items such as semantic models and reports within the workspace. `Admins can share reports and semantic models within the workspace with other users by assigning them a workspace viewer role or providing direct access links.`
+> - **Reinitializing the Workspace**: If needed, `you can reinitialize the workspace by executing an API call to delete the semantic model and then reinstalling the workspace`.
+
+1. **Log into Microsoft Fabric**: Sign in to the [Microsoft Fabric service](https://app.fabric.microsoft.com/) with your admin credentials.
+2. **Access the Admin Portal**:
+   - Click on the **Settings** gear icon in the top right corner.
+   - Select **Admin Portal** from the dropdown menu.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/642655d2-54c6-40ff-8060-7ed533e6ad57">
+
+3. **Navigate to the Admin Monitoring Workspace**:
+   - In the Admin Portal, you will see a message about the new monitoring and metrics experience under `Usage Metrics`:
+   - Click on the **Open admin monitoring workspace** link provided in the message.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/573e6ccc-ac22-4ed4-9520-5f132400b9c8">
+
+4. **Install the Workspace**:
+   - If this is your first time accessing the Admin Monitoring workspace, it will automatically begin the installation process.
+   - Wait a few minutes for the installation to complete. The initial data refresh will start around five minutes after installation and usually completes within a few minutes.
+
+5. **Configure Data Refresh**:
+   - The semantic models in the workspace are automatically refreshed once per day.
+   - Ensure that the admin who first accessed the workspace remains an admin to maintain the scheduled refresh process.
+
+6. **Reassign Workspace (Optional)**:
+   - To take advantage of capacity benefits such as unlimited content sharing, you can reassign the workspace to a different license mode:
+     - Navigate to the **Workspaces** page in the Admin Portal.
+     - Select the **Actions** button next to the Admin Monitoring workspace.
+     - Choose **Reassign workspace** and select the desired license mode, then click **Save**.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/6c36eb69-0b3e-4eef-b9ab-b4e507ad9ab9">
+
+### How to Use Data from Admin Monitoring Workspace (Custom Reports)
+
+1. **Connect to Semantic Models**:
+
+    - In your new workspace, click on `+ New item`, search for `report`, and select it.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7e078c82-936e-421f-b0d2-c1264143409c">
+
+   - Click on `Pick a published semantic model`:
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/f711aec8-5da3-4f38-ad6e-d552a81cb912">
+
+   - Search for and connect to the semantic models from the Admin Monitoring workspace.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/827780f4-193a-4c04-82ae-0edaa7c0312b">
+
+2. **Create Custom Reports**: You can utilize copilot capabilities to automatically create your report and edit it. Request additional pages with your content or even ask questions about your data.
+     
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/12368a38-cd80-4bdb-b249-efb2b9225260">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c928cae7-4bb3-48b9-8bf9-7f05f2f0b7e2">
+
+3. **Share Reports**: Once your reports are created, you can share them with others by assigning roles or providing direct access links.
+
+> Admins can share reports and semantic models within the workspace with other users by assigning them a workspace viewer role or providing direct access links.
+
+| Semantic model access | Workspace access |
+| --- | --- |
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/a35a7168-a84c-43c1-9aa9-8e81c93b92fc"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b4e3eb6a-be98-4194-8800-7702d72b27a9"> | 
 
 
