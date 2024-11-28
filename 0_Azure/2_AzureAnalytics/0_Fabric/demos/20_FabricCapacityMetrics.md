@@ -1,4 +1,4 @@
-# Fabric Capacity Metrics + Monitoring Overview 
+![image](https://github.com/user-attachments/assets/82a14c25-61b4-4aea-8ae7-ecd3c6775f31)# Fabric Capacity Metrics + Monitoring Overview 
 
 Costa Rica
 
@@ -200,4 +200,70 @@ Benefits of Using Admin Monitoring Workspace:
 | --- | --- |
 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/a35a7168-a84c-43c1-9aa9-8e81c93b92fc"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/b4e3eb6a-be98-4194-8800-7702d72b27a9"> | 
 
+## Monitor Hub
 
+> Centralized tool that allows `users to view and track the status of activities across all workspaces for which they have permissions`. This hub provides a comprehensive overview of various `activities, such as dataset refreshes, Spark job runs, dataflows, datamarts, lakehouses, notebooks, semantic models, report views, etc`.
+
+| **Feature**             | **Description**                                                                 |
+|-------------------------|---------------------------------------------------------------------------------|
+| **Activity Tracking**   | Displays activities for all Fabric items you have permission to view, sorted by start time with the newest activities at the top. |
+| **Historical View**     | Keeps a history of activities for up to 30 days, allowing you to view past activities using the Historical runs option. |
+| **Customizable Display**| Allows you to change the display order, configure table columns, and use keyword search and filters to find specific activities. |
+| **Status and Details**  | Provides detailed status information for each activity, including the ability to view more details and take actions if you have the right permissions. |
+| **Filter Options**      | You can filter activities by status, start time, item type, submitted by, and location to narrow down the results. |
+
+### How to Access and Use the Monitor Hub
+
+1. **Open the Monitor Hub**: In [Microsoft Fabric](https://app.fabric.microsoft.com/), select **Monitor** from the navigation pane. If you don't see it click on `...`:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/baf7123f-e8f7-4b2a-a437-66d95c829697">
+
+2. **View Activities**: The monitor hub displays activities in a table format. You can sort the table by selecting column titles and use the Column options button to customize the display.
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/0891e96c-d0c7-4e71-84e7-d1f91a4b6afc">
+
+3. **Search and Filter**:
+   - Use the keyword search box to find specific activities.
+   - Apply filters to narrow down the results based on status, time period, item type, owner, and workspace location.
+        
+        | Column Options | Filter Options | 
+        | --- | --- | 
+        | <img width="550" alt="image" src="https://github.com/user-attachments/assets/67c12153-1ddc-40e3-8c82-1514f3afc6a8"> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/3dfcdc57-fd54-42f2-8e3c-9694fa7dca88"> | 
+
+
+5. **Take Actions**: If you have the necessary permissions, you can perform actions on activities by selecting the More options (...) next to the activity name.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/e8e3e3e9-a8b0-4527-8ecd-b01fc88f7392">
+
+6. **View Historical Runs**: To view the history of a specific item, select Historical runs from the More options menu next to the activity name.
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/5317042a-eae6-41e8-81dd-0e9901e87bb9">
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/0047d793-4a2d-43cf-ad78-fc5debbabe95">
+
+### Extending Activity History
+
+> To extend your activity tracking beyond 30 day, you can use `Microsoft Purview`: <br/> 
+> - Provides extended audit log retention up to 1 year with appropriate licensing. <br>
+> - Use the Purview portal to view and export detailed activity logs. <br>
+> - Utilize the Purview REST API to access scan history beyond 30 days.
+      
+Steps to  Access Microsoft Purview via Audit Logs:
+
+1. **Navigate to the Admin Portal**:
+   - Go to the [Microsoft Fabric](https://app.fabric.microsoft.com/) and sign in with your admin account.
+   - Click on the **Settings** gear icon and select **Admin Portal**.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/4b5fb5d1-05f0-4e1a-9ec8-c32f569f1dd2">
+
+2. **Access Audit Logs**:
+   - In the Admin Portal, go to the **Audit logs** section.
+   - Click on `Go to Microsoft 365 Admin Center`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/82cb3cd0-604f-4090-9dc5-0c86f1c29e2b">
+
+    - You will see a message about the retirement of the site, which is being replaced with Microsoft Purview:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/6fe2fc5e-9db1-47f7-bfd8-dd85694e49c8">
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/90730142-2a56-43af-a6e5-6c3aa5deddff">
