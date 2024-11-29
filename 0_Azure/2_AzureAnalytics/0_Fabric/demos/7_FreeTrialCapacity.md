@@ -9,7 +9,13 @@ Last updated: 2024-11-19
 
 ----------
 
+> [!IMPORTANT]
+> Each standard trial of a Microsoft Fabric capacity includes `64 capacity units`. `The person who initiates the trial becomes the Capacity administrator for that trial capacity`. Other users within the same tenant can also start their own Fabric trial and become Capacity administrators for their respective trial capacities. However, `there is a limit on the number of trial capacities that can be created per tenant`. If your tenant has reached this limit, you need to purchase a Fabric capacity, consider reservations for discounts.
+
 ## Wiki 
+
+<details>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Microsoft Fabric trial capacity](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
 - [Are you ready? -> Buy a Microsoft Fabric subscription](https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription)
@@ -21,7 +27,15 @@ Last updated: 2024-11-19
 - [Building Common Data Architectures with OneLake in Microsoft Fabric](https://blog.fabric.microsoft.com/en-us/blog/building-common-data-architectures-with-onelake-in-microsoft-fabric/)
 - [Workspace roles in Lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/workspace-roles-lakehouse)
 - [Workspace roles in Fabric data warehousing](https://learn.microsoft.com/en-us/fabric/data-warehouse/workspace-roles)
-  
+
+
+</details>
+
+## Content 
+
+
+
+
 ## Overview 
 
 > When you sign up for a `Microsoft Fabric trial`, you get access to the Fabric product workloads and resources for `60 days`.
@@ -35,8 +49,12 @@ Last updated: 2024-11-19
 | License Type                     | Similar to Premium Per User (PPU)                                        |
 | Collaboration Capabilities       | Create and collaborate on Fabric items (semantic models, warehouses, notebooks) |
 
+Click here to follow the [steps to start the fabric capacity trial](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial#start-the-fabric-capacity-trial)
 
-### Roles in Workspaces in Microsoft Fabric
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/1151ba72-0be9-41d4-8c05-861d95cdd9b9">
+
+
+## Roles in Workspaces in Microsoft Fabric
 
 > Microsoft Fabric workspaces use roles to manage permissions and capabilities. These roles ensure that users have the appropriate level of access and capabilities within a workspace.
 
@@ -46,6 +64,44 @@ Last updated: 2024-11-19
 | Member      | Add/remove people, create/modify content, share items                       |
 | Contributor | Create/modify content, limited sharing capabilities                         |
 | Viewer      | View/read content, no modification capabilities                             |
+
+## How to extend trial period 
+
+> [!NOTE]
+> If their trial period is extended without any action or request from the user, it is due to the Microsoft account team responsible for your company, as they are managing the request with the support team.
+
+- If you are an existing customer, please create a support request to ask for an extension so your assigned team can collaborate with the support team to extend your trial period. Provide your trial capacity ID and explain the reason for the extension. You can find your trial capacity ID in the Account Manager under Trial status.
+    - Under `settings`, go to `Admin portal`:
+      
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/3feb7a7b-8402-4810-a5f3-31488e0427a2">
+
+    - Click on `Capacity settings`, select the ⚙️, and copy the `Capacity ID`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/a2defd0e-9068-4b08-8117-d59cb1563a90">
+
+- Are you a new customer? Contact the [Microsoft Sales Team](https://azure.microsoft.com/en-us/contact/#contact-sales) so they can engage with you and provide the best service.
+
+    - Select ⚙️, and click on `Get Microsoft help`:
+ 
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/77aef4a9-04ba-4194-91b8-b75c4bd2aedf">
+
+    - A window will open, prompting you to select the product with the issue. This window is the same as the one accessed by clicking `Admin portal`, under `Help + support`, then selecting `+ New support request`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/fddbc6d4-9283-418a-add2-50bf345b6aa2">
+
+    - In the text box, write `Trial`, choose `Trial license expiration or renewal`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/18a3913b-8ff3-48aa-8191-8697b7a44fa4">
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/e72a1a9c-ba41-43cf-a638-01cd648e93db">
+
+    - It will propose some solutions:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/d0658777-fa30-4315-ad44-2d2f38d1b56c">
+
+    - Please click on the `Support` tab to select your `support plan`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/69d02457-b9f6-4c4b-ac1c-b23c29566381">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
