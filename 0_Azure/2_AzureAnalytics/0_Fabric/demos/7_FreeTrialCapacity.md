@@ -33,8 +33,12 @@ Last updated: 2024-11-29
 
 ## Content 
 
-
-
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Roles in Workspaces in Microsoft Fabric](#roles-in-workspaces-in-microsoft-fabric)
+- [How to extend trial period](#how-to-extend-trial-period)
+- [How to reassign a license to a workspace](#how-to-reassign-a-license-to-a-workspace)
 
 ## Overview 
 
@@ -102,6 +106,30 @@ Click here to follow the [steps to start the fabric capacity trial](https://lear
     - Please click on the `Support` tab to select your `support plan`:
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/69d02457-b9f6-4c4b-ac1c-b23c29566381">
+
+## How to reassign a license to a workspace
+
+- If you have a `single workspace`, please go to `Workspace settings`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/86cdaf9e-05ef-45c8-bd90-5931a3305bcb">
+
+- Select `License info`, click on `Edit`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2e915b88-eafa-478f-872d-1a406aa52f0a">
+
+- Scroll down to find your desired license type, choose the semantic model storage format (large is recommended for models larger than 10 GB), and click on `Select license`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd16826d-dc4c-431a-aa4d-fc8a484b34c2">
+
+> Now imagine you have multiple workspaces that you need to reassign to the same license type:
+
+- Select ⚙️, click on `Admin portal`:
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/d3f999aa-1da4-4682-baea-bcfa51b5a5eb">
+
+- Within `Workspaces`, select the desired workspaces and click on `Reassign workspace`. Then, choose your license and click `Save`:
+
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/74a2e65e-7c23-479b-9a83-656e1a429b68">
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
