@@ -26,12 +26,16 @@ Last updated: 2024-11-29
 <summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Evaluate and optimize your Microsoft Fabric capacity](https://learn.microsoft.com/en-us/fabric/enterprise/optimize-capacity)
+- [Smoothing and throttling in Fabric Data Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/compute-capacity-smoothing-throttling)
 - [Burstable capacity in Fabric Data Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/burstable-capacity)
-- [Scale your capacity](https://learn.microsoft.com/en-us/fabric/enterprise/scale-capacity)
 - [The Fabric throttling policy](https://learn.microsoft.com/en-us/fabric/enterprise/throttling)
+- [Scale your capacity](https://learn.microsoft.com/en-us/fabric/enterprise/scale-capacity)
 - [Actions you can take to recover from overload situations](https://learn.microsoft.com/en-us/fabric/enterprise/throttling#actions-you-can-take-to-recover-from-overload-situations)
+- [Using Autoscale with Power BI Premium](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-auto-scale#enable-autoscale-in-the-power-bi-admin-portal)
 - [Configure capacity notifications](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-capacity-notifications)
-  
+- [Notifications considerations and limitations](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-capacity-notifications#considerations-and-limitations)
+
+
 </details>
 
 ## Overview 
@@ -43,7 +47,7 @@ Key mechanisms for resource optimization and system stability, this include Burs
 
 ### Bursting and Smoothing
 
-Mechanisms designed to handle CPU-intensive activities efficiently without the need for a higher SKU.
+> Mechanisms designed to handle CPU-intensive activities efficiently without the need for a higher SKU.
 
 
 | **Feature** | **Definition** | **Mechanism** | **Benefits** |
@@ -54,7 +58,7 @@ Mechanisms designed to handle CPU-intensive activities efficiently without the n
 
 ### Throttling
 
-Mechanism used to manage resource consumption by delaying or rejecting operations when the capacity experiences sustained high demand. 
+> Mechanism used to manage resource consumption by delaying or rejecting operations when the capacity experiences sustained high demand. 
 
 
 | **Aspect**             | **Details**                                                                 |
@@ -83,6 +87,17 @@ Mechanism used to manage resource consumption by delaying or rejecting operation
     | <img width="300" alt="image" src="https://github.com/user-attachments/assets/8085c163-b3bc-446d-a7ae-24a3e5d6ec77"> | <img width="300" alt="image" src="https://github.com/user-attachments/assets/215eb0d0-81a9-40af-96ad-90a1234352a0"> | 
 
 - Move lower priority or overconsuming workspaces out of the capacity.
+
+    > It can be done via `workspace settings`:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/004615e7-1f4c-4ac0-9d04-cda816508d3f">
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/d377dce7-6ecf-4173-8bfb-69663f06faee">
+    
+    > Or go to `settings`, click on `admin portal`, then under `workspaces`, pick the ones you want to reassign and click on `reassign workspace`:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/02a0f0d7-c86d-4c6e-a3f4-6caf2d3f3a4d">
+
 - [Autoscale](https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-auto-scale) a P capacity.
 
 ## Monitor Usage 
@@ -95,13 +110,13 @@ Below, you will find a quick overview of ways to monitor your usage with tools:
 
 ## Steps to Configure Capacity Alerts
 
-- **Monitoring**: Regularly monitor your capacity usage to ensure the alerts are functioning as expected.
-- **Adjustments**: You can adjust the threshold and recipients at any time based on your needs.
+> - **Monitoring**: Regularly monitor your capacity usage to ensure the alerts are functioning as expected. <br/>
+> - **Adjustments**: You can adjust the threshold and recipients at any time based on your needs.
 
-    | **Notification Setting** | **Value** |
-    |--------------------------|-----------|
-    | **Threshold**            | 80%       |
-    | **Recipients**           | Capacity admins, Specific contacts |
+  | **Notification Setting** | **Value** |
+  |--------------------------|-----------|
+  | **Threshold**            | 80%       |
+  | **Recipients**           | Capacity admins, Specific contacts |
 
 
 1. Go to the [Microsoft Fabric service](https://app.fabric.microsoft.com/) and sign in with your admin credentials.
@@ -129,4 +144,7 @@ Below, you will find a quick overview of ways to monitor your usage with tools:
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/962e9391-8510-4c15-acdb-5e53991c5a40">
 
+Find below an example of the email format:
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/308e372d-48de-46f4-9138-984e15b5fd24">
 
