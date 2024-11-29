@@ -35,8 +35,18 @@ Last updated: 2024-11-29
 - [Configure capacity notifications](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-capacity-notifications)
 - [Notifications considerations and limitations](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-capacity-notifications#considerations-and-limitations)
 
-
 </details>
+
+## Content 
+
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+    - [Bursting and Smoothing](#bursting-and-smoothing)
+    - [Throttling](#throttling)
+- [Actions you can take to recover from overload situations](#actions-you-can-take-to-recover-from-overload-situations)
+- [Monitor Usage](#monitor-usage)
+- [Steps to Configure Capacity Alerts](#steps-to-configure-capacity-alerts)
 
 ## Overview 
 
