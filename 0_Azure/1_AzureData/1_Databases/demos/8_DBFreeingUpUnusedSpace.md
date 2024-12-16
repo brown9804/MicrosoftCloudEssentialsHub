@@ -225,7 +225,7 @@ For Azure SQL Managed Instance, consider these strategies:
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/81ca0fcf-6188-4747-a89f-328c8697982e" />
 
 
-    - Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used:
+    - Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used.
     
         ```sql
         SELECT 
@@ -245,7 +245,7 @@ For Azure SQL Managed Instance, consider these strategies:
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/9e73aa43-59a8-412a-b8e1-757478050b8c" />
 
-    - Database Size and Space Usage: This query provides an overview of the database size and space usage, including the total size, used space, and free space:
+    - Database Size and Space Usage: This query provides an overview of the database size and space usage, including the total size, used space, and free space.
         
         ```sql
         WITH SpaceInfo AS (
@@ -274,7 +274,7 @@ For Azure SQL Managed Instance, consider these strategies:
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd6cbfa5-aec0-48d6-a8dc-440023bca0d0">
 
 
-    - Filegroup Space Usage: This query provides information about space usage by filegroups, including the filegroup name, total size, used space, and free space:
+    - Filegroup Space Usage: This query provides information about space usage by filegroups, including the filegroup name, total size, used space, and free space.
         
         ```sql
         -- Calculate the total size, used space, and free space for each filegroup
@@ -371,10 +371,12 @@ For Azure SQL Managed Instance, consider these strategies:
 
 7. **Archiving Old Data**: Move old data to an archive database using SQL Server's built-in tools or third-party solutions.
 
-8. **Removing Unused Indexes**: Identify and remove indexes that are not being used:
+8. **Removing Unused Indexes**: Identify and remove indexes that are not being used.
    ```sql
    SELECT * FROM sys.dm_db_index_usage_stats WHERE user_seeks = 0 AND user_scans = 0 AND user_lookups = 0;
    ```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8e9dfe79-c4a7-40c8-9ae8-7210c35eb6f1">
 
 9. **Using Filegroups**: Distribute objects across multiple filegroups to improve performance and manageability:
    ```sql
