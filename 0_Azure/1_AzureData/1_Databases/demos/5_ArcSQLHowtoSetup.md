@@ -36,6 +36,8 @@ Last updated: 2024-12-16
 
 ## How to setup Azure Arc on your on-premises SQL Server
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/df22531f-c57c-43dd-9fdf-d38549ff6926">
+
 | Prerequisite         | Description                                                                                       |
 |----------------------|---------------------------------------------------------------------------------------------------|
 | **Azure Account**    | Ensure you have an active Azure subscription.                                                     |
