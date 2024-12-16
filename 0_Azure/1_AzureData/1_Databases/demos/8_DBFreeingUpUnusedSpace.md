@@ -132,10 +132,226 @@ To optimize your Azure SQL Database, you can use several strategies:
 
 For Azure SQL Managed Instance, consider these strategies:
 
-1. **Shrinking the Database**: Reclaim unused space with:
+1. Gather more detailed information about the current used and allocated space in your database:
+
+    -  Detailed Space Usage by File: This query provides detailed information about each file, including the file name, type, growth settings, and more:
+    
+        ```sql
+        WITH CTE AS (
+            SELECT 
+                file_id,
+                name AS file_name,
+                type_desc AS file_type,
+                physical_name,
+                CAST(FILEPROPERTY(name, 'SpaceUsed') AS bigint) * 8 / 1024.0 AS space_used_mb,
+                CAST(size AS bigint) * 8 / 1024.0 AS space_allocated_mb,
+                CAST(max_size AS bigint) * 8 / 1024.0 AS max_size_mb,
+                growth,
+                CASE 
+                    WHEN is_percent_growth = 1 THEN 'Percentage'
+                    ELSE 'MB'
+                END AS growth_type
+            FROM sys.database_files
+        )
+        SELECT 
+            file_id,
+            file_name,
+            file_type,
+            physical_name,
+            space_used_mb,
+            space_allocated_mb,
+            max_size_mb,
+            growth,
+            growth_type,
+            space_used_mb / space_allocated_mb * 100 AS [Occupancy %]
+        FROM CTE
+        ORDER BY [Occupancy %];
+        ```
+
+
+          <img width="700" alt="image" src="https://github.com/user-attachments/assets/42ed5425-3eac-459f-9600-0bb2f8674758">
+
+
+    - Space Usage by Table: This query provides information about space usage at the table level, including the number of rows, reserved space, data space, index space, and unused space. Will iterate through all tables in your database and execute sp_spaceused for each one:
+        
+        ```sql
+        -- Create a temporary table to store the results
+        CREATE TABLE #SpaceUsed (
+            TableName NVARCHAR(256),
+            [Rows] INT,
+            Reserved VARCHAR(50),
+            Data VARCHAR(50),
+            IndexSize VARCHAR(50),
+            Unused VARCHAR(50)
+        );
+        
+        DECLARE @TableName NVARCHAR(256);
+        
+        DECLARE TableCursor CURSOR FOR
+        SELECT QUOTENAME(SCHEMA_NAME(schema_id)) + '.' + QUOTENAME(name)
+        FROM sys.tables;
+        
+        OPEN TableCursor;
+        FETCH NEXT FROM TableCursor INTO @TableName;
+        
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            INSERT INTO #SpaceUsed (TableName, [Rows], Reserved, Data, IndexSize, Unused)
+            EXEC sp_spaceused @TableName;
+            FETCH NEXT FROM TableCursor INTO @TableName;
+        END;
+        
+        CLOSE TableCursor;
+        DEALLOCATE TableCursor;
+        
+        -- Select the results from the temporary table
+        SELECT * FROM #SpaceUsed
+        ORDER BY TableName;
+        
+        -- Drop the temporary table
+        DROP TABLE #SpaceUsed;
+        ```
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/81ca0fcf-6188-4747-a89f-328c8697982e" />
+
+
+    - Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used:
+    
+        ```sql
+        SELECT 
+            OBJECT_NAME(i.object_id) AS table_name,
+            i.name AS index_name,
+            i.type_desc AS index_type,
+            SUM(a.used_pages) * 8 / 1024.0 AS index_size_mb
+        FROM 
+            sys.indexes AS i
+            JOIN sys.partitions AS p ON i.object_id = p.object_id AND i.index_id = p.index_id
+            JOIN sys.allocation_units AS a ON p.partition_id = a.container_id
+        GROUP BY 
+            i.object_id, i.index_id, i.name, i.type_desc
+        ORDER BY 
+            index_size_mb DESC;
+        ```
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9e73aa43-59a8-412a-b8e1-757478050b8c" />
+
+    - Database Size and Space Usage: This query provides an overview of the database size and space usage, including the total size, used space, and free space:
+        
+        ```sql
+        WITH SpaceInfo AS (
+            SELECT 
+                file_id,
+                type_desc,
+                name AS file_name,
+                physical_name,
+                size * 8 / 1024 AS size_mb,
+                FILEPROPERTY(name, 'SpaceUsed') * 8 / 1024 AS space_used_mb
+            FROM 
+                sys.database_files
+        )
+        SELECT 
+            db_name.database_name,
+            SUM(size_mb) AS total_size_mb,
+            SUM(space_used_mb) AS used_space_mb,
+            SUM(size_mb) - SUM(space_used_mb) AS free_space_mb
+        FROM 
+            SpaceInfo,
+            (SELECT DB_NAME() AS database_name) AS db_name
+        GROUP BY 
+            db_name.database_name;
+        ```
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd6cbfa5-aec0-48d6-a8dc-440023bca0d0">
+
+
+    - Filegroup Space Usage: This query provides information about space usage by filegroups, including the filegroup name, total size, used space, and free space:
+        
+        ```sql
+        -- Calculate the total size, used space, and free space for each filegroup
+        SELECT 
+            fg.name AS filegroup_name,
+            SUM(df.size * 8 / 1024.0) AS total_size_mb,
+            SUM(df.size * 8 / 1024.0) - SUM(a.total_pages * 8 / 1024.0) AS free_space_mb,
+            SUM(a.total_pages * 8 / 1024.0) AS used_space_mb
+        FROM 
+            sys.filegroups AS fg
+        JOIN 
+            sys.database_files AS df ON fg.data_space_id = df.data_space_id
+        JOIN 
+            sys.allocation_units AS a ON df.data_space_id = a.data_space_id
+        GROUP BY 
+            fg.name
+        ORDER BY 
+            total_size_mb DESC;
+        ```
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a7dce4f9-f32e-4b7e-bd92-d4709bd0ed7b">
+
+2. **Shrink the Database File**:  Shrink the database file to reclaim unused space
+
+   ```sql
+    -- Shrink the database file (replace 1 with your file_id)
+    DBCC SHRINKFILE (1);
+   ```
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/96c7be25-ade3-4851-a2cd-8735273c4c6f">
+
+3. **Monitor the Shrink Operation**: While the shrink operation is running, you can monitor for any blocking operations that might be affecting the process.
+
+    ```sql
+    -- Check for blocking operations
+    SELECT 
+        blocking_session_id, 
+        wait_type, 
+        wait_time, 
+        wait_resource
+    FROM 
+        sys.dm_exec_requests
+    WHERE 
+        blocking_session_id <> 0;
+    ```
+
+   
+   <img width="350" alt="image" src="https://github.com/user-attachments/assets/0d724ca6-8ac1-478b-820d-7ae124af8937" />
+
+4. **Check for Active Transactions**: Ensure there are no active transactions that might be preventing the shrink operation from completing.
+
+   ```sql
+   -- Check for active transactions
+    DBCC OPENTRAN;
+   ```
+
+   <img width="350" alt="image" src="https://github.com/user-attachments/assets/5c64c734-4999-40a2-8333-40090e88e37b">
+
+5. **Check for Long-Running Queries**: Identify any long-running queries that might be affecting the performance.
+
+    ```sql
+    -- Check for long-running queries
+    SELECT 
+        session_id, 
+        start_time, 
+        status, 
+        command, 
+        wait_type, 
+        wait_time, 
+        blocking_session_id
+    FROM 
+        sys.dm_exec_requests
+    WHERE 
+        status = 'running'
+    ORDER BY
+    ```
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/da27cedb-e113-4127-85c4-1ab10b9b09e6">
+
+
+6. **Shrinking the Database**: Reclaim unused space with. Shrink the entire database to leave 10% free space.
    ```sql
    DBCC SHRINKDATABASE (YourDatabaseName, 10);
    ```
+
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/f906adcd-732e-4efa-849c-90d8fed2e9d3">
+
    To check for blocking operations:
    ```sql
    SELECT blocking_session_id, wait_type, wait_time, wait_resource
@@ -143,14 +359,14 @@ For Azure SQL Managed Instance, consider these strategies:
    WHERE blocking_session_id <> 0;
    ```
 
-2. **Archiving Old Data**: Move old data to an archive database using SQL Server's built-in tools or third-party solutions.
+7. **Archiving Old Data**: Move old data to an archive database using SQL Server's built-in tools or third-party solutions.
 
-3. **Removing Unused Indexes**: Identify and remove indexes that are not being used:
+8. **Removing Unused Indexes**: Identify and remove indexes that are not being used:
    ```sql
    SELECT * FROM sys.dm_db_index_usage_stats WHERE user_seeks = 0 AND user_scans = 0 AND user_lookups = 0;
    ```
 
-4. **Using Filegroups**: Distribute objects across multiple filegroups to improve performance and manageability:
+9. **Using Filegroups**: Distribute objects across multiple filegroups to improve performance and manageability:
    ```sql
    CREATE TABLE YourTableName (...) ON [PrimaryFileGroup];
    ```
