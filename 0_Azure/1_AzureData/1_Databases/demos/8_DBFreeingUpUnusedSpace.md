@@ -132,6 +132,16 @@ To optimize your Azure SQL Database, you can use several strategies:
 
 For Azure SQL Managed Instance, consider these strategies:
 
+> - DBCC SHRINKFILE: Shrinks a specific database file by moving data pages and reducing the file size. <br/>
+> - DBCC SHRINKFILE (TRUNCATEONLY): Releases unused space at the end of a specific file without moving data pages.
+> - DBCC SHRINKDATABASE: Shrinks all data and log files in a database by moving data pages and reducing the overall size. <br/>
+
+| **Command**                      | **Description**                                                                 | **Syntax**                                                                                   | **Example**                                                                                   |
+|----------------------------------|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **DBCC SHRINKFILE**              | DBCC SHRINKFILE is used to shrink the size of a specific database file. This command attempts to move data pages from the end of the file to unoccupied space closer to the beginning of the file, thereby reducing the file size.            | `DBCC SHRINKFILE (file_id, target_size_in_MB);`                                              | `DBCC SHRINKFILE (1, 100);` -- Shrinks the file with ID 1 to 100 MB                       |
+| **DBCC SHRINKFILE (TRUNCATEONLY)** | DBCC SHRINKFILE (TRUNCATEONLY) is a specific option for DBCC SHRINKFILE that releases all free space at the end of the file to the operating system without moving any data pages. This command is useful when you want to quickly release unused space without the overhead of moving data. | `DBCC SHRINKFILE (file_id, TRUNCATEONLY);`                                                   | `DBCC SHRINKFILE (1, TRUNCATEONLY);` -- Releases unused space at the end of the file with ID 1 |
+| **DBCC SHRINKDATABASE**          | DBCC SHRINKDATABASE is used to shrink the size of all data and log files in a database. This command attempts to move data pages from the end of the files to unoccupied space closer to the beginning of the files, thereby reducing the overall size of the database. `target_percent_free_space`: The desired percentage of free space to remain in the database after the shrink operation.  | `DBCC SHRINKDATABASE (database_name, target_percent_free_space);`                             | `DBCC SHRINKDATABASE (YourDatabaseName, 10);` -- Shrinks the database to leave 10% free space |
+
 1. Gather more detailed information about the current used and allocated space in your database:
 
     -  Detailed Space Usage by File: This query provides detailed information about each file, including the file name, type, growth settings, and more:
