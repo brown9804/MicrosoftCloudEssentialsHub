@@ -33,13 +33,13 @@ Last updated: 2024-12-16
 - [SQL Managed Instance enabled by Azure Arc Overview](https://learn.microsoft.com/en-us/azure/azure-arc/data/managed-instance-overview)
 - [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
 - [Administer SQL Server with Azure Arc - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-sql-server)
+- [SQL Server enabled by Azure Arc](https://learn.microsoft.com/en-gb/sql/sql-server/azure-arc/overview?view=sql-server-ver16#architecture)
 
 </details>
 
 ## Overview 
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/df22531f-c57c-43dd-9fdf-d38549ff6926">
-
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5ce51be3-d5e3-441f-b1ec-d7451b825320">
 
 | **Benefit**                     | **Description**                                                                                                                                       |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
