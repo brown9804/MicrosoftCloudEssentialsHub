@@ -39,8 +39,6 @@ Last updated: 2024-12-16
 
 ## Overview 
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/5ce51be3-d5e3-441f-b1ec-d7451b825320">
-
 | **Benefit**                     | **Description**                                                                                                                                       |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Unified Management**          | Manage all SQL Server instances from a single point of control in the Azure portal, including on-premises, multi-cloud, and edge environments.         |
@@ -63,6 +61,22 @@ Last updated: 2024-12-16
 | **Edge Locations**      | SQL Server instances running in edge locations, such as retail stores or remote offices, can be connected to Azure Arc. This allows for centralized management and monitoring of these distributed instances. |
 | **Azure VMware Solution** | SQL Server instances running on Azure VMware Solution can also be managed through Azure Arc. This provides a consistent management experience for SQL Servers running in a VMware environment. |
 | **Azure Stack HCI**     | SQL Server instances running on Azure Stack HCI (Hyper-Converged Infrastructure) can be connected to Azure Arc. This enables hybrid cloud scenarios where you can manage on-premises resources alongside Azure resources. |
+
+## Architecture
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5ce51be3-d5e3-441f-b1ec-d7451b825320">
+
+| **Component**                        | **Description**                                                                                   |
+|--------------------------------------|---------------------------------------------------------------------------------------------------|
+| **SQL Assets**                       | SQL Server instances enabled by Azure Arc, located on-premises, in multi-cloud, or at the edge.   |
+| **Arc-enabled Data Services**        | Services that connect and manage the SQL Server instances, including automated backups, security updates, and monitoring. |
+| **Arc SQL Extension**                |   - `Windows Local Package`: Package installed on Windows SQL Server instances for connectivity and management. <br/>   - `Linux Local Package`: Package installed on Linux SQL Server instances for connectivity and management. |
+| **Arc Agent: Connected Machine Agent** | Agent facilitating communication between SQL Server instances and Azure.                          |
+| **Enterprise Firewall and Proxy**    |   `Outbound Only on Port 443`: Ensures secure outbound communication from on-premises to Azure using port 443. |
+| **Control Plane**                    | Managed by Azure Resource Manager (ARM) and includes Microsoft Entra Identity for authentication. |
+| **Hybrid Connections**               | Managed through Microsoft Entra ID/Service Principal for secure connections.                      |
+| **Azure Resource Manager (ARM)**     | Manages resources across various environments using ARM templates or other methods.               |
+| **Microsoft.AzureData Resource Provider** | Manages data services enabled by Azure Arc, handling tasks like inventory management, billing, and licensing. |
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
