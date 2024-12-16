@@ -372,11 +372,12 @@ For Azure SQL Managed Instance, consider these strategies:
 7. **Archiving Old Data**: Move old data to an archive database using SQL Server's built-in tools or third-party solutions.
 
 8. **Removing Unused Indexes**: Identify and remove indexes that are not being used.
+
    ```sql
    SELECT * FROM sys.dm_db_index_usage_stats WHERE user_seeks = 0 AND user_scans = 0 AND user_lookups = 0;
    ```
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/8e9dfe79-c4a7-40c8-9ae8-7210c35eb6f1">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/8e9dfe79-c4a7-40c8-9ae8-7210c35eb6f1">
 
 9. **Using Filegroups**: Distribute objects across multiple filegroups to improve performance and manageability:
    ```sql
