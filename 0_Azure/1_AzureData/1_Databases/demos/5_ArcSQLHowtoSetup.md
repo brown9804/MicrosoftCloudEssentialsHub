@@ -31,6 +31,11 @@ Last updated: 2024-12-17
 - [Content](#content)
 - [How to setup Azure Arc on your on-premises SQL Server](#how-to-setup-azure-arc-on-your-on-premises-sql-server)
 - [How to setup Azure Arc on Azure SQL Managed Instance](#how-to-setup-azure-arc-on-azure-sql-managed-instance)
+- [How to setup Azure Arc for SQL Server Instances on Azure Virtual Machines VMs](#how-to-setup-azure-arc-for-sql-server-instances-on-azure-virtual-machines-vms)
+    - [Setting Up an Azure Virtual Machine with SQL Server](#setting-up-an-azure-virtual-machine-with-sql-server)
+    - [Steps to Create the VM](#steps-to-create-the-vm)
+    - [Post-Deployment Steps](#post-deployment-steps)
+    - [Steps to Enable Azure Arc](#steps-to-enable-azure-arc)
 - [Recommended Trainings](#recommended-trainings)
 
 </details>
