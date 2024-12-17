@@ -12,6 +12,8 @@ Last updated: 2024-12-16
 
 > Once Azure Arc is connected, you can manage your SQL Server instances from the Azure portal, allowing you to view detailed inventory, run cross-SQL Server queries, and optimize configurations based on best practices
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/d7f3ccfc-b11a-4788-ab53-1d7b2ae3d216">
+
 ## Wiki 
 
 <details>
