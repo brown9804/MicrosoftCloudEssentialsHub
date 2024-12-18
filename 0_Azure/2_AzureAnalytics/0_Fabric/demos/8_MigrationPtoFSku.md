@@ -43,10 +43,10 @@ Last updated: 2024-12-18
 | **Transition to Fabric SKUs**   | - **Flexibility**: Fabric SKUs offer more flexibility in terms of size and billing options, including pay-as-you-go.<br> - **Azure Integration**: Fabric SKUs provide access to Azure-only features and are eligible for Microsoft Azure Consumption Commitment (MACC).<br> - **Unified Platform**: Microsoft Fabric combines Power BI, Azure Synapse Analytics, and Azure Data Factory into a single SaaS platform, offering all the capabilities of Power BI Premium plus additional workloads. |
 | **Impact on Different Agreements** | - **Enterprise Agreement (EA) Customers**: Can continue to renew their P-SKUs annually until the end of their EA agreement. If the agreement ends after January 1, 2025, they will need to transition to Fabric SKUs.<br> - **Sovereign Cloud Customers**: Not impacted by this change as they do not currently have access to Microsoft Fabric. |
 
-> `P1 SKU`: Best for organizations focused solely on `Power BI` with fixed capacity needs and AutoScale. <br/>
+> `P SKU`: Best for organizations focused solely on `Power BI` with fixed capacity needs and AutoScale. <br/>
 > `F SKU`: Ideal for those looking for a `more integrated, flexible, and scalable solution` that leverages Azure’s full capabilities.
 
-| Feature/Aspect                     | Power BI Premium (P1 SKU)                  | Fabric (F SKU)                              |
+| Feature/Aspect                     | Power BI Premium (P SKU)                  | Fabric (F SKU)                              |
 |------------------------------------|--------------------------------------------|---------------------------------------------|
 | **Flexibility and Scalability**    | Fixed capacity with predefined resource limits. Suitable for organizations with stable, predictable workloads. | Offers flexible options, including pay-as-you-go and various sizes to better match dynamic needs. Ideal for organizations with fluctuating workloads. |
 | **Integration with Azure**         | Primarily focused on Power BI capabilities. Limited integration with other Azure services. | Integrates Power BI with Azure Synapse Analytics and Azure Data Factory, providing a unified platform for comprehensive data analytics and processing. |
