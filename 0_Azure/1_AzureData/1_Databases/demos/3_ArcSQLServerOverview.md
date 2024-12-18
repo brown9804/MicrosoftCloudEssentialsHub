@@ -10,10 +10,6 @@ Last updated: 2024-12-17
 
 ----------
 
-> Once Azure Arc is connected, you can manage your SQL Server instances from the Azure portal, allowing you to view detailed inventory, run cross-SQL Server queries, and optimize configurations based on best practices
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/d7f3ccfc-b11a-4788-ab53-1d7b2ae3d216">
-
 ## Wiki 
 
 <details>
@@ -36,10 +32,15 @@ Last updated: 2024-12-17
 - [Analyze metrics with Azure Monitor metrics explorer](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/analyze-metrics#pin-charts-to-dashboards)
 - [Administer SQL Server with Azure Arc - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/hybrid/azure-arc-sql-server)
 - [SQL Server enabled by Azure Arc](https://learn.microsoft.com/en-gb/sql/sql-server/azure-arc/overview?view=sql-server-ver16#architecture)
+- [Overview of Azure Connected Machine agent](https://learn.microsoft.com/en-us/azure/azure-arc/servers/agent-overview)
 
 </details>
 
 ## Overview 
+
+> Once Azure Arc is connected, you can manage your SQL Server instances from the Azure portal, allowing you to view detailed inventory, run cross-SQL Server queries, and optimize configurations based on best practices
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/d7f3ccfc-b11a-4788-ab53-1d7b2ae3d216">
 
 | **Benefit**                     | **Description**                                                                                                                                       |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,6 +64,10 @@ Last updated: 2024-12-17
 | **Edge Locations**      | SQL Server instances running in edge locations, such as retail stores or remote offices, can be connected to Azure Arc. This allows for centralized management and monitoring of these distributed instances. |
 | **Azure VMware Solution** | SQL Server instances running on Azure VMware Solution can also be managed through Azure Arc. This provides a consistent management experience for SQL Servers running in a VMware environment. |
 | **Azure Stack HCI**     | SQL Server instances running on Azure Stack HCI (Hyper-Converged Infrastructure) can be connected to Azure Arc. This enables hybrid cloud scenarios where you can manage on-premises resources alongside Azure resources. |
+
+> The Azure Connected Machine agent allows you to manage both Windows and Linux machines that are hosted outside of Azure, whether on your corporate network or with other cloud providers. The agent package includes several logical components bundled together:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0086c732-307e-4573-a529-8b5bde31e558">
 
 ## Architecture
 
