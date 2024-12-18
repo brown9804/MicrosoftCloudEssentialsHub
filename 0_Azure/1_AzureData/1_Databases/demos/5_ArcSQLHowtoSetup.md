@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-18
+Last updated: 2024-12-17
 
 ----------
 
@@ -339,10 +339,11 @@ Last updated: 2024-12-18
 3. **Register the Resource Providers**: In the Cloud Shell, run the following commands to register the necessary resource providers.
 
      ```bash
-     az provider register --namespace Microsoft.AzureArcData
-     az provider register --namespace Microsoft.HybridCompute
-     az provider register --namespace Microsoft.GuestConfiguration
-     az provider show -n Microsoft.HybridCompute
+    az provider register --namespace 'Microsoft.HybridCompute'
+    az provider register --namespace 'Microsoft.GuestConfiguration'
+    az provider register --namespace 'Microsoft.HybridConnectivity'
+    az provider register --namespace 'Microsoft.AzureArcData'
+    az provider show -n Microsoft.HybridCompute
      ```
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/6b969f3a-4092-4c37-bfa9-24629079f374">
