@@ -6,9 +6,13 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-28
+Last updated: 2024-12-18
 
 ----------
+
+> [!NOTE]
+> This example is around how to grant access to a subscription using a custom role.
+
 
 > Custom roles in Azure are a powerful feature of Azure Role-Based Access Control (RBAC) that allow you to create roles tailored to the specific needs of your organization
 
@@ -18,7 +22,7 @@ Last updated: 2024-11-28
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Install Azure CLI on Windows](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
 - [Tutorial: Create an Azure custom role using Azure CLI](https://learn.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-cli)
@@ -59,13 +63,12 @@ Custom roles can be created using various methods:
 | **Azure PowerShell**| Another scripting tool for creating and managing roles.                                               |
 | **REST API**       | For programmatic access and integration with other systems.                                           |
 
-
 > [!IMPORTANT]
 > Please ensure you log in to the admin account, as you need admin permissions to set up the custom role.
 
 1. Sign in to Azure CLI: `az login`
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/83ec82fe-dea2-494e-8937-69f0cdf281b3">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/83ec82fe-dea2-494e-8937-69f0cdf281b3">
 
 - Click on `Enter`, the `highlighted` configuration is the one assigned to the account.
 
@@ -141,34 +144,46 @@ Custom roles can be created using various methods:
 
 3. Create the custom role: Use the following command to create the role using the JSON file.
 
-```powershell
- az role definition create --role-definition {file-name}.json
-```
+    ```powershell
+     az role definition create --role-definition {file-name}.json
+    ```
+    
+    In this example:
+    
+    ```powershell
+    az role definition create --role-definition custom_role.json
+    ```
 
-In this example:
-
-```powershell
-az role definition create --role-definition custom_role.json
-```
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/c4a3a705-b363-41cb-ac30-71a5c2ad7135">
+   <img width="550" alt="image" src="https://github.com/user-attachments/assets/c4a3a705-b363-41cb-ac30-71a5c2ad7135">
 
 4. Verify the custom role: List your custom roles to ensure it was created successfully.
 
-```powershell
-az role definition list --custom-role-only true
-```
+    ```powershell
+    az role definition list --custom-role-only true
+    ```
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/5449b403-4d1b-4bdb-9ff9-c1bfd406c6d0">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/5449b403-4d1b-4bdb-9ff9-c1bfd406c6d0">
 
 5. Validate the creation of your role. Depending on the assigned actions, you will see the role under either the pricegeled tab or the job function tab. Click on `view` to see detailed information about the actions included in the role.
 
-  <img width="550" alt="image" src="https://github.com/user-attachments/assets/cb8672c3-668d-4118-a703-91ce9886149b">
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/cb8672c3-668d-4118-a703-91ce9886149b">
 
 6. Assign the custom role to the necessary users. Navigate to `Access control (IAM)`, click on `+ Add`, and select `Add role assignment`:
 
-  <img width="600" alt="image" src="https://github.com/user-attachments/assets/3da6fd4a-f968-45ad-b285-dc834846cc0a">
+    <img width="600" alt="image" src="https://github.com/user-attachments/assets/3da6fd4a-f968-45ad-b285-dc834846cc0a">
 
-- Search for the role name in either the `Job Function Roles` or `Privileged Administrator Roles` tabs. Select the role, click on `+ Select members`, add the required members, and finally click on `Review + assign`:
+  - Search for the role name in either the `Job Function Roles` or `Privileged Administrator Roles` tabs. Select the role, click on `+ Select members`, add the required members, and finally click on `Review + assign`:
   
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/10a5b8d3-8ff0-49eb-aaa6-a3271e1baa0c">
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/10a5b8d3-8ff0-49eb-aaa6-a3271e1baa0c">
+
+7. Once you assign the role, the new member will receive an email similar to this:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/f12a6a14-9dcc-4ba6-81ee-5e5831f51d07">
+
+8. If the subscription is not visible, select `Advanced options`, then `View eligible subscriptions`, and finally, click `Activate` the role. You should now be able to see the subscription.
+
+    <img width="700" alt="image" src="https://github.com/user-attachments/assets/57313333-bf36-421b-87f4-da135a06aaed">
+
+    <img width="325" alt="image" src="https://github.com/user-attachments/assets/7390ba6d-8273-4a27-ba04-1b04876e1520">
+
+    <img width="330" alt="image" src="https://github.com/user-attachments/assets/c7d0cced-2802-4c01-8c1e-53f774eff321">
