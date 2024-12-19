@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-19
+Last updated: 2024-12-17
 
 ----------
 
@@ -18,7 +18,8 @@ Last updated: 2024-12-19
 - [Resolve errors when enabling or disabling Azure Arc on your AKS workload clusters in AKS enabled by Arc](https://learn.microsoft.com/en-us/azure/aks/hybrid/known-issues-arc)
 - [Azure Arc overview](https://learn.microsoft.com/en-us/azure/azure-arc/overview)
 - [Install the Azure Connected Machine agent to enable Azure Arc](https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-connected-machine-agent?tabs=WindowsScript)
-
+- [For VMs outside of Microsoft - Connect Windows Server machines to Azure through Azure Arc Setup](https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-windows-server)
+  
 </details>
 
 
@@ -339,11 +340,10 @@ Last updated: 2024-12-19
 3. **Register the Resource Providers**: In the Cloud Shell, run the following commands to register the necessary resource providers.
 
      ```bash
-    az provider register --namespace 'Microsoft.HybridCompute'
-    az provider register --namespace 'Microsoft.GuestConfiguration'
-    az provider register --namespace 'Microsoft.HybridConnectivity'
-    az provider register --namespace 'Microsoft.AzureArcData'
-    az provider show -n Microsoft.HybridCompute
+     az provider register --namespace Microsoft.AzureArcData
+     az provider register --namespace Microsoft.HybridCompute
+     az provider register --namespace Microsoft.GuestConfiguration
+     az provider show -n Microsoft.HybridCompute
      ```
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/6b969f3a-4092-4c37-bfa9-24629079f374">
@@ -386,7 +386,7 @@ Last updated: 2024-12-19
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/860ebcd0-eee9-40ef-bd2d-946945545a66" />
 
-5. **Verify the Connection**:
+7. **Verify the Connection**:
    - After running the script, go back to the Azure portal.
    - Navigate to **Azure Arc** > **SQL Server**.
    - Check if your SQL Server instance is listed and verify its status.
@@ -394,7 +394,6 @@ Last updated: 2024-12-19
         | Before the setup |  After the setup | 
         | ----- | ---- | 
         | <img width="550" alt="image" src="https://github.com/user-attachments/assets/383934f9-75ba-437d-8ed8-2da001f70e34"> |  |
-
 
 ## Recommended Trainings
 
