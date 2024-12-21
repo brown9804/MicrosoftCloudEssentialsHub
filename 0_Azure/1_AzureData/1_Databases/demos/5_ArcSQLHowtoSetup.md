@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-20
+Last updated: 2024-12-19
 
 ----------
 
@@ -33,7 +33,6 @@ Last updated: 2024-12-20
 - [How to setup Azure Arc on your on-premises SQL Server](#how-to-setup-azure-arc-on-your-on-premises-sql-server)
 - [How to setup Azure Arc on Azure SQL Managed Instance](#how-to-setup-azure-arc-on-azure-sql-managed-instance)
 - [How to setup Azure Arc for SQL Server Instances on Azure Virtual Machines VMs](#how-to-setup-azure-arc-for-sql-server-instances-on-azure-virtual-machines-vms)
-    - [Setting Up an Azure Virtual Machine with SQL Server](#setting-up-an-azure-virtual-machine-with-sql-server)
     - [Steps to Create the VM](#steps-to-create-the-vm)
     - [Post-Deployment Steps](#post-deployment-steps)
     - [Steps to Enable Azure Arc](#steps-to-enable-azure-arc)
@@ -42,6 +41,12 @@ Last updated: 2024-12-20
 </details>
 
 ## How to setup Azure Arc on your on-premises SQL Server
+
+> **Centralized Management and Monitoring**: All environments (on-premises and other cloud providers) are integrated into Azure using Azure Arc by:  <br/>
+> - **Azure Policy**: Apply governance and compliance policies consistently across all your environments.  <br/>
+> - **Azure Monitor**: Track the performance and health of your resources, whether they're on-premises, in other clouds, or in Azure.  <br/>
+> - **Log Analytics Workspace**: Collect and analyze log data from all your resources to gain insights and troubleshoot issues.  <br/>
+Azure Sentinel: Enhance security by using Azure Sentinel for SIEM (security information and event management), which helps detect, investigate, and respond to security threats across your entire infrastructure.
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/df22531f-c57c-43dd-9fdf-d38549ff6926">
 
@@ -52,7 +57,6 @@ Last updated: 2024-12-20
 | **Network**          | Open necessary firewall ports to allow communication with Azure services. Ensure outbound connectivity to the Azure Arc Data Processing Service on port 443. |
 | **Proxy**            | If using a proxy server, set the `NO_PROXY` environment variable to exclude proxy traffic for `localhost` and `127.0.0.1`. |
 | **Resource Providers** | Register the `Microsoft.AzureArcData` and `Microsoft.HybridCompute` resource providers in your Azure subscription. <br/> - Go to **Subscriptions**.  <br/> - Select your subscription  <br/> - Under **Settings**, select **Resource providers**.  <br/> - Search for `Microsoft.AzureArcData` and `Microsoft.HybridCompute`, click **Register**.                 |
-
 
   <img width="700" alt="image" src="https://github.com/user-attachments/assets/bfda2892-c917-49f4-a8c0-12feedea116c">
 
@@ -261,12 +265,6 @@ Last updated: 2024-12-20
 | **Azure Data Studio or SSMS**    | Install Azure Data Studio with the Azure Arc extension or SQL Server Management Studio (SSMS)                    |
 | **Azure CLI**                    | Install the Azure CLI with the `arcdata` extension.                         |
 
-### Setting Up an Azure Virtual Machine with SQL Server
-
-> Prerequisites: <br/>
-> - An active Azure subscription. <br/>
-> - Azure CLI installed on your local machine.
-
 ### Steps to Create the VM
 
 1. **Sign in to the Azure Portal**: Go to the Azure Portal and sign in with your Azure account.
@@ -287,11 +285,11 @@ Last updated: 2024-12-20
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/6635590c-60e9-4928-b84c-6dd61a2d701f" />
 
-4. **Administrator Account**:
+4. **Administrator Account**, and configure public inbound ports:
    - **Username**: Enter a username for the VM.
    - **Password**: Enter a strong password and confirm it.
 
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/c2746eeb-ee0e-4eab-836b-af8cc787c0a3" />
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/cb001561-1d72-423c-858d-7fbd63df4f23" />
 
 5. **Disks**: Choose the type of disk (Standard SSD, Premium SSD, etc.) based on your performance requirements.
 
@@ -299,14 +297,21 @@ Last updated: 2024-12-20
 
 6. **Networking**:
    - Configure the network settings, including virtual network, subnet, and public IP address.
-   - Ensure the **SQL Server port (1433)** is open for inbound traffic.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0e6587f7-b950-4f06-8134-c59bc8552e83" />
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/57ac20ce-86c3-47a8-af96-4e4739ca2108" />
 
-7. **SQL Server Settings**: Configure SQL Server settings such as SQL authentication mode, SQL connectivity, and storage configuration.
-8. **Review + Create**: Review all the settings and click **Create** to deploy the VM.
+7. **Management, Monitoring, Advanced**: Configure all the necessary settings to ensure optimal performance and security according based on your use case.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/8d401d88-305e-402c-a4fb-8d81dfb4fb16" />
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/56c00ffc-180c-4c8d-87fc-3813987cdddc" />
+
+8. **SQL Server Settings**: Configure SQL Server settings such as SQL authentication mode, SQL connectivity, and storage configuration.
+
+    - Ensure the **SQL Server port (1433)** is open for inbound traffic.
+    
+        <img width="613" alt="image" src="https://github.com/user-attachments/assets/bd884281-fec5-4f68-ba1d-5b4ebb042eb4" />
+
+9. **Review + Create**: Review all the settings and click **Create** to deploy the VM.
+
 
 ### Post-Deployment Steps
 
@@ -328,7 +333,10 @@ Last updated: 2024-12-20
 
 ### Steps to Enable Azure Arc
 
-> You can perform all these steps using the Azure Cloud Shell, which is an integrated CLI environment available directly in the Azure portal.
+> You can perform all these following steps using the Azure Cloud Shell, which is an integrated CLI environment available directly in the Azure portal.
+> - `Azure Arc Data Controller`: Not required for this scenario.
+> - `Azure Connected Machine Agent`: Used to onboard the Azure VM to Azure Arc.
+> - `Azure Extension for SQL Server`: Installed to manage the SQL Server instance through Azure Arc.
 
 1. **Open Azure Cloud Shell**:
    - Go to the Azure Portal.
@@ -352,7 +360,6 @@ Last updated: 2024-12-20
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/4e0fffdc-d3fd-40be-a6ef-6fb7ae0a0f81" />
 
-
 4. **Outbound Connectivity**: The Azure Arc agent requires outbound connectivity to Azure services over TCP port 443. This is essential for secure communication.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/e0ac2b80-fcc3-4608-b495-c10d8ae0ce89" />
@@ -361,32 +368,52 @@ Last updated: 2024-12-20
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/86a0edf1-c85a-45f8-8e90-d461ad02231a" />
 
-5. **Generate the Onboarding Script**:
-   - Go to the Azure Portal.
-   - Navigate to **Azure Arc** > **SQL Server**.
-   - Click on **+ Add** to start the process of connecting your SQL Server instance.
-   - Follow the prompts to generate the onboarding script. This script will connect your SQL Server instance to Azure Arc.
+> [!IMPORTANT]
+> To connect a SQL Server running on an Azure VM to Azure Arc, you don't need to create an Azure Arc Data Controller. You should use the Azure Connected Machine Agent to onboard the VM to Azure Arc and then install the Azure extension for SQL Server. 
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/9e699c27-e63b-4c57-aea3-9254746d00df" />
+5. **Install the Azure Connected Machine Agent**:
+   - **Download the agent**: Go to the Azure Portal, navigate to **Azure Arc** > **Servers** > **Add**.
+   - **Generate the script**: Follow the instructions to generate a script that installs the Connected Machine agent on your VM.
+   - **Run the script**: Execute the script on your Azure VM to install the agent and connect the VM to Azure Arc.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/0727ffd7-2d78-4993-b5a9-d6c2de9fffae" />
+6. **Install the Azure Extension for SQL Server**:
+   - Once the VM is connected to Azure Arc, the Azure extension for SQL Server can be installed automatically.
+   - If the extension is not installed automatically, you can manually install it by following the instructions in the Azure Portal under **Azure Arc** > **SQL Server** > **Add**.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/28ba4ab2-4e64-42f8-8a57-fb0d21223b87" />
+7. **Verify the Connection**:
+   - After the extension is installed, verify that the SQL Server instance is registered with Azure Arc.
+   - Go to **Azure Arc** > **SQL Server** in the Azure Portal and check for the newly registered SQL Server instance.
 
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/daf8a038-bef6-42ca-b687-90155dff3c73" />
+  
+9. **Generate the Onboarding Script**: Follow [this steps](https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-connected-machine-agent?tabs=WindowsScript#generate-an-installation-script) to create the script.
 
-6. **Run the Onboarding Script**:
+    |Steps | Visual guidance |
+    | --- | --- |
+    | 1 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/f8b82c6d-87bc-45a0-98bb-f954f29e8ccb" /> |
+    | 2 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/f462bde0-b4b8-4fdf-8ee7-0415d8f23772" /> |
+    | 3 | <img width="550" alt="image" src="https://github.com/user-attachments/assets/667b0aa1-2751-42a6-a477-69b4bd2a001c" /> |
+
+8. **Run the Onboarding Script**:
    - Download the generated script from the Azure portal.
 
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/987b8921-a9d2-4cc0-8aed-20bb6518a221" />
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/9ab5a45e-a86f-4482-8b3e-3ed5de2f4fda" />
 
    - Run the script on the target SQL Server VM. This will connect the SQL Server instance to Azure Arc. Click [here to see an example of the script](
+
+       > As mentioned, this script will do the following : <br/>
+       > - Download the agent from the Microsoft Download Center. <br/>
+       > - Install the agent on the server. <br/>
+       > - Create the Azure Arc-enabled server resource and associate it with the agent.
+  
+
+      <img width="821" alt="image" src="https://github.com/user-attachments/assets/8d8c0cc7-8a57-4b95-a8b7-a2fdcc2f74d1" />
+
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/d655a993-3ebb-48ba-ac60-ae1c7862a73c" />
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/860ebcd0-eee9-40ef-bd2d-946945545a66" />
 
-7. **Verify the Connection**:
+9. **Verify the Connection**:
    - After running the script, go back to the Azure portal.
    - Navigate to **Azure Arc** > **SQL Server**.
    - Check if your SQL Server instance is listed and verify its status.
