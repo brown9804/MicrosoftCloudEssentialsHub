@@ -20,7 +20,8 @@ Last updated: 2024-12-21
 - [Shrink a database](https://learn.microsoft.com/en-us/sql/relational-databases/databases/shrink-a-database?view=sql-server-ver16)
 - [Types of Databases](https://azure.microsoft.com/en-gb/products/category/databases/)
 - [Shrink Database Task (Maintenance Plan)](https://learn.microsoft.com/en-us/sql/relational-databases/maintenance-plans/shrink-database-task-maintenance-plan?view=sql-server-ver16)
-
+- [Manage file space for databases in Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/file-space-manage?view=azuresql-db)
+  
 </details>
 
 ## Content 
@@ -56,6 +57,16 @@ General Strategies for All Databases:
 - **Cleaning Up Unused Data**: Regularly delete or archive unused or obsolete data.
 - **Monitoring and Maintenance**: Regularly monitor database size and performance, and perform maintenance tasks.
 - **Using Filegroups**: Distribute database objects across multiple filegroups to improve performance and manageability.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/81d088ab-da80-4643-9c2c-2558709c90ff">
+
+> General Tips:
+
+| **Category**             | **Recommendation**                                                                                                                                                                                                 |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Regular Maintenance**  | Perform regular database maintenance tasks such as index rebuilding, updating statistics, and cleaning up old data.|
+| **Monitoring and Alerts**| Set up monitoring and alerts to notify you when free space falls below your defined thresholds. Use Azure Monitor and SQL Insights for comprehensive monitoring.|
+| **Backup and Recovery**  | Ensure you have a robust backup and recovery strategy in place to prevent data loss and minimize downtime.|
 
 ## Relational Databases
 
@@ -173,14 +184,19 @@ For Azure SQL Managed Instance, consider these strategies:
             max_size_mb,
             growth,
             growth_type,
-            space_used_mb / space_allocated_mb * 100 AS [Occupancy %]
+            space_used_mb / space_allocated_mb * 100 AS [Occupancy %],
+            100 - (space_used_mb / space_allocated_mb * 100) AS [Free %]
         FROM CTE
         ORDER BY [Occupancy %];
         ```
 
-
-          <img width="700" alt="image" src="https://github.com/user-attachments/assets/42ed5425-3eac-459f-9600-0bb2f8674758">
-
+          <img width="700" alt="image" src="https://github.com/user-attachments/assets/b6ca6507-668c-427c-b01a-6a66e7e0fedd" />
+        
+        | **Category**       | **Recommendation**                                                                                                                                                                                                 |
+        |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | **LOG Files**      | - **Free Space**: Maintain at least 25-30% free space in your log files. This ensures there is enough room for transaction logs to grow and prevents the database from running out of space during peak operations.<br>- **Monitoring**: Use the `sys.dm_db_log_space_usage`. Regularly check the percentage of log space used to avoid unexpected issues.<br>- **Maintenance**: Regularly back up your transaction logs to truncate inactive portions and free up space. |
+        | **ROWS (Data Files)** | - **Free Space**: Aim to keep around 20-25% free space in your data files. This allows for growth and helps avoid performance issues related to frequent auto-growth events.<br>- **Auto-Growth Settings**: Configure auto-growth settings appropriately to avoid frequent small growths. Setting a fixed size for growth (e.g., 500 MB or 1 GB) is often better than a percentage-based growth.<br>- **Monitoring**: Use the `sys.database_files` view to monitor the size and free space of your data files. |
+        | **FILESTREAM Data** | - **Free Space**: Ensure there is sufficient free space on the disk where the FILESTREAM data is stored. A good rule of thumb is to keep at least 20% free space.<br>- **Disk Monitoring**: Regularly monitor the disk space and set up alerts to notify you when free space falls below a certain threshold.<br>- **Maintenance**: Regularly clean up old or unused FILESTREAM data to free up space. |
 
     - Space Usage by Table: This query provides information about space usage at the table level, including the number of rows, reserved space, data space, index space, and unused space. Will iterate through all tables in your database and execute sp_spaceused for each one:
         
@@ -192,7 +208,8 @@ For Azure SQL Managed Instance, consider these strategies:
             Reserved VARCHAR(50),
             Data VARCHAR(50),
             IndexSize VARCHAR(50),
-            Unused VARCHAR(50)
+            Unused VARCHAR(50),
+            [Free %] FLOAT
         );
         
         DECLARE @TableName NVARCHAR(256);
@@ -208,11 +225,32 @@ For Azure SQL Managed Instance, consider these strategies:
         BEGIN
             INSERT INTO #SpaceUsed (TableName, [Rows], Reserved, Data, IndexSize, Unused)
             EXEC sp_spaceused @TableName;
+        
             FETCH NEXT FROM TableCursor INTO @TableName;
         END;
         
         CLOSE TableCursor;
         DEALLOCATE TableCursor;
+        
+        -- Use a CTE to calculate the Free %
+        WITH CTE AS (
+            SELECT 
+                TableName,
+                [Rows],
+                CAST(REPLACE(Reserved, ' KB', '') AS FLOAT) AS ReservedKB,
+                CAST(REPLACE(Data, ' KB', '') AS FLOAT) AS DataKB,
+                CAST(REPLACE(IndexSize, ' KB', '') AS FLOAT) AS IndexSizeKB,
+                CAST(REPLACE(Unused, ' KB', '') AS FLOAT) AS UnusedKB
+            FROM #SpaceUsed
+        )
+        UPDATE #SpaceUsed
+        SET [Free %] = 
+            CASE 
+                WHEN ReservedKB = 0 THEN 0
+                ELSE (UnusedKB / ReservedKB) * 100
+            END
+        FROM CTE
+        WHERE #SpaceUsed.TableName = CTE.TableName;
         
         -- Select the results from the temporary table
         SELECT * FROM #SpaceUsed
@@ -222,8 +260,15 @@ For Azure SQL Managed Instance, consider these strategies:
         DROP TABLE #SpaceUsed;
         ```
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/81ca0fcf-6188-4747-a89f-328c8697982e" />
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/401323a7-7ffc-4d6f-aade-96991793b677" />
 
+        | **Aspect**            | **Recommendation**|
+        |-----------------------|---------------------------------------------------|
+        | **Free Space**        | Maintain around 20-25% free space in your data files to accommodate table growth.|
+        | **Index Maintenance** | Regularly rebuild or reorganize indexes to optimize performance and reclaim space. Fragmented indexes can lead to inefficient space usage.|
+        | **Partitioning**      | Consider partitioning large tables to improve manageability and performance. This can also help in efficiently managing space.|
+        | **Archiving**         | Implement an archiving strategy for old or infrequently accessed data. This can free up space and improve performance for active data.|
+        | **Compression**       | Use data compression techniques to reduce the size of tables and indexes. SQL Server supports row and page compression, which can significantly reduce space usage.|
 
     - Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used.
     
