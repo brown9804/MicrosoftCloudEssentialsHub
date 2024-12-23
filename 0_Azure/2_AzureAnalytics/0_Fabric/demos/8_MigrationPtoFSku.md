@@ -1,15 +1,18 @@
-# Migration from Power BI Premium (P-SKUs) to Fabric (F-SKUs)
+# Migration from Power BI Premium (P-SKUs) to Fabric (F-SKUs) 
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-26
+Last updated: 2024-12-21
 
 ----------
 
-> $${\color{red}Same\ geo\ but\ across\ region}$$ The `multi-geography setup` in Microsoft Fabric allows you to deploy content to data centers in regions other than the home region of your Fabric tenant. This feature is particularly useful for multinational customers who need to address regional, industry-specific, or organizational data residency requirements.` In your example, if you have the US as the geography with Central US and West US 2 as regions, you can set up a Fabric capacity reservation in one of these regions. Once a capacity is created, it remains in that region, and any workspaces created under it will have their content stored in that regio`n. This approach ensures that `you don't need to move the home region`, which can simplify management and compliance. CLick [here for more information about it](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-multi-geo?tabs=power-bi-premium)
+> [!IMPORTANT]
+> 🔺 This approach is around `reassign workspaces without tenant migration`, if you decide to migrate the tenant in the future, you can do so with the workspaces already assigned to the new capacity.
+
+> $${\color{red}Same\ geo\ but\ across\ region}$$ The `multi-geography setup` in Microsoft Fabric allows you to deploy content to data centers in regions other than the home region of your Fabric tenant. This feature is particularly useful for multinational customers who need to address regional, industry-specific, or organizational data residency requirements.` In your example, if you have the US as the geography with Central US and West US 2 as regions, you can set up a Fabric capacity reservation in one of these regions. Once a capacity is created, it remains in that region, and any workspaces created under it will have their content stored in that region`. This approach ensures that `you don't need to move the home region`, which can simplify management and compliance. CLick [here for more information about it](https://learn.microsoft.com/en-us/fabric/admin/service-admin-premium-multi-geo?tabs=power-bi-premium)
 
 ## Wiki 
 
@@ -43,10 +46,10 @@ Last updated: 2024-11-26
 | **Transition to Fabric SKUs**   | - **Flexibility**: Fabric SKUs offer more flexibility in terms of size and billing options, including pay-as-you-go.<br> - **Azure Integration**: Fabric SKUs provide access to Azure-only features and are eligible for Microsoft Azure Consumption Commitment (MACC).<br> - **Unified Platform**: Microsoft Fabric combines Power BI, Azure Synapse Analytics, and Azure Data Factory into a single SaaS platform, offering all the capabilities of Power BI Premium plus additional workloads. |
 | **Impact on Different Agreements** | - **Enterprise Agreement (EA) Customers**: Can continue to renew their P-SKUs annually until the end of their EA agreement. If the agreement ends after January 1, 2025, they will need to transition to Fabric SKUs.<br> - **Sovereign Cloud Customers**: Not impacted by this change as they do not currently have access to Microsoft Fabric. |
 
-> `P1 SKU`: Best for organizations focused solely on `Power BI` with fixed capacity needs and AutoScale. <br/>
+> `P SKU`: Best for organizations focused solely on `Power BI` with fixed capacity needs and AutoScale. <br/>
 > `F SKU`: Ideal for those looking for a `more integrated, flexible, and scalable solution` that leverages Azure’s full capabilities.
 
-| Feature/Aspect                     | Power BI Premium (P1 SKU)                  | Fabric (F SKU)                              |
+| Feature/Aspect                     | Power BI Premium (P SKU)                  | Fabric (F SKU)                              |
 |------------------------------------|--------------------------------------------|---------------------------------------------|
 | **Flexibility and Scalability**    | Fixed capacity with predefined resource limits. Suitable for organizations with stable, predictable workloads. | Offers flexible options, including pay-as-you-go and various sizes to better match dynamic needs. Ideal for organizations with fluctuating workloads. |
 | **Integration with Azure**         | Primarily focused on Power BI capabilities. Limited integration with other Azure services. | Integrates Power BI with Azure Synapse Analytics and Azure Data Factory, providing a unified platform for comprehensive data analytics and processing. |
