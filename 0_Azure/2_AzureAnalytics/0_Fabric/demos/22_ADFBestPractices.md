@@ -18,7 +18,11 @@ Last updated: 2024-12-24
 - [Automated enterprise BI](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/data/enterprise-bi-adf)
 - [Data warehousing and analytics](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/data/data-warehouse)
 - [Pipeline Logic 1: Error Handling and Best Effort Step](https://techcommunity.microsoft.com/blog/azuredatafactoryblog/pipeline-logic-1-error-handling-and-best-effort-step/3712168)
-  
+- [Source control in Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/source-control)
+- [Register a Microsoft Entra app and create a service principal](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#option-3-create-a-new-client-secret)
+- [Accessing Azure KeyVault secret for Fabric CopyData Action](https://community.fabric.microsoft.com/t5/Data-Warehouse/Accessing-Azure-KeyVault-secret-for-Fabric-CopyData-Action/m-p/3710317)
+- [Use Azure Key Vault secrets in pipeline activities - ADF](https://learn.microsoft.com/en-us/azure/data-factory/how-to-use-azure-key-vault-secrets-pipeline-activities)
+
 </details>
 
 ## Content
@@ -31,11 +35,25 @@ Last updated: 2024-12-24
 - [Architecture examples](#architecture-examples)
 - [Best Practices for ADF Pipelines](#best-practices-for-adf-pipelines)
     - [Clear Pipeline Structure](#clear-pipeline-structure)
+        - [Example Pipeline Structure](#example-pipeline-structure)
     - [Parameterization](#parameterization)
     - [Incremental Loading](#incremental-loading)
+        - [Use Timestamps](#use-timestamps)
+        - [Change Data Capture CDC](#change-data-capture-cdc)
+        - [Delta Loads](#delta-loads)
+        - [Partitioning](#partitioning)
     - [Error Handling and Monitoring](#error-handling-and-monitoring)
+        - [a. Use If Condition Activity](#a-use-if-condition-activity)
+        - [b. Configure Activity Fault Tolerance](#b-configure-activity-fault-tolerance)
+        - [c. Custom Error Handling: Use Web Activity for error handling](#c-custom-error-handling-use-web-activity-for-error-handling)
+        - [d. Pipeline Monitoring: Monitor activity runs.](#d-pipeline-monitoring-monitor-activity-runs)
     - [Security Measures](#security-measures)
     - [Use Azure Key Vault](#use-azure-key-vault)
+        - [Store Secrets](#store-secrets)
+        - [Access Policies](#access-policies)
+        - [Secure Access](#secure-access)
+        - [Rotate Secrets](#rotate-secrets)
+    - [Source Control](#source-control)
     - [Resource Management](#resource-management)
     - [Testing and Validation](#testing-and-validation)
     - [Documentation](#documentation)
@@ -202,7 +220,6 @@ graph TD
    - Use a ForEach activity to process each partition.
    - Inside the ForEach activity, use a Copy Data activity to load data for each partition.
 
-
 ### Error Handling and Monitoring
 > Set up robust error handling and monitoring to quickly identify and resolve issues.
 
@@ -289,6 +306,101 @@ graph TD
 | **Access Policies**           | Configure access policies to control who can access secrets.                    | - Grant ADF managed identity access to specific secrets in Key Vault. <br/> - Set up access policies to allow only specific users or applications to retrieve secrets. <br/> - Use Key Vault access policies to restrict access based on roles and responsibilities. |
 | **Secure Access**             | Use managed identities to securely access Key Vault secrets.                    | - Configure ADF to use its managed identity to retrieve secrets from Key Vault. <br/> - Enable managed identity for ADF and grant it access to Key Vault secrets. <br/> - Use managed identities to avoid storing credentials in code or configuration files. |
 | **Rotate Secrets**            | Regularly rotate secrets to enhance security.                                   | - Update secrets in Key Vault periodically and update references in ADF. <br/> - Implement a process to rotate secrets automatically using Azure Automation or Logic Apps. <br/> - Notify relevant teams when secrets are rotated to ensure they update their configurations. |
+
+#### Store Secrets
+
+> Store sensitive information such as connection strings, passwords, and API keys in Key Vault.
+
+1. **Create an Azure Key Vault**:
+   - Go to the Azure portal and create a new Key Vault.
+   - Set the appropriate access policies.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/0fb35e8b-e0a7-4314-98fb-cad652660d15" />
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/8950c6f2-9692-46a7-9556-f70627d2ed10" />
+
+2. **Add Secrets to Key Vault**:
+   - In the Key Vault, add secrets such as database connection strings, API keys, and SAS tokens.
+   - Example: Add a secret named `DBConnectionString` with your database connection string.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/9046a4cb-8337-4263-ab07-750a759f034d" />
+
+3. **Reference Secrets in Data Factory in Microsoft Fabric**:
+   - In Data Factory within Microsoft Fabric, create a linked service and configure it to use the secret from Key Vault.
+   - Example: Use `@Microsoft.KeyVault(SecretUri=https://<YourKeyVaultName>.vault.azure.net/secrets/DBConnectionString/)` in the linked service configuration.
+  
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/92787052-7512-4e1a-b5d9-50d05ec8219c" />
+
+
+#### Access Policies
+> Configure access policies to control who can access secrets.
+
+1. **Set Up Access Policies in Key Vault**:
+   - In the Key Vault, navigate to the Access policies section.
+   - Add an access policy to grant the Data Factory managed identity access to specific secrets.
+   - Example: Grant `Get` and `List` permissions to the Data Factory managed identity.
+
+2. **Restrict Access Based on Roles**:
+   - Define access policies to allow only specific users or applications to retrieve secrets.
+   - Example: Grant access to specific roles such as `DataFactoryContributor` for managing secrets.
+
+#### Secure Access
+
+> Use managed identities to securely access Key Vault secrets.
+
+**Grant Key Vault Access to Managed Identity**:
+   - In the Key Vault, add an access policy to grant the Data Factory managed identity access to the required secrets.
+   - Example: Grant `Get` and `List` permissions to the managed identity.
+
+#### Rotate Secrets
+> Regularly rotate secrets to enhance security.
+
+1. **Update Secrets in Key Vault**:
+   - Periodically update secrets in Key Vault to ensure they remain secure.
+   - Example: Update the `DBConnectionString` secret with a new connection string.
+2. **Implement Automated Secret Rotation**:
+   - Use Azure Automation or Logic Apps to automate the process of rotating secrets.
+   - Example: Create an Azure Automation runbook to update secrets and notify relevant teams.
+3. **Notify Teams of Secret Rotation**:
+   - Ensure that relevant teams are notified when secrets are rotated.
+   - Example: Use Logic Apps to send email notifications when secrets are updated.
+
+
+### Source Control 
+
+> Benefits of Git Integration: <br/>
+> - **Version Control**: Track and audit changes, and revert to previous versions if needed.  <br/>
+> - **Collaboration**: Multiple team members can work on the same project simultaneously.  <br/>
+> - **Incremental Saves**: Save partial changes without publishing them live.  <br/>
+> - **Change Tracking**: Easily identify who made changes and when.
+
+1. **Create a Git Repository**:
+   - You can use either Azure Repos or GitHub for your Git repository.
+   - Create a new repository if you don't already have one.
+2. **Configure Git Integration in Data Factory**:
+   - Open your Data Factory in Microsoft Fabric.
+   - Go to the `Workspace settings` tab.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/a0502d5a-0006-433c-b1ab-ec7f928ab2bd" />
+
+   - Under `Git integration`, click on `Connect Git provider and account`.
+   - Select the repository type (Azure DevOps Git or GitHub).
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8ba7b1d2-0570-4753-937f-9abfc90e1d5f" />
+
+   - Provide the necessary details such as the repository name, collaboration branch, and publish branch.
+   - Optionally, import existing resources into the repository.
+3. **Branch Management**:
+   - **Feature Branch**: Create feature branches for development. These branches allow you to work on new features or changes without affecting the main codebase.
+   - **Collaboration Branch**: This branch is used for testing and reviewing changes before they are merged into the main branch.
+   - **Publish Branch**: The publish branch (e.g., `adf_publish`) contains the ARM templates of the live code.
+4. **Develop and Save Changes**:
+   - Work on your pipelines in the feature branch.
+   - Save changes incrementally in the Git repository.
+   - Use the **Publish** button to push changes from the collaboration branch to the publish branch, making them live.
+5. **Collaboration and Review**:
+   - Use pull requests to review and merge changes from feature branches to the collaboration branch.
+   - Collaborate with team members through code reviews and comments.
 
 ### Resource Management
 > Optimize resource usage to improve performance and reduce costs.
