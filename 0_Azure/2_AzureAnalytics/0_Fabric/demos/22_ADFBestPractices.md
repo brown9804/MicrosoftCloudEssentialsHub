@@ -51,10 +51,10 @@ Last updated: 2024-12-23
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/2c06eaaf-3689-48f3-8e97-7c9c128800d9">
 
-
 ## Best Practices for ADF Pipelines
 
 ### Clear Pipeline Structure
+
 > Ensure your pipelines are well-organized and easy to understand.
 
 | **Best Practice**             | **Description**                                                                 | **Example**                                                                                     |
@@ -65,6 +65,65 @@ Last updated: 2024-12-23
 | **Parameterization**          | Use parameters to make your pipelines more flexible and easier to manage.       | - Define parameters for source and destination paths, allowing the same pipeline for different datasets. <br/> - Use parameters for file names, dates, and other dynamic values. |
 | **Organized Layout**          | Arrange activities in a logical sequence and avoid overlapping lines.           | - Place activities in a left-to-right or top-to-bottom flow to visually represent the data flow. <br/> - Group related activities together and use containers for better organization. |
 | **Error Handling and Logging**| Include error handling and logging activities to capture and manage errors.     | - Add a Web Activity to log errors to a monitoring system. <br/> - Use Try-Catch blocks to handle errors gracefully and ensure the pipeline continues running. |
+
+
+#### Example Pipeline Structure
+
+> Pipeline: CopySalesDataPipeline
+
+**Activities**:
+
+```mermaid
+graph TD
+    A[LookupFiles] --> B[ForEachFile]
+    B --> C[CopySalesData]
+    B --> D[LogStatus]
+```
+
+1. **Lookup Activity**: Fetch the list of files to be processed.
+   - **Name**: `LookupFiles`
+   - **Annotation**: `Fetch list of sales data files from source`
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/61e5a71a-3907-474a-8756-df41296c2ea7" />
+
+2. **ForEach Activity**: Iterate over the list of files.
+   - **Name**: `ForEachFile`
+   - **Annotation**: `Process each sales data file`
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/e2a40a3f-df76-44f8-9aee-fe3690702abc" />
+
+   - If needed, add parameters:
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/25dd5c13-f1ed-4af1-954f-377044672741" />
+      
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/9844e3f7-f2a9-4440-8328-0a8415ccfaea" />
+ 
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/ac56189f-124b-4bd8-a304-b5add3c19ef0" />
+
+   - **Activities Inside ForEach**:
+     - **Copy Data Activity**: Copy data from source to destination.
+       - **Name**: `CopySalesData`
+       - **Annotation**: `Copy sales data from SQL to Blob Storage`
+       - **Parameters**: `SourcePath`, `DestinationPath`
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/b8da3d5a-137a-4482-850a-4e642b4828c2" />
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/2eb0a163-6aa0-4a2f-9eec-2242f71c163b" />
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/70a62c11-3e14-46f0-b2a6-6b15e64355f8" />
+
+
+     - **Set Variable Activity**: Log the status of the copy operation.
+       - **Name**: `LogStatus`
+       - **Annotation**: `Log the status of the copy operation`
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/f3aa5347-c31d-4e4b-bf60-f06f60b5f5b1" />
+
+           <img width="550" alt="image" src="https://github.com/user-attachments/assets/e061e557-9ae2-49b2-8406-3a809e61a3fe" />
+
+     - **Validate, Save and Run**:
+
+         <img width="550" alt="image" src="https://github.com/user-attachments/assets/63b0db12-8a4e-4dae-ac5a-cdf74ab6f7bf" />
 
 ### Parameterization
 > Use parameters to make your pipelines more flexible and easier to manage.
