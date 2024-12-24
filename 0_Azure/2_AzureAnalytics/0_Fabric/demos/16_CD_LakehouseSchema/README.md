@@ -43,6 +43,61 @@ Process Overview:
 > `Specifics for Lakehouse:` For lakehouses, the deployment process typically `includes the structure and metadata but not the actual data tables`. This is why you might see the structure and semantic models deployed, but the tables themselves need to be manually refreshed or reloaded in the target environment.<br/> <br/>
 > `Deployment Rules:` You can set deployment rules to manage different stages and change content settings during deployment. For example, you can specify default lakehouses for notebooks to avoid manual changes post-deployment.
 
+### Demo 
+
+1. **Create a Workspace**:
+   - Navigate to the Microsoft Fabric portal.
+   - Click on `Create a new workspace`.
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/58069226-12c5-43ca-9c0f-4f95d6d2a556" />
+
+   - Name your workspace (e.g., `Analytics Dev`).
+  
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/97bf47a4-00d8-4acc-af85-2fc52793a8f5" />
+  
+   - Ensure that your workspace is allocated to the appropriate Fabric Capacity:
+   
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/0cf11e09-dbc1-470a-9a77-6dbc279a5242" />
+
+2. **Create a Lakehouse**:
+   - Within your new workspace, select `New item` and choose `Lakehouse`.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/c391ccc3-408a-4a38-979c-acbe2fc65818" />
+
+   - Name your lakehouse (e.g., `Sales_Data_Lakehouse`).
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/a69d3f63-4286-4368-8515-d0383b63b09c" />
+
+   - Click on `Get data`, and `Upload files`:
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/e3dd716c-7391-4a03-9ff2-4f8722fd29bf" />
+
+   - Load data into the tables:
+  
+
+     
+2. **Define Schema for Dataset**:
+   - In the lakehouse, create a new dataset.
+   - Define the schema by adding tables and columns as needed.
+
+3. **Auto-Generate Report with Copilot**:
+   - Use Copilot to generate a report based on your dataset.
+   - Ensure you have the necessary permissions and settings enabled for Copilot to access and use your data.
+   - **Warning**: Make sure to configure Copilot settings correctly to avoid any data privacy or security issues.
+
+4. **Create a Deployment Pipeline**:
+   - Go back to the Microsoft Fabric portal and select "Deployment Pipelines".
+   - Create a new pipeline and name it (e.g., "Dev to Prod Pipeline").
+   - Add your "Development Workspace" as the source.
+   - Create a new workspace for production (e.g., "Production Workspace").
+   - Add the "Production Workspace" as the target.
+
+5. **Deploy to Production**:
+   - Use the deployment pipeline to move your lakehouse, dataset, and report from the "Development Workspace" to the "Production Workspace".
+   - Verify that everything is working correctly in the production environment.
+
+
+
 ### How to refresh the data
 
 > To ensure that data is refreshed and reloaded in the new stage of your deployment in Microsoft Fabric, you can use the following methods:
