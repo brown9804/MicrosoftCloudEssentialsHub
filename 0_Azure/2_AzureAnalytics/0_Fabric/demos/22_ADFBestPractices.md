@@ -145,6 +145,64 @@ graph TD
 | **Delta Loads**               | Perform delta loads to update only the changed data instead of full loads.      | - Use a query to fetch only the rows that have changed since the last load. <br/> - Implement a mechanism to track changes, such as a version number or a change flag. |
 | **Partitioning**              | Partition large datasets to improve performance and manageability.              | - Partition data by date or another logical key to facilitate incremental loading. <br/> - Use partitioned tables in your data warehouse to improve query performance and manageability. |
 
+#### Use Timestamps
+
+> Implement incremental loading using timestamps to load only new or changed data.
+
+1. **Add a Last Modified Column**:
+   - Ensure your source table has a column to store the last modified timestamp.
+   - Example: `LastModified` column in your source table.
+2. **Create a Watermark Table**:
+   - Create a table to track the last loaded timestamp.
+   - Example: `WatermarkTable` with columns `TableName` and `LastLoadedTimestamp`.
+3. **Set Up the Pipeline**:
+   - Use a Lookup activity to get the last loaded timestamp from the watermark table.
+   - Use a Copy Data activity to load data newer than the last loaded timestamp.
+   - Example query: `SELECT * FROM SourceTable WHERE LastModified > @pipeline().parameters.LastLoadedTimestamp`.
+4. **Update the Watermark Table**:
+   - After loading the data, update the watermark table with the latest timestamp.
+   - Use a Stored Procedure activity to update the `LastLoadedTimestamp` in the watermark table.
+
+#### Change Data Capture (CDC)
+> Utilize CDC to capture and load only the changes made to the source data.
+
+1. **Enable CDC on Source Table**:
+   - Enable CDC on your SQL Server table.
+   - Example: `EXEC sys.sp_cdc_enable_table @source_schema = 'dbo', @source_name = 'SourceTable', @role_name = NULL`.
+2. **Set Up the Pipeline**:
+   - Use a Lookup activity to get the changes from the CDC table.
+   - Example query: `SELECT * FROM cdc.dbo_SourceTable_CT WHERE __$operation IN (1, 2, 3)`.
+3. **Process Changes**:
+   - Use a ForEach activity to process each change.
+   - Inside the ForEach activity, use Copy Data activities to apply the changes to the destination.
+
+#### Delta Loads
+> Perform delta loads to update only the changed data instead of full loads.
+
+1. **Track Changes**:
+   - Implement a mechanism to track changes, such as a version number or a change flag.
+   - Example: Add a `ChangeFlag` column to your source table.
+2. **Set Up the Pipeline**:
+   - Use a Lookup activity to get the rows with changes.
+   - Example query: `SELECT * FROM SourceTable WHERE ChangeFlag = 1`.
+3. **Load Changed Data**:
+   - Use a Copy Data activity to load only the changed data.
+   - After loading, reset the `ChangeFlag` to 0.
+
+#### Partitioning
+> Partition large datasets to improve performance and manageability.
+
+1. **Partition Your Data**:
+   - Partition your source table by a logical key, such as date.
+   - Example: Partition by `OrderDate`.
+2. **Set Up the Pipeline**:
+   - Use a Lookup activity to get the list of partitions to process.
+   - Example query: `SELECT DISTINCT OrderDate FROM SourceTable WHERE OrderDate > @pipeline().parameters.LastProcessedDate`.
+3. **Process Each Partition**:
+   - Use a ForEach activity to process each partition.
+   - Inside the ForEach activity, use a Copy Data activity to load data for each partition.
+
+
 ### Error Handling and Monitoring
 > Set up robust error handling and monitoring to quickly identify and resolve issues.
 
