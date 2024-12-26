@@ -12,7 +12,7 @@ Last updated: 2024-12-26
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
 
 - [Table deletes, updates, and merges - DeltaTables](https://docs.delta.io/latest/delta-update.html#-merge-in-streaming)
 - [DeltaLake - DeltaTables Releases](https://github.com/delta-io/delta/releases)
@@ -24,6 +24,20 @@ Last updated: 2024-12-26
 - [Dataflow Gen2 refresh - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-refresh)
 - [Announcing Public Preview: Incremental Refresh in Dataflow Gen2](https://blog.fabric.microsoft.com/en-us/blog/announcing-public-preview-incremental-refresh-in-dataflows-gen2/)
   
+</details>
+
+
+## Content 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Wiki](#wiki)
+- [Content](#content)
+- [Deployment Pipelines](#deployment-pipelines)
+    - [Demo](#demo)
+    - [How to refresh the data](#how-to-refresh-the-data)
+
 </details>
 
 ## Deployment Pipelines 
@@ -59,6 +73,14 @@ Process Overview:
    
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0cf11e09-dbc1-470a-9a77-6dbc279a5242" />
 
+   - You can repeat this same process to create the production environment. You may host your workspace in the same capacity or in a different Fabric Capacity. Name your workspace (e.g., `Analytics Prod`).
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ba0f05c-1900-46e1-b4cc-3e0acb9fdd6a" />
+
+        | Dev Workspace | Prod Workspace |
+        | --- | --- |
+        |       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0cf11e09-dbc1-470a-9a77-6dbc279a5242" /> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/927fc744-940d-4074-9576-1246f33c4f25" /> |
+
 2. **Create a Lakehouse**:
    - Within your new workspace, select `New item` and choose `Lakehouse`.
 
@@ -73,30 +95,76 @@ Process Overview:
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/e3dd716c-7391-4a03-9ff2-4f8722fd29bf" />
 
    - Load data into the tables:
-  
 
-     
-2. **Define Schema for Dataset**:
-   - In the lakehouse, create a new dataset.
-   - Define the schema by adding tables and columns as needed.
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/a28a5540-106e-4fa2-b515-88831fa96b8d" />
 
-3. **Auto-Generate Report with Copilot**:
-   - Use Copilot to generate a report based on your dataset.
-   - Ensure you have the necessary permissions and settings enabled for Copilot to access and use your data.
-   - **Warning**: Make sure to configure Copilot settings correctly to avoid any data privacy or security issues.
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/b543a1c8-6686-484e-a9a9-f372c53262f0" />
 
-4. **Create a Deployment Pipeline**:
-   - Go back to the Microsoft Fabric portal and select "Deployment Pipelines".
-   - Create a new pipeline and name it (e.g., "Dev to Prod Pipeline").
-   - Add your "Development Workspace" as the source.
-   - Create a new workspace for production (e.g., "Production Workspace").
-   - Add the "Production Workspace" as the target.
+   - The information loaded will be under Tables/dbo section, if you are using the lakehouse schema:
 
-5. **Deploy to Production**:
-   - Use the deployment pipeline to move your lakehouse, dataset, and report from the "Development Workspace" to the "Production Workspace".
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0b3da49f-2738-412a-8b9d-bb0f2433d181" />
+
+3. **Create a New Semantic Model**:
+   - Use the `New semantic model` option to create a Power BI semantic model.
+   - Select specific tables and views from your lakehouse.
+   - Save the semantic model to your workspace for sharing, data modeling, and reporting.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/25bda38f-41fa-45f9-aa01-e647d9f4bd84" />
+
+    - At this point, you should see something similar like following: 
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/e1f88782-ddc6-4fb8-947a-af23b92a8415" />
+
+> [!NOTE]
+> Ensure you have the necessary permissions and settings enabled for Copilot to access and use your data.
+
+4. **Auto-Generate Report with Copilot**: Utilize Copilot to create a report based on your dataset. In your workspace, click on `...` over your semantic model and select `Auto-create report`:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/19718d27-7385-45a8-8aeb-2a6409490c61">
+
+    - The outcome will depend on the information you provide in this case. Copilot automatically generated this report for me; you can continue editing:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9f4bdd42-8ac5-43ea-9af9-32828b59b4a7" />
+
+    - Remember to click on `Save`:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/097a90e0-e131-4205-ad9c-241e34b0206b" />
+
+5. **Create a Deployment Pipeline**:
+    - Go back to the Microsoft Fabric portal and select `Deployment Pipelines`.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/507fe86a-8710-407e-ae31-5597371b9945" />
+
+    - Create a new pipeline and name it (e.g., `Dev to Prod Pipeline`).
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/52681609-c66d-445c-a387-ff1989f0bf53" />
+
+    - You can customize your stages. For this case, we will only have a development workspace and a production workspace:
+      
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/1836520a-7b70-4a12-a8af-5a78e29c95ab" />
+
+    - Add your `Analytics Dev` workspace as the source, click on `Assign a workspace`:
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/df0291f4-84a0-46f3-83aa-3dc6aa99ef07" />
+
+    - Add the `Production Workspace` as the target.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/082614ba-4d9a-4a2a-a0c2-a3287366ee75" />
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/bf39af09-2fda-4d49-958b-d68b87a300c6" />
+
+6. **Deploy to Production**:
+   - Use the deployment pipeline to move your lakehouse, dataset, and report from the `Analytics Dev` to the `Analytics Prod` workspace.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/0492b8a4-3d7c-4d27-9bfc-a4996e6f3c3e" />
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/f99211f2-a60c-414d-a1a0-9135c2fd5879" />
+
    - Verify that everything is working correctly in the production environment.
 
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/46045fa8-34e8-4fff-a343-d49f36eece89" />
 
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/fc139a2c-3f59-4534-8378-55fe929d33b2" />
 
 ### How to refresh the data
 
@@ -107,7 +175,6 @@ Process Overview:
 | **Scheduled Refresh**     | Automatically refreshes data at specified intervals to keep it up-to-date. This allows you to automatically refresh the data at specified intervals, ensuring that the data in the new stage is always up-to-date.                                                                                                                                                          | - Can be configured to run multiple times a day.<br>- Ensures data in the new stage is always current.                                                                                                                             |
 | **On-Demand Refresh**     | Allows immediate data refresh, triggered manually or programmatically.                                                                                                                                                              | - Can be done through workspace list or lineage views.<br>- Can be triggered via a pipeline containing a dataflow activity.                                                                                                        |
 | **Incremental Refresh**   | Refreshes only the data that has changed since the last refresh, improving efficiency. Click [here to understand more about incremental refresh](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/11_PBi_IncreRefresh.md)                                                                                                                                       | - **Evaluate Changes**: Checks for changes in the data source based on a DateTime column.<br>- **Retrieve Data**: Only changed data is retrieved and loaded.<br>- **Replace Data**: Updated data is processed and replaced.       |
-
 
 Steps to Set Up Incremental Refresh:
 1. **Create or Open a Dataflow**: Start by creating a new Dataflow Gen2 or opening an existing one.
