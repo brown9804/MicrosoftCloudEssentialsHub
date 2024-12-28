@@ -82,7 +82,7 @@ Last updated: 2024-12-28
 
 | **Pros** | **Considerations** |
 | --- | --- |
-| - **No Egress Charges**: The capacity is in the same region as your data sources and Azure tenant, eliminating egress charges.<br/>- **Efficient Networking**: Reduced cross-region data transfer leads to more efficient and simpler networking. | - **Multi-Geo Limitations**: No Power BI Metrics feature. This can be worked around by creating custom reports or DAX measures to generate KPIs and reports.<br/>- **Convert Gen1 Dataflows**: All Gen1 Dataflows need to be converted to Gen2. Assistance can be provided for this process.<br/>- **Manual Migration of Fabric Content**: Items like data pipelines, data warehouses, notebooks, lakehouses, ML models, dataflows, or any embedded content need to be manually moved. |
+| - **No Egress Charges**: The capacity is in the same region as your data sources and Azure tenant, eliminating egress charges.<br/>- **Efficient Networking**: Reduced cross-region data transfer leads to more efficient and simpler networking. | - **Multi-Geo Limitations**: No Power BI Metrics feature. This can be worked around by creating custom reports or DAX measures to generate KPIs and reports.<br/>- **Convert Gen1 Dataflows**: All Gen1 Dataflows need to be converted to Gen2. Assistance can be provided for this process. Click [here for more information about how to move queries from Dataflow Gen1 to Dataflow Gen2](https://learn.microsoft.com/en-us/fabric/data-factory/move-dataflow-gen1-to-dataflow-gen2) <br/>- **Manual Migration of Fabric Content**: Items like data pipelines, data warehouses, notebooks, lakehouses, ML models, dataflows, or any embedded content need to be manually moved. |
 
 ### Create New Capacity in East US Before Migrating Fabric Tenant
 
