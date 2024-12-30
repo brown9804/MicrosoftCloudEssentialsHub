@@ -5,13 +5,31 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2024-12-30
 
 ------------------------------------------
 
 ## Wiki 
 
 - [Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-mirroring-faq#can-snowflake-mirroring-be-accessed-through-the-power-bi-gateway-or-behind-a-firewall--)
+
+## Content 
+
+<details>
+<summary><b>Table of Content </b> (Click to expand)</summary>
+    
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Demo](#demo)
+    - [Requirements](#requirements)
+    - [Hands-On Activities](#hands-on-activities)
+        - [Data Integration Exercise:](#data-integration-exercise)
+        - [Report Creation with Copilot:](#report-creation-with-copilot)
+        - [Mirroring Setup:](#mirroring-setup)
+- [Recommended Trainings](#recommended-trainings)
+
+</details>
 
 ## Overview
 
