@@ -54,6 +54,13 @@ Last updated: 2024-11-07
 
 ## Overview 
 
+- [Free Trial Capacity](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/7_FreeTrialCapacity.md)
+- [Fabric capabilities based on SKU size](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/9_Fabric_bySKU.md)
+- [Fabric Capacity Reservations](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/12_FabricReservation.md)
+- [Fabric: Overview of Configuration Settings](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/19_FabricConfigs.md)
+- [Migration from Power BI Premium (P-SKUs) to Fabric (F-SKUs)](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/8_MigrationPtoFSku.md)
+- [Fabric Tenant Migration - Overview](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/24_FabricTenantMigration.md)
+
 ### Key Components
 
 - **Data Engineering, Data Factory, Data Science, Real-Time Analytics, Data Warehouse, and Databases**: These are the key services offered by Microsoft Fabric.
