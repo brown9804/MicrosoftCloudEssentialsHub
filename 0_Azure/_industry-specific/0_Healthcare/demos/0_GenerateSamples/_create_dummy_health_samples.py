@@ -2,7 +2,6 @@
 
 import pandas as pd
 import numpy as np
-from docx import Document
 
 # Define the number of samples
 num_samples = 1500
@@ -31,18 +30,7 @@ lab_test_results_data = {
 lab_test_results_df = pd.DataFrame(lab_test_results_data)
 lab_test_results_df.to_csv('large_lab_test_results.csv', index=False)
 
-# 3. Radiology Reports
-radiology_report = Document()
-for i in range(1, 16):
-    radiology_report.add_heading(f'Radiology Report - Page {i}', 0)
-    radiology_report.add_paragraph(f'PatientID: {i}')
-    radiology_report.add_paragraph(f'Name: Patient_{i}')
-    radiology_report.add_paragraph('Imaging Study: Chest X-ray')
-    radiology_report.add_paragraph('Findings: No acute cardiopulmonary process.')
-    radiology_report.add_paragraph('Impression: Normal chest X-ray.')
-radiology_report.save('large_radiology_report.docx')
-
-# 4. Prescription Records
+# 3. Prescription Records
 prescription_data = {
     'PatientID': np.arange(1, num_samples + 1),
     'Medication': np.random.choice(['Lisinopril', 'Albuterol', 'Metformin'], num_samples),
@@ -52,7 +40,7 @@ prescription_data = {
 prescription_df = pd.DataFrame(prescription_data)
 prescription_df.to_csv('large_prescription_records.csv', index=False)
 
-# 5. Vital Signs Logs
+# 4. Vital Signs Logs
 vital_signs_data = {
     'PatientID': np.arange(1, num_samples + 1),
     'Date': pd.date_range(start='2023-01-01', periods=num_samples, freq='D'),
@@ -65,7 +53,7 @@ vital_signs_data = {
 vital_signs_df = pd.DataFrame(vital_signs_data)
 vital_signs_df.to_csv('large_vital_signs_logs.csv', index=False)
 
-# 6. Immunization Records
+# 5. Immunization Records
 immunization_data = {
     'PatientID': np.arange(1, num_samples + 1),
     'Vaccine': np.random.choice(['Influenza', 'COVID-19', 'Hepatitis B'], num_samples),
@@ -75,32 +63,7 @@ immunization_data = {
 immunization_df = pd.DataFrame(immunization_data)
 immunization_df.to_csv('large_immunization_records.csv', index=False)
 
-# 7. Clinical Notes
-clinical_notes = Document()
-for i in range(1, 16):
-    clinical_notes.add_heading(f'Clinical Notes - Page {i}', 0)
-    clinical_notes.add_paragraph(f'PatientID: {i}')
-    clinical_notes.add_paragraph(f'Name: Patient_{i}')
-    clinical_notes.add_paragraph('Visit Date: 2023-03-05')
-    clinical_notes.add_paragraph('Chief Complaint: Cough and fever.')
-    clinical_notes.add_paragraph('Assessment: Likely viral upper respiratory infection.')
-    clinical_notes.add_paragraph('Plan: Symptomatic treatment and follow-up in one week if no improvement.')
-clinical_notes.save('large_clinical_notes.docx')
-
-# 8. Surgical Reports
-surgical_report = Document()
-for i in range(1, 16):
-    surgical_report.add_heading(f'Surgical Report - Page {i}', 0)
-    surgical_report.add_paragraph(f'PatientID: {i}')
-    surgical_report.add_paragraph(f'Name: Patient_{i}')
-    surgical_report.add_paragraph('Procedure: Appendectomy')
-    surgical_report.add_paragraph('Date of Surgery: 2023-02-25')
-    surgical_report.add_paragraph('Pre-operative Diagnosis: Acute appendicitis.')
-    surgical_report.add_paragraph('Post-operative Diagnosis: Acute appendicitis.')
-    surgical_report.add_paragraph('Procedure Details: Laparoscopic appendectomy performed without complications.')
-surgical_report.save('large_surgical_report.docx')
-
-# 9. Mental Health Records
+# 6. Mental Health Records
 mental_health_data = {
     'PatientID': np.arange(1, num_samples + 1),
     'AssessmentDate': pd.date_range(start='2023-01-01', periods=num_samples, freq='D'),
@@ -112,7 +75,7 @@ mental_health_data = {
 mental_health_df = pd.DataFrame(mental_health_data)
 mental_health_df.to_csv('large_mental_health_records.csv', index=False)
 
-# 10. Diet and Nutrition Logs
+# 7. Diet and Nutrition Logs
 diet_nutrition_data = {
     'PatientID': np.arange(1, num_samples + 1),
     'Date': pd.date_range(start='2023-01-01', periods=num_samples, freq='D'),
