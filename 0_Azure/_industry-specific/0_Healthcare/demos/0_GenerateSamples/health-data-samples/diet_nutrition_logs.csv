@@ -1,0 +1,3 @@
+PatientID,Date,MealType,FoodItems
+1,2023-03-01,Breakfast,"Oatmeal, Banana, Orange Juice"
+2,2023-03-01,Lunch,"Grilled Chicken Salad, Apple"
