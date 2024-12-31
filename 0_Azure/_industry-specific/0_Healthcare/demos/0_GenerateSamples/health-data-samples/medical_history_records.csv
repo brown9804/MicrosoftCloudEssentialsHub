@@ -1,0 +1,3 @@
+PatientID,Name,Age,Gender,PastMedicalConditions,Surgeries,Allergies,FamilyMedicalHistory
+1,John Doe,45,Male,"Hypertension, Diabetes",Appendectomy,Penicillin,Heart Disease
+2,Jane Smith,38,Female,Asthma,None,None,Diabetes
