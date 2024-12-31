@@ -89,12 +89,22 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 
 1. **Create a Microsoft Fabric Workspace**:
    - Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com/).
-   - Navigate to **Workspaces** > **New Workspace**.
-   - Fill out the workspace details and select **Apply**.
+   - Navigate to `Workspaces` > `New Workspace`.
+
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/aac646ef-6ead-4f57-a1c4-7f525852f312" />
+
+   - Fill out the workspace details and select `Apply`.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/199e60ee-03c5-4d6f-9fad-74724ffe20a3" />
 
 2. **Create a Data Warehouse and Lakehouse**:
-   - In your workspace, select **New Item** > **Warehouse** to create a Data Warehouse.
-   - Similarly, select **New Item** > **Lakehouse** to create a Lakehouse.
+   - In your workspace, select `New Item` > `Warehouse` to create a Data Warehouse.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/89e412f2-3c15-4de8-9272-ac7cc62cc938" />
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/dc5694be-a571-450c-aecd-2cff77859142" />
+
+   - Similarly, select `New Item` > `Lakehouse` to create a Lakehouse.
 
 ### Step 2: Ingest Data
 
