@@ -17,6 +17,7 @@ Last updated: 2024-12-31
 
 - [Overview of healthcare data solutions in Microsoft Fabric](https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview)
 - [Introducing healthcare data solutions in Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/03/11/introducing-healthcare-data-solutions-in-microsoft-fabric-a-game-changer-for-healthcare-data-analysis/)
+- [Snowflake and Microsoft announce expansion of their partnership](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/05/22/snowflake-and-microsoft-announce-expansion-of-their-partnership/)
   
 </details>
 
@@ -183,3 +184,7 @@ Here are some key features:
 |----------|---------|
 | If your organization needs advanced analytics capabilities, such as geospatial analysis or machine learning model deployment, Snowflake's support for AI/ML and advanced analytics can complement Microsoft Fabric's capabilities. | A retail company using Snowflake's AI/ML functions to analyze customer sentiment and predict purchasing behavior, while using Microsoft Fabric for real-time sales data integration. |
 
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
