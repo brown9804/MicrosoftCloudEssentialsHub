@@ -299,14 +299,14 @@ graph LR
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/6271e569-ed04-4c67-a332-d2d7ad614fe4">
 
-> At this point, you will find the following objects in your workspace:
-
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/c213242b-2cda-4ecc-92dd-1b3acdf153ea" />
+    > At this point, you will find the following objects in your workspace:
+    
+    <img width="550" alt="image" src="https://github.com/user-attachments/assets/c213242b-2cda-4ecc-92dd-1b3acdf153ea" />
 
 2. **Create Interactive Reports with Power BI**:
    - To create interactive dashboards and reports for data visualization, connect Power BI to your semantic model. Click on `...` on your semantic model.
 
-       <img width="953" alt="image" src="https://github.com/user-attachments/assets/fdc1de90-1d9a-4021-9c47-1eacae2fe2a0" />
+       <img width="550" alt="image" src="https://github.com/user-attachments/assets/fdc1de90-1d9a-4021-9c47-1eacae2fe2a0" />
    
    - We can leverage `Copilot` capabilities to automatically generate a report based on our semantic model and further edit it.
 
