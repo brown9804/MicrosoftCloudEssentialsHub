@@ -30,6 +30,9 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 - [Data virtualization with Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/data-virtualization-overview?view=azuresql&tabs=managed-identity)
 - [Data virtualization now generally available in Azure SQL Managed Instance](https://techcommunity.microsoft.com/blog/azuresqlblog/data-virtualization-now-generally-available-in-azure-sql-managed-instance/3624292)
 - [Announcing Data virtualization with Azure SQL Managed Instance – preview](https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-data-virtualization-with-azure-sql-managed-instance-%E2%80%93-preview/3250347)
+- [What are shortcuts?](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts#what-are-shortcuts)
+- [Create an Azure Data Lake Storage Gen2 shortcut](https://learn.microsoft.com/en-us/fabric/onelake/create-adls-shortcut)
+- [Azure Data Lake Storage hierarchical namespace](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-namespace)
 
 </details>
 
@@ -97,23 +100,63 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/199e60ee-03c5-4d6f-9fad-74724ffe20a3" />
 
-2. **Create a Data Warehouse and Lakehouse**:
-   - In your workspace, select `New Item` > `Warehouse` to create a Data Warehouse.
+2. **Create a Data Warehouse and Lakehouse**: Click [here to see more information about these types of data architecture](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/17_Overview.md#lakehouse--data-warehouse)
+   - In your workspace, select `New Item` > `Warehouse` to create a Data Warehouse `-> structured`.
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/89e412f2-3c15-4de8-9272-ac7cc62cc938" />
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/dc5694be-a571-450c-aecd-2cff77859142" />
 
-   - Similarly, select `New Item` > `Lakehouse` to create a Lakehouse.
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/ccc18717-98a8-41ff-b6f0-53b99ab3c2aa" />
+
+   - Similarly, select `New Item` > `Lakehouse` to create a Lakehouse `-> both structured + unstructured`.
+  
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/5ab352bb-1f94-404a-880d-d2c8c2a9ef1d" />
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/5967d5cb-09e2-4190-bc66-e08354235279" />
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/128d6f24-fa01-4c8a-9456-71ff6102befa" />
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/d46edb62-619e-4def-bcd1-e43242159cdd" />
 
 ### Step 2: Ingest Data
 
 1. **Upload Data to Azure Data Lake Storage (ADLS)**:
-   - Upload your sample datasets (e.g., Sales_SalesOrderHeader and Sales_SalesOrderDetail) to ADLS Gen2.
+
+   - Upload your sample datasets (e.g., Sale-SalesOrderHeader, Sales-SalesOrderDetail, health-samples) to ADLS Gen2.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/d9bcd97c-5b54-4582-b4a7-5e1a5e13163f" />
+
+> [!NOTE]
+> The ability to create shortcuts in Microsoft Fabric is available starting from the F64 SKU and higher. This feature allows you to create symbolic links to data stored in external storage systems like ADLS Gen 2, S3, or GCS, enabling in-place reads and writes without copying the data. Click [here for more information about it](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features). <br/>
+> Please ensure that Hierarchical Namespaces are enabled on your ADLS Gen 2 storage account.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/f9fdf6a3-6617-48ba-9ef1-4c6af08732af" />
+
+> Once completed:
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/b2693d59-4644-4d61-a297-5b54e1053aff" />
 
 2. **Create Shortcuts in the Lakehouse**:
-   - In the Lakehouse explorer, hover over the **Tables** folder and select **New Shortcut**.
-   - Choose **ADLS Gen2** as the external source and provide the necessary details to link your data.
+
+   - In the Lakehouse explorer, hover over the `Tables` folder and select `New Shortcut`.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/32046cb7-9cc1-4a49-bcb3-0fff6fbbfb8d" />
+
+   - Choose `ADLS Gen2` as the external source and provide the necessary details to link your data.
+
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/5dba174a-e934-4374-8a12-5478ebd1363c" />
+
+    - Use an existing connection or create one to your `ADLS Gen2`:
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a299f44e-66bb-48eb-a33d-98c8990c8cea" />
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/494478d1-6cb2-4035-adbb-b0d3a73012cd" />
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a1428ddc-94ea-47c1-bedc-d8ee17f896b4" />
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/8bc5ce3e-6d78-4352-a9f0-600e8692b325" />
+
+      <img width="550" alt="image" src="https://github.com/user-attachments/assets/aa2d9226-ad75-4ddc-9069-d16a9bb2a6e3" />
 
 ### Step 3: Set Up Data Integration
 
