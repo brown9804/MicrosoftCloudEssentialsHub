@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-31
+Last updated: 2024-12-30
 
 ----------
 
@@ -31,13 +31,25 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 - [Data virtualization now generally available in Azure SQL Managed Instance](https://techcommunity.microsoft.com/blog/azuresqlblog/data-virtualization-now-generally-available-in-azure-sql-managed-instance/3624292)
 - [Announcing Data virtualization with Azure SQL Managed Instance – preview](https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-data-virtualization-with-azure-sql-managed-instance-%E2%80%93-preview/3250347)
 
-
 </details>
 
 ## Content
 
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
+
+- [Wiki](#wiki)
+- [Content](#content)
+- [What is Data Virtualization?](#what-is-data-virtualization)
+    - [Key Features & Fabric Components](#key-features--fabric-components)
+    - [Benefits:](#benefits)
+    - [Example of how DV looks in Azure SQL MI](#example-of-how-dv-looks-in-azure-sql-mi)
+- [Demo](#demo)
+    - [Step 1: Set Up Your Environment](#step-1-set-up-your-environment)
+    - [Step 2: Ingest Data](#step-2-ingest-data)
+    - [Step 3: Set Up Data Integration](#step-3-set-up-data-integration)
+    - [Step 4: Query and Analyze Data](#step-4-query-and-analyze-data)
+    - [Step 5: Monitor and Optimize](#step-5-monitor-and-optimize)
 
 </details>
 
@@ -123,7 +135,6 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 2. **Optimize Performance**:
    - Use Azure Synapse Analytics to optimize your queries and improve performance.
    - Leverage Power BI's performance optimization features to enhance report responsiveness.
-
 
 
 <div align="center">
