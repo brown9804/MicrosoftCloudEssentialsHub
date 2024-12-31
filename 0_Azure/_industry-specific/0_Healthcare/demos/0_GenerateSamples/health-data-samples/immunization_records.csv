@@ -1,0 +1,3 @@
+PatientID,Vaccine,DateAdministered,DoseNumber
+1,Influenza,2022-10-15,1
+2,COVID-19,2023-01-10,2
