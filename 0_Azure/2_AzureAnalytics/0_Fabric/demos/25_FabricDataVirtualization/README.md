@@ -156,6 +156,8 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 
 > This setup demo how to use Microsoft Fabric and its integrated services to provide a comprehensive data management and analytics solution, achieving data virtualization.
 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/3096fe37-96c9-4d35-a0ff-6c3041be256f">
+
 ### Step 1: Set Up Your Environment
 
 1. **Create a Microsoft Fabric Workspace**:
