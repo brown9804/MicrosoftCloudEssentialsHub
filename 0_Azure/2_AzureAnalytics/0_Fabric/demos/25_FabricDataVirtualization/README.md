@@ -71,6 +71,61 @@ Data Virtualization can be leveraged either through a dedicated tool or an integ
 
 ## Demo 
 
+> This setup demo how to use Microsoft Fabric and its integrated services to provide a comprehensive data management and analytics solution, achieving data virtualization.
+
+### Step 1: Set Up Your Environment
+
+1. **Create a Microsoft Fabric Workspace**:
+   - Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com/).
+   - Navigate to **Workspaces** > **New Workspace**.
+   - Fill out the workspace details and select **Apply**.
+
+2. **Create a Data Warehouse and Lakehouse**:
+   - In your workspace, select **New Item** > **Warehouse** to create a Data Warehouse.
+   - Similarly, select **New Item** > **Lakehouse** to create a Lakehouse.
+
+### Step 2: Ingest Data
+
+1. **Upload Data to Azure Data Lake Storage (ADLS)**:
+   - Upload your sample datasets (e.g., Sales_SalesOrderHeader and Sales_SalesOrderDetail) to ADLS Gen2.
+
+2. **Create Shortcuts in the Lakehouse**:
+   - In the Lakehouse explorer, hover over the **Tables** folder and select **New Shortcut**.
+   - Choose **ADLS Gen2** as the external source and provide the necessary details to link your data.
+
+### Step 3: Set Up Data Integration
+
+1. **Create a Data Pipeline in Azure Data Factory**:
+   - Navigate to **Data Factory** in your Microsoft Fabric workspace.
+   - Create a new data pipeline and use the **Copy Data** tool to configure your data source and destination.
+   - Select your sample dataset from ADLS as the source and your Data Warehouse as the destination.
+
+2. **Configure Real-Time Data Integration**:
+   - Use **Shortcuts and Mirroring** in Data Factory to enable real-time data integration.
+   - Set up **Real-Time Intelligence** to process and analyze streaming data.
+
+### Step 4: Query and Analyze Data
+
+1. **Use Azure Synapse Analytics**:
+   - In Azure Synapse Analytics, create a new SQL pool or use the serverless SQL pool.
+   - Query data across your Data Warehouse and Lakehouse using SQL.
+
+2. **Create Interactive Reports with Power BI**:
+   - Connect Power BI to your Data Warehouse and Lakehouse.
+   - Build interactive dashboards and reports to visualize your data.
+
+### Step 5: Monitor and Optimize
+
+1. **Monitor Data Pipelines**:
+   - In Data Factory, monitor the running processes and check the results on the **Output** tab.
+   - Use the **Run Details** button to view detailed information about your data pipeline runs.
+
+2. **Optimize Performance**:
+   - Use Azure Synapse Analytics to optimize your queries and improve performance.
+   - Leverage Power BI's performance optimization features to enhance report responsiveness.
+
+
+
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
   <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
