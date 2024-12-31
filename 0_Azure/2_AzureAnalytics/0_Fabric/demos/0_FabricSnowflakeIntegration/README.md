@@ -1,206 +1,185 @@
-#  Microsoft Fabric for Power BI and Azure Data Factory (ADF) with a focus on Snowflake integration 
+# Fabric & Snowflake - Overview
 
 Costa Rica
 
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com) 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2024-12-31
 
-------------------------------------------
+----------
 
 ## Wiki 
 
-- [Frequently asked questions for Mirroring Snowflake in Microsoft Fabric (Preview)](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-mirroring-faq#can-snowflake-mirroring-be-accessed-through-the-power-bi-gateway-or-behind-a-firewall--)
+<details>
+<summary><b>Table of Wiki </b> (Click to expand)</summary>
 
-## Overview
+- [Overview of healthcare data solutions in Microsoft Fabric](https://learn.microsoft.com/en-us/industry/healthcare/healthcare-data-solutions/overview)
+- [Introducing healthcare data solutions in Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/blog/2024/03/11/introducing-healthcare-data-solutions-in-microsoft-fabric-a-game-changer-for-healthcare-data-analysis/)
+  
+</details>
 
-Here are some key points and new features you can highlight:
+## Content
 
-> Microsoft Fabric for Power BI
-1. **Copilot Integration**: Power BI now includes Copilot, which uses generative AI to help create reports and analyze data by simply describing the insights you need.
-2. **Unified Platform**: Fabric brings together Power BI, Azure Synapse, and Azure Data Factory into one unified SaaS platform, making it easier for different roles to collaborate.
-3. **Enhanced Data Integration**: With Data Factory in Fabric, you can unify hybrid and multicloud data estates, combining the ease of Power Query with the power of Data Factory.
-4. **New Visualization Features**: Power BI has added new formatting capabilities, including dark mode support and improved visual calculations.
+<details>
+<summary><b>Table of Content </b> (Click to expand)</summary>
 
-> Microsoft Fabric for Azure Data Factory (ADF)
-1. **Data Integration**: Fabric Data Factory offers new connectors, including those for Oracle, MySQL, Google BigQuery, and Snowflake, enhancing data integration and transformation capabilities.
-2. **Simplified Data Pipelines**: The new Data Factory in Fabric integrates better with the unified data platform, including Lakehouse and Data Warehouse, making data pipelines more efficient.
-3. **Real-Time Data Replication**: Mirroring in Fabric allows for near real-time replication of data from various sources into OneLake, simplifying data management and analytics.
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+    - [Why Integrate?](#why-integrate)
+- [Microsoft Fabric Use Cases](#microsoft-fabric-use-cases)
+    - [Real-Time Analytics for Manufacturing](#real-time-analytics-for-manufacturing)
+    - [Customer Insights for Retail](#customer-insights-for-retail)
+    - [Risk Assessment for Insurance](#risk-assessment-for-insurance)
+    - [Supply Chain Optimization for Logistics](#supply-chain-optimization-for-logistics)
+    - [Healthcare Data Integration and Analysis](#healthcare-data-integration-and-analysis)
+    - [Genomic Data Analysis for Research](#genomic-data-analysis-for-research)
+- [Better Together with Snowflake](#better-together-with-snowflake)
+    - [Large-Scale Data Warehousing](#large-scale-data-warehousing)
+    - [Advanced Data Sharing and Collaboration](#advanced-data-sharing-and-collaboration)
+    - [Specialized Analytics and AI/ML Workloads](#specialized-analytics-and-aiml-workloads)
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/f84ae4c4-22e7-44ae-9d21-fa7976e163e4">
+</details>
 
-| **Option**                | **Description**                                                                                                                                                                                                 |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Dataflow Gen2**         | The new generation of dataflows in Microsoft Fabric, offering improved features like **shorter authoring flows, auto-save, background publishing, and better integration with data pipelines**. Primarily focuses on the **transformation** of data.                      |
-| **Data pipeline**         | A series of processes that move data from one system to another, involving data ingestion, transformation, and storage to ensure data is ready for analysis or other uses. Manages the **movement** of data, including ingestion, transformation, and loading.                                       |
-| **Data Factory**          | A cloud-based data integration service that allows you to **create, schedule, and manage data pipelines**, supporting various data sources and providing tools for data transformation and movement.                  |
-| **Data workflow (Preview)** | Uses **Apache Airflow to create and manage data workflows**, providing a cloud-based platform for developing, scheduling, and monitoring data workflows, making it easier to handle complex data processes.           |
-| **Copy job (Preview)**    | Automates **data loading from Amazon S3 to Amazon Redshift**, detecting new files in specified paths and loading them automatically to simplify the data ingestion process.                                          |
-| **API for GraphQL (Preview)** | Allows interaction with data using GraphQL, **a query language for APIs**, enabling **efficient querying of multiple data sources** and providing a flexible way to fetch data in a single request.                     |
+## Overview 
 
-> Impact on Snowflake Usage
-1. **Mirroring**: Fabric's Mirroring feature allows you to replicate data from Snowflake into OneLake in near real-time, reducing the need for complex ETL pipelines.
-2. **Unified Analytics**: With data mirrored into OneLake, you can leverage Fabric's analytics tools, such as Spark, notebooks, and Power BI, to analyze and visualize data seamlessly.
-3. **Cost and Latency**: Mirroring provides a low-cost and low-latency solution for data replication, making it easier to keep your data up-to-date and accessible for analytics.
+> - `Snowflake` is a `cloud-based data warehousing platform` known for its scalability, performance. <br/> 
+> - `Microsoft Fabric` is an `integrated data platform that combines data warehousing, data lake, and real-time analytics capabilities`.
 
-## Demo
+Here are some key features:
 
-### Requirements
+1. **Unified Data Platform**:
+   - **Data Warehouse and Lakehouse**: Combines structured and unstructured data storage, enabling seamless data integration and analysis.
+   - **Real-Time Analytics**: Supports real-time data processing and analytics, making it suitable for dynamic and time-sensitive use cases.
+2. **Integration with Azure Ecosystem**:
+   - **Azure Synapse Analytics**: Integrates with Synapse for advanced analytics and big data processing.
+   - **Power BI**: Provides powerful data visualization and reporting capabilities through seamless integration with Power BI.
+3. **Data Virtualization**: `Shortcuts and Mirroring` allows creating symbolic links to external data sources, enabling in-place reads and writes without data duplication.
+4. **Scalability and Performance**:
+   - **Elastic Scaling**: Automatically scales compute and storage resources based on workload demands.
+   - **Optimized Performance**: Continuous performance optimizations to ensure efficient data processing and query execution.
+5. **Security and Compliance**: Offers robust security features, including encryption, access control, and compliance with industry standards.
 
-| **Category** | **Requirements** |
-|--------------|------------------|
-| **General Requirements** | - Active Microsoft Fabric subscription  <br> - Fabric capacity (measured in Capacity Units or CUs) |
-| **Data Integration Exercise** | - Permissions to access and manage Data Factory within Microsoft Fabric  <br> - Credentials and connection details for data sources (e.g., Snowflake, Oracle, MySQL)  <br> - Configuration details for the destination (e.g., Azure Data Lake, OneLake) |
-| **Report Creation with Copilot** | - Permissions to access and use Power BI within Microsoft Fabric  <br> - Copilot enabled in Power BI settings  <br> - A compatible workspace with write access assigned to a Copilot-enabled capacity (F64 or higher) or a Power BI Premium capacity (P1 or higher), [more information here](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-create-report-service) |
-| **Mirroring Setup** | - Permissions to access and manage the Fabric service within the Azure portal  <br> - Connection details for Snowflake database (e.g., account name, username, password)  <br> - Configuration details for OneLake as the destination for mirrored data  <br> - Ability to choose specific tables for mirroring and control over the initiation and suspension of mirroring processes, [more information here](https://eng.ms/docs/cloud-ai-platform/azure-data/azure-data-intelligence-platform/synapse-dw/fabric-dw-top-level-service/trident-dw/clientexperiences/mirroring/overview) |
-| **Additional Considerations** | - User permissions for accessing and managing services and resources  <br> - Compliance with organizational security and compliance policies |
+| Feature | Snowflake | Microsoft Fabric |
+|---------|-----------|------------------|
+| **Scalability** | Elastic compute and storage, high concurrency | Elastic scaling, optimized performance |
+| **Performance** | High-speed query performance, automatic improvements | Real-time analytics, continuous optimizations |
+| **Data Sharing** | Data Marketplace, seamless integration | Data virtualization with shortcuts and mirroring |
+| **Advanced Analytics** | AI/ML support, geospatial and time-series analysis | Integration with Synapse and Power BI for advanced analytics |
+| **Security** | End-to-end encryption, unified governance | Comprehensive security, compliance with industry standards |
 
-### Hands-On Activities
+### Why Integrate?
 
-#### **Data Integration Exercise**: 
+- **Complementary Strengths**: Combining Snowflake's robust data warehousing capabilities with Microsoft Fabric's real-time analytics and data virtualization can provide a comprehensive data management solution.
+- **Enhanced Flexibility**: Integration allows leveraging the strengths of both platforms, providing flexibility in handling diverse data workloads.
+- **Unified Data Access**: Using Microsoft Fabric's shortcuts and mirroring, you can access and analyze data stored in Snowflake without duplicating it, ensuring efficient data management.
 
-> Set up a data pipeline using Data Factory in Fabric to integrate data from multiple sources, including Snowflake
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e1d4d894-a350-420d-a30d-833ec31b7f35" alt="image" width="550">
+</p>
 
-1. **Access Data Factory within Fabric**:
-    - Log in to the Microsoft Fabric portal.
-    - Navigate to the Data Factory service within Fabric.
-      
-    <img width="200" alt="image" src="https://github.com/user-attachments/assets/3b57f63c-bb09-4f11-9012-06f59dfa4893">
+## Microsoft Fabric Use Cases
 
-2. **Create a New Data Pipeline**:
-    - Click on the “Create pipeline” button.
-    
-    <img width="400" alt="image" src="https://github.com/user-attachments/assets/52cfe364-9022-47b0-a76d-33f78d85144e">
+### Real-Time Analytics for Manufacturing
+**Story 1**: A manufacturing company uses Microsoft Fabric to ingest and analyze sensor data from connected machines and production systems. This real-time data provides operational visibility and helps optimize production performance.
 
-3. **Add Data Sources**:
-    - Click on the “Activity” tab.
-    - Add a Copy Data activity to the pipeline.
-    - Select the type of data source (e.g., Snowflake, Oracle, MySQL).
-    - Configure the connection settings for each data source (e.g., server name, database name, credentials).
-    
-    <img width="400" alt="image" src="https://github.com/user-attachments/assets/8032577f-b415-40a9-9610-9046dbae7870">
+**Story 2**: A manufacturing firm leverages Microsoft Fabric to monitor energy consumption across its facilities. By analyzing this data in real-time, the company identifies inefficiencies and implements energy-saving measures.
 
-4. **Configure Data Integration**:
-    - Add a sink to load the data into the desired destination (e.g., Azure Data Lake, OneLake).
-    <img width="400" alt="image" src="https://github.com/user-attachments/assets/4fbaa9dc-8cb9-4d3f-99c1-88fe309362af">
+**Story 3**: A manufacturing company uses Microsoft Fabric to track the production line's performance, identifying bottlenecks and optimizing workflow to increase productivity.
 
-5. **Run and Monitor the Pipeline**:
-    - Save and publish the pipeline.
-    - Trigger the pipeline to run.
-    - Monitor the pipeline execution for any errors or issues.
-    
+| Benefits | Description |
+|----------|-------------|
+| **Operational Efficiency** | Real-time monitoring and analytics help reduce equipment downtime and improve overall equipment effectiveness (OEE). |
+| **Quality Control** | Enhanced analytics enable better quality control and defect detection. |
+| **Energy Efficiency** | Real-time energy monitoring helps identify and reduce energy waste, leading to cost savings. |
+| **Productivity Improvement** | Identifying bottlenecks and optimizing workflow increases overall productivity. |
 
-#### **Report Creation with Copilot**: 
+### Customer Insights for Retail
+**Story 1**: A retail company leverages Microsoft Fabric to integrate data from various sources, including sales transactions, customer feedback, and social media. This integrated data provides a comprehensive view of customer behavior and preferences.
 
-> Use Copilot in Power BI to generate reports and visualizations based on specific business questions.
+**Story 2**: A retailer uses Microsoft Fabric to analyze in-store and online shopping behaviors. This data helps optimize inventory management and improve the overall shopping experience.
 
-1. **Access Power BI within Fabric:**
-    - Open Power BI within the Microsoft Fabric portal.
-    
-    <img width="200" alt="image" src="https://github.com/user-attachments/assets/6145fce7-7e4d-4ada-882f-5d842d617ca8">
+**Story 3**: A retail chain uses Microsoft Fabric to track customer loyalty program data, identifying trends and tailoring promotions to increase customer retention.
 
-2. **Enable Copilot:**
-   - Ensure that Copilot is enabled in your Power BI settings:
-      1. **Sign in to Microsoft Fabric** using your admin account credentials.
-      2. **Navigate to the Admin Portal**:
-         - Select **Fabric settings** from the menu.
-         - Choose **Admin portal**.
-      
-      3. **Enable Copilot**:
-         - In the Admin portal, select **Tenant settings**.
-         - Use the search feature to locate the **Copilot and Azure OpenAI Service (preview)** settings.
-         - Toggle the switch to **Enable Copilot in Fabric**.
-         - Click **Apply** to save your changes.
-      
-      4. **Verify Access**:
-         - Ensure that your workspace is in either **Premium Power BI (P1 and above)** or **paid Fabric (F64 and above)** capacity.
+| Benefits | Description |
+|----------|-------------|
+| **Personalized Marketing** | Insights from integrated data help tailor marketing campaigns to individual customer preferences. |
+| **Improved Customer Experience** | Better understanding of customer needs leads to enhanced customer satisfaction and loyalty. |
+| **Inventory Optimization** | Analyzing shopping behaviors helps optimize inventory levels and reduce stockouts. |
+| **Customer Retention** | Tracking loyalty program data helps identify trends and tailor promotions to retain customers. |
 
-3. **Create a New Report:**
-    - Click on “Create” and select “Report”.
-    
-    <img width="300" alt="image" src="https://github.com/user-attachments/assets/572bfb26-9154-4ae9-99f7-24221fb9559e">
+### Risk Assessment for Insurance
+**Story 1**: An insurance company uses Microsoft Fabric to aggregate and analyze data from multiple sources, including claims data, customer demographics, and external risk factors. This data integration helps improve risk assessment and underwriting processes.
 
-    - Choose the source 
-    
-    <img width="400" alt="image" src="https://github.com/user-attachments/assets/88fb050c-3919-4fb9-b27e-df590d546ab9">
+**Story 2**: An insurer leverages Microsoft Fabric to monitor social media and news feeds for emerging risks. This real-time data helps the company adjust its risk models and pricing strategies promptly.
 
-4. **Use Copilot for Insights:**
-    - In the report canvas, click on the Copilot icon.
-    - Describe the insights or visualizations you need (e.g., “Show me sales trends over the last year”).
-    - Copilot will generate the appropriate visuals and insights based on your description.
-      
-    <img width="600" alt="image" src="https://github.com/user-attachments/assets/809558d4-e78b-45c8-9c46-e658c77b1ce8">
+**Story 3**: An insurance firm uses Microsoft Fabric to analyze historical claims data, identifying patterns and predicting future claims to improve financial planning.
 
-5. **Customize the Report:**
-    - Adjust the visuals as needed (e.g., change chart types, add filters).
-    - Add additional visuals or data points to enhance the report.
-6. **Save and Share the Report:**
-   - Save the report to your workspace.
-   - Share the report with stakeholders or publish it to the Power BI Service.
+| Benefits | Description |
+|----------|-------------|
+| **Accurate Risk Assessment** | Enhanced data integration leads to more accurate risk models and better pricing strategies. |
+| **Fraud Detection** | Advanced analytics help identify and prevent fraudulent claims. |
+| **Proactive Risk Management** | Real-time monitoring of external data sources helps identify emerging risks and adjust strategies accordingly. |
+| **Predictive Analytics** | Analyzing historical claims data helps predict future claims and improve financial planning. |
 
-#### **Mirroring Setup**: 
+### Supply Chain Optimization for Logistics
+**Story 1**: A logistics company uses Microsoft Fabric to integrate data from inventory systems, transportation management systems, and IoT sensors. This integrated data helps optimize routes, improve predictability, and reduce costs.
 
-> Demonstrate how to set up Mirroring for a Snowflake database and explore the replicated data in OneLake.
+**Story 2**: A logistics provider uses Microsoft Fabric to track and analyze the condition of perishable goods during transit. This data helps ensure product quality and reduce spoilage.
 
-1. **Access Fabric**:
-   - Log in to the Azure portal.
-   - Navigate to the Fabric service.
+**Story 3**: A logistics firm leverages Microsoft Fabric to monitor warehouse operations, optimizing storage and retrieval processes to improve efficiency.
 
-2. **Set Up Mirroring**:
-    - Enable Mirroring
-        1. Open Microsoft Fabric: Log in to your Microsoft Fabric account.
-        2. **Access Tenant Settings**:
-           - Navigate to the **Admin Portal**.
-           - In the Admin Portal, go to **Tenant Settings**.
-        3. Expand Mirroring (Preview): In the Tenant Settings, find and expand the **Mirroring (Preview)** section.
-        4. Enable Mirroring: Toggle the **Mirroring (Preview)** switch to **On**.
-        5. Optional: Specific Security Groups: If you want to enable Mirroring for specific users, use the **Specific Security Groups** option to select the users or groups.
-        6. Save Settings: After enabling Mirroring, make sure to **Save** your settings.
-     
-        <img width="600" alt="image" src="https://github.com/user-attachments/assets/e721b814-245b-4d07-9774-aec125e821dd">
+| Benefits | Description |
+|----------|-------------|
+| **Route Optimization** | Real-time data integration enables dynamic route adjustments to minimize delays and reduce fuel consumption. |
+| **Inventory Management** | Better visibility into inventory levels helps prevent stockouts and overstock situations. |
+| **Product Quality** | Monitoring the condition of goods during transit helps ensure quality and reduce spoilage. |
+| **Warehouse Efficiency** | Optimizing storage and retrieval processes improves overall warehouse efficiency. |
 
-        <img width="600" alt="image" src="https://github.com/user-attachments/assets/f8a71081-02c0-48aa-a675-5c2ebff03040">
-        
-        <p float="left">
-          <img src="https://github.com/user-attachments/assets/63376753-d650-4b1c-a6dc-6f2cbdcf6ff7" width="200" height="300" />
-          <img src="https://github.com/user-attachments/assets/102c2542-6ac7-4df4-a028-8876bbdc2190" width="300" height="300" />
-        </p>
+### Healthcare Data Integration and Analysis
+**Story 1**: A healthcare organization uses Microsoft Fabric to integrate data from electronic health records (EHR), medical imaging systems, and patient monitoring devices. This integrated data provides a comprehensive view of patient health and supports advanced analytics for improved patient outcomes.
 
-    - Set Up Mirroring: [click here for more details](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-tutorial)
-       - In Fabric, go to the **Mirroring** section.
-       - Click on **Create Mirroring**.
+**Story 2**: A healthcare provider uses Microsoft Fabric to analyze patient data for early detection of chronic diseases. This proactive approach helps in timely intervention and better disease management.
 
-        <img width="600" alt="image" src="https://github.com/user-attachments/assets/4ec17f1a-5395-4ef2-9856-33ca2eda6410">
+**Story 3**: A hospital leverages Microsoft Fabric to integrate and analyze data from various departments, improving coordination and patient care.
 
-3. **Configure Snowflake Connection**:
-   - Select Snowflake as the source.
-   - Enter the connection details for your Snowflake database (e.g., account name, username, password).
+| Benefits | Description |
+|----------|-------------|
+| **Improved Patient Care** | Integrated data enables healthcare providers to make more informed decisions, leading to better patient outcomes. |
+| **Regulatory Compliance** | Ensures compliance with healthcare regulations such as HIPAA and GDPR by providing robust data governance and security features. |
+| **Early Disease Detection** | Analyzing patient data helps in early detection and management of chronic diseases. |
+| **Enhanced Coordination** | Integrating data from various departments improves coordination and patient care. |
 
-        <img width="600" alt="image" src="https://github.com/user-attachments/assets/32633b95-a79e-4550-9460-43b64c4cb3cc">
+### Genomic Data Analysis for Research
+**Story 1**: A research institution uses Microsoft Fabric to integrate and analyze genomic data from various sources. This data integration supports large-scale genomic studies and helps identify genetic markers associated with diseases.
 
-4. **Select Data to Mirror**:
-   - Choose the tables or schemas you want to replicate.
-   - Configure any transformation or filtering rules if needed.
+**Story 2**: A research organization leverages Microsoft Fabric to collaborate with international partners, sharing genomic data securely and efficiently to advance global health research.
 
-5. **Configure OneLake as Destination**:
-   - Select OneLake as the destination for the mirrored data.
-   - Configure the connection settings for OneLake.
+**Story 3**: A biotech company uses Microsoft Fabric to analyze genomic data for personalized medicine, tailoring treatments based on individual genetic profiles.
 
-6. **Start Mirroring**:
-   - Save and start the mirroring process.
-   - Monitor the mirroring status to ensure data is being replicated correctly.
+| Benefits | Description |
+|----------|-------------|
+| **Accelerated Research** | Streamlined data integration and analysis accelerate the pace of genomic research. |
+| **Collaborative Research** | Enables collaboration between researchers by providing a unified platform for data sharing and analysis. |
+| **Global Health Advancements** | Secure data sharing with international partners helps advance global health research. |
+| **Personalized Medicine** | Analyzing genomic data helps tailor treatments based on individual genetic profiles. |
 
-7. **Explore Replicated Data**:
-   - Once mirroring is complete, access OneLake.
-   - Use tools like Power BI or Azure Synapse to explore and analyze the replicated data.
+## Better Together with Snowflake
 
-## Recommended Trainings 
-- [Use Data Factory pipelines in Microsoft Fabric](https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/): This module covers how to describe pipeline capabilities, use the Copy Data activity, create pipelines based on predefined templates, and run and monitor pipelines.
-- [Extend data insights with Copilot in Power BI](https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/): This module teaches you how to create reports and summaries using Copilot in Power BI, enhancing your data interaction and report creation experience.
-- [Configure a Microsoft Fabric mirrored database from Snowflake](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake-tutorial): This tutorial guides you through configuring a mirrored database from Snowflake, including setting up a secure connection, starting the mirroring process, and exploring the mirrored data in OneLake.
+### Large-Scale Data Warehousing
+| Scenario | Example |
+|----------|---------|
+| If your organization needs to handle massive volumes of structured data with high concurrency and performance requirements, Snowflake's cloud-native architecture and elastic compute capabilities can be beneficial. | A financial services company managing petabytes of transaction data for real-time fraud detection and compliance reporting. |
 
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
+### Advanced Data Sharing and Collaboration
+| Scenario | Example |
+|----------|---------|
+| If your organization requires secure and seamless data sharing across multiple departments or external partners, Snowflake's Data Marketplace and secure data sharing features can be advantageous. | A healthcare organization sharing anonymized patient data with research institutions for collaborative studies. |
+
+### Specialized Analytics and AI/ML Workloads
+| Scenario | Example |
+|----------|---------|
+| If your organization needs advanced analytics capabilities, such as geospatial analysis or machine learning model deployment, Snowflake's support for AI/ML and advanced analytics can complement Microsoft Fabric's capabilities. | A retail company using Snowflake's AI/ML functions to analyze customer sentiment and predict purchasing behavior, while using Microsoft Fabric for real-time sales data integration. |
+
