@@ -1,0 +1,1501 @@
+PatientID,Name,Age,Gender,PastMedicalConditions,Surgeries,Allergies,FamilyMedicalHistory
+1,Patient_1,44,Female,None,Gallbladder removal,Peanuts,Diabetes
+2,Patient_2,71,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+3,Patient_3,5,Female,None,Gallbladder removal,Penicillin,None
+4,Patient_4,8,Female,Diabetes,None,None,Heart Disease
+5,Patient_5,98,Male,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+6,Patient_6,73,Female,Asthma,None,Peanuts,Diabetes
+7,Patient_7,31,Male,None,Appendectomy,Peanuts,None
+8,Patient_8,88,Male,Diabetes,Appendectomy,None,None
+9,Patient_9,72,Female,Hypertension,Appendectomy,Peanuts,Heart Disease
+10,Patient_10,55,Male,None,Gallbladder removal,Penicillin,Heart Disease
+11,Patient_11,13,Male,None,None,Penicillin,Heart Disease
+12,Patient_12,20,Male,None,Gallbladder removal,Peanuts,None
+13,Patient_13,69,Female,Diabetes,Gallbladder removal,Peanuts,Diabetes
+14,Patient_14,31,Male,None,None,Peanuts,None
+15,Patient_15,84,Male,Hypertension,None,Penicillin,None
+16,Patient_16,38,Female,Asthma,Gallbladder removal,Peanuts,None
+17,Patient_17,92,Male,None,None,None,Heart Disease
+18,Patient_18,25,Male,Diabetes,None,None,None
+19,Patient_19,71,Male,Diabetes,Gallbladder removal,Peanuts,None
+20,Patient_20,84,Female,Diabetes,None,Peanuts,Heart Disease
+21,Patient_21,85,Female,Hypertension,Gallbladder removal,None,Heart Disease
+22,Patient_22,99,Female,None,Appendectomy,Peanuts,Diabetes
+23,Patient_23,86,Female,Diabetes,Gallbladder removal,Peanuts,Diabetes
+24,Patient_24,16,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+25,Patient_25,14,Female,Hypertension,Gallbladder removal,None,Diabetes
+26,Patient_26,44,Female,Asthma,None,Penicillin,Heart Disease
+27,Patient_27,14,Male,None,Appendectomy,Peanuts,Heart Disease
+28,Patient_28,98,Female,Diabetes,None,None,Diabetes
+29,Patient_29,92,Female,Asthma,Appendectomy,None,Diabetes
+30,Patient_30,85,Female,None,Appendectomy,None,None
+31,Patient_31,1,Female,Diabetes,None,Penicillin,Diabetes
+32,Patient_32,27,Male,None,None,Penicillin,Diabetes
+33,Patient_33,4,Male,Asthma,Appendectomy,Peanuts,Diabetes
+34,Patient_34,1,Female,Asthma,None,Peanuts,Diabetes
+35,Patient_35,87,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+36,Patient_36,68,Male,Asthma,None,None,None
+37,Patient_37,23,Male,Hypertension,Gallbladder removal,None,None
+38,Patient_38,93,Female,Diabetes,None,Penicillin,Heart Disease
+39,Patient_39,94,Male,Diabetes,Gallbladder removal,None,Heart Disease
+40,Patient_40,17,Female,Hypertension,Appendectomy,Penicillin,None
+41,Patient_41,33,Male,Diabetes,None,None,Diabetes
+42,Patient_42,19,Female,Hypertension,None,None,Heart Disease
+43,Patient_43,0,Female,Hypertension,Appendectomy,Peanuts,None
+44,Patient_44,27,Male,Diabetes,None,Penicillin,Diabetes
+45,Patient_45,32,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+46,Patient_46,61,Male,Diabetes,Appendectomy,None,Diabetes
+47,Patient_47,68,Male,Hypertension,None,None,None
+48,Patient_48,10,Male,None,Gallbladder removal,None,Diabetes
+49,Patient_49,89,Male,None,None,Penicillin,Diabetes
+50,Patient_50,31,Male,Hypertension,None,None,None
+51,Patient_51,92,Male,Diabetes,Gallbladder removal,Peanuts,None
+52,Patient_52,45,Female,Asthma,Gallbladder removal,Peanuts,None
+53,Patient_53,86,Male,Asthma,None,Penicillin,Heart Disease
+54,Patient_54,30,Female,Asthma,Appendectomy,Penicillin,None
+55,Patient_55,5,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+56,Patient_56,6,Female,Hypertension,None,None,None
+57,Patient_57,83,Male,Hypertension,Gallbladder removal,None,Heart Disease
+58,Patient_58,99,Male,Diabetes,None,None,None
+59,Patient_59,81,Male,None,Appendectomy,Penicillin,Diabetes
+60,Patient_60,28,Female,None,None,Penicillin,None
+61,Patient_61,16,Female,Asthma,None,None,Diabetes
+62,Patient_62,65,Female,Diabetes,Gallbladder removal,Peanuts,None
+63,Patient_63,10,Female,Asthma,None,Penicillin,Heart Disease
+64,Patient_64,5,Female,Asthma,None,Peanuts,Diabetes
+65,Patient_65,71,Male,None,Appendectomy,Penicillin,Diabetes
+66,Patient_66,30,Female,None,Gallbladder removal,Penicillin,Heart Disease
+67,Patient_67,70,Female,Diabetes,Gallbladder removal,Penicillin,None
+68,Patient_68,74,Male,Diabetes,Appendectomy,None,Diabetes
+69,Patient_69,43,Male,None,Gallbladder removal,None,Diabetes
+70,Patient_70,69,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+71,Patient_71,45,Female,Hypertension,Appendectomy,None,None
+72,Patient_72,87,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+73,Patient_73,28,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+74,Patient_74,86,Male,Asthma,Appendectomy,Peanuts,None
+75,Patient_75,30,Female,Diabetes,Appendectomy,Peanuts,None
+76,Patient_76,65,Male,None,None,Peanuts,Diabetes
+77,Patient_77,71,Male,Asthma,None,None,Heart Disease
+78,Patient_78,71,Female,Asthma,None,Peanuts,Heart Disease
+79,Patient_79,46,Female,Hypertension,None,Peanuts,Diabetes
+80,Patient_80,73,Male,Diabetes,Gallbladder removal,None,Heart Disease
+81,Patient_81,96,Male,None,None,Peanuts,None
+82,Patient_82,86,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+83,Patient_83,32,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+84,Patient_84,70,Female,Diabetes,Appendectomy,None,None
+85,Patient_85,63,Male,Hypertension,None,Peanuts,Heart Disease
+86,Patient_86,71,Male,Hypertension,Gallbladder removal,Peanuts,None
+87,Patient_87,43,Male,Asthma,None,Peanuts,Diabetes
+88,Patient_88,17,Male,Diabetes,Appendectomy,None,Diabetes
+89,Patient_89,0,Male,Diabetes,Appendectomy,None,Heart Disease
+90,Patient_90,0,Male,None,Gallbladder removal,Peanuts,None
+91,Patient_91,64,Male,Asthma,Appendectomy,None,None
+92,Patient_92,20,Female,Asthma,Appendectomy,None,None
+93,Patient_93,30,Male,Hypertension,Appendectomy,Peanuts,None
+94,Patient_94,80,Male,None,None,Penicillin,Heart Disease
+95,Patient_95,40,Male,Hypertension,Appendectomy,Peanuts,Heart Disease
+96,Patient_96,92,Male,None,None,Penicillin,Heart Disease
+97,Patient_97,17,Female,Asthma,Appendectomy,Penicillin,None
+98,Patient_98,26,Female,Hypertension,None,Peanuts,Diabetes
+99,Patient_99,4,Male,Diabetes,Appendectomy,None,Heart Disease
+100,Patient_100,80,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+101,Patient_101,17,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+102,Patient_102,67,Male,None,Gallbladder removal,None,Diabetes
+103,Patient_103,38,Male,None,Appendectomy,Penicillin,Diabetes
+104,Patient_104,83,Male,Diabetes,Gallbladder removal,None,Diabetes
+105,Patient_105,24,Female,Hypertension,None,Peanuts,Diabetes
+106,Patient_106,28,Female,Hypertension,Gallbladder removal,Peanuts,None
+107,Patient_107,79,Male,Hypertension,Gallbladder removal,None,None
+108,Patient_108,7,Male,Hypertension,Gallbladder removal,Penicillin,None
+109,Patient_109,33,Female,None,Appendectomy,Peanuts,None
+110,Patient_110,87,Female,None,Appendectomy,Penicillin,Heart Disease
+111,Patient_111,45,Female,Asthma,None,Penicillin,Heart Disease
+112,Patient_112,39,Female,Asthma,Appendectomy,None,Diabetes
+113,Patient_113,87,Male,None,Appendectomy,Penicillin,Heart Disease
+114,Patient_114,14,Female,Diabetes,Gallbladder removal,Penicillin,None
+115,Patient_115,46,Female,None,Appendectomy,None,Heart Disease
+116,Patient_116,59,Male,None,Appendectomy,None,Heart Disease
+117,Patient_117,54,Male,Diabetes,Gallbladder removal,Penicillin,None
+118,Patient_118,95,Female,Asthma,None,None,Diabetes
+119,Patient_119,39,Female,Diabetes,Gallbladder removal,None,None
+120,Patient_120,59,Male,Hypertension,None,Peanuts,Heart Disease
+121,Patient_121,81,Female,Hypertension,None,Penicillin,Diabetes
+122,Patient_122,24,Female,Diabetes,None,Peanuts,Heart Disease
+123,Patient_123,54,Female,Hypertension,Appendectomy,None,None
+124,Patient_124,9,Male,Asthma,Appendectomy,Penicillin,Diabetes
+125,Patient_125,86,Female,Diabetes,None,None,Heart Disease
+126,Patient_126,20,Female,Asthma,None,None,Heart Disease
+127,Patient_127,46,Female,None,Appendectomy,Peanuts,None
+128,Patient_128,48,Female,Diabetes,Appendectomy,None,Heart Disease
+129,Patient_129,39,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+130,Patient_130,94,Male,Asthma,Appendectomy,Peanuts,Diabetes
+131,Patient_131,11,Male,None,Appendectomy,Penicillin,Diabetes
+132,Patient_132,18,Male,Asthma,Appendectomy,None,Heart Disease
+133,Patient_133,2,Female,Asthma,None,Peanuts,Diabetes
+134,Patient_134,70,Male,Asthma,None,None,None
+135,Patient_135,72,Male,Diabetes,Gallbladder removal,Peanuts,None
+136,Patient_136,89,Female,Diabetes,Gallbladder removal,None,None
+137,Patient_137,10,Male,None,None,None,Diabetes
+138,Patient_138,17,Male,Diabetes,None,Peanuts,Heart Disease
+139,Patient_139,39,Male,None,Gallbladder removal,Penicillin,Heart Disease
+140,Patient_140,91,Female,None,None,None,None
+141,Patient_141,62,Female,Diabetes,None,None,Diabetes
+142,Patient_142,55,Male,Hypertension,None,Peanuts,Diabetes
+143,Patient_143,60,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+144,Patient_144,8,Female,None,None,None,None
+145,Patient_145,68,Male,Asthma,Gallbladder removal,Penicillin,Diabetes
+146,Patient_146,31,Male,None,None,None,None
+147,Patient_147,54,Female,Hypertension,None,Penicillin,Heart Disease
+148,Patient_148,20,Female,Diabetes,None,Penicillin,None
+149,Patient_149,23,Male,None,Gallbladder removal,Peanuts,Diabetes
+150,Patient_150,32,Male,Asthma,Gallbladder removal,None,Diabetes
+151,Patient_151,43,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+152,Patient_152,50,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+153,Patient_153,57,Male,Hypertension,Gallbladder removal,Peanuts,None
+154,Patient_154,22,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+155,Patient_155,4,Female,Hypertension,None,Penicillin,Heart Disease
+156,Patient_156,2,Male,Hypertension,Appendectomy,None,Heart Disease
+157,Patient_157,3,Male,None,Gallbladder removal,Peanuts,Diabetes
+158,Patient_158,24,Male,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+159,Patient_159,39,Male,Hypertension,Appendectomy,None,None
+160,Patient_160,70,Male,Diabetes,Gallbladder removal,None,Heart Disease
+161,Patient_161,46,Female,Hypertension,Appendectomy,None,Heart Disease
+162,Patient_162,12,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+163,Patient_163,10,Female,None,Appendectomy,None,None
+164,Patient_164,32,Male,None,Appendectomy,None,None
+165,Patient_165,13,Female,Diabetes,Appendectomy,None,Diabetes
+166,Patient_166,87,Male,Diabetes,Gallbladder removal,None,None
+167,Patient_167,50,Female,Hypertension,None,Peanuts,Heart Disease
+168,Patient_168,69,Female,Asthma,Gallbladder removal,Penicillin,None
+169,Patient_169,73,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+170,Patient_170,42,Female,Hypertension,Appendectomy,Penicillin,Diabetes
+171,Patient_171,61,Male,Asthma,None,None,None
+172,Patient_172,91,Female,Hypertension,None,None,None
+173,Patient_173,52,Male,Asthma,Appendectomy,Peanuts,None
+174,Patient_174,82,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+175,Patient_175,46,Male,None,Gallbladder removal,Penicillin,Diabetes
+176,Patient_176,57,Female,Asthma,Gallbladder removal,Peanuts,None
+177,Patient_177,44,Female,Asthma,Gallbladder removal,None,Diabetes
+178,Patient_178,32,Male,None,Gallbladder removal,Penicillin,Heart Disease
+179,Patient_179,77,Female,Asthma,Appendectomy,Penicillin,Diabetes
+180,Patient_180,89,Female,Hypertension,Gallbladder removal,None,Diabetes
+181,Patient_181,70,Female,Hypertension,Appendectomy,None,None
+182,Patient_182,50,Male,Diabetes,None,None,None
+183,Patient_183,72,Female,Asthma,None,Peanuts,None
+184,Patient_184,29,Male,Hypertension,Appendectomy,Peanuts,None
+185,Patient_185,46,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+186,Patient_186,56,Female,Asthma,None,Penicillin,None
+187,Patient_187,71,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+188,Patient_188,68,Female,Asthma,Appendectomy,None,Diabetes
+189,Patient_189,27,Male,None,Gallbladder removal,Penicillin,Diabetes
+190,Patient_190,89,Male,None,Appendectomy,None,None
+191,Patient_191,32,Male,Asthma,Gallbladder removal,Penicillin,None
+192,Patient_192,86,Female,None,Appendectomy,Peanuts,Heart Disease
+193,Patient_193,83,Male,Asthma,Gallbladder removal,None,Diabetes
+194,Patient_194,21,Male,Asthma,Gallbladder removal,None,Diabetes
+195,Patient_195,71,Male,Hypertension,None,Peanuts,Diabetes
+196,Patient_196,56,Male,Asthma,Appendectomy,None,Diabetes
+197,Patient_197,4,Male,Diabetes,Appendectomy,None,Heart Disease
+198,Patient_198,2,Male,Hypertension,None,Penicillin,None
+199,Patient_199,28,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+200,Patient_200,38,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+201,Patient_201,76,Female,Asthma,Gallbladder removal,None,Heart Disease
+202,Patient_202,80,Female,Asthma,Appendectomy,Penicillin,Diabetes
+203,Patient_203,45,Female,Asthma,Appendectomy,None,None
+204,Patient_204,60,Male,Diabetes,None,None,None
+205,Patient_205,11,Female,None,Appendectomy,Penicillin,None
+206,Patient_206,56,Female,Asthma,Gallbladder removal,Penicillin,None
+207,Patient_207,50,Female,Diabetes,None,Peanuts,None
+208,Patient_208,66,Male,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+209,Patient_209,91,Female,Asthma,Gallbladder removal,None,Diabetes
+210,Patient_210,28,Female,None,None,Penicillin,Diabetes
+211,Patient_211,20,Female,None,Gallbladder removal,None,Diabetes
+212,Patient_212,88,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+213,Patient_213,34,Male,Diabetes,Gallbladder removal,Peanuts,None
+214,Patient_214,62,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+215,Patient_215,42,Male,Asthma,None,Penicillin,Heart Disease
+216,Patient_216,94,Male,Asthma,Appendectomy,Penicillin,None
+217,Patient_217,46,Male,None,Gallbladder removal,Penicillin,Diabetes
+218,Patient_218,47,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+219,Patient_219,39,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+220,Patient_220,68,Female,None,Appendectomy,None,None
+221,Patient_221,12,Female,None,None,None,Diabetes
+222,Patient_222,44,Female,None,Gallbladder removal,Penicillin,Diabetes
+223,Patient_223,12,Female,Hypertension,Gallbladder removal,None,Heart Disease
+224,Patient_224,44,Female,Diabetes,None,Penicillin,Heart Disease
+225,Patient_225,87,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+226,Patient_226,95,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+227,Patient_227,61,Male,None,Gallbladder removal,Peanuts,Diabetes
+228,Patient_228,18,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+229,Patient_229,51,Male,Diabetes,None,Penicillin,None
+230,Patient_230,96,Male,Diabetes,Gallbladder removal,Peanuts,None
+231,Patient_231,10,Female,Diabetes,Appendectomy,None,None
+232,Patient_232,10,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+233,Patient_233,23,Female,None,Appendectomy,Penicillin,Diabetes
+234,Patient_234,13,Male,Asthma,Appendectomy,Penicillin,Diabetes
+235,Patient_235,36,Female,Diabetes,Appendectomy,Peanuts,None
+236,Patient_236,66,Female,Asthma,Appendectomy,None,Diabetes
+237,Patient_237,62,Female,Diabetes,Gallbladder removal,Penicillin,None
+238,Patient_238,2,Female,Hypertension,Appendectomy,Penicillin,None
+239,Patient_239,82,Male,Asthma,None,Penicillin,Heart Disease
+240,Patient_240,67,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+241,Patient_241,80,Male,None,Appendectomy,None,Diabetes
+242,Patient_242,63,Male,Asthma,Appendectomy,Peanuts,None
+243,Patient_243,66,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+244,Patient_244,38,Male,Asthma,Appendectomy,Peanuts,Heart Disease
+245,Patient_245,97,Female,None,Gallbladder removal,Peanuts,None
+246,Patient_246,0,Female,Diabetes,None,Peanuts,None
+247,Patient_247,8,Female,Asthma,None,None,Heart Disease
+248,Patient_248,29,Male,Asthma,Appendectomy,Penicillin,None
+249,Patient_249,24,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+250,Patient_250,56,Female,None,Gallbladder removal,None,None
+251,Patient_251,46,Male,None,Appendectomy,Peanuts,Diabetes
+252,Patient_252,93,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+253,Patient_253,85,Female,None,Gallbladder removal,Peanuts,None
+254,Patient_254,94,Female,None,Gallbladder removal,Peanuts,None
+255,Patient_255,30,Male,None,Gallbladder removal,Penicillin,None
+256,Patient_256,88,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+257,Patient_257,70,Male,Diabetes,Appendectomy,Penicillin,None
+258,Patient_258,0,Female,Asthma,Gallbladder removal,None,None
+259,Patient_259,3,Male,Hypertension,None,Peanuts,Diabetes
+260,Patient_260,99,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+261,Patient_261,87,Female,None,Gallbladder removal,None,Diabetes
+262,Patient_262,0,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+263,Patient_263,3,Male,Asthma,Appendectomy,None,Heart Disease
+264,Patient_264,13,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+265,Patient_265,41,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+266,Patient_266,16,Female,None,None,Penicillin,Heart Disease
+267,Patient_267,71,Female,Diabetes,None,None,Diabetes
+268,Patient_268,20,Female,Diabetes,Appendectomy,None,Diabetes
+269,Patient_269,10,Female,None,Appendectomy,None,None
+270,Patient_270,3,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+271,Patient_271,44,Female,None,None,Penicillin,Diabetes
+272,Patient_272,93,Female,Hypertension,None,None,Heart Disease
+273,Patient_273,13,Male,None,None,Peanuts,Diabetes
+274,Patient_274,41,Male,Asthma,Appendectomy,Penicillin,Diabetes
+275,Patient_275,96,Male,None,Appendectomy,Penicillin,None
+276,Patient_276,43,Female,None,None,Peanuts,Diabetes
+277,Patient_277,7,Female,Asthma,Appendectomy,Peanuts,Diabetes
+278,Patient_278,61,Female,None,Appendectomy,Peanuts,None
+279,Patient_279,36,Male,Hypertension,Appendectomy,Peanuts,Heart Disease
+280,Patient_280,34,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+281,Patient_281,58,Male,Diabetes,Appendectomy,None,None
+282,Patient_282,48,Female,None,None,Penicillin,Diabetes
+283,Patient_283,34,Female,Asthma,Appendectomy,Penicillin,None
+284,Patient_284,91,Female,Diabetes,None,None,Heart Disease
+285,Patient_285,16,Female,None,None,None,None
+286,Patient_286,37,Female,None,Gallbladder removal,None,Diabetes
+287,Patient_287,14,Male,None,Appendectomy,Penicillin,Heart Disease
+288,Patient_288,20,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+289,Patient_289,3,Male,Hypertension,Appendectomy,None,Diabetes
+290,Patient_290,23,Male,None,None,Peanuts,None
+291,Patient_291,19,Male,Asthma,None,Peanuts,None
+292,Patient_292,90,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+293,Patient_293,43,Male,Asthma,Appendectomy,Peanuts,None
+294,Patient_294,97,Male,Diabetes,None,Penicillin,Diabetes
+295,Patient_295,21,Female,Hypertension,Gallbladder removal,Peanuts,None
+296,Patient_296,19,Female,None,Appendectomy,None,None
+297,Patient_297,29,Female,Asthma,None,Penicillin,Diabetes
+298,Patient_298,6,Female,Asthma,Gallbladder removal,Peanuts,None
+299,Patient_299,10,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+300,Patient_300,9,Female,None,None,None,Heart Disease
+301,Patient_301,58,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+302,Patient_302,29,Male,None,Gallbladder removal,Penicillin,Diabetes
+303,Patient_303,78,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+304,Patient_304,92,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+305,Patient_305,61,Female,Asthma,None,None,Diabetes
+306,Patient_306,59,Male,Hypertension,None,Penicillin,Diabetes
+307,Patient_307,22,Male,None,Gallbladder removal,Peanuts,Diabetes
+308,Patient_308,42,Male,None,Gallbladder removal,Penicillin,Heart Disease
+309,Patient_309,73,Male,Asthma,Appendectomy,Peanuts,Diabetes
+310,Patient_310,14,Female,None,None,Peanuts,Diabetes
+311,Patient_311,63,Male,Diabetes,Gallbladder removal,None,Heart Disease
+312,Patient_312,87,Male,Asthma,Gallbladder removal,Peanuts,None
+313,Patient_313,51,Female,None,Gallbladder removal,Peanuts,None
+314,Patient_314,68,Male,Hypertension,Gallbladder removal,Penicillin,None
+315,Patient_315,26,Female,Diabetes,Appendectomy,Penicillin,None
+316,Patient_316,75,Male,Diabetes,Appendectomy,Penicillin,Heart Disease
+317,Patient_317,51,Male,Diabetes,None,None,Heart Disease
+318,Patient_318,23,Female,Diabetes,Appendectomy,Peanuts,None
+319,Patient_319,31,Female,Asthma,None,None,Heart Disease
+320,Patient_320,75,Male,Asthma,None,None,Diabetes
+321,Patient_321,44,Male,Asthma,Appendectomy,None,Heart Disease
+322,Patient_322,70,Female,Diabetes,None,Peanuts,Heart Disease
+323,Patient_323,43,Female,Diabetes,Appendectomy,Penicillin,Heart Disease
+324,Patient_324,38,Female,None,Gallbladder removal,Peanuts,Heart Disease
+325,Patient_325,48,Female,Asthma,Gallbladder removal,Peanuts,None
+326,Patient_326,78,Female,None,None,None,Diabetes
+327,Patient_327,92,Female,Asthma,None,None,Diabetes
+328,Patient_328,47,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+329,Patient_329,84,Female,Hypertension,None,Penicillin,None
+330,Patient_330,96,Male,Diabetes,Gallbladder removal,Penicillin,None
+331,Patient_331,66,Male,Hypertension,Gallbladder removal,Penicillin,None
+332,Patient_332,52,Male,Hypertension,Appendectomy,None,Diabetes
+333,Patient_333,1,Male,Hypertension,Appendectomy,Peanuts,None
+334,Patient_334,92,Male,Asthma,Gallbladder removal,Penicillin,Diabetes
+335,Patient_335,77,Male,Diabetes,None,None,Heart Disease
+336,Patient_336,47,Male,Diabetes,Appendectomy,Penicillin,None
+337,Patient_337,61,Female,Diabetes,Appendectomy,None,Heart Disease
+338,Patient_338,94,Female,None,None,None,Diabetes
+339,Patient_339,0,Female,Asthma,Appendectomy,Penicillin,Diabetes
+340,Patient_340,85,Male,Asthma,None,Penicillin,Diabetes
+341,Patient_341,9,Female,Hypertension,None,Peanuts,None
+342,Patient_342,19,Female,Diabetes,Appendectomy,None,Diabetes
+343,Patient_343,26,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+344,Patient_344,86,Female,None,Gallbladder removal,Penicillin,Heart Disease
+345,Patient_345,12,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+346,Patient_346,77,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+347,Patient_347,48,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+348,Patient_348,74,Male,Asthma,None,Peanuts,Diabetes
+349,Patient_349,86,Female,Asthma,None,Penicillin,Diabetes
+350,Patient_350,15,Female,Asthma,Appendectomy,Penicillin,Heart Disease
+351,Patient_351,54,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+352,Patient_352,7,Female,Hypertension,Gallbladder removal,None,Diabetes
+353,Patient_353,75,Female,Hypertension,None,Penicillin,Diabetes
+354,Patient_354,84,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+355,Patient_355,68,Female,Hypertension,Appendectomy,None,None
+356,Patient_356,70,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+357,Patient_357,63,Female,None,Appendectomy,Peanuts,Heart Disease
+358,Patient_358,0,Female,Asthma,Appendectomy,Peanuts,Diabetes
+359,Patient_359,62,Male,Hypertension,None,Penicillin,Heart Disease
+360,Patient_360,30,Female,Diabetes,Appendectomy,Peanuts,None
+361,Patient_361,21,Male,Diabetes,Appendectomy,None,Heart Disease
+362,Patient_362,84,Male,None,Gallbladder removal,Peanuts,Diabetes
+363,Patient_363,40,Female,None,Appendectomy,None,Diabetes
+364,Patient_364,26,Female,Asthma,Appendectomy,None,Heart Disease
+365,Patient_365,93,Male,Diabetes,Appendectomy,None,Heart Disease
+366,Patient_366,34,Female,Asthma,Gallbladder removal,Peanuts,None
+367,Patient_367,13,Female,Asthma,None,Penicillin,Diabetes
+368,Patient_368,97,Male,None,Appendectomy,None,None
+369,Patient_369,0,Male,Hypertension,None,Peanuts,None
+370,Patient_370,23,Female,Diabetes,None,Penicillin,Heart Disease
+371,Patient_371,27,Female,None,None,None,Heart Disease
+372,Patient_372,84,Female,None,Appendectomy,Penicillin,Heart Disease
+373,Patient_373,12,Female,Diabetes,None,Penicillin,Heart Disease
+374,Patient_374,42,Female,None,None,None,None
+375,Patient_375,71,Female,Asthma,Gallbladder removal,None,Heart Disease
+376,Patient_376,67,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+377,Patient_377,49,Male,Asthma,Appendectomy,Peanuts,None
+378,Patient_378,32,Female,None,None,Penicillin,None
+379,Patient_379,90,Male,Diabetes,Gallbladder removal,None,Heart Disease
+380,Patient_380,3,Female,None,Appendectomy,Penicillin,Diabetes
+381,Patient_381,41,Female,None,Appendectomy,None,Heart Disease
+382,Patient_382,96,Female,Asthma,Appendectomy,Peanuts,Diabetes
+383,Patient_383,77,Female,Asthma,None,None,Heart Disease
+384,Patient_384,94,Female,Hypertension,Gallbladder removal,None,None
+385,Patient_385,54,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+386,Patient_386,39,Female,Diabetes,None,Penicillin,Diabetes
+387,Patient_387,42,Male,Diabetes,Appendectomy,None,Heart Disease
+388,Patient_388,80,Male,Asthma,None,None,None
+389,Patient_389,61,Male,None,Gallbladder removal,Penicillin,Diabetes
+390,Patient_390,18,Male,Diabetes,Gallbladder removal,None,Diabetes
+391,Patient_391,93,Female,Diabetes,Appendectomy,None,Heart Disease
+392,Patient_392,55,Female,Asthma,Appendectomy,None,None
+393,Patient_393,47,Female,Diabetes,Gallbladder removal,None,Heart Disease
+394,Patient_394,85,Male,Diabetes,Appendectomy,None,None
+395,Patient_395,28,Female,None,None,Peanuts,Diabetes
+396,Patient_396,37,Male,Hypertension,Appendectomy,None,Diabetes
+397,Patient_397,1,Male,None,None,None,Heart Disease
+398,Patient_398,0,Male,None,None,Penicillin,None
+399,Patient_399,53,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+400,Patient_400,33,Female,Diabetes,Appendectomy,None,Heart Disease
+401,Patient_401,40,Female,None,Gallbladder removal,Penicillin,Heart Disease
+402,Patient_402,15,Male,None,Appendectomy,Penicillin,Heart Disease
+403,Patient_403,10,Female,Asthma,None,Peanuts,None
+404,Patient_404,78,Female,Hypertension,Appendectomy,Peanuts,None
+405,Patient_405,23,Male,Diabetes,None,None,Diabetes
+406,Patient_406,31,Female,None,Gallbladder removal,None,Diabetes
+407,Patient_407,67,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+408,Patient_408,64,Female,None,Gallbladder removal,None,Heart Disease
+409,Patient_409,10,Male,Asthma,None,Penicillin,Diabetes
+410,Patient_410,8,Female,Asthma,Appendectomy,Penicillin,None
+411,Patient_411,91,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+412,Patient_412,61,Female,Diabetes,None,Peanuts,Heart Disease
+413,Patient_413,22,Male,None,None,Penicillin,Diabetes
+414,Patient_414,24,Male,None,None,None,None
+415,Patient_415,95,Female,None,None,Peanuts,Diabetes
+416,Patient_416,99,Female,Hypertension,Appendectomy,Peanuts,Heart Disease
+417,Patient_417,0,Female,Hypertension,Gallbladder removal,None,Heart Disease
+418,Patient_418,41,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+419,Patient_419,93,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+420,Patient_420,39,Female,Asthma,Appendectomy,Peanuts,Diabetes
+421,Patient_421,8,Male,Asthma,Appendectomy,None,None
+422,Patient_422,18,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+423,Patient_423,34,Male,Asthma,None,Penicillin,Heart Disease
+424,Patient_424,74,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+425,Patient_425,27,Male,Hypertension,Gallbladder removal,Penicillin,Diabetes
+426,Patient_426,46,Female,Diabetes,None,Penicillin,None
+427,Patient_427,1,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+428,Patient_428,13,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+429,Patient_429,99,Male,Diabetes,None,Peanuts,Diabetes
+430,Patient_430,56,Male,Diabetes,Gallbladder removal,Penicillin,None
+431,Patient_431,28,Female,Hypertension,Appendectomy,None,Diabetes
+432,Patient_432,95,Male,None,None,Peanuts,Heart Disease
+433,Patient_433,75,Male,Hypertension,None,None,Diabetes
+434,Patient_434,2,Male,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+435,Patient_435,68,Female,Diabetes,Appendectomy,None,Diabetes
+436,Patient_436,19,Male,Diabetes,None,Penicillin,Heart Disease
+437,Patient_437,74,Male,Diabetes,None,Penicillin,None
+438,Patient_438,7,Female,Asthma,None,Penicillin,None
+439,Patient_439,1,Male,Hypertension,Gallbladder removal,None,None
+440,Patient_440,19,Female,Hypertension,Appendectomy,None,Heart Disease
+441,Patient_441,44,Male,Asthma,None,Peanuts,Diabetes
+442,Patient_442,75,Female,Asthma,Gallbladder removal,Peanuts,None
+443,Patient_443,78,Female,None,Gallbladder removal,Peanuts,Heart Disease
+444,Patient_444,4,Male,Diabetes,None,Peanuts,None
+445,Patient_445,3,Male,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+446,Patient_446,62,Female,Hypertension,Appendectomy,Penicillin,None
+447,Patient_447,97,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+448,Patient_448,89,Female,None,None,Penicillin,Diabetes
+449,Patient_449,82,Male,Hypertension,None,Peanuts,None
+450,Patient_450,53,Male,Asthma,Appendectomy,None,Heart Disease
+451,Patient_451,83,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+452,Patient_452,50,Male,Diabetes,Appendectomy,None,Diabetes
+453,Patient_453,74,Male,None,None,None,Heart Disease
+454,Patient_454,38,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+455,Patient_455,66,Male,None,None,None,None
+456,Patient_456,88,Male,Hypertension,Gallbladder removal,None,None
+457,Patient_457,33,Female,Diabetes,None,Penicillin,Diabetes
+458,Patient_458,18,Female,None,Gallbladder removal,None,Heart Disease
+459,Patient_459,40,Male,None,Appendectomy,None,Heart Disease
+460,Patient_460,74,Female,Asthma,Appendectomy,None,Heart Disease
+461,Patient_461,88,Male,Asthma,Appendectomy,Penicillin,Diabetes
+462,Patient_462,54,Male,Hypertension,None,Penicillin,Heart Disease
+463,Patient_463,68,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+464,Patient_464,70,Male,None,Appendectomy,None,Diabetes
+465,Patient_465,12,Female,Asthma,Gallbladder removal,Peanuts,None
+466,Patient_466,29,Male,Hypertension,Appendectomy,Peanuts,None
+467,Patient_467,12,Male,Diabetes,Gallbladder removal,Peanuts,None
+468,Patient_468,15,Male,Asthma,Gallbladder removal,None,Heart Disease
+469,Patient_469,10,Male,None,None,Penicillin,Diabetes
+470,Patient_470,33,Male,None,None,Penicillin,Heart Disease
+471,Patient_471,34,Male,None,None,Penicillin,None
+472,Patient_472,60,Male,Hypertension,None,Peanuts,None
+473,Patient_473,17,Female,Asthma,None,Peanuts,None
+474,Patient_474,46,Female,Hypertension,None,Peanuts,Diabetes
+475,Patient_475,4,Male,None,Appendectomy,Penicillin,None
+476,Patient_476,31,Female,Asthma,None,None,Heart Disease
+477,Patient_477,73,Male,Hypertension,Gallbladder removal,None,Heart Disease
+478,Patient_478,27,Male,Asthma,Gallbladder removal,None,Diabetes
+479,Patient_479,88,Male,Asthma,Gallbladder removal,None,Heart Disease
+480,Patient_480,83,Male,Asthma,Appendectomy,Peanuts,None
+481,Patient_481,49,Female,Asthma,None,Penicillin,Heart Disease
+482,Patient_482,53,Female,Diabetes,None,Penicillin,Heart Disease
+483,Patient_483,50,Female,Asthma,Gallbladder removal,Penicillin,None
+484,Patient_484,50,Female,Asthma,Appendectomy,Penicillin,Heart Disease
+485,Patient_485,93,Male,Hypertension,None,None,Heart Disease
+486,Patient_486,22,Male,None,Appendectomy,Penicillin,Heart Disease
+487,Patient_487,1,Male,Diabetes,Appendectomy,Penicillin,None
+488,Patient_488,58,Male,Asthma,None,None,Diabetes
+489,Patient_489,81,Female,Diabetes,Appendectomy,Penicillin,None
+490,Patient_490,74,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+491,Patient_491,30,Female,None,None,Peanuts,Diabetes
+492,Patient_492,81,Female,Asthma,Appendectomy,Penicillin,None
+493,Patient_493,94,Female,Asthma,Appendectomy,None,Diabetes
+494,Patient_494,97,Female,None,Appendectomy,None,Diabetes
+495,Patient_495,78,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+496,Patient_496,1,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+497,Patient_497,94,Female,Diabetes,Gallbladder removal,Peanuts,Diabetes
+498,Patient_498,7,Male,Hypertension,None,Penicillin,Diabetes
+499,Patient_499,26,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+500,Patient_500,98,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+501,Patient_501,24,Male,None,None,None,None
+502,Patient_502,55,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+503,Patient_503,31,Female,None,None,None,Diabetes
+504,Patient_504,22,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+505,Patient_505,98,Male,Asthma,Appendectomy,Penicillin,None
+506,Patient_506,88,Male,Asthma,Appendectomy,Peanuts,Diabetes
+507,Patient_507,37,Male,None,Appendectomy,Penicillin,None
+508,Patient_508,7,Male,Diabetes,Gallbladder removal,None,Heart Disease
+509,Patient_509,40,Female,Asthma,None,Penicillin,Heart Disease
+510,Patient_510,21,Female,Asthma,None,None,Heart Disease
+511,Patient_511,46,Male,None,None,None,Diabetes
+512,Patient_512,91,Male,None,Appendectomy,Peanuts,Heart Disease
+513,Patient_513,95,Male,Diabetes,Gallbladder removal,None,Heart Disease
+514,Patient_514,75,Female,Asthma,Appendectomy,Penicillin,Diabetes
+515,Patient_515,32,Male,None,Appendectomy,Peanuts,None
+516,Patient_516,84,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+517,Patient_517,71,Female,Asthma,None,Penicillin,None
+518,Patient_518,70,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+519,Patient_519,36,Male,Asthma,None,Penicillin,Diabetes
+520,Patient_520,88,Male,Diabetes,Appendectomy,None,Heart Disease
+521,Patient_521,19,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+522,Patient_522,92,Female,None,Gallbladder removal,None,Diabetes
+523,Patient_523,99,Male,Diabetes,None,Peanuts,Heart Disease
+524,Patient_524,65,Female,None,Appendectomy,Peanuts,Heart Disease
+525,Patient_525,73,Female,Diabetes,None,Penicillin,None
+526,Patient_526,83,Female,None,Appendectomy,Peanuts,None
+527,Patient_527,82,Female,None,Gallbladder removal,None,Diabetes
+528,Patient_528,6,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+529,Patient_529,38,Male,Hypertension,None,None,Heart Disease
+530,Patient_530,90,Female,Asthma,None,Peanuts,Heart Disease
+531,Patient_531,19,Female,Asthma,Appendectomy,None,Diabetes
+532,Patient_532,96,Male,Hypertension,None,Peanuts,None
+533,Patient_533,9,Male,Asthma,Appendectomy,Peanuts,Diabetes
+534,Patient_534,28,Male,None,Appendectomy,None,Diabetes
+535,Patient_535,69,Male,Asthma,Appendectomy,Penicillin,Diabetes
+536,Patient_536,67,Female,None,None,Penicillin,None
+537,Patient_537,92,Female,None,Gallbladder removal,None,Heart Disease
+538,Patient_538,47,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+539,Patient_539,94,Male,None,Gallbladder removal,Peanuts,None
+540,Patient_540,12,Female,Hypertension,Appendectomy,Peanuts,Diabetes
+541,Patient_541,51,Male,Diabetes,None,Peanuts,Heart Disease
+542,Patient_542,37,Male,Diabetes,Gallbladder removal,None,None
+543,Patient_543,16,Male,Asthma,Appendectomy,None,None
+544,Patient_544,33,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+545,Patient_545,32,Male,None,Appendectomy,None,Heart Disease
+546,Patient_546,30,Male,None,Gallbladder removal,Peanuts,Diabetes
+547,Patient_547,47,Male,None,Gallbladder removal,None,Diabetes
+548,Patient_548,80,Female,Asthma,Appendectomy,Peanuts,None
+549,Patient_549,4,Female,Hypertension,Appendectomy,Penicillin,Diabetes
+550,Patient_550,91,Female,Asthma,Appendectomy,None,Heart Disease
+551,Patient_551,53,Female,None,Gallbladder removal,None,Diabetes
+552,Patient_552,25,Male,None,None,None,None
+553,Patient_553,29,Female,None,None,Peanuts,Diabetes
+554,Patient_554,51,Female,Asthma,Appendectomy,None,None
+555,Patient_555,73,Male,None,Gallbladder removal,Peanuts,Heart Disease
+556,Patient_556,85,Female,Asthma,Appendectomy,Penicillin,Diabetes
+557,Patient_557,58,Female,Diabetes,Gallbladder removal,Penicillin,None
+558,Patient_558,93,Female,Hypertension,Appendectomy,None,Heart Disease
+559,Patient_559,15,Male,None,Appendectomy,None,Heart Disease
+560,Patient_560,49,Male,None,Appendectomy,Penicillin,None
+561,Patient_561,39,Male,None,None,None,Diabetes
+562,Patient_562,74,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+563,Patient_563,56,Female,Diabetes,None,Penicillin,Diabetes
+564,Patient_564,69,Male,None,None,Penicillin,Heart Disease
+565,Patient_565,30,Male,None,Gallbladder removal,Peanuts,Diabetes
+566,Patient_566,4,Female,Diabetes,Appendectomy,Peanuts,None
+567,Patient_567,87,Male,None,None,None,Diabetes
+568,Patient_568,61,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+569,Patient_569,86,Female,None,None,Penicillin,None
+570,Patient_570,88,Male,Asthma,Gallbladder removal,None,None
+571,Patient_571,2,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+572,Patient_572,40,Female,Diabetes,None,None,None
+573,Patient_573,3,Male,Asthma,None,Penicillin,None
+574,Patient_574,38,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+575,Patient_575,60,Female,None,None,Penicillin,None
+576,Patient_576,98,Female,None,Gallbladder removal,Penicillin,Heart Disease
+577,Patient_577,49,Male,Asthma,Gallbladder removal,None,Diabetes
+578,Patient_578,90,Male,Asthma,None,Peanuts,Diabetes
+579,Patient_579,27,Female,Hypertension,None,Penicillin,Heart Disease
+580,Patient_580,78,Female,None,Appendectomy,None,Heart Disease
+581,Patient_581,1,Female,Diabetes,Gallbladder removal,None,None
+582,Patient_582,61,Female,None,None,Penicillin,None
+583,Patient_583,29,Female,None,None,Penicillin,None
+584,Patient_584,25,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+585,Patient_585,57,Female,Hypertension,None,Peanuts,None
+586,Patient_586,73,Female,None,None,Peanuts,Diabetes
+587,Patient_587,23,Male,Hypertension,Gallbladder removal,Peanuts,None
+588,Patient_588,44,Male,Hypertension,None,Penicillin,None
+589,Patient_589,62,Male,None,None,Peanuts,None
+590,Patient_590,81,Male,Hypertension,Gallbladder removal,None,None
+591,Patient_591,67,Female,Hypertension,Gallbladder removal,None,None
+592,Patient_592,36,Female,Diabetes,None,Peanuts,None
+593,Patient_593,24,Male,Hypertension,Appendectomy,None,Diabetes
+594,Patient_594,85,Male,None,Appendectomy,Penicillin,Heart Disease
+595,Patient_595,56,Male,Hypertension,None,Peanuts,Heart Disease
+596,Patient_596,22,Female,Hypertension,Appendectomy,Peanuts,None
+597,Patient_597,76,Male,Hypertension,Appendectomy,None,Heart Disease
+598,Patient_598,82,Female,Hypertension,Appendectomy,Peanuts,None
+599,Patient_599,57,Male,Asthma,None,Penicillin,None
+600,Patient_600,11,Female,None,None,Penicillin,Diabetes
+601,Patient_601,18,Male,Hypertension,None,None,None
+602,Patient_602,37,Female,None,Appendectomy,Peanuts,Diabetes
+603,Patient_603,63,Male,Asthma,Gallbladder removal,Penicillin,None
+604,Patient_604,88,Female,Hypertension,None,Penicillin,None
+605,Patient_605,28,Female,Diabetes,None,None,Heart Disease
+606,Patient_606,59,Male,None,Appendectomy,Penicillin,Diabetes
+607,Patient_607,31,Female,Diabetes,Gallbladder removal,None,Diabetes
+608,Patient_608,91,Male,Diabetes,None,Peanuts,Heart Disease
+609,Patient_609,14,Female,Asthma,Gallbladder removal,Peanuts,None
+610,Patient_610,58,Male,Hypertension,Appendectomy,None,Diabetes
+611,Patient_611,35,Female,None,Appendectomy,Peanuts,None
+612,Patient_612,13,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+613,Patient_613,81,Male,None,Gallbladder removal,None,None
+614,Patient_614,92,Male,None,Appendectomy,Penicillin,None
+615,Patient_615,45,Female,Diabetes,Gallbladder removal,Peanuts,None
+616,Patient_616,12,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+617,Patient_617,86,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+618,Patient_618,44,Female,Asthma,None,None,None
+619,Patient_619,86,Female,Diabetes,None,Penicillin,Heart Disease
+620,Patient_620,55,Female,Asthma,Gallbladder removal,Penicillin,None
+621,Patient_621,79,Female,None,Gallbladder removal,Peanuts,Heart Disease
+622,Patient_622,60,Female,Diabetes,Appendectomy,None,Heart Disease
+623,Patient_623,70,Male,Diabetes,None,None,Heart Disease
+624,Patient_624,81,Male,Hypertension,Appendectomy,None,Diabetes
+625,Patient_625,61,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+626,Patient_626,70,Female,Asthma,None,None,None
+627,Patient_627,14,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+628,Patient_628,21,Female,Diabetes,Gallbladder removal,None,None
+629,Patient_629,17,Male,None,Appendectomy,Peanuts,Diabetes
+630,Patient_630,59,Male,None,None,Peanuts,Diabetes
+631,Patient_631,9,Female,Diabetes,None,Penicillin,Heart Disease
+632,Patient_632,88,Female,Diabetes,Gallbladder removal,Penicillin,None
+633,Patient_633,55,Female,None,Gallbladder removal,Penicillin,Diabetes
+634,Patient_634,93,Male,Hypertension,Gallbladder removal,Penicillin,None
+635,Patient_635,62,Female,Hypertension,None,None,Heart Disease
+636,Patient_636,22,Male,Diabetes,Appendectomy,None,Diabetes
+637,Patient_637,17,Male,None,Appendectomy,Peanuts,None
+638,Patient_638,50,Female,Asthma,None,Penicillin,Heart Disease
+639,Patient_639,86,Male,Diabetes,Appendectomy,Penicillin,None
+640,Patient_640,76,Female,Hypertension,None,Peanuts,Heart Disease
+641,Patient_641,32,Female,None,None,Penicillin,None
+642,Patient_642,51,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+643,Patient_643,18,Female,None,Appendectomy,None,None
+644,Patient_644,44,Female,Diabetes,None,None,Diabetes
+645,Patient_645,71,Male,None,Gallbladder removal,Peanuts,Diabetes
+646,Patient_646,65,Male,Diabetes,None,Peanuts,Heart Disease
+647,Patient_647,59,Female,Asthma,None,Peanuts,None
+648,Patient_648,2,Female,Asthma,None,Penicillin,Heart Disease
+649,Patient_649,42,Female,Hypertension,None,Penicillin,None
+650,Patient_650,81,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+651,Patient_651,4,Female,None,None,Penicillin,Diabetes
+652,Patient_652,29,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+653,Patient_653,33,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+654,Patient_654,16,Male,Diabetes,Appendectomy,Penicillin,None
+655,Patient_655,48,Male,Diabetes,None,Penicillin,Heart Disease
+656,Patient_656,10,Male,Hypertension,Appendectomy,None,Heart Disease
+657,Patient_657,12,Male,None,Gallbladder removal,None,Heart Disease
+658,Patient_658,11,Female,Hypertension,None,None,None
+659,Patient_659,21,Female,None,None,Peanuts,Diabetes
+660,Patient_660,21,Male,Hypertension,None,Peanuts,None
+661,Patient_661,75,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+662,Patient_662,33,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+663,Patient_663,10,Female,Hypertension,None,Peanuts,None
+664,Patient_664,14,Male,Diabetes,Gallbladder removal,None,None
+665,Patient_665,42,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+666,Patient_666,28,Male,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+667,Patient_667,29,Female,Diabetes,Appendectomy,Peanuts,Heart Disease
+668,Patient_668,84,Male,Hypertension,None,None,Heart Disease
+669,Patient_669,78,Male,None,Appendectomy,Peanuts,Heart Disease
+670,Patient_670,54,Female,Diabetes,Appendectomy,Penicillin,Heart Disease
+671,Patient_671,69,Female,None,None,Peanuts,Heart Disease
+672,Patient_672,23,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+673,Patient_673,66,Male,Asthma,None,None,Heart Disease
+674,Patient_674,13,Female,Asthma,Appendectomy,Peanuts,Diabetes
+675,Patient_675,66,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+676,Patient_676,76,Male,Hypertension,Gallbladder removal,Penicillin,Diabetes
+677,Patient_677,17,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+678,Patient_678,64,Male,None,Appendectomy,Peanuts,Heart Disease
+679,Patient_679,6,Female,Diabetes,Appendectomy,None,None
+680,Patient_680,51,Male,None,Gallbladder removal,Penicillin,Diabetes
+681,Patient_681,17,Female,Asthma,None,None,None
+682,Patient_682,70,Female,Asthma,Appendectomy,Penicillin,None
+683,Patient_683,9,Female,Asthma,Appendectomy,None,Diabetes
+684,Patient_684,75,Male,Asthma,None,Penicillin,Diabetes
+685,Patient_685,33,Female,Asthma,None,None,Heart Disease
+686,Patient_686,49,Male,Asthma,Appendectomy,None,Diabetes
+687,Patient_687,41,Male,Asthma,None,Penicillin,Heart Disease
+688,Patient_688,13,Male,Asthma,Gallbladder removal,Peanuts,None
+689,Patient_689,69,Female,Diabetes,None,Penicillin,None
+690,Patient_690,25,Female,None,Gallbladder removal,None,Heart Disease
+691,Patient_691,53,Male,Asthma,Gallbladder removal,None,None
+692,Patient_692,1,Female,None,Appendectomy,Peanuts,None
+693,Patient_693,74,Female,None,Appendectomy,Penicillin,None
+694,Patient_694,70,Female,Asthma,Gallbladder removal,Peanuts,None
+695,Patient_695,24,Male,Diabetes,None,Penicillin,Diabetes
+696,Patient_696,85,Male,Diabetes,Gallbladder removal,Peanuts,None
+697,Patient_697,33,Male,None,Gallbladder removal,Peanuts,None
+698,Patient_698,20,Male,Diabetes,None,Peanuts,Diabetes
+699,Patient_699,41,Female,Hypertension,None,Penicillin,Heart Disease
+700,Patient_700,83,Male,Diabetes,Gallbladder removal,Peanuts,None
+701,Patient_701,37,Female,None,Appendectomy,Peanuts,Diabetes
+702,Patient_702,39,Male,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+703,Patient_703,57,Male,None,Gallbladder removal,Peanuts,None
+704,Patient_704,32,Female,Diabetes,Gallbladder removal,Penicillin,None
+705,Patient_705,96,Female,Diabetes,Gallbladder removal,None,Heart Disease
+706,Patient_706,6,Female,None,Gallbladder removal,None,None
+707,Patient_707,39,Male,Hypertension,None,Peanuts,Diabetes
+708,Patient_708,15,Male,Diabetes,Appendectomy,None,Diabetes
+709,Patient_709,14,Female,Asthma,Gallbladder removal,None,Heart Disease
+710,Patient_710,69,Male,None,Appendectomy,Peanuts,Diabetes
+711,Patient_711,74,Female,None,Appendectomy,Penicillin,None
+712,Patient_712,68,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+713,Patient_713,67,Female,Diabetes,Gallbladder removal,Penicillin,None
+714,Patient_714,21,Female,Asthma,Gallbladder removal,Penicillin,None
+715,Patient_715,16,Male,Asthma,None,Peanuts,Heart Disease
+716,Patient_716,37,Male,Diabetes,None,Peanuts,Diabetes
+717,Patient_717,10,Male,Asthma,Appendectomy,None,Heart Disease
+718,Patient_718,45,Female,Hypertension,Appendectomy,Peanuts,Heart Disease
+719,Patient_719,91,Female,Hypertension,None,None,None
+720,Patient_720,50,Female,Asthma,Gallbladder removal,None,None
+721,Patient_721,52,Female,None,Appendectomy,Penicillin,Diabetes
+722,Patient_722,28,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+723,Patient_723,60,Male,None,Gallbladder removal,Penicillin,Diabetes
+724,Patient_724,23,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+725,Patient_725,97,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+726,Patient_726,56,Male,Hypertension,None,Peanuts,Heart Disease
+727,Patient_727,23,Male,None,Appendectomy,None,Heart Disease
+728,Patient_728,35,Male,Asthma,Appendectomy,None,None
+729,Patient_729,7,Male,Diabetes,Gallbladder removal,None,None
+730,Patient_730,8,Male,Hypertension,Gallbladder removal,Peanuts,None
+731,Patient_731,24,Male,None,Appendectomy,None,None
+732,Patient_732,45,Female,Diabetes,Appendectomy,Penicillin,None
+733,Patient_733,18,Female,Hypertension,None,None,None
+734,Patient_734,14,Female,Diabetes,Gallbladder removal,None,None
+735,Patient_735,76,Female,Diabetes,Gallbladder removal,None,None
+736,Patient_736,34,Male,Diabetes,Appendectomy,Peanuts,None
+737,Patient_737,55,Female,Asthma,None,Penicillin,Heart Disease
+738,Patient_738,93,Female,Asthma,None,None,None
+739,Patient_739,92,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+740,Patient_740,46,Male,Asthma,Gallbladder removal,Penicillin,Diabetes
+741,Patient_741,68,Male,None,Appendectomy,Peanuts,Diabetes
+742,Patient_742,45,Female,Diabetes,Gallbladder removal,None,Diabetes
+743,Patient_743,57,Male,Hypertension,Appendectomy,Peanuts,Diabetes
+744,Patient_744,82,Male,Diabetes,Gallbladder removal,None,Heart Disease
+745,Patient_745,66,Female,Diabetes,Appendectomy,None,None
+746,Patient_746,59,Female,Hypertension,Gallbladder removal,None,Heart Disease
+747,Patient_747,6,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+748,Patient_748,81,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+749,Patient_749,32,Male,Hypertension,None,None,None
+750,Patient_750,56,Male,Asthma,Appendectomy,None,Diabetes
+751,Patient_751,11,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+752,Patient_752,80,Female,Diabetes,Appendectomy,Penicillin,None
+753,Patient_753,26,Female,Asthma,Appendectomy,Peanuts,None
+754,Patient_754,17,Female,Hypertension,Appendectomy,Peanuts,Diabetes
+755,Patient_755,43,Female,Hypertension,Appendectomy,Peanuts,None
+756,Patient_756,36,Female,None,Gallbladder removal,Penicillin,None
+757,Patient_757,7,Male,Asthma,None,None,Diabetes
+758,Patient_758,76,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+759,Patient_759,68,Male,Asthma,None,Penicillin,None
+760,Patient_760,71,Male,Diabetes,Appendectomy,Penicillin,None
+761,Patient_761,50,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+762,Patient_762,79,Female,Asthma,None,Penicillin,None
+763,Patient_763,49,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+764,Patient_764,50,Male,Asthma,Appendectomy,Penicillin,Diabetes
+765,Patient_765,96,Female,None,None,Penicillin,Heart Disease
+766,Patient_766,20,Female,None,Gallbladder removal,Peanuts,Heart Disease
+767,Patient_767,29,Female,Diabetes,Gallbladder removal,Peanuts,None
+768,Patient_768,95,Male,None,None,Peanuts,Diabetes
+769,Patient_769,88,Female,Hypertension,None,None,Diabetes
+770,Patient_770,10,Female,Asthma,Appendectomy,Peanuts,None
+771,Patient_771,74,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+772,Patient_772,84,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+773,Patient_773,37,Male,None,Gallbladder removal,None,Heart Disease
+774,Patient_774,44,Female,None,Gallbladder removal,None,Heart Disease
+775,Patient_775,24,Female,Asthma,None,Peanuts,Heart Disease
+776,Patient_776,77,Female,Diabetes,Gallbladder removal,None,Heart Disease
+777,Patient_777,37,Female,Diabetes,Gallbladder removal,Peanuts,None
+778,Patient_778,48,Female,None,None,Penicillin,Diabetes
+779,Patient_779,21,Female,Hypertension,Gallbladder removal,Peanuts,None
+780,Patient_780,74,Female,Hypertension,Appendectomy,Peanuts,None
+781,Patient_781,80,Female,None,None,Penicillin,Diabetes
+782,Patient_782,96,Female,Asthma,Appendectomy,None,None
+783,Patient_783,53,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+784,Patient_784,54,Male,Asthma,None,Peanuts,Heart Disease
+785,Patient_785,24,Male,Diabetes,None,Peanuts,Heart Disease
+786,Patient_786,89,Female,None,Appendectomy,Penicillin,None
+787,Patient_787,97,Male,Asthma,Gallbladder removal,Peanuts,None
+788,Patient_788,56,Female,Asthma,Gallbladder removal,Peanuts,None
+789,Patient_789,60,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+790,Patient_790,61,Female,Diabetes,None,Peanuts,Diabetes
+791,Patient_791,51,Female,Asthma,Appendectomy,None,Diabetes
+792,Patient_792,64,Male,Diabetes,Gallbladder removal,None,Diabetes
+793,Patient_793,63,Female,None,Gallbladder removal,Penicillin,None
+794,Patient_794,76,Male,None,Gallbladder removal,Peanuts,None
+795,Patient_795,28,Male,Asthma,Appendectomy,None,Heart Disease
+796,Patient_796,5,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+797,Patient_797,47,Male,None,None,Penicillin,None
+798,Patient_798,40,Male,None,None,None,Diabetes
+799,Patient_799,69,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+800,Patient_800,26,Male,Hypertension,Appendectomy,None,Diabetes
+801,Patient_801,20,Female,Asthma,Gallbladder removal,None,Heart Disease
+802,Patient_802,61,Female,None,Appendectomy,Peanuts,None
+803,Patient_803,38,Female,Hypertension,Gallbladder removal,Peanuts,None
+804,Patient_804,53,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+805,Patient_805,97,Female,Asthma,Gallbladder removal,Peanuts,None
+806,Patient_806,86,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+807,Patient_807,64,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+808,Patient_808,75,Female,Diabetes,None,None,Diabetes
+809,Patient_809,95,Male,None,Appendectomy,Peanuts,Diabetes
+810,Patient_810,99,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+811,Patient_811,6,Male,None,Appendectomy,Peanuts,Heart Disease
+812,Patient_812,89,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+813,Patient_813,71,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+814,Patient_814,47,Female,Asthma,None,Penicillin,Heart Disease
+815,Patient_815,99,Male,Asthma,Appendectomy,Peanuts,None
+816,Patient_816,33,Female,None,None,Peanuts,Heart Disease
+817,Patient_817,34,Male,Asthma,Gallbladder removal,Peanuts,None
+818,Patient_818,83,Female,Asthma,Appendectomy,Penicillin,Diabetes
+819,Patient_819,71,Male,None,None,Peanuts,Heart Disease
+820,Patient_820,10,Female,Asthma,None,Peanuts,Diabetes
+821,Patient_821,63,Male,None,Appendectomy,None,None
+822,Patient_822,87,Male,Diabetes,Gallbladder removal,Peanuts,None
+823,Patient_823,1,Male,Hypertension,None,Peanuts,Heart Disease
+824,Patient_824,39,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+825,Patient_825,65,Male,Diabetes,None,Penicillin,Diabetes
+826,Patient_826,95,Female,Asthma,None,Peanuts,None
+827,Patient_827,7,Female,Diabetes,Appendectomy,None,Heart Disease
+828,Patient_828,23,Male,Diabetes,None,None,Heart Disease
+829,Patient_829,61,Female,Diabetes,Appendectomy,Peanuts,Heart Disease
+830,Patient_830,46,Male,Diabetes,Appendectomy,Peanuts,None
+831,Patient_831,74,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+832,Patient_832,84,Male,None,None,None,Diabetes
+833,Patient_833,27,Male,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+834,Patient_834,80,Male,Asthma,Gallbladder removal,None,Heart Disease
+835,Patient_835,8,Female,Hypertension,None,Peanuts,Diabetes
+836,Patient_836,83,Male,None,Gallbladder removal,Peanuts,Diabetes
+837,Patient_837,26,Male,None,None,Peanuts,Heart Disease
+838,Patient_838,71,Female,Hypertension,None,Penicillin,None
+839,Patient_839,4,Male,None,None,Penicillin,Heart Disease
+840,Patient_840,0,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+841,Patient_841,50,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+842,Patient_842,44,Male,None,Appendectomy,Penicillin,Heart Disease
+843,Patient_843,97,Male,None,Gallbladder removal,None,None
+844,Patient_844,93,Female,Hypertension,None,Penicillin,Heart Disease
+845,Patient_845,6,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+846,Patient_846,11,Female,Hypertension,Gallbladder removal,None,None
+847,Patient_847,23,Female,None,Appendectomy,Penicillin,Heart Disease
+848,Patient_848,46,Female,Asthma,Gallbladder removal,Penicillin,None
+849,Patient_849,77,Male,None,None,Peanuts,Heart Disease
+850,Patient_850,60,Male,Asthma,Appendectomy,Peanuts,None
+851,Patient_851,82,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+852,Patient_852,65,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+853,Patient_853,13,Female,Asthma,Appendectomy,Peanuts,None
+854,Patient_854,22,Male,Diabetes,None,Penicillin,Heart Disease
+855,Patient_855,64,Male,Hypertension,None,Penicillin,Diabetes
+856,Patient_856,17,Female,Diabetes,Gallbladder removal,None,Diabetes
+857,Patient_857,3,Male,Hypertension,None,Peanuts,Heart Disease
+858,Patient_858,2,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+859,Patient_859,30,Male,None,Appendectomy,Penicillin,Heart Disease
+860,Patient_860,52,Female,Diabetes,None,None,None
+861,Patient_861,12,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+862,Patient_862,38,Female,Asthma,Appendectomy,None,None
+863,Patient_863,42,Male,None,None,Penicillin,Heart Disease
+864,Patient_864,76,Female,None,Appendectomy,Peanuts,Diabetes
+865,Patient_865,87,Female,Asthma,None,Peanuts,Heart Disease
+866,Patient_866,33,Female,None,Gallbladder removal,Penicillin,None
+867,Patient_867,95,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+868,Patient_868,75,Male,None,Appendectomy,None,Diabetes
+869,Patient_869,69,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+870,Patient_870,21,Male,None,Gallbladder removal,Peanuts,None
+871,Patient_871,49,Male,None,Gallbladder removal,Penicillin,Heart Disease
+872,Patient_872,61,Female,Asthma,Gallbladder removal,None,Heart Disease
+873,Patient_873,61,Male,Hypertension,Gallbladder removal,None,Heart Disease
+874,Patient_874,18,Female,None,Gallbladder removal,None,Diabetes
+875,Patient_875,17,Male,None,None,None,None
+876,Patient_876,32,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+877,Patient_877,55,Male,Diabetes,Appendectomy,None,None
+878,Patient_878,95,Female,Diabetes,Appendectomy,None,Heart Disease
+879,Patient_879,72,Male,None,None,None,Heart Disease
+880,Patient_880,97,Female,None,Appendectomy,Peanuts,None
+881,Patient_881,34,Male,Diabetes,Appendectomy,None,None
+882,Patient_882,97,Male,Asthma,Gallbladder removal,Penicillin,None
+883,Patient_883,71,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+884,Patient_884,64,Female,Asthma,None,None,Heart Disease
+885,Patient_885,35,Male,None,Appendectomy,None,Heart Disease
+886,Patient_886,37,Male,Asthma,Appendectomy,Peanuts,Diabetes
+887,Patient_887,90,Female,None,None,Penicillin,Heart Disease
+888,Patient_888,83,Female,Asthma,None,Penicillin,Diabetes
+889,Patient_889,66,Male,Hypertension,Appendectomy,Penicillin,None
+890,Patient_890,63,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+891,Patient_891,22,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+892,Patient_892,93,Female,Diabetes,Gallbladder removal,Peanuts,Diabetes
+893,Patient_893,99,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+894,Patient_894,93,Male,Asthma,Gallbladder removal,None,Diabetes
+895,Patient_895,16,Male,Hypertension,None,None,Diabetes
+896,Patient_896,58,Female,Hypertension,None,None,Heart Disease
+897,Patient_897,2,Female,None,Gallbladder removal,None,Diabetes
+898,Patient_898,21,Female,None,None,Peanuts,Heart Disease
+899,Patient_899,86,Female,Hypertension,Gallbladder removal,None,Heart Disease
+900,Patient_900,59,Female,None,None,None,Heart Disease
+901,Patient_901,46,Female,Asthma,None,Peanuts,Diabetes
+902,Patient_902,68,Male,None,Appendectomy,Peanuts,Diabetes
+903,Patient_903,97,Female,Diabetes,Appendectomy,None,None
+904,Patient_904,15,Female,Asthma,Appendectomy,Penicillin,Diabetes
+905,Patient_905,63,Male,Asthma,Gallbladder removal,None,Heart Disease
+906,Patient_906,1,Male,Diabetes,Appendectomy,Peanuts,None
+907,Patient_907,26,Male,Diabetes,Gallbladder removal,Penicillin,None
+908,Patient_908,7,Male,None,Appendectomy,Penicillin,None
+909,Patient_909,12,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+910,Patient_910,75,Male,Hypertension,Appendectomy,Peanuts,Heart Disease
+911,Patient_911,69,Male,Diabetes,Gallbladder removal,Penicillin,None
+912,Patient_912,76,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+913,Patient_913,54,Female,Asthma,Appendectomy,Peanuts,None
+914,Patient_914,51,Male,None,None,Peanuts,Diabetes
+915,Patient_915,95,Male,None,Gallbladder removal,Penicillin,None
+916,Patient_916,56,Female,Asthma,Appendectomy,None,None
+917,Patient_917,97,Female,None,None,None,None
+918,Patient_918,65,Female,Asthma,None,Peanuts,Heart Disease
+919,Patient_919,97,Male,Diabetes,Appendectomy,None,Diabetes
+920,Patient_920,27,Male,Diabetes,None,Peanuts,Diabetes
+921,Patient_921,62,Female,Diabetes,None,None,None
+922,Patient_922,44,Female,None,Appendectomy,Peanuts,Diabetes
+923,Patient_923,2,Female,Diabetes,Gallbladder removal,None,Heart Disease
+924,Patient_924,62,Male,None,Appendectomy,None,None
+925,Patient_925,98,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+926,Patient_926,20,Male,Diabetes,Gallbladder removal,Penicillin,None
+927,Patient_927,34,Female,Asthma,None,Peanuts,Heart Disease
+928,Patient_928,8,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+929,Patient_929,14,Female,Hypertension,None,None,None
+930,Patient_930,46,Female,Hypertension,None,None,Diabetes
+931,Patient_931,19,Male,Diabetes,None,Peanuts,None
+932,Patient_932,69,Female,None,Gallbladder removal,None,None
+933,Patient_933,67,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+934,Patient_934,95,Male,Hypertension,Appendectomy,None,None
+935,Patient_935,27,Male,Asthma,Appendectomy,None,Heart Disease
+936,Patient_936,23,Male,None,Appendectomy,None,Diabetes
+937,Patient_937,62,Female,Hypertension,Appendectomy,Penicillin,Diabetes
+938,Patient_938,74,Male,None,None,None,None
+939,Patient_939,89,Male,Diabetes,Gallbladder removal,Penicillin,None
+940,Patient_940,79,Female,Asthma,Gallbladder removal,None,Diabetes
+941,Patient_941,16,Male,Diabetes,Appendectomy,Peanuts,None
+942,Patient_942,84,Male,Hypertension,Gallbladder removal,None,Diabetes
+943,Patient_943,24,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+944,Patient_944,14,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+945,Patient_945,18,Female,Asthma,Gallbladder removal,Penicillin,None
+946,Patient_946,20,Male,Diabetes,None,Penicillin,Diabetes
+947,Patient_947,66,Male,None,None,Penicillin,None
+948,Patient_948,73,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+949,Patient_949,87,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+950,Patient_950,19,Female,Asthma,Appendectomy,Peanuts,None
+951,Patient_951,89,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+952,Patient_952,0,Male,Hypertension,Gallbladder removal,Penicillin,None
+953,Patient_953,43,Male,None,Gallbladder removal,Penicillin,None
+954,Patient_954,95,Female,Hypertension,Appendectomy,Peanuts,None
+955,Patient_955,58,Female,Hypertension,None,Penicillin,Heart Disease
+956,Patient_956,60,Male,None,Appendectomy,None,Heart Disease
+957,Patient_957,42,Female,None,Gallbladder removal,Penicillin,Heart Disease
+958,Patient_958,28,Male,Hypertension,Gallbladder removal,Penicillin,None
+959,Patient_959,35,Male,Asthma,Appendectomy,Penicillin,None
+960,Patient_960,92,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+961,Patient_961,55,Male,Hypertension,None,Peanuts,Heart Disease
+962,Patient_962,1,Male,None,Appendectomy,Peanuts,Diabetes
+963,Patient_963,10,Female,Diabetes,Appendectomy,Penicillin,Heart Disease
+964,Patient_964,76,Female,Asthma,Gallbladder removal,Penicillin,None
+965,Patient_965,67,Male,Diabetes,None,Peanuts,Diabetes
+966,Patient_966,91,Female,Diabetes,Gallbladder removal,None,None
+967,Patient_967,50,Female,Diabetes,None,None,None
+968,Patient_968,64,Male,Diabetes,None,Penicillin,None
+969,Patient_969,24,Female,Hypertension,Appendectomy,Peanuts,None
+970,Patient_970,98,Female,None,None,Penicillin,Heart Disease
+971,Patient_971,11,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+972,Patient_972,66,Female,Asthma,Appendectomy,None,Diabetes
+973,Patient_973,96,Female,Asthma,None,None,None
+974,Patient_974,1,Female,None,None,Penicillin,Diabetes
+975,Patient_975,54,Male,None,None,None,Diabetes
+976,Patient_976,66,Female,Hypertension,Appendectomy,None,None
+977,Patient_977,32,Female,Diabetes,None,None,Heart Disease
+978,Patient_978,97,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+979,Patient_979,74,Male,Asthma,Appendectomy,None,Diabetes
+980,Patient_980,38,Male,None,Gallbladder removal,Penicillin,Diabetes
+981,Patient_981,80,Male,Asthma,None,Penicillin,None
+982,Patient_982,58,Female,Diabetes,Appendectomy,None,Diabetes
+983,Patient_983,19,Male,Hypertension,None,None,None
+984,Patient_984,71,Female,None,None,Penicillin,Heart Disease
+985,Patient_985,5,Female,Diabetes,Appendectomy,None,None
+986,Patient_986,45,Male,None,Gallbladder removal,Penicillin,None
+987,Patient_987,63,Female,Diabetes,Appendectomy,None,Heart Disease
+988,Patient_988,58,Female,Diabetes,Gallbladder removal,Penicillin,None
+989,Patient_989,14,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+990,Patient_990,10,Male,None,None,None,None
+991,Patient_991,60,Female,Diabetes,None,None,Diabetes
+992,Patient_992,55,Female,Hypertension,Gallbladder removal,Penicillin,None
+993,Patient_993,78,Female,None,Appendectomy,Peanuts,Diabetes
+994,Patient_994,16,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+995,Patient_995,74,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+996,Patient_996,59,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+997,Patient_997,98,Male,Asthma,Appendectomy,None,Heart Disease
+998,Patient_998,91,Female,Diabetes,None,Penicillin,None
+999,Patient_999,45,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+1000,Patient_1000,52,Female,Hypertension,None,Peanuts,None
+1001,Patient_1001,94,Female,Asthma,None,Peanuts,Diabetes
+1002,Patient_1002,45,Female,Hypertension,None,None,Diabetes
+1003,Patient_1003,12,Male,Hypertension,None,Penicillin,None
+1004,Patient_1004,72,Male,None,None,Peanuts,None
+1005,Patient_1005,70,Male,Diabetes,None,Penicillin,Heart Disease
+1006,Patient_1006,86,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+1007,Patient_1007,98,Male,Asthma,Appendectomy,None,None
+1008,Patient_1008,31,Female,Asthma,Gallbladder removal,Penicillin,Heart Disease
+1009,Patient_1009,31,Female,Hypertension,Gallbladder removal,Penicillin,None
+1010,Patient_1010,66,Female,Diabetes,Appendectomy,None,Heart Disease
+1011,Patient_1011,71,Female,None,Gallbladder removal,None,Heart Disease
+1012,Patient_1012,26,Male,None,Appendectomy,Penicillin,None
+1013,Patient_1013,82,Male,None,None,Penicillin,Heart Disease
+1014,Patient_1014,8,Female,Hypertension,None,Peanuts,Heart Disease
+1015,Patient_1015,87,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+1016,Patient_1016,96,Female,Hypertension,None,Peanuts,None
+1017,Patient_1017,60,Female,Diabetes,None,Peanuts,Diabetes
+1018,Patient_1018,1,Female,Hypertension,Appendectomy,Peanuts,None
+1019,Patient_1019,2,Female,None,Appendectomy,Penicillin,Heart Disease
+1020,Patient_1020,54,Male,None,Gallbladder removal,None,Heart Disease
+1021,Patient_1021,47,Male,Diabetes,Gallbladder removal,None,Heart Disease
+1022,Patient_1022,85,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+1023,Patient_1023,73,Male,Diabetes,Appendectomy,Penicillin,None
+1024,Patient_1024,51,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1025,Patient_1025,68,Male,Diabetes,Appendectomy,Peanuts,None
+1026,Patient_1026,7,Female,Asthma,Appendectomy,None,Diabetes
+1027,Patient_1027,67,Female,None,Appendectomy,Penicillin,Diabetes
+1028,Patient_1028,55,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+1029,Patient_1029,22,Male,Asthma,None,None,Diabetes
+1030,Patient_1030,56,Male,None,None,None,None
+1031,Patient_1031,54,Female,Diabetes,None,Peanuts,Diabetes
+1032,Patient_1032,78,Male,Asthma,None,Penicillin,Diabetes
+1033,Patient_1033,77,Female,Asthma,Gallbladder removal,Penicillin,None
+1034,Patient_1034,22,Female,Asthma,Appendectomy,Penicillin,None
+1035,Patient_1035,95,Female,None,Appendectomy,Penicillin,None
+1036,Patient_1036,16,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+1037,Patient_1037,72,Female,Diabetes,Gallbladder removal,Peanuts,Diabetes
+1038,Patient_1038,44,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+1039,Patient_1039,24,Male,Asthma,None,None,Diabetes
+1040,Patient_1040,92,Male,Asthma,None,None,Heart Disease
+1041,Patient_1041,37,Female,Asthma,Gallbladder removal,None,Heart Disease
+1042,Patient_1042,24,Male,Asthma,Gallbladder removal,Peanuts,None
+1043,Patient_1043,40,Female,Asthma,Appendectomy,None,Heart Disease
+1044,Patient_1044,37,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+1045,Patient_1045,60,Female,None,None,Peanuts,Heart Disease
+1046,Patient_1046,58,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+1047,Patient_1047,39,Female,Diabetes,None,None,Heart Disease
+1048,Patient_1048,23,Male,Asthma,None,Peanuts,Diabetes
+1049,Patient_1049,73,Female,Hypertension,Gallbladder removal,None,Heart Disease
+1050,Patient_1050,66,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+1051,Patient_1051,54,Male,Asthma,None,Penicillin,Diabetes
+1052,Patient_1052,16,Female,None,Gallbladder removal,None,Heart Disease
+1053,Patient_1053,33,Male,Diabetes,Appendectomy,Penicillin,Heart Disease
+1054,Patient_1054,46,Male,Hypertension,Appendectomy,Penicillin,None
+1055,Patient_1055,56,Female,Diabetes,Appendectomy,Peanuts,None
+1056,Patient_1056,49,Female,None,Gallbladder removal,None,Heart Disease
+1057,Patient_1057,86,Male,None,Appendectomy,None,Diabetes
+1058,Patient_1058,86,Male,Diabetes,Gallbladder removal,Penicillin,None
+1059,Patient_1059,2,Female,Diabetes,Appendectomy,None,Heart Disease
+1060,Patient_1060,25,Male,Diabetes,None,None,Heart Disease
+1061,Patient_1061,29,Female,Asthma,Gallbladder removal,Penicillin,Diabetes
+1062,Patient_1062,26,Male,Asthma,None,Peanuts,Diabetes
+1063,Patient_1063,14,Female,Hypertension,Appendectomy,Penicillin,Diabetes
+1064,Patient_1064,76,Male,None,None,Peanuts,Diabetes
+1065,Patient_1065,64,Female,Asthma,Appendectomy,Peanuts,Diabetes
+1066,Patient_1066,79,Female,Diabetes,None,Penicillin,Heart Disease
+1067,Patient_1067,9,Male,None,Appendectomy,Peanuts,None
+1068,Patient_1068,0,Female,None,Gallbladder removal,None,Diabetes
+1069,Patient_1069,1,Female,None,None,None,None
+1070,Patient_1070,29,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1071,Patient_1071,23,Male,Asthma,Appendectomy,Penicillin,Diabetes
+1072,Patient_1072,20,Female,Diabetes,None,Peanuts,Diabetes
+1073,Patient_1073,67,Male,None,Gallbladder removal,Peanuts,Heart Disease
+1074,Patient_1074,34,Male,Asthma,Appendectomy,Peanuts,None
+1075,Patient_1075,23,Female,Diabetes,None,Peanuts,None
+1076,Patient_1076,63,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1077,Patient_1077,90,Female,Hypertension,Appendectomy,None,Diabetes
+1078,Patient_1078,84,Female,None,None,None,None
+1079,Patient_1079,83,Male,None,Appendectomy,Peanuts,Heart Disease
+1080,Patient_1080,40,Male,Hypertension,None,None,Heart Disease
+1081,Patient_1081,79,Female,Hypertension,None,None,Diabetes
+1082,Patient_1082,13,Female,Asthma,None,Penicillin,Heart Disease
+1083,Patient_1083,91,Male,None,Appendectomy,None,None
+1084,Patient_1084,30,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+1085,Patient_1085,1,Female,None,Gallbladder removal,None,Diabetes
+1086,Patient_1086,72,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1087,Patient_1087,79,Male,Hypertension,Appendectomy,None,Diabetes
+1088,Patient_1088,3,Female,Asthma,None,Peanuts,Heart Disease
+1089,Patient_1089,78,Male,None,None,Penicillin,None
+1090,Patient_1090,12,Male,Diabetes,None,Peanuts,Heart Disease
+1091,Patient_1091,23,Female,Diabetes,None,Peanuts,None
+1092,Patient_1092,83,Female,Asthma,Appendectomy,Peanuts,Diabetes
+1093,Patient_1093,63,Male,Asthma,Appendectomy,None,Diabetes
+1094,Patient_1094,17,Female,Asthma,Gallbladder removal,Peanuts,None
+1095,Patient_1095,22,Male,Asthma,Appendectomy,None,Diabetes
+1096,Patient_1096,9,Male,None,Appendectomy,None,Diabetes
+1097,Patient_1097,0,Female,Hypertension,None,Peanuts,None
+1098,Patient_1098,51,Female,None,Appendectomy,None,None
+1099,Patient_1099,0,Male,None,Gallbladder removal,Peanuts,Heart Disease
+1100,Patient_1100,87,Female,None,None,Peanuts,Heart Disease
+1101,Patient_1101,32,Female,None,Gallbladder removal,Penicillin,Diabetes
+1102,Patient_1102,95,Male,None,Appendectomy,None,Diabetes
+1103,Patient_1103,28,Male,Hypertension,Gallbladder removal,None,None
+1104,Patient_1104,34,Female,Diabetes,Appendectomy,None,None
+1105,Patient_1105,64,Male,None,None,None,None
+1106,Patient_1106,28,Female,None,None,Penicillin,None
+1107,Patient_1107,22,Male,Diabetes,Appendectomy,Penicillin,None
+1108,Patient_1108,97,Female,Asthma,Appendectomy,None,Diabetes
+1109,Patient_1109,33,Female,Hypertension,Appendectomy,Penicillin,Heart Disease
+1110,Patient_1110,39,Male,Hypertension,Appendectomy,None,Diabetes
+1111,Patient_1111,29,Female,Diabetes,Gallbladder removal,Penicillin,None
+1112,Patient_1112,73,Female,Hypertension,Gallbladder removal,None,None
+1113,Patient_1113,12,Female,None,None,None,Heart Disease
+1114,Patient_1114,62,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+1115,Patient_1115,13,Male,Asthma,None,None,Heart Disease
+1116,Patient_1116,60,Male,Diabetes,Appendectomy,Penicillin,Heart Disease
+1117,Patient_1117,20,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1118,Patient_1118,0,Female,Hypertension,Appendectomy,Peanuts,None
+1119,Patient_1119,53,Female,None,None,Peanuts,Diabetes
+1120,Patient_1120,22,Female,Hypertension,None,None,Diabetes
+1121,Patient_1121,92,Male,Hypertension,None,Penicillin,None
+1122,Patient_1122,85,Male,Asthma,Gallbladder removal,Peanuts,None
+1123,Patient_1123,92,Male,Asthma,Appendectomy,Penicillin,Diabetes
+1124,Patient_1124,44,Male,None,None,Peanuts,None
+1125,Patient_1125,54,Female,None,Gallbladder removal,Peanuts,Diabetes
+1126,Patient_1126,87,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+1127,Patient_1127,78,Male,None,None,Peanuts,Diabetes
+1128,Patient_1128,65,Male,None,Gallbladder removal,Peanuts,None
+1129,Patient_1129,80,Male,None,None,Penicillin,None
+1130,Patient_1130,14,Female,None,Appendectomy,Penicillin,None
+1131,Patient_1131,86,Male,Hypertension,Gallbladder removal,Penicillin,None
+1132,Patient_1132,5,Female,Hypertension,Appendectomy,Penicillin,None
+1133,Patient_1133,66,Female,Diabetes,Appendectomy,None,Heart Disease
+1134,Patient_1134,67,Male,None,None,None,Diabetes
+1135,Patient_1135,47,Female,Asthma,Appendectomy,None,Heart Disease
+1136,Patient_1136,12,Female,Diabetes,None,Peanuts,None
+1137,Patient_1137,3,Female,Asthma,None,None,Diabetes
+1138,Patient_1138,35,Female,Asthma,Appendectomy,None,Heart Disease
+1139,Patient_1139,4,Female,Asthma,Gallbladder removal,Peanuts,None
+1140,Patient_1140,4,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1141,Patient_1141,0,Female,Hypertension,Gallbladder removal,None,Diabetes
+1142,Patient_1142,36,Male,None,Appendectomy,None,Diabetes
+1143,Patient_1143,6,Male,None,None,Peanuts,None
+1144,Patient_1144,1,Male,Hypertension,Appendectomy,Peanuts,Diabetes
+1145,Patient_1145,90,Male,None,Gallbladder removal,Peanuts,Diabetes
+1146,Patient_1146,82,Female,Hypertension,Appendectomy,None,Diabetes
+1147,Patient_1147,25,Male,Hypertension,Appendectomy,Peanuts,Heart Disease
+1148,Patient_1148,56,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+1149,Patient_1149,79,Male,Diabetes,Appendectomy,Penicillin,None
+1150,Patient_1150,65,Female,Asthma,Appendectomy,Penicillin,Heart Disease
+1151,Patient_1151,72,Male,Diabetes,None,Penicillin,Diabetes
+1152,Patient_1152,35,Male,None,Appendectomy,Peanuts,Heart Disease
+1153,Patient_1153,53,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+1154,Patient_1154,78,Female,None,None,Penicillin,None
+1155,Patient_1155,16,Female,Diabetes,None,None,None
+1156,Patient_1156,78,Male,Hypertension,None,None,None
+1157,Patient_1157,42,Female,Diabetes,None,None,None
+1158,Patient_1158,69,Male,Diabetes,Gallbladder removal,None,Heart Disease
+1159,Patient_1159,57,Male,Asthma,Appendectomy,None,Diabetes
+1160,Patient_1160,6,Female,Asthma,Gallbladder removal,Penicillin,None
+1161,Patient_1161,85,Male,Asthma,None,None,None
+1162,Patient_1162,50,Male,Diabetes,Appendectomy,None,None
+1163,Patient_1163,66,Female,None,None,None,Heart Disease
+1164,Patient_1164,57,Male,Hypertension,Appendectomy,None,Heart Disease
+1165,Patient_1165,98,Male,Diabetes,Gallbladder removal,Penicillin,None
+1166,Patient_1166,72,Male,Hypertension,Appendectomy,None,Diabetes
+1167,Patient_1167,3,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1168,Patient_1168,28,Female,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+1169,Patient_1169,71,Female,Asthma,Gallbladder removal,None,Diabetes
+1170,Patient_1170,92,Female,None,Appendectomy,Penicillin,Heart Disease
+1171,Patient_1171,60,Male,Hypertension,Appendectomy,Peanuts,Diabetes
+1172,Patient_1172,98,Female,None,Appendectomy,Peanuts,Diabetes
+1173,Patient_1173,62,Female,None,Appendectomy,None,Diabetes
+1174,Patient_1174,62,Female,Diabetes,Appendectomy,None,Heart Disease
+1175,Patient_1175,98,Female,Diabetes,Appendectomy,None,None
+1176,Patient_1176,61,Male,None,Appendectomy,None,Heart Disease
+1177,Patient_1177,66,Male,Asthma,None,Penicillin,Diabetes
+1178,Patient_1178,62,Male,Asthma,None,None,None
+1179,Patient_1179,90,Female,None,Gallbladder removal,Penicillin,None
+1180,Patient_1180,16,Male,Hypertension,None,None,Diabetes
+1181,Patient_1181,72,Male,Asthma,Gallbladder removal,None,Diabetes
+1182,Patient_1182,66,Male,Diabetes,Gallbladder removal,None,None
+1183,Patient_1183,22,Male,None,None,Penicillin,Heart Disease
+1184,Patient_1184,77,Male,Diabetes,Gallbladder removal,Penicillin,None
+1185,Patient_1185,71,Female,Hypertension,Appendectomy,Penicillin,Diabetes
+1186,Patient_1186,71,Female,Diabetes,Appendectomy,Peanuts,None
+1187,Patient_1187,65,Male,None,None,Penicillin,Heart Disease
+1188,Patient_1188,0,Female,Diabetes,Gallbladder removal,None,Heart Disease
+1189,Patient_1189,51,Male,None,Appendectomy,None,Heart Disease
+1190,Patient_1190,38,Male,Hypertension,None,Penicillin,Heart Disease
+1191,Patient_1191,53,Female,None,Gallbladder removal,Peanuts,None
+1192,Patient_1192,50,Female,Asthma,Gallbladder removal,None,None
+1193,Patient_1193,73,Female,Hypertension,Appendectomy,Peanuts,None
+1194,Patient_1194,57,Female,Hypertension,Appendectomy,None,Heart Disease
+1195,Patient_1195,63,Female,Diabetes,Gallbladder removal,Peanuts,None
+1196,Patient_1196,58,Female,Asthma,None,None,Diabetes
+1197,Patient_1197,47,Male,Asthma,Gallbladder removal,None,Diabetes
+1198,Patient_1198,41,Female,Asthma,Gallbladder removal,None,None
+1199,Patient_1199,23,Female,Asthma,Appendectomy,Penicillin,None
+1200,Patient_1200,79,Male,Asthma,None,Peanuts,None
+1201,Patient_1201,97,Male,Hypertension,None,None,Heart Disease
+1202,Patient_1202,97,Female,Hypertension,Appendectomy,None,None
+1203,Patient_1203,89,Male,Diabetes,Appendectomy,None,Diabetes
+1204,Patient_1204,64,Male,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1205,Patient_1205,11,Female,Hypertension,Appendectomy,None,None
+1206,Patient_1206,52,Female,Asthma,Appendectomy,Penicillin,None
+1207,Patient_1207,50,Female,Diabetes,Appendectomy,Peanuts,Diabetes
+1208,Patient_1208,94,Male,Diabetes,None,Penicillin,None
+1209,Patient_1209,30,Male,Asthma,None,Peanuts,Heart Disease
+1210,Patient_1210,92,Female,None,Appendectomy,None,Diabetes
+1211,Patient_1211,55,Female,Asthma,Gallbladder removal,Peanuts,None
+1212,Patient_1212,36,Male,Diabetes,Gallbladder removal,Penicillin,Diabetes
+1213,Patient_1213,85,Male,Hypertension,None,Peanuts,Diabetes
+1214,Patient_1214,11,Male,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1215,Patient_1215,95,Male,Asthma,Gallbladder removal,Penicillin,Diabetes
+1216,Patient_1216,16,Female,Hypertension,Appendectomy,Peanuts,Heart Disease
+1217,Patient_1217,19,Male,Hypertension,Gallbladder removal,None,None
+1218,Patient_1218,71,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+1219,Patient_1219,60,Male,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1220,Patient_1220,40,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+1221,Patient_1221,80,Male,Asthma,None,Penicillin,None
+1222,Patient_1222,35,Male,Asthma,None,None,None
+1223,Patient_1223,68,Male,Asthma,Gallbladder removal,Peanuts,None
+1224,Patient_1224,81,Male,Asthma,Gallbladder removal,Peanuts,Diabetes
+1225,Patient_1225,6,Male,Asthma,None,Peanuts,Diabetes
+1226,Patient_1226,14,Female,Asthma,None,None,None
+1227,Patient_1227,69,Female,Asthma,Gallbladder removal,Peanuts,None
+1228,Patient_1228,28,Female,Hypertension,None,None,None
+1229,Patient_1229,22,Male,None,Gallbladder removal,Peanuts,Diabetes
+1230,Patient_1230,10,Female,Hypertension,None,Peanuts,Heart Disease
+1231,Patient_1231,72,Male,Asthma,Appendectomy,None,None
+1232,Patient_1232,16,Female,None,Gallbladder removal,None,Heart Disease
+1233,Patient_1233,47,Female,Asthma,Appendectomy,Penicillin,Heart Disease
+1234,Patient_1234,76,Female,Asthma,None,Peanuts,Heart Disease
+1235,Patient_1235,75,Male,Asthma,None,Peanuts,None
+1236,Patient_1236,76,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+1237,Patient_1237,26,Female,None,Appendectomy,Peanuts,Heart Disease
+1238,Patient_1238,58,Male,None,Gallbladder removal,None,None
+1239,Patient_1239,74,Male,Diabetes,Appendectomy,None,None
+1240,Patient_1240,42,Female,Hypertension,Gallbladder removal,Peanuts,None
+1241,Patient_1241,84,Male,Asthma,None,None,Heart Disease
+1242,Patient_1242,93,Male,Diabetes,Appendectomy,Penicillin,None
+1243,Patient_1243,47,Female,Asthma,Gallbladder removal,Penicillin,None
+1244,Patient_1244,0,Male,Asthma,Appendectomy,None,Diabetes
+1245,Patient_1245,99,Male,Diabetes,None,Peanuts,Diabetes
+1246,Patient_1246,87,Female,None,Appendectomy,None,Diabetes
+1247,Patient_1247,90,Male,Hypertension,Appendectomy,Penicillin,None
+1248,Patient_1248,75,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+1249,Patient_1249,22,Male,Asthma,Appendectomy,None,Heart Disease
+1250,Patient_1250,13,Male,Asthma,None,Penicillin,Diabetes
+1251,Patient_1251,21,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+1252,Patient_1252,21,Female,Diabetes,Appendectomy,None,None
+1253,Patient_1253,82,Male,Diabetes,Appendectomy,Penicillin,None
+1254,Patient_1254,99,Female,None,Gallbladder removal,Penicillin,None
+1255,Patient_1255,81,Male,Hypertension,Appendectomy,Peanuts,None
+1256,Patient_1256,40,Female,None,Appendectomy,Peanuts,None
+1257,Patient_1257,72,Female,None,None,None,Diabetes
+1258,Patient_1258,1,Male,Diabetes,Gallbladder removal,None,Diabetes
+1259,Patient_1259,62,Female,Asthma,Appendectomy,None,None
+1260,Patient_1260,47,Female,Diabetes,Appendectomy,Peanuts,None
+1261,Patient_1261,43,Female,Asthma,Appendectomy,Peanuts,None
+1262,Patient_1262,58,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+1263,Patient_1263,55,Male,Asthma,Gallbladder removal,Penicillin,None
+1264,Patient_1264,88,Male,Hypertension,Gallbladder removal,None,Heart Disease
+1265,Patient_1265,6,Female,None,Gallbladder removal,Penicillin,None
+1266,Patient_1266,96,Female,Asthma,None,Penicillin,Heart Disease
+1267,Patient_1267,40,Male,None,None,None,None
+1268,Patient_1268,19,Female,None,None,None,None
+1269,Patient_1269,63,Female,Asthma,None,None,Diabetes
+1270,Patient_1270,18,Female,Hypertension,Appendectomy,Peanuts,None
+1271,Patient_1271,25,Male,Asthma,Appendectomy,None,None
+1272,Patient_1272,26,Male,Hypertension,Appendectomy,None,Heart Disease
+1273,Patient_1273,34,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+1274,Patient_1274,28,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+1275,Patient_1275,26,Female,None,Appendectomy,None,None
+1276,Patient_1276,10,Female,None,None,Peanuts,Heart Disease
+1277,Patient_1277,46,Female,Diabetes,Appendectomy,Peanuts,Heart Disease
+1278,Patient_1278,0,Female,Diabetes,None,Penicillin,None
+1279,Patient_1279,51,Male,None,Gallbladder removal,Penicillin,Heart Disease
+1280,Patient_1280,84,Female,Hypertension,Gallbladder removal,Penicillin,None
+1281,Patient_1281,94,Female,Diabetes,None,None,Heart Disease
+1282,Patient_1282,10,Male,None,Appendectomy,Peanuts,None
+1283,Patient_1283,68,Female,Asthma,Appendectomy,Penicillin,Diabetes
+1284,Patient_1284,53,Male,None,Appendectomy,Peanuts,Heart Disease
+1285,Patient_1285,93,Female,Asthma,None,Penicillin,Diabetes
+1286,Patient_1286,16,Female,None,Gallbladder removal,None,None
+1287,Patient_1287,51,Male,Asthma,Gallbladder removal,Peanuts,Heart Disease
+1288,Patient_1288,53,Female,Diabetes,None,Peanuts,Heart Disease
+1289,Patient_1289,5,Female,Asthma,Gallbladder removal,None,Heart Disease
+1290,Patient_1290,44,Male,Hypertension,Gallbladder removal,Penicillin,None
+1291,Patient_1291,45,Female,Asthma,Gallbladder removal,None,None
+1292,Patient_1292,96,Male,Asthma,Appendectomy,Penicillin,Heart Disease
+1293,Patient_1293,46,Male,Diabetes,Appendectomy,None,None
+1294,Patient_1294,85,Female,Hypertension,None,None,Diabetes
+1295,Patient_1295,20,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1296,Patient_1296,63,Female,Asthma,Appendectomy,None,Heart Disease
+1297,Patient_1297,55,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+1298,Patient_1298,3,Male,Asthma,Appendectomy,Penicillin,None
+1299,Patient_1299,9,Female,None,None,Peanuts,Diabetes
+1300,Patient_1300,69,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+1301,Patient_1301,7,Female,None,Appendectomy,Penicillin,None
+1302,Patient_1302,21,Male,Hypertension,Appendectomy,Penicillin,None
+1303,Patient_1303,43,Male,Asthma,None,Penicillin,None
+1304,Patient_1304,78,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+1305,Patient_1305,26,Male,None,Gallbladder removal,None,Heart Disease
+1306,Patient_1306,74,Male,Hypertension,Gallbladder removal,Peanuts,Heart Disease
+1307,Patient_1307,40,Male,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1308,Patient_1308,1,Male,None,Gallbladder removal,None,None
+1309,Patient_1309,97,Female,Asthma,Gallbladder removal,None,Heart Disease
+1310,Patient_1310,16,Female,Asthma,Appendectomy,Peanuts,None
+1311,Patient_1311,52,Female,Asthma,Appendectomy,Penicillin,Diabetes
+1312,Patient_1312,76,Female,Diabetes,None,None,None
+1313,Patient_1313,78,Male,Diabetes,Appendectomy,Peanuts,Diabetes
+1314,Patient_1314,94,Male,Asthma,None,Peanuts,None
+1315,Patient_1315,80,Male,None,None,Penicillin,Heart Disease
+1316,Patient_1316,35,Female,Diabetes,Appendectomy,Penicillin,Diabetes
+1317,Patient_1317,84,Female,Diabetes,Gallbladder removal,Peanuts,None
+1318,Patient_1318,20,Male,Diabetes,None,Peanuts,Heart Disease
+1319,Patient_1319,88,Female,Hypertension,Appendectomy,None,Heart Disease
+1320,Patient_1320,14,Male,None,None,Peanuts,Diabetes
+1321,Patient_1321,18,Male,Diabetes,None,None,Heart Disease
+1322,Patient_1322,45,Female,Hypertension,Appendectomy,Peanuts,Heart Disease
+1323,Patient_1323,56,Male,Hypertension,Appendectomy,Peanuts,Heart Disease
+1324,Patient_1324,69,Male,Asthma,None,Penicillin,None
+1325,Patient_1325,12,Male,Hypertension,Appendectomy,None,None
+1326,Patient_1326,51,Male,None,Appendectomy,Penicillin,Diabetes
+1327,Patient_1327,48,Female,Hypertension,Gallbladder removal,None,None
+1328,Patient_1328,78,Female,None,None,Penicillin,Diabetes
+1329,Patient_1329,24,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+1330,Patient_1330,31,Male,Hypertension,Gallbladder removal,None,None
+1331,Patient_1331,51,Female,Asthma,None,Peanuts,None
+1332,Patient_1332,50,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1333,Patient_1333,83,Male,Diabetes,Appendectomy,None,Heart Disease
+1334,Patient_1334,72,Male,Asthma,None,None,Diabetes
+1335,Patient_1335,61,Male,Diabetes,Appendectomy,Peanuts,None
+1336,Patient_1336,74,Male,None,Appendectomy,Penicillin,None
+1337,Patient_1337,18,Female,None,None,None,None
+1338,Patient_1338,17,Male,None,None,Penicillin,Heart Disease
+1339,Patient_1339,5,Male,None,Appendectomy,Penicillin,None
+1340,Patient_1340,63,Male,Hypertension,None,Peanuts,Heart Disease
+1341,Patient_1341,64,Male,None,Gallbladder removal,Penicillin,Diabetes
+1342,Patient_1342,88,Female,None,Gallbladder removal,Penicillin,Heart Disease
+1343,Patient_1343,50,Female,Asthma,Appendectomy,Peanuts,Diabetes
+1344,Patient_1344,15,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1345,Patient_1345,39,Male,None,Appendectomy,Peanuts,Diabetes
+1346,Patient_1346,50,Female,Hypertension,Appendectomy,Penicillin,None
+1347,Patient_1347,15,Male,None,Gallbladder removal,Penicillin,Heart Disease
+1348,Patient_1348,90,Male,Hypertension,Appendectomy,Peanuts,Diabetes
+1349,Patient_1349,23,Female,Diabetes,Gallbladder removal,None,Diabetes
+1350,Patient_1350,69,Female,None,None,None,None
+1351,Patient_1351,21,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+1352,Patient_1352,15,Male,None,Gallbladder removal,Peanuts,None
+1353,Patient_1353,17,Male,Asthma,Gallbladder removal,None,Diabetes
+1354,Patient_1354,82,Female,Hypertension,Appendectomy,None,Heart Disease
+1355,Patient_1355,97,Female,None,None,Penicillin,Heart Disease
+1356,Patient_1356,5,Male,Asthma,None,None,None
+1357,Patient_1357,62,Female,Hypertension,Appendectomy,None,Diabetes
+1358,Patient_1358,40,Male,Diabetes,None,Penicillin,None
+1359,Patient_1359,65,Female,Hypertension,None,None,Heart Disease
+1360,Patient_1360,4,Female,Asthma,Appendectomy,Penicillin,Heart Disease
+1361,Patient_1361,46,Female,Asthma,Gallbladder removal,Penicillin,None
+1362,Patient_1362,83,Female,Hypertension,Gallbladder removal,None,Heart Disease
+1363,Patient_1363,4,Female,None,Gallbladder removal,Peanuts,None
+1364,Patient_1364,43,Female,Diabetes,None,Peanuts,None
+1365,Patient_1365,41,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1366,Patient_1366,91,Male,Asthma,Appendectomy,Peanuts,None
+1367,Patient_1367,18,Female,Diabetes,None,Penicillin,Heart Disease
+1368,Patient_1368,33,Male,Asthma,None,Peanuts,Diabetes
+1369,Patient_1369,32,Female,Asthma,None,Penicillin,None
+1370,Patient_1370,23,Female,Hypertension,None,Penicillin,Diabetes
+1371,Patient_1371,3,Female,Asthma,Appendectomy,Peanuts,None
+1372,Patient_1372,91,Female,Diabetes,Gallbladder removal,Penicillin,Diabetes
+1373,Patient_1373,5,Female,None,Appendectomy,Peanuts,Heart Disease
+1374,Patient_1374,81,Male,Hypertension,Appendectomy,Peanuts,None
+1375,Patient_1375,40,Female,None,Gallbladder removal,Peanuts,None
+1376,Patient_1376,16,Male,Hypertension,Appendectomy,None,Diabetes
+1377,Patient_1377,74,Female,Hypertension,None,Penicillin,Diabetes
+1378,Patient_1378,97,Male,None,Appendectomy,Penicillin,Diabetes
+1379,Patient_1379,91,Male,Hypertension,Gallbladder removal,None,Diabetes
+1380,Patient_1380,34,Female,Asthma,None,Penicillin,Heart Disease
+1381,Patient_1381,51,Male,None,Appendectomy,None,Diabetes
+1382,Patient_1382,71,Male,None,None,None,Diabetes
+1383,Patient_1383,79,Male,Hypertension,None,Penicillin,Diabetes
+1384,Patient_1384,22,Female,Hypertension,Gallbladder removal,Penicillin,Heart Disease
+1385,Patient_1385,31,Male,None,Appendectomy,Peanuts,None
+1386,Patient_1386,42,Male,Diabetes,Appendectomy,Peanuts,Heart Disease
+1387,Patient_1387,5,Male,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+1388,Patient_1388,3,Female,Asthma,None,None,None
+1389,Patient_1389,11,Male,Diabetes,Gallbladder removal,None,None
+1390,Patient_1390,79,Female,Hypertension,None,Penicillin,Heart Disease
+1391,Patient_1391,50,Female,None,None,Penicillin,Diabetes
+1392,Patient_1392,89,Male,Asthma,Appendectomy,Peanuts,Heart Disease
+1393,Patient_1393,20,Male,Diabetes,Appendectomy,Penicillin,Diabetes
+1394,Patient_1394,19,Male,Hypertension,Appendectomy,None,Diabetes
+1395,Patient_1395,8,Female,None,None,Penicillin,Diabetes
+1396,Patient_1396,75,Female,None,Gallbladder removal,Peanuts,Heart Disease
+1397,Patient_1397,3,Female,Diabetes,None,Penicillin,Heart Disease
+1398,Patient_1398,61,Male,Hypertension,None,None,None
+1399,Patient_1399,82,Male,Asthma,None,Penicillin,Diabetes
+1400,Patient_1400,71,Male,None,None,None,Diabetes
+1401,Patient_1401,77,Female,None,Appendectomy,None,Diabetes
+1402,Patient_1402,0,Male,None,None,Penicillin,Heart Disease
+1403,Patient_1403,23,Female,None,None,Peanuts,Heart Disease
+1404,Patient_1404,33,Male,Asthma,None,None,Heart Disease
+1405,Patient_1405,72,Male,Diabetes,Gallbladder removal,Peanuts,None
+1406,Patient_1406,38,Female,Hypertension,Appendectomy,None,Diabetes
+1407,Patient_1407,51,Female,Hypertension,Appendectomy,Peanuts,None
+1408,Patient_1408,27,Male,Asthma,Gallbladder removal,Penicillin,None
+1409,Patient_1409,60,Male,Diabetes,None,Peanuts,None
+1410,Patient_1410,85,Female,Hypertension,Gallbladder removal,Peanuts,Diabetes
+1411,Patient_1411,75,Male,Hypertension,Gallbladder removal,None,None
+1412,Patient_1412,32,Male,Diabetes,None,Penicillin,None
+1413,Patient_1413,27,Female,Diabetes,Gallbladder removal,Penicillin,None
+1414,Patient_1414,10,Male,Asthma,Appendectomy,None,Heart Disease
+1415,Patient_1415,82,Male,Asthma,Appendectomy,None,Diabetes
+1416,Patient_1416,50,Female,Hypertension,None,Penicillin,None
+1417,Patient_1417,52,Male,None,None,Penicillin,None
+1418,Patient_1418,25,Male,None,Gallbladder removal,Peanuts,None
+1419,Patient_1419,97,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+1420,Patient_1420,82,Female,Hypertension,None,Peanuts,None
+1421,Patient_1421,63,Female,Asthma,Gallbladder removal,None,Heart Disease
+1422,Patient_1422,82,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+1423,Patient_1423,26,Male,Asthma,Appendectomy,Penicillin,Diabetes
+1424,Patient_1424,69,Male,Hypertension,Gallbladder removal,Peanuts,None
+1425,Patient_1425,94,Female,None,None,None,Heart Disease
+1426,Patient_1426,13,Female,Asthma,None,Peanuts,Heart Disease
+1427,Patient_1427,64,Female,Hypertension,Appendectomy,None,Heart Disease
+1428,Patient_1428,40,Female,Hypertension,None,None,Diabetes
+1429,Patient_1429,7,Male,Diabetes,None,None,None
+1430,Patient_1430,40,Female,None,Gallbladder removal,None,None
+1431,Patient_1431,6,Male,Diabetes,Gallbladder removal,None,None
+1432,Patient_1432,36,Female,Asthma,Appendectomy,Penicillin,None
+1433,Patient_1433,92,Male,Diabetes,Gallbladder removal,None,Diabetes
+1434,Patient_1434,11,Male,Diabetes,None,None,Diabetes
+1435,Patient_1435,93,Female,Asthma,Appendectomy,Penicillin,None
+1436,Patient_1436,45,Female,Diabetes,None,Peanuts,Heart Disease
+1437,Patient_1437,87,Male,None,Gallbladder removal,Peanuts,Heart Disease
+1438,Patient_1438,63,Female,None,None,Peanuts,Heart Disease
+1439,Patient_1439,39,Male,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1440,Patient_1440,67,Female,Asthma,Appendectomy,Peanuts,Heart Disease
+1441,Patient_1441,27,Male,Hypertension,Appendectomy,Penicillin,Diabetes
+1442,Patient_1442,96,Female,Diabetes,Gallbladder removal,Penicillin,Heart Disease
+1443,Patient_1443,52,Male,Hypertension,None,Peanuts,Diabetes
+1444,Patient_1444,13,Male,Hypertension,Gallbladder removal,None,Heart Disease
+1445,Patient_1445,68,Female,Hypertension,None,Peanuts,Diabetes
+1446,Patient_1446,27,Male,Hypertension,Appendectomy,Penicillin,None
+1447,Patient_1447,86,Male,None,Gallbladder removal,Penicillin,Heart Disease
+1448,Patient_1448,24,Female,None,Appendectomy,Penicillin,None
+1449,Patient_1449,70,Female,None,Appendectomy,Peanuts,Heart Disease
+1450,Patient_1450,9,Male,Hypertension,Appendectomy,None,Diabetes
+1451,Patient_1451,37,Male,Asthma,Appendectomy,Peanuts,Diabetes
+1452,Patient_1452,44,Male,Diabetes,Gallbladder removal,Peanuts,None
+1453,Patient_1453,27,Male,Asthma,Appendectomy,Peanuts,None
+1454,Patient_1454,97,Male,Diabetes,None,Penicillin,None
+1455,Patient_1455,41,Female,Asthma,None,None,None
+1456,Patient_1456,77,Male,Asthma,Appendectomy,Peanuts,None
+1457,Patient_1457,88,Male,Diabetes,None,Penicillin,None
+1458,Patient_1458,0,Male,Asthma,None,None,None
+1459,Patient_1459,77,Female,Asthma,None,Penicillin,Heart Disease
+1460,Patient_1460,88,Male,Asthma,Appendectomy,None,None
+1461,Patient_1461,72,Male,Hypertension,Appendectomy,Peanuts,None
+1462,Patient_1462,91,Female,None,Appendectomy,None,None
+1463,Patient_1463,26,Female,Hypertension,Gallbladder removal,Penicillin,Diabetes
+1464,Patient_1464,47,Male,Asthma,None,Penicillin,Heart Disease
+1465,Patient_1465,75,Male,Asthma,None,None,Diabetes
+1466,Patient_1466,15,Male,None,None,None,None
+1467,Patient_1467,46,Male,None,Appendectomy,None,Diabetes
+1468,Patient_1468,67,Female,None,Gallbladder removal,Peanuts,Heart Disease
+1469,Patient_1469,70,Male,Hypertension,Gallbladder removal,Peanuts,None
+1470,Patient_1470,55,Female,Diabetes,None,Peanuts,Diabetes
+1471,Patient_1471,31,Male,None,None,Penicillin,Heart Disease
+1472,Patient_1472,10,Male,None,None,Penicillin,Diabetes
+1473,Patient_1473,46,Female,Asthma,None,Penicillin,Heart Disease
+1474,Patient_1474,38,Female,None,None,Peanuts,Heart Disease
+1475,Patient_1475,70,Female,Asthma,None,Peanuts,Heart Disease
+1476,Patient_1476,46,Male,Asthma,Gallbladder removal,Penicillin,Heart Disease
+1477,Patient_1477,22,Female,Diabetes,None,Penicillin,Diabetes
+1478,Patient_1478,59,Female,Asthma,Gallbladder removal,None,Diabetes
+1479,Patient_1479,45,Female,Hypertension,None,Peanuts,Heart Disease
+1480,Patient_1480,70,Female,Diabetes,Gallbladder removal,Penicillin,None
+1481,Patient_1481,40,Male,Hypertension,None,Penicillin,Diabetes
+1482,Patient_1482,18,Female,Diabetes,Appendectomy,None,None
+1483,Patient_1483,65,Female,Asthma,Gallbladder removal,Peanuts,Diabetes
+1484,Patient_1484,93,Male,Diabetes,Appendectomy,Peanuts,None
+1485,Patient_1485,66,Female,Asthma,Gallbladder removal,Peanuts,None
+1486,Patient_1486,31,Female,Diabetes,Gallbladder removal,Peanuts,Heart Disease
+1487,Patient_1487,95,Male,Asthma,None,Penicillin,Diabetes
+1488,Patient_1488,87,Female,Diabetes,Appendectomy,Peanuts,Heart Disease
+1489,Patient_1489,2,Female,None,Gallbladder removal,None,Heart Disease
+1490,Patient_1490,89,Male,Hypertension,Appendectomy,Penicillin,Heart Disease
+1491,Patient_1491,90,Female,Asthma,Appendectomy,Peanuts,None
+1492,Patient_1492,85,Female,Asthma,Appendectomy,Penicillin,None
+1493,Patient_1493,40,Female,Asthma,None,Penicillin,None
+1494,Patient_1494,23,Female,Diabetes,Appendectomy,Penicillin,None
+1495,Patient_1495,85,Female,Hypertension,Gallbladder removal,Peanuts,None
+1496,Patient_1496,75,Male,Asthma,Gallbladder removal,Peanuts,None
+1497,Patient_1497,83,Male,Asthma,Appendectomy,None,Heart Disease
+1498,Patient_1498,87,Male,Diabetes,Gallbladder removal,Peanuts,Diabetes
+1499,Patient_1499,19,Male,Asthma,None,Peanuts,Heart Disease
+1500,Patient_1500,16,Female,Diabetes,Appendectomy,Penicillin,None
