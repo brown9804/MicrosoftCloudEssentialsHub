@@ -273,6 +273,7 @@ graph TD
    - Provide support channels (e.g., email, chat) for customer queries and issues.
 
 ### Implement Monitoring and Analytics 
+
 1. **Set Up Azure Monitor**:
    - Navigate to `Azure Monitor` in the Azure Portal.
    - Create alerts and dashboards to monitor the performance and usage of your AI models.
