@@ -1,4 +1,4 @@
-# AI Foundry: Software Development Life Cycle (SDLC) Strategy Overview
+# AI Foundry: AI Model Management with Software Development Life Cycle (SDLC) 
 
 Costa Rica
 
