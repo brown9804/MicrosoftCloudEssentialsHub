@@ -29,6 +29,12 @@ Last updated: 2025-01-02
 
 - [Create a project in Azure AI Foundry portal](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/create-projects)
 - [Overview: Deploy AI models in Azure AI Foundry portal](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/deployments-overview)
+- [What is Azure role-based access control (Azure RBAC)?](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview)
+- [Role-based access control in Azure AI Foundry portal](https://learn.microsoft.com/en-us/azure/ai-studio/concepts/rbac-ai-studio)
+- [5 Ways to Implement Enterprise Security with Azure AI Foundry](https://techcommunity.microsoft.com/blog/aiplatformblog/5-ways-to-implement-enterprise-security-with-azure-ai-foundry/4253221)
+- [Baseline OpenAI end-to-end chat reference architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/baseline-openai-e2e-chat)
+- [Azure OpenAI chat baseline architecture in an Azure landing zone - Tech Community](https://techcommunity.microsoft.com/blog/azurearchitectureblog/azure-openai-chat-baseline-architecture-in-an-azure-landing-zone/4149124)
+- [Azure OpenAI chat baseline architecture in an Azure landing zone - MS article](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/azure-openai-baseline-landing-zone)
 
 </details>
 
@@ -36,6 +42,18 @@ Last updated: 2025-01-02
 
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
+    
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Demo](#demo)
+    - [Create a Resource Group](#create-a-resource-group)
+    - [Set Up AI Foundry](#set-up-ai-foundry)
+    - [Deploy AI Models on AI Foundry](#deploy-ai-models-on-ai-foundry)
+    - [Set Up Azure API Management](#set-up-azure-api-management)
+    - [Flexible Model Modification (RBAC for Approach 1)](#flexible-model-modification-rbac-for-approach-1)
+    - [Ready-to-Use API (for Approach 2)](#ready-to-use-api-for-approach-2)
+    - [Implement Monitoring and Analytics](#implement-monitoring-and-analytics)
 
 </details>
 
@@ -213,14 +231,54 @@ graph TD
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/b16cfb63-4fe0-415b-935d-a190d5936c74" />
 
+### Flexible Model Modification (RBAC for Approach 1)
 
-### Flexible Model Modification (for Approach 1)
+> Implement RBAC (Role-Based Access Control)
 
+1. **Set Up AI Foundry Projects**:
+   - Create projects for development, testing, and production within AI Foundry.
+   - Assign roles based on user profile:
+       - **Project Owner**: Full access to manage and modify models.
+       - **Project Contributor**: Access to modify and fine-tune models but cannot manage project settings.
+       - **Project Developer**: Access to develop and test models, including making modifications and running experiments.
+       - **Project Reader**: View-only access for users who need to monitor models without making changes.
+   - Go to `Management center`:
+     
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/15bfb87f-e98a-4217-9031-8b61d5875b8b" />
 
+   - Make sure you create the remaining projects for the stages: development, testing, and production accordingly.
+    
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5994cef2-adf3-41d3-8e8d-f43eda75048e" />
 
+   -  Click on each project to manage users and roles. Under `Overview`, go to `Project users` and click on `View all`. To add the necessary personas.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0107c650-91d0-4abb-8dd7-2ad2950a6b15" />
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c081ba94-5a21-45e9-84dc-70b5bafa3d65" />
+
+2. **Configure RBAC**:
+   - Navigate to your AI Foundry instance.
+   - Go to `Access control (IAM)` and assign roles to users or groups based on their skill levels and responsibilities.
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/6c48b098-de99-4764-b7fe-84db7b2daecd" />
 
 ###  Ready-to-Use API (for Approach 2)
 
+> Provide Documentation and Support 
+
+1. **Create Documentation**:
+   - Develop comprehensive documentation for integrating the API.
+   - Include examples, use cases, and troubleshooting tips.
+2. **Set Up Support Channels**:
+   - Provide support channels (e.g., email, chat) for customer queries and issues.
+
+### Implement Monitoring and Analytics 
+1. **Set Up Azure Monitor**:
+   - Navigate to `Azure Monitor` in the Azure Portal.
+   - Create alerts and dashboards to monitor the performance and usage of your AI models.
+2. **Integrate Application Insights**:
+   - Navigate to `Application Insights` in the Azure Portal.
+   - Create an `Application Insights` resource and integrate it with your AI models and APIs.
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
