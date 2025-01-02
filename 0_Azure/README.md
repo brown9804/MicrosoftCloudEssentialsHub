@@ -9,11 +9,6 @@ Last updated: 2024-11-15
 
 ------------------------------------------
 
-<div align="center">
-  <h3 style="color: #4CAF50;">Total Visitors</h3>
-  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
-</div>
-
 ## Wiki 
 
 <details>
@@ -131,3 +126,7 @@ Here are some important Azure products within each category:
 <img width="800" alt="image" src="https://github.com/brown9804/MSCloudEssentials_LPath/assets/24630902/cf68fbc7-20e7-4e62-8202-393584f058e9">
 
   
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>

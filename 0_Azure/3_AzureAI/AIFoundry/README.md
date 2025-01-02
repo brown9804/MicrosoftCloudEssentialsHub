@@ -1,52 +1,52 @@
-# Azure AI Studio
+# Azure AI Foundry
 
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2025-01-02
 
 ----------
 
 > You can create and manage Azure resources for Azure AI Studio via the Azure portal. 
+
+> [!IMPORTANT]
+> Please be aware that prior to being named AI Studio, AI Foundry introduced new components and optimized the backend operations.
 
 ## Content 
 
 <details>
   <summary>Click to display </summary>
   
-- [Azure AI Studio](#azure-ai-studio)
-    - [Content](#content)
-    - [Wiki](#wiki)
-    - [Overview](#overview)
-        - [Model Catalog](#model-catalog)
-        - [Model Benchmarks](#model-benchmarks)
-        - [Azure AI Services](#azure-ai-services)
-    - [Architecture](#architecture)
-        - [AI Hub](#ai-hub)
-        - [Projects](#projects)
-        - [AI Studio SDK](#ai-studio-sdk)
-        - [RBAC and Permissions](#rbac-and-permissions)
-        - [Networking](#networking)
-    - [Project playground](#project-playground)
-        - [Chat](#chat)
-        - [Assistants](#assistants)
-        - [Images](#images)
-        - [Completions](#completions)
-    - [Tools](#tools)
-        - [Code](#code)
-        - [Prompt Flow](#prompt-flow)
-        - [Tracing](#tracing)
-        - [Evaluation](#evaluation)
-        - [Fine-tunning](#fine-tunning)
-    - [Components](#components)
-        - [Data](#data)
-        - [Indexes](#indexes)
-        - [Content Filter](#content-filter)
-        - [Deployments](#deployments)
-
-<!-- /TOC -->
+- [Content](#content)
+- [Wiki](#wiki)
+- [Overview](#overview)
+   - [Model Catalog](#model-catalog)
+   - [Model Benchmarks](#model-benchmarks)
+   - [Azure AI Services](#azure-ai-services)
+- [Architecture](#architecture)
+   - [AI Hub](#ai-hub)
+   - [Projects](#projects)
+   - [AI Studio SDK](#ai-studio-sdk)
+   - [RBAC and Permissions](#rbac-and-permissions)
+   - [Networking](#networking)
+- [Project playground](#project-playground)
+   - [Chat](#chat)
+   - [Assistants](#assistants)
+   - [Images](#images)
+   - [Completions](#completions)
+- [Tools](#tools)
+   - [Code](#code)
+   - [Prompt Flow](#prompt-flow)
+   - [Tracing](#tracing)
+   - [Evaluation](#evaluation)
+   - [Fine-tunning](#fine-tunning)
+- [Components](#components)
+   - [Data](#data)
+   - [Indexes](#indexes)
+   - [Content Filter](#content-filter)
+   - [Deployments](#deployments)
 
 </details>
 
@@ -75,7 +75,7 @@ Last updated: 2024-11-19
   
   [image from](https://www.slideshare.net/slideshow/azure-ai-platform-automated-ml-workshop/133115961)
 
-  | **Feature** | **Azure AI Studio** | **Azure OpenAI** |
+  | **Feature** | **Azure AI Foundry** | **Azure OpenAI** |
   |-------------|----------------------|------------------|
   | **Scope** | Comprehensive platform for building, testing, and deploying generative AI applications | Specific service providing access to OpenAI's models |
   | **Model Catalog** | Includes models from OpenAI, Hugging Face, Meta, and more | Focuses on OpenAI models like GPT-4, Codex, and DALL-E |
@@ -85,7 +85,7 @@ Last updated: 2024-11-19
 
 ### Model Catalog 
 
-> The Model Catalog in Azure AI Studio is a `central hub where you can discover, evaluate, and deploy a wide range of AI models`. It includes models from various providers such as Azure OpenAI Service, Mistral, Meta, Cohere, NVIDIA, and Hugging Face, as well as models trained by Microsoft.
+> The Model Catalog in Azure AI Foundry is a `central hub where you can discover, evaluate, and deploy a wide range of AI models`. It includes models from various providers such as Azure OpenAI Service, Mistral, Meta, Cohere, NVIDIA, and Hugging Face, as well as models trained by Microsoft.
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/5d83afb8-9924-49f1-aebc-3ce90c58c58f" width="450" height="250" />
