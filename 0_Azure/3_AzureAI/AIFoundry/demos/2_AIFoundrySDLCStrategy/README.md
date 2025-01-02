@@ -35,6 +35,9 @@ Last updated: 2025-01-02
 - [Baseline OpenAI end-to-end chat reference architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/baseline-openai-e2e-chat)
 - [Azure OpenAI chat baseline architecture in an Azure landing zone - Tech Community](https://techcommunity.microsoft.com/blog/azurearchitectureblog/azure-openai-chat-baseline-architecture-in-an-azure-landing-zone/4149124)
 - [Azure OpenAI chat baseline architecture in an Azure landing zone - MS article](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/architecture/azure-openai-baseline-landing-zone)
+- [GenAIOps with prompt flow and Azure DevOps](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-end-to-end-azure-devops-with-prompt-flow?view=azureml-api-2)
+- [Integrate prompt flow with DevOps for LLM-based applications](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-integrate-with-llm-app-devops?view=azureml-api-2&tabs=cli)
+- [GenAIOps with prompt flow and GitHub](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-end-to-end-llmops-with-prompt-flow?view=azureml-api-2)
 
 </details>
 
