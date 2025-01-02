@@ -198,7 +198,7 @@ graph TD
 
    - Configure the endpoints and security settings.
 
-
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/b16cfb63-4fe0-415b-935d-a190d5936c74" />
 
 
 ### Flexible Model Modification (for Approach 1)
