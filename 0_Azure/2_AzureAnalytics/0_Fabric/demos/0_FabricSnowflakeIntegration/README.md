@@ -68,7 +68,7 @@ Here are some key features:
 | **Scalability** | Elastic compute and storage, high concurrency | Elastic scaling, optimized performance |
 | **Performance** | High-speed query performance, automatic improvements | Real-time analytics, continuous optimizations |
 | **Data Sharing** | Data Marketplace, seamless integration | Data virtualization with shortcuts and mirroring |
-| **Advanced Analytics** | AI/ML support, geospatial and time-series analysis | Integration with Synapse and Power BI for advanced analytics |
+| **Advanced Analytics** | AI/ML support, geospatial and time-series analysis | Integration with Synapse and Power BI for advanced analytics, integration with AI and other Azure services |
 | **Security** | End-to-end encryption, unified governance | Comprehensive security, compliance with industry standards |
 
 ### Why Integrate?
