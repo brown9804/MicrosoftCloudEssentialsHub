@@ -13,6 +13,15 @@ Last updated: 2025-01-02
 > [!NOTE]
 > If you require additional information on Cloud and the SDLC process, please visit this [repository](https://github.com/brown9804/CloudDevOps_LPath?tab=readme-ov-file#cloud-devops---learning-path). It contains content not only on SDLC but also on DevOps practices.
 
+> [!IMPORTANT]
+> This overview provides an example of how to create an infrastructure that enables efficient and secure delivery of AI models into different solutions. By setting up AI Foundry with RBAC, using Azure API Management, and implementing monitoring and analytics, you can ensure your AI models are accessible, manageable, and perform well across different environments. Please ensure to adjust the infrastructure, networking, and other configurations as required. <br/>
+> 1. **Set Up Resource Group and AI Foundry Hub**: Create a centralized hub for managing your AI resources. <br/>
+> 2. **Create Projects for Different Environments**: Organize your AI models into development, testing, and production projects. <br/>
+> 3. **Implement RBAC**: Assign roles to users based on their profile to manage access and permissions. <br/>
+> 4. **Expose Models as APIs**: Use Azure API Management to make your AI models accessible via APIs. <br/>
+> 5. **Provide Documentation and Support**: Ensure users have the necessary resources and support to integrate the APIs. <br/>
+> 6. **Implement Monitoring and Analytics**: Track the performance and usage of your AI models to ensure they meet your needs.
+
 ## Wiki 
 
 <details>
@@ -78,7 +87,11 @@ graph TD
 
 ## Demo 
 
-> Please follow the general setup for both approaches. You will then notice a distinction between these approaches in the subsequent subsections.
+> Please follow the general setup for both approaches. You will then notice a distinction between these approaches in the subsequent subsections. Click [here to access the template arch diagram](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/0_Azure/3_AzureAI/AIFoundry/demos/2_AIFoundrySDLCStrategy/docs)
+
+<p style="text-align: center">
+    <img width="750" alt="image" src="https://github.com/user-attachments/assets/5aad6eea-e355-4c82-ac34-4e45b8df7934">
+</p>
 
 ### Create a Resource Group
 
