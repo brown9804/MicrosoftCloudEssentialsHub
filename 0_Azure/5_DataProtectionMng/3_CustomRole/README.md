@@ -187,3 +187,16 @@ Custom roles can be created using various methods:
     <img width="325" alt="image" src="https://github.com/user-attachments/assets/7390ba6d-8273-4a27-ba04-1b04876e1520">
 
     <img width="330" alt="image" src="https://github.com/user-attachments/assets/c7d0cced-2802-4c01-8c1e-53f774eff321">
+
+> [!IMPORTANT]
+> This custom role is for a period of 8 hours, so every 8 hours the role will end as it is time-bound. You can choose to change it to a permanent role so the user does not need to activate the role every 8 hours. To do that, please use the admin account to go to the subscription, under `Access control (IAM)`, click on `Role assignments`. Search for the assigned role, click on `Eligible time-bound`, and change it to `Permanent`.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0864455f-e585-4db6-a909-d37b56286fd4" />
+
+| Before the change | After the change | 
+| --- | --- | 
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/a8aed7bc-7f7a-43b0-8eee-789ed6397f31"> | <img width="650" alt="image" src="https://github.com/user-attachments/assets/cf6af4cf-8479-499b-b002-1a1c783c5b59" /> | 
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/813f1137-c16e-464d-b8bf-41761578ba9a" />
+
+
