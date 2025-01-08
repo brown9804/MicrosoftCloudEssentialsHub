@@ -191,7 +191,6 @@ Custom roles can be created using various methods:
 > [!IMPORTANT]
 > This custom role is for a period of 8 hours, so every 8 hours the role will end as it is time-bound. You can choose to change it to a permanent role so the user does not need to activate the role every 8 hours. To do that, please use the admin account to go to the subscription, under `Access control (IAM)`, click on `Role assignments`. Search for the assigned role, click on `Eligible time-bound`, and change it to `Permanent`.
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/0864455f-e585-4db6-a909-d37b56286fd4" />
 
 | Before the change | After the change | 
 | --- | --- | 
