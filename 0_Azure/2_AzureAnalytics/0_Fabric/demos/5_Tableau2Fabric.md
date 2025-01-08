@@ -350,6 +350,10 @@ SWITCH(<expression>, <value1>, <result1>, <value2>, <result2>, ..., <else>)
 
 Star Schemas are a way to organize your data, where there is one fact table that contains the transactional data, and smaller dimension tables that contain characteristics. The fact table and dimension tables are connected through one-to-many relationships via unique keys. This approach helps avoid data duplication by storing only the key in your fact table.
 
+> The diagram illustrates the relationships between a central fact table ("Sales") and its surrounding dimension tables ("Product," "Sales Territory," "Employee," "Reseller," and "Date").
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/1842372a-72f4-4b7d-8abd-48c524c97cb7">
+
 #### Key Components of a Star Schema
 
 1. **Fact Table**:
