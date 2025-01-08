@@ -352,7 +352,9 @@ Star Schemas are a way to organize your data, where there is one fact table that
 
 > The diagram illustrates the relationships between a central fact table ("Sales") and its surrounding dimension tables ("Product," "Sales Territory," "Employee," "Reseller," and "Date").
 
-<img width="550" alt="image" src="https://github.com/user-attachments/assets/1842372a-72f4-4b7d-8abd-48c524c97cb7">
+<p align="center">
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/1842372a-72f4-4b7d-8abd-48c524c97cb7">
+</p>
 
 #### Key Components of a Star Schema
 
