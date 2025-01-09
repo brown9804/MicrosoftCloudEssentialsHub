@@ -17,6 +17,11 @@ Last updated: 2025-01-08
 - [Time intelligence functions](https://learn.microsoft.com/en-us/dax/time-intelligence-functions-dax)
 - [Time Intelligence: Calendar Table](https://community.fabric.microsoft.com/t5/Power-BI-Community-Blog/Time-Intelligence-Calendar-Table/ba-p/1000565)
 - [Understand star schema and the importance for Power BI](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
+- [Use Show Me to Start a View - Tableau](https://help.tableau.com/current/pro/desktop/en-us/buildauto_showme.htm)
+- [Shelves and Cards Reference  - Tableau](https://help.tableau.com/current/pro/desktop/en-us/buildmanual_shelves.htm)
+- [Apply conditional formatting in tables and matrixes](htt)ps://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting
+- [Optimization guide for Power BI](https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization)
+- [Use Performance Analyzer to examine report element performance in Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-performance-analyzer)
 
 </details>
 
@@ -419,12 +424,145 @@ In Power BI, you would create relationships between the `Sales` fact table and e
 
 ## How to create visualizations 
 
+> `Think Dashboards`: In Power BI, you can create dashboards that combine multiple visuals on a single page. This allows you to tell a comprehensive data story by displaying related visuals together. For example, you can have a bar chart, line graph, and pie chart all on one page, and they can interact with each other. `When you select a data point in one visual, it can filter or highlight related data in the other visuals, providing a more dynamic and interactive experience.`
+
 | Visualization Type | Tableau Tutorial | Power BI Tutorial |
 |--------------------|------------------|-------------------|
 | **Waterfall Chart** | - [How to Create a Waterfall Chart in Tableau](https://www.youtube.com/watch?v=5ArPAZYxUVk) <br/> - [Creating a Tableau Waterfall Chart](https://hevodata.com/learn/tableau-waterfall-chart/) | - [How to Create and Format Power BI Waterfall Chart](https://www.youtube.com/watch?v=KMJKyaSnEwc) <br/> - [Waterfall charts in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-waterfall-charts) |
 | **Doughnut Chart** | - [How to Create a Doughnut Chart in Tableau](https://www.youtube.com/watch?v=rADPwnGU2BQ) <br/> - [Creating Doughnut Charts](https://kb.tableau.com/articles/Issue/creating-donut-charts) | - [How to Create a Donut Chart in Power BI](https://www.youtube.com/watch?v=zXSJqit7s5w) <br/> - [Doughnut charts in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-doughnut-charts) |
 | **Combination Chart** | - [How to Create a Combination Chart in Tableau](https://www.youtube.com/watch?v=Kfwy9sAk_zY) <br/> - [Quick Start: Combination Charts](https://help.tableau.com/current/pro/desktop/en-us/qs_combo_charts.htm) | - [Combination (Combo) Charts in Power BI](https://www.youtube.com/watch?v=Zac4Y0pQnhM) <br/> - [Combo chart in Power BI](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-combo-chart) |
 | **Sankey Diagram** | - [How to Create a Sankey Diagram in Tableau](https://www.youtube.com/watch?v=1HwCzlA9hI4) <br/> - [How to Build a Sankey Chart in Tableau](https://www.thedataschool.co.uk/alfred-chan/how-to-build-a-sankey-chart-in-tableau/) | - [How to Create a Sankey Diagram in Power BI](https://www.youtube.com/watch?v=T7lVEk9pWY8) <br/> - [How to create a Sankey Chart in Power BI Desktop](https://www.mssqltips.com/sqlservertip/7558/build-sankey-chart-using-power-bi-with-step-by-step-instructions/) |
+
+### Recreate Simple Visuals
+When migrating from Tableau to Power BI, you can use Power BI's features to recreate your existing visuals. Power BI has similar functionalities to Tableau's `Show Me`, `Rows/Columns Shelf`, and `Marks Card`. You can drag and drop fields to create visuals, customize them with different chart types, and apply filters and formatting to match your original designs.
+
+| Functionality | Tableau | Power Bi | 
+| --- | --- | --- |
+| - Show Me (Tableau) <br/> - Visualizations (PBi) | <img width="130" alt="image" src="https://github.com/user-attachments/assets/185e23c7-4a91-4726-a1c8-a3bfb1a7c0db" /> | <img width="160" alt="image" src="https://github.com/user-attachments/assets/4d70ec80-f006-49e1-a56e-abdd9e13d3d0"> |
+| Rows/Columns Shelf | <img width="330" alt="image" src="https://github.com/user-attachments/assets/9c47b71c-6ea8-48dd-9cfe-e286b43025ff" /> | <img width="410" alt="image" src="https://github.com/user-attachments/assets/f8e5243d-b043-49b0-88e9-1fcc304e229f" /> |
+| Marks Card |<img width="330" alt="image" src="https://github.com/user-attachments/assets/58302424-15e7-4269-a232-6aeeb8547515" /> | <img width="410" alt="image" src="https://github.com/user-attachments/assets/bf76de20-5308-4f2c-8dcd-e3b4fadb33f9" /> | 
+
+### Explore Custom Visuals
+If Power BI's built-in visuals don't meet your needs, you can explore the extensive library of custom visuals available in the Power BI marketplace. These custom visuals are created by the community and third-party developers, offering a wide range of options to enhance your reports. You can find visuals for advanced charts, maps, and other specialized visualizations that might not be available out-of-the-box.
+
+### Learn New Tools
+Power BI offers several unique tools that can enhance your visualizations. For example:
+- **Bookmarks:** Bookmarks allow you to capture the current state of a report page, including filters, slicers, and visual settings. You can use bookmarks to create interactive reports with different views and navigation options.
+- **Drillthrough:** This feature lets you create detailed drillthrough pages that provide more in-depth information about a specific data point. Users can right-click on a data point and navigate to a detailed report page focused on that data.
+- **Tooltips:** Custom tooltips can be designed to show additional information when users hover over a data point. This can include charts, images, and text to provide more context without cluttering the main visual.
+Certainly! Here's the expanded table with more information:
+
+| Power BI Terminology | Slicer | ↓ (drill) | Tooltips | Insights | Q&A | Theme |
+|---|---|---|---|---|---|---|
+| **Definition** | Add a filter on a visual or page that the report user can toggle. | Drill down into the hierarchy on a visual. | Adding in more fields as additional information on a visual when hovering. | Provides analysis of why the data is the way it is. | Use natural language to ask questions on your data. | Customize colors to use in your visuals. |
+| **Tableau equivalent** | Filter | + (drill) | Tooltips | Explain Data | Ask Data | Custom color palettes |
+| **Purpose** | Allow users to interactively filter data on reports and dashboards. | Enable users to explore data at different levels of detail. | Provide additional context and information without cluttering the visual. | Automatically generate insights and explanations for data trends. | Allow users to query data using natural language. | Ensure visual consistency and branding across reports. |
+| **Usage** | Used to create interactive reports where users can filter data by categories, dates, etc. | Used to navigate through data hierarchies, such as year to month to day. | Used to show detailed information when hovering over data points. | Used to understand the underlying reasons for data patterns and anomalies. | Used to quickly find answers and insights by typing questions. | Used to apply consistent color schemes and styles to all visuals. |
+| **Customization** | Can be customized with different types of slicers (e.g., dropdown, list, date). | Can be customized with different drill levels and paths. | Can be customized with various fields and formatting options. | Can be customized with different types of insights and explanations. | Can be customized with synonyms and phrasings for better query results. | Can be customized with specific color codes and themes. |
+
+### Conditional Formatting
+
+Below you will see some examples, click [here to see more from Microsoft documentation](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting)
+
+| Color by rules for percentages | Add icons | 
+| --- | --- |
+| <img width="550" alt="image" src="https://github.com/user-attachments/assets/d44f70a4-dc16-48d1-ba96-264ecb7694d0" /> | <img width="550" alt="image" src="https://github.com/user-attachments/assets/c4395520-5e63-409d-adc7-ff71acf48f18" /> | 
+
+### Visualization Terminology
+
+| Power BI Terminology | Page | Visualization | Report | Dashboard |
+|---|---|---|---|---|
+| **Definition** | Blank canvas for your visualizations and reports | A single graph, chart, or table; selected from the Visualization pane | Collection of visualizations in a single Power BI file | Collection of Power BI visualizations that are pinned onto a single view on Power BI service |
+| **Purpose** | Organize and structure your visualizations | Display specific data insights | Provide detailed analysis and insights | Offer a high-level overview of key metrics |
+| **Interaction** | Can contain multiple visualizations that interact with each other | Individual visual elements | Interactive with filters, slicers, and drillthroughs | Interactive with live data and real-time updates |
+| **Usage** | Used to create and design reports | Used to visualize data in various formats | Used for in-depth data analysis and storytelling | Used for monitoring and quick access to important metrics |
+| **Customization** | Can be customized with themes, backgrounds, and layouts | Can be customized with different chart types, colors, and labels | Can include custom visuals, calculated fields, and measures | Can be customized with tiles, widgets, and live data feeds |
+| `Tableau equivalent` | Sheet | Visualization | Tableau Workbook/Dashboard | No Tableau equivalent |
+
+### Parameters 
+
+> `Parameters` in Power BI are versatile tools that allow you to add interactivity and flexibility to your reports. They can be used to create dynamic filters, control visual elements, and enable users to interact with the data in meaningful ways. Here’s a more detailed look at how you can use parameters in Power BI:
+
+#### Types of Parameters
+
+1. **Numeric Parameters**: These allow you to create parameters with numeric values. For example, you can create a parameter to adjust a discount rate or a threshold value. Users can interact with these parameters using sliders or input boxes to see how changes in the parameter affect the data.
+2. **Field Parameters**: These parameters allow you to switch between different fields or dimensions in your data. For example, you can create a parameter to toggle between different metrics like sales, profit, or quantity, allowing users to dynamically change the visualized data.
+
+#### Creating and Using Parameters
+
+1. **Creating a Numeric Parameter**:
+   - Go to the `Modeling` tab in Power BI Desktop.
+   - Select `New Parameter` and choose `Numeric Range`.
+   - Configure the parameter by setting its name, data type, minimum and maximum values, and increment steps.
+   - Once created, the parameter can be added to your report as a slicer, allowing users to adjust its value interactively.
+2. **Creating a Field Parameter**:
+   - Similar to numeric parameters, you can create field parameters by selecting `New Parameter` and choosing `Fields`.
+   - Define the fields you want to include in the parameter.
+   - Users can then switch between these fields in the report, providing a dynamic way to explore different dimensions of the data.
+
+#### Using Parameters in Calculations: 
+
+In Power BI, parameters can be referenced in DAX (Data Analysis Expressions) calculations to create dynamic measures and calculated columns. For example, you can create a measure that adjusts based on the value of a numeric parameter. For example, this measure will dynamically update based on the value selected in the discount parameter, allowing users to see the impact of different discount rates on sales.
+
+```DAX
+SalesAfterDiscount = SUM(Sales[SalesAmount]) - (SUM(Sales[SalesAmount]) * 'Discount Parameter'[Discount Value])
+```
+
+> [!IMPORTANT]
+> - **Single Value Parameters**: Unlike Tableau, Power BI does not support single value parameters directly. However, you can achieve similar functionality using measures. For instance, you can create a measure that holds a single value and use it in your calculations. <br/>
+> - **Dynamic Filtering**: Parameters can be used to create dynamic filters that adjust the data displayed in visuals. This is particularly useful for creating interactive reports where users can explore different scenarios and what-if analyses. 
+
+#### Practical Applications: 
+
+1. **Scenario Analysis**: Use parameters to create what-if scenarios, such as adjusting sales targets or budget allocations, and see how these changes impact your key metrics.
+2. **Dynamic Reporting**: Allow users to switch between different metrics or dimensions, providing a more flexible and interactive reporting experience.
+3. **Customizable Visuals**: Enable users to customize visuals by selecting different parameters, such as changing the time period, geographic region, or product category.
+
+### Bookmarks 
+
+> `Bookmarks` in Power BI are powerful tools that allow you to capture and save the current state of a report page, including filters, slicers, sort order, and the visibility of visuals. This feature is similar to **Tableau** actions and the concept of parameterizing sheets, enabling users to switch between different views or states within a report.
+
+#### Key Features and Uses of Bookmarks
+
+1. **Navigation and Interactivity**:
+   - **Navigation**: Bookmarks can be used to create a navigation experience within your report. By linking bookmarks to buttons or images, you can guide users through different sections or pages of your report, creating an app-like experience.
+   - **Interactivity**: Bookmarks allow users to toggle between different states of a report. For example, you can create bookmarks to switch between different visualizations, such as a bar chart and a line graph, or to show and hide specific visuals based on user interaction.
+2. **Swapping Visuals**: One of the most common uses of bookmarks is to swap out visuals in a report. This can be particularly useful when you want to provide different perspectives on the same data. For instance, you can create bookmarks to switch between a detailed view and a summary view of your data, or to compare different metrics side by side.
+3. **Capturing Report States**: Bookmarks capture the entire state of a report page, including the current filters, slicers, and visual settings. This means you can create bookmarks for different scenarios or analysis points, allowing users to quickly switch between them without having to manually adjust filters or settings each time.
+4. **Creating Interactive Reports**: By using bookmarks in combination with buttons, you can create highly interactive reports. For example, you can set up buttons to apply specific filters, reset filters, or navigate to different report pages. This enhances the user experience by making the report more dynamic and user-friendly.
+
+#### How to Create and Use Bookmarks
+
+1. **Creating a Bookmark**:
+   - In Power BI Desktop, go to the **View** tab and enable the **Bookmarks Pane**.
+   - Configure your report page as you want it to appear in the bookmark (e.g., apply filters, adjust visuals).
+   - In the Bookmarks Pane, click **Add** to create a new bookmark. You can rename the bookmark for easy reference.
+2. **Using Bookmarks with Buttons**:
+   - You can assign bookmarks to buttons or images to create interactive elements in your report.
+   - In the **Insert** tab, add a button or image to your report.
+   - In the **Format** pane, go to the **Action** settings, enable **Action**, and select **Bookmark**. Choose the bookmark you want to link to the button.
+3. **Managing Bookmarks**: You can update, rename, delete, and reorder bookmarks in the Bookmarks Pane. This allows you to keep your bookmarks organized and make adjustments as needed.
+4. **Advanced Bookmark Features**:
+   - **Grouping Bookmarks**: You can group bookmarks to create a sequence of views or steps. This is useful for presentations or guided analysis.
+   - **Data, Display, and Current Page Options**: When creating or updating a bookmark, you can choose which aspects of the report state to capture (e.g., data filters, visual display settings, or the current page).
+
+        <img width="550" alt="image" src="https://github.com/user-attachments/assets/26669f44-c56e-4618-b78a-86fabc830e70" />
+
+#### Practical Applications
+
+1. **Storytelling**: Use bookmarks to create a narrative flow in your report, guiding users through different insights and analysis points.
+2. **Interactive Dashboards**: Enhance dashboards with interactive elements that allow users to switch views, apply filters, and navigate between pages seamlessly.
+3. **Scenario Analysis**: Create bookmarks for different scenarios or what-if analyses, enabling users to explore various outcomes and impacts.
+
+## Optimization 
+
+> Click here to read more about [Power BI: Incremental Refresh](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/11_PBi_IncreRefresh.md), or [Strategies to Prevent Capacity Spikes - Overview](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/21_FabricPreventCapacitySpikes.md)
+
+| **Optimization Area** | **Technique** | **Details** |
+|---|---|---|
+| **Optimization – Data Load** | - Utilize query folding<br/>- Use a star schema<br/>- Avoid row-by-row calculations<br/>- Avoid high cardinality columns<br/>- Optimize column data types<br/>- Create custom columns in Power Query | Power BI utilizes the column-based Vertipaq Engine to enhance the performance of data load and executing your DAX code. To optimize your data model for faster loading, consider the following:<br/>- Push queries to the source to reduce load on Power BI.<br/>- Organize data into fact and dimension tables to avoid redundancy.<br/>- Perform calculations on columns rather than rows.<br/>- Exclude unnecessary columns with high cardinality, such as UUID fields.<br/>- Use appropriate data types, like Date instead of DateTime when time is not needed.<br/>- Perform data transformations in Power Query rather than in the Power BI data tab. |
+| **Optimization – Performance Analyzer** | - Turn on Performance Analyzer<br/>- Analyze DAX query time<br/>- Analyze visual display time<br/>- Analyze other processing time | If your reports are running slow and you want to debug, you can turn on Performance Analyzer in Power BI Desktop. This tool helps you identify bottlenecks and optimize report elements by examining:<br/>- **DAX query**: Time taken for Analysis Services to return results for a DAX query.<br/>- **Visual display**: Time required for visuals to render on the screen, including retrieving web images or geocoding.<br/>- **Other**: Time spent on preparing queries, waiting for other visuals, or background processing. |
+
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
