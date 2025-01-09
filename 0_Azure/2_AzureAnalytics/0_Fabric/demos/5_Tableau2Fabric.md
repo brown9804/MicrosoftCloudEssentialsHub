@@ -36,6 +36,54 @@ Last updated: 2025-01-09
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Migration Considerations](#migration-considerations)
+- [Lifecycle Comparison](#lifecycle-comparison)
+- [Data Ingestion](#data-ingestion)
+    - [Essentials for Developers](#essentials-for-developers)
+    - [Data Connection Types](#data-connection-types)
+- [Data Transformation](#data-transformation)
+- [Data Modelling](#data-modelling)
+    - [Data Modelling – Dataflows](#data-modelling--dataflows)
+    - [Data Modelling – Date Tables and Time Intelligence](#data-modelling--date-tables-and-time-intelligence)
+    - [Data Modelling – Calculations](#data-modelling--calculations)
+        - [Calculated Columns](#calculated-columns)
+        - [Custom Calculations](#custom-calculations)
+    - [Data Modelling – Measures](#data-modelling--measures)
+        - [Practical Use Cases](#practical-use-cases)
+    - [Data Modelling – Conditionals](#data-modelling--conditionals)
+        - [IF Function](#if-function)
+        - [Nested IF Statements](#nested-if-statements)
+        - [SWITCH Function](#switch-function)
+        - [Practical Use Cases](#practical-use-cases)
+    - [Data Modelling – Star Schemas](#data-modelling--star-schemas)
+        - [Key Components of a Star Schema](#key-components-of-a-star-schema)
+        - [Benefits of Using Star Schemas](#benefits-of-using-star-schemas)
+        - [Practical Example in Power BI](#practical-example-in-power-bi)
+- [How to create visualizations](#how-to-create-visualizations)
+    - [Recreate Simple Visuals](#recreate-simple-visuals)
+    - [Explore Custom Visuals](#explore-custom-visuals)
+    - [Learn New Tools](#learn-new-tools)
+    - [Conditional Formatting](#conditional-formatting)
+    - [Visualization Terminology](#visualization-terminology)
+    - [Parameters](#parameters)
+        - [Types of Parameters](#types-of-parameters)
+        - [Creating and Using Parameters](#creating-and-using-parameters)
+        - [Using Parameters in Calculations:](#using-parameters-in-calculations)
+        - [Practical Applications:](#practical-applications)
+    - [Bookmarks](#bookmarks)
+        - [Key Features and Uses of Bookmarks](#key-features-and-uses-of-bookmarks)
+        - [How to Create and Use Bookmarks](#how-to-create-and-use-bookmarks)
+        - [Practical Applications](#practical-applications)
+- [Optimization](#optimization)
+- [Power Bi Sharing Platform](#power-bi-sharing-platform)
+- [Admin](#admin)
+- [Governance](#governance)
+- [Migration Approach](#migration-approach)
+    - [How to  migrate a report](#how-to--migrate-a-report)
+    - [Migrate End Users](#migrate-end-users)
 
 </details>
 
@@ -599,39 +647,98 @@ For more information, please refer to the general guidance provided below:
 | **Definition** | Your Power BI Capacity or Tenant is what you purchase when you buy a Premium Capacity. Workspaces in a capacity are completely separated from other workloads in the shared capacity or another premium capacity. This ensures dedicated resources and performance for your reports and datasets. | In Power BI Service, admins can create logical domains that wall off the workloads of one business unit (BU) from another and assign workspaces to domains. One capacity can have multiple domains, allowing for better organization and governance of data. Domains help in managing data according to specific business needs and regulations. | Group users together to allow easier permission assignments and management. In Power BI Service, this is integrated with your O365/M365 groups so you can directly use those groups to assign permissions in Power BI. This integration simplifies user management and ensures consistent access control across your organization. |
 | **Tableau equivalent** | Sites: In Tableau, sites are used to separate content and manage resources independently, similar to how capacities work in Power BI. | Sites: Tableau also uses sites to logically separate content and manage permissions, similar to domains in Power BI. | User Groups: In Tableau, user groups are used to manage permissions and access control, similar to security groups and M365 groups in Power BI. |
 
-### Identify your administrators
-> If you have a Microsoft 365 user administrator, they will automatically have Power BI admin access and can grant users the Power BI Admin role. This role allows them to manage various aspects of the Power BI environment, including user permissions, workspace settings, and data governance. If you don’t have a Microsoft 365, Dynamics 365, or Azure tenant, you will need to first create a Microsoft Entra tenant. This is essential for managing user identities and access within your organization.
+> How to migrate:
 
-### Upskill your Power BI administrators
-> Ensure that your Power BI Admins are well-prepared and knowledgeable about using the Admin Portal to manage your Power BI environment. Consider enrolling them in training courses such as "Power BI: Administrator in a Day" or other relevant workshops. These courses cover essential topics like configuring access settings, monitoring platform usage, managing licenses, and using PowerShell cmdlets for automation. This training will help your admins effectively manage and optimize your Power BI deployment.
-
-### Determine your org settings
-
-> Collaborate with your team to agree upon and configure organization-wide settings in Power BI. These settings include:
-
-- **Custom visuals**: Decide whether to allow the use of custom visuals created by third-party developers.
-- **Sensitivity labels**: Implement data sensitivity labels to classify and protect your data.
-- **Workspace creation**: Determine if all users should have the ability to create workspaces or if this should be restricted to specific roles
-- **Data sharing and collaboration**: Configure settings for data sharing, collaboration, and access permissions to ensure data security and compliance.
-
-### Assign licenses
-> If you need to assign Power BI Pro or Premium Per User (PPU) licenses to individuals, you can do so in the Power BI Admin Portal. Follow these steps:
-
-- Sign in to the Microsoft 365 admin center or Azure portal.
-- Navigate to the `Licenses` section under `Billing`.
-- Select the appropriate Power BI license (e.g., Power BI Pro or PPU) and assign it to the desired users
-- Ensure that users have the necessary licenses to access and utilize Power BI features effectively.
-
-### Customize branding
-> Customize the look and feel of the Power BI Service to match your organization's branding. These branding elements help create a consistent and professional appearance for your Power BI environment, enhancing user experience and trust. This includes:
-
-- **Logo**: Upload your company logo to appear in the top left of the navigation bar.
-- **Theme color**: Choose a theme color for the top navigation bar that complements your logo and corporate colors.
-- **Cover image**: Add a cover image to the Home page to create a welcoming and branded experience for users
+1. Identify your administrators: If you have a Microsoft 365 user administrator, they will automatically have Power BI admin access and can grant users the Power BI Admin role. This role allows them to manage various aspects of the Power BI environment, including user permissions, workspace settings, and data governance. If you don’t have a Microsoft 365, Dynamics 365, or Azure tenant, you will need to first create a Microsoft Entra tenant. This is essential for managing user identities and access within your organization.
+2. Upskill your Power BI administrators: Ensure that your Power BI Admins are well-prepared and knowledgeable about using the Admin Portal to manage your Power BI environment. Consider enrolling them in training courses such as "Power BI: Administrator in a Day" or other relevant workshops. These courses cover essential topics like configuring access settings, monitoring platform usage, managing licenses, and using PowerShell cmdlets for automation. This training will help your admins effectively manage and optimize your Power BI deployment.
+3. Determine your org settings: Collaborate with your team to agree upon and configure organization-wide settings in Power BI. These settings include:
+      - **Custom visuals**: Decide whether to allow the use of custom visuals created by third-party developers.
+      - **Sensitivity labels**: Implement data sensitivity labels to classify and protect your data.
+      - **Workspace creation**: Determine if all users should have the ability to create workspaces or if this should be restricted to specific roles
+      - **Data sharing and collaboration**: Configure settings for data sharing, collaboration, and access permissions to ensure data security and compliance.
+4. Assign licenses: If you need to assign Power BI Pro or Premium Per User (PPU) licenses to individuals, you can do so in the Power BI Admin Portal. Follow these steps:
+      - Sign in to the Microsoft 365 admin center or Azure portal.
+      - Navigate to the `Licenses` section under `Billing`.
+      - Select the appropriate Power BI license (e.g., Power BI Pro or PPU) and assign it to the desired users
+      - Ensure that users have the necessary licenses to access and utilize Power BI features effectively.
+5. Customize branding: Customize the look and feel of the Power BI Service to match your organization's branding. These branding elements help create a consistent and professional appearance for your Power BI environment, enhancing user experience and trust. This includes:
+      - **Logo**: Upload your company logo to appear in the top left of the navigation bar.
+      - **Theme color**: Choose a theme color for the top navigation bar that complements your logo and corporate colors.
+      - **Cover image**: Add a cover image to the Home page to create a welcoming and branded experience for users
 
 ## Governance 
 
+> Below are some recommendations for implementing governance in Power BI:
 
+- **Content Ownership and Management**: There are three primary strategies for how data, analytics, and business intelligence (BI) content is owned and managed: business-led self-service, managed self-service, and enterprise. Each strategy depends on factors such as user skills, ongoing commitment for training, flexibility required, and complexity level. For more details, refer to the [Microsoft Fabric adoption roadmap: Content ownership and management](https://learn.microsoft.com/en-us/power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management).
+- **Content Delivery Scope**: The scope of content delivery in Power BI includes personal, team, departmental, and enterprise levels. Each scope influences best practices for content distribution, management, security, and information protection. For more information, see the [Microsoft Fabric adoption roadmap: Content delivery scope](https://learn.microsoft.com/en-us/power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope).
+- **Content Distribution and Sharing**: Plan the distribution and sharing of content in Power BI by setting roles, managing permissions, and implementing a content distribution strategy that fits your needs. This includes sharing content with colleagues and external users such as customers, partners, or vendors. For more details, refer to the [Power BI implementation planning: Content distribution and sharing](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-distribution-sharing).
+- **Regulated and Sensitive Data**: Implement data governance strategies to ensure users comply with regulatory requirements and internal policies when working with regulated and highly sensitive data. This includes using sensitivity labels and data loss prevention (DLP) measures. For more information, see the [Microsoft Fabric adoption roadmap: Governance](https://learn.microsoft.com/en-us/power-bi/guidance/fabric-adoption-roadmap-governance) and [Power BI implementation planning: Information protection](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-info-protection).
+- **Unverified Data Sources**: Establish policies for the use of unverified data sources that are unknown to IT. This includes assessing the risks and benefits of using such data sources and implementing appropriate security measures. For more details, refer to the [Microsoft Fabric adoption roadmap: Governance](https://learn.microsoft.com/en-us/power-bi/guidance/fabric-adoption-roadmap-governance).
+- **Manually Maintained Data Sources**: Define when manually maintained data sources, such as Excel or flat files, are permitted. Ensure that these data sources are formatted correctly and integrated into Power BI in a way that maintains data integrity and consistency. For more information, see the [Coursera Microsoft Power BI Data Analyst](https://quiztudy.com/microsoft-courses/microsoft-power-bi-data-analyst-weekly-breakdown/data-sources-in-power-bi-course-3-module-1/).
+- **Workspace Creation**: By default, all Pro and above users can create workspaces in Power BI. This can be restricted by a Power BI administrator in Tenant settings, specifying which AD groups can or cannot create workspaces. For more details, refer to the [Power BI implementation planning: Tenant-level workspace planning](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-workspaces-tenant-level-planning).
+- **Managing Workspaces**: Effective workspace management involves defining the purpose, ownership, organization, and access for each workspace. Align workspace-level decisions with tenant-level goals and ensure proper governance and collaboration. For more information, see the [Power BI implementation planning: Workspace-level workspace planning](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-workspaces-workspace-level-planning).
+- **Personal Workspaces**: Personal workspaces are used for individual data exploration and analysis. They are governed to a lesser extent than collaborative workspaces and are intended for private analytics. For more details, refer to the [Power BI usage scenarios: Personal BI](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-usage-scenario-personal-bi).
+- **Fabric Capacity Assignment**: Workspaces can be assigned to Fabric capacity to ensure dedicated resources and performance. This requires a capacity contributor role and a workspace admin role. For more information, see [Manage your Fabric capacity](https://learn.microsoft.com/en-us/fabric/admin/capacity-settings).
+- **Fabric Administrator**: Fabric administrators are responsible for overseeing the Fabric environment, including managing capacities, workspaces, and governance policies. For more details, refer to the [Microsoft Fabric adoption roadmap: Governance](https://learn.microsoft.com/en-us/power-bi/guidance/fabric-adoption-roadmap-governance).
+- **Delegated Settings**: Certain settings can be delegated to the Domain admin level to allow for more granular control and management of the Power BI environment. This includes managing workspace creation, access permissions, and governance policies. For more information, see the [Power BI implementation planning: Tenant-level workspace planning](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-workspaces-tenant-level-planning).
+- **Security and Data Protection**: Implement security, privacy, and data protection requirements based on sensitivity labels. This includes defining allowed actions for content assigned to each label and ensuring compliance with regulatory requirements. For more details, refer to the [Power BI implementation planning: Information protection](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-info-protection).
+- **Personal Gateways**: Decide whether to allow or disallow the use of personal gateways for data refreshes and connectivity. This decision should be based on security considerations and organizational policies. For more information, see the [Power BI implementation planning: Content distribution and sharing](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-distribution-sharing).
+- **Self-Service Purchasing**: Determine whether to allow or disallow self-service purchasing of user licenses. This decision should align with your organization's procurement policies and governance framework. For more details, refer to the [Power BI implementation planning: Tenant-level workspace planning](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-workspaces-tenant-level-planning).
+- **Content Certification**: Define the requirements for who can certify content and the criteria that must be met for certification. This ensures that certified content meets quality and governance standards. For more information, see the [Power BI implementation planning: Content lifecycle management](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
+- **Application Lifecycle Management (ALM)**: Implement ALM practices to manage content through its entire lifecycle, including development, test, and production stages. This includes version control, testing, and deployment processes. For more details, refer to the [Power BI implementation planning: Content lifecycle management](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
+- **Critical Content Requirements**: Define additional requirements for critical content, such as data quality verifications and documentation. This ensures that critical content meets high standards of accuracy and reliability. For more information, see the [Power BI implementation planning: Content lifecycle management](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
+- **Standardized Master Data**: Use standardized master data and common data definitions to improve consistency across data assets. This promotes data integrity and facilitates better data analysis and reporting. For more details, refer to the [Power BI implementation planning: Content lifecycle management](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
+- **External Tools**: Provide recommendations and requirements for the use of external tools by advanced content creators. This includes tools for data modeling, visualization, and analysis that complement Power BI's capabilities. For more information, see the [Power BI implementation planning: Content lifecycle management](https://learn.microsoft.com/en-us/power-bi/guidance/powerbi-implementation-planning-content-lifecycle-management-overview).
+
+## Migration Approach 
+
+> [!IMPORTANT]
+> `No automated tool for migration`: There is `no` tool for migrating from **Tableau** to **Power BI**. The migration process requires manually rebuilding all data connections and reports from scratch (using your Tableau reports as a reference).
+
+> Steps:
+
+- **Plan for your migration**: Multiple Tableau visuals can be grouped within a single report. Look through the visuals in each of your Tableau projects to see if it makes sense to group them in one Power BI report. Also, assess the priority of the reports to determine what should be migrated first. This planning phase helps in organizing the migration process and setting clear priorities.
+- **Conduct a Proof of Concept (PoC)**: Validate key concepts such as testing out gateway connections and validating unsure assumptions. This allows you to mitigate risks earlier on and pass on the learning to others. A PoC helps in identifying potential challenges and ensuring that the migration approach is feasible.
+- **Conduct phased migration**: It is not ideal to perform all migration at once and move your users to another BI platform all at the same time. Pick some projects to migrate first, gather the learnings from performing the migration, allow content creators and users to adapt, then proceed with the next one with your newfound expertise. This phased approach helps in managing the transition smoothly and minimizing disruptions.
+- **Migrate your key reports first**: Consider migrating your most visible and frequently used reports first. In this way, you’re likely to gain more early adopters and gain momentum as your users become familiar with the new BI platform. Early success with key reports can build confidence and support for the migration.
+- **Have a subject matter expert around for support**: After the key reports have been migrated, you can start asking content creators and authors to prepare for their formal migration. During this process, make sure you have a community where questions can be answered and hiccups can be addressed. Having experts available for support ensures a smoother transition and helps in resolving issues quickly.
+- **Focus on the big picture**: It is never possible to exactly replicate your original visuals. Instead of trying to create a replica, focus on the big picture and create something that is fit-for-purpose. It will be helpful to have subject matter experts around to help and consult during this process. Emphasize the overall goals and objectives of the reports rather than exact visual replication.
+- **Consider reusability of datasets**: After you migrate your key reports, consider making the data sources reusable for others using a dataflow. Dataflows allow you to create reusable data preparation logic that can be shared across multiple reports and datasets, promoting consistency and efficiency.
+- **Prepare to handle varying responses**: You will see varying levels of receptiveness and willingness to move to Power BI because your users may have made significant investments in building skills for Tableau. Communication on the higher-level organizational benefits is important in this instance to ensure your users understand the benefits of standardizing on Power BI. Addressing user concerns and highlighting the advantages of Power BI can help in gaining acceptance.
+- **Invest in training and governance**: Conduct regular internal trainings to help users develop and deepen their Power BI skills. Have a central group of Power BI admins who manage the platform and monitor usage. Training and governance are crucial for ensuring that users are proficient with the new tool and that the platform is used effectively and securely.
+- **Allow gradual growth**: When you have a large organization, it is common for the entire migration process to take one or two years before you can fully phase out of your old BI platform. Allowing gradual growth and adaptation ensures a smoother transition and helps in managing the change effectively.
+
+### How to  migrate a report
+
+- **Rebuild data connections**: Reconnect to your on-premises or cloud data sources in Power BI. This involves setting up new data connections using Power BI's data connectors and ensuring that the data is imported or queried correctly.
+- **Build visuals one by one**: Recreate each visual from your Tableau reports in Power BI Desktop. This includes selecting the appropriate visual type, configuring the data fields, and applying any necessary formatting and customizations.
+- **Publish your new Power BI report**: Once the visuals are built, publish the report to the Power BI Service. This makes the report accessible to your users and allows for further collaboration and sharing.
+- **Set up a workspace**: Create a workspace in Power BI Service to organize and manage your reports and datasets. Workspaces act as containers for your content and help in managing access and permissions.
+- **Set up Row-Level Security (RLS)**: If needed, configure RLS in Power BI Desktop to control access to data based on user roles. This ensures that users only see the data they are authorized to view.
+- **Iterate for each solution**: Repeat the above steps for each Tableau report or dashboard being migrated to Power BI. This iterative process helps in systematically transitioning all your content to the new platform.
+
+### Migrate End Users 
+
+- **Conduct a Proof of Concept (PoC)**: Before fully migrating, conduct a PoC to validate key concepts such as data connectivity, performance, and user experience. This helps identify potential issues early and allows you to refine your migration approach.
+- **Phased Migration Approach**: Implement a phased migration approach where you migrate a few reports at a time. This allows users to adapt gradually and provides opportunities to gather feedback and make improvements.
+- **Communication and Change Management**: Communicate the benefits of Power BI and the migration plan clearly to all users. Address any concerns and provide regular updates to keep everyone informed and engaged.
+- **Invest in Training and Governance**: Continuously invest in training programs to help users develop and deepen their Power BI skills. Establish governance policies to ensure data security, compliance, and effective use of the platform.
+- Upskilling End Users:
+    - **Train your end users in navigating Power BI**: It's essential to provide comprehensive training to ensure that your end users are comfortable using Power BI. This includes understanding the interface, navigating reports, and utilizing key features.
+    - **Identify different personas**: Recognize that your end users will have different roles and needs. Common personas include:
+      - **Report Developers**: These users create and design reports and dashboards. They need in-depth training on data modeling, DAX (Data Analysis Expressions), and advanced visualization techniques.
+      - **Citizen Developers**: These users have some technical skills and create reports for their teams. They need training on basic report creation, data connections, and using Power BI Desktop.
+      - **Report Consumers**: These users primarily view and interact with reports. They need training on navigating reports, using filters and slicers, and understanding the insights presented.
+    - **Provide tailored upskilling plans**: Develop training programs that cater to the specific needs of each persona. This could include workshops, online courses, and hands-on labs. Resources like the Power BI Learning Catalog can be very helpful.
+- Set Up Office Hours:
+  - **Provide support through office hours**: Establish regular office hours where end users can seek help and ask questions. This ensures they have a dedicated time and place to get support, which can be crucial during the transition period.
+  - **Create a support community**: Encourage the formation of user groups or forums where users can share tips, ask questions, and help each other. This fosters a collaborative environment and helps users feel supported.
+  - **Leverage internal champions**: Identify and empower Power BI champions within your organization who can provide peer support and share best practices.
+- Transfer the Crucial Reports First:
+    - **Prioritize critical reports**: Start by migrating the reports and dashboards that are most critical to business decision-making. This minimizes business disruption and ensures that key stakeholders have access to the information they need.
+    - **Gain early buy-ins**: By focusing on crucial reports first, you can demonstrate the value of Power BI early in the migration process. This helps in gaining buy-in from stakeholders and building momentum for the migration.
+    - **Ensure data accuracy and consistency**: During the migration of critical reports, pay close attention to data accuracy and consistency. Validate the migrated reports thoroughly to ensure they match the original Tableau reports.
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
