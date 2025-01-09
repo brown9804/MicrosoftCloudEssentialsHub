@@ -22,7 +22,13 @@ Last updated: 2025-01-09
 - [Apply conditional formatting in tables and matrixes](htt)ps://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting
 - [Optimization guide for Power BI](https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization)
 - [Use Performance Analyzer to examine report element performance in Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-performance-analyzer)
-
+- [Get started with org apps (preview) - Power BI | Microsoft Learn](https://learn.microsoft.com/en-us/power-bi/consumer/org-app-items/org-app-items)
+- [Purchase Power BI and assign licenses. - Power BI](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-purchasing-power-bi-pro)
+- [Get licenses for users in your organization. - Power BI](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-licensing-organization)
+- [How i can find who is the admin? - Microsoft Fabric Community](https://community.fabric.microsoft.com/t5/Service/How-i-can-find-who-is-the-admin/m-p/184111)
+- [Announcing custom branding for your organization | Microsoft Power BI Blog](https://powerbi.microsoft.com/en-us/blog/announcing-custom-branding-for-your-organization/)
+- [Add custom branding to the Power BI service - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/admin/service-admin-custom-branding)
+  
 </details>
 
 ## Content 
@@ -562,6 +568,69 @@ SalesAfterDiscount = SUM(Sales[SalesAmount]) - (SUM(Sales[SalesAmount]) * 'Disco
 |---|---|---|
 | **Optimization – Data Load** | - Utilize query folding<br/>- Use a star schema<br/>- Avoid row-by-row calculations<br/>- Avoid high cardinality columns<br/>- Optimize column data types<br/>- Create custom columns in Power Query | Power BI utilizes the column-based Vertipaq Engine to enhance the performance of data load and executing your DAX code. To optimize your data model for faster loading, consider the following:<br/>- Push queries to the source to reduce load on Power BI.<br/>- Organize data into fact and dimension tables to avoid redundancy.<br/>- Perform calculations on columns rather than rows.<br/>- Exclude unnecessary columns with high cardinality, such as UUID fields.<br/>- Use appropriate data types, like Date instead of DateTime when time is not needed.<br/>- Perform data transformations in Power Query rather than in the Power BI data tab. |
 | **Optimization – Performance Analyzer** | - Turn on Performance Analyzer<br/>- Analyze DAX query time<br/>- Analyze visual display time<br/>- Analyze other processing time | If your reports are running slow and you want to debug, you can turn on Performance Analyzer in Power BI Desktop. This tool helps you identify bottlenecks and optimize report elements by examining:<br/>- **DAX query**: Time taken for Analysis Services to return results for a DAX query.<br/>- **Visual display**: Time required for visuals to render on the screen, including retrieving web images or geocoding.<br/>- **Other**: Time spent on preparing queries, waiting for other visuals, or background processing. |
+
+## Power Bi Sharing Platform
+
+- **Reassess your current Tableau environment**: Evaluate your existing Tableau Projects to determine if they can be consolidated into larger, logical groups. This helps streamline the migration process and ensures that related reports and dashboards are grouped together for better organization and management.
+- **Create workspaces**: In Power BI, workspaces are used to logically group reports and datasets. Create as many workspaces as needed to map each Tableau Project to a corresponding Power BI Workspace. This helps maintain a clear structure and organization for your reports.
+  - **Set up access control**: Configure access control for each workspace by assigning roles such as contributors and owners. This ensures that only authorized users can access and modify the reports and datasets within each workspace.
+- **Publish your migrated datasets and reports (Publish to your workspace)**: Use Power BI Desktop to migrate your datasets and reports from Tableau to Power BI. Once the migration is complete, publish these datasets and reports to the appropriate Power BI Workspace on the [Power BI Service](https://app.fabric.microsoft.com/). This makes them accessible to your users and ensures they are stored in a centralized location.
+- **Configure the scheduled refresh**: On [Power BI Service](https://app.fabric.microsoft.com/), set up a refresh schedule for each published dataset to ensure that your data is always up to date. This is crucial for maintaining the accuracy and relevance of your reports. You can configure the refresh frequency based on your data update requirements (e.g., daily, weekly).
+- **Test and validate your reports and dashboards**: After migrating your reports and dashboards to Power BI, thoroughly test and validate them to ensure they are functioning as expected. This includes checking data accuracy, visualizations, and interactivity. Make any necessary adjustments to address any issues that arise during testing.
+- **Explore Power BI Dashboards**: If you need to distribute visuals to a large audience, consider using Power BI Dashboards. Dashboards allow you to pin visuals from multiple reports onto a single view, providing a high-level overview of key metrics. This can be an effective way to share insights with stakeholders and ensure they have access to the most important information.
+
+> Roles and functionalities in Power BI and their equivalents in Tableau:
+
+| **Power BI** | **Workspaces** | **Admin, Member, Contributor, Viewer** |
+|---|---|---|
+| **Definition** | In Power BI Service, all artifacts like reports, datasets, dashboards, and apps are organized into workspaces. Workspaces act as containers for these artifacts, allowing for better organization, collaboration, and management. | Power BI has four different levels of access you can grant a user when sharing a workspace with them. These roles determine what actions users can perform within the workspace: <br/>- **Admin**: Full control over the workspace, including managing access, publishing content, and modifying settings. <br/>- **Member**: Can create, edit, and delete content within the workspace but cannot manage access. <br/>- **Contributor**: Can create and edit content but cannot delete it or manage access. <br/>- **Viewer**: Can view and interact with content but cannot create, edit, or delete anything. |
+| **Tableau equivalent** | Projects: In Tableau, projects are used to organize workbooks, data sources, and other content. They serve a similar purpose to Power BI workspaces by providing a structured way to manage and share content. | Tableau has three main roles for user access: <br/>- **Explorer**: Can interact with and modify existing content but cannot publish new content. <br/>- **Creator**: Can create, publish, and modify content. <br/>- **Viewer**: Can only view and interact with published content. |
+
+## Admin 
+
+For more information, please refer to the general guidance provided below:
+
+- [Fabric: Overview of Configuration Settings](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/19_FabricConfigs.md)
+- [Fabric Capacity Metrics + Monitoring Overview](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/20_FabricCapacityMetrics.md)
+- [Microsoft Fabric - Power Bi: How to Manage Accesss](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/14_PbiManageAccess.md)
+
+| **Power BI** | **Capacity/Tenant** | **Domains** | **Security Groups/M365 Groups** |
+|---|---|---|---|
+| **Definition** | Your Power BI Capacity or Tenant is what you purchase when you buy a Premium Capacity. Workspaces in a capacity are completely separated from other workloads in the shared capacity or another premium capacity. This ensures dedicated resources and performance for your reports and datasets. | In Power BI Service, admins can create logical domains that wall off the workloads of one business unit (BU) from another and assign workspaces to domains. One capacity can have multiple domains, allowing for better organization and governance of data. Domains help in managing data according to specific business needs and regulations. | Group users together to allow easier permission assignments and management. In Power BI Service, this is integrated with your O365/M365 groups so you can directly use those groups to assign permissions in Power BI. This integration simplifies user management and ensures consistent access control across your organization. |
+| **Tableau equivalent** | Sites: In Tableau, sites are used to separate content and manage resources independently, similar to how capacities work in Power BI. | Sites: Tableau also uses sites to logically separate content and manage permissions, similar to domains in Power BI. | User Groups: In Tableau, user groups are used to manage permissions and access control, similar to security groups and M365 groups in Power BI. |
+
+### Identify your administrators
+> If you have a Microsoft 365 user administrator, they will automatically have Power BI admin access and can grant users the Power BI Admin role. This role allows them to manage various aspects of the Power BI environment, including user permissions, workspace settings, and data governance. If you don’t have a Microsoft 365, Dynamics 365, or Azure tenant, you will need to first create a Microsoft Entra tenant. This is essential for managing user identities and access within your organization.
+
+### Upskill your Power BI administrators
+> Ensure that your Power BI Admins are well-prepared and knowledgeable about using the Admin Portal to manage your Power BI environment. Consider enrolling them in training courses such as "Power BI: Administrator in a Day" or other relevant workshops. These courses cover essential topics like configuring access settings, monitoring platform usage, managing licenses, and using PowerShell cmdlets for automation. This training will help your admins effectively manage and optimize your Power BI deployment.
+
+### Determine your org settings
+
+> Collaborate with your team to agree upon and configure organization-wide settings in Power BI. These settings include:
+
+- **Custom visuals**: Decide whether to allow the use of custom visuals created by third-party developers.
+- **Sensitivity labels**: Implement data sensitivity labels to classify and protect your data.
+- **Workspace creation**: Determine if all users should have the ability to create workspaces or if this should be restricted to specific roles
+- **Data sharing and collaboration**: Configure settings for data sharing, collaboration, and access permissions to ensure data security and compliance.
+
+### Assign licenses
+> If you need to assign Power BI Pro or Premium Per User (PPU) licenses to individuals, you can do so in the Power BI Admin Portal. Follow these steps:
+
+- Sign in to the Microsoft 365 admin center or Azure portal.
+- Navigate to the `Licenses` section under `Billing`.
+- Select the appropriate Power BI license (e.g., Power BI Pro or PPU) and assign it to the desired users
+- Ensure that users have the necessary licenses to access and utilize Power BI features effectively.
+
+### Customize branding
+> Customize the look and feel of the Power BI Service to match your organization's branding. These branding elements help create a consistent and professional appearance for your Power BI environment, enhancing user experience and trust. This includes:
+
+- **Logo**: Upload your company logo to appear in the top left of the navigation bar.
+- **Theme color**: Choose a theme color for the top navigation bar that complements your logo and corporate colors.
+- **Cover image**: Add a cover image to the Home page to create a welcoming and branded experience for users
+
+## Governance 
+
 
 
 <div align="center">
