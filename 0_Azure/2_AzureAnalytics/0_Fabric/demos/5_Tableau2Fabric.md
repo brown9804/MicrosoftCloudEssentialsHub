@@ -19,7 +19,7 @@ Last updated: 2025-01-09
 - [Understand star schema and the importance for Power BI](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
 - [Use Show Me to Start a View - Tableau](https://help.tableau.com/current/pro/desktop/en-us/buildauto_showme.htm)
 - [Shelves and Cards Reference  - Tableau](https://help.tableau.com/current/pro/desktop/en-us/buildmanual_shelves.htm)
-- [Apply conditional formatting in tables and matrixes](htt)ps://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting
+- [Apply conditional formatting in tables and matrixes](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-conditional-table-formatting)
 - [Optimization guide for Power BI](https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization)
 - [Use Performance Analyzer to examine report element performance in Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-performance-analyzer)
 - [Get started with org apps (preview) - Power BI | Microsoft Learn](https://learn.microsoft.com/en-us/power-bi/consumer/org-app-items/org-app-items)
