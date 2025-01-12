@@ -1,4 +1,4 @@
-# Connecting Microsoft Fabric to HDI Platform
+# Connecting Microsoft Fabric to Azure HDI Platform
 
 Costa Rica
 
