@@ -135,12 +135,12 @@ Last updated: 2025-01-13
     <li>Definition: A field of AI focused on the interaction between computers and human language.</li>
     <li>Key Components:
         <ul>
-            <li>Text Preprocessing</li>
-            <li>Part-of-Speech Tagging</li>
-            <li>Named Entity Recognition (NER)</li>
-            <li>Sentiment Analysis</li>
-            <li>Machine Translation</li>
-            <li>Topic Modeling</li>
+            <li>Text Preprocessing: Tokenization, stemming, lemmatization, and stop words removal.</li>
+            <li>Part-of-Speech Tagging: Identifying grammatical parts of speech.</li>
+            <li>Named Entity Recognition (NER): Extracting entities like names, dates, and locations.</li>
+            <li>Sentiment Analysis: Determining the emotional tone of text.</li>
+            <li>Machine Translation: Translating text between languages.</li>
+            <li>Topic Modeling: Identifying main themes within text.</li>
         </ul>
     </li>
     <li>
@@ -150,9 +150,9 @@ Last updated: 2025-01-13
             <li>Definition: Large-scale neural networks trained on vast amounts of text data to generate human-like text.</li>
             <li>Key Features:
                 <ul>
-                    <li>Pre-training and Fine-tuning</li>
-                    <li>Transformer Architecture</li>
-                    <li>Contextual Understanding</li>
+                    <li>Pre-training and Fine-tuning: Training on large corpora and then fine-tuning for specific tasks.</li>
+                    <li>Transformer Architecture: Handling sequential data and capturing long-range dependencies.</li>
+                    <li>Contextual Understanding: Generating text based on context.</li>
                     <li>High Scalability</li>
                 </ul>
             </li>
@@ -302,26 +302,6 @@ Last updated: 2025-01-13
 | **RAG**     | Retrieval-Augmented Generation | Technique | Enhances language models by retrieving external knowledge in real-time. This allows the model to access up-to-date information while generating responses. | - Real-time data retrieval<br/>- Dynamic knowledge access<br/>- Flexible and up-to-date responses<br/>- Integration with external databases or APIs | - Real-time information retrieval<br/>- Dynamic content generation<br/>- Complex query handling<br/>- Customer support |
 | **CAG**     | Cache-Augmented Generation | Technique | Uses preloaded knowledge stored within the model for faster and more precise responses. This approach is ideal for scenarios where the information is stable and doesn't change frequently. | - Preloaded knowledge<br/>- Precomputed memory (key-value cache)<br/>- Fast and error-free responses<br/>- Efficient context management | - Static knowledge retrieval<br/>- Efficient response generation<br/>- Scenarios with stable information<br/>- Offline applications |
 
-##  Natural Language Processing (NLP)
-
-> `NLP` nvolves enabling computers to understand, interpret, and generate human language.
-
-**Key Components of NLP**:
-1. **Text Preprocessing**: Tokenization, stemming, lemmatization, and stop words removal.
-2. **Part-of-Speech Tagging**: Identifying grammatical parts of speech.
-3. **Named Entity Recognition (NER)**: Extracting entities like names, dates, and locations.
-4. **Sentiment Analysis**: Determining the emotional tone of text.
-5. **Machine Translation**: Translating text between languages.
-6. **Topic Modeling**: Identifying main themes within text.
-
-## Large Language Models (LLMs)
-
-> `LLMs` are large-scale neural networks trained on vast amounts of text data to generate human-like text.
-
-**Key Features of LLMs**:
-1. **Pre-training and Fine-tuning**: Training on large corpora and then fine-tuning for specific tasks.
-2. **Transformer Architecture**: Handling sequential data and capturing long-range dependencies.
-3. **Contextual Understanding**: Generating text based on context.
 
 ## Deploy a language model with Azure AI Foundry
 
