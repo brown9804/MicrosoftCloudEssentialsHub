@@ -21,6 +21,7 @@ Last updated: 2025-01-13
 - [NLP Transformers paper](https://arxiv.org/abs/1706.03762)
 - [Model summary table and region availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#model-summary-table-and-region-availability)
 - [Create and Use Custom Tool Package - Prompt Flow](https://microsoft.github.io/promptflow/how-to-guides/develop-a-tool/create-and-use-tool-package.html)
+- [Create a custom environment - Customize base image for compute session](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/how-to-customize-session-base-image?view=azureml-api-2)
 
 </details>
 
@@ -402,6 +403,11 @@ These workflows typically consist of three main components:
 | **Standard Flow**  | General LLM-based application development                                   | - Versatile tools for various tasks<br>- Data processing, analysis, and transformation<br>- Handles large datasets<br>- Cleans and prepares data for analysis<br>- Enables complex workflows | - Building robust and flexible applications<br>- General-purpose LLM workflows                    |
 | **Chat Flow**      | Conversational applications                                                 | - Enhanced support for chat functionalities<br>- Natural language understanding<br>- Dialogue management<br>- Response generation<br>- Advanced NLP capabilities<br>- Manages conversation flow<br>- Generates context-aware responses | - Creating chatbots and virtual assistants<br>- Interactive conversational agents|
 | **Evaluation Flow**| Performance evaluation                                                      | - Tools for measuring performance metrics<br>- Comparing results<br>- Identifying areas for improvement<br>- Measures accuracy, precision, recall, and F1 score<br>- Compares results from different runs<br>- Pinpoints areas for enhancement | - Iterative development and optimization<br>- Ensuring applications meet performance standards|
+
+## Connections and Runtimes
+
+
+
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
