@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-11-19
+Last updated: 2025-01-12
 
 ------------------------------------------
 
@@ -22,7 +22,7 @@ Last updated: 2024-11-19
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
   
 - [Microsoft Fabric trial capacity](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
 - [Buy a Microsoft Fabric subscription](https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription)
@@ -34,6 +34,23 @@ Last updated: 2024-11-19
 - [User license and capabilities](https://learn.microsoft.com/en-us/fabric/enterprise/licenses#per-user-licenses)
 - [Microsoft Fabric features by SKU](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features)
 - [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?msockid=38ec3806873362243e122ce086486339)
+
+</details>
+
+## Content 
+
+<details>
+<summary><b>Table of Content</b> (Click to expand)</summary>
+  
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+- [Reservations & Capacity](#reservations--capacity)
+    - [Scope Assignment in Reservations](#scope-assignment-in-reservations)
+- [How to make a reservation](#how-to-make-a-reservation)
+- [Creating/Linking Fabric Capacity to Your Reservation](#creatinglinking-fabric-capacity-to-your-reservation)
+- [Assign Workspace Capacity](#assign-workspace-capacity)
+- [How to Change Scope of a Reservation](#how-to-change-scope-of-a-reservation)
 
 </details>
 

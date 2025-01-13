@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-24
+Last updated: 2025-01-12
 
 ----------
 
@@ -21,7 +21,8 @@ Last updated: 2024-12-24
 - [Types of Databases](https://azure.microsoft.com/en-gb/products/category/databases/)
 - [Shrink Database Task (Maintenance Plan)](https://learn.microsoft.com/en-us/sql/relational-databases/maintenance-plans/shrink-database-task-maintenance-plan?view=sql-server-ver16)
 - [Manage file space for databases in Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/file-space-manage?view=azuresql-db)
-  
+- [DBCC SHRINKFILE (Transact-SQL)](https://learn.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-shrinkfile-transact-sql?view=sql-server-ver16)
+
 </details>
 
 ## Content 
@@ -348,8 +349,24 @@ For Azure SQL Managed Instance, consider these strategies:
     -- Shrink the database file (replace 1 with your file_id)
     DBCC SHRINKFILE (1);
    ```
-
+  
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/96c7be25-ade3-4851-a2cd-8735273c4c6f">
+    
+    > If you specify a target size that is just enough to hold all the data pages, the result can be a file with no free space.
+    
+    **Before Shrink:**
+
+    | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{green}\text{Free Space}}$$ |
+
+    - **After Shrink with TRUNCATEONLY:** When you use DBCC SHRINKFILE with the TRUNCATEONLY option `DBCC SHRINKFILE (file_id, TRUNCATEONLY)`, it releases the unused space at the end of the file without moving any data pages. This means that the data pages remain in their original locations, and only the free space at the end of the file is released.
+
+      | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ |
+
+      > If you don't move the pages, the space within the file might not be optimized because the data pages could be scattered throughout the file, leaving gaps of unused space in between. This can lead to fragmentation, where the data is not stored contiguously, potentially affecting performance. In this case, the free space at the end is released, but the data pages remain scattered, which might not be optimal for performance.
+
+    - After `DBCC SHRINKFILE (file_id, target_size_in_MB)`: In this case, the data pages are moved to fill the gaps, and the file is shrunk to the target size, eliminating free space.
+
+        | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ |
 
 3. **Monitor the Shrink Operation**: While the shrink operation is running, you can monitor for any blocking operations that might be affecting the process.
 
@@ -401,9 +418,18 @@ For Azure SQL Managed Instance, consider these strategies:
 
 
 6. **Shrinking the Database**: Reclaim unused space with. Shrink the entire database to leave 10% free space.
+
    ```sql
    DBCC SHRINKDATABASE (YourDatabaseName, 10);
    ```
+   
+    **Before Shrink:**
+    
+    | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{green}\text{Free Space}}$$ |
+    
+    After `DBCC SHRINKDATABASE (database_name, target_percent_free_space)`: The data pages are moved to reduce fragmentation, and the file is shrunk to maintain a small percentage of free space.
+    
+    | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ |
 
    <img width="550" alt="image" src="https://github.com/user-attachments/assets/f906adcd-732e-4efa-849c-90d8fed2e9d3">
 
