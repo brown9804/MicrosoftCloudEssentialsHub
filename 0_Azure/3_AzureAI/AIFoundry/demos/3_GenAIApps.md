@@ -20,6 +20,7 @@ Last updated: 2025-01-13
 - [The Azure AI Foundry SDK](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/develop/sdk-overview?tabs=sync&pivots=programming-language-python)
 - [NLP Transformers paper](https://arxiv.org/abs/1706.03762)
 - [Model summary table and region availability](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#model-summary-table-and-region-availability)
+- [Create and Use Custom Tool Package - Prompt Flow](https://microsoft.github.io/promptflow/how-to-guides/develop-a-tool/create-and-use-tool-package.html)
 
 </details>
 
@@ -374,6 +375,33 @@ graph TD
       - **Continuous Monitoring**: Keep track of the application's performance and health. Use monitoring tools to detect issues early and respond quickly.
       - **Regular Updates**: Update the model and application as needed to incorporate new data, improve performance, and address any issues.
       - **User Feedback**: Collect and analyze user feedback to identify areas for improvement and ensure the application meets user needs.
+
+## Large Language Model (LLM) application with prompt flow
+
+> `Prompt flow is a feature within Azure AI Foundry that allows you to create and manage executable workflows`.
+
+```mermaid
+graph TB
+    A[Inputs] --> B[Preprocessing Node]
+    B --> C[Processing Node]
+    C --> D[Analysis Node]
+    D --> E[Decision Node]
+    E --> F[Outputs]
+    B --> G[Intermediate Data 1]
+    C --> H[Intermediate Data 2]
+    D --> I[Intermediate Data 3]
+```
+
+These workflows typically consist of three main components: 
+- Inputs: These are the data elements that are fed into the flow. Inputs can be of various types, such as strings, integers, or boolean values. They represent the initial data required to start the flow. 
+- Nodes: These are the core components of the flow that perform data processing, task execution, or algorithmic operations. Nodes can represent different tools or functions that manipulate the input data to produce intermediate or final results. 
+- Outputs: These are the results or data produced by the flow after processing the inputs through the nodes. Outputs represent the final outcome of the flow, which can be used for further analysis or actions.
+
+| **Flow Type**      | **Purpose**                                                                 | **Features**                                                                                       | **Use Cases**                                                                                     |
+|--------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Standard Flow**  | General LLM-based application development                                   | - Versatile tools for various tasks<br>- Data processing, analysis, and transformation<br>- Handles large datasets<br>- Cleans and prepares data for analysis<br>- Enables complex workflows | - Building robust and flexible applications<br>- General-purpose LLM workflows                    |
+| **Chat Flow**      | Conversational applications                                                 | - Enhanced support for chat functionalities<br>- Natural language understanding<br>- Dialogue management<br>- Response generation<br>- Advanced NLP capabilities<br>- Manages conversation flow<br>- Generates context-aware responses | - Creating chatbots and virtual assistants<br>- Interactive conversational agents|
+| **Evaluation Flow**| Performance evaluation                                                      | - Tools for measuring performance metrics<br>- Comparing results<br>- Identifying areas for improvement<br>- Measures accuracy, precision, recall, and F1 score<br>- Compares results from different runs<br>- Pinpoints areas for enhancement | - Iterative development and optimization<br>- Ensuring applications meet performance standards|
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
