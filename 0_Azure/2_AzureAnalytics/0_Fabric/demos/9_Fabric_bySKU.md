@@ -5,7 +5,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2024-12-31
+Last updated: 2025-01-13
 
 ------------------------------------------
 
@@ -41,6 +41,17 @@ Detailed Features by License:
 > [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?msockid=38ec3806873362243e122ce086486339) will calculate storage costs if you exceed the included limit for your selected SKU. If your usage stays within the included storage capacity, you shouldn’t see additional charges for storage. <br/> <br/> 
 > The included storage in Microsoft Fabric primarily applies to **mirroring** across all F SKUs. This means that the free storage provided (e.g., 64 TB for F64) is specifically allocated for creating mirrored copies of your data to ensure redundancy and high availability. <br/> <br/>
 > For other types of storage, such as general data storage or storage used by Data Factory and AI capabilities, you will be billed if you exceed the included storage or if compute capacity is paused.This applies to all F SKUs, from F2 to F2048.
+
+https://github.com/user-attachments/assets/83447901-2227-4cf3-a89c-c8ee57d50009
+
+> Considerations: 
+- **Region and SKU Size**: The price of Microsoft Fabric services varies based on the region and the SKU size. For instance, the cost in North America is different from that in Europe. Additionally, different SKUs have specific rates. For example, an F256 SKU has a different rate compared to an F128 SKU.
+- **What is an SKU?**: SKU stands for **Stock Keeping Unit**. It's a unique identifier for each distinct product and service that can be purchased. In the context of Microsoft Fabric, SKUs represent different capacities or configurations of the service. For example, an F256 SKU indicates a specific capacity of 256 Compute Units (CU).
+- **What is a CU?**: CU stands for **Compute Unit**. It's a measure of the computing resources allocated to your service. Higher CU values indicate more computing power and capacity. For instance, an F256 SKU provides 256 CUs, which can handle more intensive workloads compared to an F128 SKU with 128 CUs.
+- **Reservations**: When you make a reservation for Microsoft Fabric, you agree to a certain amount of consumption over a specified period. The discount from the reservation is applied as you use the service. For example, if you reserve an F256 capacity for a year, the discount will be reflected in your monthly usage charges.
+- **Splitting Reservations**: You can split your reserved capacity into different SKU sizes to suit your needs. For example, if you reserve an F256 capacity, you can allocate it in various ways. You might use F128 for one project, F64 for another, and split the remaining F64 into smaller chunks like F32, F16, and F16. The total usage should add up to the reserved F256 capacity to benefit from the discount.
+
+This flexibility allows you to optimize your Microsoft Fabric costs based on your specific requirements and usage patterns. Being clear about the sizes and regions helps ensure you get the best value for your reservation.
 
 > [!NOTE]
 > - `Capacity Units (CU)`: Measure of compute power within a SKU. Higher CUs provide more computational capacity. <br/>
