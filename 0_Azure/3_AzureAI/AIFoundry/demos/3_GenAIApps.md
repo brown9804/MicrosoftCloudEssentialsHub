@@ -302,7 +302,6 @@ Last updated: 2025-01-13
 | **RAG**     | Retrieval-Augmented Generation | Technique | Enhances language models by retrieving external knowledge in real-time. This allows the model to access up-to-date information while generating responses. | - Real-time data retrieval<br/>- Dynamic knowledge access<br/>- Flexible and up-to-date responses<br/>- Integration with external databases or APIs | - Real-time information retrieval<br/>- Dynamic content generation<br/>- Complex query handling<br/>- Customer support |
 | **CAG**     | Cache-Augmented Generation | Technique | Uses preloaded knowledge stored within the model for faster and more precise responses. This approach is ideal for scenarios where the information is stable and doesn't change frequently. | - Preloaded knowledge<br/>- Precomputed memory (key-value cache)<br/>- Fast and error-free responses<br/>- Efficient context management | - Static knowledge retrieval<br/>- Efficient response generation<br/>- Scenarios with stable information<br/>- Offline applications |
 
-
 ## Deploy a language model with Azure AI Foundry
 
 | **Activity**        | **Azure OpenAI models**                                                             | **Models deployed as Serverless APIs (pay-as-you-go)**                          | **Models deployed with user-managed compute**                                  |
@@ -319,6 +318,62 @@ Last updated: 2025-01-13
 | **Integration**     | High - Seamless integration with other Azure services.                              | Medium - Can integrate with other services, but may require additional setup.   | High - Full control over integration with other services and systems.          |
 | **Customization**   | Low - Limited customization options.                                                | High - Can customize models and endpoints as needed.                            | High - Full customization of models, infrastructure, and endpoints.            |
 | **Support**         | High - Azure provides extensive support and documentation.                          | Medium - Support depends on the serverless platform and configurations.         | High - Full control over support and troubleshooting.                          |
+
+## Understand the development lifecycle of a large language model (LLM) app
+
+```mermaid
+graph TD
+    A[<i class='fas fa-lightbulb'></i> Initialization] --> B[<i class='fas fa-cogs'></i> Experimentation]
+    B --> C[<i class='fas fa-chart-line'></i> Evaluation and Refinement]
+    C --> D[<i class='fas fa-rocket'></i> Production]
+    D --> E[<i class='fas fa-tools'></i> Monitoring and Maintenance]
+
+    A --> A1[<i class='fas fa-bullseye'></i> Define the Objective]
+    A --> A2[<i class='fas fa-database'></i> Collect a Sample Dataset]
+    A --> A3[<i class='fas fa-keyboard'></i> Build a Basic Prompt]
+    A --> A4[<i class='fas fa-project-diagram'></i> Design the Flow]
+
+    B --> B1[<i class='fas fa-code'></i> Develop the Flow]
+    B --> B2[<i class='fas fa-vial'></i> Test the Flow]
+    B2 --> B3[<i class='fas fa-sync-alt'></i> Iterative Process: Run, Evaluate, Modify, Repeat]
+
+    C --> C1[<i class='fas fa-database'></i> Evaluate with a Larger Dataset]
+    C --> C2[<i class='fas fa-search'></i> Identify Bottlenecks]
+    C --> C3[<i class='fas fa-wrench'></i> Optimize and Refine]
+
+    D --> D1[<i class='fas fa-rocket'></i> Deploy the Model]
+    D --> D2[<i class='fas fa-chart-line'></i> Monitor Performance]
+    D --> D3[<i class='fas fa-arrows-alt'></i> Handle Scaling]
+
+    E --> E1[<i class='fas fa-heartbeat'></i> Continuous Monitoring]
+    E --> E2[<i class='fas fa-sync-alt'></i> Regular Updates]
+    E --> E3[<i class='fas fa-comments'></i> User Feedback]
+```
+
+1. Initialization: Define the use case and design the solution:
+    - **Define the Objective**: Clearly outline the purpose of the LLM application. For example, if the goal is to classify news articles, specify the categories and the desired output.
+    - **Collect a Sample Dataset**: Gather a representative subset of data that the LLM will process. Ensure diversity in the data to cover various scenarios and edge cases. Remove any sensitive information to avoid vulnerabilities.
+    - **Build a Basic Prompt**: Create an initial prompt that will be used to interact with the LLM.
+    - **Design the Flow**: Plan the overall architecture and workflow of the application, including data input, processing, and output.
+2. Experimentation: Develop a flow and test with a small dataset.
+    - **Develop the Flow**: Implement the initial design using the sample dataset. This involves coding the data preprocessing steps, integrating the LLM, and defining the output format.
+    - **Test the Flow**: Run the flow against the sample dataset to evaluate its performance. This is an iterative process where you:
+        1. Run the flow.
+        2. Evaluate the prompt's performance.
+        3. Modify the flow or prompt based on the results.
+        4. Repeat until satisfied with the performance.
+3. Evaluation and Refinement: Assess the flow with a larger dataset and refine the model.
+      - **Evaluate with a Larger Dataset**: Test the flow on a larger, more diverse dataset to evaluate how well the LLM generalizes to new data.
+      - **Identify Bottlenecks**: Look for areas where the model's performance can be improved, such as processing speed, accuracy, or handling of edge cases.
+      - **Optimize and Refine**: Make necessary adjustments to the model, prompt, or workflow to enhance performance. This may involve fine-tuning the model, adjusting hyperparameters, or improving data preprocessing steps.
+4. Production: Deploy and monitor the flow and application.
+      - **Deploy the Model**: Move the refined model to a production environment. This involves setting up the necessary infrastructure, such as servers, databases, and APIs.
+      - **Monitor Performance**: Continuously monitor the application's performance in the production environment. Use metrics like response time, accuracy, and user feedback to assess performance.
+      - **Handle Scaling**: Ensure the application can scale to handle increased demand. This may involve load balancing, auto-scaling, and optimizing resource usage.
+5. Monitoring and Maintenance: Ensure the application remains performant and up-to-date.
+      - **Continuous Monitoring**: Keep track of the application's performance and health. Use monitoring tools to detect issues early and respond quickly.
+      - **Regular Updates**: Update the model and application as needed to incorporate new data, improve performance, and address any issues.
+      - **User Feedback**: Collect and analyze user feedback to identify areas for improvement and ensure the application meets user needs.
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
