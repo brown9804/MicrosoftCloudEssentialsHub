@@ -1,4 +1,4 @@
-name: Track Visitors and Generate Summaries
+name: Track Visitors
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  track-and-summarize:
+  track-visitors:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git fetch origin
           if git show-ref --verify --quiet refs/heads/visitors-count; then
-            visitors-count
+            git checkout visitors-count
             git pull origin visitors-count --rebase || true
           else
             git checkout -b visitors-count
