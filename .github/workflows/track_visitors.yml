@@ -5,7 +5,8 @@ on:
     branches:
       - main  # Trigger the workflow on push to the main branch
   schedule:
-    - cron: '*/30 * * * *'  # Runs every 30 minutes
+    - cron: '*/10 * * * *'  # Runs every 10 minutes
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   track-and-summarize:
@@ -32,18 +33,24 @@ jobs:
       - name: Run tracking script
         run: python .github/workflows/track_visitors.py
 
-      # Step 5: Commit and push logs with considerations for local changes and stashing if needed
+      # Step 5: Commit and push logs to a new branch and create a pull request
       - name: Commit and push logs
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          git fetch origin
+          if git show-ref --verify --quiet refs/heads/visitors-count; then
+            git checkout visitors-count
+          else
+            git checkout -b visitors-count
+          fi
           # Check for local changes and stash them if present
           if [ -n "$(git status --porcelain)" ]; then
             git stash || true
-            git pull origin ${{ github.ref }} --rebase 
+            git pull origin visitors-count --rebase 
             git stash pop || true  # Ignore error if no stash entries to pop or pull fails
           else
-            git pull origin ${{ github.ref }} --rebase # Ignore error if pull fails
+            git pull origin visitors-count --rebase # Ignore error if pull fails
           fi
           git add -A  # Add all changes including untracked files
           # Check for changes before committing
@@ -53,5 +60,14 @@ jobs:
           else
             # Commit the changes
             git commit -m 'Update visitor logs and summaries'
-            git push origin HEAD:${{ github.ref }}
+            git push origin visitors-count
           fi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: visitors-count
+          base: main
+          title: "Update visitor logs and summaries"
+          body: "This pull request updates the visitor logs and summaries."
