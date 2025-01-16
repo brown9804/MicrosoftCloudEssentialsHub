@@ -47,7 +47,6 @@ jobs:
           git add -A  # Add all changes including untracked files
           if git diff-index --quiet HEAD --; then
             echo "No changes to commit"
-            exit 0
           else
             git commit -m 'Update visitor logs and summaries'
             git push origin HEAD:${{ github.ref }}
