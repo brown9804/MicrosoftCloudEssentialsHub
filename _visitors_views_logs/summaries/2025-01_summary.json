@@ -16,5 +16,23 @@
         "device_type": "desktop",
         "query_parameters": "param1=value1&param2=value2",
         "is_unique": true
+    },
+    {
+        "ip": "192.168.1.1",
+        "timestamp": "2025-01-16T06:18:28.449499",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",
+        "referrer": "https://example.com",
+        "requested_url": "https://yourrepo.github.io/page",
+        "geolocation": {
+            "ip": "192.168.1.1",
+            "bogon": true
+        },
+        "screen_resolution": "1920x1080",
+        "language": "en-US",
+        "session_duration": "5 minutes",
+        "page_views": 3,
+        "device_type": "desktop",
+        "query_parameters": "param1=value1&param2=value2",
+        "is_unique": true
     }
 ]
