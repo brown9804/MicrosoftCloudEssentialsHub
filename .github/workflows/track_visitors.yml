@@ -30,7 +30,7 @@ jobs:
 
       # Step 4: Run the tracking script
       - name: Run tracking script
-        run: python track_visitors.py
+        run: python .github/workflows/track_visitors.py
 
       # Step 5: Commit and push logs with considerations for local changes and stashing if needed
       - name: Commit and push logs
