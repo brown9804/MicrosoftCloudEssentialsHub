@@ -48,10 +48,10 @@ jobs:
           # Check for local changes and stash them if present
           if [ -n "$(git status --porcelain)" ]; then
             git stash || true
-            git pull origin visitors-count --rebase 
+            git pull origin visitors-count --rebase || true
             git stash pop || true  # Ignore error if no stash entries to pop or pull fails
           else
-            git pull origin visitors-count --rebase # Ignore error if pull fails
+            git pull origin visitors-count --rebase || true  # Ignore error if pull fails
           fi
           git add -A  # Add all changes including untracked files
           # Check for changes before committing
@@ -61,6 +61,7 @@ jobs:
           else
             # Commit the changes
             git commit -m 'Update visitor logs and summaries'
+            git pull origin visitors-count --rebase  # Ensure the branch is up to date
             git push origin visitors-count
           fi
 
@@ -72,4 +73,3 @@ jobs:
           base: main
           title: "Update visitor logs and summaries"
           body: "This pull request updates the visitor logs and summaries."
-          draft: false  # Ensure the PR is not created as a draft
