@@ -135,7 +135,13 @@ def generate_summaries():
 def main():
     repo_name = os.getenv('REPO_NAME', 'brown9804/MicrosoftCloudEssentialsHub')  # Replace with your default repository name or set it dynamically using environment variable
     traffic_data = fetch_traffic_data(repo_name)
-    log_visitor_data(traffic_data)
+    for view in traffic_data.get("views", []):
+        visitor_data = {
+            "timestamp": view["timestamp"],
+            "count": view["count"],
+            "uniques": view["uniques"]
+        }
+        log_visitor_data(visitor_data)
     generate_summaries()
 
 if __name__ == "__main__":
