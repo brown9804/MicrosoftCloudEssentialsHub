@@ -1,12 +1,7 @@
 name: Track Visitors and Generate Summaries
 
 on:
-  push:
-    branches:
-      - main  # Trigger the workflow on push to the main branch
-  schedule:
-    - cron: '*/10 * * * *'  # Runs every 10 minutes
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:
 
 jobs:
   track-and-summarize:
@@ -63,5 +58,4 @@ jobs:
             git commit -m 'Update visitor logs and summaries'
             git pull origin visitors-count --rebase  # Ensure the branch is up to date
             git push origin visitors-count
-          fi
-          
+          fi 
