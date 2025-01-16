@@ -1,4 +1,4 @@
-# Microsoft Cloud Essentials - Learning Hub
+# Microsoft Cloud Demos Scenarios - Learning Hub
 
 Costa Rica
 
