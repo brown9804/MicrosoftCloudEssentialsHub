@@ -1,0 +1,58 @@
+name: Track Visitors and Generate Summaries
+
+on:
+  push:
+    branches:
+      - '**'
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+  workflow_dispatch:
+
+jobs:
+  track-and-summarize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Set environment variables
+        run: echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
+
+      - name: and push logs
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git fetch origin
+          if git show-ref --verify --quiet refs/heads/visitors-count; then
+            git checkout visitors-count
+            git pull origin visitors-count --rebase || true
+          else
+            git checkout -b visitors-count
+            git push origin visitors-count
+          fi
+          if [ -n "$(git status --porcelain)" ]; then
+            git stash || true
+            git pull origin visitors-count --rebase || true
+            git stash pop || true
+          else
+            git pull origin visitors-count --rebase || true
+          fi
+          git add -A
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+            exit 0
+          else
+            git commit -m 'Update visitor logs and summaries'
+            git pull origin visitors-count --rebase
+            git push origin visitors-count
