@@ -3,7 +3,8 @@ name: Track Visitors and Generate Summaries
 on:
   push:
     branches:
-      - '**'
+      - main
+
   schedule:
     - cron: '*/5 * * * *'  # Runs every 5 minutes
   workflow_dispatch:
@@ -38,10 +39,10 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git fetch origin
+         
           if git show-ref --verify --quiet refs/heads/visitors-count; then
             git checkout visitors-count
-            git pull origin visitors-count || true
+            git pull origin visitors-count --rebase || true
           else
             git checkout -b visitors-count
             git push origin visitors-count
