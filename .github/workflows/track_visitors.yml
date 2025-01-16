@@ -1,4 +1,4 @@
-name: Track Visitors
+name: Track Visitors and Generate Summaries
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  track-visitors:
+  track-and-summarize:
     runs-on: ubuntu-latest
 
     steps:
@@ -49,8 +49,8 @@ jobs:
           git add -A
           if git diff-index --quiet HEAD --; then
             echo "No changes to commit"
-            exit 0
           else
             git commit -m 'Update visitor logs and summaries'
             git pull origin visitors-count --rebase
             git push origin visitors-count
+          fi
