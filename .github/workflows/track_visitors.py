@@ -41,14 +41,13 @@ def get_geolocation(ip):
 # Function to log visitor data
 def log_visitor_data(visitor_data):
     try:
-        # Create directories for year, month, and day
+        # Create directories for year and month
         year_dir = os.path.join(log_dir, str(datetime.datetime.now().year))
-        month_dir = os.path.join(year_dir, str(datetime.datetime.now().month))
-        day_dir = os.path.join(month_dir, str(datetime.datetime.now().day))
-        os.makedirs(day_dir, exist_ok=True)
+        month_dir = os.path.join(year_dir, str(datetime.datetime.now().strftime('%Y-%m')))
+        os.makedirs(month_dir, exist_ok=True)
 
         # Log file for the day
-        log_file = os.path.join(day_dir, "visitor_logs.json")
+        log_file = os.path.join(month_dir, f"{datetime.datetime.now().strftime('%Y-%m-%d')}_visitor_logs.json")
 
         # Read existing logs
         if os.path.exists(log_file):
@@ -102,14 +101,15 @@ def generate_summaries():
                 continue
 
             for month in range(1, 13):
-                month_dir = os.path.join(year_dir, str(month))
+                month_str = f"{year}-{month:02d}"
+                month_dir = os.path.join(year_dir, month_str)
                 if not os.path.exists(month_dir):
                     continue
 
                 monthly_logs = []
                 for day in range(1, 32):
-                    day_dir = os.path.join(month_dir, str(day))
-                    log_file = os.path.join(day_dir, "visitor_logs.json")
+                    day_str = f"{year}-{month:02d}-{day:02d}"
+                    log_file = os.path.join(month_dir, f"{day_str}_visitor_logs.json")
                     if not os.path.exists(log_file):
                         continue
 
@@ -118,11 +118,11 @@ def generate_summaries():
                         monthly_logs.extend(daily_logs)
 
                 if monthly_logs:
-                    monthly_summary_file = os.path.join(summaries_dir, f"{year}_{month}_summary.json")
+                    monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
                     with open(monthly_summary_file, "w") as file:
                         json.dump(monthly_logs, file, indent=4)
 
-                    logging.info(f"Monthly summary generated for {year}-{month}")
+                    logging.info(f"Monthly summary generated for {month_str}")
     except Exception as e:
         logging.error(f"Error generating summaries: {e}")
 
