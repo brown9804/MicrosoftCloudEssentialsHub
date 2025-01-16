@@ -1,7 +1,12 @@
 name: Track Visitors and Generate Summaries
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - '**'  # Trigger the workflow on push to any branch
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   track-and-summarize:
@@ -28,7 +33,7 @@ jobs:
       - name: Run tracking script
         run: python .github/workflows/track_visitors.py
 
-      # Step 5: Commit and push logs to a new branch and create a pull request
+      # Step 5: Commit and push logs to a new branch
       - name: Commit and push logs
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -58,4 +63,4 @@ jobs:
             git commit -m 'Update visitor logs and summaries'
             git pull origin visitors-count --rebase  # Ensure the branch is up to date
             git push origin visitors-count
-          fi 
+          fi
