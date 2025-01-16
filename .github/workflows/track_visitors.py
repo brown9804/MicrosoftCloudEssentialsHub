@@ -1,173 +1,55 @@
-## Data points to be collected to gain more insights into who is viewing your repository, to better 
-## understand the audience and make informed decisions to enhance the repository's 
-## content and user experience:
-## 1. **Timestamp**: The date and time of the visit.
-## 2. **User Agent**: Information about the visitor's browser and operating system.
-## 3. **Referrer URL**: The URL from which the visitor came.
-## 4. **Requested URL**: The specific URL the visitor is accessing.
-## 5. **Page Views**: The number of pages viewed during the session.
-## 6. **Unique Visitor Flag**: A flag to indicate if the visitor is unique.
+name: Track Visitors and Generate Summaries
 
-import os
-import datetime
-import json
-import requests
-import logging
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
+  workflow_dispatch:
 
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+jobs:
+  track-and-summarize:
+    runs-on: ubuntu-latest
 
-# Directory to save logs
-log_dir = "_visitors_views_logs"
-os.makedirs(log_dir, exist_ok=True)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-# Function to fetch traffic data from GitHub API
-def fetch_traffic_data(repo):
-    headers = {
-        "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    url_views = f"https://api.github.com/repos/{repo}/traffic/views"
-    url_clones = f"https://api.github.com/repos/{repo}/traffic/clones"
-    
-    response_views = requests.get(url_views, headers=headers)
-    response_clones = requests.get(url_clones, headers=headers)
-    
-    return response_views.json(), response_clones.json()
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-# Function to log visitor data
-def log_visitor_data(visitor_data, data_type):
-    try:
-        # Create directories for year and month
-        year_dir = os.path.join(log_dir, str(datetime.datetime.now().year))
-        month_dir = os.path.join(year_dir, str(datetime.datetime.now().strftime('%Y-%m')))
-        os.makedirs(month_dir, exist_ok=True)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
 
-        # Log file for the day
-        log_file = os.path.join(month_dir, f"{datetime.datetime.now().strftime('%Y-%m-%d')}_{data_type}_logs.json")
+      - name: Set environment variables
+        run: echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
 
-        # Read existing logs
-        if os.path.exists(log_file):
-            with open(log_file, "r") as file:
-                logs = json.load(file)
-        else:
-            logs = []
+      - name: Run tracking script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/workflows/track_visitors.py
 
-        # Ensure logs is a list
-        if isinstance(logs, dict):
-            logs = logs.get("logs", [])
-
-        # Append new visitor data
-        logs.append(visitor_data)
-
-        # Summarize the time and pages viewed for the same person
-        summary = {
-            "total_visitors": len(logs),
-            "unique_visitors": len(set((log["timestamp"], log["uniques"]) for log in logs)),
-            "total_page_views": sum(log["count"] for log in logs)
-        }
-        
-        with open(log_file, "w") as file:
-            json.dump({"summary": summary, "logs": logs}, file, indent=4)
-
-        logging.info(f"{data_type.capitalize()} data logged successfully.")
-    except Exception as e:
-        logging.error(f"Error logging {data_type} data: {e}")
-
-# Function to generate summaries for weekly, monthly, quarterly, semi-annual, and annual periods
-def generate_summaries():
-    try:
-        summaries_dir = os.path.join(log_dir, "summaries")
-        os.makedirs(summaries_dir, exist_ok=True)
-
-        current_year = datetime.datetime.now().year
-
-        for year in range(current_year - 1, current_year + 1):
-            year_dir = os.path.join(log_dir, str(year))
-            if not os.path.exists(year_dir):
-                continue
-
-            for month in range(1, 13):
-                month_str = f"{year}-{month:02d}"
-                month_dir = os.path.join(year_dir, month_str)
-                if not os.path.exists(month_dir):
-                    continue
-
-                monthly_logs = []
-                total_count = 0
-                unique_visitors = {}
-                daily_counts = {}
-                for day in range(1, 32):
-                    day_str = f"{year}-{month:02d}-{day:02d}"
-                    log_file_views = os.path.join(month_dir, f"{day_str}_views_logs.json")
-                    log_file_clones = os.path.join(month_dir, f"{day_str}_clones_logs.json")
-                    
-                    if not os.path.exists(log_file_views) and not os.path.exists(log_file_clones):
-                        continue
-
-                    daily_logs = []
-                    if os.path.exists(log_file_views):
-                        with open(log_file_views, "r") as file:
-                            daily_logs.extend(json.load(file))
-                    if os.path.exists(log_file_clones):
-                        with open(log_file_clones, "r") as file:
-                            daily_logs.extend(json.load(file))
-                    
-                    monthly_logs.extend(daily_logs)
-                    total_count += len(daily_logs)
-                    daily_counts[day_str] = len(daily_logs)
-
-                    for log in daily_logs:
-                        key = (log["timestamp"], log["uniques"])
-                        if key not in unique_visitors:
-                            unique_visitors[key] = {
-                                "page_views": log["count"],
-                                "count": 1,
-                            }
-                        else:
-                            unique_visitors[key]["page_views"] += log["count"]
-                            unique_visitors[key]["count"] += 1
-
-                if monthly_logs:
-                    monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
-                    summary_data = {
-                        "total_count": total_count,
-                        "daily_counts": daily_counts,
-                        "unique_visitors": unique_visitors,
-                        "logs": monthly_logs,
-                    }
-                    with open(monthly_summary_file, "w") as file:
-                        json.dump(summary_data, file, indent=4)
-
-                    logging.info(f"Monthly summary generated for {month_str} with total count {total_count}")
-    except Exception as e:
-        logging.error(f"Error generating summaries: {e}")
-
-# Main function to run the script
-def main():
-    repo_name = os.getenv('REPO_NAME', 'brown9804/MicrosoftCloudEssentialsHub')  # Replace with your default repository name or set it dynamically using environment variable
-    traffic_views, traffic_clones = fetch_traffic_data(repo_name)
-    
-    for view in traffic_views.get("views", []):
-        visitor_data = {
-            "timestamp": view["timestamp"],
-            "count": view["count"],
-            "uniques": view["uniques"]
-        }
-        log_visitor_data(visitor_data, "views")
-    
-    for clone in traffic_clones.get("clones", []):
-        clone_data = {
-            "timestamp": clone["timestamp"],
-            "count": clone["count"],
-            "uniques": clone["uniques"]
-        }
-        log_visitor_data(clone_data, "clones")
-    
-    generate_summaries()
-
-if __name__ == "__main__":
-    main()
-
-if __name__ == "__main__":
-    main()
+      - name: Commit and push logs
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git fetch origin
+          if git show-ref --verify --quiet refs/heads/visitors-count; then
+            git checkout visitors-count
+            git pull origin visitors-count --rebase || true
+          else
+            git checkout -b visitors-count
+            git push origin visitors-count
+          fi
+          git add _visitors_views_logs
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+          else
+            git commit -m 'Update visitor logs and summaries'
+            git pull origin visitors-count --rebase
+            git push origin visitors-count
