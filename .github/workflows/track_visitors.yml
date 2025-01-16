@@ -72,3 +72,4 @@ jobs:
           base: main
           title: "Update visitor logs and summaries"
           body: "This pull request updates the visitor logs and summaries."
+          draft: false  # Ensure the PR is not created as a draft
