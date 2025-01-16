@@ -38,6 +38,26 @@ def get_geolocation(ip):
         logging.error(f"Error fetching geolocation data: {e}")
         return {}
 
+# Function to collect visitor data (replace with actual data collection)
+def collect_visitor_data():
+    # Example data, replace with actual data collection logic
+    visitor_data = {
+        "ip": "192.168.1.1",  # Visitor's IP address
+        "timestamp": datetime.datetime.now().isoformat(),  # Timestamp of the visit
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",  # Visitor's browser and OS information (Microsoft Edge)
+        "referrer": "https://example.com",  # URL from which the visitor came
+        "requested_url": "https://yourrepo.github.io/page",  # URL the visitor is accessing
+        "geolocation": get_geolocation("192.168.1.1"),  # Geolocation data based on IP address
+        "screen_resolution": "1920x1080",  # Visitor's screen resolution
+        "language": "en-US",  # Preferred language set in the visitor's browser
+        "session_duration": "5 minutes",  # Duration of the visitor's session
+        "page_views": 3,  # Number of pages viewed during the session
+        "device_type": "desktop",  # Device type (desktop, tablet, mobile)
+        "query_parameters": "param1=value1&param2=value2",  # Query parameters in the URL
+        "is_unique": True  # Flag to indicate if the visitor is unique
+    }
+    return visitor_data
+
 # Function to log visitor data
 def log_visitor_data(visitor_data):
     try:
@@ -67,24 +87,8 @@ def log_visitor_data(visitor_data):
     except Exception as e:
         logging.error(f"Error logging visitor data: {e}")
 
-# Visitor data (example data, replace with actual data collection)
-visitor_data = {
-    "ip": "192.168.1.1",  # Visitor's IP address
-    "timestamp": datetime.datetime.now().isoformat(),  # Timestamp of the visit
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",  # Visitor's browser and OS information (Microsoft Edge)
-    "referrer": "https://example.com",  # URL from which the visitor came
-    "requested_url": "https://yourrepo.github.io/page",  # URL the visitor is accessing
-    "geolocation": get_geolocation("192.168.1.1"),  # Geolocation data based on IP address
-    "screen_resolution": "1920x1080",  # Visitor's screen resolution
-    "language": "en-US",  # Preferred language set in the visitor's browser
-    "session_duration": "5 minutes",  # Duration of the visitor's session
-    "page_views": 3,  # Number of pages viewed during the session
-    "device_type": "desktop",  # Device type (desktop, tablet, mobile)
-    "query_parameters": "param1=value1&param2=value2",  # Query parameters in the URL
-    "is_unique": True  # Flag to indicate if the visitor is unique
-}
-
-# Log the visitor data
+# Collect and log visitor data
+visitor_data = collect_visitor_data()
 log_visitor_data(visitor_data)
 
 # Function to generate summaries for weekly, monthly, quarterly, semi-annual, and annual periods
@@ -107,6 +111,7 @@ def generate_summaries():
                     continue
 
                 monthly_logs = []
+                total_count = 0
                 for day in range(1, 32):
                     day_str = f"{year}-{month:02d}-{day:02d}"
                     log_file = os.path.join(month_dir, f"{day_str}_visitor_logs.json")
@@ -116,13 +121,18 @@ def generate_summaries():
                     with open(log_file, "r") as file:
                         daily_logs = json.load(file)
                         monthly_logs.extend(daily_logs)
+                        total_count += len(daily_logs)
 
                 if monthly_logs:
                     monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
+                    summary_data = {
+                        "total_count": total_count,
+                        "logs": monthly_logs
+                    }
                     with open(monthly_summary_file, "w") as file:
-                        json.dump(monthly_logs, file, indent=4)
+                        json.dump(summary_data, file, indent=4)
 
-                    logging.info(f"Monthly summary generated for {month_str}")
+                    logging.info(f"Monthly summary generated for {month_str} with total count {total_count}")
     except Exception as e:
         logging.error(f"Error generating summaries: {e}")
 
