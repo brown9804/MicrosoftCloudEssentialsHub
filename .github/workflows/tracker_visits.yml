@@ -29,7 +29,12 @@ jobs:
       - name: Set environment variables
         run: echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
 
-      - name: and push logs
+      - name: Run tracking script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/workflows/track_visitors.py
+
+      - name: Commit and push logs
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
@@ -56,3 +61,4 @@ jobs:
             git commit -m 'Update visitor logs and summaries'
             git pull origin visitors-count --rebase
             git push origin visitors-count
+          fi
