@@ -27,12 +27,16 @@ def fetch_traffic_data(repo):
         "Authorization": f"token {os.getenv('GITHUB_TOKEN')}",
         "Accept": "application/vnd.github.v3+json"
     }
-    url = f"https://api.github.com/repos/{repo}/traffic/views"
-    response = requests.get(url, headers=headers)
-    return response.json()
+    url_views = f"https://api.github.com/repos/{repo}/traffic/views"
+    url_clones = f"https://api.github.com/repos/{repo}/traffic/clones"
+    
+    response_views = requests.get(url_views, headers=headers)
+    response_clones = requests.get(url_clones, headers=headers)
+    
+    return response_views.json(), response_clones.json()
 
 # Function to log visitor data
-def log_visitor_data(visitor_data):
+def log_visitor_data(visitor_data, data_type):
     try:
         # Create directories for year and month
         year_dir = os.path.join(log_dir, str(datetime.datetime.now().year))
@@ -40,7 +44,7 @@ def log_visitor_data(visitor_data):
         os.makedirs(month_dir, exist_ok=True)
 
         # Log file for the day
-        log_file = os.path.join(month_dir, f"{datetime.datetime.now().strftime('%Y-%m-%d')}_visitor_logs.json")
+        log_file = os.path.join(month_dir, f"{datetime.datetime.now().strftime('%Y-%m-%d')}_{data_type}_logs.json")
 
         # Read existing logs
         if os.path.exists(log_file):
@@ -59,16 +63,16 @@ def log_visitor_data(visitor_data):
         # Summarize the time and pages viewed for the same person
         summary = {
             "total_visitors": len(logs),
-            "unique_visitors": len(set((log["timestamp"], log["user_agent"]) for log in logs)),
+            "unique_visitors": len(set((log["timestamp"], log["uniques"]) for log in logs)),
             "total_page_views": sum(log["count"] for log in logs)
         }
         
         with open(log_file, "w") as file:
             json.dump({"summary": summary, "logs": logs}, file, indent=4)
 
-        logging.info("Visitor data logged successfully.")
+        logging.info(f"{data_type.capitalize()} data logged successfully.")
     except Exception as e:
-        logging.error(f"Error logging visitor data: {e}")
+        logging.error(f"Error logging {data_type} data: {e}")
 
 # Function to generate summaries for weekly, monthly, quarterly, semi-annual, and annual periods
 def generate_summaries():
@@ -95,26 +99,34 @@ def generate_summaries():
                 daily_counts = {}
                 for day in range(1, 32):
                     day_str = f"{year}-{month:02d}-{day:02d}"
-                    log_file = os.path.join(month_dir, f"{day_str}_visitor_logs.json")
-                    if not os.path.exists(log_file):
+                    log_file_views = os.path.join(month_dir, f"{day_str}_views_logs.json")
+                    log_file_clones = os.path.join(month_dir, f"{day_str}_clones_logs.json")
+                    
+                    if not os.path.exists(log_file_views) and not os.path.exists(log_file_clones):
                         continue
 
-                    with open(log_file, "r") as file:
-                        daily_logs = json.load(file)
-                        monthly_logs.extend(daily_logs)
-                        total_count += len(daily_logs)
-                        daily_counts[day_str] = len(daily_logs)
+                    daily_logs = []
+                    if os.path.exists(log_file_views):
+                        with open(log_file_views, "r") as file:
+                            daily_logs.extend(json.load(file))
+                    if os.path.exists(log_file_clones):
+                        with open(log_file_clones, "r") as file:
+                            daily_logs.extend(json.load(file))
+                    
+                    monthly_logs.extend(daily_logs)
+                    total_count += len(daily_logs)
+                    daily_counts[day_str] = len(daily_logs)
 
-                        for log in daily_logs:
-                            key = (log["timestamp"], log["user_agent"])
-                            if key not in unique_visitors:
-                                unique_visitors[key] = {
-                                    "page_views": log["count"],
-                                    "count": 1,
-                                }
-                            else:
-                                unique_visitors[key]["page_views"] += log["count"]
-                                unique_visitors[key]["count"] += 1
+                    for log in daily_logs:
+                        key = (log["timestamp"], log["uniques"])
+                        if key not in unique_visitors:
+                            unique_visitors[key] = {
+                                "page_views": log["count"],
+                                "count": 1,
+                            }
+                        else:
+                            unique_visitors[key]["page_views"] += log["count"]
+                            unique_visitors[key]["count"] += 1
 
                 if monthly_logs:
                     monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
@@ -134,15 +146,28 @@ def generate_summaries():
 # Main function to run the script
 def main():
     repo_name = os.getenv('REPO_NAME', 'brown9804/MicrosoftCloudEssentialsHub')  # Replace with your default repository name or set it dynamically using environment variable
-    traffic_data = fetch_traffic_data(repo_name)
-    for view in traffic_data.get("views", []):
+    traffic_views, traffic_clones = fetch_traffic_data(repo_name)
+    
+    for view in traffic_views.get("views", []):
         visitor_data = {
             "timestamp": view["timestamp"],
             "count": view["count"],
             "uniques": view["uniques"]
         }
-        log_visitor_data(visitor_data)
+        log_visitor_data(visitor_data, "views")
+    
+    for clone in traffic_clones.get("clones", []):
+        clone_data = {
+            "timestamp": clone["timestamp"],
+            "count": clone["count"],
+            "uniques": clone["uniques"]
+        }
+        log_visitor_data(clone_data, "clones")
+    
     generate_summaries()
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
