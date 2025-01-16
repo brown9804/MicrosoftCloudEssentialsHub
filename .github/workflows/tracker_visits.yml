@@ -3,7 +3,8 @@ name: Track Visitors and Generate Summaries
 on:
   push:
     branches:
-      - '**'
+      - main
+      
   schedule:
     - cron: '*/5 * * * *'  # Runs every 5 minutes
   workflow_dispatch:
