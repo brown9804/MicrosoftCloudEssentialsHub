@@ -47,4 +47,3 @@ jobs:
             git commit -m 'Update visitor logs and summaries'
             git pull origin visitors-count --rebase
             git push origin visitors-count
-          fi
