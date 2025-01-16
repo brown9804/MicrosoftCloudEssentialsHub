@@ -82,7 +82,7 @@ def log_visitor_data(visitor_data):
         # Append new visitor data without using timestamp as unique identifier
         logs.append(visitor_data)
 
-        # Save logs with summary at the beginning of the file
+        # Summarize the time and pages viewed for the same person
         summary = {
             "total_visitors": len(logs),
             "unique_visitors": len(set((log["ip"], log["user_agent"]) for log in logs)),
