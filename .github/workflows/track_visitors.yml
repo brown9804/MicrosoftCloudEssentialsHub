@@ -43,6 +43,7 @@ jobs:
             git checkout visitors-count
           else
             git checkout -b visitors-count
+            git push origin visitors-count  # Create the branch on the remote
           fi
           # Check for local changes and stash them if present
           if [ -n "$(git status --porcelain)" ]; then
