@@ -12,7 +12,7 @@ Last updated: 2024-11-19
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of Wiki</b> (Click to expand)</summary>
   
 - [Azure OpenAI Service - Pricing](https://azure.microsoft.com/en-gb/pricing/details/cognitive-services/openai-service/)
 - [Plan to manage costs for Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/manage-costs)
@@ -27,6 +27,32 @@ Last updated: 2024-11-19
 - [Azure OpenAI Service REST API preview reference, with available parameters](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference-preview)
   
 </details>
+
+## Content 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Wiki](#wiki)
+- [Content](#content)
+- [Cost Analysis](#cost-analysis)
+- [Deployments type](#deployments-type)
+- [Billing models](#billing-models)
+- [Tokenization](#tokenization)
+- [Optimization: Best Practices Overview](#optimization-best-practices-overview)
+- [Cost Tracking with API calls](#cost-tracking-with-api-calls)
+    - [Register an Application in Azure AD](#register-an-application-in-azure-ad)
+    - [Grant API Permissions](#grant-api-permissions)
+    - [Get an Access Token](#get-an-access-token)
+    - [Adding Filters](#adding-filters)
+- [Tagging Resources Demo](#tagging-resources-demo)
+    - [Tagging the Azure OpenAI Resource](#tagging-the-azure-openai-resource)
+    - [Using Tags in API Calls](#using-tags-in-api-calls)
+    - [Generating Billing Reports Based on Tags](#generating-billing-reports-based-on-tags)
+    - [Automating Tagging with Azure Policy](#automating-tagging-with-azure-policy)
+
+</details>
+
 
 ## Cost Analysis 
 
