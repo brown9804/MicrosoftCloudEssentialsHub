@@ -50,11 +50,10 @@ def collect_visitor_data():
         "geolocation": get_geolocation("192.168.1.1"),  # Geolocation data based on IP address
         "screen_resolution": "1920x1080",  # Visitor's screen resolution
         "language": "en-US",  # Preferred language set in the visitor's browser
-        "session_duration": "5 minutes",  # Duration of the visitor's session
+        "session_duration": 5,  # Duration of the visitor's session in minutes
         "page_views": 3,  # Number of pages viewed during the session
         "device_type": "desktop",  # Device type (desktop, tablet, mobile)
         "query_parameters": "param1=value1&param2=value2",  # Query parameters in the URL
-        "is_unique": True  # Flag to indicate if the visitor is unique
     }
     return visitor_data
 
@@ -75,6 +74,10 @@ def log_visitor_data(visitor_data):
                 logs = json.load(file)
         else:
             logs = []
+
+        # Check if the visitor is unique based on IP and user agent
+        is_unique = all(visitor_data["ip"] != log["ip"] or visitor_data["user_agent"] != log["user_agent"] for log in logs)
+        visitor_data["is_unique"] = is_unique
 
         # Append new visitor data without using timestamp as unique identifier
         logs.append(visitor_data)
@@ -112,6 +115,7 @@ def generate_summaries():
 
                 monthly_logs = []
                 total_count = 0
+                unique_visitors = {}
                 for day in range(1, 32):
                     day_str = f"{year}-{month:02d}-{day:02d}"
                     log_file = os.path.join(month_dir, f"{day_str}_visitor_logs.json")
@@ -123,11 +127,25 @@ def generate_summaries():
                         monthly_logs.extend(daily_logs)
                         total_count += len(daily_logs)
 
+                        for log in daily_logs:
+                            key = (log["ip"], log["user_agent"])
+                            if key not in unique_visitors:
+                                unique_visitors[key] = {
+                                    "session_duration": log["session_duration"],
+                                    "page_views": log["page_views"],
+                                    "count": 1,
+                                }
+                            else:
+                                unique_visitors[key]["session_duration"] += log["session_duration"]
+                                unique_visitors[key]["page_views"] += log["page_views"]
+                                unique_visitors[key]["count"] += 1
+
                 if monthly_logs:
                     monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
                     summary_data = {
                         "total_count": total_count,
-                        "logs": monthly_logs
+                        "unique_visitors": unique_visitors,
+                        "logs": monthly_logs,
                     }
                     with open(monthly_summary_file, "w") as file:
                         json.dump(summary_data, file, indent=4)
