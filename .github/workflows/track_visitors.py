@@ -45,8 +45,8 @@ def collect_visitor_data():
         "ip": "192.168.1.1",  # Visitor's IP address
         "timestamp": datetime.datetime.now().isoformat(),  # Timestamp of the visit
         "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",  # Visitor's browser and OS information (Microsoft Edge)
-        "referrer": "https://example.com",  # URL from which the visitor came
-        "requested_url": "https://yourrepo.github.io/page",  # URL the visitor is accessing
+        "referrer": "https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main",  # Default referrer URL
+        "requested_url": "https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main",  # Default requested URL
         "geolocation": get_geolocation("192.168.1.1"),  # Geolocation data based on IP address
         "screen_resolution": "1920x1080",  # Visitor's screen resolution
         "language": "en-US",  # Preferred language set in the visitor's browser
@@ -76,7 +76,7 @@ def log_visitor_data(visitor_data):
         else:
             logs = []
 
-        # Append new visitor data
+        # Append new visitor data without using timestamp as unique identifier
         logs.append(visitor_data)
 
         # Save logs
