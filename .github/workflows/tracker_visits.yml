@@ -5,7 +5,7 @@ on:
     branches:
       - '**'
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
   workflow_dispatch:
 
 jobs:
@@ -29,8 +29,7 @@ jobs:
       - name: Set environment variables
         run: echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
 
-      - name: Run tracking script
-        env:
+      - name: Run tracking script env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/track_visitors.py
 
@@ -41,17 +40,10 @@ jobs:
           git fetch origin
           if git show-ref --verify --quiet refs/heads/visitors-count; then
             git checkout visitors-count
-            git pull origin visitors-count --rebase || true
+            git pull origin visitors-count || true
           else
             git checkout -b visitors-count
             git push origin visitors-count
-          fi
-          if [ -n "$(git status --porcelain)" ]; then
-            git stash || true
-            git pull origin visitors-count --rebase || true
-            git stash pop || true
-          else
-            git pull origin visitors-count --rebase || true
           fi
           git add -A
           if git diff-index --quiet HEAD --; then
