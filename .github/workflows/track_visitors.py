@@ -116,6 +116,7 @@ def generate_summaries():
                 monthly_logs = []
                 total_count = 0
                 unique_visitors = {}
+                daily_counts = {}
                 for day in range(1, 32):
                     day_str = f"{year}-{month:02d}-{day:02d}"
                     log_file = os.path.join(month_dir, f"{day_str}_visitor_logs.json")
@@ -126,6 +127,7 @@ def generate_summaries():
                         daily_logs = json.load(file)
                         monthly_logs.extend(daily_logs)
                         total_count += len(daily_logs)
+                        daily_counts[day_str] = len(daily_logs)
 
                         for log in daily_logs:
                             key = (log["ip"], log["user_agent"])
@@ -144,6 +146,7 @@ def generate_summaries():
                     monthly_summary_file = os.path.join(summaries_dir, f"{month_str}_summary.json")
                     summary_data = {
                         "total_count": total_count,
+                        "daily_counts": daily_counts,
                         "unique_visitors": unique_visitors,
                         "logs": monthly_logs,
                     }
