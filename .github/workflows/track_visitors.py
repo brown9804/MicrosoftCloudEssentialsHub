@@ -49,6 +49,10 @@ def log_visitor_data(visitor_data):
         else:
             logs = []
 
+        # Ensure logs is a list
+        if isinstance(logs, dict):
+            logs = logs.get("logs", [])
+
         # Append new visitor data
         logs.append(visitor_data)
 
