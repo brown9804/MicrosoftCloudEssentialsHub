@@ -82,9 +82,16 @@ def log_visitor_data(visitor_data):
         # Append new visitor data without using timestamp as unique identifier
         logs.append(visitor_data)
 
-        # Save logs
+        # Save logs with summary at the beginning of the file
+        summary = {
+            "total_visitors": len(logs),
+            "unique_visitors": len(set((log["ip"], log["user_agent"]) for log in logs)),
+            "total_session_duration_minutes": sum(log["session_duration"] for log in logs),
+            "total_page_views": sum(log["page_views"] for log in logs)
+        }
+        
         with open(log_file, "w") as file:
-            json.dump(logs, file, indent=4)
+            json.dump({"summary": summary, "logs": logs}, file, indent=4)
 
         logging.info("Visitor data logged successfully.")
     except Exception as e:
@@ -133,12 +140,12 @@ def generate_summaries():
                             key = (log["ip"], log["user_agent"])
                             if key not in unique_visitors:
                                 unique_visitors[key] = {
-                                    "session_duration": log["session_duration"],
+                                    "session_duration_minutes": log["session_duration"],
                                     "page_views": log["page_views"],
                                     "count": 1,
                                 }
                             else:
-                                unique_visitors[key]["session_duration"] += log["session_duration"]
+                                unique_visitors[key]["session_duration_minutes"] += log["session_duration"]
                                 unique_visitors[key]["page_views"] += log["page_views"]
                                 unique_visitors[key]["count"] += 1
 
