@@ -75,7 +75,9 @@ Last updated: 2025-01-17
 ### Step 2: Configure the Source Dataset
 
 > [!NOTE]
-> For this purpose, I already have a lakehouse with some XML files in place. Here is the input source used, few examples of [XML File: Employee Records]() used.
+> For this purpose, I already have a lakehouse with some XML files in place. Here is the input source used, few examples of [XML File: Employee Records](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/tree/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/26_ParsingXMLfilesPQuery/samples) used.
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/e5d6b1b4-8330-47a7-8ffb-fe990d83b12b" />
 
 1. **Create a Source Dataset**:
    - In the Datasets section, create a new dataset.
