@@ -1,0 +1,70 @@
+<Company>
+    <Employees>
+        <Employee id="3">
+            <Name>Michael Johnson</Name>
+            <Position>Data Analyst</Position>
+            <Department>Analytics</Department>
+            <Salary currency="USD">65000</Salary>
+            <HireDate>2019-07-15</HireDate>
+            <Contact>
+                <Email>michael.johnson@example.com</Email>
+                <Phone type="mobile">555-123-4567</Phone>
+                <Phone type="work">555-765-4321</Phone>
+            </Contact>
+            <Address>
+                <Street>789 Oak St</Street>
+                <City>Gotham</City>
+                <State>NJ</State>
+                <ZipCode>07001</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Epsilon</Name>
+                    <Role>Data Analyst</Role>
+                    <StartDate>2020-02-01</StartDate>
+                    <EndDate>2021-01-31</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Zeta</Name>
+                    <Role>Data Analyst</Role>
+                    <StartDate>2021-03-01</StartDate>
+                    <EndDate>2022-02-28</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+        <Employee id="4">
+            <Name>Emily Davis</Name>
+            <Position>HR Manager</Position>
+            <Department>Human Resources</Department>
+            <Salary currency="USD">80000</Salary>
+            <HireDate>2017-11-10</HireDate>
+            <Contact>
+                <Email>emily.davis@example.com</Email>
+                <Phone type="mobile">444-555-6666</Phone>
+                <Phone type="work">444-666-5555</Phone>
+            </Contact>
+            <Address>
+                <Street>321 Pine St</Street>
+                <City>Star City</City>
+                <State>CA</State>
+                <ZipCode>90001</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Theta</Name>
+                    <Role>HR Lead</Role>
+                    <StartDate>2018-01-01</StartDate>
+                    <EndDate>2019-12-31</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Iota</Name>
+                    <Role>HR Manager</Role>
+                    <StartDate>2020-01-01</StartDate>
+                    <EndDate>2021-12-31</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+    </Employees>
+</Company>

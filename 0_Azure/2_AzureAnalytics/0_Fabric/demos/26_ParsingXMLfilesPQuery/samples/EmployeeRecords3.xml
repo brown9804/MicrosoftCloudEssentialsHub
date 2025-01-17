@@ -1,0 +1,70 @@
+<Company>
+    <Employees>
+        <Employee id="5">
+            <Name>David Brown</Name>
+            <Position>Marketing Specialist</Position>
+            <Department>Marketing</Department>
+            <Salary currency="USD">70000</Salary>
+            <HireDate>2021-04-20</HireDate>
+            <Contact>
+                <Email>david.brown@example.com</Email>
+                <Phone type="mobile">333-444-5555</Phone>
+                <Phone type="work">333-555-4444</Phone>
+            </Contact>
+            <Address>
+                <Street>654 Maple St</Street>
+                <City>Central City</City>
+                <State>TX</State>
+                <ZipCode>73301</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Kappa</Name>
+                    <Role>Marketing Lead</Role>
+                    <StartDate>2021-05-01</StartDate>
+                    <EndDate>2022-04-30</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Lambda</Name>
+                    <Role>Marketing Specialist</Role>
+                    <StartDate>2022-06-01</StartDate>
+                    <EndDate>2023-05-31</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+        <Employee id="6">
+            <Name>Sarah Wilson</Name>
+            <Position>Finance Manager</Position>
+            <Department>Finance</Department>
+            <Salary currency="USD">95000</Salary>
+            <HireDate>2016-09-15</HireDate>
+            <Contact>
+                <Email>sarah.wilson@example.com</Email>
+                <Phone type="mobile">222-333-4444</Phone>
+                <Phone type="work">222-444-3333</Phone>
+            </Contact>
+            <Address>
+                <Street>987 Birch St</Street>
+                <City>Coast City</City>
+                <State>FL</State>
+                <ZipCode>33101</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Mu</Name>
+                    <Role>Finance Lead</Role>
+                    <StartDate>2017-01-01</StartDate>
+                    <EndDate>2018-12-31</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Nu</Name>
+                    <Role>Finance Manager</Role>
+                    <StartDate>2019-01-01</StartDate>
+                    <EndDate>2020-12-31</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+    </Employees>
+</Company>
