@@ -1,0 +1,70 @@
+<Company>
+    <Employees>
+        <Employee id="1">
+            <Name>John Doe</Name>
+            <Position>Software Engineer</Position>
+            <Department>IT</Department>
+            <Salary currency="USD">75000</Salary>
+            <HireDate>2020-01-15</HireDate>
+            <Contact>
+                <Email>john.doe@example.com</Email>
+                <Phone type="mobile">123-456-7890</Phone>
+                <Phone type="work">098-765-4321</Phone>
+            </Contact>
+            <Address>
+                <Street>123 Main St</Street>
+                <City>Springfield</City>
+                <State>IL</State>
+                <ZipCode>62701</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Alpha</Name>
+                    <Role>Lead Developer</Role>
+                    <StartDate>2021-06-01</StartDate>
+                    <EndDate>2022-05-31</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Beta</Name>
+                    <Role>Developer</Role>
+                    <StartDate>2022-06-01</StartDate>
+                    <EndDate>2023-05-31</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+        <Employee id="2">
+            <Name>Jane Smith</Name>
+            <Position>Project Manager</Position>
+            <Department>IT</Department>
+            <Salary currency="USD">90000</Salary>
+            <HireDate>2018-03-22</HireDate>
+            <Contact>
+                <Email>jane.smith@example.com</Email>
+                <Phone type="mobile">987-654-3210</Phone>
+                <Phone type="work">012-345-6789</Phone>
+            </Contact>
+            <Address>
+                <Street>456 Elm St</Street>
+                <City>Metropolis</City>
+                <State>NY</State>
+                <ZipCode>10001</ZipCode>
+                <Country>USA</Country>
+            </Address>
+            <Projects>
+                <Project>
+                    <Name>Project Gamma</Name>
+                    <Role>Project Manager</Role>
+                    <StartDate>2019-01-01</StartDate>
+                    <EndDate>2020-12-31</EndDate>
+                </Project>
+                <Project>
+                    <Name>Project Delta</Name>
+                    <Role>Project Manager</Role>
+                    <StartDate>2021-01-01</StartDate>
+                    <EndDate>2022-12-31</EndDate>
+                </Project>
+            </Projects>
+        </Employee>
+    </Employees>
+</Company>
