@@ -119,47 +119,16 @@ graph TD
 > Click here for additional information on this topic [Azure SQL Managed Instance: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/relational/1_az-sql-mi.md) 
 
 ### SQL Server on Azure Virtual Machines
-To maintain SQL Server on Azure VMs, you can:
 
-1. **Cleaning Up Unused Data**: Regularly delete or archive obsolete data to free up space.
-
-2. **Monitoring and Maintenance**: Use built-in monitoring tools and maintenance plans, such as SQL Server Management Studio (SSMS) or Azure Monitor.
-
-3. **Data Compression**: Apply compression techniques to tables and indexes:
-   ```sql
-   ALTER TABLE YourTableName REBUILD WITH (DATA_COMPRESSION = PAGE);
-   ```
+> Click here for additional information on this topic [Azure SQL Managed Instance: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/relational/2_sql-az-vm.md)
 
 ### Azure Database for PostgreSQL
-For Azure Database for PostgreSQL, these strategies are effective:
 
-1. **Partitioning Tables**: Use PostgreSQL's native partitioning features to manage large tables:
-   ```sql
-   CREATE TABLE measurement_y2023m01 PARTITION OF measurement FOR VALUES FROM ('2023-01-01') TO ('2023-02-01');
-   ```
-
-2. **Index Optimization**: Regularly rebuild or reorganize indexes to maintain performance:
-   ```sql
-   REINDEX TABLE YourTableName;
-   ```
-
-3. **Archiving Old Data**: Move old data to an archive database using PostgreSQL's built-in tools or third-party solutions.
+> Click here for additional information on this topic [Azure Database for PostgreSQL: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/relational/3_az-postgreSQL.md)
 
 ### Azure Database for MySQL
-To optimize Azure Database for MySQL, you can:
 
-1. **Data Compression**: Use MySQL's compression features to save space:
-   ```sql
-   ALTER TABLE YourTableName ROW_FORMAT=COMPRESSED;
-   ```
-
-2. **Index Optimization**: Regularly rebuild or reorganize indexes to keep the database performing well:
-   ```sql
-   OPTIMIZE TABLE YourTableName;
-   ```
-
-3. **Cleaning Up Unused Data**: Regularly delete or archive obsolete data to maintain database efficiency.
-
+> Click here for additional information on this topic [Azure Database for MySQL: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/relational/4_az-db-mysql.md)
 
 ## Non-Relational Databases
 
@@ -188,25 +157,8 @@ graph TD
 ```
 ### Azure Cosmos DB
 
-A globally distributed, multi-model database service.
+> Click here for additional information on this topic [Azure Cosmos DB: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/non-relational/0_az-cosmosdb.md)
 
-> **Strategies**:
-
-- **Partitioning**: Use automatic partitioning to manage large datasets. Cosmos DB automatically partitions data based on the partition key you define. Ensure your partition key is chosen to evenly distribute data.
-- **Index Optimization**: Customize indexing policies to optimize performance. Customize indexing policies using the Azure Portal or SDK. Example:
- ```json
- {
-   "indexingMode": "consistent",
-   "automatic": true,
-   "includedPaths": [
-     { "path": "/*" }
-   ],
-   "excludedPaths": [
-     { "path": "/\"_etag\"/?" }
-   ]
- }
- ```
-- **Archiving Old Data**: Move old data to an archive database. Use Azure Data Factory to move old data to an archive storage solution.
 
 ### Azure Managed Instance for Apache Cassandra
 
