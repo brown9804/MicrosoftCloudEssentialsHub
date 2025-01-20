@@ -12,12 +12,30 @@ Last updated: 2024-11-19
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of References </b> (Click to expand)</summary>
 
 - [Fabric Draw.io icons](https://github.com/marclelijveld/Fabric-Icons/tree/main)
 
 </details>
 
+## Contents 
+
+<details>
+<summary><b>Table of Contents</b> (Click to expand)</summary>
+
+- [Wiki](#wiki)
+- [Contents](#contents)
+- [Overview](#overview)
+- [Demo](#demo)
+    - [Step 1: Set Up Your Environment](#step-1-set-up-your-environment)
+    - [Step 2: Ingest Data into the Bronze Layer](#step-2-ingest-data-into-the-bronze-layer)
+    - [Step 3: Transform Data in the Silver Layer](#step-3-transform-data-in-the-silver-layer)
+    - [Step 4: Curate Data in the Gold Layer](#step-4-curate-data-in-the-gold-layer)
+    - [Step 5: Set Up Pipelines for Orchestration](#step-5-set-up-pipelines-for-orchestration)
+    - [Step 6: Enable Data Access for Reporting](#step-6-enable-data-access-for-reporting)
+
+
+</details>
 
 ## Overview 
 
