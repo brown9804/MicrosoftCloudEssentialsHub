@@ -13,6 +13,9 @@ Last updated: 2025-01-17
 
 ## Wiki 
 
+<details>
+<summary><b>Table of References </b> (Click to expand)</summary>
+
 - [Microsoft Fabric trial capacity](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
 - [Buy a Microsoft Fabric subscription](https://learn.microsoft.com/en-us/fabric/enterprise/buy-subscription)
 - [Microsoft Fabric pricing table: compute + storage](https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/)
@@ -25,6 +28,8 @@ Last updated: 2025-01-17
 - [Understand how consumption is calculated](https://learn.microsoft.com/en-us/fabric/enterprise/plan-capacity#understand-how-consumption-is-calculated)
 - [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?msockid=38ec3806873362243e122ce086486339)
 - [Fabric Capacity and OneLake Consumption](https://learn.microsoft.com/en-us/fabric/onelake/onelake-capacity-consumption)
+
+</details>
 
 ## Overview 
 
