@@ -155,57 +155,18 @@ graph TD
     A3 --> A3_1[Data Eviction Policies]
     A3 --> A3_2[Monitoring and Maintenance]
 ```
+
 ### Azure Cosmos DB
 
 > Click here for additional information on this topic [Azure Cosmos DB: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/non-relational/0_az-cosmosdb.md)
 
-
 ### Azure Managed Instance for Apache Cassandra
 
-A managed instance of Apache Cassandra.
-
-> **Strategies**:
-
-- **Data Compression**: Use Cassandra's compression features. Enable compression on tables:
-  ```sql
-  CREATE TABLE my_table (id UUID PRIMARY KEY, data TEXT) WITH compression = {'class': 'LZ4Compressor'};
-  ```
-- **Index Optimization**: Regularly rebuild or reorganize indexes. Rebuild indexes periodically:
-  ```sql
-  REBUILD INDEX my_index;
-  ```
-- **Cleaning Up Unused Data**: Regularly delete or archive obsolete data. Use TTL (Time to Live) to automatically delete old data.
-  ```sql
-  CREATE TABLE my_table (id UUID PRIMARY KEY, data TEXT) WITH default_time_to_live = 86400;
-  ```
-
-The value 86400 in the context of the default_time_to_live setting for Apache Cassandra represents the Time to Live (TTL) for data in seconds. Specifically, 86400 seconds is equivalent to 24 hours (1 day). This means that any data inserted into the table will automatically be deleted after 24 hours.
-
-  ```
-  86400 seconds = 24 hours = 1 day
-  ```
-
-  > So, when you set default_time_to_live = 86400, it ensures that data in the table will expire and be removed after one day. If you want to set a different TTL, you can adjust this value accordingly. For example:
-  
-  ```
-  3600 seconds = 1 hour
-  604800 seconds = 7 days (1 week)
-  ```
+> Click here for additional information on this topic [Azure Managed Instance for Apache Cassandra: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/non-relational/1_az-mi-apache-cassandra.md)
 
 ### Azure Cache for Redis
 
-An in-memory data store for caching and real-time analytics.
-
-> **Strategies**:
-
-- **Data Eviction Policies**: Use eviction policies to manage memory usage. Configure eviction policies in Redis configuration:
- ```
- maxmemory-policy allkeys-lru
- ```
-- **Monitoring and Maintenance**: Regularly monitor and maintain cache performance. Use Azure Monitor to set up alerts and monitor performance metrics. Example:
- ```
- az monitor metrics alert create --name "HighMemoryUsage" --resource-group "MyResourceGroup" --scopes "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Cache/Redis/{cache-name}" --condition "avg memory_usage_percentage > 80" --description "Alert when memory usage exceeds 80%"
- ```
+> Click here for additional information on this topic [Azure Cache for Redis: Freeing Up Unused Space - Overview](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/1_AzureData/1_Databases/demos/8_DBFreeingUpUnusedSpace/non-relational/2_az-cache-redis.md)
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
