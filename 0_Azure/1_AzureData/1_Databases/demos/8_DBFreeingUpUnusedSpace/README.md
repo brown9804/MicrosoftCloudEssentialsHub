@@ -114,7 +114,10 @@ graph TD
 
 To optimize your Azure SQL Database, you can use several strategies:
 
-1. **Shrinking the Database**: This helps reclaim unused space. Use the command:
+#### 1. Shrinking the Database
+
+>This helps reclaim unused space. Use the command:
+
    ```sql
    DBCC SHRINKDATABASE (YourDatabaseName, 10);
    ```
@@ -125,17 +128,26 @@ To optimize your Azure SQL Database, you can use several strategies:
    WHERE blocking_session_id <> 0;
    ```
 
-2. **Data Compression**: Apply `PAGE` or `ROW` compression to reduce storage costs and improve performance. For example:
+#### 2. Data Compression
+
+> Apply `PAGE` or `ROW` compression to reduce storage costs and improve performance. For example:
+
    ```sql
    ALTER TABLE YourTableName REBUILD WITH (DATA_COMPRESSION = PAGE);
    ```
 
-3. **Index Optimization**: Regularly rebuild or reorganize indexes to maintain query performance:
+#### 3. Index Optimization
+
+> Regularly rebuild or reorganize indexes to maintain query performance:
+
    ```sql
    ALTER INDEX ALL ON YourTableName REBUILD;
    ```
 
-4. **Partitioning Tables**: Split large tables into partitions to improve manageability and performance:
+#### 4. Partitioning Tables
+
+> Split large tables into partitions to improve manageability and performance:
+
    ```sql
    CREATE PARTITION FUNCTION MyPartitionFunction (datetime) AS RANGE LEFT FOR VALUES ('2023-01-01', '2024-01-01');
    ```
@@ -154,221 +166,225 @@ For Azure SQL Managed Instance, consider these strategies:
 | **DBCC SHRINKFILE (TRUNCATEONLY)** | DBCC SHRINKFILE (TRUNCATEONLY) is a specific option for DBCC SHRINKFILE that releases all free space at the end of the file to the operating system without moving any data pages. This command is useful when you want to quickly release unused space without the overhead of moving data. | `DBCC SHRINKFILE (file_id, TRUNCATEONLY);`                                                   | `DBCC SHRINKFILE (1, TRUNCATEONLY);` -- Releases unused space at the end of the file with ID 1 |
 | **DBCC SHRINKDATABASE**          | DBCC SHRINKDATABASE is used to shrink the size of all data and log files in a database. This command attempts to move data pages from the end of the files to unoccupied space closer to the beginning of the files, thereby reducing the overall size of the database. `target_percent_free_space: The desired percentage of free space to remain in the database after the shrink operation.`  | `DBCC SHRINKDATABASE (database_name, target_percent_free_space);`                             | `DBCC SHRINKDATABASE (YourDatabaseName, 10);` -- Shrinks the database to leave 10% free space |
 
-1. Gather more detailed information about the current used and allocated space in your database:
+#### 1. Gather more detailed information 
 
-    -  Detailed Space Usage by File: This query provides detailed information about each file, including the file name, type, growth settings, and more:
-    
-        ```sql
-        WITH CTE AS (
-            SELECT 
-                file_id,
-                name AS file_name,
-                type_desc AS file_type,
-                physical_name,
-                CAST(FILEPROPERTY(name, 'SpaceUsed') AS bigint) * 8 / 1024.0 AS space_used_mb,
-                CAST(size AS bigint) * 8 / 1024.0 AS space_allocated_mb,
-                CAST(max_size AS bigint) * 8 / 1024.0 AS max_size_mb,
-                growth,
-                CASE 
-                    WHEN is_percent_growth = 1 THEN 'Percentage'
-                    ELSE 'MB'
-                END AS growth_type
-            FROM sys.database_files
-        )
+> About the current used and allocated space in your database
+
+-  Detailed Space Usage by File: This query provides detailed information about each file, including the file name, type, growth settings, and more:
+
+    ```sql
+    WITH CTE AS (
         SELECT 
             file_id,
-            file_name,
-            file_type,
+            name AS file_name,
+            type_desc AS file_type,
             physical_name,
-            space_used_mb,
-            space_allocated_mb,
-            max_size_mb,
+            CAST(FILEPROPERTY(name, 'SpaceUsed') AS bigint) * 8 / 1024.0 AS space_used_mb,
+            CAST(size AS bigint) * 8 / 1024.0 AS space_allocated_mb,
+            CAST(max_size AS bigint) * 8 / 1024.0 AS max_size_mb,
             growth,
-            growth_type,
-            space_used_mb / space_allocated_mb * 100 AS [Occupancy %],
-            100 - (space_used_mb / space_allocated_mb * 100) AS [Free %]
-        FROM CTE
-        ORDER BY [Occupancy %];
-        ```
-
-          <img width="700" alt="image" src="https://github.com/user-attachments/assets/b6ca6507-668c-427c-b01a-6a66e7e0fedd" />
-        
-        | **Category**       | **Recommendation**                                                                                                                                                                                                 |
-        |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-        | **LOG Files**      | - **Free Space**: Maintain at least 25-30% free space in your log files. This ensures there is enough room for transaction logs to grow and prevents the database from running out of space during peak operations.<br>- **Monitoring**: Use the `sys.dm_db_log_space_usage`. Regularly check the percentage of log space used to avoid unexpected issues.<br>- **Maintenance**: Regularly back up your transaction logs to truncate inactive portions and free up space. |
-        | **ROWS (Data Files)** | - **Free Space**: Aim to keep around 20-25% free space in your data files. This allows for growth and helps avoid performance issues related to frequent auto-growth events.<br>- **Auto-Growth Settings**: Configure auto-growth settings appropriately to avoid frequent small growths. Setting a fixed size for growth (e.g., 500 MB or 1 GB) is often better than a percentage-based growth.<br>- **Monitoring**: Use the `sys.database_files` view to monitor the size and free space of your data files. |
-        | **FILESTREAM Data** | - **Free Space**: Ensure there is sufficient free space on the disk where the FILESTREAM data is stored. A good rule of thumb is to keep at least 20% free space.<br>- **Disk Monitoring**: Regularly monitor the disk space and set up alerts to notify you when free space falls below a certain threshold.<br>- **Maintenance**: Regularly clean up old or unused FILESTREAM data to free up space. |
-
-    - Space Usage by Table: This query provides information about space usage at the table level, including the number of rows, reserved space, data space, index space, and unused space. Will iterate through all tables in your database and execute sp_spaceused for each one:
-        
-        ```sql
-        -- Create a temporary table to store the results
-        CREATE TABLE #SpaceUsed (
-            TableName NVARCHAR(256),
-            [Rows] INT,
-            Reserved VARCHAR(50),
-            Data VARCHAR(50),
-            IndexSize VARCHAR(50),
-            Unused VARCHAR(50),
-            [Free %] FLOAT
-        );
-        
-        DECLARE @TableName NVARCHAR(256);
-        
-        DECLARE TableCursor CURSOR FOR
-        SELECT QUOTENAME(SCHEMA_NAME(schema_id)) + '.' + QUOTENAME(name)
-        FROM sys.tables;
-        
-        OPEN TableCursor;
-        FETCH NEXT FROM TableCursor INTO @TableName;
-        
-        WHILE @@FETCH_STATUS = 0
-        BEGIN
-            INSERT INTO #SpaceUsed (TableName, [Rows], Reserved, Data, IndexSize, Unused)
-            EXEC sp_spaceused @TableName;
-        
-            FETCH NEXT FROM TableCursor INTO @TableName;
-        END;
-        
-        CLOSE TableCursor;
-        DEALLOCATE TableCursor;
-        
-        -- Use a CTE to calculate the Free %
-        WITH CTE AS (
-            SELECT 
-                TableName,
-                [Rows],
-                CAST(REPLACE(Reserved, ' KB', '') AS FLOAT) AS ReservedKB,
-                CAST(REPLACE(Data, ' KB', '') AS FLOAT) AS DataKB,
-                CAST(REPLACE(IndexSize, ' KB', '') AS FLOAT) AS IndexSizeKB,
-                CAST(REPLACE(Unused, ' KB', '') AS FLOAT) AS UnusedKB
-            FROM #SpaceUsed
-        )
-        UPDATE #SpaceUsed
-        SET [Free %] = 
             CASE 
-                WHEN ReservedKB = 0 THEN 0
-                ELSE (UnusedKB / ReservedKB) * 100
-            END
-        FROM CTE
-        WHERE #SpaceUsed.TableName = CTE.TableName;
-        
-        -- Select the results from the temporary table
-        SELECT * FROM #SpaceUsed
-        ORDER BY TableName;
-        
-        -- Drop the temporary table
-        DROP TABLE #SpaceUsed;
-        ```
+                WHEN is_percent_growth = 1 THEN 'Percentage'
+                ELSE 'MB'
+            END AS growth_type
+        FROM sys.database_files
+    )
+    SELECT 
+        file_id,
+        file_name,
+        file_type,
+        physical_name,
+        space_used_mb,
+        space_allocated_mb,
+        max_size_mb,
+        growth,
+        growth_type,
+        space_used_mb / space_allocated_mb * 100 AS [Occupancy %],
+        100 - (space_used_mb / space_allocated_mb * 100) AS [Free %]
+    FROM CTE
+    ORDER BY [Occupancy %];
+    ```
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/401323a7-7ffc-4d6f-aade-96991793b677" />
-
-        | **Aspect**            | **Recommendation**|
-        |-----------------------|---------------------------------------------------|
-        | **Free Space**        | Maintain around 20-25% free space in your data files to accommodate table growth.|
-        | **Index Maintenance** | Regularly rebuild or reorganize indexes to optimize performance and reclaim space. Fragmented indexes can lead to inefficient space usage.|
-        | **Partitioning**      | Consider partitioning large tables to improve manageability and performance. This can also help in efficiently managing space.|
-        | **Archiving**         | Implement an archiving strategy for old or infrequently accessed data. This can free up space and improve performance for active data.|
-        | **Compression**       | Use data compression techniques to reduce the size of tables and indexes. SQL Server supports row and page compression, which can significantly reduce space usage.|
-
-    - Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used.
+      <img width="700" alt="image" src="https://github.com/user-attachments/assets/b6ca6507-668c-427c-b01a-6a66e7e0fedd" />
     
-        ```sql
-        SELECT 
-            OBJECT_NAME(i.object_id) AS table_name,
-            i.name AS index_name,
-            i.type_desc AS index_type,
-            SUM(a.used_pages) * 8 / 1024.0 AS index_size_mb
-        FROM 
-            sys.indexes AS i
-            JOIN sys.partitions AS p ON i.object_id = p.object_id AND i.index_id = p.index_id
-            JOIN sys.allocation_units AS a ON p.partition_id = a.container_id
-        GROUP BY 
-            i.object_id, i.index_id, i.name, i.type_desc
-        ORDER BY 
-            index_size_mb DESC;
-        ```
+    | **Category**       | **Recommendation**                                                                                                                                                                                                 |
+    |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | **LOG Files**      | - **Free Space**: Maintain at least 25-30% free space in your log files. This ensures there is enough room for transaction logs to grow and prevents the database from running out of space during peak operations.<br>- **Monitoring**: Use the `sys.dm_db_log_space_usage`. Regularly check the percentage of log space used to avoid unexpected issues.<br>- **Maintenance**: Regularly back up your transaction logs to truncate inactive portions and free up space. |
+    | **ROWS (Data Files)** | - **Free Space**: Aim to keep around 20-25% free space in your data files. This allows for growth and helps avoid performance issues related to frequent auto-growth events.<br>- **Auto-Growth Settings**: Configure auto-growth settings appropriately to avoid frequent small growths. Setting a fixed size for growth (e.g., 500 MB or 1 GB) is often better than a percentage-based growth.<br>- **Monitoring**: Use the `sys.database_files` view to monitor the size and free space of your data files. |
+    | **FILESTREAM Data** | - **Free Space**: Ensure there is sufficient free space on the disk where the FILESTREAM data is stored. A good rule of thumb is to keep at least 20% free space.<br>- **Disk Monitoring**: Regularly monitor the disk space and set up alerts to notify you when free space falls below a certain threshold.<br>- **Maintenance**: Regularly clean up old or unused FILESTREAM data to free up space. |
 
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/9e73aa43-59a8-412a-b8e1-757478050b8c" />
-
-    - Database Size and Space Usage: This query provides an overview of the database size and space usage, including the total size, used space, and free space.
-        
-        ```sql
-        WITH SpaceInfo AS (
-            SELECT 
-                file_id,
-                type_desc,
-                name AS file_name,
-                physical_name,
-                size * 8 / 1024 AS size_mb,
-                FILEPROPERTY(name, 'SpaceUsed') * 8 / 1024 AS space_used_mb
-            FROM 
-                sys.database_files
-        )
-        SELECT 
-            db_name.database_name,
-            SUM(size_mb) AS total_size_mb,
-            SUM(space_used_mb) AS used_space_mb,
-            SUM(size_mb) - SUM(space_used_mb) AS free_space_mb
-        FROM 
-            SpaceInfo,
-            (SELECT DB_NAME() AS database_name) AS db_name
-        GROUP BY 
-            db_name.database_name;
-        ```
-
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd6cbfa5-aec0-48d6-a8dc-440023bca0d0">
-
-
-    - Filegroup Space Usage: This query provides information about space usage by filegroups, including the filegroup name, total size, used space, and free space.
-        
-        ```sql
-        -- Calculate the total size, used space, and free space for each filegroup
-        SELECT 
-            fg.name AS filegroup_name,
-            SUM(df.size * 8 / 1024.0) AS total_size_mb,
-            SUM(df.size * 8 / 1024.0) - SUM(a.total_pages * 8 / 1024.0) AS free_space_mb,
-            SUM(a.total_pages * 8 / 1024.0) AS used_space_mb
-        FROM 
-            sys.filegroups AS fg
-        JOIN 
-            sys.database_files AS df ON fg.data_space_id = df.data_space_id
-        JOIN 
-            sys.allocation_units AS a ON df.data_space_id = a.data_space_id
-        GROUP BY 
-            fg.name
-        ORDER BY 
-            total_size_mb DESC;
-        ```
-
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/a7dce4f9-f32e-4b7e-bd92-d4709bd0ed7b">
-
-2. **Shrink the Database File**:  Shrink the database file to reclaim unused space
-
-   ```sql
-    -- Shrink the database file (replace 1 with your file_id)
-    DBCC SHRINKFILE (1);
-   ```
-  
-      <img width="550" alt="image" src="https://github.com/user-attachments/assets/96c7be25-ade3-4851-a2cd-8735273c4c6f">
+- Space Usage by Table: This query provides information about space usage at the table level, including the number of rows, reserved space, data space, index space, and unused space. Will iterate through all tables in your database and execute sp_spaceused for each one:
     
-    > If you specify a target size that is just enough to hold all the data pages, the result can be a file with no free space.
+    ```sql
+    -- Create a temporary table to store the results
+    CREATE TABLE #SpaceUsed (
+        TableName NVARCHAR(256),
+        [Rows] INT,
+        Reserved VARCHAR(50),
+        Data VARCHAR(50),
+        IndexSize VARCHAR(50),
+        Unused VARCHAR(50),
+        [Free %] FLOAT
+    );
     
-    **Before Shrink:**
+    DECLARE @TableName NVARCHAR(256);
+    
+    DECLARE TableCursor CURSOR FOR
+    SELECT QUOTENAME(SCHEMA_NAME(schema_id)) + '.' + QUOTENAME(name)
+    FROM sys.tables;
+    
+    OPEN TableCursor;
+    FETCH NEXT FROM TableCursor INTO @TableName;
+    
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        INSERT INTO #SpaceUsed (TableName, [Rows], Reserved, Data, IndexSize, Unused)
+        EXEC sp_spaceused @TableName;
+    
+        FETCH NEXT FROM TableCursor INTO @TableName;
+    END;
+    
+    CLOSE TableCursor;
+    DEALLOCATE TableCursor;
+    
+    -- Use a CTE to calculate the Free %
+    WITH CTE AS (
+        SELECT 
+            TableName,
+            [Rows],
+            CAST(REPLACE(Reserved, ' KB', '') AS FLOAT) AS ReservedKB,
+            CAST(REPLACE(Data, ' KB', '') AS FLOAT) AS DataKB,
+            CAST(REPLACE(IndexSize, ' KB', '') AS FLOAT) AS IndexSizeKB,
+            CAST(REPLACE(Unused, ' KB', '') AS FLOAT) AS UnusedKB
+        FROM #SpaceUsed
+    )
+    UPDATE #SpaceUsed
+    SET [Free %] = 
+        CASE 
+            WHEN ReservedKB = 0 THEN 0
+            ELSE (UnusedKB / ReservedKB) * 100
+        END
+    FROM CTE
+    WHERE #SpaceUsed.TableName = CTE.TableName;
+    
+    -- Select the results from the temporary table
+    SELECT * FROM #SpaceUsed
+    ORDER BY TableName;
+    
+    -- Drop the temporary table
+    DROP TABLE #SpaceUsed;
+    ```
 
-    | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{green}\text{Free Space}}$$ |
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/401323a7-7ffc-4d6f-aade-96991793b677" />
 
-    - **After Shrink with TRUNCATEONLY:** When you use DBCC SHRINKFILE with the TRUNCATEONLY option `DBCC SHRINKFILE (file_id, TRUNCATEONLY)`, it releases the unused space at the end of the file without moving any data pages. This means that the data pages remain in their original locations, and only the free space at the end of the file is released.
+    | **Aspect**            | **Recommendation**|
+    |-----------------------|---------------------------------------------------|
+    | **Free Space**        | Maintain around 20-25% free space in your data files to accommodate table growth.|
+    | **Index Maintenance** | Regularly rebuild or reorganize indexes to optimize performance and reclaim space. Fragmented indexes can lead to inefficient space usage.|
+    | **Partitioning**      | Consider partitioning large tables to improve manageability and performance. This can also help in efficiently managing space.|
+    | **Archiving**         | Implement an archiving strategy for old or infrequently accessed data. This can free up space and improve performance for active data.|
+    | **Compression**       | Use data compression techniques to reduce the size of tables and indexes. SQL Server supports row and page compression, which can significantly reduce space usage.|
 
-      | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ |
+- Space Usage by Index: This query provides detailed information about space usage by indexes, including the index name, type, and space used.
 
-      > If you don't move the pages, the space within the file might not be optimized because the data pages could be scattered throughout the file, leaving gaps of unused space in between. This can lead to fragmentation, where the data is not stored contiguously, potentially affecting performance. In this case, the free space at the end is released, but the data pages remain scattered, which might not be optimal for performance.
+    ```sql
+    SELECT 
+        OBJECT_NAME(i.object_id) AS table_name,
+        i.name AS index_name,
+        i.type_desc AS index_type,
+        SUM(a.used_pages) * 8 / 1024.0 AS index_size_mb
+    FROM 
+        sys.indexes AS i
+        JOIN sys.partitions AS p ON i.object_id = p.object_id AND i.index_id = p.index_id
+        JOIN sys.allocation_units AS a ON p.partition_id = a.container_id
+    GROUP BY 
+        i.object_id, i.index_id, i.name, i.type_desc
+    ORDER BY 
+        index_size_mb DESC;
+    ```
 
-    - After `DBCC SHRINKFILE (file_id, target_size_in_MB)`: In this case, the data pages are moved to fill the gaps, and the file is shrunk to the target size, eliminating free space.
-  
-        > The `target_percent_free_space`: parameter `defines the desired final size of the file after the shrink operation`. It indicates the final size in megabytes. For instance, setting target_size_in_MB to 2000 will reduce the file to 2000 MB. 
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/9e73aa43-59a8-412a-b8e1-757478050b8c" />
 
-        | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ |
+- Database Size and Space Usage: This query provides an overview of the database size and space usage, including the total size, used space, and free space.
+    
+    ```sql
+    WITH SpaceInfo AS (
+        SELECT 
+            file_id,
+            type_desc,
+            name AS file_name,
+            physical_name,
+            size * 8 / 1024 AS size_mb,
+            FILEPROPERTY(name, 'SpaceUsed') * 8 / 1024 AS space_used_mb
+        FROM 
+            sys.database_files
+    )
+    SELECT 
+        db_name.database_name,
+        SUM(size_mb) AS total_size_mb,
+        SUM(space_used_mb) AS used_space_mb,
+        SUM(size_mb) - SUM(space_used_mb) AS free_space_mb
+    FROM 
+        SpaceInfo,
+        (SELECT DB_NAME() AS database_name) AS db_name
+    GROUP BY 
+        db_name.database_name;
+    ```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/bd6cbfa5-aec0-48d6-a8dc-440023bca0d0">
+
+
+- Filegroup Space Usage: This query provides information about space usage by filegroups, including the filegroup name, total size, used space, and free space.
+    
+    ```sql
+    -- Calculate the total size, used space, and free space for each filegroup
+    SELECT 
+        fg.name AS filegroup_name,
+        SUM(df.size * 8 / 1024.0) AS total_size_mb,
+        SUM(df.size * 8 / 1024.0) - SUM(a.total_pages * 8 / 1024.0) AS free_space_mb,
+        SUM(a.total_pages * 8 / 1024.0) AS used_space_mb
+    FROM 
+        sys.filegroups AS fg
+    JOIN 
+        sys.database_files AS df ON fg.data_space_id = df.data_space_id
+    JOIN 
+        sys.allocation_units AS a ON df.data_space_id = a.data_space_id
+    GROUP BY 
+        fg.name
+    ORDER BY 
+        total_size_mb DESC;
+    ```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/a7dce4f9-f32e-4b7e-bd92-d4709bd0ed7b">
+
+#### 2. Shrink the Database File
+
+> Shrink the database file to reclaim unused space
+
+```sql
+-- Shrink the database file (replace 1 with your file_id)
+DBCC SHRINKFILE (1);
+```
+
+  <img width="550" alt="image" src="https://github.com/user-attachments/assets/96c7be25-ade3-4851-a2cd-8735273c4c6f">
+
+> If you specify a target size that is just enough to hold all the data pages, the result can be a file with no free space.
+
+**Before Shrink:**
+
+| $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{green}\text{Free Space}}$$ |
+
+- **After Shrink with TRUNCATEONLY:** When you use DBCC SHRINKFILE with the TRUNCATEONLY option `DBCC SHRINKFILE (file_id, TRUNCATEONLY)`, it releases the unused space at the end of the file without moving any data pages. This means that the data pages remain in their original locations, and only the free space at the end of the file is released.
+
+  | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{green}\text{Free Space}}$$ | $${\color{red}\text{Data Page}}$$ |
+
+  > If you don't move the pages, the space within the file might not be optimized because the data pages could be scattered throughout the file, leaving gaps of unused space in between. This can lead to fragmentation, where the data is not stored contiguously, potentially affecting performance. In this case, the free space at the end is released, but the data pages remain scattered, which might not be optimal for performance.
+
+- After `DBCC SHRINKFILE (file_id, target_size_in_MB)`: In this case, the data pages are moved to fill the gaps, and the file is shrunk to the target size, eliminating free space.
+
+    > The `target_percent_free_space`: parameter `defines the desired final size of the file after the shrink operation`. It indicates the final size in megabytes. For instance, setting target_size_in_MB to 2000 will reduce the file to 2000 MB. 
+
+    | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ | $${\color{red}\text{Data Page}}$$ |
 
 3. **Monitor the Shrink Operation**: While the shrink operation is running, you can monitor for any blocking operations that might be affecting the process.
 
