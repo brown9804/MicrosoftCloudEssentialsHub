@@ -21,7 +21,17 @@ Last updated: 2024-11-19
 - [Getting Started with Microsoft Fabric](https://www.microsoft.com/en-us/microsoft-fabric/getting-started)
 - [Roles in workspaces in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces)
 - [Permission model - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/security/permission-model)
-  
+- [Query the SQL analytics endpoint of your SQL database in Fabric](https://learn.microsoft.com/en-us/fabric/database/sql/query-sql-analytics-endpoint)
+- [Use the SQL analytics endpoint to query data](https://learn.microsoft.com/en-us/fabric/database/sql/tutorial-use-analytics-endpoint)
+- [Apache Spark Runtimes in Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime)
+- [Model data in the default Power BI semantic model in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/default-power-bi-semantic-model)
+- [Create reports on data warehousing in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-reports)
+- [What is the SQL analytics endpoint for a lakehouse?](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint)
+- [What is a lakehouse in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview)
+- [Default Power BI semantic models in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/semantic-models)
+- [How lakehouse sharing works](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing)
+- [Tutorial: Stream and consume events to and from Real-Time Intelligence by using an Apache Kafka endpoint in an eventstream](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/event-streams/stream-consume-events-use-kafka-endpoint)
+
 </details>
 
 ## Overview 
