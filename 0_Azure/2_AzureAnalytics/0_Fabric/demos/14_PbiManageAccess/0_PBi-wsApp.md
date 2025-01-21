@@ -1,4 +1,4 @@
-# Microsoft Fabric - Power Bi: How to Manage Accesss
+# Microsoft Fabric: Power Bi Workspace App - Overview 
 
 Costa Rica
 
@@ -8,79 +8,6 @@ Costa Rica
 Last updated: 2024-11-19
 
 ------------------------------------------
-
-## Wiki 
-
-<details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
-
-- [Roles in workspaces in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces#-workspace-roles)
-- [Permission model](https://learn.microsoft.com/en-us/fabric/security/permission-model)
-- [Row-level security (RLS) with Power BI](https://learn.microsoft.com/en-us/fabric/security/service-admin-row-level-security)
-  
-</details>
-
-
-## Overview 
-
-> Power BI offers a comprehensive suite of analytics tools for organizational insights. You can connect to hundreds of data sources, simplifies data preparation, and facilitates ad hoc analysis. Power BI allows you to produce beautiful reports, then publish them for your organization to consume on the web and across mobile devices.
-
-Types of Access in Power BI:
-
-| **Product**           | **Description**                                                                 |
-|-----------------------|---------------------------------------------------------------------------------|
-| Power BI Desktop      | A Windows application for creating reports and data visualizations on your local computer. |
-| Power BI Service      | An online SaaS (Software as a Service) where you can share and view dashboards and reports. |
-| Power BI Mobile Apps  | Available on Windows, iOS, and Android devices for viewing reports and dashboards on the go. |
-
-
-Roles and Permissions:
-
-- **Admin**: Full control over the Power BI tenant, including user management and tenant settings.
-- **Member**: Can edit and manage content within a workspace.
-- **Contributor**: Can add and edit content, but cannot manage workspace settings.
-- **Viewer**: Can only view content within a workspace.
-
-Licensing:
-
-| **License Type**     | **Description**                                                                 |
-|----------------------|---------------------------------------------------------------------------------|
-| Power BI Free        | Limited to individual use with no sharing capabilities.                         |
-| Power BI Pro         | Allows sharing and collaboration, required for both creators and consumers of content. |
-| Power BI Premium     | Provides dedicated capacity and advanced features, does not require Pro licenses for content consumers. |
-
-Data Connectivity:
-
-| **Category**         | **Description**                                                                 |
-|----------------------|---------------------------------------------------------------------------------|
-| Files                | Excel, CSV, XML, JSON                                                           |
-| Databases            | SQL Server, Oracle, MySQL, PostgreSQL                                           |
-| Online Services      | SharePoint, Dynamics 365, Google Analytics, Salesforce                          |
-| Other Sources        | Web, OData, Active Directory                                                    |
-
-Creating and Publishing Reports:
-
-| **Step**             | **Description**                                                                 |
-|----------------------|---------------------------------------------------------------------------------|
-| Connect to Data      | Use Power BI Desktop to connect to your data source.                            |
-| Transform Data       | Clean and transform your data using Power Query.                                |
-| Create Visuals       | Build reports with interactive visuals.                                         |
-| Publish              | Publish your reports to the Power BI service for sharing.                       |
-
-Sharing and Security:
-- **Row-Level Security (RLS)**: Restricts data access for given users, defined within roles.
-- **Content Packs**: A way to share datasets, reports, and dashboards with other users.
-- **Apps**: A collection of dashboards and reports bundled together and shared with users.
-
-Consuming Reports:
-
-| **Method**           | **Description**                                                                 |
-|----------------------|---------------------------------------------------------------------------------|
-| Power BI Service     | View and interact with reports in a web browser.                                |
-| Power BI Mobile Apps | Access reports on mobile devices.                                               |
-| Embedded             | Integrate reports into your own applications using Power BI Embedded.           |
-
-## Demo 
 
 > How to create a Power Bi Workspace App from the beginning and share it with external users. The same steps apply to security groups; simply replicate the process for a security group and add members to it.
 
@@ -166,13 +93,21 @@ Consuming Reports:
         
         <img width="436" alt="image" src="https://github.com/user-attachments/assets/814f831f-19b8-4939-a3e2-618385c4827b">
 
+        > `Read All SQL Endpoint Data` permission allows users to access and read data from SQL endpoints within the Fabric environment. This permission is typically required for users who need to: <br/>
+        > - Query Data: Execute SQL `queries against the data stored in the Fabric environment`. <br/>
+        > - Access Reports: `View and interact with reports and dashboards that rely on SQL data sources`. <br/>
+        > - Data Analysis: `Perform data analysis and generate insights` using SQL-based data.
+
+
+
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/b87137f1-b464-43df-a04d-593a41b3131a">
 
       2. Make sure the person already have access to the semantic model:
 
          <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5344f85-53f3-48dc-b0b1-6b3c5995bbd6">
 
-> Granting `Read, ReadData` access to the `semantic model, sql analytics endpoint`, grating `App audience` will enable the assigned individual to view it.
+> - Granting `Read, ReadData` access to the `semantic model, sql analytics endpoint` <br/>
+> - Grating `App audience` will enable the assigned identity to view it.
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/353d88ad-a4a7-4aef-aff4-d584901c29d8">
 
