@@ -1,4 +1,4 @@
-# Microsoft Fabric - Power Bi: How to Manage Accesss
+# Microsoft Fabric: Power Bi How to Manage Accesss - Overview 
 
 Costa Rica
 
@@ -12,7 +12,7 @@ Last updated: 2024-11-19
 ## Wiki 
 
 <details>
-<summary><b>Table of Contents</b> (Click to expand)</summary>
+<summary><b>Table of References </b> (Click to expand)</summary>
 
 - [Roles in workspaces in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/get-started/roles-workspaces#-workspace-roles)
 - [Permission model](https://learn.microsoft.com/en-us/fabric/security/permission-model)
