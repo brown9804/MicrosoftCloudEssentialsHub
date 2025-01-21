@@ -93,13 +93,21 @@ Last updated: 2024-11-19
         
         <img width="436" alt="image" src="https://github.com/user-attachments/assets/814f831f-19b8-4939-a3e2-618385c4827b">
 
+        > `Read All SQL Endpoint Data` permission allows users to access and read data from SQL endpoints within the Fabric environment. This permission is typically required for users who need to: <br/>
+        > - Query Data: Execute SQL `queries against the data stored in the Fabric environment`. <br/>
+        > - Access Reports: `View and interact with reports and dashboards that rely on SQL data sources`. <br/>
+        > - Data Analysis: `Perform data analysis and generate insights` using SQL-based data.
+
+
+
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/b87137f1-b464-43df-a04d-593a41b3131a">
 
       2. Make sure the person already have access to the semantic model:
 
          <img width="550" alt="image" src="https://github.com/user-attachments/assets/f5344f85-53f3-48dc-b0b1-6b3c5995bbd6">
 
-> Granting `Read, ReadData` access to the `semantic model, sql analytics endpoint`, grating `App audience` will enable the assigned individual to view it.
+> - Granting `Read, ReadData` access to the `semantic model, sql analytics endpoint` <br/>
+> - Grating `App audience` will enable the assigned identity to view it.
 
   <img width="550" alt="image" src="https://github.com/user-attachments/assets/353d88ad-a4a7-4aef-aff4-d584901c29d8">
 
