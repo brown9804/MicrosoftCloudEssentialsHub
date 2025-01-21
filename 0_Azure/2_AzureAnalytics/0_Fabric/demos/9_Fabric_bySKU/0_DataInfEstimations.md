@@ -16,6 +16,8 @@ Last updated: 2025-01-20
 <summary><b>Table of References </b> (Click to expand)</summary>
 
 - [Understanding the data processing capability](https://learn.microsoft.com/en-us/data-engineering/playbook/capabilities/data-processing/)
+- [SQL database in Microsoft Fabric (Preview)](https://learn.microsoft.com/en-us/fabric/database/sql/overview)
+- [Microsoft Fabric features parity](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features)
 
 </details>
 
