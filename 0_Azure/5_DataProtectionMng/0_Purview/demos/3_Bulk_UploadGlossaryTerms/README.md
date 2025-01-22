@@ -16,14 +16,15 @@ Last updated: 2025-01-17
 ## Wiki 
 
 <details>
-<summary><b>Table of Wiki </b> (Click to expand)</summary>
+<summary><b>Table of References </b> (Click to expand)</summary>
 
 - [Learn about the new Microsoft Purview portal](https://learn.microsoft.com/en-us/purview/purview-portal)
 - [Microsoft Purview setup guides](https://learn.microsoft.com/en-us/purview/purview-fast-track-setup-guides)
 - [Microsoft Purview (formerly Azure Purview) deployment checklist](https://learn.microsoft.com/en-us/purview/legacy/tutorial-azure-purview-checklist)
 - [Import and export glossary terms](https://learn.microsoft.com/en-us/purview/legacy/how-to-import-export-glossary)
 - [Get ready for the next enhancement in Microsoft Purview governance](https://learn.microsoft.com/en-us/purview/new-governance-experience)
-
+- [Purview Roadmap](https://learn.microsoft.com/en-us/purview/whats-new)
+  
 </details>
 
 
@@ -123,7 +124,7 @@ Last updated: 2025-01-17
 
 ## How to transition data to - (new Microsoft Purview portal)
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > The `data appears to have migrated seamlessly`. Please follow the steps below to `locate the glossary terms you created in the classic Purview portal within this new portal`. 
 
 1. Switch to new portal:
