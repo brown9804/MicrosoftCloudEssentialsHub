@@ -15,7 +15,7 @@ Last updated: 2024-11-19
 ## Wiki 
 
 <details>
-<summary><b>Table of Wiki </b> (Click to expand)</summary>
+<summary><b>Table of References </b> (Click to expand)</summary>
    
 - [RAG Microsoft Drawio/visio templates](https://github.com/Azure/GPT-RAG/blob/main/media/visio/Enterprise%20RAG.vsdx)
 - [RAG Microsoft Enterprise RAG Solution Accelerator (GPT-RAG) - github repo](https://github.com/Azure/GPT-RAG)
