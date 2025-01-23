@@ -15,7 +15,7 @@ Last updated: 2024-11-19
 
 ```mermaid
 graph TD
-    A[User Query] -->|1. User asks a question via the bot| B[Azure Bot Service]
+    A[User Query] -->|User asks a question via the bot| B[Azure Bot Service]
     B -->| Bot sends query to| C[Azure Function]
     C -->| Azure Function uses| D[Azure Doc Intelligence ]
     D -->|Extracts relevant data from documents| C
