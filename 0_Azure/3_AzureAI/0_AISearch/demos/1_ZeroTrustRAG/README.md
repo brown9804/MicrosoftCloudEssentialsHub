@@ -1,4 +1,4 @@
-#  Zero Trust Architecture for RAG 
+#  RAG: Zero Trust Architecture - Overview
 
 Costa Rica
 
