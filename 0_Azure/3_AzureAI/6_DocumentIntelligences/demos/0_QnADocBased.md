@@ -1,4 +1,4 @@
-# Q&A Bot Using Azure - Document Based 
+# Azure Q&A Bot Document Based - Overview
 
 Costa Rica
 
@@ -9,16 +9,15 @@ Last updated: 2024-11-19
 
 ------------------------------------------
 
-## Example of use case with Documment Intelligence
 
 > [!NOTE]
-> Azure Form Recognizer helps to extract more data from documents but might increase the price. It is optional and can be used based on specific needs.
+>  Azure Document Intelligence can assist in extracting more data from documents. Given the time-consuming and complex nature of parsing information from different formats, its use is advisable.
 
 ```mermaid
 graph TD
     A[User Query] -->|1. User asks a question via the bot| B[Azure Bot Service]
     B -->|2. Bot sends query to| C[Azure Function]
-    C -->|3. Azure Function uses| D[Azure Form Recognizer - Optional]
+    C -->|3. Azure Function uses| D[Azure Doc Intelligence ]
     D -->|Extracts relevant data from documents| C
     C -->|4. Azure Function queries| E[Azure AI Search]
     E -->|Indexes processed documents| F[Azure Blob Storage]
@@ -44,12 +43,12 @@ graph TD
     I -->|Track performance and health| C
 ```
 
-### Solution Architecture 
+## Solution Architecture 
 
 1. Document Storage
     - **Azure Blob Storage**: Store your documents in Azure Blob Storage. This service is scalable and cost-effective for storing large amounts of unstructured data. Ensure that all data stored in Azure Blob Storage is encrypted at rest and in transit.
 3. Document Processing:
-    - **Azure Form Recognizer** (Optional): Use Azure Form Recognizer to extract structured data from your documents. This service can handle various document types, including invoices, receipts, and more, converting them into usable data.
+    - **Azure Document Intelligence** (Optional): Use Azure Document Intelligence to extract structured data from your documents. This service can handle various document types, including invoices, receipts, and more, converting them into usable data.
     - **Azure AI Search**: Index the processed documents using Azure AI Search (formerly known as Azure Cognitive Search) to make them searchable.
 4. Natural Language Processing:
     - **Azure OpenAI Service**: Use the Azure OpenAI Service to leverage models like GPT-4 for understanding and generating human-like text. This can be used to interpret user queries and generate responses based on the indexed documents.
@@ -64,10 +63,10 @@ graph TD
     - Azure Blob Storage and Azure AI Search are designed to scale automatically to handle large volumes of data.
     - Azure Functions can scale out to handle more requests as needed.
     
-### Example Workflow 
+## E.g Workflow 
 1. **User Query**: The user asks a question via the bot.
 2. **Query Processing**: The bot sends the query to an Azure Function.
-3. **Document Intelligence**: The Azure Function uses Form Recognizer to extract relevant data from the documents.
+3. **Document Intelligence**: The Azure Function uses Document Intelligence to extract relevant data from the documents.
 4. **Search**: The Azure Function queries the AI Search index.
 5. **Response Generation**: The Azure Function uses the OpenAI model to generate a response based on the search results and extracted data.
 6. **Reply**: The bot sends the response back to the user.
