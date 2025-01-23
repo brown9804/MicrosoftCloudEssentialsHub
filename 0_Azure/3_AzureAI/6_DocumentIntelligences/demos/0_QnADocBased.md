@@ -16,14 +16,14 @@ Last updated: 2024-11-19
 ```mermaid
 graph TD
     A[User Query] -->|1. User asks a question via the bot| B[Azure Bot Service]
-    B -->|2. Bot sends query to| C[Azure Function]
-    C -->|3. Azure Function uses| D[Azure Doc Intelligence ]
+    B -->| Bot sends query to| C[Azure Function]
+    C -->| Azure Function uses| D[Azure Doc Intelligence ]
     D -->|Extracts relevant data from documents| C
-    C -->|4. Azure Function queries| E[Azure AI Search]
+    C -->| Azure Function queries| E[Azure AI Search]
     E -->|Indexes processed documents| F[Azure Blob Storage]
-    C -->|5. Azure Function uses| G[Azure OpenAI Service]
+    C -->| Azure Function uses| G[Azure OpenAI Service]
     G -->|Generates response based on search results and extracted data| C
-    C -->|6. Bot sends response back to user| B
+    C -->| Bot sends response back to user| B
 
     subgraph "Solution Architecture"
         F
