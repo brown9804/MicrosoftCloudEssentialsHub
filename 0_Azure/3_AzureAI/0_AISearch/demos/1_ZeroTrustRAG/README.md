@@ -27,9 +27,10 @@ Last updated: 2024-11-19
 
 ## Overview
 
-> As Microsoft defined Zero Trist:
+> As Microsoft defined Zero Trust:
 
-![image](https://github.com/user-attachments/assets/da80a334-e6a0-4d53-aa9f-9b81029980fe)
+![image](https://github.com/user-attachments/assets/da80a334-e6a0-4d53-aa9f-9b81029980fe) <br/>
+From [Microsoft Security](https://www.microsoft.com/en-us/security/business/zero-trust?msockid=38ec3806873362243e122ce086486339)
 
 
 ## Components
@@ -55,7 +56,7 @@ Last updated: 2024-11-19
 
 > Zero trust: Initial Phase
 
-![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/1_zero-trust-phase0.png)
+![zero-trust-phase0](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/1_zero-trust-phase0.png) 
 
 > Microsoft Enterprise RAG Solution Accelerator: 
 
@@ -70,7 +71,8 @@ Last updated: 2024-11-19
 9. **Response Generation**: The orchestrator uses Azure OpenAI to generate a response based on the retrieved documents.
 10. **Response Delivery**: The response is sent back to the user through the same secure path.
 
-![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/2_Microsoft-RAG_Azure-Template.png)
+![Microsoft-RAG_Azure-Template](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/3_AzureAI/0_AISearch/demos/1_ZeroTrustRAG/docs/2_Microsoft-RAG_Azure-Template.png) <br/> 
+From [Zero Trust Architecture Deployment](https://github.com/Azure/GPT-RAG?tab=readme-ov-file#zero-trust-architecture-deployment)
 
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
