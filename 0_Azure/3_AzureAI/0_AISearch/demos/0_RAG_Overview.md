@@ -13,7 +13,7 @@ Last updated: 2024-11-28
 ## Wiki 
 
 <details>
-<summary><b>Table of Wiki </b> (Click to expand)</summary>
+<summary><b>Table of References </b> (Click to expand)</summary>
    
 - [What's Azure AI Search?](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)
 - [Indexer overview - Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-indexer-overview)
