@@ -19,7 +19,7 @@ For Azure SQL Managed Instance, consider these strategies:
 ## Wiki 
 
 <details>
-<summary><b>Table of References </b> (Click to expand)</summary>
+<summary><b> References </b> (Click to expand)</summary>
 
 - [Microsoft Learn - Maintaining indexes optimally to improve performance and reduce resource utilization](https://learn.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16)
     
@@ -28,11 +28,11 @@ For Azure SQL Managed Instance, consider these strategies:
 ## Content 
 
 <details>
-<summary><b>Table of Content </b> (Click to expand)</summary>
+<summary><b> Content </b> (Click to expand)</summary>
 
 - [Wiki](#wiki)
 - [Content](#content)
-- [Gather more detailed information about the current used and allocated space in your database](#gather-more-detailed-information)
+- [Gather more detailed information](#gather-more-detailed-information)
     - [Detailed Space Usage by File](#detailed-space-usage-by-file)
     - [Space Usage by Table](#space-usage-by-table)
     - [Space Usage by Index](#space-usage-by-index)
@@ -46,6 +46,10 @@ For Azure SQL Managed Instance, consider these strategies:
 - [Archiving Old Data](#archiving-old-data)
 - [Removing Unused Indexes](#removing-unused-indexes)
 - [Using Filegroups](#using-filegroups)
+- [Fragmentation](#fragmentation)
+    - [Measuring Fragmentation](#measuring-fragmentation)
+    - [How to resolve it](#how-to-resolve-it)
+    - [Automating Maintenance in Azure SQL Managed Instance](#automating-maintenance-in-azure-sql-managed-instance)
     
 </details>
 
