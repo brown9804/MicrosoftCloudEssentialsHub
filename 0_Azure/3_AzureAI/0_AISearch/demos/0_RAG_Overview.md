@@ -1,4 +1,4 @@
-# Retrieval-Augmented Generation (RAG) pattern
+#  RAG (Retrieval-Augmented Generation) pattern - Overview 
 
 Costa Rica
 
