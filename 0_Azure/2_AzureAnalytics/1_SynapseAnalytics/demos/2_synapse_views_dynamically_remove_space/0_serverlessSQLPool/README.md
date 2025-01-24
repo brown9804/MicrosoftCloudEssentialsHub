@@ -1,4 +1,4 @@
-# Serverless SQL Pool: Store Procedure Dynamically Remove Space
+# Serverless SQL Pool: Dynamically Remove Space
 
 Costa Rica
 
