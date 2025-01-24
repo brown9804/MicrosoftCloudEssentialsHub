@@ -12,7 +12,7 @@ Last updated: 2024-12-26
 ## Wiki 
 
 <details>
-<summary><b>Table of Wiki</b> (Click to expand)</summary>
+<summary><b> References </b> (Click to expand)</summary>
 
 - [Table deletes, updates, and merges - DeltaTables](https://docs.delta.io/latest/delta-update.html#-merge-in-streaming)
 - [DeltaLake - DeltaTables Releases](https://github.com/delta-io/delta/releases)
