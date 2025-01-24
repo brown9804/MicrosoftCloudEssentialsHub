@@ -30,6 +30,12 @@ Last updated: 2025-01-24
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+    - [SQL Pools](#sql-pools)
+    - [Synapse Views](#synapse-views)
+- [How to Dynamically Remove Space in field name](#how-to-dynamically-remove-space-in-field-name)
 
 </details>
 
@@ -60,3 +66,8 @@ SQL pools in Azure Synapse Analytics come in two main types:
 
 - For an overview of Serverless SQL Pool (built-in), please read this overview.
 - For information on Dedicated SQL Pool (formerly SQL DW), click here.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
