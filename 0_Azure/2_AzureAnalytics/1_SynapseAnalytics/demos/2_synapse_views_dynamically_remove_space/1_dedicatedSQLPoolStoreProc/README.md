@@ -68,7 +68,7 @@ Last updated: 2025-01-24
 
        <img width="550" alt="image" src="https://github.com/user-attachments/assets/3382ea4a-06eb-4e32-93d9-569cef7fc2f5" />
 
-2. **Create Sample Tables**: Use the following script to create tables with spaces in their names and columns. Click [here to see the .sql file]().
+2. **Create Sample Tables**: Use the following script to create tables with spaces in their names and columns. Click [here to see the .sql file](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/2_AzureAnalytics/1_SynapseAnalytics/demos/2_synapse_views_dynamically_remove_space/1_dedicatedSQLPoolStoreProc/src/create-sample-tables.sql).
 
     ```sql
     -- Create sample tables with spaces in names
@@ -125,7 +125,7 @@ Last updated: 2025-01-24
 
   ### Create Views with Modified Tables/Column Names
 
-1. **Create a Stored Procedure to Remove Spaces from Column Names**: Use the following script to create a stored procedure that removes spaces from column names and creates views. Click [here to see the .sql file]().
+1. **Create a Stored Procedure to Remove Spaces from Column Names**: Use the following script to create a stored procedure that removes spaces from column names and creates views. Click [here to see the .sql file](https://github.com/MicrosoftCloudEssentials-LearningHub/Demos-ScenariosHub/blob/main/0_Azure/2_AzureAnalytics/1_SynapseAnalytics/demos/2_synapse_views_dynamically_remove_space/1_dedicatedSQLPoolStoreProc/src/store-procedure-clean-up.sql).
 
     ```sql
      CREATE PROCEDURE RemoveSpacesFromColumnNames
