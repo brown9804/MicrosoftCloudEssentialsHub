@@ -23,7 +23,8 @@ Last updated: 2024-12-26
 - [Incremental refresh in Dataflow Gen2 - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-incremental-refresh)
 - [Dataflow Gen2 refresh - Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-factory/dataflow-gen2-refresh)
 - [Announcing Public Preview: Incremental Refresh in Dataflow Gen2](https://blog.fabric.microsoft.com/en-us/blog/announcing-public-preview-incremental-refresh-in-dataflows-gen2/)
-  
+- [Choose the best Fabric CI/CD workflow option for you](https://learn.microsoft.com/en-us/fabric/cicd/manage-deployment)
+
 </details>
 
 
