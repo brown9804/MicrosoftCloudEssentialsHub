@@ -10,19 +10,17 @@ Last updated: 2025-01-24
 
 ----------
 
-## Wiki 
-
-<details>
-<summary><b>List of References </b> (Click to expand)</summary>
-
-
-</details>
-
 ## Content
 
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
+- [Content](#content)
+- [Demo](#demo)
+   - [Set Up a Dedicated SQL Pool](#set-up-a-dedicated-sql-pool)
+   - [Create a Dedicated SQL Pool](#create-a-dedicated-sql-pool)
+   - [Create Tables with Spaces in Names and Columns](#create-tables-with-spaces-in-names-and-columns)
+   - [Create Views with Modified Tables/Column Names](#create-views-with-modified-tablescolumn-names)
 
 </details>
 
@@ -130,7 +128,88 @@ Last updated: 2025-01-24
 1. **Create a Stored Procedure to Remove Spaces from Column Names**: Use the following script to create a stored procedure that removes spaces from column names and creates views. Click [here to see the .sql file]().
 
     ```sql
-
+     CREATE PROCEDURE RemoveSpacesFromColumnNames
+     AS
+     BEGIN
+         DECLARE @tableName NVARCHAR(255)
+         DECLARE @columnName NVARCHAR(255)
+         DECLARE @sql NVARCHAR(MAX)
+     
+         -- Temporary table to store table names
+         CREATE TABLE #TableNames (TABLE_NAME NVARCHAR(255))
+         INSERT INTO #TableNames
+         SELECT TABLE_NAME
+         FROM INFORMATION_SCHEMA.TABLES
+         WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = 'dbo'
+     
+         -- Loop through each table
+         WHILE EXISTS (SELECT 1 FROM #TableNames)
+         BEGIN
+             SELECT TOP 1 @tableName = TABLE_NAME FROM #TableNames
+     
+             -- Print the table name for debugging
+             PRINT 'Processing table: ' + @tableName
+     
+             SET @sql = 'CREATE VIEW dbo.vw' + REPLACE(@tableName, ' ', '') + ' AS SELECT '
+     
+             -- Drop the temporary table if it exists
+             IF OBJECT_ID('tempdb..#ColumnNames') IS NOT NULL
+                 DROP TABLE #ColumnNames
+     
+             -- Temporary table to store column names
+             CREATE TABLE #ColumnNames (COLUMN_NAME NVARCHAR(255))
+             INSERT INTO #ColumnNames
+             SELECT COLUMN_NAME
+             FROM INFORMATION_SCHEMA.COLUMNS
+             WHERE TABLE_NAME = @tableName
+     
+             -- Loop through each column
+             WHILE EXISTS (SELECT 1 FROM #ColumnNames)
+             BEGIN
+                 SELECT TOP 1 @columnName = COLUMN_NAME FROM #ColumnNames
+     
+                 -- Print the column name for debugging
+                 PRINT 'Processing column: ' + @columnName
+     
+                 -- Remove all spaces from column names
+                 IF (SELECT COUNT(*) FROM #ColumnNames) = 1
+                 BEGIN
+                     SET @sql = @sql + 'REPLACE([' + @columnName + '], '' '', '''') AS [' + REPLACE(@columnName, ' ', '') + '] '
+                 END
+                 ELSE
+                 BEGIN
+                     SET @sql = @sql + 'REPLACE([' + @columnName + '], '' '', '''') AS [' + REPLACE(@columnName, ' ', '') + '], '
+                 END
+     
+                 DELETE FROM #ColumnNames WHERE COLUMN_NAME = @columnName
+             END
+     
+             -- Remove the trailing comma and space if any
+             IF RIGHT(@sql, 2) = ', '
+             BEGIN
+                 SET @sql = LEFT(@sql, LEN(@sql) - 2)
+             END
+     
+             SET @sql = @sql + ' FROM [' + @tableName + '];'
+     
+             -- Print the dynamic SQL for debugging
+             PRINT 'Generated SQL: ' + @sql
+     
+             -- Execute the dynamic SQL
+             BEGIN TRY
+                 EXEC sp_executesql @sql
+             END TRY
+             BEGIN CATCH
+                 PRINT 'Error: ' + ERROR_MESSAGE()
+             END CATCH
+     
+             DELETE FROM #TableNames WHERE TABLE_NAME = @tableName
+         END
+     
+         -- Clean up temporary tables
+         DROP TABLE #TableNames
+         DROP TABLE #ColumnNames
+     END
     ```
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/13b3b5f2-3142-448f-b03a-3eeae00a1509" />
@@ -157,16 +236,14 @@ Last updated: 2025-01-24
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ccf430e-1dff-4968-980c-a4f3913a8369" />
 
+| Before | After |
+| --- | --- |
+| <img width="360" alt="image" src="https://github.com/user-attachments/assets/b0de5118-bf67-4f75-9dd7-2ae5ba33cb28" /> | <img width="360" alt="image" src="https://github.com/user-attachments/assets/ef9c6d3a-1d45-4d37-9977-431cf8b774d0" /> |
+
 > [!NOTE]
 > Once you refresh, the views will be visible:
 
-| Before | After |
-| --- | --- |
-<img width="360" alt="image" src="https://github.com/user-attachments/assets/b0de5118-bf67-4f75-9dd7-2ae5ba33cb28" />
-
-
-
-
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/e0191419-29cc-448a-a14f-a76da221b015" />
 
 
 <div align="center">
