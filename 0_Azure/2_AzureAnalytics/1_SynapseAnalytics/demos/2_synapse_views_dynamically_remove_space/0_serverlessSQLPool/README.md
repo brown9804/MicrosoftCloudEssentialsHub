@@ -10,19 +10,20 @@ Last updated: 2025-01-26
 
 ----------
 
-## Wiki 
-
-<details>
-<summary><b>List of References </b> (Click to expand)</summary>
-
-
-</details>
-
 ## Content
 
 <details>
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
+- [Content](#content)
+- [Overview](#overview)
+- [Demo](#demo)
+   - [Set Up a Synapse Workspace](#set-up-a-synapse-workspace)
+   - [Upload Sample Data to Storage Account](#upload-sample-data-to-storage-account)
+   - [Create User Database](#create-user-database)
+   - [Create an External Data Source and File Format](#create-an-external-data-source-and-file-format)
+   - [Create an External Table](#create-an-external-table)
+   - [Create Views with Modified Tables/Column Names](#create-views-with-modified-tablescolumn-names)
 
 </details>
 
@@ -95,21 +96,24 @@ Last updated: 2025-01-26
      <img width="884" alt="image" src="https://github.com/user-attachments/assets/f24a4d45-6bee-46ea-bccc-b5f893044c01" />
 
 2. Switch to the User Database: Use the newly created database.
-3. Create an External Data Source: Integrate this task with the previous step by establishing the external data source within the user database.
+   
+### Create an External Data Source and File Format
+
+1. Integrate this task with the previous step by establishing the external data source within the user database.
 
      ```sql
      USE {User Database Name};
 
      CREATE EXTERNAL DATA SOURCE {Data Source Name}
      WITH (
-         LOCATION = 'https://<your-storage-account>.dfs.core.windows.net/<your-container>'
+         LOCATION = 'https://<your-storage-account>.dfs.core.windows.net/<your-container>/'
      );
      ```
 
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/13f22e3b-7c68-4ed2-8a56-2752a5033869" />
 
 
-4. **Create an External File Format**: As part of the same flow, define the format of the CSV file.
+2. **Create an External File Format**: As part of the same flow, define the format of the CSV file.
 
      ```sql
      CREATE EXTERNAL FILE FORMAT {File Format Name}
@@ -126,51 +130,107 @@ Last updated: 2025-01-26
      <img width="550" alt="image" src="https://github.com/user-attachments/assets/40a4c6a2-bc51-49ba-9361-bec6eb0edb9e" />
 
 
-5. **Create an External Table**:  Create an external table that references the sample data.
+### Create an External Table
+
+1. Create an external table that references the sample data.
 
      ```sql
-     CREATE EXTERNAL TABLE [Table With Spaces] (
-         [ID] INT,
-         [Name With Spaces] NVARCHAR(50),
-         [Date With Spaces] DATE
+     CREATE EXTERNAL TABLE [Table Name] (
+         [Employee ID] INT,
+         [Employee Name] NVARCHAR(50),
+         [Hire Date] DATE
      )
      WITH (
-         LOCATION = '<file-name>.csv',
+         LOCATION = 'employee data with spaces.csv',
+         DATA_SOURCE = {Data Source Name},
+         FILE_FORMAT = {File Format Name}
+     );
+     
+     CREATE EXTERNAL TABLE [Table Name] (
+         [Product ID] INT,
+         [Product Name] NVARCHAR(50),
+         [Release Date] DATE
+     )
+     WITH (
+         LOCATION = 'product data with spaces.csv',
          DATA_SOURCE = {Data Source Name},
          FILE_FORMAT = {File Format Name}
      );
      ```
+     
+     <img width="550" alt="image" src="https://github.com/user-attachments/assets/841cc8b7-4c2d-4c9a-975c-fec4bb3326d8" />
 
-
-
-6. **Query the External Table**:  You can now query the external table to see the sample data.
-     ```sql
-     SELECT * FROM [Table With Spaces];
+2. Confirm the existence of the tables 
+     
+     ```sql 
+     SELECT * FROM sys.tables 
+     WHERE name IN ('Product Data', 'Employee Data');
      ```
 
+     <img width="240" alt="image" src="https://github.com/user-attachments/assets/9eb9e379-30a7-42b8-966d-8f8c96b31395" />
 
 
-
-
-1. **Open the SQL Script Editor**:
-   - In Synapse Studio, go to the `Develop hub` by clicking on the `Develop` icon in the left navigation pane.
-   - Click on `+ New SQL script` to open the SQL script editor.
-
-       <img width="550" alt="image" src="https://github.com/user-attachments/assets/3382ea4a-06eb-4e32-93d9-569cef7fc2f5" />
-
-
-2. Create an External Data Source: Define an external data source that points to your SQL database.
+3. **Query the External Table**:  You can now query the external table to see the sample data.
 
      ```sql
-     CREATE EXTERNAL DATA SOURCE MySQLDataSource
-     WITH (
-         TYPE = RDBMS,
-         LOCATION = '<your-sql-server-name>.database.windows.net',
-         DATABASE_NAME = '<your-database-name>',
-         CREDENTIAL = MyCredential
-     );
+     SELECT * FROM {Table Name};
      ```
 
+### Create Views with Modified Tables/Column Names
+
+> This script is designed to dynamically create views for each table in a database, renaming columns to remove spaces. It starts by creating a temporary table to store the SQL statements and assigns a unique row number to each statement. The script then loops through these statements, executing each one in turn. Finally, it cleans up by dropping the temporary table.
+> 1. **Temporary Table Creation**: A temporary table `#CreateViewStatements` is created to store the dynamic SQL statements and their corresponding row numbers. <br/>
+> 2. **Inserting SQL Statements**: The script generates SQL statements to create views for each table in the database. It uses the `INFORMATION_SCHEMA.COLUMNS` to get the table and column names, renaming columns to remove spaces. These statements, along with a row number, are inserted into the temporary table. <br/>
+> 3. **Variable Declaration**: Variables are declared to hold the current SQL statement, the current row number, and the maximum row number. <br/>
+> 4. **Getting Maximum Row Number**: The script retrieves the maximum row number from the temporary table to determine how many statements need to be executed. <br/>
+> 5. **Executing SQL Statements**: A loop iterates through each row in the temporary table, retrieves the SQL statement, executes it, and increments the row number until all statements are executed. <br/>
+> 6. **Cleanup**: The temporary table is dropped to clean up after the script has finished executing. <br/>
+
+```sql
+-- Create a temporary table to store the dynamic SQL statements
+CREATE TABLE #CreateViewStatements (SQLStatement NVARCHAR(MAX), RowNum INT);
+
+-- Insert dynamic SQL statements for each table with a row number
+INSERT INTO #CreateViewStatements (SQLStatement, RowNum)
+SELECT 
+    'CREATE VIEW ' + QUOTENAME(REPLACE(TABLE_NAME, ' ', '_')) + ' AS SELECT ' +
+    STRING_AGG('[' + COLUMN_NAME + '] AS [' + REPLACE(COLUMN_NAME, ' ', '') + ']', ', ') +
+    ' FROM ' + QUOTENAME(TABLE_NAME),
+    ROW_NUMBER() OVER (ORDER BY TABLE_NAME)
+FROM INFORMATION_SCHEMA.COLUMNS
+GROUP BY TABLE_NAME;
+
+-- Declare variables to hold the SQL statement and row number
+DECLARE @sql NVARCHAR(MAX);
+DECLARE @rowNum INT = 1;
+DECLARE @maxRowNum INT;
+
+-- Get the maximum row number
+SELECT @maxRowNum = MAX(RowNum) FROM #CreateViewStatements;
+
+-- Loop through the temporary table and execute each SQL statement
+WHILE @rowNum <= @maxRowNum
+BEGIN
+    -- Get the next SQL statement
+    SELECT @sql = SQLStatement FROM #CreateViewStatements WHERE RowNum = @rowNum;
+
+    -- Execute the SQL statement
+    EXEC sp_executesql @sql;
+
+    -- Increment the row number
+    SET @rowNum = @rowNum + 1;
+END;
+
+-- Drop the temporary table
+DROP TABLE #CreateViewStatements;
+```
+
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/2654dcb8-d843-4000-9b32-b36f14f2a7a8" />
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/6f270523-adf1-4ca3-b80c-b5decd624459" />
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/7a5a26ff-9a5f-4c98-a337-b64ce0cc1699" />
    
 <div align="center">
   <h3 style="color: #4CAF50;">Total Visitors</h3>
