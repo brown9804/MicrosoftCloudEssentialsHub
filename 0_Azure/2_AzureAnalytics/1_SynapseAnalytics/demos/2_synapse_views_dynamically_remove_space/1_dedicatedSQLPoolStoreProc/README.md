@@ -6,7 +6,7 @@ Costa Rica
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
 [brown9804](https://github.com/brown9804)
 
-Last updated: 2025-01-24
+Last updated: 2025-01-25
 
 ----------
 
@@ -17,7 +17,7 @@ Last updated: 2025-01-24
 
 - [Content](#content)
 - [Demo](#demo)
-   - [Set Up a Dedicated SQL Pool](#set-up-a-dedicated-sql-pool)
+   - [Set Up a Synapse Workspace](#set-up-a-synapse-workspace)
    - [Create a Dedicated SQL Pool](#create-a-dedicated-sql-pool)
    - [Create Tables with Spaces in Names and Columns](#create-tables-with-spaces-in-names-and-columns)
    - [Create Views with Modified Tables/Column Names](#create-views-with-modified-tablescolumn-names)
@@ -26,7 +26,7 @@ Last updated: 2025-01-24
 
 ## Demo
 
-### Set Up a Dedicated SQL Pool
+### Set Up a Synapse Workspace
 
 1. **Sign in to the Azure Portal**: Go to the Azure Portal and sign in with your Azure account.
 2. **Navigate to Your Synapse Workspace**: In the Azure Portal, search for your Synapse workspace or create a new one if you don't have one.
