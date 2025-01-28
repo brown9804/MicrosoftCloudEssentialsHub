@@ -33,22 +33,23 @@ Last updated: 2024-12-31
 <details>
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
-- [Fabric Overview](#fabric-overview)
-    - [Wiki](#wiki)
-    - [Overview](#overview)
-        - [Key Components](#key-components)
-        - [Features](#features)
-    - [OneLake in Microsoft Fabric](#onelake-in-microsoft-fabric)
-        - [Lakehouse & Data Warehouse](#lakehouse--data-warehouse)
-    - [Parquet & Delta Data Formats](#parquet--delta-data-formats)
-    - [Dataflow Gen2 & Data Pipelines](#dataflow-gen2--data-pipelines)
-    - [Shortcuts & Mirroring](#shortcuts--mirroring)
-    - [Data Factory](#data-factory)
-    - [Medallion Architecture Overview](#medallion-architecture-overview)
-    - [Fabric: Highlights into AI/LLMs](#fabric-highlights-into-aillms)
-    - [Writing SQL: SQL Analytics Endpoint](#writing-sql-sql-analytics-endpoint)
-        - [How to Configure and Use the SQL Analytics Endpoint](#how-to-configure-and-use-the-sql-analytics-endpoint)
-    - [Fabric AI Skill](#fabric-ai-skill)
+- [Wiki](#wiki)
+- [Content](#content)
+- [Overview](#overview)
+    - [Key Components](#key-components)
+    - [Features](#features)
+- [OneLake in Microsoft Fabric](#onelake-in-microsoft-fabric)
+    - [Lakehouse & Data Warehouse](#lakehouse--data-warehouse)
+- [Parquet & Delta Data Formats](#parquet--delta-data-formats)
+- [Z-Order and V-Order](#z-order-and-v-order)
+- [Dataflow Gen2 & Data Pipelines](#dataflow-gen2--data-pipelines)
+- [Shortcuts & Mirroring](#shortcuts--mirroring)
+- [Data Factory](#data-factory)
+- [Medallion Architecture Overview](#medallion-architecture-overview)
+- [Fabric: Highlights into AI/LLMs](#fabric-highlights-into-aillms)
+- [Writing SQL: SQL Analytics Endpoint](#writing-sql-sql-analytics-endpoint)
+    - [How to Configure and Use the SQL Analytics Endpoint](#how-to-configure-and-use-the-sql-analytics-endpoint)
+- [Fabric AI Skill](#fabric-ai-skill)
 
 </details>
 
@@ -160,7 +161,7 @@ graph TD
 > - `ACID Transaction`s: Ensures data reliability and consistency, supporting complex data operations without data corruption.
 > - `Schema Enforcement and Evolution`: Allows for schema changes over time, making it easier to manage evolving data structures.
 > - `Time Travel:` Enables querying of historical data, providing the ability to access and revert to previous versions of data.
-> - `Efficient Data Management`: Features like compaction, Z-Order, and V-Order optimize data storage and query performance
+> - `Efficient Data Management`: Features like compaction, [Z-Order](#z-order-and-v-order), and [V-Order](#z-order-and-v-order) optimize data storage and query performance
 
 ```mermaid
 graph TD
@@ -177,15 +178,6 @@ graph TD
         L -->|Query Optimization| V[✔️]
     end
 ```
-  
-  | **Aspect**               | **Z-Order**                                                                 | **V-Order**                                                                 |
-  |--------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-  | **Purpose**              | Improves query performance by co-locating related information in the same set of files. | Enhances read performance by organizing data in a way that leverages Microsoft Verti-Scan technology. |
-  | **Key Features**         | - Data Co-Location: Organizes data based on one or more columns, storing rows with similar values together. <br/> - Query Efficiency: Reduces the amount of data read during queries, improving performance. <br/> - Compatibility: Works with Delta Lake to enhance data-skipping algorithms. | - Special Sorting: Applies special sorting techniques to Parquet files. <br/> - Row Group Distribution: Optimizes row group distribution for better read performance. <br/> - Dictionary Encoding and Compression: Uses efficient dictionary encoding and compression. <br/> - Performance Boost: Provides fast reads under various compute engines. <br/> - Cost Efficiency: Reduces network, disk, and CPU resources during reads. |
-  | **Timing**               | Applied during read time (or table optimization).                            | Applied during write time.                                                 |
-  | **Use Cases**            | - When you need to improve query performance by reducing the amount of data read. <br/> - For queries that frequently filter on specific columns. | - When you need to enhance read performance and reduce storage costs. <br/> - For scenarios requiring efficient data access across various compute engines. |
-  | **Compatibility**        | Requires specific tools like Delta Lake.                                     | Universally compatible with all Parquet engines. 
-
 
 | Feature                | Parquet                                      | Delta                                      | Available in Parquet? | Available in Delta? |
 |------------------------|----------------------------------------------|--------------------------------------------|-----------------------|---------------------|
@@ -198,9 +190,21 @@ graph TD
 | **Data Versioning**    | Not available, limiting the ability to track changes over time. | Provides data versioning, allowing for auditing and rollback scenarios. | ❌                    | ✔️                  |
 | **Schema Enforcement** | No built-in schema enforcement, requiring external validation. | Enforces schema consistency, maintaining data quality. | ❌                    | ✔️                  |
 | **Efficient Updates**  | Does not support efficient updates, making it less suitable for frequently changing data. | Allows for efficient updates and deletes, ideal for dynamic datasets. | ❌                    | ✔️                  |
-| **Query Optimization** | Basic query optimization, relying on columnar storage benefits. | Advanced query optimization with features like data skipping and Z-order indexing. | ✔️                    | ✔️                  |
+| **Query Optimization** | Basic query optimization, relying on columnar storage benefits. | Advanced query optimization with features like data skipping and [Z-order](#z-order-and-v-order) indexing. | ✔️                    | ✔️                  |
 | **Use Case**           | Ideal for data warehousing, batch processing, and scenarios where data is primarily read and not frequently updated. | Best suited for data lakes, real-time analytics, and environments requiring strict data integrity and frequent updates. | ✔️                    | ✔️                  |
 | **Additional Context** | Parquet is excellent for read-heavy workloads and large-scale data analytics. It's widely supported and highly efficient for scenarios where data doesn't change frequently. | Delta builds on Parquet by adding features like ACID transactions, data versioning, and efficient updates/deletes. It's designed for environments where data integrity, frequent updates, and complex data operations are crucial. | ✔️                    | ✔️                  |
+
+## Z-Order and V-Order
+
+  
+| **Aspect**               | **Z-Order**                                                                 | **V-Order**                                                                 |
+|--------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| **Purpose**              | Improves query performance by co-locating related information in the same set of files. | Enhances read performance by organizing data in a way that leverages Microsoft Verti-Scan technology. |
+| **Key Features**         | - Data Co-Location: Organizes data based on one or more columns, storing rows with similar values together. <br/> - Query Efficiency: Reduces the amount of data read during queries, improving performance. <br/> - Compatibility: Works with Delta Lake to enhance data-skipping algorithms. | - Special Sorting: Applies special sorting techniques to Parquet files. <br/> - Row Group Distribution: Optimizes row group distribution for better read performance. <br/> - Dictionary Encoding and Compression: Uses efficient dictionary encoding and compression. <br/> - Performance Boost: Provides fast reads under various compute engines. <br/> - Cost Efficiency: Reduces network, disk, and CPU resources during reads. |
+| **Timing**               | Applied during read time (or table optimization).                            | Applied during write time.                                                 |
+| **Use Cases**            | - When you need to improve query performance by reducing the amount of data read. <br/> - For queries that frequently filter on specific columns. | - When you need to enhance read performance and reduce storage costs. <br/> - For scenarios requiring efficient data access across various compute engines. |
+| **Compatibility**        | Requires specific tools like Delta Lake.                                     | Universally compatible with all Parquet engines. 
+
 
 ## Dataflow Gen2 & Data Pipelines
 
