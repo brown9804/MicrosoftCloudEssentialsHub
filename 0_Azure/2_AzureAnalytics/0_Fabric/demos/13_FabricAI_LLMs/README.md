@@ -251,6 +251,12 @@ Make sure to replace `"your_openai_api_key"`, `"https://your_openai_api_base/"`,
 
 ### Basic Usage of LangChain Transformer
 
+> `LangChain Transformer helps you automate the process of generating and transforming text data using advanced language models`, making it easier to integrate AI capabilities into your data workflows. <br/>
+> 1. `Prompt Creation`: Start by `defining a template for the kind of text you want to generate or analyze`. For example, you might create a prompt that asks the model to define a specific technology term.  <br/>
+> 2. `Chain Setup`: Then `set up a chain that links this prompt to a language model`. This chain is responsible for sending the prompt to the model and receiving the generated response.  <br/>
+> 3. `Transformer Configuration`: The LangChain Transformer is `configured to use this chain`. It specifies how the `input data (like a list of technology names) should be processed and what kind of output (like definitions) should be produced`.  <br/>
+> 4. `Data Processing`: Finally, `apply this setup to a dataset.` E.g., list of technology names in a DataFrame, and the transformer will use the language model to generate definitions for each technology.
+
 1. **Create a Prompt Template**: Define a prompt template for generating definitions.
 
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/f4a3dea8-d743-46e0-a6e9-279aae457bc8">
