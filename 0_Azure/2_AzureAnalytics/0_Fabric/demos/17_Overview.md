@@ -359,3 +359,8 @@ Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/tree/main/
 > Fabric AI Skills let you `build custom chat platforms for asking and answering questions using advanced AI`. By setting up these skills, we can ask questions and get reliable answers based on data. We need to give clear instructions and examples so the AI can work well for our company's specific needs and data.
 
 Click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/2_FabricAISkills.md) for a quick guidance.
+
+<div align="center">
+  <h3 style="color: #4CAF50;">Total Visitors</h3>
+  <img src="https://profile-counter.glitch.me/brown9804/count.svg" alt="Visitor Count" style="border: 2px solid #4CAF50; border-radius: 5px; padding: 5px;"/>
+</div>
